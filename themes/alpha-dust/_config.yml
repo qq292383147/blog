@@ -1,0 +1,43 @@
+# Logo (Font Awesome Class)
+fa_logo: fa-cube
+
+# Header
+menu:
+  首页: /
+  档案: /archives
+  关于: /about.html
+  标签: /tags
+  分类: /categories
+  联系: /contact.html
+
+# Default post title
+default_post_title: Untitled
+
+# Archive Date Format
+archive_date_format: MMM YYYY
+
+# Comments.
+comments:
+  # Disqus comments
+  disqus_shortname:
+
+# Google Analytics Tracking ID
+google_analytics:
+
+# Social Accounts
+twitter_url: #https://twitter.com/?lang=en
+facebook_url: #https://www.facebook.com/
+instagram_url: #https://www.instagram.com/
+dribble_url: #https://dribbble.com/
+github_url: #https://github.com/klugjo/hexo-theme-alpha-dust
+googleplus_url: #https://plus.google.com/
+behance_url: #https://www.behance.net/
+fivehundredpx_url: #https://500px.com/
+email_url: #test@example.com
+rss_url: \#
+
+# Footer About Text
+footer_about: "张健龙的官方网站 <a href=\"http://zhanglong292383147.gitee.io/\">Acton</a>. 本作刚加入技术博客,希望有什么问题可以直接联系我. 我的邮箱是www.292383147zhang@qq.com"
+
+# Footer Copyright Line
+footer_copyright: "@Acton.2019 All right reserved | Design & Acton"
