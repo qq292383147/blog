@@ -19,7 +19,7 @@ axios就是一个基于Promise的，发送http请求的一个工具库。
     `npm install --save axios` 
 2. 在index.js文件中引入axios
 
-```jsx
+```js
 import axios from 'axios'
 new Vue({
   // el: '#app',
@@ -32,7 +32,7 @@ new Vue({
 
 ##### 1.  执行get请求，有两种方式
 
-```jsx
+```js
 // 第一种方式  将参数直接写在url中
 axios.get('/getMainInfo?id=123')
 .then((res) => {
@@ -57,7 +57,7 @@ axios.get('/getMainInfo', {
 
 ##### 2. 执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。
 
-```jsx
+```js
 axios.post('/getMainInfo', {
   id: 123
 })
@@ -78,7 +78,7 @@ axios.post('/getMainInfo', {
 - baseURL：baseURL会自动加在url前面，除非url是一个绝对URL，**string类型** 
 - transformRequest：允许在向服务器发送请求之前，修改请求数据，只适用于**post，put，patch**请求，**数组类型，数组里面的最后一个函数必须返回一个字符串** 
 
-```kotlin
+```js
 [fucntion(data) {
   // 对data进行更改
   return data
@@ -134,6 +134,7 @@ axios({
   console.log(res.statusText)
   console.log(res.headers)
   console.log(res.config)
+  
 }).catch(err => {
   console.log(err)
 })

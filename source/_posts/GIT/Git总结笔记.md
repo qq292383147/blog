@@ -30,6 +30,22 @@ categories: git
 
 - `git config --global user.email` “你的邮箱”
 
+- `git config user.name` 查看用户名
+
+- `git config user.password` 查看密码
+
+- `git config user.email` 查看邮箱
+
+- `git config --list` 查看配置信息
+
+- `git config --global user.name "xx(新的用户名)"` 修改用户名
+
+- `git config --global user.password "xxx(新的密码)"` 修改密码
+
+- `git config --global user.email "xxx@xxx.com(新的邮箱)"` 修改邮箱
+
+
+
 ### 可以使用两种操作方式：
 
 - 1、图形化界面（初级）sourcetree
