@@ -2530,6 +2530,8 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 ```
 ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/36.png) 
 
+> 注意：在`webpack` 的配置文件中，`mode：development` 模式是开发模式，不压缩文件，如果要打包项目建议使用 `mode：production` 模式
+
 ## 使用webpack
 
 新建项目文件夹 test-webpack，运行如下命令：
@@ -2584,6 +2586,8 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 - 7、运行 npm run dev 
 
+## webpack loader 加载器
+
 ####  webpack处理css 
 
 安装 `npm i css-loader style-loader -D` 
@@ -2594,6 +2598,16 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/40.png) 
 
+> 注意： 
+>
+> 1、test 表示匹配的文件类型，use 表示对应要调用的 loader
+>
+> 2、use 数组中指定 的 loader 顺序是固定的
+>
+> 3、多个 loader 的调用顺序是：从后往前调用 调用到 style-loader 后如果没有参数则把处理结果发送到 webpuck
+
+
+
 ####  webpack处理less和sass 
 
 - 1、运行`npm i less less-loader -D`
@@ -2603,42 +2617,24 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 ```js
 {
-
     test: /\.less$/,
-
     use: [{
-
         loader: 'style-loader'
-
     }, {
-
         loader: 'css-loader'
-
     }, {
-
         loader: 'less-loader'
-
     }]
-
 },
-
 {
-
     test: /\.scss$/,
-
     use: [{
         loader: 'style-loader'
-
     }, {
-
         loader: 'css-loader'
-
     }, {
-
         loader: 'sass-loader'
-
     }]
-
 }
 ```
 
@@ -3540,3 +3536,12 @@ import $ from 'jquery'
 <style>
 </style>
 ```
+
+
+
+## VUE打包项目
+
+```bash
+npm run build:prod --report
+```
+

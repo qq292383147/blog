@@ -84,7 +84,7 @@ const state = {
   currentIndex: -1 // 单签歌曲
 }
 export default state
-复制代码
+
 // config.js
 export const playMode = {
   sequence: 0,
