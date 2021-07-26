@@ -382,13 +382,13 @@ jq对象.css(属性名);
 
 ### ​    1.jquery对象转js对象  
 
-​       1.1） $(obj).get(i)
+​1.1） `$(obj).get(i)`
 
---get([index])
+`get([index])`
 
-取得其中一个匹配的元素。 num表示取得第几个匹配的元素。
+取得其中一个匹配的元素。 num 表示取得第几个匹配的元素。
 
-这能够让你选择一个实际的DOM 元素并且对他直接操作，而不是通过 jQuery 函数。$(this).get(0)与$(this)[0]等价。
+这能够让你选择一个实际的 DOM 元素并且对他直接操作，而不是通过 jQuery 函数。`$(this).get(0)`与`$(this)[0]` 等价。
 
 ##### HTML 代码:
 
@@ -411,105 +411,115 @@ $("img").get(0);
 
 ```html
 [ <img src="test1.jpg"/> ]
+
 ```
 
- 
+1.2） `$(obj)[i]`
 
-​       1.2） $(obj)[i] 
+### 2.js对象转jQuery对象
 
-###    2.js对象转jQuery对象
-
-​       var obj=document.getElmentById('id');
-
-​       $(obj);
+```js
+    var obj = document.getElmentById('id');
+    $(obj);
+```
 
 ### 四.核心方法：
 
-\1. click([[data],fn]) ——鼠标点击事件函数
+1. `click([[data],fn])` ——鼠标点击事件函数
 
-\2. hover() ——鼠标移入移出函数
+2. `hover()` ——鼠标移入移出函数
 
-\3. each()方法——循环遍历
+3. `each()` 方法——循环遍历
 
-​	例：为每个h1添加num属性，值为数字索引。
+​	例：为每个 h1 添加 num 属性，值为数字索引。
 
+```js
 ​	$('h1').each(function(i){
 
 ​		$('h1').get()[i].setAttribute('num',i+1);
 
 ​	})
 
-\4. **index()** 方法返回指定元素相对于其他指定元素的 index 位置。
+```
 
-例 var idx = $(this).index('.menu li');
+4. `index()` 方法返回指定元素相对于其他指定元素的 index 位置。
 
-在jq里面可以得到某个元素在其集合里面的索引
+例 
 
-$(元素).index()    得到的是元素在它的兄弟元素里面的索引
+```js
+  var idx = $(this).index('.menu li');
+```
 
-jq对象.index(元素); 相当于indexOf
 
- 
+在 jq 里面可以得到某个元素在其集合里面的索引
 
-5.mouseenter() 当鼠标指针进入（穿过）元素时
+`$(元素).index()`    得到的是元素在它的兄弟元素里面的索引
 
-  mouseleave() 当鼠标指针离开元素时
+jq对象.index(元素); 相当于 indexOf
 
-​    例：$('.menu li').mouseenter(function(){}
 
-6.not() 选中所有不包含的元素
+5. `mouseenter()` 当鼠标指针进入（穿过）元素时
+
+    `mouseleave()` 当鼠标指针离开元素时
+
+​例：
+
+```js
+$('.menu li').mouseenter(function(){}
+
+```
+
+6. `not()` 选中所有不包含的元素
 
 ​    例：选中div中除了p标签的其他标签
+```js
+​   $('div').not('p');
+```
 
-​    $('div').not('p');
+特性 `attributes`：值为 `string`
 
- 
+属性 properties：值为string\boolean\number\object
 
-特性attributes：值为string
+1.如果 `attributes` 是本来在 DOM 对象中就存在的，`attributes` 和 `properties` 的值会同步
 
-属性properties：值为string\boolean\number\object
+2.如果 `attributes` 是本来在 DOM 对象中就存在的，但是类型为 `boolean`，那么 `attributes` 和 `properties` 的值不会同步
 
-1.如果attributes是本来在DOM对象中就存在的，attributes和properties的值会同步
+3.如果 `attributes` 不是 DOM 独享内建的属性，`attributes` 和 `properties` 的值不会同步
 
-2.如果attributes是本来在DOM对象中就存在的，但是类型为boolean，那么attributes和properties的值不会同步
 
-3.如果attributes不是DOM独享内建的属性，attributes和properties的值不会同步
-
- 
 
 #### 操作元素的特性：
 
-1.获取特性的值：attr(name)
+1.获取特性的值：`attr(name)`
 
-2.设置特性的值：attr(name,value) attr(attributes)
+2.设置特性的值：`attr(name,value) attr(attributes)`
 
-3.删除特性：removeAttr(name)
+3.删除特性：`removeAttr(name)`
 
- 
+
 
 #### 操作元素的属性：
 
-1.获取属性的值：prop(name)
+1.获取属性的值：`prop(name)`
 
-2.设置属性的值：prop(name,value) prop(properties)
+2.设置属性的值：`prop(name,value) prop(properties)`
 
-3.删除属性：removerProp(name)
+3.删除属性：`removerProp(name)`
 
- 
 
 #### 在元素中存取数据
 
-获取数据的值：data([name])
+获取数据的值：`data([name])`
 
-设置数据的值：data(name,value) data(object)
+设置数据的值：`data(name,value) data(object)`
 
-删除数据：removeData([name])
+删除数据：`removeData([name])`
 
-判断是否有数据：jQuery.hasData(element)
+判断是否有数据：`jQuery.hasData(element)`
 
- 
 
-**添加或修改class**
+
+#### 添加或修改 class
 
 addClass(names)
 
@@ -517,9 +527,9 @@ removeClass(names)
 
 hasClass(name)
 
-toggleClass(names][,switch])   switch是否切换
+toggleClass(names][,switch])   switch 是否切换
 
- 
+
 
 ```js
 //延迟一秒筛选（挺有意思的,用的比较少）
@@ -533,7 +543,7 @@ setTimeout(function(){
 },1000);
 ```
 
-\---------------------------------------------------
+
 
 ```html
 <button id="run">Run</button>
@@ -572,17 +582,17 @@ $(function(){
 
 ## 动  画
 
-\- 显示(show)与隐藏(hide)是一组动画：
+- 显示(show)与隐藏(hide)是一组动画：
 
-\- **滑入**(slideUp)与**滑出**(slideDown)与**切换**(slideToggle)，效果与卷帘门类似
+- **滑入**(slideUp)与**滑出**(slideDown)与**切换**(slideToggle)，效果与卷帘门类似
 
-\- **淡入**(fadeIn)与**淡出**(fadeOut)与**切换**(fadeToggle)
+- **淡入**(fadeIn)与**淡出**(fadeOut)与**切换**(fadeToggle)
 
- 
 
-slideUp、fadeIn、show  	 显示
 
-slideDown、fadeOut、hide  隐藏
+`slideUp`、`fadeIn`、`show`   显示
+
+`slideDown`、`fadeOut`、`hide`    隐藏
 
  
 
@@ -596,17 +606,17 @@ slideDown、fadeOut、hide  隐藏
 
  
 
-// stop方法：停止动画效果
+<span class="greenTextColor">// stop方法：停止动画效果</span>
 
 jq对象.stop(clearQueue, jumpToEnd);
 
-// 第一个参数：是否清除队列boolean类型
+<span class="greenTextColor">// 第一个参数：是否清除队列 `boolean` 类型</span>
 
-// 第二个参数：是否跳转到最终效果boolean类型
+<span class="greenTextColor">// 第二个参数：是否跳转到最终效果 `boolean` 类型</span>
 
-// 清空队列：后面的动画不执行了
+<span class="greenTextColor">// 清空队列：后面的动画不执行了</span>
 
-// 跳到结尾：立刻到达目标效果
+<span class="greenTextColor">// 跳到结尾：立刻到达目标效果</span>
 
  
 
@@ -614,175 +624,217 @@ jq对象.animate({目标键值对},speed,ease,fn);
 
 jq对象.animate({css属性的键值对},动画的持续时间,速度曲线,动画结束的回调函数);
 
- 
 
 
- *  jQuery
- *      就是一个js文件，里面封装了很多到达函数
- *
- *  $()  ---  $ 在jq里面称为： 顶级对象   $ === jQuery
- *
- *  怎么用：
- *      引入、入口函数、自己写代码
- *
- *  api
- *      选择器
- *          $(css选择器);  - 基本选择器
- *
- *          $(li:odd)
- *          $(li:even)
- *          $(li:eq(索引))
- *
- *          $(selector).parent()        获取父元素
- *          $(selector).children()        获取子元素
- *          $(selector).siblings()        获取除了自己以外的所有兄弟元素
- *          $(selector).eq(索引)        获取集合里面的指定索引的元素
- *
- *          获取索引
- *              $(元素).index()   获取元素在它的兄弟元素之间的索引
- *              $(selector).index(元素);  获取元素在集合里面的索引
- *      注册事件
- *
- *          jq对象.事件名称(事件处理程序);
- *
- *      操作样式
- *          css
- *              设置
- *                  jq对象.css(属性名,属性值);
- *                  jq对象.css({
- *                      属性名:属性值
- *                      属性名:属性值
- *                      属性名:属性值
- *                  });
- *              获取
- *                  jq对象.css(属性名);
- *
- *          addClass
- *          removeClass
- *          toggleClass
- *          hasClass
- *
- *      动画函数
- *          animate
- *
- *              jq对象.animate({目标键值对},speed,ease,fn);
- *
- *              show()/hide()/toggle()
- *
- *              fadeIn()/fadeOut()/fadeToggle()
- *              fadeTo()
- *
- *              slideDown()/slideUp()/slideToggle()
+jQuery
+    就是一个js文件，里面封装了很多到达函数
 
+$()---$ 在jq里面称为： 顶级对象 $ === jQuery
 
+怎么用：
+    引入、入口函数、自己写代码
 
+### api
 
+选择器
+$(css选择器); 基本选择器
 
- * 需要获取滚动出去的距离：
+$(li:odd)
 
- * scrollTop()     -  垂直
+$(li:even)
 
- * jq对象.scrollTop();
-    
+$(li:eq(索引))
 
- * scrollLeft();   - 水平的
-    
-     
+$(selector).parent()  获取父元素
 
- * 这两个方法，除了可以获取之外，还可以设置
-    
-     
+$(selector).children()  获取子元素
 
- * 使用获取宽度和高度的快速的方式
-    
+$(selector).siblings()  获取除了自己以外的所有兄弟元素
 
- * jq对象.width();
+$(selector).eq(索引)  获取集合里面的指定索引的元素
 
- * jq对象.height();
-    
+获取索引
 
- * 也是可以获取和可以设置的
-    
+$(元素).index() 获取元素在它的兄弟元素之间的索引
 
- * 在jq中，封装了好多获取宽高的方式：
-    
+$(selector).index(元素);获取元素在集合里面的索引
 
- * innerWidth/innerHeight              得到的是content+padding
+注册事件
 
- * outWidth/ outerHeight               content+padding+border
+jq对象.事件名称(事件处理程序);
 
- * outWidth(true)/outerHeight(true)    content+padding+border+margin
+操作样式
 
-    ```js
-    - $(function(){
-          $('input').click(function(){
-              // 回到顶部： 滚动出去的距离是0
-              $(window).scrollTop(0);
-          });
-    
-        var b = $("#box");
-        console.log(b.width());     //只是内容的宽度
-        console.log(b.innerWidth()); // 包含了内容和padding
-        console.log(b.outerWidth()); // 包含内容、padding、border
-        console.log(b.outerWidth(true)); // 包含了内容宁、padding、border、margin
-    });
-    ```
+css
 
- 
+设置
 
+jq对象.css(属性名,属性值);
 
- *  节点操作
- *      增
- *          创建
- *              $('<标签名></标签名>');
- *              html('<div></div>');
- *          追加
- *              append  appendTo
- *              prepend prependTo
- *              before  after
- *      删
- *          remove()
- *          empty()
- *          html('')
- *      改
- *          改属性
- *              attr
- *                  操作非开关属性
- *              prop
- *                  操作开关属性
- *
- *                  jq对象.attr(属性名,属性值)
- *          改样式
- *              css
- *              addClass/removeClass/toggleClass
- *          改内容
- *              val()/text()/html()
- *                  jq对象.val();
- *                  jq对象.text(内容)
- *      查
- *          选择器
- *  滚动
- *      获取和设置滚动出去的距离
- *          scrollTop()     垂直
- *          scrollLeft()    水平
- *  位置
- *      offset()
- *          得到的是元素距离页面的左上角的位移
- *
- *      position
- *          得到的是元素距离他的offsetParent的位移
- *  大小
- *      width/height                        内容的大小
- *      innerWidth/innerHeight  内容+padding
- *      outerWidth/outerHeight  内容+padding + border
- *      outerWidth(true)/outerHeight(true) 内容+padding + border+margin
+jq对象.css({
+属性名:属性值
+属性名:属性值
+属性名:属性值
+});
+
+获取
+
+jq对象.css(属性名);
+
+addClass
+
+removeClass
+
+toggleClass
+
+hasClass
+
+动画函数
+
+animate
+
+jq对象.animate({目标键值对},speed,ease,fn);
+
+`show()`/`hide()`/`toggle()`
+
+`fadeIn()`/`fadeOut()`/`fadeToggle()`
+`fadeTo()`
+
+`slideDown()`/`slideUp()`/`slideToggle()`
 
 
 
 
-\----------------------------------------------
 
-## jQuery选择器的性能优化
+  需要获取滚动出去的距离：
+
+  scrollTop()   垂直
+
+  jq对象.scrollTop();
+
+  scrollLeft();  水平的
+
+  这两个方法，除了可以获取之外，还可以设置
+
+  使用获取宽度和高度的快速的方式
+
+  jq对象.width();
+
+  jq对象.height();
+
+  也是可以获取和可以设置的
+
+  在jq中，封装了好多获取宽高的方式：
+
+  `innerWidth`/`innerHeight`            得到的是 content + padding
+
+  `outWidth`/`outerHeight`             content + padding + border
+
+  `outWidth(true)`/`outerHeight(true) ` content + padding + border + margin
+
+```js
+  $(function(){
+       $('input').click(function(){
+           // 回到顶部： 滚动出去的距离是0
+           $(window).scrollTop(0);
+       });
+  
+     var b = $("#box");
+     console.log(b.width());   //只是内容的宽度
+     console.log(b.innerWidth()); // 包含了内容和padding
+     console.log(b.outerWidth()); // 包含内容、padding、border
+     console.log(b.outerWidth(true)); // 包含了内容宁、padding、border、margin
+   });
+
+```
+
+
+
+#### 节点操作
+
+##### 增
+
+创建
+
+`$('<标签名></标签名>');`
+
+`html('<div></div>');`
+
+追加
+
+appendappendTo
+
+prepend prependTo
+
+beforeafter
+
+##### 删
+
+remove()
+
+empty()
+
+html('')
+
+##### 改
+
+改属性 
+  
+  `attr`: 操作非开关属性
+
+  `prop`: 操作开关属性
+ 
+  jq对象.attr(属性名,属性值)
+
+改样式
+
+   css:
+
+`addClass`/`removeClass`/`toggleClass`
+
+
+改内容
+
+`val()`/`text()`/`html()`
+
+
+  jq对象.val();
+
+  jq对象.text(内容)
+
+##### 查
+
+选择器
+
+滚动
+
+获取和设置滚动出去的距离
+
+
+scrollTop()   垂直
+
+scrollLeft()  水平
+
+位置
+
+`offset()`: 得到的是元素距离页面的左上角的位移
+ 
+`position`
+    得到的是元素距离他的 `offsetParent` 的位移
+
+大小
+
+`width`/`height`  内容的大小
+
+`innerWidth`/`innerHeight` 内容 + padding
+
+`outerWidth`/`outerHeight` 内容 + padding + border
+
+`outerWidth(true)`/`outerHeight(true)` 内容 + padding + border + margin
+
+----------------------------------------------
+
+## jQuery 选择器的性能优化
 
 1.尽量使用css中有的选择器
 
@@ -798,15 +850,15 @@ jq对象.animate({css属性的键值对},动画的持续时间,速度曲线,动�
 
 
 
-jQuery事件--->
+### jQuery 事件
 
-\----------------------------------------------
 
-## 筛  选
+#### 筛  选
+
 
 **1.过滤**
 
-### --eq()
+### eq()
 
 其实在jq里面可以直接根据索引得到jq对象
 
@@ -814,51 +866,52 @@ jq对象.eq(索引)
 
 $(jq对象[索引])
 
-### --first()
+### first()
 
-### --last()
+### last()
 
-### --not()
+### not()
 
-### --slice() 之间的会被选中
+### slice() 之间的会被选中
 
  
 
 ## 2.查  找
 
---children()  查找子元素
+1. children()  查找子元素
 
---find()      查找后代元素
+2. find()      查找后代元素
 
---next()      查找下一个元素
+3. next()      查找下一个元素
 
---nextAll()   查找下一个全部元素
+4. nextAll()   查找下一个全部元素
 
---parent()    查找上一级元素
+5. parent()    查找上一级元素
 
---prev()      查找父元素
+6. prev()      查找父元素
 
---prevAll()   查找上一级元素的所有元素
+7. prevAll()   查找上一级元素的所有元素
 
---siblings()  查找前后所有元素（兄弟元素）
+8. siblings()  查找前后所有元素（兄弟元素）
 
- 
 
 ## 3.串 联
 
-add()  在标签上追加元素
+`add()`  在标签上追加元素
 
-andSelf()  找到下一个标签然后追加样式到自己和下一个元素
+`andSelf()`  找到下一个标签然后追加样式到自己和下一个元素
 
- 
+
 
 选择器和筛选器的区别：
 
-当parent不能使用+号连接this对象时，我们就使用筛选选择器：
+当 parent 不能使用 `+` 号连接 `this` 对象时，我们就使用筛选选择器：
 
+```js
 $(this).children('h1').css({"color","#00f"});
+```
 
- 
+
 
 ## 属 性
 
@@ -883,7 +936,7 @@ $('img').click(function(){
 
 ## 2.css类
 
-addClass();     //追加一个css类为class
+`addClass()`;     //追加一个 css 类为 class
 
 例：
 
@@ -917,77 +970,79 @@ html(val); 赋值，然后复制内容到另一个元素
 
 ## 4.文本
 
-text();  //get的意思
+text();  <span class="greenTextColor">//get 的意思</span>
 
-text(val);  //set的意思
+text(val);  <span class="greenTextColor">//set 的意思</span>
 
  
 
 ## 5.值
 
-val();    //get的意思
+val();    <span class="greenTextColor">
+//get 的意思</span>
 
-val(val); //set的意思
+val(val); <span class="greenTextColor">
+//set 的意思</span>
 
- 
+
 
 #### 文档处理：
 
 ##### 1.内部插入（节点操作）
 
-append()  //后追加插入
+append()  <span class="greenTextColor">//后追加插入</span>
 
-appendTo() //后追加插入
+appendTo() <span class="greenTextColor">//后追加插入</span>
 
-prepend()  //前追加插入
+prepend()  <span class="greenTextColor">//前追加插入</span>
 
-propengTo()  //前追加插入
+propengTo()  <span class="greenTextColor">//前追加插入</span>
 
  
 
 ##### 2.外部插入
 
-after() //用来插在每个匹配元素的后面
+after() <span class="greenTextColor">//用来插在每个匹配元素的后面</span>
 
-before() //在匹配元素的前面插入内容
+before() <span class="greenTextColor">//在匹配元素的前面插入内容</span>
 
-insertAfter() //在目标元素后面插入集合中每个匹配的元素
+insertAfter() <span class="greenTextColor">//在目标元素后面插入集合中每个匹配的元素</span>
 
-insertBefore() //在目标元素前面插入集合中每个匹配的元素
+insertBefore() <span class="greenTextColor">//在目标元素前面插入集合中每个匹配的元素</span>
 
  
 
 ##### 3.包围
 
-wrap() //在每个匹配的元素外层包上一个html元素
+wrap() <span class="greenTextColor">//在每个匹配的元素外层包上一个 html 元素</span>
 
-wrapInner()  //在匹配元素里的内容外包一层结构
+wrapInner()  <span class="greenTextColor">//在匹配元素里的内容外包一层结构</span>
 
-wrapAll()  //在所有匹配元素外面包一层HTML结构
+wrapAll()  <span class="greenTextColor">//在所有匹配元素外面包一层HTML结构</span>
 
 ##### 4.替换
 
-replaceWith() //用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合
+replaceWith() <span class="greenTextColor">//用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合</span>
 
-replaceAll() //用集合的匹配元素替换每个目标元素
+replaceAll() <span class="greenTextColor">//用集合的匹配元素替换每个目标元素</span>
 
  
 
 ##### 5.删除
 
-empty() //从DOM中移除集合中匹配元素的所有子节点
+empty() <span class="greenTextColor">//从 DOM 中移除集合中匹配元素的所有子节点</span>
 
-remove() //将匹配元素集合从DOM中删除
+remove() <span class="greenTextColor">//将匹配元素集合从 DOM 中删除</span>
 
-detach() //从DOM中去掉所有匹配的元素(带事件)
+detach() <span class="greenTextColor">//从DOM中去掉所有匹配的元素(带事件)</span>
 
  
 
 ##### 6.复制
 
-clone() //创建一个匹配的元素集合的深度拷贝副本
+clone() <span class="greenTextColor">//创建一个匹配的元素集合的深度拷贝副本</span>
 
-clone(true) //一个Boolean值，表示是否会复制元素上的事件处理函数
+clone(true) <span class="greenTextColor">//一个 `Boolean` 值，表示是否会复制元素上的事件处理函数</span>
 
  
 
@@ -1043,26 +1098,26 @@ jq对象.css(属性名,属性值);
 
 ### 2.位置
 
-offset() //在匹配的元素集合中，获取的第一个元素的当前坐标，或设置每一个元素的坐标，坐标相对于文档
+offset() <span class="greenTextColor">//在匹配的元素集合中，获取的第一个元素的当前坐标，或设置每一个元素的坐标，坐标相对于文档</span>
 
-position() //获取匹配元素中第一个元素的当前坐标，相对于offset parent的坐标
+position() <span class="greenTextColor">//获取匹配元素中第一个元素的当前坐标，相对于offset parent的坐标</span>
 
-scrollTop(val) //获取匹配的元素集合中第一个元素的当前垂直滚动条的位置或设置每个匹配元素的垂直滚动条位置
+scrollTop(val) <span class="greenTextColor">//获取匹配的元素集合中第一个元素的当前垂直滚动条的位置或设置每个匹配元素的垂直滚动条位置</span>
 
  
 
 ### 3.尺寸
 
-height() //获取匹配元素集合中的第一个元素的当前计算高度值或设置每一个匹配元素的高度值
+height() <span class="greenTextColor">//获取匹配元素集合中的第一个元素的当前计算高度值或设置每一个匹配元素的高度值</span>
 
-width()  //为匹配的元素集合中获取第一个元素的当前计算宽度值或给每个匹配的元素设置宽度
+width()  <span class="greenTextColor">//为匹配的元素集合中获取第一个元素的当前计算宽度值或给每个匹配的元素设置宽度</span>
 
-innerHeight() //为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，但是不包括border
+innerHeight() <span class="greenTextColor">//为匹配的元素集合中获取第一个元素的当前计算高度值,包括padding，但是不包括border</span>
 
-innerWidth() //为匹配的元素集合中获取第一个元素的当前计算宽度值,包括padding，但是不包括border
+innerWidth() <span class="greenTextColor">//为匹配的元素集合中获取第一个元素的当前计算宽度值,包括padding，但是不包括border</span>
 
-outerHeight() //获取元素集合中第一个元素的当前计算高度值,包括padding，border和选择性的margin。返回一个整数（不包含“px”）表示的值  ，或如果在一个空集合上调用该方法，则会返回 null
+outerHeight() <span class="greenTextColor">//获取元素集合中第一个元素的当前计算高度值,包括padding，border和选择性的margin。返回一个整数（不包含“px”）表示的值  ，或如果在一个空集合上调用该方法，则会返回 null</span>
 
-outerWidth() //获取元素集合中第一个元素的当前计算宽度值,包括padding，border和选择性的margin。（愚人码头注：返回一个整数（不包含“px”）表示的值，或如果在一个空集合上调用该方法，则会返回 null。）
+outerWidth() <span class="greenTextColor">//获取元素集合中第一个元素的当前计算宽度值,包括padding，border和选择性的margin。（愚人码头注：返回一个整数（不包含“px”）表示的值，或如果在一个空集合上调用该方法，则会返回 null。）</span>
 
- 
+<center class="centerEnd">~end~</center>
