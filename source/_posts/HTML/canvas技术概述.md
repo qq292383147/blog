@@ -46,7 +46,7 @@ canvas是通过JavaScript进行2D图形的绘制，而 `` 标签本身是没有�
 canvas是一个HTML元素，所以要使用canvas，首先需要：
 
 ```html
-	当前浏览器不支持canvas
+	<canvas>当前浏览器不支持canvas</canvas>
 ```
 
 在第一行HTML代码中可以看到两个属性：`width` 和 `height` ，它指明了画布的宽高，在上文中提到过，不要使用CSS规定尺寸，因为当CSS规定的尺寸和画布尺寸比例不一致时，无法成比例缩放，导致绘制出来的图形变得扭曲。在没有设置画布大小时，canvas默认会初始化成300px * 150px的画布。
