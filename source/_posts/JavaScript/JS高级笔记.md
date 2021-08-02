@@ -71,4 +71,27 @@ categories: JavaScript
 对象的constructor属性最初是用来标识对象类型的，
 但是，如果要检测对象的类型，还是使用instarceof操作符更可靠一些
 
+
+### startsWith() 方法的运用
+
+```js
+  var str = "Hello world, welcome to the RO";
+  var n = str.startsWith("Hello");
+
+```
+
+#### 定义和用法
+startsWith()  方法用于检测字符串是否以指定的子字符串开始
+
+如果是以指定的子字符串开头返回 `true，否则` `false`
+
+startsWith() 方法对大小写敏感
+
+#### 语法
+
+```js
+  string.startsWith(searchvalue, start)
+```
+
+
 [end]

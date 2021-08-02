@@ -308,7 +308,17 @@ absolute 子
 
 
 
-```less
+### 属性定义及使用说明
+
+z-index 属性指定一个元素的堆叠顺序。
+
+拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。
+
+**注意：** `z-index` 进行定位元素(`position:absolute`, `position:relative`, or `position:fixed`)。
+
+
+
+```css
 .index {
    height: 100vh;
    width: 100vw;
@@ -376,6 +386,41 @@ vertical-align:middle;  /*让行内元素对齐*/
 ```
 
 水平行内元素才有效果
+
+### 利用 CSS 的 content 属性 attr 抓取资料
+
+想必大家都想到了伪元素 after ，但是文字怎么获得呢，又不能用 JavaScript 。
+
+CSS 的伪元素是个很強大的东西，我们可以利用他做很多运用，通常为了做一些效果， content:" " 多半会留空，但其实可以在里面写上 attr 抓资料哦！
+
+```html
+<div data-msg="这里是获取content的内容">hover</div>
+```
+
+
+
+```css
+div {
+    width:100px;
+    border:1px solid red;  
+    position:relative;
+}
+div:hover:after {
+    content:attr(data-msg);
+    position:absolute;
+    font-size: 12px;
+    width:200%;
+    line-height:30px;
+    text-align:center;
+    left:0;
+    top:25px;
+    border:1px solid green;
+}
+```
+
+
+
+
 
 # **css3**
 
