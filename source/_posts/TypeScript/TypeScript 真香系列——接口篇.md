@@ -1,8 +1,8 @@
 ---
 title: TypeScript 真香系列——接口篇
 date: 2019-11-24 18:56:30
-tags: JavaScript
-categories: JavaScript
+tags: TypeScript
+categories: TypeScript
 ---
 
 ## 接口带来了什么好处
