@@ -27,7 +27,10 @@ figure.highlight
           &.gutter
             width 40px
             text-align right
-          padding 8px !important
+            padding 8px !important
+            pre
+              .line
+                user-select: none
           .line
             height 1.45em
           pre
@@ -109,8 +112,6 @@ figure.highlight
 
             .deletion
               color #dc322f
-
-
             .line
               .tag
                 .name
