@@ -4,6 +4,16 @@ body
   @media $xs
     font-size 0.7em
 
+body::-webkit-scrollbar
+  width: 5px
+  color: rgba(0,0,0,.52)
+  z-index: 99
+  height: 5px
+
+body::-webkit-scrollbar-thumb
+  background: #ccc
+  border-radius: 10px
+
 .bg-gradient
   linearGradient(lighten(#0f1516, 5%), lighten(#113a47, 20%))
   width: 100vw
