@@ -11,7 +11,7 @@ categories: css
 
 
 
-![109](http://zhanglong292383147.gitee.io/picture_images/picture/css/109.gif)
+![109](F:\图片库blog/picture_images/picture/css/109.gif)
 
 
 
@@ -21,7 +21,7 @@ categories: css
 
 举个栗子，比如有十个元素播放十个动画，将第二个元素的动画播放时间设定为比第一个元素晚0.5秒（也就是将延迟设为0.5秒），其他元素以此类推，这样它们就会错开来，形成一种独特的视觉效果。
 
-![110](http://zhanglong292383147.gitee.io/picture_images/picture/css/110.gif)
+![110](F:\图片库blog/picture_images/picture/css/110.gif)
 
 这就是所谓的交错动画：通过设置不同的延迟时间，达到动画交错播放的效果。
 
@@ -107,7 +107,7 @@ body {
 
 还有一种经常用到的玩法：用JS将句子或单词分割成字母，并给每个字母加上不同延时的动画，同样也很华丽。
 
-![111](http://zhanglong292383147.gitee.io/picture_images/picture/css/111.gif)
+![111](F:\图片库blog/picture_images/picture/css/111.gif)
 
 
 
@@ -191,7 +191,7 @@ p {
 
 一般我们都是从第一个元素开始交错的。但如果要从中间元素开始交错的话，就要给当前元素的延时各加上一个值，这个值就是中间元素的下标到当前元素的下标的距离（也就是下标之差的绝对值）与步长的乘积，即：`delay + Math.abs(i - middle) * step`，其中中间元素的下标`middle = letters.filter(e => e !== "").length / 2`
 
-![112](http://zhanglong292383147.gitee.io/picture_images/picture/css/112.gif)
+![112](F:\图片库blog/picture_images/picture/css/112.gif)
 
 代码如下：
 
@@ -312,7 +312,7 @@ body {
 
 又到了白色相簿的季节呢~为什么你写CSS这么熟练啊？
 
-![113](http://zhanglong292383147.gitee.io/picture_images/picture/css/113.jpg)
+![113](F:\图片库blog/picture_images/picture/css/113.jpg)
 
 代码如下：
 
@@ -383,7 +383,7 @@ body {
 
 <center><font color="#f0f" size=5>4、伪类</font></center>
 
-![114](http://zhanglong292383147.gitee.io/picture_images/picture/css/114.gif)
+![114](F:\图片库blog/picture_images/picture/css/114.gif)
 
 
 
@@ -622,7 +622,7 @@ body {
 
 谁规定按钮只能有一套边框的？利用绝对定位和`padding`，我们可以给按钮做出3套大小不一的边框来，这样效果更炫了。
 
-![115](http://zhanglong292383147.gitee.io/picture_images/picture/css/115.gif)
+![115](F:\图片库blog/picture_images/picture/css/115.gif)
 
 代码如下：
 
@@ -842,7 +842,7 @@ body {
 
 
 
-![116](http://zhanglong292383147.gitee.io/picture_images/picture/css/116.gif)
+![116](F:\图片库blog/picture_images/picture/css/116.gif)
 
 
 
@@ -978,13 +978,13 @@ header {
 
 利用这个函数，我们可以用伪元素在原先文本的基础上“复制”出另一个文本，如下图所示。
 
-![117](http://zhanglong292383147.gitee.io/picture_images/picture/css/117.jpg)
+![117](F:\图片库blog/picture_images/picture/css/117.jpg)
 
 
 
 看上去有点乱糟糟的对吧？没事，给它加上`overflow: hidden`，把多余的文本遮住。通过JS分割文本并应用交错动画，就得到了如下的效果，这也是接下来本文要讲的`overflow`障眼法。
 
-![118](http://zhanglong292383147.gitee.io/picture_images/picture/css/118.gif)
+![118](F:\图片库blog/picture_images/picture/css/118.gif)
 
 
 
@@ -1083,7 +1083,7 @@ body {
 
 笔者就用渐变来模拟那道光，通过`transform: translateX()`将其平移至右边。
 
-![119](http://zhanglong292383147.gitee.io/picture_images/picture/css/119.gif)
+![119](F:\图片库blog/picture_images/picture/css/119.gif)
 
 
 
@@ -1091,7 +1091,7 @@ body {
 
 于是乎，给按钮加上`overflow: hidden`，光在按钮外的位置时就被隐藏起来了。
 
-![120](http://zhanglong292383147.gitee.io/picture_images/picture/css/120.gif)
+![120](F:\图片库blog/picture_images/picture/css/120.gif)
 
 
 
@@ -1211,7 +1211,7 @@ body {
 
 然后，利用兄弟选择符`~`来定制和`input`相邻的所有元素（`+`号也行，只不过只能选中最近的元素），例如可以用伪元素生成一个新的方框代替原先的`input`，利用伪类`:checked`和动画来表示它被勾选后的状态，本质上还是障眼法哦~
 
-![121](http://zhanglong292383147.gitee.io/picture_images/picture/css/121.gif)
+![121](F:\图片库blog/picture_images/picture/css/121.gif)
 
 
 
@@ -1377,7 +1377,7 @@ body {
 
 调整多个顶点的`border-radius`可以做出不规则的曲边形状
 
-![122](http://zhanglong292383147.gitee.io/picture_images/picture/css/122.gif)
+![122](F:\图片库blog/picture_images/picture/css/122.gif)
 
 
 
@@ -1519,7 +1519,7 @@ body {
 
 为盒子添加阴影，增加盒子的立体感，可以多层叠加，并且会使阴影更加丝滑
 
-![123](http://zhanglong292383147.gitee.io/picture_images/picture/css/123.gif)
+![123](F:\图片库blog/picture_images/picture/css/123.gif)
 
 
 
@@ -1696,7 +1696,7 @@ body {
 
 如果给`box-shadow`的扩张半径设定足够大的值，可以用它来遮住背景，而无需额外的div元素
 
-![124](http://zhanglong292383147.gitee.io/picture_images/picture/css/124.gif)
+![124](F:\图片库blog/picture_images/picture/css/124.gif)
 
 
 
@@ -1857,13 +1857,13 @@ body {
 
 利用这个特性我们可以在盒子内部的某个范围内设定颜色，做出一个新月形
 
-![125](http://zhanglong292383147.gitee.io/picture_images/picture/css/125.jpg)
+![125](F:\图片库blog/picture_images/picture/css/125.jpg)
 
 
 
 再加点动画和滤镜效果，“猩红之月”闪亮登场！
 
-![126](http://zhanglong292383147.gitee.io/picture_images/picture/css/126.gif)
+![126](F:\图片库blog/picture_images/picture/css/126.gif)
 
 
 
@@ -1941,7 +1941,7 @@ body {
 
 
 
-![127](http://zhanglong292383147.gitee.io/picture_images/picture/css/127.gif)
+![127](F:\图片库blog/picture_images/picture/css/127.gif)
 
 
 
@@ -2037,7 +2037,7 @@ h1, p {
 
 
 
-![128](http://zhanglong292383147.gitee.io/picture_images/picture/css/128.gif)
+![128](F:\图片库blog/picture_images/picture/css/128.gif)
 
 
 
@@ -2102,7 +2102,7 @@ body {
 
 
 
-![129](http://zhanglong292383147.gitee.io/picture_images/picture/css/129.gif)
+![129](F:\图片库blog/picture_images/picture/css/129.gif)
 
 
 
@@ -2202,7 +2202,7 @@ body {
 
 能将背景裁剪成文字的前景色，常用来和`color: transparent`配合生成渐变文本
 
-![130](http://zhanglong292383147.gitee.io/picture_images/picture/css/130.gif)
+![130](F:\图片库blog/picture_images/picture/css/130.gif)
 
 
 
@@ -2297,7 +2297,7 @@ ul {
 
 线性渐变是笔者最常用的渐变
 
-![131](http://zhanglong292383147.gitee.io/picture_images/picture/css/131.gif)
+![131](F:\图片库blog/picture_images/picture/css/131.gif)
 
 
 
@@ -2605,7 +2605,7 @@ body {
 
 此外，由于背景可以叠加，我们可以叠加多个不同位置大小的径向渐变来生成圆点群，再加上动画就产生了一种微粒效果，无需多余的`div`元素。
 
-![132](http://zhanglong292383147.gitee.io/picture_images/picture/css/132.gif)
+![132](F:\图片库blog/picture_images/picture/css/132.gif)
 
 
 
@@ -2773,13 +2773,13 @@ body {
 
 圆锥渐变可以用于制作饼图
 
-![133](http://zhanglong292383147.gitee.io/picture_images/picture/css/133.jpg)
+![133](F:\图片库blog/picture_images/picture/css/133.jpg)
 
 
 
 用一个伪元素叠在饼图上面，并将`content`设为某个值（这个值通过CSS变量计算出来），就能制作出度量计的效果，障眼法又一次完成了它的使命。
 
-![134](http://zhanglong292383147.gitee.io/picture_images/picture/css/134.jpg)
+![134](F:\图片库blog/picture_images/picture/css/134.jpg)
 
 
 
@@ -2892,7 +2892,7 @@ PS里的滤镜，玩过的都懂，`blur`最常用
 
 对背景应用滤镜，产生毛玻璃的效果
 
-![135](http://zhanglong292383147.gitee.io/picture_images/picture/css/135.gif)
+![135](F:\图片库blog/picture_images/picture/css/135.gif)
 
 
 
@@ -2972,7 +2972,7 @@ PS里的混合模式，常用于文本在背景下的特殊效果
 
 以下利用滤色模式（`screen`）实现文本视频蒙版效果
 
-![136](http://zhanglong292383147.gitee.io/picture_images/picture/css/136.gif)
+![136](F:\图片库blog/picture_images/picture/css/136.gif)
 
 
 
@@ -3047,7 +3047,7 @@ h1 {
 
 PS里的裁切，可以制作各种不规则形状。如果和动画结合也会相当有意思。
 
-![137](http://zhanglong292383147.gitee.io/picture_images/picture/css/137.gif)
+![137](F:\图片库blog/picture_images/picture/css/137.gif)
 
 
 
@@ -3208,7 +3208,7 @@ body {
 
 投影效果，不怎么常用，适合立体感强的作品。
 
-![138](http://zhanglong292383147.gitee.io/picture_images/picture/css/138.gif)
+![138](F:\图片库blog/picture_images/picture/css/138.gif)
 
 
 
@@ -3321,7 +3321,7 @@ body {
 
 既然能够获取鼠标的位置，那么跟踪鼠标的位置也就不是什么难事了：通过监听`mouseenter`和`mouseleave`事件，来获取鼠标出入一个元素时的位置，并用此坐标来当作鼠标的位移距离，监听`mousemove`事件，来获取鼠标在元素上移动时的位置，同样地用此坐标来当作鼠标的位移距离，这样一个跟踪鼠标的效果就实现了。
 
-![139](http://zhanglong292383147.gitee.io/picture_images/picture/css/139.gif)
+![139](F:\图片库blog/picture_images/picture/css/139.gif)
 
 
 
@@ -3499,13 +3499,13 @@ CSS Houdini是CSS的底层API，它使我们能够通过这套接口来扩展CSS
 
 还记得上文提到的圆锥渐变`conic-gradient()`吗？既然它可以用来制作饼图，那么我们能不能让饼图动起来呢？答案是肯定的，定义三个变量：`--color1`、`--color2`和`--pos`，其中`--pos`的语法类型为长度百分比`<length-percentage>`，将其从`0`变为`100%`，饼图就会顺时针旋转出现。
 
-![140](http://zhanglong292383147.gitee.io/picture_images/picture/css/140.gif)
+![140](F:\图片库blog/picture_images/picture/css/140.gif)
 
 
 
 利用绝对定位和层叠上下文，我们可以叠加多个从小到大的饼图，再给它们设置不同的颜色，应用交错动画，就有了下面这个炫丽的效果。
 
-![141](http://zhanglong292383147.gitee.io/picture_images/picture/css/141.gif)
+![141](F:\图片库blog/picture_images/picture/css/141.gif)
 
 
 
@@ -3634,7 +3634,7 @@ body {
 
 
 
-![142](http://zhanglong292383147.gitee.io/picture_images/picture/css/142.gif)
+![142](F:\图片库blog/picture_images/picture/css/142.gif)
 
 
 

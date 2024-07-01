@@ -178,7 +178,7 @@ categories: css
 
 ### loading
 
-![108](http://zhanglong292383147.gitee.io/picture_images/picture/css/108.gif)
+![108](F:\图片库blog/picture_images/picture/css/108.gif)
 
 这是一个"半圆边框"旋转的loading, 你可以根据业务需求自己指定圆的半径.
 
@@ -202,7 +202,7 @@ categories: css
 
 如果你做一些界面生成器工具(类易企秀)你会用到.
 
-![109](http://zhanglong292383147.gitee.io/picture_images/picture/css/109.jpg)
+![109](F:\图片库blog/picture_images/picture/css/109.jpg)
 
 ```scss
 /**

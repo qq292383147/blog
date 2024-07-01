@@ -456,7 +456,7 @@ F || E
 
 例如，有如下表：
 
-![第四级选择器](http://zhanglong292383147.gitee.io/picture_images/picture/css/97.png)
+![第四级选择器](F:\图片库blog/picture_images/picture/css/97.png)
 
 对于以下样式
 

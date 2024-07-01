@@ -8,7 +8,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">三角形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/13.jpg)
+![img](F:\图片库blog/picture_images/picture/css/13.jpg)
 
 ### css
 ```css
@@ -30,7 +30,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">梯形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/14.jpg)
+![img](F:\图片库blog/picture_images/picture/css/14.jpg)
 
 ### css
 ```css
@@ -52,7 +52,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">椭圆</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/15.jpg)
+![img](F:\图片库blog/picture_images/picture/css/15.jpg)
 
 ### css
 ```css
@@ -74,7 +74,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">球体</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/16.jpg)
+![img](F:\图片库blog/picture_images/picture/css/16.jpg)
 
 ### css
 ```css
@@ -96,7 +96,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">半圆</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/17.jpg)
+![img](F:\图片库blog/picture_images/picture/css/17.jpg)
 
 ### css
 ```css
@@ -121,7 +121,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">菱形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/18.jpg)
+![img](F:\图片库blog/picture_images/picture/css/18.jpg)
 
 ### css
 ```css
@@ -143,7 +143,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">扇形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/19.jpg)
+![img](F:\图片库blog/picture_images/picture/css/19.jpg)
 
 ### css
 ```css
@@ -178,7 +178,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">五边形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/20.jpg)
+![img](F:\图片库blog/picture_images/picture/css/20.jpg)
 
 ### css
 ```css
@@ -213,7 +213,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">六边形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/21.jpg)
+![img](F:\图片库blog/picture_images/picture/css/21.jpg)
 
 ### css
 ```css
@@ -259,7 +259,7 @@ categories: css
 
 <center><font color="red" size="9">心形</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/22.jpg)
+![img](F:\图片库blog/picture_images/picture/css/22.jpg)
 
 ### css
 ```css
@@ -300,7 +300,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">长方体</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/23.jpg)
+![img](F:\图片库blog/picture_images/picture/css/23.jpg)
 
 ### css
 ```css
@@ -374,7 +374,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">圆柱体</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/24.jpg)
+![img](F:\图片库blog/picture_images/picture/css/24.jpg)
 
 ### css
 ```css
@@ -416,7 +416,7 @@ categories: css
 
 <center><font color="#B452CD" size="9">棱锥</font></center>
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/25.jpg)
+![img](F:\图片库blog/picture_images/picture/css/25.jpg)
 
 ### css
 ```css
@@ -490,5 +490,4 @@ categories: css
     <div class="bottom"></div>
   </div>
 ```
-
 

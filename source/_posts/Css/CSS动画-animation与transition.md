@@ -147,7 +147,7 @@ box1在hover后有两个属性改变了，改变前和改变后的属性值分�
 
 #### 4、transition属性浏览器兼容情况
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/11.jpg)
+ ![img](F:\图片库blog/picture_images/picture/css/11.jpg)
 
  
 
@@ -263,4 +263,4 @@ both（根据animation-direction轮流应用forwards和backwards规则）。
 
 #### 3、animation属性浏览器兼容情况
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/css/12.jpg)
+ ![img](F:\图片库blog/picture_images/picture/css/12.jpg)
