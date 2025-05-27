@@ -35,7 +35,7 @@ git pull
 获取内容
 
 ```bash
-  git stash pop stash@{0}
+git stash pop stash@{0}
 ```
 
 还原暂存的内容
@@ -56,5 +56,5 @@ Auto-merging c/environ.c CONFLICT (content): Merge conflict in c/environ.c
 7.最后一步清空 `stash`
 
 ```bash
-$ git stash clear
+git stash clear
 ```
