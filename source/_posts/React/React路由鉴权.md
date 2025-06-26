@@ -531,7 +531,7 @@ const getConfirmation = (message, callback) => {
 
 
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/React/23.jpg)
+![1](https://qq292383147.github.io/pictureLibrary/picture/React/23.jpg)
 
 
 
@@ -650,7 +650,7 @@ const SidebarExample = () => (
 
 解决了与应用路由相结合的问题，具体到布局组件内部，其中最重要的两部分就是页面的页眉和页脚部分，而页眉又可以分为应用页眉与页面页眉两部分。
 
-![2](http://zhanglong292383147.gitee.io/picture_images/picture/React/24.jpg)
+![2](https://qq292383147.github.io/pictureLibrary/picture/React/24.jpg)
 
 
 
@@ -698,7 +698,7 @@ const SidebarExample = () => (
 
 ### 2、配置式页眉
 
-![3](http://zhanglong292383147.gitee.io/picture_images/picture/React/25.jpg)
+![3](https://qq292383147.github.io/pictureLibrary/picture/React/25.jpg)
 
 
 
@@ -891,7 +891,7 @@ const routes = [{
 
 在上面的配置中，admin 和 user 都可以访问门店列表页面，但只有 admin 才可以访问门店详情页面。
 
-![4](http://zhanglong292383147.gitee.io/picture_images/picture/React/26.jpg)
+![4](https://qq292383147.github.io/pictureLibrary/picture/React/26.jpg)
 
 
 
@@ -951,7 +951,7 @@ renderAuthorizedRoute = (route) => {
 
 于是，在最终的路由中，我们会优先匹配无需鉴权的页面路径，保证所有用户在访问无需鉴权的页面时，第一时间就可以看到页面。然后再去匹配需要鉴权的页面路径，最终如果所有的路径都匹配不到的话，再渲染 404 页面告知用户当前页面路径不存在。
 
-![5](http://zhanglong292383147.gitee.io/picture_images/picture/React/27.jpg)
+![5](https://qq292383147.github.io/pictureLibrary/picture/React/27.jpg)
 
 
 
@@ -969,7 +969,7 @@ renderAuthorizedRoute = (route) => {
 
 需要鉴权的路由和不需要鉴权的路由作为两种不同的页面，一般而言它们的页面布局也是不同的。如登录页面使用的就是普通页面布局：
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/React/28.jpg)
+![6](https://qq292383147.github.io/pictureLibrary/picture/React/28.jpg)
 
 
 
@@ -1063,7 +1063,7 @@ export default connect(mapStateToProps)(Router);
 
 
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/React/29.jpg)
+![7](https://qq292383147.github.io/pictureLibrary/picture/React/29.jpg)
 
 
 
@@ -1098,7 +1098,7 @@ const menuData = [{
 
 在大多数的情况下，每一个菜单项都代表着一个不同的页面路径，点击后会触发 url 的变化并跳转至相应页面，也就是上面配置中的 path 字段。
 
-![8](http://zhanglong292383147.gitee.io/picture_images/picture/React/30.jpg)
+![8](https://qq292383147.github.io/pictureLibrary/picture/React/30.jpg)
 
 
 
@@ -1250,9 +1250,9 @@ const getMeunMatchKeys = (flatMenuKeys, paths) =>
 
 在侧边栏菜单中，有两个重要的状态：一个是 `selectedKeys`，即当前选定的菜单项；另一个是 `openKeys`，即多个多级菜单的打开状态。这二者的含义是不同的，因为在 `selectedKeys` 不变的情况下，用户在打开或关闭其他多级菜单后，`openKeys` 是会发生变化的，如下面二图所示，`selectedKeys` 相同但 `openKeys` 不同。
 
-![9](http://zhanglong292383147.gitee.io/picture_images/picture/React/31.jpg)
+![9](https://qq292383147.github.io/pictureLibrary/picture/React/31.jpg)
 
-![10](http://zhanglong292383147.gitee.io/picture_images/picture/React/32.jpg)
+![10](https://qq292383147.github.io/pictureLibrary/picture/React/32.jpg)
 
 
 
@@ -1371,7 +1371,7 @@ const App = props => (
 
 从一个具体的前端应用直接切入开发技巧与理念的讲解，所以对于刚入门 React 的朋友来说可能存在着一定的基础知识部分梳理的缺失，这里为大家提供一份较为详细的 React 开发者学习路线图，希望能够为刚入门 React 的朋友提供一条规范且便捷的学习之路。
 
-![11](http://zhanglong292383147.gitee.io/picture_images/picture/React/33.png)
+![11](https://qq292383147.github.io/pictureLibrary/picture/React/33.png)
 
 
 

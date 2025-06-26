@@ -34,7 +34,7 @@ categories: JavaScript
 
 > 栈是一种遵循**后进先出（LIFO）**原则的有序集合。新添加的或待删除的元素都保存在栈的同一端，称作**栈顶**，另一端就叫**栈底**。在栈里，新元素都接近栈顶，旧元素都接近栈底。
 
-![112](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/112.jpg)
+![112](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/112.jpg)
 
 类比生活中的物件：一摞书📚或者推放在一起的盘子。
 
@@ -198,7 +198,7 @@ console.log(minstack.min()); // 2
 
 
 
-![113](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/113.jpg)
+![113](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/113.jpg)
 
 类比：日常生活中的购物排队。
 

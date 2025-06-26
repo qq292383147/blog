@@ -332,7 +332,7 @@ npm i pro-types -S
 
 ## 组件生命周期
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/React的生命周期.jpg)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/React的生命周期.jpg)
 
 
 
@@ -1188,9 +1188,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 参数获取： `this.props.match.params.xxx`
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/React路由初体验1.jpg)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/React路由初体验1.jpg)
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/React路由初体验2.jpg)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/React路由初体验2.jpg)
 
 ## axios也可以在React中发送请求
 
@@ -1390,7 +1390,7 @@ $ yarn add babel-plugin-import
 
 如图操作：
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/按需加载UI框架-antd.jpg)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/按需加载UI框架-antd.jpg)
 
 ## Material-UI（国外）
 
@@ -1495,27 +1495,27 @@ ionic cordova build android (可能需要单独配置Gradle) ---打包
 
 可能还会报错，按照报错说明去Android SDK Manager 安装响应的包，检查是否连接手机
 
-![安卓报错信息处理](http://zhanglong292383147.gitee.io/picture_images/picture/React/安卓报错信息处理.jpg)
+![安卓报错信息处理](https://qq292383147.github.io/pictureLibrary/picture/React/安卓报错信息处理.jpg)
 
 ## py环境配置
 
-![安装py环境](http://zhanglong292383147.gitee.io/picture_images/picture/React/安装py环境.jpg)
+![安装py环境](https://qq292383147.github.io/pictureLibrary/picture/React/安装py环境.jpg)
 
 ## Android环境配置
 
-![Android环境配置](http://zhanglong292383147.gitee.io/picture_images/picture/React/Android环境配置.jpg)
+![Android环境配置](https://qq292383147.github.io/pictureLibrary/picture/React/Android环境配置.jpg)
 
 [React Native搭建开发环境](https://reactnative.cn/docs/getting-started/)
 
 ##React Native快速上手
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/React/React Native项目配置.jpg)
+![1](https://qq292383147.github.io/pictureLibrary/picture/React/React Native项目配置.jpg)
 
-![React Native驱动安装成功](http://zhanglong292383147.gitee.io/picture_images/picture/React/React Native驱动安装成功.jpg)
+![React Native驱动安装成功](https://qq292383147.github.io/pictureLibrary/picture/React/React Native驱动安装成功.jpg)
 
 ## weex快速上手
 
-![weex](http://zhanglong292383147.gitee.io/picture_images/picture/React/weex.jpg)
+![weex](https://qq292383147.github.io/pictureLibrary/picture/React/weex.jpg)
 
 注意：weex有很多坑，使用时请注意！！
 
@@ -1692,7 +1692,7 @@ Redux是Javascript （不是react，其他的想Angular也可以使用，甚至�
 
 应用中所有的`state`都以一个对象树的形式存在一个单一的`store`中。唯一改变`state`的办法是触发`action`，一个描述发生什么的对象。为了描述`action`如何`action`如何改变`state`树，你需要编写`reducers`。
 
-![Redux原理](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux原理.jpg)
+![Redux原理](https://qq292383147.github.io/pictureLibrary/picture/React/Redux原理.jpg)
 
 ## Redux中的三大原则
 

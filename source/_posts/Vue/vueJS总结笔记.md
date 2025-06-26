@@ -377,7 +377,7 @@ Vue.config.keyCodes.`f1` = 112
 
 #### 总结：
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/1.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/1.png) 
 
 
 ### V-if 是否渲染 
@@ -472,20 +472,20 @@ new Vue({
 
 ### 用自己的电脑做服务器&nbsp;&nbsp;json-server 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/2.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/2.png) 
 
 ```shell
  npm i json-server -g 
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/3.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/3.png) 
 
 ```shell
  json-server --watch db.json 
 ```
 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/4.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/4.png) 
 
 ```shell
  json-server --watch db.json 
@@ -559,7 +559,7 @@ expression：绑定值的字符串形式。例如 `v-focus`="colorvalue" ，`exp
 1、函数的默认表示要过滤的数据
 2、在函数中必须要return
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/5.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/5.png) 
 
 
 <h3>1、私有过滤器</h3>
@@ -744,7 +744,7 @@ Let promiseObj = new Promise(function( resolve ,  reject ) {
 
 ## Axios (要安装比如`npm i axios` 或者使用`cds`引入)
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/6.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/6.png) 
 
 - 1、基于promise的请求库
 - 2、Get请求传参
@@ -869,20 +869,20 @@ vue.`component`(组件名,  配置项)方法
 
  如果使用驼峰命令，那么在页面使用的时候，要使用连字符 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/7.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/7.png) 
 
  组件内部指令方法data使用 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/8.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/8.png) 
 
 ###  组件中的指令以及事件绑定 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/9.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/9.png) 
 
 
 ###  父子组件创建 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/10.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/10.png) 
 
 ####  父组件传值给子组件(props) 
 
@@ -901,7 +901,7 @@ vue.`component`(组件名,  配置项)方法
   } 
  } 
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/11.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/11.png) 
 
 ####  子组件传值给父组件
 
@@ -947,7 +947,7 @@ data() {
   } 
  } 
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/12.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/12.png) 
 
 ### 非父子传参 
 
@@ -974,7 +974,7 @@ data() {
 
 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/13.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/13.png) 
 
 ###  利用  component  组件和is属性实现动态组件  （  tab栏切换  ） 
 
@@ -982,7 +982,7 @@ data() {
 
 实现如下：
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/14.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/14.png) 
 
 ### 局部自定义指令和局部过滤器( 注意：只能在组件里 )
 ```js
@@ -1010,13 +1010,13 @@ fmtTime(time) {
 
 ###  create 和 mounted 相关 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/15.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/15.png) 
 
 ###  update 相关 
 
 这里我们在 chrome console里执行以下命令
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/16.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/16.png) 
 
  
 
@@ -1024,13 +1024,13 @@ fmtTime(time) {
 
 有关于销毁，暂时还不是很清楚。我们在console里执行下命令对 vue实例进行销毁。销毁完成后，我们再重新改变message的值，vue不再对此动作进行响应了。但是原先生成的dom元素还存在，可以这么理解，执行了destroy操作，后续就不再受vue控制了。
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/17.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/17.png) 
 
 ## 总结 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/18.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/18.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/19.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/19.png) 
 
 
 ## 插槽的几种方式 
@@ -1705,7 +1705,7 @@ query跟params，前者在浏览器地址栏中显示参数，后者则不显示
 
 编写单页面的步骤
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/20.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/20.png) 
 
 JavaScript 
 
@@ -1762,7 +1762,7 @@ redirect：{name: 'homePage'}
 
 · 最后将组件渲染到<router-view>标签
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/21.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/21.png) 
 
  
 
@@ -1772,7 +1772,7 @@ redirect：{name: 'homePage'}
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/22.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/22.png) 
 
 实现嵌套路由有两个要点：
 
@@ -1912,7 +1912,7 @@ router.map({
 
 在/home路由下定义了一个subRoutes选项，/news和/message是两条子路由，它们分别表示路径/home/news和/home/message，这两条路由分别映射组件News和Message。
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/23.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/23.png) 
 
  注意：这里有一个概念要区分一下，  /home/news  和  /home/message  是  /home  路由的子路由，与之对应的News和Message组件并不是Home的子组件。 
 
@@ -2060,7 +2060,7 @@ Home组件和News组件模板：
 <a v-link="{ name: 'news'}">News</a>和<a v-link="{ name: 'detail', params:{id: '01'} }">News 01</a>这两行HTML代码，使用了具名路径。
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/24.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/24.png) 
 
 ##  v-link指令 
 
@@ -2072,7 +2072,7 @@ Home组件和News组件模板：
 我们还是使用<a>标签，不同的是，我们使用v-link属性而不是href属性。 -->
 <a v-link="{ path: '/join/DDFE' }">Join DDFE</a>
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/25.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/25.png) 
 
 具体来讲，v-link有三种用法：
 ```html
@@ -2130,7 +2130,7 @@ v-link 会自动设置 <a> 的 href 属性，你无需使用href来处理浏览�
 <!-- $route.path, $route.params, $route.name, $route.query这几个属性很容易理解，看示例就能知道它们代表的含义。 -->
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/26.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/26.png) 
 ```
 （由于$route.matched内容较长，所以没有将其显示在画面上）
 
@@ -2144,7 +2144,7 @@ v-link 会自动设置 <a> 的 href 属性，你无需使用href来处理浏览�
 另外，带有 v-link 指令的元素，如果 v-link 对应的 URL 匹配当前的路径，该元素会被添加特定的class，该class的默认名称为v-link-active。例如，当我们访问/home/news/detail/03这个URL时，根据匹配规则，会有3个链接被添加v-link-active。
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/27.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/27.png) 
 
 ##  让链接处于活跃状态 
 
@@ -2163,11 +2163,11 @@ v-link 会自动设置 <a> 的 href 属性，你无需使用href来处理浏览�
 <a class="list-group-item" v-link="{ path: '/about', activeClass: 'active'}">About</a>
 ```
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/28.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065517841-1680312207.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/28.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065517841-1680312207.png)
 
 设定了v-link指令的activeClass属性后，默认的v-link-active被新的class取代。
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/29.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065518716-104060093.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/29.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065518716-104060093.png)
 
 第2个问题，为v-link指令设定activeClass是不起作用的，因为我们使用的是bootstrap的样式，需要设置a标签的父元素<li>才能让链接看起来处于选中状态，就像下面的代码所展现的：
 ```html
@@ -2230,7 +2230,7 @@ var Home = Vue.extend({
 ```
 该示例运行效果如下：
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/30.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065519669-735239613.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/30.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065519669-735239613.png)
 
 ##  钩子函数(06) 
 
@@ -2449,13 +2449,13 @@ var About = Vue.extend({
 
 - 4. 访问/about路径
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/31.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065520701-1747230444.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/31.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065520701-1747230444.png)
 
 ##  切换控制流水线 
 
 当用户点击了/home/news链接，然后再点击/home/message链接后，vue-router做了什么事情呢？它执行了一个切换管道
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/32.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065521701-1824249305.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/32.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065521701-1824249305.png)
 
 如何做到这些呢？这个过程包含一些我们必须要做的工作：
 
@@ -2480,19 +2480,19 @@ var About = Vue.extend({
 
 检查当前的视图结构中是否存在可以重用的组件。这是通过对比两个新的组件树，找出共用的组件，然后检查它们的可重用性（通过 canReuse 选项）。默认情况下， 所有组件都是可重用的，除非是定制过。
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/33.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065522701-996052433.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/33.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065522701-996052433.png)
 
 ###  2. 验证阶段 
 
 检查当前的组件是否能够停用以及新组件是否可以被激活。这是通过调用路由配置阶段的canDeactivate 和canActivate 钩子函数来判断的。
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/34.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065523560-1593453726.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/34.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065523560-1593453726.png)
 
 ###  3.激活阶段 
 
 一旦所有的验证钩子函数都被调用而且没有终止切换，切换就可以认定是合法的。路由器则开始禁用当前组件并启用新组件。
 
-[![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/35.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065524294-115652970.png)
+[![img](https://qq292383147.github.io/pictureLibrary/picture/vue/35.png)](http://images2015.cnblogs.com/blog/341820/201607/341820-20160721065524294-115652970.png)
 
 此阶段对应钩子函数的调用顺序和验证阶段相同，其目的是在组件切换真正执行之前提供一个进行清理和准备的机会。界面的更新会等到所有受影响组件的 deactivate 和 activate 钩子函数执行之后才进行。
 
@@ -2528,7 +2528,7 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 3、nrm use taobao(210)  // 选择淘宝镜像，也可以选择cnpm
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/36.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/36.png) 
 
 > 注意：在`webpack` 的配置文件中，`mode：development` 模式是开发模式，不压缩文件，如果要打包项目建议使用 `mode：production` 模式
 
@@ -2563,13 +2563,13 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 - 2、运行`npx webpack`
 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/37.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/37.png) 
 
 ####  webpack热更新 
 
 安装 `npm i webpack-dev-server -D`
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/38.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/38.png) 
 
 ```js
 // 3、index.html中修改
@@ -2582,7 +2582,7 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 - 6、配置script： "dev": "webpack-dev-server --inline --hot --open --port 8090" 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/39.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/39.png) 
 
 - 7、运行 npm run dev 
 
@@ -2596,7 +2596,7 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 - 2、style-loader 用于将处理好的样式，加入到页面中的style标签中去
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/40.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/40.png) 
 
 > 注意： 
 >
@@ -2645,19 +2645,19 @@ data 这个钩子函数会在 activate 之后被调用，或者当前组件组�
 
 url-loader封装了file-loader
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/41.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/41.png) 
 
 ####  webpack处理html模板文件 
 
  `npm i html-webpack-plugin -D `
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/42.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/42.png) 
 
 ####  webpack转换es6语法 
 
  npm i babel-loader @babel/core @babel/preset-env -D 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/43.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/43.png) 
 
 ##  单文件组件 
 
@@ -2669,21 +2669,21 @@ url-loader封装了file-loader
 
 `npm i vue-loader vue-template-compiler -D`
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/44.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/44.png) 
 
 ####  使用vue文件创建vue组件 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/45.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/45.png) 
 
 ####  引入组件,并将组件渲染到页面 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/46.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/46.png) 
 
 ####  路由配置 
 
 `npm install vue-router --save`
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/47.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/47.png) 
 
 ##  vue-cli 脚手架工具 
 
@@ -2691,19 +2691,19 @@ url-loader封装了file-loader
 
  `npm install -g @vue/cli`  下载工具
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/48.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/48.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/49.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/49.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/50.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/50.png) 
 
  `vue create admin`   通过上面的工具下载3.X模板
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/51.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/51.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/52.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/52.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/53.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/53.png) 
 
 注意：在使用vue环境开发需注意代码格式
 
@@ -2720,23 +2720,23 @@ url-loader封装了file-loader
 
 ## Weex
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/54.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/54.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/55.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/55.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/56.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/56.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/57.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/57.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/58.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/58.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/59.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/59.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/60.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/60.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/61.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/61.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/62.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/62.png) 
 
 做适配时记得安装 `npm i postcss-pxtorem -D` 
 
@@ -2811,7 +2811,7 @@ flex默认主轴方向为column
 
 ## VueX 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/63.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/63.png) 
 
 >state ,驱动应用的数据源；
 >view ,以声明方式将  state  映射到视图；
@@ -2819,7 +2819,7 @@ flex默认主轴方向为column
 
 Vuex 是专门为 Vue.js 设计的状态管理库,以利用 Vue.js 的细粒度数据响应机制来进行高效的状态更新。
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/64.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/64.png) 
 
 vuex是一个专门为vue.js设计的集中式状态管理架构。状态？我把它理解为在data中的属性需要共享给其他vue组件使用的部分,就叫做状态。简单的说就是data中需要共用的属性。 
 (就是一种向各个组件可以传参的方式)
@@ -2871,7 +2871,7 @@ Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的
 `npm install vuex –save`
 
 新建文件夹store,并在此文件夹下新建store.js文件。项目目录,如下: 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/65.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/65.png)
 
 ### 1.main.js添加
 
@@ -2942,7 +2942,7 @@ Vue.use(Vuex);
 
 </script>
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/66.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/66.png) 
 2.store.js文件中添加
 
 ```js
@@ -2976,9 +2976,9 @@ export default new Vuex.Store({
 });
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/67.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/67.png) 
 完成页面,点击按钮可以+1或-1 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/68.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/68.png)
 
 ##  state访问状态对象 
 
@@ -3003,7 +3003,7 @@ computed:{
      },
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/69.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/69.png)
 
  
 
@@ -3023,14 +3023,14 @@ count:state=>state.count  //理解为传入state对象，修改state.count属性
 
        }),
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/70.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/70.png)
 
 ###  3.通过mapState的数组来赋值 
 
 `computed:mapState(["count"])`
 
 这个算是最简单的写法了，在实际项目开发当中也经常这样使用。 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/71.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/71.png)
 
 ##  Mutation修改状态 
 
@@ -3038,9 +3038,9 @@ count:state=>state.count  //理解为传入state对象，修改state.count属性
 更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数：
 
 前面我们已经用到过了 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/72.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/72.png) 
 要唤醒一个 mutation handler，你需要以相应的 type 调用 store.commit 方法： 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/73.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/73.png)
 
 提交载荷（Payload） 
 你可以向 store.commit 传入额外的参数，即 mutation 的 载荷（payload）： 
@@ -3090,7 +3090,7 @@ import { mapState,mapMutations } from 'vuex';
 
 <button @click="reduce">-1</button>
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/74.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/74.png) 
 或者这么写,也可以
 ```html
 <button @click="add10(10)">+10</button>
@@ -3142,7 +3142,7 @@ computed:{
 ```
 
 需要注意的是，你写了这个配置后，在每次count 的值发生变化的时候，都会进行加100的操作。 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/75.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/75.png)
 
 ###  用mapGetters简化模板写法 
 
@@ -3154,7 +3154,7 @@ import { mapState,mapMutations,mapGetters } from 'vuex';
 
 ...mapGetters(["count"])
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/76.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/76.png)
 
 ##  actions异步修改状态 
 
@@ -3169,13 +3169,13 @@ actions是异步的改变state状态，而Mutations是同步改变状态
 <button @click="$store.dispatch('reduceAction')">-</button>
 ```
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/77.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/77.png) 
 这样就能看到效果了,
 
 ###  mapActions 辅助函数 
 
 在组件中分发 Action 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/78.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/78.png)
 
 增加异步检验
 ```js
@@ -3216,29 +3216,29 @@ computed:{
 
 },
 ```
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/79.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/79.png)
 
 ### methods 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/80.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/80.png)
 
 完整版 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/81.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/81.png)
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/82.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/82.png)
 
 另一种格式 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/83.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/83.png)
 
 基于VueJs通用应用框架实现服务端渲染（SSR）数据  Nuxt.js 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/84.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/84.png) 
 
 安装和配置
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/85.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/85.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/86.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/86.png) 
 
 
 

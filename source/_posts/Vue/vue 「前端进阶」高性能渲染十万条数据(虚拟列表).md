@@ -53,7 +53,7 @@ document.getElementById('button').addEventListener('click',function(){
 
 然后，我们通过`Chrome`的`Performance`工具来详细的分析这段代码的性能瓶颈在哪里：
 
-![94](http://zhanglong292383147.gitee.io/picture_images/picture/vue/94.gif)
+![94](https://qq292383147.github.io/pictureLibrary/picture/vue/94.gif)
 
 从`Performance`可以看出，代码从执行到渲染结束，共消耗了`960.8ms`,其中的主要时间消耗如下：
 
@@ -80,13 +80,13 @@ document.getElementById('button').addEventListener('click',function(){
 
 假设有1万条记录需要同时渲染，我们屏幕的`可见区域`的高度为`500px`,而列表项的高度为`50px`，则此时我们在屏幕中最多只能看到10个列表项，那么在首次渲染的时候，我们只需加载10条即可。
 
-![95](http://zhanglong292383147.gitee.io/picture_images/picture/vue/95.jpg)
+![95](https://qq292383147.github.io/pictureLibrary/picture/vue/95.jpg)
 
 说完首次加载，再分析一下当滚动发生时，我们可以通过计算当前滚动值得知此时在屏幕`可见区域`应该显示的列表项。
 
 假设滚动发生，滚动条距顶部的位置为`150px`,则我们可得知在`可见区域`内的列表项为`第4项`至`第13项。
 
-![96](http://zhanglong292383147.gitee.io/picture_images/picture/vue/96.png)
+![96](https://qq292383147.github.io/pictureLibrary/picture/vue/96.png)
 
 ## 实现
 
@@ -97,7 +97,7 @@ document.getElementById('button').addEventListener('click',function(){
 - 计算当前`可视区域的`数据，并渲染到页面中
 - 计算`startIndex`对应的数据在整个列表中的偏移位置`startOffset`并设置到列表上
 
-![97](http://zhanglong292383147.gitee.io/picture_images/picture/vue/97.png)
+![97](https://qq292383147.github.io/pictureLibrary/picture/vue/97.png)
 
 由于只是对`可视区域`内的列表项进行渲染，所以为了保持列表容器的高度并可正常的触发滚动，将Html结构设计成如下结构：
 
@@ -220,7 +220,7 @@ export default {
 
 最终效果如下：
 
-![98](http://zhanglong292383147.gitee.io/picture_images/picture/vue/98.gif)
+![98](https://qq292383147.github.io/pictureLibrary/picture/vue/98.gif)
 
 ## 列表项动态高度
 
@@ -228,7 +228,7 @@ export default {
 
 比如这种情况：
 
-![99](http://zhanglong292383147.gitee.io/picture_images/picture/vue/99.jpg)
+![99](https://qq292383147.github.io/pictureLibrary/picture/vue/99.jpg)
 
 在虚拟列表中应用动态高度的解决方案一般有如下三种：
 
@@ -391,7 +391,7 @@ for (let id = 0; id < 10000; id++) {
 
 最终效果如下：
 
-![100](http://zhanglong292383147.gitee.io/picture_images/picture/vue/100.gif)
+![100](https://qq292383147.github.io/pictureLibrary/picture/vue/100.gif)
 
 从演示效果上看，我们实现了基于`文字内容动态撑高列表项`情况下的`虚拟列表`，但是我们可能会发现，当滚动过快时，会出现短暂的`白屏现象`。
 
@@ -401,7 +401,7 @@ for (let id = 0; id < 10000; id++) {
 - 可视区域：`screen`
 - 可视区域下方：`below`
 
-![101](http://zhanglong292383147.gitee.io/picture_images/picture/vue/101.png)
+![101](https://qq292383147.github.io/pictureLibrary/picture/vue/101.png)
 
 定义组件属性`bufferScale`,用于接收`缓冲区数据`与`可视区数据`的`比例`
 
@@ -445,7 +445,7 @@ visibleData(){
 
 最终效果如下：
 
-![102](http://zhanglong292383147.gitee.io/picture_images/picture/vue/102.gif)
+![102](https://qq292383147.github.io/pictureLibrary/picture/vue/102.gif)
 
 > 基于这个方案，个人开发了一个基于Vue2.x的虚拟列表组件：[vue-virtual-listview](https://github.com/chenqf/vue-virtual-listview),可[点击查看完整代码](https://github.com/chenqf/vue-virtual-listview)。
 

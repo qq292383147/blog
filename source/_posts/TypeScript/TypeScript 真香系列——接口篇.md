@@ -121,7 +121,7 @@ getUserInfo();
 
 其实这个说明和上面类似，我再提一下，就是想证明 TypeScript 确实挺香的！ 写一个后端接口，我要特意封装一个工具类，来检测前端给我传递过来的参数，比如下图中的`validate`专门用来检验参数的函数 
 
-![111](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/111.jpg)
+![111](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/111.jpg)
 
 但是有了 TypeScript 这个参数检验函数可以省略了，我们可以这样写：
 

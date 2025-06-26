@@ -5,7 +5,7 @@ tags: vue
 categories: vue
 ---
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vue/132.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vue/132.jpg)
 
 **html**
 

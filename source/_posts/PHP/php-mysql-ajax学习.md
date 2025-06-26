@@ -84,7 +84,7 @@ macOS：`/etc/hosts`
 
 可以通过在命令行中运行： <font color="#f0f">netstat -an</font> 命令监视本机端口使用情况：
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/1.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/1.png) 
 
 - http 默认的端口 80
 
@@ -166,7 +166,7 @@ Apache 是根据文件的扩展名找到文件的类型，然后挨个问一下�
 
 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/2.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/2.png) 
 
  
 
@@ -526,7 +526,7 @@ $_REQUEST:用于获取GET或者POST方式提交的内容
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/3.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/3.png) 
 
  
 
@@ -548,7 +548,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/4.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/4.png) 
 
  
 
@@ -578,9 +578,9 @@ formdata的形式包装
 
 5. 将文件从临时目录移到你的文件存放目录（这一步是真正的将文件永久的存储在服务器端）
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/5.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/5.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/6.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/6.png) 
 
 $_FILES数组
 
@@ -588,7 +588,7 @@ Type属性为file的input元素可以通过表单提交文件（上传文件）�
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/7.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/7.png) 
 
 文件上传后，文件信息自动保存在预定义变量$_FILES数组中。
 
@@ -700,11 +700,11 @@ function register(){
 
 ## 上传的限制，修改最大值--->改 php.ini
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/8.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/8.png) 
 
 ## 上传文件的最小值与最大值的范围是： 8M-20M
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/9.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/9.png) 
 
  
 
@@ -747,7 +747,7 @@ Null、string、number、boolean、object、array
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/10.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/10.png) 
 
  
 
@@ -1128,37 +1128,37 @@ SELECT \* from songs where isdelete = 0
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/11.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/11.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/12.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/12.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/13.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/13.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/14.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/14.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/15.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/15.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/16.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/16.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/17.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/17.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/18.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/18.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/19.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/19.png) 
 
  
 
 Date类型的处理
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/20.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/20.png) 
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/21.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/21.png) 
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/22.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/22.png) 
 
 ## 请求
 
@@ -1358,27 +1358,27 @@ xhr.responseText、xhr.responseXML都表示响应主体
 
 **使用模板实现数据遍历**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/23.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/23.png) 
 
  
 
 在script标签中设置type为：text/template,让浏览器不认识的格式
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/24.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/24.png) 
 
 **添加模板数据**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/25.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/25.png) 
 
 **在结构中设置方式  <%%>表示script中的逻辑表达方式，看以下图**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/26.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/26.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/27.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/27.png) 
 
 **获取并生成数据（遍历）**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/28.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/28.png) 
 
 **理解传入的数据是数组还是对象，对象可以直接用，数组需要转换**
 
@@ -1388,7 +1388,7 @@ xhr.responseText、xhr.responseXML都表示响应主体
 
 Test与exec函数的作用和区别
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/29.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/29.png) 
 
  
 
@@ -1496,17 +1496,17 @@ header( 'Access-Control-Allow-Origin:http://www.study.com');
 
 HTML代码
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/30.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/30.png)
 
 PHP代码
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/31.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/31.png)
 
 ## 4. JSONP原理
 
 首先在客户端注册一个callback，然后把callback的名字传给服务器。此时，服务器先生成json数据，然后以javascript语法的方式，生成function，function名字就是传递上来I带参数jsonp。最后将json数据直接以入参的方式，放置function中，这样就生成js语法的文档，返回给客户端。客户端浏览器，解析script变迁，并执行返回javascript文档，此时数据作为参数，传入了客户端预先定义好的callback函数里。简单的说，就是利用script标签没有跨域限制的“漏洞”来达到与第三方通讯的目的。
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/32.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/32.png)
 
 ## json 是一种数据格式，jsonp 是一种数据调用的方式，带callback的json就是jsonp
 
@@ -1526,5 +1526,5 @@ PHP代码
 
 7、 iframe的src属性发送请求
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/php_mysql_ajax/33.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/33.png) 
 

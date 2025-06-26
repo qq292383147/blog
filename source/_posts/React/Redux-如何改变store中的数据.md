@@ -7,7 +7,7 @@ categories: React & React Native
 
 下面就一起来编写todolist的添加,删除等代码的,最终的效果图如下所示
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/1.gif)
+![1](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/1.gif)
 
 <center><font color="red">(添加,删除todolist操作)</font></center>
 
@@ -29,15 +29,15 @@ qq浏览器各种插件也是应有尽有,与在chrome控制台里调试是一�
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()); // createStore第二个参数添加这个redux-devtools的配置可以开启调试功能
 ```
 
-![2](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/2.jpg)
+![2](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/2.jpg)
 
 <center><font color="red">(需要浏览器安装redux-devtools插件)</font></center>
 
-![3](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/3.jpg)
+![3](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/3.jpg)
 
 <center><font color="red">（需要按照文档,对创建的store仓库配置一下）</font></center>
 
-![4](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/4.jpg)
+![4](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/4.jpg)
 
 <center><font color="red">（配置完后,刷新浏览器Redux调试工具就会出现了）</font></center>
 
@@ -153,7 +153,7 @@ ReactDOM.render(<TodoList />, container);
 
 具体的效果如下所示
 
-![5](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/5.gif)
+![5](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/5.gif)
 
 通过上面新添加的action代码,实现一个更改store的数据,并达到了与页面更新的操作
 
@@ -276,7 +276,7 @@ handleStoreChange(){
 
 输入框表单内添加内容,点击右侧的提交按钮,将Input框的内容添加到底下的列表当中 具体效果如下所示
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/6.gif)
+![6](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/6.gif)
 
 <center><font color="red">（添加list操作）</font></center>
 
@@ -423,7 +423,7 @@ if(action.type === 'addInputcontent'){
 
 基于原有的代码,添加这两步就完成了一个添加列表的操作的 那么删除列表的功能怎么实现呢? 以下是实现的效果
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/7.gif)
+![7](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/7.gif)
 
 <center><font color="red">（删除列表）</font></center>
 
@@ -637,7 +637,7 @@ if (action.type === 'deletelist') {
 
 文章写到这里,一个todolist的添加,删除操作就完成了,当然看到这样的代码,这么一个小小的demo操作,绕来绕去,估计奔溃了的,这样的代码堆叠在一起肯定是不行的
 
-![8](http://zhanglong292383147.gitee.io/picture_images/picture/React/Redux笔记/8.jpg)
+![8](https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/8.jpg)
 
 <center><font color="red">（放个妹子上来,让阅读产生灵魂震荡,不疲劳）</font></center>
 

@@ -262,11 +262,11 @@ console.log(add.apply(null, [1, 2])); // 3
 
 考虑下面代码：
 
-![9](http://zhanglong292383147.gitee.io/picture_images/picture/Vue_2019/9.jpg)
+![9](https://qq292383147.github.io/pictureLibrary/picture/Vue_2019/9.jpg)
 
 使用 ES6 实现上述功能：
 
-![10](http://zhanglong292383147.gitee.io/picture_images/picture/Vue_2019/10.jpg)
+![10](https://qq292383147.github.io/pictureLibrary/picture/Vue_2019/10.jpg)
 
 #### 问题 9: 在 JS 中定义枚举的首选语法是什么
 

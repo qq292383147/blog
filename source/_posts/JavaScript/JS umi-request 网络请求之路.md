@@ -207,7 +207,7 @@ fetch 本身并不提供请求超时、缓存、取消等能力，而在业务�
 
 复杂场景应用对请求前后有定制化的处理需求，请求库除了提供基础的内置能力外，也需要提升自身拓展性，基于此 umi-request 引入**中间件机制，**选择了类 KOA 的洋葱圈模型：
 
-![56](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/56.jpg)
+![56](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/56.jpg)
 
 （中间件洋葱图）
 

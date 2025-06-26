@@ -48,7 +48,7 @@ history.pushState({ page: 1 }, "", "a.html");
 history.pushState({ page: 2 }, "", "b.html");
 ```
 
-![108](http://zhanglong292383147.gitee.io/picture_images/picture/vue/108.gif)
+![108](https://qq292383147.github.io/pictureLibrary/picture/vue/108.gif)
 
 当历史记录条目更改时，将触发`popstate`事件。如果被激活的历史记录条目是通过对`history.pushState（）`的调用创建的，或者受到对`history.replaceState（）`的调用的影响，`popstate`事件的`state`属性包含历史条目的状态对象的副本。
 
@@ -62,7 +62,7 @@ window.addEventListener('popstate', ()=>{
 })
 ```
 
-![109](http://zhanglong292383147.gitee.io/picture_images/picture/vue/109.gif)
+![109](https://qq292383147.github.io/pictureLibrary/picture/vue/109.gif)
 
 ## vue-router 实现原理
 
@@ -177,7 +177,7 @@ export function createRoute (
 
 > 这里主要讲了，`vue-router` 的 `install`，`router-view` 实现视图渲染，`create-route` 创建路由实例，还有如何实现与vue的结合，实现数据绑定等。由于篇幅的问题，再多细节的东西就没有讲了，有兴趣大家可以翻翻源码。
 
-![110](http://zhanglong292383147.gitee.io/picture_images/picture/vue/110.jpg)
+![110](https://qq292383147.github.io/pictureLibrary/picture/vue/110.jpg)
 
 ## route 跟 router 的区别
 
@@ -339,13 +339,13 @@ watch: {
 
 为什么要检测物理返回键？比如你有这样列表页，点击进去是一个详情页，然后返回的时候列表刷新了，找不到原来的位置，这种时候对用户的体验非常不好。我们看一下例子。
 
-![111](http://zhanglong292383147.gitee.io/picture_images/picture/vue/111.gif)
+![111](https://qq292383147.github.io/pictureLibrary/picture/vue/111.gif)
 
 > 那么我们如何去优化它？
 
 思路就是在用户返回到列表页的时候不刷新数据，只有在用户主动进入列表的时候才会刷新数据，我们看一下效果
 
-![112](http://zhanglong292383147.gitee.io/picture_images/picture/vue/112.gif)
+![112](https://qq292383147.github.io/pictureLibrary/picture/vue/112.gif)
 
 下面是实现的代码，原理就是监听 `popstate`，当浏览器返回的时候会触发 `popstate`，这时我们标记 `isBack` 为 `ture`。在 `setTimeout 0` 之后判断 `isBack`（是否为浏览器返回），如果不是浏览器返回的再刷新数据。
 

@@ -22,7 +22,7 @@ categories: 面试题
 
 # 数据流的不同
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/Mianjingxuan/6.jpg)
+![6](https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/6.jpg)
 
 大家都知道Vue中默认是支持双向绑定的。在Vue1.0中我们可以实现两种双向绑定：
 
@@ -54,7 +54,7 @@ React 最早也是使用 mixins 的，不过后来他们觉得这种方式对组
 
 # 组件通信的区别
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/Mianjingxuan/7.jpg)
+![7](https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/7.jpg)
 
 其实这部分两个比较相似。
 

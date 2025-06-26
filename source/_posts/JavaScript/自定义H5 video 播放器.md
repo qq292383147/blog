@@ -9,7 +9,7 @@ categories: JavaScript
 
 ## 一、效果预览
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/40.gif)
+![1](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/40.gif)
 
 ## 二、步骤简介
 
@@ -239,7 +239,7 @@ methods: {
 
 1. 播放进度随着播放慢慢变长，播放进度条由三部分组成：
 
-![2](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/41.jpg)
+![2](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/41.jpg)
 
 
 
@@ -382,7 +382,7 @@ this.videoDom.addEventListener("timeupdate", () => { // 监听视频播放过程
 
 声音与视频的进度条是类似的，只不过声音的进度条是计算竖直方向的，声音相关属性volume，值的范围 0 ~ 1，监听声音的方法是volumechange。声音的样式图片样式如下：
 
-![3](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/42.jpg)
+![3](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/42.jpg)
 
 相关方法如下：
 

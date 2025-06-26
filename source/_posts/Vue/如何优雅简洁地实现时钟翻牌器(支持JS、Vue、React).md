@@ -7,11 +7,11 @@ categories: vue
 
 
 
-![114](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/114.jpg)
+![114](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/114.jpg)
 
 相信很多人都已经自己独立实现过了，我也在网上看了一些demo，发现HTML结构大多比较复杂，用了4个并列的标签来放置前后两个“牌”。本文就来讲解下，如何进一步精简HTML，让结构简单，让JS方法封装得易使用。先来看看最终效果：
 
-![115](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/115.gif)
+![115](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/115.gif)
 
 每个翻牌的HTML结构（精简至2个并列标签）：
 
@@ -88,7 +88,7 @@ flip的CSS代码如下：
 
 基本结构的效果是这样的:
 
-![116](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/116.jpg)
+![116](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/116.jpg)
 
 #### 1.2 构建纸牌并用伪元素拆分上下两部分
 
@@ -132,7 +132,7 @@ flip的CSS代码如下：
 
 效果如下：
 
-![117](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/117.jpg)
+![117](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/117.jpg)
 
 > 回答上一章节的问题，为什么底层设置background为白色？
 >
@@ -164,7 +164,7 @@ flip的CSS代码如下：
 
 效果如下：
 
-![118](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/118.jpg)
+![118](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/118.jpg)
 
 到这里，我们可以认为是4个小纸片，分别是：
 
@@ -205,7 +205,7 @@ flip的CSS代码如下：
 
 现在效果如下：
 
-![119](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/119.jpg)
+![119](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/119.jpg)
 
 可以很明显的看到两个问题：
 
@@ -218,11 +218,11 @@ flip的CSS代码如下：
 
 提到文字的显示，肯定会想到基线（baseline），可能你也曾经看过这个图：
 
-![120](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/120.jpg)
+![120](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/120.jpg)
 
 关于基线(baseline)的计算，确实很麻烦，我也在这里绕了很久。其实理解line-height:0可以换个角度，会更容易理解，请看下图：
 
-![121](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/121.jpg)
+![121](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/121.jpg)
 
 当line-height为200px，每行文字高度为200px，文字在200px高度的行间区域垂直居中；
 
@@ -245,17 +245,17 @@ flip的CSS代码如下：
 
 效果如下：
 
-![122](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/122.jpg)
+![122](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/122.jpg)
 
 #### 1.4 设置纸牌的层叠关系
 
 首先，先看下“向下翻牌”的视频演示，直观感受下每个纸片的层级关系：
 
-![123](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/123.gif)
+![123](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/123.gif)
 
 按照实物图就可以确定每张纸片的z-index：
 
-![124](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/124.jpg)
+![124](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/124.jpg)
 
 添加以下CSS代码：
 
@@ -277,7 +277,7 @@ flip的CSS代码如下：
 
 现在效果如下：
 
-![125](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/125.jpg)
+![125](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/125.jpg)
 
 咦？怎么不对？别着急，这是因为我们只设置了层级，但是没有把后面纸牌的下半部翻转上去。
 
@@ -299,7 +299,7 @@ flip的CSS代码如下：
 
 `transform-origin: 50% 0%;`表示将旋转基本点设置在横轴的中点，纵轴的顶点位置，如下图所示：
 
-![126](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/126.jpg)
+![126](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/126.jpg)
 
 `perspective(160px)`可以理解为立体透视图的景深。在本次分享的效果中，我们的视角是正对牌面，并且纸牌位于视角中间。所以 transform-origin的第一个值（X轴位置）为50%。
 
@@ -307,7 +307,7 @@ flip的CSS代码如下：
 
 基于以上设置，已经可以正常显示了，如下图：
 
-![127](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/127.jpg)
+![127](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/127.jpg)
 
 同理，“向上翻”也需要进行设置下。大家可以自己折两个纸片，参照上面的方法，应该很容易实现。这里不再重复讲解，直接放上代码，大家可以对比下哪里不同：
 
@@ -337,14 +337,14 @@ flip的CSS代码如下：
 
 我们还是以“向下翻”为例，再来看下之前的实物翻牌视频：
 
-![128](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/128.gif)
+![128](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/128.gif)
 
 可以看到，“向下翻”主要涉及两个元素的动画：
 
 1. 前面纸牌的上半部向下翻转180度。
 2. 后面纸牌的下半部（目前已翻转上去）向下翻转180度恢复原状态。
 
-![129](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/129.jpg)
+![129](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/129.jpg)
 
 直接上代码：
 
@@ -382,7 +382,7 @@ flip的CSS代码如下：
 
 以上代码涉及的知识点和原理没有新的东西，都已经讲解过了，就不详述了。box-shadow是为了给纸片的上边缘加一点白光，视觉效果更好一点。否则在翻转的时候，跟后面元素都是黑色，融在一起了。看看现在的效果：
 
-![130](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/130.gif)
+![130](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/130.gif)
 
 显示不正常！为什么？因为前排上半部纸片的z-index最高，所以它在翻转到下半部的时候仍然遮挡住了其他纸片。怎么优雅的解决？超级简单，来看看第四个知识点：
 
@@ -405,7 +405,7 @@ backface-visibility表示元素的背面是否可见，默认为visible（可见
 
 现在效果很完美！
 
-![131](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/131.gif)
+![131](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/131.gif)
 
 大家可以试着自己实现向上翻转效果，代码直接放出：
 
@@ -542,7 +542,7 @@ function flipUp() {
 
 先看下交互效果：
 
-![132](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/132.gif)
+![132](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/132.gif)
 
 这段Javascript代码很冗余，重复代码很多。在实际产品中，都是多个数字牌，这种方式显然无法应对。下一章节，我们来说下如何优雅的封装，以不变应万变。
 
@@ -550,7 +550,7 @@ function flipUp() {
 
 先看下最终效果：
 
-![133](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/133.gif)
+![133](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/133.gif)
 
 #### 3.1 HTML构建
 
@@ -605,7 +605,7 @@ CSS代码如下(之前章节的CSS代码请保留):
 
 效果如下，剩下的就是JS部分了。
 
-![134](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/134.jpg)
+![134](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/134.jpg)
 
 #### 3.2 构建Flipper类
 
@@ -813,7 +813,7 @@ function padLeftZero(str) {
 
 现在看下效果，已经可以正确显示当前时间了。
 
-![135](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/135.jpg)
+![135](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/135.jpg)
 
 #### 3.4 运行时钟
 
@@ -841,7 +841,7 @@ setInterval(function() {
 
 这段代码逻辑很简单了，主要就是进行前后时间字符串的对比，然后设置纸牌并翻转。最终效果：
 
-![136](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/136.gif)
+![136](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/136.gif)
 
 ### 4 Vue & React封装
 

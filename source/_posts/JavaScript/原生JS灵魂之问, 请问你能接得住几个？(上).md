@@ -168,7 +168,7 @@ if(3n){
 
 caniuse的结果:
 
-![43](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/43.jpg)
+![43](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/43.jpg)
 
 其实现在的兼容性并不怎么好，只有chrome67、firefox、Opera这些主流实现，要正式成为规范，其实还有很长的路要走。
 
@@ -298,7 +298,7 @@ JS中，类型转换只有三种：
 
 > 注意"Boolean 转字符串"这行结果指的是 true 转字符串的例子
 
-![44](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/44.jpg)
+![44](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/44.jpg)
 
 ### 3. == 和 ===有什么区别？
 
@@ -545,13 +545,13 @@ let使JS发生革命性的变化，让JS有函数作用域变为了块级作用�
 
 当函数经过new调用时，这个函数就成为了构造函数，返回一个全新的实例对象，这个实例对象有一个__proto__属性，指向构造函数的原型对象。
 
-![45](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/45.jpg)
+![45](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/45.jpg)
 
 ### 2.能不能描述一下原型链？
 
 JavaScript对象通过prototype指向父类对象，直到指向Object对象为止，这样就形成了一个原型指向的链条, 即原型链。
 
-![46](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/46.png)
+![46](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/46.png)
 
 - 对象的 hasOwnProperty() 来检查对象自身中是否含有该属性
 - 使用 in 检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回 true
@@ -599,7 +599,7 @@ JavaScript对象通过prototype指向父类对象，直到指向Object对象为�
 
 可以看到控制台：
 
-![47](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/47.jpg)
+![47](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/47.jpg)
 
 明明我只改变了s1的play属性，为什么s2也跟着变了呢？很简单，因为两个实例使用的是同一个原型对象。
 
@@ -625,7 +625,7 @@ JavaScript对象通过prototype指向父类对象，直到指向Object对象为�
 
 可以看到控制台：
 
-![48](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/48.jpg)
+![48](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/48.jpg)
 
 之前的问题都得以解决。但是这里又徒增了一个新问题，那就是Parent3的构造函数会多执行了一次（Child3.prototype = new Parent3();）。这是我们不愿看到的。那么如何解决这个问题？
 
@@ -651,7 +651,7 @@ JavaScript对象通过prototype指向父类对象，直到指向Object对象为�
   console.log(s3)
 ```
 
-![49](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/49.jpg)
+![49](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/49.jpg)
 
 子类实例的构造函数是Parent4，显然这是不对的，应该是Child4。
 

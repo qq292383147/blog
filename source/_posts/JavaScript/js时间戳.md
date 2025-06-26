@@ -33,7 +33,7 @@ console.log(timetamp4);
 
 打印结果 如下：
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/19.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/19.jpg)
 
  
 
@@ -51,7 +51,7 @@ console.log(tmestamp4.toLocaleDateString().replace(/\//g, "-") + " " + timestamp
 
 *效果如下：*
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/20.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/20.jpg)
 
  
 

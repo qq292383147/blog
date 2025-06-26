@@ -21,7 +21,7 @@ categories: vue
 
 因为 kbone 是为了解决 小程序 与 Web 端的问题，所以每个目录下的配置都会有两份（小程序 与 Web 端各一份）
 
-![117](http://zhanglong292383147.gitee.io/picture_images/picture/vue/117.jpg)
+![117](https://qq292383147.github.io/pictureLibrary/picture/vue/117.jpg)
 
 ### 入口
 
@@ -29,7 +29,7 @@ categories: vue
 
 当然，Web 端会比 小程序 多一个入口页面，即 index.html（位于根目录下）。
 
-![118](http://zhanglong292383147.gitee.io/picture_images/picture/vue/118.jpg)
+![118](https://qq292383147.github.io/pictureLibrary/picture/vue/118.jpg)
 
 下面两段代码分别是 小程序端 入口与 Web 端入口的代码，可以看到 小程序端的入口代码封装在 createApp 函数里面（这里固定即可），内部会比 Web 端多一个创建 app 节点的操作，其他的基本就是一致的。
 
@@ -59,7 +59,7 @@ newVue({  el: '#app',  render: h => h(todo)})
 
 Web 端配置为正常的 Vue 配置，小程序端配置与 Web 端配置的唯一不同就是需要引入 mp-webpack-plugin 插件来将 Vue 组件转化为小程序代码。
 
-![119](http://zhanglong292383147.gitee.io/picture_images/picture/vue/119.jpg)
+![119](https://qq292383147.github.io/pictureLibrary/picture/vue/119.jpg)
 
 ### 构建代码
 
@@ -84,7 +84,7 @@ npm run mp
 
 todo 代码可到 kbone/demo13 自提。
 
-![120](http://zhanglong292383147.gitee.io/picture_images/picture/vue/120.jpg)
+![120](https://qq292383147.github.io/pictureLibrary/picture/vue/120.jpg)
 
 ### 最后
 

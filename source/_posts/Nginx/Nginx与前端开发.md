@@ -29,7 +29,7 @@ Nginx发布于2004年，经过初期几年的沉淀之后，迅速蹿升为“�
 
    大家总有用过，翻墙工具其实就是一个正向代理工具。它会把 们访问墙外服务器server的网页请求，代理到一个可以访问该网站的代理服务器proxy，这个代理服务器proxy把墙外服务器server上的网页内容获取，再转发给客户。具体的流程如下图。 
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/1.jpg)
+![1](https://qq292383147.github.io/pictureLibrary/picture/Nginx/1.jpg)
 
 <center>nginx-proxy</center>
 
@@ -39,7 +39,7 @@ Nginx发布于2004年，经过初期几年的沉淀之后，迅速蹿升为“�
 
 2. 反向代理则正好相反，先看流程图图。 
 
-![2](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/2.jpg)
+![2](https://qq292383147.github.io/pictureLibrary/picture/Nginx/2.jpg)
 
 <center>nginx-proxy-reverse</center>
 
@@ -66,7 +66,7 @@ Nginx发布于2004年，经过初期几年的沉淀之后，迅速蹿升为“�
 
 2. **解决跨域** 在众多的解决跨域方式中， 都不可避免的都需要服务端进行支持， 使用Nginx可以纯前端解决请求跨域问题。 特别是在前后端分离调试时， 经常需要在本地起前端工程， 接口希望拉取服务端的实际数据而不是本地的mock。 而如果本地程序直接访问远程接口， 肯定会遇到跨域问题。现在前端成熟的做法，一般是把node proxy server集成进来。事实上，用Nginx同样可以解决问题，甚至可以应用于线上。 本地起一个nginx server。server_name是mysite-base.com，比如现在需要请求线上www.kaola.com域下的线上接口 [www.kaola.com/getPCBanner…](https://www.kaola.com/getPCBannerList.html) 的数据，当在页面里直接请求，浏览器会报错：
 
-![3](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/3.jpg)
+![3](https://qq292383147.github.io/pictureLibrary/picture/Nginx/3.jpg)
 
 为了绕开浏览器的跨域安全限制，
 
@@ -103,11 +103,11 @@ Nginx发布于2004年，经过初期几年的沉淀之后，迅速蹿升为“�
 
 这样当浏览设备切换成移动模式，再次刷新页面后，站点被自动切换到H5站。如下：
 
-![4](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/4.gif)
+![4](https://qq292383147.github.io/pictureLibrary/picture/Nginx/4.gif)
 
 4. **合并请求** 前端性能优化中重要一点就是尽量减少http资源请求的数量。通过[nginx-http-concat](https://github.com/alibaba/nginx-http-concat)模块（淘宝开发的第三方模块，需要单独安装）用一种特殊的请求url规则（例子：[example.com/](http://example.com/)??1.js,2.js,3.js ），前端可以将多个资源的请求合并成一个请求，后台Nginx会获取各个资源并拼接成一个结果进行返回。例如上面的例子通过一个请求将1.js,2.js,3js三个js资源合并成一个请求，减少了浏览器开销。 本地server mysite-base.com为例，static/js文件夹下有三个文件，文件内容很简单，分别为：
 
-![5](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/5.jpg)
+![5](https://qq292383147.github.io/pictureLibrary/picture/Nginx/5.jpg)
 
 Nginx配置如下：
 
@@ -126,7 +126,7 @@ Nginx配置如下：
 
 当在浏览器请求http://mysite-base.com/static/js/??a.js,b.js,c.js 时，发现三个js被合并成一个返回了，如下图：
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/6.jpg)
+![6](https://qq292383147.github.io/pictureLibrary/picture/Nginx/6.jpg)
 
 5. **图片处理** 在前端开发中，经常需要不同尺寸的图片。现在的云储存基本对图片都提供有处理服务（一般是通过在图片链接上加参数）。其实用Nginx，可以通过几十行配置，搭建出一个属于自己的本地图片处理服务，完全能够满足日常对图片的裁剪/缩放/旋转/图片品质等处理需求。要用到[ngx_http_image_filter_module](http://nginx.org/en/docs/http/ngx_http_image_filter_module.html)模块。这个模块是非基本模块，需要安装。 下面是图片缩放功能部分的Nginx配置：
 
@@ -150,7 +150,7 @@ Nginx配置如下：
     }
 ```
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/7.gif)
+![7](https://qq292383147.github.io/pictureLibrary/picture/Nginx/7.gif)
 
 这里只是最基本的配置。此外，可以通过proxy_cache配置Nginx缓存，避免每次请求都重新处理图片，减少Nginx服务器处理压力；还以可以通过和
 
@@ -216,6 +216,6 @@ server {
 }
 ```
 
-![8](http://zhanglong292383147.gitee.io/picture_images/picture/Nginx/8.gif)
+![8](https://qq292383147.github.io/pictureLibrary/picture/Nginx/8.gif)
 
 这个功能其实为Nginx在前端开发中的应用提供了无限可能。例如，可以通过区分本地、测试和线上环境，为本地/测试环境页面增加很多开发辅助功能：给本地页面加一个常驻二维码便于手机端扫码调试；本地调试线上页面时，在js文件底部塞入sourceMappingURL，便于本地debug等等。

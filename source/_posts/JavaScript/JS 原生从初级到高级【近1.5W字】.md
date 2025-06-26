@@ -350,14 +350,14 @@ bind实现:
 
 ### 1.6.2构造函数,实例与原型对象的关系
 
-![50](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/50.png)
+![50](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/50.png)
 
 ```js
 var Person = function (name) { this.name = name; }//person是构造函数
 var o3personTwo = new Person('personTwo')//personTwo是实例
 ```
 
-![51](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/51.jpg)
+![51](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/51.jpg)
 
 原型对象都有一个默认的constructor属性指向构造函数
 
@@ -420,7 +420,7 @@ Obj.name='张三'
 
 ### 1.6.5 对象的原型链
 
-![52](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/52.jpg)
+![52](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/52.jpg)
 
 ## 1.7 继承的方式
 
@@ -2230,7 +2230,7 @@ HTTP(S) 请求地址 → DNS 解析 → 三次握手 → 发送请求 → 四次
 
 三次握手过程图片来源 CSDN） 
 
-![53](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/53.png)
+![53](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/53.png)
 
 在这里插入图片描述
 
@@ -2238,7 +2238,7 @@ HTTP(S) 请求地址 → DNS 解析 → 三次握手 → 发送请求 → 四次
 
 ​	3. 四次挥手过（图片来源 CSDN）
 
-![54](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/54.jpg)
+![54](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/54.jpg)
 
 1. 在这里插入图片描述
 
@@ -2350,7 +2350,7 @@ F5 刷新会忽略强缓存不会忽略协商缓存，ctrl+f5 都失效
 
 ### 7.5.9 浏览器请求分析
 
-![55](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/55.jpg)
+![55](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/55.jpg)
 
 ### 7.5.10 总结
 

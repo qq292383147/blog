@@ -5,7 +5,7 @@ tags: React & React Native
 categories: React & React Native
 ---
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/React-router-logo.jpg)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/React-router-logo.jpg)
 
 
 ## 1.静态路由 vs. 动态路由
@@ -224,5 +224,5 @@ import { Link, NavLink } from 'react-router-dom'
 
 另外，`react-router`还提供了其他一些工具库，比如支持组件的动态`import`（下载）的`react-loadable`，支持CSS转场动画的`react-transition-group`
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/react-router需要的组件.jpg)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/react-router需要的组件.jpg)
 

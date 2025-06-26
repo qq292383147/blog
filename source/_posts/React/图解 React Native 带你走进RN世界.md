@@ -23,7 +23,7 @@ categories: React & React Native
 
 学完上一篇文章的你现在脑海中的画面应该是这样的:
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/React/12.jpg)
+![12](https://qq292383147.github.io/pictureLibrary/picture/React/12.jpg)
 
 你也知道，React 是在 Web 上开发用户界面的利器。使用 React 来开发 UI 的话，就能够描述你想要什么，而不是告诉 UI 如何更新 (响应式 UI)，还可以在可重用组件中组织代码，并创建高性能用户界面，而无需担心DOM超慢的速度 (虚拟 DOM)。越来越多的开发者选择 React 是因为它可以使得开发者更专注于上层业务，而不是底层 DOM 更新的细节。我们将这种开发 UI 的方式称之为 React 范式。范式基本上就是你思考一个问题的方式，以及这个问题的描述方式和解决方案。
 
@@ -35,7 +35,7 @@ categories: React & React Native
 
 这有点像在国外的工作室上班，员工需要说不同的语言。你需要精通所有语言才能跟所有模特进行交流。这听上去就很麻烦，你说是吧？
 
-![13](http://zhanglong292383147.gitee.io/picture_images/picture/React/13.jpg)
+![13](https://qq292383147.github.io/pictureLibrary/picture/React/13.jpg)
 
 所以，如果想要你开发出的原生应用能运行在 iOS 和安卓两个平台上的话，你需要创建两套完全分离的代码库。同样的业务逻辑需要写两遍。开发应用既困难，成本又高，从长期的维护来看的话更是如此。
 
@@ -49,21 +49,21 @@ categories: React & React Native
 
 但是，对于原生应用的话，当需要管理不同平台上的各种“树人”时，事情就变得有挑战了。如果我们将更多的重担压在 React 肩上的话，那我们可怜的超级英雄将会为此抓狂。
 
-![14](http://zhanglong292383147.gitee.io/picture_images/picture/React/14.jpg)
+![14](https://qq292383147.github.io/pictureLibrary/picture/React/14.jpg)
 
 为了解决此问题，React 创建者们将原来的 React 拆分成两部分。第一部分是全新的 React ，它只负责启用 React 范式。第二部分叫做 ReactDOM ，它唯一的任务就是与浏览器中的 DOM 进行交互。因为 ReactDOM 负责更新 DOM ，而 DOM 又决定了浏览器渲染的内容，所以我们将 ReactDOM 称之为渲染器。
 
 想象一下，我们的超级英雄脱下了他的斗篷，并在上面洒了一些魔法之尘。
 
-![15](http://zhanglong292383147.gitee.io/picture_images/picture/React/15.jpg)
+![15](https://qq292383147.github.io/pictureLibrary/picture/React/15.jpg)
 
 斗篷立刻就有了生命，并成为了超级英雄的小助手。从负责与 Domo 沟通的枷锁中释放后，React 现在可以专注于做他最擅长的事。
 
-![16](http://zhanglong292383147.gitee.io/picture_images/picture/React/16.jpg)
+![16](https://qq292383147.github.io/pictureLibrary/picture/React/16.jpg)
 
 这种角色分离的理念非常之强大。现在我们只需要维护一个共享的核心库，同时编写全新的渲染器来适应新平台。这种方式要比之前简单多了。由于有了 iOS 和安卓渲染器的强力支撑，现在你可以**只使用一种语言和相同的 React 范式**来同时为两个平台开发应用。
 
-![17](http://zhanglong292383147.gitee.io/picture_images/picture/React/17.jpg)
+![17](https://qq292383147.github.io/pictureLibrary/picture/React/17.jpg)
 
 React 只需要专注于他擅长的领域即可。渲染器来负责沟通。
 
@@ -73,7 +73,7 @@ React 的官网定义是: 用来开发用户界面的 JavaScript 库。它的含
 
 实际上，**你无法单独使用 React 开发出一个完整的应用**。例如，你需要 CSS 来写外观样式，你需要 webpack 来打包，你需要 Firebase 来做数据持久化，等等。
 
-![18](http://zhanglong292383147.gitee.io/picture_images/picture/React/18.jpg)
+![18](https://qq292383147.github.io/pictureLibrary/picture/React/18.jpg)
 
 “网络浏览器” 工作室里的实际景象要你比之前所见到的要忙碌得多。
 
@@ -94,7 +94,7 @@ React 的官网定义是: 用来开发用户界面的 JavaScript 库。它的含
 
 我们说 React Native 本身是一个完整的平台是因为**它包含开发完整应用所需的一切**。相比之下，原本的 React 只负责 Web UI ，你需要去自己引用其他部分才能创建出一个 Web 应用。
 
-![19](http://zhanglong292383147.gitee.io/picture_images/picture/React/19.jpg)
+![19](https://qq292383147.github.io/pictureLibrary/picture/React/19.jpg)
 
 React Native 的组成
 
@@ -110,7 +110,7 @@ React Native 的组成
 
 看到这里，你应该了解到 React Native 是一个完整的平台，它可以让你使用 JavaScript 来开发真正的原生应用，而且还是用 React 的路子来写（React 范式）。
 
-![20](http://zhanglong292383147.gitee.io/picture_images/picture/React/20.jpg)
+![20](https://qq292383147.github.io/pictureLibrary/picture/React/20.jpg)
 
 ## React Sketch.app、ReactVR、React XYZ…
 
@@ -118,7 +118,7 @@ Airbnb 最近发布了一款十分有趣的工具，叫做 [React Sketch.app](ht
 
 没错！从本质上来说，它就是使用了特殊渲染器的 React Native ，这个渲染器能与 Sketch 中的树人进行交流！
 
-![21](http://zhanglong292383147.gitee.io/picture_images/picture/React/21.jpg)
+![21](https://qq292383147.github.io/pictureLibrary/picture/React/21.jpg)
 
 因为 React Sketch.app 是基于 React Native 的，它也是一个完整的平台，所以可以直接使用它来从远程 API 来获取数据并在 Sketch 中进行渲染。
 

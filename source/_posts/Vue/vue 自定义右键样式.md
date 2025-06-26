@@ -23,7 +23,7 @@ categories: vue
 
 > 这个是vue内置的，点击右键（阻止默认右键的默认行为）的一个回调方法，他返回了一大串东西这里我用到的是这两个(用于定位显示菜单的x,y位置)
 
-![114](http://zhanglong292383147.gitee.io/picture_images/picture/vue/114.jpg)
+![114](https://qq292383147.github.io/pictureLibrary/picture/vue/114.jpg)
 
 > `x_index`，`y_index` 是储存在`data`中的，用于定位模态框位置。
 >  `ctrlId` 用于给接口处理的依据
@@ -210,7 +210,7 @@ categories: vue
 
 ##### 修复前：
 
-![115](http://zhanglong292383147.gitee.io/picture_images/picture/vue/115.jpg)
+![115](https://qq292383147.github.io/pictureLibrary/picture/vue/115.jpg)
 
 ```js
 //原来的代码
@@ -232,7 +232,7 @@ categories: vue
 
 ##### 修复后：
 
-![116](http://zhanglong292383147.gitee.io/picture_images/picture/vue/116.jpg)
+![116](https://qq292383147.github.io/pictureLibrary/picture/vue/116.jpg)
 
 ```js
 //修改后的代码，（由于要判断，所以单独写了个方法，把e跟item都传过去）

@@ -17,7 +17,7 @@ yarn add vuex --save
 ## 二、基本配置文件事例
 在项目中src文件夹下新建store文件夹,并在创建如下文件：
 
-![4](http://zhanglong292383147.gitee.io/picture_images/picture/vue/93.jpg)
+![4](https://qq292383147.github.io/pictureLibrary/picture/vue/93.jpg)
 
 index.js 入口文件
 state.js 所有状态的管理

@@ -13,7 +13,7 @@ categories: JavaScript
 
 将 B 对象拷贝到 A 对象中，但不包括 B 里面的子对象。浅拷贝只复制一层对象的属性，并不包括对象里面的为引用类型的数据。 
 
-![90](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/90.jpg)
+![90](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/90.jpg)
 
 ## 二、如何实现浅拷贝
 
@@ -55,11 +55,11 @@ if (Object.assign == null) {
 }
 ```
 
-![91](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/91.jpg)
+![91](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/91.jpg)
 
 ### 2.2 扩展运算符(...)
 
-![93](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/93.jpg)![92](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/92.jpg)
+![93](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/93.jpg)![92](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/92.jpg)
 
 ### 2.3 Array.prototype.slice() && Array.prototype.concat()
 
@@ -75,7 +75,7 @@ console.log(list1);
 
 
 
-![94](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/94.jpg)
+![94](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/94.jpg)
 
 ## 三、什么是深拷贝
 
@@ -83,7 +83,7 @@ console.log(list1);
 
 将 B 对象拷贝到 A 对象中，包括 B 里面的子对象。它不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。
 
-![95](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/95.jpg)
+![95](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/95.jpg)
 
 ## 四、如何实现深拷贝
 
@@ -140,9 +140,9 @@ console.log(obj);
 console.timeEnd('clone');
 ```
 
-![96](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/96.jpg)
+![96](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/96.jpg)
 
-如果存在循环引用![97](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/97.jpg)
+如果存在循环引用![97](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/97.jpg)
 
 - 优点：能解决undefined、Symbol和函数的问题。
 - 缺点：不能循环引用。

@@ -17,19 +17,19 @@ categories: vue
 
 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/1.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/1.jpg)
 
  
 
 ## 2、简单明了，先引入 Vue 和 Vuex 并且别忘了 Vue.use(Vuex);
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/2.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/2.jpg)
 
 **当然你 Vuex 首先得跟 main.js 扯上点关系嘛。这里的m_index.js === main.js 因为项目原因，暂时换了个名字，不过也无影响，好了我们继续。**
 
 **=》引入 store 文件  =》   并且 Vue 实例上得将 挂载 store ，这下万无一失。可以继续了** 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/3.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/3.jpg)
 
  **然后我们就可以开始编写我们的vuex业务代码了，那么，我们的数据如何保存？**
 
@@ -37,7 +37,7 @@ categories: vue
 
 ## 3、现在开始 Vuex 的主宰部分 new Vuex.Store（{}）
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/4.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/4.jpg)
 
  **在这张图上可以清楚的看到 new Vuex.Store 里面有一个 state:{ } 注释也写了，**
 
@@ -53,7 +53,7 @@ categories: vue
 
 
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/5.jpg)
+ ![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/5.jpg)
 
  
 
@@ -61,7 +61,7 @@ categories: vue
 
 　**注释也写了，getters 可以实时监听state值的变化(最新状态)**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/6.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/6.jpg)
 
  **我给 getters 里面获取 count 值的方法命名为 getCount 并且需要传入 state**
 
@@ -79,7 +79,7 @@ this.$store.getters.getCount  具体效果在 第4 栏里面有些，这里就�
 
 **这里我们点击按钮调用 add（执行加的方法）和 del（执行减法的方法），然后在里面直接提交 mutations 中的方法修改值：**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/7.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/7.jpg)
 
  
 
@@ -87,17 +87,17 @@ this.$store.getters.getCount  具体效果在 第4 栏里面有些，这里就�
 
 **这里定义的两个方法就是上面 commit 提交的两个方法如下：**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/8.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/8.jpg)
 
 　　**我们可以将参数传递给 mutations 中的函数进行计算 这里是 num 。**
 
 ​      **现在我们看看效果 ：**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/9.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/9.jpg)
 
   **很好，count 数值都发生了改变，我点击了两下，并且 是可以在 Vue Devtools 中的 Vuex 看到过程效果**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/10.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/10.jpg)
 
 **payload ：1 就是数值变化1 type 操作的方法是 addCount 也就是 mutations 根方法**
 
@@ -114,17 +114,17 @@ this.$store.getters.getCount  具体效果在 第4 栏里面有些，这里就�
 
 **我们来看一下：**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/11.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/11.jpg)
 
 **然后我们去修改 Hello World.vue 文件：**
 
 **这里我们把 commit 提交 mutations 修改为使用 dispatch 来提交 actions；我们点击页面，效果是一样的。**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/12.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/12.jpg)
 
 **现在让我们来看看效果，这里我又点击了6下，很显然，效果是一样的。**
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/13.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/13.jpg)
 
  
 
@@ -134,45 +134,45 @@ this.$store.getters.getCount  具体效果在 第4 栏里面有些，这里就�
 
 然后，我们将 something 传入这个方法里面 add(something) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/14.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/14.jpg)
 
  
 
 这个时候，看着好像没有什么问题，那么问题这时候就来了，我们先试试点加号会发生什么？
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/15.jpg)
+ ![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/15.jpg)
 
    我点击了三下加号，看到没，直接在 0后面拼接了111 变成0111 这显然不是我们想要的效果了，这是为什么呢？
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/16.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/16.jpg)
 
 我们来打印一下 这个 1 的数据类型
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/17.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/17.jpg)
 
  原来如此，这个是字符串类型，难怪不能直接加，那么现在我们该怎么办呢？当然是 字符串转换成数字啦 parseInt()
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/18.jpg)
+ ![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/18.jpg)
 
  
 
   当然是 字符串转换成数字啦  哈哈哈哈哈哈 parseInt(); 方法  然后继续打印结果
 
-  ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/19.jpg)
+  ![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/19.jpg)
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/20.jpg)
+ ![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/20.jpg)
 
  
 
   好了，现在就是数字类型了，那么我们继续最后一步，并且看看效果吧
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/21.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/21.jpg)
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/22.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/22.jpg)
 
  
 
@@ -193,13 +193,13 @@ this.$store.getters.getCount  具体效果在 第4 栏里面有些，这里就�
 
 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/23.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/23.jpg)
 
  
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/24.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/24.jpg)
 
- ![img](http://zhanglong292383147.gitee.io/picture_images/picture/vuex/25.jpg)
+ ![img](https://qq292383147.github.io/pictureLibrary/picture/vuex/25.jpg)
 
  
 

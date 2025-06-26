@@ -553,8 +553,8 @@ res.end();
 
 
 创建的文件命名不能使用中文&&大写字母&&特殊符号
-npm ----->  yarn(运行速度快)![](http://zhanglong292383147.gitee.io/picture_images/picture/es6_nodeJS/1.png) （下载最新版本的jQuery）
-如果想下载其他版本的jquery，可以输入：![](http://zhanglong292383147.gitee.io/picture_images/picture/es6_nodeJS/2.png)
+npm ----->  yarn(运行速度快)![](https://qq292383147.github.io/pictureLibrary/picture/es6_nodeJS/1.png) （下载最新版本的jQuery）
+如果想下载其他版本的jquery，可以输入：![](https://qq292383147.github.io/pictureLibrary/picture/es6_nodeJS/2.png)
 （shift +鼠标右键）
 <br>
 <h2>Node.js特点：</h2>
@@ -625,7 +625,7 @@ npm list -g --depth 0
 npm cache clean --force 清除缓存命令
 ```
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/es6_nodeJS/3.png)
+![](https://qq292383147.github.io/pictureLibrary/picture/es6_nodeJS/3.png)
 
 网络环境（网速差）
 
@@ -936,9 +936,9 @@ Node 自动下载包
 package-lock.json\package.json
 ```
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/es6_nodeJS/4.png)
+![](https://qq292383147.github.io/pictureLibrary/picture/es6_nodeJS/4.png)
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/es6_nodeJS/5.png)
+![](https://qq292383147.github.io/pictureLibrary/picture/es6_nodeJS/5.png)
 
 ```js
 //引入MD5

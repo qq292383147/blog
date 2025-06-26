@@ -155,7 +155,7 @@ function resolve(value) {
 
 `Promises/A+`规范中的2.1`Promise States`中明确规定了，`pending`可以转化为`fulfilled`或`rejected`并且只能转化一次，也就是说如果`pending`转化到`fulfilled`状态，那么就不能再转化到`rejected`。并且`fulfilled`和`rejected`状态只能由`pending`转化而来，两者之间不能互相转换。一图胜千言：
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/es6_nodeJS/6.jpg)
+![img](https://qq292383147.github.io/pictureLibrary/picture/es6_nodeJS/6.jpg)
 
 
 

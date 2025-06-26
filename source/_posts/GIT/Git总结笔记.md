@@ -56,7 +56,7 @@ categories: git
 
 ### 一：说明开发过程中的工作流程
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/1.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/1.png)
 
 ### 二：什么是shell
 
@@ -92,12 +92,12 @@ bash常见命令
 
 `who am i` 查看当前用户
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/2.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/2.png) 
 
 ## 四：vi编辑器
 
 vi编辑器提供了3种模式，分别是命令模式、插入模式、底行模式，每种模式下用户所能进行的操作是不一样的
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/3.png)
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/3.png)
 
 使用vi编辑器
 
@@ -157,7 +157,7 @@ vi编辑器提供了3种模式，分别是命令模式、插入模式、底行�
 
 暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”（Index），不过一般说法还是叫暂存区域。
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/4.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/4.png) 
 
 基本的Git工作流程如下：
 
@@ -236,7 +236,7 @@ vi编辑器提供了3种模式，分别是命令模式、插入模式、底行�
 
 - 11. 创建本地共享仓库:仓库就是一个文件夹
 
->a) ![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/5.png)
+>a) ![img](https://qq292383147.github.io/pictureLibrary/picture/git/5.png)
 ><br>
 >b) 通过—bare创建裸仓库
 ><br>
@@ -244,11 +244,11 @@ vi编辑器提供了3种模式，分别是命令模式、插入模式、底行�
 ><br>
 >d) 通过从共享仓库中复制内容
 ><br>
->e) 虽然复制的时候是从裸仓库中复制的，但是复制到的内容是真正的工作目录下的内容![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/6.png)
+>e) 虽然复制的时候是从裸仓库中复制的，但是复制到的内容是真正的工作目录下的内容![img](https://qq292383147.github.io/pictureLibrary/picture/git/6.png)
 ><br>
->f) 修改内容，并且将修改的内容更新![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/7.png)
+>f) 修改内容，并且将修改的内容更新![img](https://qq292383147.github.io/pictureLibrary/picture/git/7.png)
 ><br>
->g) 进入到另外的目录，将之前提交的内容拉取![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/8.png)
+>g) 进入到另外的目录，将之前提交的内容拉取![img](https://qq292383147.github.io/pictureLibrary/picture/git/8.png)
 
 - 12. git远程仓库
 
@@ -274,7 +274,7 @@ vi编辑器提供了3种模式，分别是命令模式、插入模式、底行�
 
 7 使用命令 `git pull [仓库地址] master` 获取仓库中的最新内容
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/9.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/9.png) 
 
 ### 文件对比
 
@@ -311,11 +311,11 @@ vi编辑器提供了3种模式，分别是命令模式、插入模式、底行�
 
 - `git rm --cached [文件名称]`：从暂存区删除文件
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/10.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/10.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/11.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/11.png) 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/12.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/12.png) 
 
 
 
@@ -335,4 +335,4 @@ vi编辑器提供了3种模式，分别是命令模式、插入模式、底行�
 
 清除安装的缓存
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/git/13.png) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/git/13.png) 

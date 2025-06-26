@@ -34,7 +34,7 @@ categories: JavaScript
 
 看下 http 请求的消息体
 
-![57](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/57.jpg)
+![57](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/57.jpg)
 
 
 
@@ -68,7 +68,7 @@ categories: JavaScript
 
 <font color="red">DEMO</font>
 
-![58](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/58.gif)
+![58](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/58.gif)
 
 
 
@@ -100,7 +100,7 @@ categories: JavaScript
 
 `koa-body` 会自动保存文件到系统临时目录下，也可以指定保存的文件路径。
 
-![59](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/59.png)
+![59](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/59.png)
 
 
 
@@ -178,7 +178,7 @@ console.log('demo1 server start ......   ');
 
 <font color="red">DEMO</font>
 
-![60](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/60.gif)
+![60](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/60.gif)
 
 
 
@@ -235,7 +235,7 @@ app.use((ctx) => {
 
 <font color="red">DEMO</font>
 
-![61](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/61.gif)
+![61](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/61.gif)
 
 
 
@@ -299,7 +299,7 @@ iframe.addEventListener('load',function () {
 
 <font color="red">DEMO</font>
 
-![62](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/62.gif)
+![62](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/62.gif)
 
 
 
@@ -380,7 +380,7 @@ fetch('http://localhost:8100/', {
 
 <font color="red">DEMO</font>
 
-![63](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/63.gif)
+![63](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/63.gif)
 
 
 
@@ -478,7 +478,7 @@ fetch('http://localhost:8100/', {
 
 <font color="red">DEMO</font>
 
-![64](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/64.gif)
+![64](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/64.gif)
 
 <font color="red">说明</font>
 
@@ -628,7 +628,7 @@ fetch('http://localhost:8100/', {
 
 MDN 上说是0.
 
-![65](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/65.png)
+![65](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/65.png)
 
 如果大家有不同的结果，欢迎留言。
 
@@ -642,7 +642,7 @@ MDN 上说是0.
 
 <font color="red">DEMO</font>
 
-![66](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/66.gif)
+![66](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/66.gif)
 
 <font color="red">说明</font>
 
@@ -751,7 +751,7 @@ MDN 上说是0.
 <font color="red">DEMO</font>
 
 
-![67](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/67.gif)
+![67](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/67.gif)
 
 
 
@@ -859,9 +859,9 @@ MDN 上说是0.
 
 <font color="red">DEMO</font>
 
-![68](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/68.png)
+![68](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/68.png)
 
-![69](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/69.gif)
+![69](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/69.gif)
 
 
 
@@ -1069,9 +1069,9 @@ app.use((ctx) => {
 
 <font  color="red">DEMO</font>
 
-![70](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/70.gif)
+![70](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/70.gif)
 
-![71](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/71.gif)
+![71](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/71.gif)
 
 
 

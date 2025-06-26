@@ -729,7 +729,7 @@ flex 设置子项宽度占父元素宽度的比例
 
 第一个子项的宽度应该是其他子项的两倍 
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/H5C3/1.jpg) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/H5C3/1.jpg) 
 
  
 

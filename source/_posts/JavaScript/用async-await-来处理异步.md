@@ -480,7 +480,7 @@ promise前面的await关键字能够使JavaScript等待，直到promise处理结
 
 ```
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/36.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/36.gif)
 
 假设 `getOne` 需要一秒来解析。为了创建这个延迟，我们将1000（一秒）传入到`sleep`。一秒过后，`sleeppromise`解析后，我们返回值1。
 
@@ -504,7 +504,7 @@ promise前面的await关键字能够使JavaScript等待，直到promise处理结
 ```
 
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/37.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/37.gif)
 
 
 现在，假设你需要处理三个promises。每个promise都有一秒钟的延迟。
@@ -543,7 +543,7 @@ promise前面的await关键字能够使JavaScript等待，直到promise处理结
     test()
 ```
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/38.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/38.gif)
 
 
 如果`getOne`，`getTwo`和`getThree`可以同时获取，你将节省两秒钟。你可以使用`Promise.all`同时获取这三个`promises`。
@@ -575,5 +575,5 @@ promise前面的await关键字能够使JavaScript等待，直到promise处理结
 ```
 
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/39.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/39.gif)
 

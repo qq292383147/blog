@@ -162,55 +162,55 @@ yarn / yarn install     //安装依赖包
 
 ### 项目主页面
 
-![5](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/1.jpg)
+![5](https://qq292383147.github.io/pictureLibrary/picture/React/单车/1.jpg)
 
 ### AntD的Button页面
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/2.jpg)
+![6](https://qq292383147.github.io/pictureLibrary/picture/React/单车/2.jpg)
 
 ### Echart图表页面
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/3.jpg)
+![7](https://qq292383147.github.io/pictureLibrary/picture/React/单车/3.jpg)
 
 ### 城市管理页面
 
-![8](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/4.jpg)
+![8](https://qq292383147.github.io/pictureLibrary/picture/React/单车/4.jpg)
 
 ### Echart饼形图页面
 
-![9](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/5.jpg)
+![9](https://qq292383147.github.io/pictureLibrary/picture/React/单车/5.jpg)
 
 ### UI轮播图，包含文字轮播和图片轮播
 
-![10](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/6.jpg)
+![10](https://qq292383147.github.io/pictureLibrary/picture/React/单车/6.jpg)
 
 ### 车辆地图页面
 
-![11](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/7.jpg)
+![11](https://qq292383147.github.io/pictureLibrary/picture/React/单车/7.jpg)
 
 ### 用户授权页面
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/8.jpg)
+![12](https://qq292383147.github.io/pictureLibrary/picture/React/单车/8.jpg)
 
 ### 高级表格页面
 
-![14](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/9.jpg)
+![14](https://qq292383147.github.io/pictureLibrary/picture/React/单车/9.jpg)
 
 ### 菜单权限页面
 
-![15](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/10.jpg)
+![15](https://qq292383147.github.io/pictureLibrary/picture/React/单车/10.jpg)
 
 ### 员工管理页面
 
-![16](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/11.jpg)
+![16](https://qq292383147.github.io/pictureLibrary/picture/React/单车/11.jpg)
 
 ### 表单页面
 
-![17](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/12.jpg)
+![17](https://qq292383147.github.io/pictureLibrary/picture/React/单车/12.jpg)
 
 ### 订单详情页面
 
-![17](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/13.jpg)
+![17](https://qq292383147.github.io/pictureLibrary/picture/React/单车/13.jpg)
 
 ## 搭建运行环境
 
@@ -610,7 +610,7 @@ export default menuList;
 
 效果如下：
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/14.jpg)
+![1](https://qq292383147.github.io/pictureLibrary/picture/React/单车/14.jpg)
 
 
 #### <font color="#1E90FF"> 实例代码首页头部内容</font>
@@ -806,7 +806,7 @@ export default {
 
 效果如下
 
-![2](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/15.jpg)
+![2](https://qq292383147.github.io/pictureLibrary/picture/React/单车/15.jpg)
 
 **src/components/Footer/index.js**
 
@@ -840,11 +840,11 @@ export default class Footer extends React.Component{
 
 效果如下：
 
-![3](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/16.jpg)
+![3](https://qq292383147.github.io/pictureLibrary/picture/React/单车/16.jpg)
 
 #### 整体页面效果
 
-![4](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/17.jpg)
+![4](https://qq292383147.github.io/pictureLibrary/picture/React/单车/17.jpg)
 
 ### Router 4.0
 
@@ -1391,7 +1391,7 @@ import {Card} from 'antd'
 <Card title="基础组件"></Card>
 ```
 
-![5-0](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/18.jpg)
+![5-0](https://qq292383147.github.io/pictureLibrary/picture/React/单车/18.jpg)
 
 
 
@@ -1544,7 +1544,7 @@ export default Buttons;
 
 **效果图**
 
-![5](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/19.jpg)
+![5](https://qq292383147.github.io/pictureLibrary/picture/React/单车/19.jpg)
 
 <font color="#f0f">**补充知识点**</font>
 
@@ -1682,7 +1682,7 @@ export default class Buttons extends React.Component {
 
 **效果图** 
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/20.jpg)
+![6](https://qq292383147.github.io/pictureLibrary/picture/React/单车/20.jpg)
 
 - Model自定义页脚实现方式
 
@@ -1967,7 +1967,7 @@ handleSubmit = () =>{
 
 **效果如图**
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/21.jpg)
+![7](https://qq292383147.github.io/pictureLibrary/picture/React/单车/21.jpg)
 
 #### CheckBox记住密码
 
@@ -1998,7 +1998,7 @@ handleSubmit = () =>{
 
 **整体效果如图：**
 
-![8](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/22.jpg)
+![8](https://qq292383147.github.io/pictureLibrary/picture/React/单车/22.jpg)
 
 ### 注册
 
@@ -2227,7 +2227,7 @@ export default Form.create()(FormRegister);
 
 在设置联系地址的范围最大行数，最小行数时：autoSize={} 里面要求是一个对象。如const rows = {minRows:2,manRows:6}; autoSize={rows } ;成立。autoSize={minRows:2,manRows:6} 将报错。 AntD官方文档描述如下： 
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/23.jpg)
+![12](https://qq292383147.github.io/pictureLibrary/picture/React/单车/23.jpg)
 
 ```js
 <FormItem label="联系地址" {...formItemLayout}>
@@ -2244,7 +2244,7 @@ export default Form.create()(FormRegister);
 
 效果如图：
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/24.jpg)
+![12](https://qq292383147.github.io/pictureLibrary/picture/React/单车/24.jpg)
 
 #### 日期显示
 
@@ -2266,7 +2266,7 @@ export default Form.create()(FormRegister);
 
 **如图**
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/25.jpg)
+![12](https://qq292383147.github.io/pictureLibrary/picture/React/单车/25.jpg)
 
 #### 上传头像
 
@@ -2585,19 +2585,19 @@ export default class BasicTable extends React.Component{
 
 #### 单选表格效果
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/26.jpg)
+![12](https://qq292383147.github.io/pictureLibrary/picture/React/单车/26.jpg)
 
 **点击行内任意一处，均有提示**
 
-![13](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/27.jpg)
+![13](https://qq292383147.github.io/pictureLibrary/picture/React/单车/27.jpg)
 
 #### 多选表格效果
 
-![14](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/28.jpg)
+![14](https://qq292383147.github.io/pictureLibrary/picture/React/单车/28.jpg)
 
 #### 分页表格效果
 
-![15](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/29.jpg)
+![15](https://qq292383147.github.io/pictureLibrary/picture/React/单车/29.jpg)
 
 #### ajax封装(get)
 
@@ -2830,11 +2830,11 @@ axios.ajax({
 
 #### 点击行内任意位置，均有提示，可进行增删改查
 
-![16](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/30.jpg)
+![16](https://qq292383147.github.io/pictureLibrary/picture/React/单车/30.jpg)
 
 **点击行内任意一处，均有提示**
 
-![17](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/31.jpg)
+![17](https://qq292383147.github.io/pictureLibrary/picture/React/单车/31.jpg)
 
 **render里return的标签内容**
 
@@ -2888,7 +2888,7 @@ render (){
 
 #### checkBox表格多选删除
 
-![18](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/32.jpg)
+![18](https://qq292383147.github.io/pictureLibrary/picture/React/单车/32.jpg)
 
 ```js
  //多选删除事件
@@ -3434,7 +3434,7 @@ export default class BasicTable extends React.Component {
 
 #### 头部固定
 
-![19](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/33.jpg)
+![19](https://qq292383147.github.io/pictureLibrary/picture/React/单车/33.jpg)
 
 ```
 table标签里设置scroll={{scroll={{y:240}}
@@ -3521,7 +3521,7 @@ x：x轴、1050:x轴总宽度，width之和
 
 **若中间有缝隙，可增加标题种类**
 
-![20](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/34.jpg)
+![20](https://qq292383147.github.io/pictureLibrary/picture/React/单车/34.jpg)
 
 ```
 若中间有过度太窄，修改scroll={{x：1050}}，修改width之和
@@ -3530,7 +3530,7 @@ x：x轴、1050:x轴总宽度，width之和
 
 #### 年龄排序
 
-![21](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/35.jpg)
+![21](https://qq292383147.github.io/pictureLibrary/picture/React/单车/35.jpg)
 
 ```js
     render() {
@@ -3680,7 +3680,7 @@ handleChange = (pagination,filers,sorter)=> {
 
 #### 按钮操作-删除
 
-![22](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/36.jpg)
+![22](https://qq292383147.github.io/pictureLibrary/picture/React/单车/36.jpg)
 
 ```js
     render() { 
@@ -3798,7 +3798,7 @@ handleChange = (pagination,filers,sorter)=> {
 
 **Badge样式：** 
 
-![23](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/37.jpg)
+![23](https://qq292383147.github.io/pictureLibrary/picture/React/单车/37.jpg)
 
 ```js
 {
@@ -3827,7 +3827,7 @@ handleChange = (pagination,filers,sorter)=> {
 
 富文本编辑器Rich Text Editor,简称RTE,是一种可内嵌于浏览器，所见即所得的文本编辑器 
 
-![24](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/38.jpg)
+![24](https://qq292383147.github.io/pictureLibrary/picture/React/单车/38.jpg)
 
 #### 安装插件
 
@@ -3918,7 +3918,7 @@ export default class RichText extends React.Component{
 
 #### 页面效果
 
-![25](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/39.jpg)
+![25](https://qq292383147.github.io/pictureLibrary/picture/React/单车/39.jpg)
 
 #### Easy Mock城市管理的数据接口
 
@@ -4065,7 +4065,7 @@ FilterForm = Form.create({})(FilterForm);
   }
 ```
 
-![26](http://zhanglong292383147.gitee.io/picture_images/picture/React/单车/40.jpg)
+![26](https://qq292383147.github.io/pictureLibrary/picture/React/单车/40.jpg)
 
 #### 开通城市-弹框功能
 

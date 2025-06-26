@@ -46,7 +46,7 @@ categories: React & React Native
   }
 ```
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/拖拽1.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/拖拽1.gif)
 
 我们加一只猫 🐱
 
@@ -103,7 +103,7 @@ categories: React & React Native
   }
 ```
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/拖拽2.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/拖拽2.gif)
 
 接下来，让我们在高阶组件中增加 `onDrag` 回调函数，并在 `props` 中注入 `x` 和 `y` 的位置属性。
 
@@ -144,7 +144,7 @@ categories: React & React Native
 
 现在 `Mouse` 组件会向用户展示他的 `XY` 位置属性 🤓
 
-![](http://zhanglong292383147.gitee.io/picture_images/picture/React/拖拽3.gif)
+![](https://qq292383147.github.io/pictureLibrary/picture/React/拖拽3.gif)
 
 
 我们也可以给 `HOC` 传递 `props`。然后在传递的过程中过滤掉这些无用的属性。举个例子，传递一个 `onDrag` 回调函数。

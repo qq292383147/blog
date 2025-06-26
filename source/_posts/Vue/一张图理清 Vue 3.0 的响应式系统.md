@@ -7,7 +7,7 @@ categories: vue
 
 随着 Vue 3.0 Pre Alpha 版本的公布，我们得以一窥其源码的实现。Vue 最巧妙的特性之一是其响应式系统，而我们也能够在仓库的 packages/reactivity 模块下找到对应的实现。虽然源码的代码量不多，网上的分析文章也有一堆，但是要想清晰地理解响应式原理的具体实现过程，还是挺费脑筋的事情。经过一天的研究和整理，我把其响应式系统的原理总结成了一张图，而本文也将围绕这张图去讲述具体的实现过程。
 
-![121](http://zhanglong292383147.gitee.io/picture_images/picture/vue/121.jpg)
+![121](https://qq292383147.github.io/pictureLibrary/picture/vue/121.jpg)
 
 > 文章涉及到的代码我也已经上传到仓库，结合代码阅读本文会更为流畅哦！
 
@@ -35,7 +35,7 @@ const fn = () => {  const count = state.count  console.log(`set count to ${count
 
 ## **初始化阶段**
 
-![122](http://zhanglong292383147.gitee.io/picture_images/picture/vue/122.jpg)
+![122](https://qq292383147.github.io/pictureLibrary/picture/vue/122.jpg)
 
 
 在初始化阶段，主要做了两件事。
@@ -96,7 +96,7 @@ export function run(effect, fn, args) {
 
 ## **依赖收集阶段**
 
-![123](http://zhanglong292383147.gitee.io/picture_images/picture/vue/123.jpg)
+![123](https://qq292383147.github.io/pictureLibrary/picture/vue/123.jpg)
 
 这个阶段的触发时机，就是在 effect 被立即执行，其内部的 `fn()` 触发了 Proxy 对象的 getter 的时候。简单来说，只要执行到类似 `state.count` 的语句，就会触发 state 的 getter。
 
@@ -115,7 +115,7 @@ const effect3 = effect(() => {  console.log('effect3: ' + state.count, state.age
 
 那么这里的 targetMap 应该为这个样子：
 
-![124](http://zhanglong292383147.gitee.io/picture_images/picture/vue/124.jpg)
+![124](https://qq292383147.github.io/pictureLibrary/picture/vue/124.jpg)
 
 这样，`{ target -> key -> dep }` 的对应关系就建立起来了，依赖收集也就完成了。代码如下：
 
@@ -147,11 +147,11 @@ export function track (target, operationType, key) {
 
 回顾上一章节的例子，我们得到了一个 `{ count: 0, age: 18 }` 的 Proxy，并构造了三个 effect。在控制台上看看效果：
 
-![125](http://zhanglong292383147.gitee.io/picture_images/picture/vue/125.jpg)
+![125](https://qq292383147.github.io/pictureLibrary/picture/vue/125.jpg)
 
 效果符合预期，那么它是怎么实现的呢？首先来看看这个阶段的原理图：
 
-![126](http://zhanglong292383147.gitee.io/picture_images/picture/vue/126.jpg)
+![126](https://qq292383147.github.io/pictureLibrary/picture/vue/126.jpg)
 
 当修改对象的某个属性值的时候，会触发对应的 setter。
 

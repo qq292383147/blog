@@ -11,7 +11,7 @@ categories:
 
 ## 一、什么是 iframe
 
-![图片](http://zhanglong292383147.gitee.io/picture_images/picture/iframe/1.png)
+![图片](https://qq292383147.github.io/pictureLibrary/picture/iframe/1.png)
 
 `iframe` 用于在页面内显示页面，使用 `iframe` 会创建包含另外一个文档的内联框架（即行内框架）
 
@@ -95,7 +95,7 @@ var iwindow = window.frames['name'];
 
 ## 四、在 iframe 中获取父级内容
 
-![图片](http://zhanglong292383147.gitee.io/picture_images/picture/iframe/2.png)
+![图片](https://qq292383147.github.io/pictureLibrary/picture/iframe/2.png)
 
 
 

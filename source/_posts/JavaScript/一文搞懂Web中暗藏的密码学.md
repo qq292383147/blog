@@ -9,7 +9,7 @@ categories: JavaScript
 
 密码学是各种安全应用程序所必需的，现代密码学旨在创建通过应用数学原理和计算机科学来保护信息的机制。但相比之下，密码分析旨在解密此类机制，以便获得对信息的非法访问。
 
-![98](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/98.jpg)
+![98](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/98.jpg)
 
 密码学具有三个关键属性：
 
@@ -48,7 +48,7 @@ categories: JavaScript
 
 **对称加密：**
 
-![99](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/99.jpg)
+![99](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/99.jpg)
 
 用途： 
 
@@ -56,7 +56,7 @@ categories: JavaScript
 
 **非对称加密：**
 
-![101](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/101.jpg)
+![101](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/101.jpg)
 
 用途： `TLS`，`VPN`，`SSH`。
 
@@ -71,7 +71,7 @@ categories: JavaScript
 2. **通过此共享密钥，双方切换到对称加密。**
 3. **这种加密速度更快，更适合处理大量数据。**
 
-![102](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/102.jpg)
+![102](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/102.jpg)
 
 能被密码界承认的加密算法都是公开的：
 
@@ -89,7 +89,7 @@ categories: JavaScript
 
 哈希算法的前提很简单：**给定任意长度的输入，输出特定长度的字节**。在大多数情况下，此字节序列对于该输入将是唯一的，并且不会给出输入是什么的指示。换一种说法：
 
-![103](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/103.jpg)
+![103](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/103.jpg)
 
 1. 仅凭哈希算法的输出，是无法确定原始数据的。
 2. 取一些任意数据以及使用哈希算法输出，就可以验证此数据是否与原始输入数据匹配，从而无需查看原始数据。
@@ -126,7 +126,7 @@ SHA256(/Users/hiro/Downloads/非对称.png)= 7c264efc9ea7d0431e7281286949ec4c558
 
 **强大的哈希算法几乎会为每个唯一输入创建一个新存储桶。**
 
-![104](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/104.jpg)
+![104](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/104.jpg)
 
 ### 3.2 例子二：网站登陆
 
@@ -140,9 +140,9 @@ SHA256(/Users/hiro/Downloads/非对称.png)= 7c264efc9ea7d0431e7281286949ec4c558
 
 **注册：**
 
-![105](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/105.jpg)
+![105](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/105.jpg)
 
-**登陆：**![106](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/106.jpg)
+**登陆：**![106](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/106.jpg)
 
 哈希算法的一个有趣的方面是：无论输入数据的长度如何，散列的输出始终是相同的长度。
 
@@ -188,7 +188,7 @@ The quick brown fox jumps over the lazy dog
 
 在`HTML`中，需要对数据进行`HTML`编码以遵守所需的`HTML`字符格式。转义避免XSS攻击也是如此。
 
-![107](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/107.jpg)
+![107](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/107.jpg)
 
 ### 4.3 `Base64/32/16`编码
 
@@ -207,13 +207,13 @@ The quick brown fox jumps over the lazy dog
 
 `Base64`映射表，如下：
 
-![108](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/108.jpg)
+![108](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/108.jpg)
 
  举个栗子：
 
 > [引自：一篇文章彻底弄懂Base64编码原理](https://blog.csdn.net/wo541075754/article/details/81734770)
 
-![109](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/109.jpg)
+![109](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/109.jpg)
 
 - 第一步：“`M`”、“`a`”、"`n`"对应的`ASCII`码值分别为77，97，110，对应的二进制值是`01001101`、`01100001`、`01101110`。如图第二三行所示，由此组成一个24位的二进制字符串。
 - 第二步：如图红色框，将24位每6位二进制位一组分成四组。
@@ -294,7 +294,7 @@ function hello(_0x2cc8x2){console[_0xa1cc[1]](_0xa1cc[0]+ _0x2cc8x2)}hello(_0xa1
   - `SHA`家族有五个算法，分别是`SHA-1,SHA-224,SHA-256,SHA-384,SHA-512`
   - 它们是美国的政府标准，后面的四个称之为`SHA-2`
 
-- bcrypt：`bcrypt`算法相对来说是运算比较慢的算法。![109](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/109.jpg)
+- bcrypt：`bcrypt`算法相对来说是运算比较慢的算法。![109](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/109.jpg)
 
 - - 在密码学界有句常话：**越慢的算法越安全。算法越算，黑客破解成本越高：**
   - 通过`salt`和`const`这两个值来减缓加密过程，ta的加密时间（百ms级）远远超过`md5`（大概`1ms`左右）。

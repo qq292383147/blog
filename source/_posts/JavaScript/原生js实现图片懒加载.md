@@ -15,7 +15,7 @@ categories: JavaScript
 
 ### 效果图
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/147.gif) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/147.gif) 
 
 
 
@@ -25,7 +25,7 @@ categories: JavaScript
 
 #### 代码的基本原理
 
-![img](http://zhanglong292383147.gitee.io/picture_images/picture/JavaScript/148.jpg) 
+![img](https://qq292383147.github.io/pictureLibrary/picture/JavaScript/148.jpg) 
 
 HTML 结构与样式
 

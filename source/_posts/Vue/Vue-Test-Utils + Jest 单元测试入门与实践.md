@@ -217,11 +217,11 @@ npm run test:unit
 
 然后终端里会看到输出结果，`PASS` 表示测试用例通过了，这个是官方提供单元测试例子。下面我们来写点自己的东西。
 
-![103](http://zhanglong292383147.gitee.io/picture_images/picture/vue/103.jpg)
+![103](https://qq292383147.github.io/pictureLibrary/picture/vue/103.jpg)
 
 ## 实现一个ToDoList
 
-![104](http://zhanglong292383147.gitee.io/picture_images/picture/vue/104.png)
+![104](https://qq292383147.github.io/pictureLibrary/picture/vue/104.png)
 
 看上面的原型图，有这么几点明确的需求：
 
@@ -337,7 +337,7 @@ export default {
 
 页面写完，原型上的需求也大概开发完成，页面大概长如下样子：
 
-![105](http://zhanglong292383147.gitee.io/picture_images/picture/vue/105.jpg)
+![105](https://qq292383147.github.io/pictureLibrary/picture/vue/105.jpg)
 
 ### 修改目录配置
 
@@ -581,9 +581,9 @@ collectCoverageFrom: ["**/*.{js,vue}", "!**/node_modules/**"],
 
 然后我们在终端运行： `npm run test:cov`，结果如下：
 
-![106](http://zhanglong292383147.gitee.io/picture_images/picture/vue/106.jpg)
+![106](https://qq292383147.github.io/pictureLibrary/picture/vue/106.jpg)
 
 运行测试覆盖率命名后会在项目根目录生成 `coverage` 目录，浏览器打开里面的 `index.html` ：
 
-![107](http://zhanglong292383147.gitee.io/picture_images/picture/vue/107.jpg)
+![107](https://qq292383147.github.io/pictureLibrary/picture/vue/107.jpg)
 

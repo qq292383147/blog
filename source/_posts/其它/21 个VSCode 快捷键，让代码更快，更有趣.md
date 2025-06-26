@@ -20,15 +20,15 @@ VSCode中我最喜欢的特性之一是能够在项目目录中的所有文件�
 
 要使用此特性，可以按`Ctrl + Shift + f`打开视图，它将显示编辑器左侧的侧边栏：
 
-![1](http://zhanglong292383147.gitee.io/picture_images/picture/other/1.png)
+![1](https://qq292383147.github.io/pictureLibrary/picture/other/1.png)
 
 输入查找的內容并回车，VS code 将提供与输入内容匹配的结果列表，如下所示：+
 
-![2](http://zhanglong292383147.gitee.io/picture_images/picture/other/2.jpg)
+![2](https://qq292383147.github.io/pictureLibrary/picture/other/2.jpg)
 
 你还可以同时规制每个搜索果文件中的所有匹配内容。如果你单击左边的这个小箭头，它将在下面弹出第二个输入框，可以在这里输入要替换的文本，同时单击右边出现的小框：
 
-![3](http://zhanglong292383147.gitee.io/picture_images/picture/other/3.jpg)
+![3](https://qq292383147.github.io/pictureLibrary/picture/other/3.jpg)
 
 **2、为 tabs 设置强调色 (Material Theme)**
 
@@ -37,21 +37,21 @@ VSCode中我最喜欢的特性之一是能够在项目目录中的所有文件�
 <font color="red">**红色：**</font>
 
 
-  ![4](http://zhanglong292383147.gitee.io/picture_images/picture/other/4.png)
+  ![4](https://qq292383147.github.io/pictureLibrary/picture/other/4.png)
 
 <font color="#551A8B">**紫色：**</font>
 
-![5](http://zhanglong292383147.gitee.io/picture_images/picture/other/5.jpg)
+![5](https://qq292383147.github.io/pictureLibrary/picture/other/5.jpg)
 
 <font color="#CDCD00">**黄色：**</font>
 
-![6](http://zhanglong292383147.gitee.io/picture_images/picture/other/6.jpg)
+![6](https://qq292383147.github.io/pictureLibrary/picture/other/6.jpg)
 
 有16种不同的颜色可供选择。
 
 因此，如果胸有安装此扩展，打开的命令面板(`Ctrl + Shift + P`)，选择 `Material Theme: Set accent color`并从列表中选择一个颜色，它将更改选项卡的下划线颜色，如下所示
 
-![7](http://zhanglong292383147.gitee.io/picture_images/picture/other/7.gif)
+![7](https://qq292383147.github.io/pictureLibrary/picture/other/7.gif)
 
 <font color="green">**3、进程资源管理器**</font>
 
@@ -59,7 +59,7 @@ VSCode中我最喜欢的特性之一是能够在项目目录中的所有文件�
 
 好吧，如果你还不知道，VsCode 有一个进程资源管理器功能，如下所示：
 
-![8](http://zhanglong292383147.gitee.io/picture_images/picture/other/8.jpg)
+![8](https://qq292383147.github.io/pictureLibrary/picture/other/8.jpg)
 
 是不是看起来很熟悉？
 
@@ -71,7 +71,7 @@ VSCode中我最喜欢的特性之一是能够在项目目录中的所有文件�
 
 这是我需要花费一些时间才能发现的，因为我无法猜出该功能的名称。使用此功能可以自动选择整个块，从开始的大括号到结束。
 
-![9](http://zhanglong292383147.gitee.io/picture_images/picture/other/9.gif)
+![9](https://qq292383147.github.io/pictureLibrary/picture/other/9.gif)
 
 我发现这个功能在想要找到 `if/else` 对应的结束块很有用。
 
@@ -108,7 +108,7 @@ Mac: control + `
 
 你可以通过打开命令面板(`Ctrl + Shift + P`)并输入`Show running extensions`来查看所有你安装的正在运行的插件。
 
-![10](http://zhanglong292383147.gitee.io/picture_images/picture/other/10.jpg)
+![10](https://qq292383147.github.io/pictureLibrary/picture/other/10.jpg)
 
 <font color="green">**9、重新加载**</font>
 
@@ -125,7 +125,7 @@ Mac: Control + Option + R
 
 幸运的是，VsCode 有一种方法可以通过按`Ctrl + Alt +右箭头`（Mac：`Control + Option +右箭头）`将标签移动到右侧的组，或者按`Ctrl + Alt + 左箭头`将标签转移到单独的标签组 （Mac：`Control + Option +左箭头）`）将标签移动到左侧的组：
 
-![11](http://zhanglong292383147.gitee.io/picture_images/picture/other/11.gif)
+![11](https://qq292383147.github.io/pictureLibrary/picture/other/11.gif)
 
 <font color="green">**11、选择左侧/右侧的所有内容**</font>
 
@@ -144,18 +144,18 @@ Mac: command + Shift + Home/End
 - fn+下方向键是page down
 
 
-![12](http://zhanglong292383147.gitee.io/picture_images/picture/other/12.gif)
+![12](https://qq292383147.github.io/pictureLibrary/picture/other/12.gif)
 
 <font color="green">**12、删除上一个单词**</font>
 
 要删除前一个单词，可以按`Ctrl + Backspace` (Mac: `option + delete`)。这在你打错字的时候非常有用。
 
-![13](http://zhanglong292383147.gitee.io/picture_images/picture/other/13.gif)
+![13](https://qq292383147.github.io/pictureLibrary/picture/other/13.gif)
   
 
 你可以在 VsCode 之外的任何地方使用它。
 
-![14](http://zhanglong292383147.gitee.io/picture_images/picture/other/14.gif)
+![14](https://qq292383147.github.io/pictureLibrary/picture/other/14.gif)
 
 <font color="green">**13、启动性能**</font>
 
@@ -163,7 +163,7 @@ Mac: command + Shift + Home/End
 
 有时候，如果你足够幸运，你会找到一个工具，它能给你所有的答案。在VsCode 中，启动性能是很重要的。这就是为什么你能弹出一个有用的窗口，奇迹般地提供所有你需要的信息：
 
-![15](http://zhanglong292383147.gitee.io/picture_images/picture/other/15.jpg)
+![15](https://qq292383147.github.io/pictureLibrary/picture/other/15.jpg)
 
 打开命令面板(`Ctrl + Shift + P`)，搜索S`tartup Performance`。
 
@@ -175,25 +175,25 @@ Mac: command + Shift + Home/End
 
 一个非常强大和已知的功能是复制行。只需按 `Shift + Alt + 向下箭头` (Mac: `command + Shift + 向下箭头`)
 
-![16](http://zhanglong292383147.gitee.io/picture_images/picture/other/16.gif)
+![16](https://qq292383147.github.io/pictureLibrary/picture/other/16.gif)
 
 <font color="green">**16、移至文件的开头/结尾**</font>
 
 要使光标移到文件的第一行或最后一行，最快的方法是按`Ctrl + Home` (`Mac: command + Home`)键开头，然后按`Ctrl + End` (Mac: `command + End`)键结尾。
 
-![17](http://zhanglong292383147.gitee.io/picture_images/picture/other/17.gif)
+![17](https://qq292383147.github.io/pictureLibrary/picture/other/17.gif)
 
 <font color="green">**17、批量替换当前文件中所有匹配的文本**</font>
 
 可以选择任何一组文本，如果该选中文本出现多个，可以通过按`Ctrl + F2` (Mac: `command + F2`)一次改所有出现的文本。
 
-![18](http://zhanglong292383147.gitee.io/picture_images/picture/other/18.gif)
+![18](https://qq292383147.github.io/pictureLibrary/picture/other/18.gif)
 
 <font color="green">**18、向上/向下移动一行**</font>
 
 按`Alt + 向上箭头`(Mac: `command+ 向上箭头`)当前行向上移动，按`Alt + 向下箭头`(Mac: `command+ 向下箭头`))当前行向下移动。
 
-![19](http://zhanglong292383147.gitee.io/picture_images/picture/other/19.gif)
+![19](https://qq292383147.github.io/pictureLibrary/picture/other/19.gif)
 
 <font color="green">**19、删除一行**</font>
 
@@ -201,22 +201,22 @@ Mac: command + Shift + Home/End
 
 使用`Ctrl + X`剪切命令(`Mac：command + X`)来删除一行。
 
-![20](http://zhanglong292383147.gitee.io/picture_images/picture/other/20.gif)
+![20](https://qq292383147.github.io/pictureLibrary/picture/other/20.gif)
 
 或者使用 `Ctrl + Shift + K` (Mac: `command + Shift + K`)命令。
 
-![21](http://zhanglong292383147.gitee.io/picture_images/picture/other/21.gif)
+![21](https://qq292383147.github.io/pictureLibrary/picture/other/21.gif)
 
 <font color="green">**20、将编辑器向左或向右移动**</font>
 
 如果你像我一样，你可能会有一种无法控制的欲望，想要在一个组中重新排列选项卡，其中选项卡相互关联，左边的选项卡是比较重要文件，而右边的选项卡是相对不重要的文件。
 通过 Ctrl+Shift+PgUp/PgDown(command + +Shift+PgUp/PgDown)向左/向右移动编辑器。
 
-![22](http://zhanglong292383147.gitee.io/picture_images/picture/other/22.gif)
+![22](https://qq292383147.github.io/pictureLibrary/picture/other/22.gif)
 
 <font color="green">**21、复制光标向上或者向上批量添加内容**</font>
 
 在 VsCode 中复制游标可以证明是最节省时间的特性。
 
-![23](http://zhanglong292383147.gitee.io/picture_images/picture/other/23.gif)
+![23](https://qq292383147.github.io/pictureLibrary/picture/other/23.gif)
 
