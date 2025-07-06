@@ -3,7 +3,7 @@ Thumbs.db
 db.json
 *.log
 node_modules/
-public/
+# public/
 .deploy*/
 hexo常用命令.md
 md格式.md
