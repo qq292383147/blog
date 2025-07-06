@@ -89,7 +89,7 @@ theme: alpha-dust    # 当前主题名称。值为false时禁用主题
 deploy:
   type: git
   repo: 
-    # github: https://github.com/qq292383147/blog.git
+    # github: https://github.com/qq292383147/blog.git # 暂不使用
     gitee: https://gitee.com/zhangLong292383147/zhangLong292383147.git
   branch: blog
   force: true  # 添加强制推送选项（慎用）
