@@ -87,5 +87,7 @@ theme: alpha-dust    # 当前主题名称。值为false时禁用主题
 # 部署 Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/qq292383147/blog.git
+  branch: blog
 
