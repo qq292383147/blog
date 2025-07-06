@@ -91,6 +91,6 @@ deploy:
   repo: 
     # github: https://github.com/qq292383147/blog.git # 暂不使用
     gitee: https://gitee.com/zhangLong292383147/zhangLong292383147.git
-  branch: blog
+  branch: gh-pages
   force: true  # 添加强制推送选项（慎用）
 
