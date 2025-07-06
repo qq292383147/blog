@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/10/22/Css/px%E5%92%8Crem%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">
+            <a href="/blog/2019/10/22/Css/px%E5%92%8Crem%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">
                 px和rem之间的相互转换
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/css/">css</a>
+                    <a href="/blog/categories/css/">css</a>
                 </span>
             
         </div>
@@ -173,20 +173,20 @@
         <!-- Post Content -->
         <p><code>rem</code>是相对于根元素<code>&lt;html&gt;</code>，这样就意味着，我们只需要在根元素确定一个参考值，这个参考值设置为多少，完全可以根据您自己的需求来定。</p>
 <p>我们知道，浏览器默认的字号<code>16px</code>，来看一些<code>px</code>单位与<code>rem</code>之间的转换关系：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|  px  |     rem       |</span><br><span class="line">------------------------</span><br><span class="line">|  12  | 12/16 = .75   |</span><br><span class="line">|  14  | 14/16 = .875  |</span><br><span class="line">|  16  | 16/16 = 1     |</span><br><span class="line">|  18  | 18/16 = 1.125 |</span><br><span class="line">|  20  | 20/16 = 1.25  |</span><br><span class="line">|  24  | 24/16 = 1.5   |</span><br><span class="line">|  30  | 30/16 = 1.875 |</span><br><span class="line">|  36  | 36/16 = 2.25  |</span><br><span class="line">|  42  | 42/16 = 2.625 |</span><br><span class="line">|  48  | 48/16 = 3     |</span><br><span class="line">-------------------------</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|  px  |     rem       |</span><br><span class="line">------------------------</span><br><span class="line">|  12  | 12/16 = .75   |</span><br><span class="line">|  14  | 14/16 = .875  |</span><br><span class="line">|  16  | 16/16 = 1     |</span><br><span class="line">|  18  | 18/16 = 1.125 |</span><br><span class="line">|  20  | 20/16 = 1.25  |</span><br><span class="line">|  24  | 24/16 = 1.5   |</span><br><span class="line">|  30  | 30/16 = 1.875 |</span><br><span class="line">|  36  | 36/16 = 2.25  |</span><br><span class="line">|  42  | 42/16 = 2.625 |</span><br><span class="line">|  48  | 48/16 = 3     |</span><br><span class="line">-------------------------        </span><br></pre></td></tr></table></figure>
 <p>为了方便计算，时常将在<code>&lt;html&gt;</code>元素中设置<code>font-size</code>值为<code>62.5%</code>:</p>
 <p>相当于在<code>&lt;html&gt;</code>中设置<code>font-size</code>为<code>10px</code>，此时，上面示例中所示的值将会改变：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|  px  |     rem        |</span><br><span class="line">-------------------------</span><br><span class="line">|  12  | 12/10 = 1.2    |</span><br><span class="line">|  14  | 14/10 = 1.4    |</span><br><span class="line">|  16  | 16/10 = 1.6    |</span><br><span class="line">|  18  | 18/10 = 1.8    |</span><br><span class="line">|  20  | 20/10 = 2.0    |</span><br><span class="line">|  24  | 24/10 = 2.4    |</span><br><span class="line">|  30  | 30/10 = 3.0    |</span><br><span class="line">|  36  | 36/10 = 3.6    |</span><br><span class="line">|  42  | 42/10 = 4.2    |</span><br><span class="line">|  48  | 48/10 = 4.8    |</span><br><span class="line">-------------------------</span><br></pre></td></tr></table></figure>
-<p>由于<code>rem</code>是<a href="http://caibaojian.com/t/css3" target="_blank" rel="noopener">css3</a>中的一个属性，很多人首先关注的就是浏览器对他的支持度，我截了一张<a href="http://caniuse.com/rem" target="_blank" rel="noopener">caniuse</a>对<code>rem</code>属性的兼容表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|  px  |     rem        |</span><br><span class="line">-------------------------</span><br><span class="line">|  12  | 12/10 = 1.2    |</span><br><span class="line">|  14  | 14/10 = 1.4    |</span><br><span class="line">|  16  | 16/10 = 1.6    |</span><br><span class="line">|  18  | 18/10 = 1.8    |</span><br><span class="line">|  20  | 20/10 = 2.0    |</span><br><span class="line">|  24  | 24/10 = 2.4    |</span><br><span class="line">|  30  | 30/10 = 3.0    |</span><br><span class="line">|  36  | 36/10 = 3.6    |</span><br><span class="line">|  42  | 42/10 = 4.2    |</span><br><span class="line">|  48  | 48/10 = 4.8    |</span><br><span class="line">-------------------------        </span><br></pre></td></tr></table></figure>
+<p>由于<code>rem</code>是<a target="_blank" rel="noopener" href="http://caibaojian.com/t/css3">css3</a>中的一个属性，很多人首先关注的就是浏览器对他的支持度，我截了一张<a target="_blank" rel="noopener" href="http://caniuse.com/rem">caniuse</a>对<code>rem</code>属性的兼容表：</p>
 <p><img src="http://caibaojian.com/d/uploads/2015/12/sass-px-rem-1.jpg" alt="sass-px-rem-1"></p>
 <p>从上图可以清楚的知道，<code>rem</code>在众多浏览器中都已得到很好的支持，如果您的项目不用考虑IE低版本的话，你就可以放心的使用了。</p>
 <p><strong>1rem等于多少px呢？</strong></p>
 <p>1rem等于html根元素设定的font-size的px值，假如我们在css里面设定下面的css。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html&#123;font-size:14px&#125;</span><br></pre></td></tr></table></figure>
-<p>那么后面的<a href="http://caibaojian.com/css3/" target="_blank" rel="noopener">CSS</a>里面的rem值则是以这个14来换算，例如设定一个div宽度为3rem,高度为2.5rem.则它换算成px为width:42px.height:35px，同理，假如一个设计稿为宽度42px,高度为35px，则换成成rem，则是42/14=3rem，35/14=2.5rem。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html&#123;font-size:14px&#125;</span><br></pre></td></tr></table></figure>
+<p>那么后面的<a target="_blank" rel="noopener" href="http://caibaojian.com/css3/">CSS</a>里面的rem值则是以这个14来换算，例如设定一个div宽度为3rem,高度为2.5rem.则它换算成px为width:42px.height:35px，同理，假如一个设计稿为宽度42px,高度为35px，则换成成rem，则是42/14=3rem，35/14=2.5rem。</p>
 <p>如果css里面没有设定html的font-size，则默认浏览器以1rem=16px来换算。</p>
 <p>附上关于rem的其他相关文章：</p>
-<p><a href="http://caibaojian.com/flexible-js.html" target="_blank" rel="noopener">rem实现移动端自适应</a></p>
+<p><a target="_blank" rel="noopener" href="http://caibaojian.com/flexible-js.html">rem实现移动端自适应</a></p>
 
     </div>
 
@@ -195,7 +195,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/css/">#css</a>
+            <a href="/blog/tags/css/">#css</a>
         </div>
     
 
@@ -231,19 +231,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -258,19 +258,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -335,7 +335,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -349,7 +349,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

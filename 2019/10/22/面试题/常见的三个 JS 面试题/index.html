@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E4%B8%AA%20JS%20%E9%9D%A2%E8%AF%95%E9%A2%98/">
+            <a href="/blog/2019/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/%E5%B8%B8%E8%A7%81%E7%9A%84%E4%B8%89%E4%B8%AA%20JS%20%E9%9D%A2%E8%AF%95%E9%A2%98/">
                 常见的三个 JS 面试题
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/面试题/">面试题</a>
+                    <a href="/blog/categories/面试题/">面试题</a>
                 </span>
             
         </div>
@@ -173,27 +173,27 @@
         <!-- Post Content -->
         <h3 id="问题-1-事件委托代理"><a href="#问题-1-事件委托代理" class="headerlink" title="问题 1: 事件委托代理"></a>问题 1: 事件委托代理</h3><p>在构建应用程序时，有时需要将事件绑定到页面上的按钮、文本或图像，以便在用户与元素交互时执行某些操作。</p>
 <p>如果我们以一个简单的待办事项列表为例，面试官可能会告诉你，当用户点击列表中的一个列表项时执行某些操作。他们希望你用 JavaScript 实现这个功能，假设有如下 HTML 代码:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"todo-app"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>Walk the dog<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>Pay bills<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>Make dinner<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>Code for one hour<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;todo-app&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>Walk the dog<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>Pay bills<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>Make dinner<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;item&quot;</span>&gt;</span>Code for one hour<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>你可能想要做如下操作来将事件绑定到元素:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> app = <span class="built_in">document</span>.getElementById(<span class="string">'todo-app'</span>);</span><br><span class="line">  <span class="keyword">let</span> itimes = app.getElementsByClassName(<span class="string">'item'</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> items) &#123;</span><br><span class="line">    item.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      alert(<span class="string">'you clicked on item: '</span> + item.innerHTML);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> app = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;todo-app&#x27;</span>);</span><br><span class="line">  <span class="keyword">let</span> itimes = app.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;item&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> items) &#123;</span><br><span class="line">    item.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&#x27;you clicked on item: &#x27;</span> + item.<span class="property">innerHTML</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>虽然这在技术上是可行的，但问题是要将事件分别绑定到每个项。这对于目前 <code>4</code> 个元素来说，没什么大问题，但是如果在待办事项列表中添加了 <code>10,000</code> 项(他们可能有很多事情要做)怎么办?然后，函数将创建 10,000 个独立的事件侦听器，并将每个事件监听器绑定到 DOM ，这样代码执行的效率非常低下。</p>
 <p>在面试中，最好先问面试官用户可以输入的最大元素数量是多少。例如，如果它不超过 <code>10</code>，那么上面的代码就可以很好地工作。但是如果用户可以输入的条目数量没有限制，那么你应该使用一个更高效的解决方案。</p>
 <p>如果你的应用程序最终可能有数百个事件侦听器，那么更有效的解决方案是将一个事件侦听器实际绑定到整个容器，然后在单击它时能够访问每个列表项， 这称为 <strong>事件委托</strong>，它比附加单独的事件处理程序更有效。</p>
 <p>下面是事件委托的代码:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> app = <span class="built_in">document</span>.getElementById(<span class="string">'todo-app'</span>);</span><br><span class="line"></span><br><span class="line">  app.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (e.target &amp;&amp; e.target.nodeName === <span class="string">'LI'</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> item = e.target;</span><br><span class="line">      alert(<span class="string">'you clicked on item: '</span> + item.innerHTML)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> app = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;todo-app&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  app.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (e.<span class="property">target</span> &amp;&amp; e.<span class="property">target</span>.<span class="property">nodeName</span> === <span class="string">&#x27;LI&#x27;</span>) &#123;</span><br><span class="line">      <span class="keyword">let</span> item = e.<span class="property">target</span>;</span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&#x27;you clicked on item: &#x27;</span> + item.<span class="property">innerHTML</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="问题-2：-在循环中使用闭包"><a href="#问题-2：-在循环中使用闭包" class="headerlink" title="问题 2： 在循环中使用闭包"></a>问题 2： 在循环中使用闭包</h2><p>闭包常常出现在面试中，以便面试官衡量你对 JS 的熟悉程度，以及你是否知道何时使用闭包。</p>
 <p>闭包基本上是内部函数可以访问其范围之外的变量。 闭包可用于实现隐私和创建函数工厂， 闭包常见的面试题如下：</p>
 <blockquote>
 <p>编写一个函数，该函数将遍历整数列表，并在延迟3秒后打印每个元素的索引。</p>
 </blockquote>
 <p>经常不正确的写法是这样的：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'The index of this number is: '</span> + i);</span><br><span class="line">  &#125;, <span class="number">3000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;The index of this number is: &#x27;</span> + i);</span><br><span class="line">  &#125;, <span class="number">3000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果运行上面代码，<code>3</code> 秒延迟后你会看到，实际上每次打印输出是 <code>4</code>，而不是期望的 <code>0，1，2，3</code> 。</p>
 <p>为了正确理解为什么会发生这种情况，了解为什么会在 JavaScript 中发生这种情况将非常有用，这正是面试官试图测试的内容。</p>
 <p>原因是因为 <code>setTimeout</code> 函数创建了一个可以访问其外部作用域的函数（闭包），该作用域是包含索引 <code>i</code> 的循环。 经过 <code>3</code> 秒后，执行该函数并打印出 <code>i</code> 的值，该值在循环结束时为 <code>4</code>，因为它循环经过<code>0,1,2,3,4</code>并且循环最终停止在 <code>4</code>。</p>
-<p>实际上有<a href="https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops" target="_blank" rel="noopener">多处</a>方法来正确的解这道题：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">i_local</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'The index of this number is: '</span> + i_local);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;(i), <span class="number">3000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'The index of this number is: '</span> + i);</span><br><span class="line">  &#125;, <span class="number">3000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上有<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3572480/please-explain-the-use-of-javascript-closures-in-loops">多处</a>方法来正确的解这道题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params">i_local</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;The index of this number is: &#x27;</span> + i_local);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;(i), <span class="number">3000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">10</span>, <span class="number">12</span>, <span class="number">15</span>, <span class="number">21</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;The index of this number is: &#x27;</span> + i);</span><br><span class="line">  &#125;, <span class="number">3000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="问题-3：事件的节流（throttle）与防抖（debounce）"><a href="#问题-3：事件的节流（throttle）与防抖（debounce）" class="headerlink" title="问题 3：事件的节流（throttle）与防抖（debounce）"></a>问题 3：事件的节流（throttle）与防抖（debounce）</h2><p>有些浏览器事件可以在短时间内快速触发多次，比如调整窗口大小或向下滚动页面。例如，监听页面窗口滚动事件，并且用户持续快速地向下滚动页面，那么滚动事件可能在 3 秒内触发数千次，这可能会导致一些严重的性能问题。</p>
 <p>如果在面试中讨论构建应用程序，出现滚动、窗口大小调整或按下键等事件请务必提及 <strong>防抖(Debouncing)</strong> 和 <strong>函数节流（Throttling）来提升页面速度和性能。这两兄弟的本质都是以闭包</strong>的形式存在。通过对事件对应的回调函数进行包裹、以自由变量的形式缓存时间信息，最后用 setTimeout 来控制事件的触发频率。</p>
 <p><strong>Throttle： 第一个人说了算</strong></p>
@@ -202,11 +202,11 @@
 <p>总结下来，所谓的“节流”，是通过在一段时间内无视后来产生的回调请求来实现的。只要 裁判宣布比赛开始，裁判就会开启计时器，在这段时间内，参赛者就尽管不断的吃，谁也无法知道最终结果。</p>
 <p>对应到实际的交互上是一样一样的：每当用户触发了一次 scroll 事件，我们就为这个触发操作开启计时器。一段时间内，后续所有的 scroll 事件都会被当作“参赛者吃东西——它们无法触发新的 scroll 回调。直到“一段时间”到了，第一次触发的 scroll 事件对应的回调才会执行，而“一段时间内”触发的后续的 scroll 回调都会被节流阀无视掉。</p>
 <p>现在一起实现一个 throttle：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fn是我们需要包装的事件回调, interval是时间间隔的阈值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fn, interval</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// last为上一次触发回调的时间</span></span><br><span class="line">  <span class="keyword">let</span> last = <span class="number">0</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 将throttle处理结果当作函数返回</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 保留调用时的this上下文</span></span><br><span class="line">      <span class="keyword">let</span> context = <span class="keyword">this</span></span><br><span class="line">      <span class="comment">// 保留调用时传入的参数</span></span><br><span class="line">      <span class="keyword">let</span> args = <span class="built_in">arguments</span></span><br><span class="line">      <span class="comment">// 记录本次触发回调的时间</span></span><br><span class="line">      <span class="keyword">let</span> now = +<span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 判断上次触发的时间和本次触发的时间差是否小于时间间隔的阈值</span></span><br><span class="line">      <span class="keyword">if</span> (now - last &gt;= interval) &#123;</span><br><span class="line">      <span class="comment">// 如果时间间隔大于我们设定的时间间隔阈值，则执行回调</span></span><br><span class="line">          last = now;</span><br><span class="line">          fn.apply(context, args);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用throttle来包装scroll的回调</span></span><br><span class="line"><span class="keyword">const</span> better_scroll = throttle(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'触发了滚动事件'</span>), <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'scroll'</span>, better_scroll)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fn是我们需要包装的事件回调, interval是时间间隔的阈值</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">throttle</span>(<span class="params">fn, interval</span>) &#123;</span><br><span class="line">  <span class="comment">// last为上一次触发回调的时间</span></span><br><span class="line">  <span class="keyword">let</span> last = <span class="number">0</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 将throttle处理结果当作函数返回</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="comment">// 保留调用时的this上下文</span></span><br><span class="line">      <span class="keyword">let</span> context = <span class="variable language_">this</span></span><br><span class="line">      <span class="comment">// 保留调用时传入的参数</span></span><br><span class="line">      <span class="keyword">let</span> args = <span class="variable language_">arguments</span></span><br><span class="line">      <span class="comment">// 记录本次触发回调的时间</span></span><br><span class="line">      <span class="keyword">let</span> now = +<span class="keyword">new</span> <span class="title class_">Date</span>()</span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 判断上次触发的时间和本次触发的时间差是否小于时间间隔的阈值</span></span><br><span class="line">      <span class="keyword">if</span> (now - last &gt;= interval) &#123;</span><br><span class="line">      <span class="comment">// 如果时间间隔大于我们设定的时间间隔阈值，则执行回调</span></span><br><span class="line">          last = now;</span><br><span class="line">          fn.<span class="title function_">apply</span>(context, args);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 用throttle来包装scroll的回调</span></span><br><span class="line"><span class="keyword">const</span> better_scroll = <span class="title function_">throttle</span>(<span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;触发了滚动事件&#x27;</span>), <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, better_scroll)</span><br></pre></td></tr></table></figure>
 <p><strong>代码部署后可能存在的BUG没法实时知道，事后为了解决这些BUG，花了大量的时间进行log 调试，这边顺便给大家推荐一个好用的BUG监控工具 Fundebug。</strong></p>
 <p>干货集合：</p>
 <blockquote>
-<p><a href="https://github.com/qq449245884/xiaozhi" target="_blank" rel="noopener">https://github.com/qq449245884/xiaozhi</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/qq449245884/xiaozhi">https://github.com/qq449245884/xiaozhi</a></p>
 </blockquote>
 
     </div>
@@ -216,7 +216,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/面试题/">#面试题</a>
+            <a href="/blog/tags/面试题/">#面试题</a>
         </div>
     
 
@@ -252,19 +252,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -279,19 +279,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -356,7 +356,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -370,7 +370,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

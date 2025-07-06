@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/12/21/%E5%85%B6%E5%AE%83/Linux%20CentOS%20+%20Nodejs%20+%20Express%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE/">
+            <a href="/blog/2019/12/21/%E5%85%B6%E5%AE%83/Linux%20CentOS%20+%20Nodejs%20+%20Express%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE/">
                 Linux CentOS + Nodejs + Express部署vue项目
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/其它/">其它</a>
+                    <a href="/blog/categories/其它/">其它</a>
                 </span>
             
         </div>
@@ -176,25 +176,25 @@
 <h3 id="1-清理工作"><a href="#1-清理工作" class="headerlink" title="1.清理工作"></a>1.清理工作</h3><p>如果之前有安装过nodejs，用自带的包管理命名先删除一次</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove nodejs npm -y</span><br></pre></td></tr></table></figure>
 <p>然后手动进入以下目录删除相关文件<br>进入 /usr/local/lib 删除所有 node 和 node_modules文件夹<br>进入 /usr/local/include 删除所有 node 和 node_modules 文件夹<br>进入 /usr/local/bin 删除 node 的可执行文件</p>
-<h3 id="2-去官网复制node安装包链接"><a href="#2-去官网复制node安装包链接" class="headerlink" title="2.去官网复制node安装包链接"></a>2.去官网复制node安装包链接</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br><img src="H:\上传到git里面的md文件图片\picture\other\24.png" alt="24"></p>
-<h3 id="3-在Xshell里cd到安装目录"><a href="#3-在Xshell里cd到安装目录" class="headerlink" title="3.在Xshell里cd到安装目录"></a>3.在Xshell里cd到安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+<h3 id="2-去官网复制node安装包链接"><a href="#2-去官网复制node安装包链接" class="headerlink" title="2.去官网复制node安装包链接"></a>2.去官网复制node安装包链接</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a><br><img src="H:\上传到git里面的md文件图片\picture\other\24.png" alt="24"></p>
+<h3 id="3-在Xshell里cd到安装目录"><a href="#3-在Xshell里cd到安装目录" class="headerlink" title="3.在Xshell里cd到安装目录"></a>3.在Xshell里cd到安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/</span><br></pre></td></tr></table></figure>
 <h3 id="4-输入命令链接开始下载nodejs安装包"><a href="#4-输入命令链接开始下载nodejs安装包" class="headerlink" title="4.输入命令链接开始下载nodejs安装包"></a>4.输入命令链接开始下载nodejs安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
 <h3 id="5-输入命令两步解压"><a href="#5-输入命令两步解压" class="headerlink" title="5.输入命令两步解压"></a>5.输入命令两步解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v10.16.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v10.16.0-linux-x64.tar</span><br></pre></td></tr></table></figure>
-<h3 id="6-重名解压的文件夹名称为nodejs"><a href="#6-重名解压的文件夹名称为nodejs" class="headerlink" title="6.重名解压的文件夹名称为nodejs"></a>6.重名解压的文件夹名称为nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v10.16.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
+<h3 id="6-重名解压的文件夹名称为nodejs"><a href="#6-重名解压的文件夹名称为nodejs" class="headerlink" title="6.重名解压的文件夹名称为nodejs"></a>6.重名解压的文件夹名称为nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> node-v10.16.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
 <h3 id="7-进入解压目录"><a href="#7-进入解压目录" class="headerlink" title="7.进入解压目录"></a>7.进入解压目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> nodejs</span><br></pre></td></tr></table></figure>
-<h3 id="8-创建软连接"><a href="#8-创建软连接" class="headerlink" title="8.创建软连接"></a>8.创建软连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s  /usr/<span class="built_in">local</span>/nodejs/bin/node /usr/<span class="built_in">local</span>/bin/node</span><br><span class="line">ln -s  /usr/<span class="built_in">local</span>/nodejs/bin/npm /usr/<span class="built_in">local</span>/bin/npm</span><br></pre></td></tr></table></figure>
+<h3 id="8-创建软连接"><a href="#8-创建软连接" class="headerlink" title="8.创建软连接"></a>8.创建软连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s  /usr/local/nodejs/bin/node /usr/local/bin/node</span><br><span class="line"><span class="built_in">ln</span> -s  /usr/local/nodejs/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure>
 <p>如果不小心输错了路径，重新创建会提示：‘ln: 无法创建符号链接”/usr/local/bin/npm”: 文件已存在’，输入rm /usr/local/bin/npm命令清除后可以重新创建</p>
 <h3 id="9-测试"><a href="#9-测试" class="headerlink" title="9.测试"></a>9.测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<h3 id="10-安装cnpm淘宝镜像并创建软链接"><a href="#10-安装cnpm淘宝镜像并创建软链接" class="headerlink" title="10.安装cnpm淘宝镜像并创建软链接"></a>10.安装cnpm淘宝镜像并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/cnpm /usr/<span class="built_in">local</span>/bin/cnpm</span><br></pre></td></tr></table></figure>
+<h3 id="10-安装cnpm淘宝镜像并创建软链接"><a href="#10-安装cnpm淘宝镜像并创建软链接" class="headerlink" title="10.安装cnpm淘宝镜像并创建软链接"></a>10.安装cnpm淘宝镜像并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm</span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/nodejs/bin/cnpm /usr/local/bin/cnpm</span><br></pre></td></tr></table></figure>
 <h2 id="二、用Express搭建web服务"><a href="#二、用Express搭建web服务" class="headerlink" title="二、用Express搭建web服务"></a>二、用Express搭建web服务</h2><h3 id="1-在Xshell里cd到指定目录"><a href="#1-在Xshell里cd到指定目录" class="headerlink" title="1.在Xshell里cd到指定目录"></a>1.在Xshell里cd到指定目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/</span><br></pre></td></tr></table></figure>
 <p>注：如果没有www目录就在var目录下输入命令mkdir www手动创建一个，并进入到www目录</p>
-<h3 id="2-创建web服务项目文件夹"><a href="#2-创建web服务项目文件夹" class="headerlink" title="2.创建web服务项目文件夹"></a>2.创建web服务项目文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br></pre></td></tr></table></figure>
+<h3 id="2-创建web服务项目文件夹"><a href="#2-创建web服务项目文件夹" class="headerlink" title="2.创建web服务项目文件夹"></a>2.创建web服务项目文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> demo</span><br></pre></td></tr></table></figure>
 <h3 id="3-cd进入项目目录"><a href="#3-cd进入项目目录" class="headerlink" title="3.cd进入项目目录"></a>3.cd进入项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> demo</span><br></pre></td></tr></table></figure>
 <h3 id="4-初始化项目生成package-json"><a href="#4-初始化项目生成package-json" class="headerlink" title="4.初始化项目生成package.json"></a>4.初始化项目生成package.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
 <p>注：这里的-y意思是省略创建过程中一直输yes的步骤</p>
 <h3 id="5-安装express"><a href="#5-安装express" class="headerlink" title="5.安装express"></a>5.安装express</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i express -D</span><br></pre></td></tr></table></figure>
-<h3 id="6-创建web服务程序文件app-js"><a href="#6-创建web服务程序文件app-js" class="headerlink" title="6.创建web服务程序文件app.js"></a>6.创建web服务程序文件app.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir app.js</span><br></pre></td></tr></table></figure>
-<h3 id="7-编写web服务程序代码app-js"><a href="#7-编写web服务程序代码app-js" class="headerlink" title="7.编写web服务程序代码app.js"></a>7.编写web服务程序代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); <span class="comment">//文件模块</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>); <span class="comment">//路径模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>); <span class="comment">//express框架模块</span></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">'11.22.33.44'</span>; <span class="comment">//ip</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">9999</span>; <span class="comment">//端口</span></span><br><span class="line"></span><br><span class="line">app.use(express.static(path.resolve(__dirname, <span class="string">'./dist'</span>))); <span class="comment">// 设置静态项目访问路径(此处的dist为webpack打包生成的项目文件夹名称)</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> html = fs.readFileSync(path.resolve(__dirname, <span class="string">'./dist/index.html'</span>), <span class="string">'utf-8'</span>); <span class="comment">// 设置所有访问服务请求默认返回index.html文件</span></span><br><span class="line">    res.send(html);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, hostName, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(服务器运行在http:<span class="comment">//$&#123;hostName&#125;:$&#123;port&#125;);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="6-创建web服务程序文件app-js"><a href="#6-创建web服务程序文件app-js" class="headerlink" title="6.创建web服务程序文件app.js"></a>6.创建web服务程序文件app.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> app.js</span><br></pre></td></tr></table></figure>
+<h3 id="7-编写web服务程序代码app-js"><a href="#7-编写web服务程序代码app-js" class="headerlink" title="7.编写web服务程序代码app.js"></a>7.编写web服务程序代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">//文件模块</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>); <span class="comment">//路径模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>); <span class="comment">//express框架模块</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">&#x27;11.22.33.44&#x27;</span>; <span class="comment">//ip</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">9999</span>; <span class="comment">//端口</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./dist&#x27;</span>))); <span class="comment">// 设置静态项目访问路径(此处的dist为webpack打包生成的项目文件夹名称)</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;*&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> html = fs.<span class="title function_">readFileSync</span>(path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./dist/index.html&#x27;</span>), <span class="string">&#x27;utf-8&#x27;</span>); <span class="comment">// 设置所有访问服务请求默认返回index.html文件</span></span><br><span class="line">    res.<span class="title function_">send</span>(html);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, hostName, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(服务器运行在<span class="attr">http</span>:<span class="comment">//$&#123;hostName&#125;:$&#123;port&#125;);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="三、打包部署vue项目"><a href="#三、打包部署vue项目" class="headerlink" title="三、打包部署vue项目"></a>三、打包部署vue项目</h2><h3 id="1-在本地开发工具里打包需要部署的vue项目"><a href="#1-在本地开发工具里打包需要部署的vue项目" class="headerlink" title="1.在本地开发工具里打包需要部署的vue项目"></a>1.在本地开发工具里打包需要部署的vue项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
 <p>生成的dist文件夹就是我们需要部署到服务器上的项目</p>
 <p><img src="H:\上传到git里面的md文件图片\picture\other\25.png" alt="25"></p>
@@ -203,7 +203,7 @@
 <p>如果能正常访问项目地址表示已经搭建成功。</p>
 <p>请求后端接口跨域方案请见：<br>跨域代理方案1：Nginx使用教程<br>跨域代理方案2：Nodejs 中使用http-proxy-middleware实现代理跨域</p>
 <h3 id="2-安装PM2托管Node-Web服务程序"><a href="#2-安装PM2托管Node-Web服务程序" class="headerlink" title="2.安装PM2托管Node Web服务程序"></a>2.安装PM2托管Node Web服务程序</h3><p>在xshell里用node默认的启动方式有一个缺点，xshell退出后nodejs项目便会停止<br>使用pm2这个托管工具可以很好的解决这个问题，而且当代码有更改时会自动重启服务更新</p>
-<h3 id="1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"><a href="#1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接" class="headerlink" title="1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"></a>1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install pm2 -g</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/pm2 /usr/<span class="built_in">local</span>/bin/pm2</span><br></pre></td></tr></table></figure>
+<h3 id="1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"><a href="#1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接" class="headerlink" title="1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"></a>1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install pm2 -g</span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/nodejs/bin/pm2 /usr/local/bin/pm2</span><br></pre></td></tr></table></figure>
 <h3 id="2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称"><a href="#2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称" class="headerlink" title="2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称"></a>2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js --name abc</span><br></pre></td></tr></table></figure>
 <h3 id="以下为pm2常用命令说明"><a href="#以下为pm2常用命令说明" class="headerlink" title="以下为pm2常用命令说明"></a>以下为pm2常用命令说明</h3><table>
 <thead>
@@ -301,7 +301,7 @@
 </tr>
 </tbody>
 </table>
-<p>pm2使用教程参考链接：<br><a href="https://www.cnblogs.com/chyingp/p/pm2-documentation.html" target="_blank" rel="noopener">https://www.cnblogs.com/chyingp/p/pm2-documentation.html</a><br><a href="https://www.jb51.net/article/113398.htm" target="_blank" rel="noopener">https://www.jb51.net/article/113398.htm</a></p>
+<p>pm2使用教程参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chyingp/p/pm2-documentation.html">https://www.cnblogs.com/chyingp/p/pm2-documentation.html</a><br><a target="_blank" rel="noopener" href="https://www.jb51.net/article/113398.htm">https://www.jb51.net/article/113398.htm</a></p>
 
     </div>
 
@@ -310,7 +310,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/其它/">#其它</a>
+            <a href="/blog/tags/其它/">#其它</a>
         </div>
     
 
@@ -346,19 +346,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -373,19 +373,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -450,7 +450,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -464,7 +464,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/03/29/Vue/vue%E4%B8%ADv-bind%E5%92%8Cv-model%E7%9A%84%E5%8C%BA%E5%88%AB/">
+            <a href="/blog/2019/03/29/Vue/vue%E4%B8%ADv-bind%E5%92%8Cv-model%E7%9A%84%E5%8C%BA%E5%88%AB/">
                 vue中v-bind和v-model的区别
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/vue/">vue</a>
+                    <a href="/blog/categories/vue/">vue</a>
                 </span>
             
         </div>
@@ -175,13 +175,13 @@
 <p>简单来说，区别如下：<br>1.v-bind用来绑定数据和属性以及表达式，缩写为’:’<br>2.v-model使用在表单中，实现双向数据绑定的，在表单元素外使用不起作用</p>
 </blockquote>
 <h2 id="一、v-model"><a href="#一、v-model" class="headerlink" title="一、v-model"></a>一、v-model</h2><p>v-model多在表单中使用，在表单元素上创建双向绑定，根据控件类型选择正确的方法更新元素，可以绑定text、radio、checkbox、selected</p>
-<h3 id="1-绑定text"><a href="#1-绑定text" class="headerlink" title="1. 绑定text"></a>1. 绑定text</h3>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"val"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> &#123;&#123;val&#125;&#125; <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-绑定radio"><a href="#2-绑定radio" class="headerlink" title="2. 绑定radio"></a>2. 绑定radio</h3>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"one"</span> <span class="attr">v-model</span>=<span class="string">"radioVal"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"two"</span> <span class="attr">v-model</span>=<span class="string">"radioVal"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span> <span class="attr">v-bind</span>=<span class="string">"radioval"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-绑定text"><a href="#1-绑定text" class="headerlink" title="1. 绑定text"></a>1. 绑定text</h3>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;val&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> &#123;&#123;val&#125;&#125; <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-绑定radio"><a href="#2-绑定radio" class="headerlink" title="2. 绑定radio"></a>2. 绑定radio</h3>  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">value</span>=<span class="string">&quot;one&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;radioVal&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">value</span>=<span class="string">&quot;two&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;radioVal&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span> <span class="attr">v-bind</span>=<span class="string">&quot;radioval&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>  radioval的值随着选择单选框的值，会变成one 或者 two</p>
 <h3 id="3-绑定checkBox"><a href="#3-绑定checkBox" class="headerlink" title="3. 绑定checkBox"></a>3. 绑定checkBox</h3><p>(1)单个勾选框，最终的值为逻辑值true和false</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">v-model</span>=<span class="string">"checkVal"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"checkbox"</span>&gt;</span>&#123;&#123;checkVal&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;checkVal&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123;checkVal&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>（2）多个勾选框时，将值绑定到一个数组</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"apple"</span> <span class="attr">v-model</span>=<span class="string">"checkArray"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"checkbox"</span>&gt;</span>&#123;&#123;apple&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"banana"</span> <span class="attr">v-model</span>=<span class="string">"checkArray"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"checkbox"</span>&gt;</span>&#123;&#123;banana&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">value</span>=<span class="string">"pear"</span> <span class="attr">v-model</span>=<span class="string">"checkArray"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"checkbox"</span>&gt;</span>&#123;&#123;pear&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;checkArray | json&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;apple&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;checkArray&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123;apple&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;banana&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;checkArray&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123;banana&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;pear&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;checkArray&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123;pear&#125;&#125;<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;checkArray | json&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>checkArray中的值会根据是否选中进行关联变化</p>
 <h3 id="4-绑定select"><a href="#4-绑定select" class="headerlink" title="4. 绑定select"></a>4. 绑定select</h3><blockquote>
 <p>（1）绑定到单个select<br>（2）绑定多个select时，同样适用数组</p>
@@ -191,9 +191,9 @@
 <h4 id="3-debounce"><a href="#3-debounce" class="headerlink" title="(3)debounce"></a>(3)debounce</h4><blockquote>
 <p>给输入框加一个很小的延迟，设置一个最小的延时，在每次敲击之后延时同步输入框的值与数据。如果每次更新都要进行高耗操作（例如在输入提示中 Ajax 请求），它较为有用。<br>注意 debounce 参数不会延迟 input 事件：它延迟“写入”底层数据。因此在使用 debounce 时应当用 vm.$watch() 响应数据的变化。若想延迟 DOM 事件，应当使用 debounce 过滤器。</p>
 </blockquote>
-<h2 id="二、v-bind"><a href="#二、v-bind" class="headerlink" title="二、v-bind"></a>二、v-bind</h2><h3 id="1-绑定文本"><a href="#1-绑定文本" class="headerlink" title="1.绑定文本"></a>1.绑定文本</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 直接用v-bind或者&#123;&#123;&#125;&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind</span>=<span class="string">"message"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-绑定属性"><a href="#2-绑定属性" class="headerlink" title="2.绑定属性"></a>2.绑定属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:src</span>=<span class="string">"http://...."</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:class</span>=<span class="string">"http://...."</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:style</span>=<span class="string">"http://...."</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-绑定表达式"><a href="#3-绑定表达式" class="headerlink" title="3.绑定表达式"></a>3.绑定表达式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; number + <span class="number">1</span> &#125;&#125;</span><br><span class="line">&#123;&#123; ok ? <span class="string">'YES'</span> : <span class="string">'NO'</span> &#125;&#125;</span><br><span class="line">&#123;&#123; message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>) &#125;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二、v-bind"><a href="#二、v-bind" class="headerlink" title="二、v-bind"></a>二、v-bind</h2><h3 id="1-绑定文本"><a href="#1-绑定文本" class="headerlink" title="1.绑定文本"></a>1.绑定文本</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 直接用v-bind或者&#123;&#123;&#125;&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind</span>=<span class="string">&quot;message&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-绑定属性"><a href="#2-绑定属性" class="headerlink" title="2.绑定属性"></a>2.绑定属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:src</span>=<span class="string">&quot;http://....&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;http://....&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-bind:style</span>=<span class="string">&quot;http://....&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-绑定表达式"><a href="#3-绑定表达式" class="headerlink" title="3.绑定表达式"></a>3.绑定表达式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; number + <span class="number">1</span> &#125;&#125;</span><br><span class="line">&#123;&#123; ok ? <span class="string">&#x27;YES&#x27;</span> : <span class="string">&#x27;NO&#x27;</span> &#125;&#125;</span><br><span class="line">&#123;&#123; message.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>).<span class="title function_">reverse</span>().<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>) &#125;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="4-绑定html"><a href="#4-绑定html" class="headerlink" title="4.绑定html"></a>4.绑定html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;&#123; raw_html &#125;&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> // 这个时候必须要使用三个&#123;&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -203,7 +203,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/vue/">#vue</a>
+            <a href="/blog/tags/vue/">#vue</a>
         </div>
     
 
@@ -239,19 +239,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -266,19 +266,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -343,7 +343,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -357,7 +357,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

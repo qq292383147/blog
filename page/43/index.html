@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
             <h1 id="main-title" class="title">张健龙个人技术博客</h1>
             <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
@@ -152,7 +152,7 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/03/17/JavaScript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+            <a href="/blog/2019/03/17/JavaScript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
                 箭头函数
             </a>
         </h1>
@@ -163,7 +163,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -173,45 +173,45 @@
         <div class="content">
             <p><strong>更简洁的语法</strong></p>
 <p>我们先来按常规语法定义函数：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/1.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/1.jpg" alt=""></p>
 <p>该函数使用箭头函数可以使用仅仅一行代码搞定！</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/2.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/2.jpg" alt=""></p>
 <p>是不是很酷！虽然是一个极端简洁的例子，但是很好的表述了箭头函数在写代码时的优势。我们来深入了解箭头函数的语法：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/3.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/3.jpg" alt=""></p>
 <p>如果没有参数，那么可以进一步简化：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/4.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/4.jpg" alt=""></p>
 <p>如果只有一个参数，可以省略括号:</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/5.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/5.jpg" alt=""></p>
 <p>如果返回值仅仅只有一个表达式(expression), 还可以省略大括号：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/6.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/6.jpg" alt=""></p>
 <p>现在你已经学会了箭头函数的语法，我们来实战一下。打开Chrome浏览器开发者控制台，输入：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/7.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/7.jpg" alt=""></p>
 <p>我们将变量double绑定到一个箭头函数，该函数有一个参数num, 返回 num * 2。 调用该函数：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/8.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/8.jpg" alt=""></p>
 <p><strong>没有局部this的绑定</strong></p>
 <p>和一般的函数不同，箭头函数不会绑定this。 或则说箭头函数不会改变this本来的绑定。</p>
 <p>我们用一个例子来说明：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/9.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/9.jpg" alt=""></p>
 <p>因为使用了关键字new构造，Count()函数中的this绑定到一个新的对象，并且赋值给a。通过console.log打印a.num，会输出0。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/10.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/10.jpg" alt=""></p>
 <p>如果我们想每过一秒将a.num的值加1，该如何实现呢？可以使用setInterval()函数。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/11.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/11.jpg" alt=""></p>
 <p>我们来看一下输出结果：</p>
 <p>你会发现，每隔一秒都会有一个NaN打印出来，而不是累加的数字。到底哪里错了呢？</p>
 <p>首先使用如下语句停止setInterval函数的连续执行：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/12.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/12.jpg" alt=""></p>
 <p>我们来尝试理解为什么出错：根据上一篇博客讲解的规则，首先函数setInterval没有被某个声明的对象调用，也没有使用new关键字，再之没有使用bind, call和apply。setInterval只是一个普通的函数。实际上setInterval里面的this绑定到全局对象的。我们可以通过将this打印出来验证这一点：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/13.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/13.jpg" alt=""></p>
 <p>你会发现，整个window对象被打印出来。 使用如下命令停止打印：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/14.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/14.jpg" alt=""></p>
 <p>回到之前的函数，之所以打印NaN，是因为this.num绑定到window对象的num，而window.num未定义。</p>
 <p>那么，我们如何解决这个问题呢？使用箭头函数！使用箭头函数就不会导致this被绑定到全局对象。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/15.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/15.jpg" alt=""></p>
 <p>通过Counter构造函数绑定的this将会被保留。在setInterval函数中，this依然指向我们新创建的b对象。</p>
 <p>为了验证刚刚的说法，我们可以将 Counter函数中的this绑定到that, 然后在setInterval中判断this和that是否相同。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/16.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/16.jpg" alt=""></p>
 <p>正如我们期望的，打印值每次都是true。最后，结束刷屏的打印：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/17.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/17.jpg" alt=""></p>
 <p><strong>总结</strong></p>
 <p>箭头函数是我最喜欢的<code>ES6</code>特性之一。使用=&gt;来代替<code>function</code>是非常便捷的。但我也曾见过只使用<br><code>=&gt;</code>来声明函数的代码，我并不认为这是好的做法，因为=&gt;也提供了它区别于传统function，其所<br>独有的特性。我个人推荐，仅在你需要使用它提供的新特性时，才使用它。</p>
 <p>简单的说：</p>
@@ -230,7 +230,7 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/03/10/hello-world/">
+            <a href="/blog/2019/03/10/hello-world/">
                 您好，博客
             </a>
         </h1>
@@ -245,7 +245,7 @@
 
     
         <div class="content">
-            <p>欢迎来到Acton的个人技术博客！<br><a href="https://zhanglong292383147.gitee.io/" target="_blank" rel="noopener">博客地址:  </a><a href="https://zhanglong292383147.gitee.io/" target="_blank" rel="noopener">https://zhanglong292383147.gitee.io/</a><br>这是你的第一篇文章。查看文档以获得更多信息。</p>
+            <p>欢迎来到Acton的个人技术博客！<br><a target="_blank" rel="noopener" href="https://zhanglong292383147.gitee.io/">博客地址:  </a><a target="_blank" rel="noopener" href="https://zhanglong292383147.gitee.io/">https://zhanglong292383147.gitee.io/</a><br>这是你的第一篇文章。查看文档以获得更多信息。</p>
 
         </div>
     
@@ -257,7 +257,7 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/03/10/Css/flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B/">
+            <a href="/blog/2019/03/10/Css/flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B/">
                 flex布局教程
             </a>
         </h1>
@@ -268,7 +268,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/flex/">flex</a>
+                    <a href="/blog/categories/flex/">flex</a>
                 </span>
             
         </div>
@@ -284,7 +284,7 @@
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意，设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效。</p>
 <h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_1.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_1.png" alt=""></p>
 <p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做<code>main start</code>，结束位置叫做<code>main end</code>；交叉轴的开始位置叫做<code>cross start</code>，结束位置叫做<code>cross end</code>。</p>
 <p>项目默认沿主轴排列。单个项目占据的主轴空间叫做<code>main size</code>，占据的交叉轴空间叫做<code>cross size</code>。</p>
 <h2 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h2><p>以下6个属性设置在容器上。</p>
@@ -293,26 +293,26 @@
 </blockquote>
 <h3 id="3-1-flex-direction属性"><a href="#3-1-flex-direction属性" class="headerlink" title="3.1 flex-direction属性"></a>3.1 flex-direction属性</h3><p><code>flex-direction</code>属性决定主轴的方向（即项目的排列方向）。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_2.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_2.png" alt=""></p>
 <p>它可能有4个值。</p>
 <blockquote>
 <p><code>row</code>（默认值）：主轴为水平方向，起点在左端。<br><code>row-reverse</code>：主轴为水平方向，起点在右端。<br><code>column</code>：主轴为垂直方向，起点在上沿。<br><code>column-reverse</code>：主轴为垂直方向，起点在下沿。</p>
 </blockquote>
 <h3 id="3-2-flex-wrap属性"><a href="#3-2-flex-wrap属性" class="headerlink" title="3.2 flex-wrap属性"></a>3.2 flex-wrap属性</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。<code>flex-wrap</code>属性定义，如果一条轴线排不下，如何换行。</p>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_3.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_3.png" alt=""></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>它可能取三个值。</p>
 <p>（1）<code>nowrap</code>（默认）：不换行。</p>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_4.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_4.png" alt=""></p>
 <p>（2）<code>wrap</code>：换行，第一行在上方。</p>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_5.jpg" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_5.jpg" alt=""></p>
 <p>（3）<code>wrap-reverse</code>：换行，第一行在下方。</p>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_6.jpg" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_6.jpg" alt=""></p>
 <h3 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h3><p><code>flex-flow</code>属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="3-4-justify-content属性"><a href="#3-4-justify-content属性" class="headerlink" title="3.4 justify-content属性"></a>3.4 justify-content属性</h3><p><code>justify-content</code>属性定义了项目在主轴上的对齐方式。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_7.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_7.png" alt=""></p>
 <p>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
 <blockquote>
 <ul>
@@ -325,7 +325,7 @@
 </blockquote>
 <h3 id="3-5-align-items属性"><a href="#3-5-align-items属性" class="headerlink" title="3.5 align-items属性"></a>3.5 align-items属性</h3><p><code>align-items</code>属性定义项目在交叉轴上如何对齐。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-items</span>: flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_8.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_8.png" alt=""></p>
 <p>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
 <blockquote>
 <ul>
@@ -338,7 +338,7 @@
 </blockquote>
 <h3 id="3-6-align-content属性"><a href="#3-6-align-content属性" class="headerlink" title="3.6 align-content属性"></a>3.6 align-content属性</h3><p><code>align-content</code>属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">align-content</span>: flex-start | flex-end | center | space-between | space-around | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_9.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_9.png" alt=""></p>
 <p>该属性可能取6个值。</p>
 <blockquote>
 <ul>
@@ -363,28 +363,28 @@
 </blockquote>
 <h3 id="4-1-order属性"><a href="#4-1-order属性" class="headerlink" title="4.1 order属性"></a>4.1 order属性</h3><p><code>order</code>属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">order</span>: &lt;integer&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_10.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_10.png" alt=""></p>
 <h3 id="4-2-flex-grow属性"><a href="#4-2-flex-grow属性" class="headerlink" title="4.2 flex-grow属性"></a>4.2 flex-grow属性</h3><p><code>flex-grow</code>属性定义项目的放大比例，默认为<code>0</code>，即如果存在剩余空间，也不放大。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-grow</span>: &lt;number&gt;; <span class="comment">/* default 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_11.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_11.png" alt=""></p>
 <p>如果所有项目的<code>flex-grow</code>属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的<code>flex-grow</code>属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
 <h3 id="4-3-flex-shrink属性"><a href="#4-3-flex-shrink属性" class="headerlink" title="4.3 flex-shrink属性"></a>4.3 flex-shrink属性</h3><p><code>flex-shrink</code>属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-shrink</span>: &lt;number&gt;; <span class="comment">/* default 1 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_12.jpg" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_12.jpg" alt=""></p>
 <p>如果所有项目的<code>flex-shrink</code>属性都为1，当空间不足时，都将等比例缩小。如果一个项目的<code>flex-shrink</code>属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
 <p>负值对该属性无效。</p>
 <h3 id="4-4-flex-basis属性"><a href="#4-4-flex-basis属性" class="headerlink" title="4.4 flex-basis属性"></a>4.4 flex-basis属性</h3><p><code>flex-basis</code>属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为<code>auto</code>，即项目的本来大小。</p>
 <blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="selector-class">.item</span> &#123;</span><br><span class="line">&gt;   flex-basis: &lt;length&gt; | auto; /* default auto */</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="comment">/* default auto */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>它可以设为跟<code>width</code>或<code>height</code>属性一样的值（比如350px），则项目将占据固定空间。</p>
 <h3 id="4-5-flex属性"><a href="#4-5-flex属性" class="headerlink" title="4.5 flex属性"></a>4.5 flex属性</h3><p><code>flex</code>属性是<code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">'flex-grow'</span>&gt; &lt;<span class="string">'flex-shrink'</span>&gt;? || &lt;<span class="string">'flex-basis'</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: none | [ &lt;<span class="string">&#x27;flex-grow&#x27;</span>&gt; &lt;<span class="string">&#x27;flex-shrink&#x27;</span>&gt;? || &lt;<span class="string">&#x27;flex-basis&#x27;</span>&gt; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>该属性有两个快捷值：<code>auto</code> (<code>1 1 auto</code>) 和 none (<code>0 0 auto</code>)。</p>
 <p>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
 <h3 id="4-6-align-self属性"><a href="#4-6-align-self属性" class="headerlink" title="4.6 align-self属性"></a>4.6 align-self属性</h3><p><code>align-self</code>属性允许单个项目有与其他项目不一样的对齐方式，可覆盖<code>align-items</code>属性。默认值为<code>auto</code>，表示继承父元素的<code>align-items</code>属性，如果没有父元素，则等同于<code>stretch</code>。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">  <span class="attribute">align-self</span>: auto | flex-start | flex-end | center | baseline | stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_13.png" alt></p>
+<p><img src="F:\图片库blog/picture_images/picture/Flex/flex_13.png" alt=""></p>
 <p>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
 
         </div>
@@ -401,10 +401,10 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="wrap-pagination">
-                <a class="" href="/page/42/">
+                <a class="" href="/blog/page/42/">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </a>
-                <a class="disabled" href="/">
+                <a class="disabled" href="/blog/">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -436,19 +436,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -463,19 +463,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -540,7 +540,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -554,7 +554,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

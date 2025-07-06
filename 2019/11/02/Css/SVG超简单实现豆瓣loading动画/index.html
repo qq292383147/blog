@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/11/02/Css/SVG%E8%B6%85%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E8%B1%86%E7%93%A3loading%E5%8A%A8%E7%94%BB/">
+            <a href="/blog/2019/11/02/Css/SVG%E8%B6%85%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E8%B1%86%E7%93%A3loading%E5%8A%A8%E7%94%BB/">
                 SVG超简单实现豆瓣loading动画
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/css/">css</a>
+                    <a href="/blog/categories/css/">css</a>
                 </span>
             
         </div>
@@ -176,10 +176,10 @@
 <p>我通过<code>CSS3</code>配合<code>SVG</code>来完成这次模仿豆瓣的loading动画。没用过<code>SVG</code>的也不用慌，我下面会写出相应的属性方便你去理解。因为这个真的超简单。那么我们就直奔主题吧</p>
 <h1 id="初始化svg"><a href="#初始化svg" class="headerlink" title="初始化svg"></a>初始化svg</h1><p>我们需要先完成一个静态的<code>笑脸</code></p>
 <p>始化SVG视图的大小</p>
-<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">&quot;100&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>我指定了一个宽高都为<code>100px</code>的区域，<code>width=”100”</code>和<code>width=”100px”</code>是等价的。</p>
 <h1 id="画嘴巴"><a href="#画嘴巴" class="headerlink" title="画嘴巴"></a>画嘴巴</h1><p>我们把<code>嘴巴</code>给画出来，在<code>svg</code>内先画一个圆</p>
-<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"mouth"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">&quot;mouth&quot;</span> <span class="attr">cx</span>=<span class="string">&quot;50&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;50&quot;</span> <span class="attr">r</span>=<span class="string">&quot;14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>cx</code> 和 <code>cy</code> 属性定义圆点的 <code>x</code> 和 <code>y</code> 坐标。</p>
 <p><strong>看到浏览器上面多了一个填充的黑色圆点</strong></p>
 <p><img src="F:\图片库blog/picture_images/picture/css/89.png" alt="原型"></p>
@@ -241,7 +241,7 @@
 <p>可见此时我们的<code>嘴巴</code>部分已经完成了</p>
 <p><img src="F:\图片库blog/picture_images/picture/css/90.png" alt="原型"></p>
 <h1 id="画眼睛"><a href="#画眼睛" class="headerlink" title="画眼睛"></a>画眼睛</h1><p>接下来开始画<code>眼睛</code>，我又画了一个<code>circle</code>。</p>
-<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"eye"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">&quot;eye&quot;</span> <span class="attr">cx</span>=<span class="string">&quot;50&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;50&quot;</span> <span class="attr">r</span>=<span class="string">&quot;14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="F:\图片库blog/picture_images/picture/css/91.png" alt="原型"></p>
 <p><strong>我们依然可以通过stroke-dasharray来画出一对眼睛</strong></p>
 <p>先把<code>嘴巴</code>注释掉，避免影响我们调试。</p>
@@ -250,7 +250,7 @@
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.eye</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="F:\图片库blog/picture_images/picture/css/92.png" alt="原型"></p>
 <p>为了让嘴巴对齐，我们左旋转<code>45度</code>，给<code>eye</code>加上<code>transform</code>属性</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transform-origin</span>: center;</span><br><span class="line"><span class="attribute">transform</span>: rotate(-<span class="number">45deg</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transform-origin</span>: center;</span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">45deg</span>);</span><br></pre></td></tr></table></figure>
 <p><img src="F:\图片库blog/picture_images/picture/css/93.png" alt="原型"></p>
 <p>这样子我们就完成了<code>眼睛</code>了</p>
 <h1 id="加动画"><a href="#加动画" class="headerlink" title="加动画"></a>加动画</h1><p>经过我无数遍慢放（一帧一帧）的观察豆瓣的加载动画，终于找到了规律（哭）。</p>
@@ -259,22 +259,22 @@
 <p>通过动画我们可以看出<code>嘴巴</code>部分是旋转了<code>两圈</code>的，并且在旋转<code>第一圈</code>的时候，两边的间距缩小为<code>1/4</code>，在<code>第二圈</code>的时候，间距恢复为<code>1/2</code>，且最后有一段的<code>停留时间</code>。</p>
 <p><strong>根据最后的一段停留时间和旋转两圈</strong></p>
 <p>我们可以通过<code>transform</code>完成，简单</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="number">80%</span>, <span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>第一圈的时候两边间距缩小为1/4，也就是此时stroke-dasharray的值为 44, 22，后续再恢复为1/2</strong></p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">22</span>;   <span class="comment">/* 间距改为1/4 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;   <span class="comment">/* 间距恢复为1/2 */</span></span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="number">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">22</span>;   <span class="comment">/* 间距改为1/4 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">80%</span>, <span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;   <span class="comment">/* 间距恢复为1/2 */</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>动画的运行速度为<strong>开始快，结束慢</strong>，所以我们使用<code>ease-out</code>作为<strong>贝塞尔曲线函数值</strong></p>
 <p>这样<code>嘴巴</code>的动画就完成了</p>
 <h2 id="眼睛动画"><a href="#眼睛动画" class="headerlink" title="眼睛动画"></a>眼睛动画</h2><p><img src="F:\图片库blog/picture_images/picture/css/95.gif" alt="原型"></p>
 <p>同样的，通过动画我们可以看出<code>眼睛</code>部分同样是旋转了<code>两圈</code>，并且在旋转<code>第一圈</code>的时候，两边的间距增大为<code>7/8</code>，在<code>第二圈</code>的时候，间距恢复为<code>3/4</code>，且最后有一段的<code>停留时间</code>。</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> eyeAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">77</span>;    <span class="comment">/* 间距改为7/8 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">675deg</span>);  <span class="comment">/* 间距恢复为3/4 */</span></span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> eyeAni &#123;</span><br><span class="line">    <span class="number">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">77</span>;    <span class="comment">/* 间距改为7/8 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">80%</span>, <span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">675deg</span>);  <span class="comment">/* 间距恢复为3/4 */</span></span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>动画的运行速度为<strong>开始和结束慢</strong>，所以我们使用<code>ease-in-out</code>作为<strong>贝塞尔曲线函数值</strong></p>
 <p>至此我们的<code>眼睛</code>动画也就完成了</p>
 <p>我们把两个动画整合起来，这样就完成了模仿豆瓣的loading动画了，特简单。</p>
 <p><img src="F:\图片库blog/picture_images/picture/css/96.gif" alt="效果图"></p>
 <h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><em>html</em></p>
-<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"mouth"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"eye"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">&quot;100&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">&quot;mouth&quot;</span> <span class="attr">cx</span>=<span class="string">&quot;50&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;50&quot;</span> <span class="attr">r</span>=<span class="string">&quot;14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">&quot;eye&quot;</span> <span class="attr">cx</span>=<span class="string">&quot;50&quot;</span> <span class="attr">cy</span>=<span class="string">&quot;50&quot;</span> <span class="attr">r</span>=<span class="string">&quot;14&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><em>css</em></p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mouth</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;   <span class="comment">/* transform动画时以自身中心作为基点 */</span></span><br><span class="line">    <span class="attribute">animation</span>: mounthAni <span class="number">2.3s</span> ease-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.eye</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;</span><br><span class="line">    <span class="attribute">transform</span>: rotate(-<span class="number">45deg</span>);</span><br><span class="line">    <span class="attribute">animation</span>: eyeAni <span class="number">2.3s</span> ease-in-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">22</span>;   <span class="comment">/* 间距改为1/4 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;   <span class="comment">/* 间距恢复为1/2 */</span></span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> eyeAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">77</span>;    <span class="comment">/* 间距改为7/8 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">675deg</span>);  <span class="comment">/* 间距恢复为3/4 */</span></span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mouth</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;   <span class="comment">/* transform动画时以自身中心作为基点 */</span></span><br><span class="line">    <span class="attribute">animation</span>: mounthAni <span class="number">2.3s</span> ease-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.eye</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">45deg</span>);</span><br><span class="line">    <span class="attribute">animation</span>: eyeAni <span class="number">2.3s</span> ease-in-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="number">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">22</span>;   <span class="comment">/* 间距改为1/4 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">80%</span>, <span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;   <span class="comment">/* 间距恢复为1/2 */</span></span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> eyeAni &#123;</span><br><span class="line">    <span class="number">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">77</span>;    <span class="comment">/* 间距改为7/8 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">80%</span>, <span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">675deg</span>);  <span class="comment">/* 间距恢复为3/4 */</span></span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>CSS3</code>动画已足够强大，但是如果要实现上面那种间距可<code>变大变小</code>的动画效果，只用<code>CSS</code>的话我还是没有想到怎么实现，如果各位有方法的话欢迎评论告诉我😀，所以使用了<code>SVG</code>加<code>CSS</code>来完成，<code>眼睛</code>部分原本想过使用<code>animateMotion</code>来完成，奈何看了半天还是不会用🤣，所以就想着只用<code>CSS</code>的动画效果完成了这次的动画，没想到意外的简单，所以把方法分享给大家。整个loading动画都围绕着<code>stroke-dasharray</code>展开，用到的<code>SVG</code>属性真的是冰山一角，上面的内容如果有什么错误的话还望各位多多指教。</p>
 
     </div>
@@ -284,7 +284,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/css/">#css</a>
+            <a href="/blog/tags/css/">#css</a>
         </div>
     
 
@@ -320,19 +320,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -347,19 +347,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -424,7 +424,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -438,7 +438,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

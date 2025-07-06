@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/03/17/JavaScript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+            <a href="/blog/2019/03/17/JavaScript/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
                 箭头函数
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -173,45 +173,45 @@
         <!-- Post Content -->
         <p><strong>更简洁的语法</strong></p>
 <p>我们先来按常规语法定义函数：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/1.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/1.jpg" alt=""></p>
 <p>该函数使用箭头函数可以使用仅仅一行代码搞定！</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/2.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/2.jpg" alt=""></p>
 <p>是不是很酷！虽然是一个极端简洁的例子，但是很好的表述了箭头函数在写代码时的优势。我们来深入了解箭头函数的语法：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/3.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/3.jpg" alt=""></p>
 <p>如果没有参数，那么可以进一步简化：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/4.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/4.jpg" alt=""></p>
 <p>如果只有一个参数，可以省略括号:</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/5.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/5.jpg" alt=""></p>
 <p>如果返回值仅仅只有一个表达式(expression), 还可以省略大括号：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/6.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/6.jpg" alt=""></p>
 <p>现在你已经学会了箭头函数的语法，我们来实战一下。打开Chrome浏览器开发者控制台，输入：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/7.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/7.jpg" alt=""></p>
 <p>我们将变量double绑定到一个箭头函数，该函数有一个参数num, 返回 num * 2。 调用该函数：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/8.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/8.jpg" alt=""></p>
 <p><strong>没有局部this的绑定</strong></p>
 <p>和一般的函数不同，箭头函数不会绑定this。 或则说箭头函数不会改变this本来的绑定。</p>
 <p>我们用一个例子来说明：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/9.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/9.jpg" alt=""></p>
 <p>因为使用了关键字new构造，Count()函数中的this绑定到一个新的对象，并且赋值给a。通过console.log打印a.num，会输出0。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/10.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/10.jpg" alt=""></p>
 <p>如果我们想每过一秒将a.num的值加1，该如何实现呢？可以使用setInterval()函数。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/11.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/11.jpg" alt=""></p>
 <p>我们来看一下输出结果：</p>
 <p>你会发现，每隔一秒都会有一个NaN打印出来，而不是累加的数字。到底哪里错了呢？</p>
 <p>首先使用如下语句停止setInterval函数的连续执行：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/12.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/12.jpg" alt=""></p>
 <p>我们来尝试理解为什么出错：根据上一篇博客讲解的规则，首先函数setInterval没有被某个声明的对象调用，也没有使用new关键字，再之没有使用bind, call和apply。setInterval只是一个普通的函数。实际上setInterval里面的this绑定到全局对象的。我们可以通过将this打印出来验证这一点：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/13.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/13.jpg" alt=""></p>
 <p>你会发现，整个window对象被打印出来。 使用如下命令停止打印：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/14.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/14.jpg" alt=""></p>
 <p>回到之前的函数，之所以打印NaN，是因为this.num绑定到window对象的num，而window.num未定义。</p>
 <p>那么，我们如何解决这个问题呢？使用箭头函数！使用箭头函数就不会导致this被绑定到全局对象。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/15.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/15.jpg" alt=""></p>
 <p>通过Counter构造函数绑定的this将会被保留。在setInterval函数中，this依然指向我们新创建的b对象。</p>
 <p>为了验证刚刚的说法，我们可以将 Counter函数中的this绑定到that, 然后在setInterval中判断this和that是否相同。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/16.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/16.jpg" alt=""></p>
 <p>正如我们期望的，打印值每次都是true。最后，结束刷屏的打印：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/17.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/17.jpg" alt=""></p>
 <p><strong>总结</strong></p>
 <p>箭头函数是我最喜欢的<code>ES6</code>特性之一。使用=&gt;来代替<code>function</code>是非常便捷的。但我也曾见过只使用<br><code>=&gt;</code>来声明函数的代码，我并不认为这是好的做法，因为=&gt;也提供了它区别于传统function，其所<br>独有的特性。我个人推荐，仅在你需要使用它提供的新特性时，才使用它。</p>
 <p>简单的说：</p>
@@ -227,7 +227,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/JavaScript/">#JavaScript</a>
+            <a href="/blog/tags/JavaScript/">#JavaScript</a>
         </div>
     
 
@@ -263,19 +263,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -290,19 +290,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -367,7 +367,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -381,7 +381,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/11/13/JavaScript/localStorage%E3%80%81sessionStorage%E3%80%81cookie%E3%80%81session%E5%87%A0%E7%A7%8Dweb%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93/">
+            <a href="/blog/2019/11/13/JavaScript/localStorage%E3%80%81sessionStorage%E3%80%81cookie%E3%80%81session%E5%87%A0%E7%A7%8Dweb%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93/">
                 localStorage、sessionStorage、cookie、session几种web数据存储方式对比总结
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -180,13 +180,13 @@
 <p>官网的解释很让人疑惑，那我翻译下这几句话：</p>
 <p>provide 可以在祖先组件中指定我们想要<strong>提供</strong>给后代组件的数据或方法，而在任何后代组件中，我们都可以使用 inject 来接收 provide <strong>提供</strong>的数据或方法。</p>
 <p>举个官网的🌰：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父级组件提供 'foo'</span></span><br><span class="line"><span class="keyword">var</span> Provider = &#123;</span><br><span class="line">  provide: &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件注入 'foo'</span></span><br><span class="line"><span class="keyword">var</span> Child = &#123;</span><br><span class="line">  inject: [<span class="string">'foo'</span>],</span><br><span class="line">  created () &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.foo) <span class="comment">// =&gt; "bar"</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父级组件提供 &#x27;foo&#x27;</span></span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Provider</span> = &#123;</span><br><span class="line">  <span class="attr">provide</span>: &#123;</span><br><span class="line">    <span class="attr">foo</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 子组件注入 &#x27;foo&#x27;</span></span><br><span class="line"><span class="keyword">var</span> <span class="title class_">Child</span> = &#123;</span><br><span class="line">  <span class="attr">inject</span>: [<span class="string">&#x27;foo&#x27;</span>],</span><br><span class="line">  <span class="title function_">created</span> () &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">foo</span>) <span class="comment">// =&gt; &quot;bar&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看到，父组件提供的 foo 变量被子组件成功接收并使用。</p>
 <p>了解了 provide/inject 是什么后，我们再来使用使用 provide/inject。</p>
 <h3 id="使用-provide-inject-做全局状态管理"><a href="#使用-provide-inject-做全局状态管理" class="headerlink" title="使用 provide/inject 做全局状态管理"></a>使用 provide/inject 做全局状态管理</h3><p>在日常开发中，我们经常会使用 Vuex 做状态管理，但是，我个人一直不喜欢使用 Vuex，原因在于 Vuex 为了保持状态可被回溯追踪，使用起来太过繁琐；而我之前参与的项目，较少多人合作，这个功能对于我来说，意义不大，我仅仅只需要 Vuex 中提供全局状态的功能。</p>
 <p>那么，有没有方便快捷的实现全局状态的方法呢？当然有，这就是 provide/inject 这个黑科技 API 的一种使用方法。</p>
 <p>很多人也许会想到一种方式：在根组件中，传入变量，然后在后代组件中使用即可。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根组件提供一个非响应式变量给后代组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  provide () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">'bar'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后代组件注入 'app'</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;&#123;&#123;<span class="keyword">this</span>.text&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    inject: [<span class="string">'text'</span>],</span><br><span class="line">    created() &#123;</span><br><span class="line">      <span class="keyword">this</span>.text = <span class="string">'baz'</span> <span class="comment">// 在模板中，依然显示 'bar'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根组件提供一个非响应式变量给后代组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="title function_">provide</span> () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">text</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后代组件注入 &#x27;app&#x27;</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;this.text&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">inject</span>: [<span class="string">&#x27;text&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">created</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.<span class="property">text</span> = <span class="string">&#x27;baz&#x27;</span> <span class="comment">// 在模板中，依然显示 &#x27;bar&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>这个想法，说对也对，说不对也不对，原因在于 provide 的特殊性。</p>
 <p>在官网文档中关于 provide/inject 有这么一个提示：</p>
 <blockquote>
@@ -195,7 +195,7 @@
 <p>也就是说，Vue 不会对 provide 中的变量进行响应式处理。所以，要想 inject 接受的变量是响应式的，provide 提供的变量本身就需要是响应式的。</p>
 <p>由于组件内部的各种状态就是可响应的，所以我们直接在根组件中将组件本身注入 provide，此时，我们可以在后代组件中任意访问根组件中的所有状态，根组件就成为了全局状态的容器，仔细想想，是不是很像 React 中的 context 呢？</p>
 <p>代码如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根组件提供将自身提供给后代组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  provide () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      app: <span class="keyword">this</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">'bar'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后代组件注入 'app'</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;&#123;&#123;<span class="keyword">this</span>.app.text&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    inject: [<span class="string">'app'</span>],</span><br><span class="line">    created() &#123;</span><br><span class="line">      <span class="keyword">this</span>.app.text = <span class="string">'baz'</span> <span class="comment">// 在模板中，显示 'baz'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根组件提供将自身提供给后代组件</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="title function_">provide</span> () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">app</span>: <span class="variable language_">this</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">data</span> () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">text</span>: <span class="string">&#x27;bar&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后代组件注入 &#x27;app&#x27;</span></span><br><span class="line">&lt;template&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;this.app.text&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="attr">inject</span>: [<span class="string">&#x27;app&#x27;</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title function_">created</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="variable language_">this</span>.<span class="property">app</span>.<span class="property">text</span> = <span class="string">&#x27;baz&#x27;</span> <span class="comment">// 在模板中，显示 &#x27;baz&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>也许有的同学会问：使用 $root 依然能够取到根节点，那么我们何必使用 provide/inject 呢？</p>
 <p>在实际开发中，一个项目常常有多人开发，每个人有可能需要不同的全局变量，如果所有人的全局变量都统一定义在根组件，势必会引起变量冲突等问题。</p>
 <p>使用 provide/inject 不同模块的入口组件传给各自的后代组件可以完美的解决该问题。</p>
@@ -214,7 +214,7 @@
 <p>如果是常规方案，我们可以通过 props 从 Form 开始，一层层往下传递属性值。看起来只需要传递传递两层即可，还可以接受。但是，Form 的下一层组件不一定是 FormItem，FormItem 的下一层组件不一定是 Button，它们之间还可以嵌套其他组件，也就是说，层级关系不确定。如果使用 props，我们写的组件会出现强耦合的情况。</p>
 <p>provide/inject 可以完美的解决这个问题，只需要向后代注入组件本身（上下文），后代组件中可以无视层级任意访问祖先组件中的状态。</p>
 <p>部分源码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// Button 组件核心源码</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &apos;ElButton&apos;,</span><br><span class="line">    // 通过 inject 获取 elForm 以及 elFormItem 这两个组件</span><br><span class="line">    inject: &#123;</span><br><span class="line">        elForm: &#123;</span><br><span class="line">            default: &apos;&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        elFormItem: &#123;</span><br><span class="line">            default: &apos;&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // ...</span><br><span class="line">    computed: &#123;</span><br><span class="line">        _elFormItemSize() &#123;</span><br><span class="line">            return (this.elFormItem || &#123;&#125;).elFormItemSize;</span><br><span class="line">        &#125;,</span><br><span class="line">        buttonSize() &#123;</span><br><span class="line">            return this.size || this._elFormItemSize || (this.$ELEMENT || &#123;&#125;).size;</span><br><span class="line">        &#125;,</span><br><span class="line">        //...</span><br><span class="line">    &#125;,</span><br><span class="line">    // ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">// Button 组件核心源码</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#x27;ElButton&#x27;,</span><br><span class="line">    // 通过 inject 获取 elForm 以及 elFormItem 这两个组件</span><br><span class="line">    inject: &#123;</span><br><span class="line">        elForm: &#123;</span><br><span class="line">            default: &#x27;&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        elFormItem: &#123;</span><br><span class="line">            default: &#x27;&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // ...</span><br><span class="line">    computed: &#123;</span><br><span class="line">        _elFormItemSize() &#123;</span><br><span class="line">            return (this.elFormItem || &#123;&#125;).elFormItemSize;</span><br><span class="line">        &#125;,</span><br><span class="line">        buttonSize() &#123;</span><br><span class="line">            return this.size || this._elFormItemSize || (this.$ELEMENT || &#123;&#125;).size;</span><br><span class="line">        &#125;,</span><br><span class="line">        //...</span><br><span class="line">    &#125;,</span><br><span class="line">    // ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -222,7 +222,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/JavaScript/">#JavaScript</a>
+            <a href="/blog/tags/JavaScript/">#JavaScript</a>
         </div>
     
 
@@ -258,19 +258,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -285,19 +285,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -362,7 +362,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -376,7 +376,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

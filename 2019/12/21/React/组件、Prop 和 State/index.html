@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/12/21/React/%E7%BB%84%E4%BB%B6%E3%80%81Prop%20%E5%92%8C%20State/">
+            <a href="/blog/2019/12/21/React/%E7%BB%84%E4%BB%B6%E3%80%81Prop%20%E5%92%8C%20State/">
                 组件、Prop 和 State
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/React-React-Native/">React & React Native</a>
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
                 </span>
             
         </div>
@@ -180,30 +180,30 @@
 <li>你能写出 Domo 帽子那个例子的伪代码吗？</li>
 </ul>
 <h2 id="盖房子"><a href="#盖房子" class="headerlink" title="盖房子"></a>盖房子</h2><p>要想理解这些概念是什么以及如何使用它们，我们先来写一个小示例。就盖个房子如何？(点击门有惊喜)</p>
-<p>查看由 focuser (<a href="https://codepen.io/focuser/" target="_blank" rel="noopener">@focuser</a>) 在 <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a> 编写的 Demo : <a href="https://codepen.io/focuser/pen/EXBOpx/" target="_blank" rel="noopener">React 小屋</a>。</p>
-<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>如果你还记得我们在<a href="https://juejin.im/post/5b481f6b51882519ad6175c2" target="_blank" rel="noopener">前面文章</a>中所讨论过的，组件的概念是 React 的三大支柱之一。使用 React 开发应用基本都是在使用组件。</p>
+<p>查看由 focuser (<a target="_blank" rel="noopener" href="https://codepen.io/focuser/">@focuser</a>) 在 <a target="_blank" rel="noopener" href="https://codepen.io/">CodePen</a> 编写的 Demo : <a target="_blank" rel="noopener" href="https://codepen.io/focuser/pen/EXBOpx/">React 小屋</a>。</p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p>如果你还记得我们在<a target="_blank" rel="noopener" href="https://juejin.im/post/5b481f6b51882519ad6175c2">前面文章</a>中所讨论过的，组件的概念是 React 的三大支柱之一。使用 React 开发应用基本都是在使用组件。</p>
 <p>第一步是将 UI 分解成多个组件。例如，我们可以这样来拆分房子:</p>
 <p><img src="H:\上传到git里面的md文件图片\picture\React\22.jpg" alt="22"></p>
 <p>现在来编码！</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Roof /&gt;     // 房顶</span><br><span class="line">    &lt;Wall /&gt;     // 墙</span><br><span class="line">    &lt;Window /&gt;   // 窗</span><br><span class="line">    &lt;Door /&gt;     // 门</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Roof /&gt;     // 房顶</span><br><span class="line">    &lt;Wall /&gt;     // 墙</span><br><span class="line">    &lt;Window /&gt;   // 窗</span><br><span class="line">    &lt;Door /&gt;     // 门</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>等一下，怎么看起来这么像 HTML ？没错！React 的部分代码看上去就是非常像 HTML ，其实就是这样设计的，这是为了让 Web 设计师理解和编写 React 代码更容易一些。太贴心了！</p>
 <p>因此，在上面的代码中，我们使用 <code>&lt;div&gt;</code> 作为容器，这基本和 HTML 中是一样的。而像 <code>Roof</code> 和 <code>Wall</code> 这样的标签是我们即将定义的自定义标签/组件。</p>
 <p>温馨提示: 上面的代码并非实际的 React 代码，甚至连 JavaScript 都算不上。暂时，我们只使用这种宽松的语法来介绍概念。一旦你理解这些概念后，我们再来学习 JavaScript 的细节并将上述概念转换成真实代码。</p>
 <p>为了让这个例子更容易理解一些，我再简化一下: 从现在开始，我们来写一个超级简单的 Web 应用，连图片都不用，只显示文字。</p>
 <p>例如，<code>Roof</code> 其实就是一个里面有文字的 div :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Roof:</span><br><span class="line">  &lt;div&gt;roof&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Roof:</span><br><span class="line">  &lt;div&gt;roof&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>其他组件也是如此，都是只有文字的 div 而已。首先，我们来看下房子的完整的 React 风格的代码:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Roof /&gt;</span><br><span class="line">    &lt;Wall /&gt;</span><br><span class="line">    &lt;Window /&gt;</span><br><span class="line">    &lt;Door /&gt;</span><br><span class="line">  &lt;/div&gt;  </span><br><span class="line">Roof:</span><br><span class="line">  &lt;div&gt;roof&lt;/div&gt;</span><br><span class="line">Wall:</span><br><span class="line">  &lt;div&gt;wall&lt;/div&gt;</span><br><span class="line">Window:</span><br><span class="line">  &lt;div&gt;window&lt;/div&gt;</span><br><span class="line">Door:</span><br><span class="line">  &lt;div&gt;door&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Roof /&gt;</span><br><span class="line">    &lt;Wall /&gt;</span><br><span class="line">    &lt;Window /&gt;</span><br><span class="line">    &lt;Door /&gt;</span><br><span class="line">  &lt;/div&gt;  </span><br><span class="line">Roof:</span><br><span class="line">  &lt;div&gt;roof&lt;/div&gt;</span><br><span class="line">Wall:</span><br><span class="line">  &lt;div&gt;wall&lt;/div&gt;</span><br><span class="line">Window:</span><br><span class="line">  &lt;div&gt;window&lt;/div&gt;</span><br><span class="line">Door:</span><br><span class="line">  &lt;div&gt;door&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>这没什么不好理解的，是吧？<code>House</code> 是由 <code>Roof</code>、<code>Wall</code>、<code>Window</code> 和 <code>Door</code> 组成的，这些都是纯文本构成的组件。</p>
 <p>最后，React 生成的 HTML 如下所示:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;div&gt;roof&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;wall&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;windows&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;door&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;div&gt;roof&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;wall&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;windows&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;door&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="使用-Props-来配置屋顶的颜色"><a href="#使用-Props-来配置屋顶的颜色" class="headerlink" title="使用 Props 来配置屋顶的颜色"></a>使用 Props 来配置屋顶的颜色</h2><p>想象一下，我们将规格说明书发给一个工厂，这个工厂负责代工所有的零部件。在规格说明书中，我们可以告诉工厂每个部件的固有属性，比如屋顶的颜色、门的形状，等等。在按照我们的要求将屋顶和门生产出来后，它们的属性不会产生任何变化，屋顶还是蓝色的，门依旧是矩形的。这些属性压根不会改变。</p>
 <p>在 React 里，我们将这些属性称之为 Prop ，即 property 的缩写。关于 Prop ，你需要记住两点: 首先，我们来决定 Prop 的值，并在组件构建之前将其作为组件设计的一部分。其次，Prop 的值永远不会改变。</p>
 <p>那 prop 在代码中是怎样的呢？在 <code>House</code> 组件中，如果我们想要蓝色屋顶的话，只需在 <code>Roof</code> 组件上添加 “color” 属性。这就好比是在发给工厂的规格说明书中指定颜色。</p>
 <p>这有点类似于给 HTML 标签添加属性:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Roof color=&quot;blue&quot;/&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Roof color=&quot;blue&quot;/&gt;</span><br><span class="line">    ...</span><br><span class="line">  &lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>那 <code>Roof</code> 里面又是怎么样使用 prop 的呢？代码如下所示:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Roof:</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;&#123;props.color&#125; roof&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Roof:</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;&#123;props.color&#125; roof&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>就这样？没错！但是有几点需要注意:</p>
 <ul>
 <li>定义组件的 HTML 风格代码是一个<strong>模板</strong>，而不是单纯的 HTML 标签。这意味着我们可以在其中放置占位符来改变 HTML 输出的内容，而不必重复编写不同的 HTML (还记得 <a href="../assets/What-Is-React/thinker-with-hat.png">Domo 的帽子</a>吗？这就是占位符的概念！)。在这个示例中，<code>&lt;Roof color=&quot;blue&quot; /&gt;</code> 生成的 HTML 是 <code>&lt;div&gt;blue roof&lt;div&gt;</code>，而 <code>&lt;Roof color=&quot;red&quot; /&gt;</code> 生成的是 <code>&lt;div&gt;red roof&lt;/div&gt;</code>，以此类推。</li>
@@ -214,15 +214,15 @@
 <p>举个例子，门既可以开，又可以关。我们可以说门的状态就是 state ，因为它的值是可以在门创建后更改的。在这点上，state 与 prop 是不同的，prop 是不会改变的，比如门的形状。</p>
 <p>状态值的改变通常是由外部事件所引起的。在 Web 应用中，这些所谓的外部事件通常包括：用户输入了数据，或者从服务端获取了数据，又或者是定时器的触发。</p>
 <p>下面，我们来为门添加 state :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Door:</span><br><span class="line">  State:</span><br><span class="line">    status   // &quot;open&quot; 或 &quot;closed&quot;</span><br><span class="line">  &lt;div&gt;Door is &#123;state.status&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Door:</span><br><span class="line">  State:</span><br><span class="line">    status   // &quot;open&quot; 或 &quot;closed&quot;</span><br><span class="line">  &lt;div&gt;Door is &#123;state.status&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>与 <code>props</code> 类似，<code>state</code> 也是组件内部所有状态值的集合。因此，我们可以在组件定义的模板中使用 <code>state.[something]</code> 。</p>
 <p>接下来，我们来添加一些处理用户输入的“伪代码”来让门具有交互性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Door:</span><br><span class="line">State:</span><br><span class="line">  status // &quot;open&quot; 或 &quot;closed&quot;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;Door is &#123;state.status&#125;&lt;/div&gt;</span><br><span class="line">  // 处理用户输入</span><br><span class="line">  当开门时</span><br><span class="line">    将 state.status 修改成 &quot;open&quot;</span><br><span class="line">  当关门时</span><br><span class="line">    将 state.status 修改成 &quot;closed&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Door:</span><br><span class="line">State:</span><br><span class="line">  status // &quot;open&quot; 或 &quot;closed&quot;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;Door is &#123;state.status&#125;&lt;/div&gt;</span><br><span class="line">  // 处理用户输入</span><br><span class="line">  当开门时</span><br><span class="line">    将 state.status 修改成 &quot;open&quot;</span><br><span class="line">  当关门时</span><br><span class="line">    将 state.status 修改成 &quot;closed&quot;</span><br></pre></td></tr></table></figure>
 <p>这里的关键点是组件的 state 是随时间而变化的。模板的输出，也就是生成的 HTML 会根据 state 的变化而自动改变。</p>
 <p>顺便说句，不要忘了上面的只是“伪代码”，而不是 React 代码。不要尝试将其复制黏贴到你的项目中！否则你的电脑炸了我不负责……💣</p>
 <h3 id="State-是私有的"><a href="#State-是私有的" class="headerlink" title="State 是私有的"></a>State 是私有的</h3><p>组件的 state 是私有的。门无论是开还是关，这都仅仅是门的逻辑。与房子或其他组件没有任何关系。事实上，我们完全可以将门从房子中移出去，它仍然可以自己打开或关闭。</p>
 <p>因此，门的状态只有在 <code>Door</code> 组件内部是可见的。在 <code>Door</code> 组件内，我们可以读取或改写它的 state 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Door /&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;!-- 下面这句是错的 --&gt;</span><br><span class="line">    &lt;div&gt;The door is &#123;Door.state.status&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">Window:</span><br><span class="line">  ...</span><br><span class="line">  &lt;!-- 下面这句是错的！ --&gt;</span><br><span class="line">  将 Door.state.status 修改成 &apos;open&apos;</span><br><span class="line"></span><br><span class="line">Door:</span><br><span class="line">  ...</span><br><span class="line">  &lt;!-- 兄dei，这还是错的！ --&gt;</span><br><span class="line">  if House.state.正在出售</span><br><span class="line">    房产经纪人就可以开门</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">House:</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Door /&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;!-- 下面这句是错的 --&gt;</span><br><span class="line">    &lt;div&gt;The door is &#123;Door.state.status&#125;&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">Window:</span><br><span class="line">  ...</span><br><span class="line">  &lt;!-- 下面这句是错的！ --&gt;</span><br><span class="line">  将 Door.state.status 修改成 &#x27;open&#x27;</span><br><span class="line"></span><br><span class="line">Door:</span><br><span class="line">  ...</span><br><span class="line">  &lt;!-- 兄dei，这还是错的！ --&gt;</span><br><span class="line">  if House.state.正在出售</span><br><span class="line">    房产经纪人就可以开门</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好啦，这就是 prop 和 state 。prop 是组件的配置项，它的值是在组件创建之前就已经决定好了，比如门的形状和屋顶的颜色就可以定义为 prop。prop 的值永远不会改变。而 state 是组件的私有数据，当组件创建后才可以使用它。比如门的开关状态可以包括在 state 里面。state 会随着一些外部事件的发生而变化。这些所谓的外部事件通常包括：用户输入了数据，或者从服务端获取了数据，又或者是定时器的触发。</p>
 
     </div>
@@ -232,7 +232,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/React-React-Native/">#React & React Native</a>
+            <a href="/blog/tags/React-React-Native/">#React & React Native</a>
         </div>
     
 
@@ -268,19 +268,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -295,19 +295,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -372,7 +372,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -386,7 +386,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

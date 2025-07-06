@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/11/03/JavaScript/%E4%B8%80%E6%96%87%E7%90%86%E6%B8%85%E7%94%B1%E9%97%AD%E5%8C%85%E5%BC%95%E5%8F%91%5B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%5D%E5%92%8C%5B%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%5D/">
+            <a href="/blog/2019/11/03/JavaScript/%E4%B8%80%E6%96%87%E7%90%86%E6%B8%85%E7%94%B1%E9%97%AD%E5%8C%85%E5%BC%95%E5%8F%91%5B%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%5D%E5%92%8C%5B%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%5D/">
                 一文理清由闭包引发[内存泄漏]和[垃圾回收机制]
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -192,14 +192,14 @@
 <li><p>实现共有变量 =》 做累加器 </p>
 <ul>
 <li><p>代码实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        count ++;</span><br><span class="line">        <span class="built_in">console</span>.log(count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> demo;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> counter = add();</span><br><span class="line">counter();</span><br><span class="line">counter();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">add</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">demo</span>(<span class="params"></span>) &#123;</span><br><span class="line">        count ++;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> demo;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> counter = <span class="title function_">add</span>();</span><br><span class="line"><span class="title function_">counter</span>();</span><br><span class="line"><span class="title function_">counter</span>();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>可以做缓存 </p>
 <ul>
 <li><p>代码实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">eater</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> food = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        eat: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'i am eating'</span> + <span class="string">' '</span> + food);</span><br><span class="line">            food = <span class="string">''</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        push: <span class="function"><span class="keyword">function</span>(<span class="params">myFood</span>) </span>&#123;</span><br><span class="line">            food = myFood;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> eater1 = eater();</span><br><span class="line">eater.push(<span class="string">'banana'</span>);</span><br><span class="line">eater.eater();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">eater</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> food = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        <span class="attr">eat</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;i am eating&#x27;</span> + <span class="string">&#x27; &#x27;</span> + food);</span><br><span class="line">            food = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">push</span>: <span class="keyword">function</span>(<span class="params">myFood</span>) &#123;</span><br><span class="line">            food = myFood;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> eater1 = <span class="title function_">eater</span>();</span><br><span class="line">eater.<span class="title function_">push</span>(<span class="string">&#x27;banana&#x27;</span>);</span><br><span class="line">eater.<span class="title function_">eater</span>();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -210,7 +210,7 @@
 <li><p>可以实现封装 属性私有化 </p>
 <ul>
 <li><p>代码实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hang</span>(<span class="params">name, wife</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> prepareWife = <span class="string">'xiaozhang'</span>;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.wife = wife;</span><br><span class="line">    <span class="keyword">this</span>.divorce = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.wife = prepareWife;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.changePrepareWife = <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">        prepareWife = target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.sayPrepareWife = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(prepareWife);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> deng = <span class="keyword">new</span> Hang(<span class="string">'deng'</span>, <span class="string">'xiaoliu'</span>);</span><br><span class="line">deng.prepareWife;</span><br><span class="line">deng.sayPrepareWife();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Hang</span>(<span class="params">name, wife</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> prepareWife = <span class="string">&#x27;xiaozhang&#x27;</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">wife</span> = wife;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">divorce</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">wife</span> = prepareWife;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">changePrepareWife</span> = <span class="keyword">function</span>(<span class="params">target</span>) &#123;</span><br><span class="line">        prepareWife = target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sayPrepareWife</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(prepareWife);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> deng = <span class="keyword">new</span> <span class="title class_">Hang</span>(<span class="string">&#x27;deng&#x27;</span>, <span class="string">&#x27;xiaoliu&#x27;</span>);</span><br><span class="line">deng.<span class="property">prepareWife</span>;</span><br><span class="line">deng.<span class="title function_">sayPrepareWife</span>();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -239,12 +239,12 @@
 <li><p>意外的全局变量 </p>
 <ul>
 <li><p>在函数内未声明的变量就赋值，这样会在全局对象创建一个新的变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    say = <span class="string">'hehe'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">即==</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.say =<span class="string">'hehe'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    say = <span class="string">&#x27;hehe&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">即==</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">bar</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">say</span> =<span class="string">&#x27;hehe&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>或者是使用this创建了全局的变量</p>
-  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'hehe'</span>;</span><br><span class="line">&#125;</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&#x27;hehe&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">foo</span>();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>被遗忘的计时器或回调函数 </p>
 <ul>
@@ -281,7 +281,7 @@
 <li><p>优点：WeakMap里面对element的引用就是弱引用，不会被计入垃圾回收机制的。也就是说一旦消除对该节点的引用，它的占用内存就会被垃圾回收机制释放。WeakMap保存的这个键值对，也会自动消失。</p>
 </li>
 <li><p>代码实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line"><span class="keyword">const</span> element = <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>);</span><br><span class="line">vm.set(element, <span class="string">'something'</span>);</span><br><span class="line">vm.get(element);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vm = <span class="keyword">new</span> <span class="title class_">WeakMap</span>();</span><br><span class="line"><span class="keyword">const</span> element = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;example&#x27;</span>);</span><br><span class="line">vm.<span class="title function_">set</span>(element, <span class="string">&#x27;something&#x27;</span>);</span><br><span class="line">vm.<span class="title function_">get</span>(element);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -309,7 +309,7 @@
 </ul>
 </li>
 <li><p>代码示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = new Object();</span><br><span class="line">var b = a;</span><br><span class="line">a = null;</span><br><span class="line">b = null;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var a = new Object();</span><br><span class="line">var b = a;</span><br><span class="line">a = null;</span><br><span class="line">b = null;</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -348,7 +348,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/JavaScript/">#JavaScript</a>
+            <a href="/blog/tags/JavaScript/">#JavaScript</a>
         </div>
     
 
@@ -384,19 +384,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -411,19 +411,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -488,7 +488,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -502,7 +502,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2020/06/27/HTML/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+            <a href="/blog/2020/06/27/HTML/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
                 浏览器跨域访问解决方案
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/HTML/">HTML</a>
+                    <a href="/blog/categories/HTML/">HTML</a>
                 </span>
             
         </div>
@@ -171,7 +171,7 @@
         
 
         <!-- Post Content -->
-        <h2 id="跨域的概念"><a href="#跨域的概念" class="headerlink" title="跨域的概念"></a>跨域的概念</h2><p>跨域大家都知道，不同地址，不同端口，不同级别，不同协议都会构成跨域。例如：about.haorooms.com和<a href="http://www.haorooms.com都会构成跨域。总结起来只要协议、域名、端口有任何一个不同，都被当作是不同的域。下面举例，每两个一组。" target="_blank" rel="noopener">www.haorooms.com都会构成跨域。总结起来只要协议、域名、端口有任何一个不同，都被当作是不同的域。下面举例，每两个一组。</a></p>
+        <h2 id="跨域的概念"><a href="#跨域的概念" class="headerlink" title="跨域的概念"></a>跨域的概念</h2><p>跨域大家都知道，不同地址，不同端口，不同级别，不同协议都会构成跨域。例如：about.haorooms.com和<a target="_blank" rel="noopener" href="http://www.haorooms.com都会构成跨域。总结起来只要协议、域名、端口有任何一个不同，都被当作是不同的域。下面举例，每两个一组。">www.haorooms.com都会构成跨域。总结起来只要协议、域名、端口有任何一个不同，都被当作是不同的域。下面举例，每两个一组。</a></p>
 <table>
 <thead>
 <tr>
@@ -182,47 +182,47 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/a.js">http://www.haorooms.com/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/b.js" target="_blank" rel="noopener">http://www.haorooms.com/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/b.js">http://www.haorooms.com/b.js</a></td>
 <td>同一域名下</td>
 <td>允许</td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/lab/a.js" target="_blank" rel="noopener">http://www.haorooms.com/lab/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/lab/a.js">http://www.haorooms.com/lab/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/script/b.js" target="_blank" rel="noopener">http://www.haorooms.com/script/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/script/b.js">http://www.haorooms.com/script/b.js</a></td>
 <td>同一域名下不同文件夹</td>
 <td>允许</td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com:8000/a.js" target="_blank" rel="noopener">http://www.haorooms.com:8000/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com:8000/a.js">http://www.haorooms.com:8000/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/b.js" target="_blank" rel="noopener">http://www.haorooms.com/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/b.js">http://www.haorooms.com/b.js</a></td>
 <td>同一域名，不同端口</td>
 <td>不允许</td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/a.js">http://www.haorooms.com/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://www.haorooms.com/b.js" target="_blank" rel="noopener">https://www.haorooms.com/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.haorooms.com/b.js">https://www.haorooms.com/b.js</a></td>
 <td>同一域名，不同协议</td>
 <td>不允许</td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/a.js">http://www.haorooms.com/a.js</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -237,37 +237,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="http://60.32.92.74/b.js" target="_blank" rel="noopener">http://60.32.92.74/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://60.32.92.74/b.js">http://60.32.92.74/b.js</a></td>
 <td>域名和域名对应ip</td>
 <td>不允许</td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/a.js">http://www.haorooms.com/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://about.haorooms.com/b.js" target="_blank" rel="noopener">http://about.haorooms.com/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://about.haorooms.com/b.js">http://about.haorooms.com/b.js</a></td>
 <td>主域相同，子域不同</td>
 <td>不允许</td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/a.js">http://www.haorooms.com/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://haorooms.com/b.js" target="_blank" rel="noopener">http://haorooms.com/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://haorooms.com/b.js">http://haorooms.com/b.js</a></td>
 <td>同一域名，不同二级域名（同上）</td>
 <td>不允许（cookie这种情况下也不允许访问）</td>
 </tr>
 <tr>
-<td><a href="http://www.hao123.com/a.js" target="_blank" rel="noopener">http://www.hao123.com/a.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.hao123.com/a.js">http://www.hao123.com/a.js</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="http://www.haorooms.com/b.js" target="_blank" rel="noopener">http://www.haorooms.com/b.js</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.haorooms.com/b.js">http://www.haorooms.com/b.js</a></td>
 <td>不同域名</td>
 <td>不允许</td>
 </tr>
@@ -282,53 +282,53 @@
 <p>CORS要前后端同时做配置。</p>
 <p><strong>1、首先我们来看前端。</strong></p>
 <p>纯js的ajax请求。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//ie6以下用new ActiveXObject("Microsoft.XMLHTTP");可以做能力判断。</span></span></span><br><span class="line"><span class="javascript">    xhr.open(<span class="string">"￼GET"</span>, <span class="string">"/haorooms"</span>,<span class="literal">true</span>);</span></span><br><span class="line">    xhr.send();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>(); <span class="comment">//ie6以下用new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);可以做能力判断。</span></span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">open</span>(<span class="string">&quot;￼GET&quot;</span>, <span class="string">&quot;/haorooms&quot;</span>,<span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以上的haorooms是相对路径，如果我们要使用CORS，相关Ajax代码可能如下所示：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();<span class="comment">//ie6以下用new ActiveXObject("Microsoft.XMLHTTP");可以做能力判断。</span></span></span><br><span class="line"><span class="javascript">    xhr.open(<span class="string">"￼GET"</span>, <span class="string">"http://www.haorooms.com/CORS"</span>,<span class="literal">true</span>);</span></span><br><span class="line">    xhr.send();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>();<span class="comment">//ie6以下用new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);可以做能力判断。</span></span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">open</span>(<span class="string">&quot;￼GET&quot;</span>, <span class="string">&quot;http://www.haorooms.com/CORS&quot;</span>,<span class="literal">true</span>);</span></span><br><span class="line"><span class="language-javascript">    xhr.<span class="title function_">send</span>();</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>当然，你也可以用jquery的ajax进行。</p>
 <p> <strong>2、后端或者服务器端的配置</strong></p>
 <p>下面我们主要介绍Apache和PHP里的设置方法。</p>
 <p>Apache：Apache需要使用mod_headers模块来激活HTTP头的设置，它默认是激活的。你只需要在Apache配置文件的 &lt; Directory &gt;, &lt; Location&gt;, &lt; Files &gt;或&lt; VirtualHost&gt;的配置里加入以下内容即可：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Header set Access-Control-Allow-Origin *</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Header set Access-Control-Allow-Origin *  </span><br></pre></td></tr></table></figure>
 <p> PHP：只需要使用如下的代码设置即可。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"> header(<span class="string">"Access-Control-Allow-Origin:*"</span>);</span><br></pre></td></tr></table></figure>
-<p>以上的配置的含义是允许任何域发起的请求都可以获取当前服务器的数据。当然，这样有很大的危险性，恶意站点可能通过XSS攻击我们的服务器。所以我们应该尽量有针对性的对限制安全的来源，例如下面的设置使得只有<a href="http://www.haorooms.com这个域才能跨域访问服务器的API。" target="_blank" rel="noopener">www.haorooms.com这个域才能跨域访问服务器的API。</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: http:<span class="comment">//www.haorooms.com</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"> <span class="title function_ invoke__">header</span>(<span class="string">&quot;Access-Control-Allow-Origin:*&quot;</span>);  </span><br></pre></td></tr></table></figure>
+<p>以上的配置的含义是允许任何域发起的请求都可以获取当前服务器的数据。当然，这样有很大的危险性，恶意站点可能通过XSS攻击我们的服务器。所以我们应该尽量有针对性的对限制安全的来源，例如下面的设置使得只有<a target="_blank" rel="noopener" href="http://www.haorooms.com这个域才能跨域访问服务器的API。">www.haorooms.com这个域才能跨域访问服务器的API。</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Access</span>-<span class="title class_">Control</span>-<span class="title class_">Allow</span>-<span class="title class_">Origin</span>: <span class="attr">http</span>:<span class="comment">//www.haorooms.com </span></span><br></pre></td></tr></table></figure>
 <h3 id="通过jsonp跨域"><a href="#通过jsonp跨域" class="headerlink" title="通过jsonp跨域"></a>通过jsonp跨域</h3><p>jsonp跨域也需要前后端配合使用。一般后端设置callback ，前端给后台接口中传一个callback 就可以。</p>
 <p>例如前端代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//处理获得的json数据</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://haorooms.com/data.php?callback=dosomething"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">dosomething</span>(<span class="params">jsondata</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//处理获得的json数据</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://haorooms.com/data.php?callback=dosomething&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>后台代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];<span class="comment">//得到回调函数名</span></span><br><span class="line">$data = <span class="keyword">array</span>(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>);<span class="comment">//要返回的数据</span></span><br><span class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;<span class="comment">//输出</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>假如你用ajax方式进行jsonp跨域，我之前的一篇文章中提及过：<a href="http://www.haorooms.com/post/jquery_ajax_wg" target="_blank" rel="noopener">http://www.haorooms.com/post/jquery_ajax_wg</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">//简写形式，效果相同  </span></span><br><span class="line"><span class="comment">$.getJSON("url跨域地址",  &#123;参数，要把callback作为参数传到后端&#125;，</span></span><br><span class="line"><span class="comment">        function(data)&#123;  </span></span><br><span class="line"><span class="comment">            //结构处理 </span></span><br><span class="line"><span class="comment">&#125;,"jsonp");  </span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line">$.ajax(&#123;  </span><br><span class="line">    type : <span class="string">"get"</span>,  </span><br><span class="line">    url : <span class="string">"跨域地址"</span>,  </span><br><span class="line">    dataType : <span class="string">"jsonp"</span>,<span class="comment">//数据类型为jsonp  </span></span><br><span class="line">    jsonp: <span class="string">"callback"</span>,<span class="comment">//服务端用于接收callback调用的function名的参数【后台接受什么参数，我们就传什么参数】我们上面设置是callback</span></span><br><span class="line">    success : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;  </span><br><span class="line">        <span class="comment">//结果处理</span></span><br><span class="line">    &#125;,  </span><br><span class="line">    error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;  </span><br><span class="line">          <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$callback</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;callback&#x27;</span>];<span class="comment">//得到回调函数名</span></span><br><span class="line"><span class="variable">$data</span> = <span class="keyword">array</span>(<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>);<span class="comment">//要返回的数据</span></span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$callback</span>.<span class="string">&#x27;(&#x27;</span>.<span class="title function_ invoke__">json_encode</span>(<span class="variable">$data</span>).<span class="string">&#x27;)&#x27;</span>;<span class="comment">//输出</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>假如你用ajax方式进行jsonp跨域，我之前的一篇文章中提及过：<a target="_blank" rel="noopener" href="http://www.haorooms.com/post/jquery_ajax_wg">http://www.haorooms.com/post/jquery_ajax_wg</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">//简写形式，效果相同  </span></span><br><span class="line"><span class="comment">$.getJSON(&quot;url跨域地址&quot;,  &#123;参数，要把callback作为参数传到后端&#125;，</span></span><br><span class="line"><span class="comment">        function(data)&#123;  </span></span><br><span class="line"><span class="comment">            //结构处理 </span></span><br><span class="line"><span class="comment">&#125;,&quot;jsonp&quot;);  </span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line">$.<span class="title function_">ajax</span>(&#123;  </span><br><span class="line">    type : <span class="string">&quot;get&quot;</span>,  </span><br><span class="line">    url : <span class="string">&quot;跨域地址&quot;</span>,  </span><br><span class="line">    dataType : <span class="string">&quot;jsonp&quot;</span>,<span class="comment">//数据类型为jsonp  </span></span><br><span class="line">    <span class="attr">jsonp</span>: <span class="string">&quot;callback&quot;</span>,<span class="comment">//服务端用于接收callback调用的function名的参数【后台接受什么参数，我们就传什么参数】我们上面设置是callback</span></span><br><span class="line">    success : <span class="keyword">function</span>(<span class="params">data</span>)&#123;  </span><br><span class="line">        <span class="comment">//结果处理</span></span><br><span class="line">    &#125;,  </span><br><span class="line">    <span class="attr">error</span>:<span class="keyword">function</span>(<span class="params">data</span>)&#123;  </span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h3 id="通过修改document-domain来跨子域"><a href="#通过修改document-domain来跨子域" class="headerlink" title="通过修改document.domain来跨子域"></a>通过修改document.domain来跨子域</h3><p>我们只需要在跨域的两个页面中设置document.domain就可以了。修改document.domain的方法只适用于不同子域的框架间的交互。</p>
-<p>例如：1.在页面 http:// <a href="http://www.haorooms.com/a.html" target="_blank" rel="noopener">www.haorooms.com/a.html</a>  中设置document.domain</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://haorooms.com/b.html"</span> onload = <span class="string">"test()"</span>&gt;&lt;<span class="regexp">/iframe&gt;</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    document.domain = 'haorooms.com';//设置成主域</span></span><br><span class="line"><span class="string">    function test()&#123;</span></span><br><span class="line"><span class="string">        //contentWindow 可取得子窗口的 window 对象</span></span><br><span class="line"><span class="string">        alert(document.getElementById('￼iframe').contentWindow);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>例如：1.在页面 http:// <a target="_blank" rel="noopener" href="http://www.haorooms.com/a.html">www.haorooms.com/a.html</a>  中设置document.domain</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe id = <span class="string">&quot;iframe&quot;</span> src=<span class="string">&quot;http://haorooms.com/b.html&quot;</span> onload = <span class="string">&quot;test()&quot;</span>&gt;&lt;/iframe&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">document</span>.<span class="property">domain</span> = <span class="string">&#x27;haorooms.com&#x27;</span>;<span class="comment">//设置成主域</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="comment">//contentWindow 可取得子窗口的 window 对象</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="title function_">alert</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;￼iframe&#x27;</span>).<span class="property">contentWindow</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>2、在页面http:// haorooms.com/b.html   中设置document.domain</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.domain = <span class="string">'haorooms.com'</span>;<span class="comment">//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="property">domain</span> = <span class="string">&#x27;haorooms.com&#x27;</span>;<span class="comment">//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="使用window-name来进行跨域"><a href="#使用window-name来进行跨域" class="headerlink" title="使用window.name来进行跨域"></a>使用window.name来进行跨域</h3><p>原理：</p>
 <p>window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的。</p>
 <p>方法：</p>
 <p>假如有三个页面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.com/app.html：应用页面。</span><br><span class="line">a.com/proxy.html：代理文件，一般是一个没有任何内容的html文件，需要和应用页面在同一域下。</span><br><span class="line">b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.com/app.html：应用页面。</span><br><span class="line">a.com/proxy.html：代理文件，一般是一个没有任何内容的html文件，需要和应用页面在同一域下。</span><br><span class="line">b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</span><br></pre></td></tr></table></figure>
 <p><strong>1、在应用页面（a.com/app.html）中创建一个iframe，把其src指向数据页面（b.com/data.html）。</strong></p>
 <p>数据页面会把数据附加到这个iframe的window.name上，data.html代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.name = <span class="string">'I was there!'</span>;    <span class="comment">// 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右</span></span></span><br><span class="line"><span class="javascript">                                     <span class="comment">// 数据格式可以自定义，如json、字符串</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">window</span>.<span class="property">name</span> = <span class="string">&#x27;I was there!&#x27;</span>;    <span class="comment">// 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右</span></span></span><br><span class="line"><span class="language-javascript">                                     <span class="comment">// 数据格式可以自定义，如json、字符串</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>2、在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件（代理文件和应用页面在同一域下，所以可以相互通信）。</strong></p>
 <p>app.html部分代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> state = <span class="number">0</span>, </span></span><br><span class="line"><span class="javascript">    iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>),</span></span><br><span class="line"><span class="javascript">    loadfn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        if (state === 1) &#123;</span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> data = iframe.contentWindow.name;    <span class="comment">// 读取数据</span></span></span><br><span class="line"><span class="javascript">            alert(data);    <span class="comment">//弹出'I was there!'</span></span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state === <span class="number">0</span>) &#123;</span></span><br><span class="line">            state = 1;</span><br><span class="line"><span class="javascript">            iframe.contentWindow.location = <span class="string">"http://a.com/proxy.html"</span>;    <span class="comment">// 设置的代理文件</span></span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;;</span><br><span class="line"><span class="javascript">    iframe.src = <span class="string">'http://b.com/data.html'</span>;</span></span><br><span class="line">    if (iframe.attachEvent) &#123;</span><br><span class="line"><span class="javascript">        iframe.attachEvent(<span class="string">'onload'</span>, loadfn);</span></span><br><span class="line"><span class="javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">        iframe.onload  = loadfn;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.body.appendChild(iframe);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">var</span> state = <span class="number">0</span>, </span></span><br><span class="line"><span class="language-javascript">    iframe = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;iframe&#x27;</span>),</span></span><br><span class="line"><span class="language-javascript">    loadfn = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (state === <span class="number">1</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> data = iframe.<span class="property">contentWindow</span>.<span class="property">name</span>;    <span class="comment">// 读取数据</span></span></span><br><span class="line"><span class="language-javascript">            <span class="title function_">alert</span>(data);    <span class="comment">//弹出&#x27;I was there!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state === <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">            state = <span class="number">1</span>;</span></span><br><span class="line"><span class="language-javascript">            iframe.<span class="property">contentWindow</span>.<span class="property">location</span> = <span class="string">&quot;http://a.com/proxy.html&quot;</span>;    <span class="comment">// 设置的代理文件</span></span></span><br><span class="line"><span class="language-javascript">        &#125;  </span></span><br><span class="line"><span class="language-javascript">    &#125;;</span></span><br><span class="line"><span class="language-javascript">    iframe.<span class="property">src</span> = <span class="string">&#x27;http://b.com/data.html&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span> (iframe.<span class="property">attachEvent</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        iframe.<span class="title function_">attachEvent</span>(<span class="string">&#x27;onload&#x27;</span>, loadfn);</span></span><br><span class="line"><span class="language-javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        iframe.<span class="property">onload</span>  = loadfn;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(iframe);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>3、获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）。</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    iframe.contentWindow.document.write(<span class="string">''</span>);</span></span><br><span class="line">    iframe.contentWindow.close();</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.body.removeChild(iframe);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="使用HTML5的window-postMessage方法跨域"><a href="#使用HTML5的window-postMessage方法跨域" class="headerlink" title="使用HTML5的window.postMessage方法跨域"></a>使用HTML5的window.postMessage方法跨域</h3><p>具体请看上一篇博客：<a href="http://www.haorooms.com/post/window_postMessage" target="_blank" rel="noopener">http://www.haorooms.com/post/window_postMessage</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    iframe.<span class="property">contentWindow</span>.<span class="property">document</span>.<span class="title function_">write</span>(<span class="string">&#x27;&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    iframe.<span class="property">contentWindow</span>.<span class="title function_">close</span>();</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">removeChild</span>(iframe);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用HTML5的window-postMessage方法跨域"><a href="#使用HTML5的window-postMessage方法跨域" class="headerlink" title="使用HTML5的window.postMessage方法跨域"></a>使用HTML5的window.postMessage方法跨域</h3><p>具体请看上一篇博客：<a target="_blank" rel="noopener" href="http://www.haorooms.com/post/window_postMessage">http://www.haorooms.com/post/window_postMessage</a></p>
 <h2 id="webpack解决跨域问题"><a href="#webpack解决跨域问题" class="headerlink" title="webpack解决跨域问题"></a>webpack解决跨域问题</h2><p>（2017年3月补充） 除了上面的跨域解决方案之外，webpack也可以解决前端跨域问题，只需要安装webpack 的http-proxy-middleware模块就可以</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install http-proxy-middleware --save-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install http-proxy-middleware --save-dev</span><br></pre></td></tr></table></figure>
 <p>配置如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    devtool: <span class="string">'cheap-module-source-map'</span>,</span><br><span class="line">    entry: <span class="string">'./app/js/index.js'</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dev'</span>),</span><br><span class="line">        <span class="comment">// 所有输出文件的目标路径</span></span><br><span class="line">        filename: <span class="string">'js/bundle.js'</span>,</span><br><span class="line">        publicPath: <span class="string">'/'</span>,</span><br><span class="line">        chunkFilename: <span class="string">'[name].chunk.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: path.resolve(__dirname, <span class="string">'dev'</span>),</span><br><span class="line">        publicPath: <span class="string">'/'</span>,</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">        proxy: &#123;</span><br><span class="line">            <span class="comment">// 请求到 '/device' 下 的请求都会被代理到 target： http://debug.haorooms.com 中</span></span><br><span class="line">            <span class="string">'/device/*'</span>: &#123; </span><br><span class="line">                target: <span class="string">'http://debug.haorooms.com'</span>,</span><br><span class="line">                secure: <span class="literal">false</span>, <span class="comment">// 接受 运行在 https 上的服务</span></span><br><span class="line">                changeOrigin: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">    <span class="attr">devtool</span>: <span class="string">&#x27;cheap-module-source-map&#x27;</span>,</span><br><span class="line">    <span class="attr">entry</span>: <span class="string">&#x27;./app/js/index.js&#x27;</span></span><br><span class="line">    <span class="attr">output</span>: &#123;</span><br><span class="line">        <span class="attr">path</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;dev&#x27;</span>),</span><br><span class="line">        <span class="comment">// 所有输出文件的目标路径</span></span><br><span class="line">        <span class="attr">filename</span>: <span class="string">&#x27;js/bundle.js&#x27;</span>,</span><br><span class="line">        <span class="attr">publicPath</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">chunkFilename</span>: <span class="string">&#x27;[name].chunk.js&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">devServer</span>: &#123;</span><br><span class="line">        <span class="attr">contentBase</span>: path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;dev&#x27;</span>),</span><br><span class="line">        <span class="attr">publicPath</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">        <span class="attr">historyApiFallback</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">proxy</span>: &#123;</span><br><span class="line">            <span class="comment">// 请求到 &#x27;/device&#x27; 下 的请求都会被代理到 target： http://debug.haorooms.com 中</span></span><br><span class="line">            <span class="string">&#x27;/device/*&#x27;</span>: &#123; </span><br><span class="line">                <span class="attr">target</span>: <span class="string">&#x27;http://debug.haorooms.com&#x27;</span>,</span><br><span class="line">                <span class="attr">secure</span>: <span class="literal">false</span>, <span class="comment">// 接受 运行在 https 上的服务</span></span><br><span class="line">                <span class="attr">changeOrigin</span>: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">'/device/space'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 被代理到 http://debug.haorooms.com/device/space</span></span><br><span class="line">      <span class="keyword">return</span> res.json();</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  fetch(<span class="string">'device/space'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// http://localhost:8080/device/space 访问本地服务</span></span><br><span class="line">      <span class="keyword">return</span> res.json();</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fetch</span>(<span class="string">&#x27;/device/space&#x27;</span>).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 被代理到 http://debug.haorooms.com/device/space</span></span><br><span class="line">      <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="title function_">fetch</span>(<span class="string">&#x27;device/space&#x27;</span>).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// http://localhost:8080/device/space 访问本地服务</span></span><br><span class="line">      <span class="keyword">return</span> res.<span class="title function_">json</span>();</span><br><span class="line">  &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(res);</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 <p>注：使用的url 必须以/开始 否则不会代理到指定地址</p>
 <h2 id="谷歌浏览器跨域设置"><a href="#谷歌浏览器跨域设置" class="headerlink" title="谷歌浏览器跨域设置"></a>谷歌浏览器跨域设置</h2><p>找到谷歌浏览器快捷方式，右键 =====&gt; 快捷方式 =====&gt; 目标，在后面加上这句话</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--disable-web-security --user-data-dir</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--disable-web-security --user-data-dir </span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -336,7 +336,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/HTML/">#HTML</a>
+            <a href="/blog/tags/HTML/">#HTML</a>
         </div>
     
 
@@ -372,19 +372,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -399,19 +399,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -476,7 +476,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -490,7 +490,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

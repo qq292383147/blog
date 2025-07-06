@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
             <h1 id="main-title" class="title">张健龙个人技术博客</h1>
             <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
@@ -152,7 +152,7 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/15/JavaScript/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Web%E4%B8%AD%E6%9A%97%E8%97%8F%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/">
+            <a href="/blog/2019/11/15/JavaScript/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Web%E4%B8%AD%E6%9A%97%E8%97%8F%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/">
                 一文搞懂Web中暗藏的密码学
             </a>
         </h1>
@@ -163,7 +163,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -188,7 +188,7 @@
 <p>在本文中，我们将从加密，哈希，编码和混淆四种密码学基础技术来入门。</p>
 <p><strong>本文图片经过再制，方便看懂。</strong></p>
 <blockquote>
-<p>大纲和主体内容引自： <a href="https://auth0.com/blog/how-secure-are-encryption-hashing-encoding-and-obfuscation/#What-is-Encoding-" target="_blank" rel="noopener">How Secure Are Encryption, Hashing, Encoding and Obfuscation?</a></p>
+<p>大纲和主体内容引自： <a target="_blank" rel="noopener" href="https://auth0.com/blog/how-secure-are-encryption-hashing-encoding-and-obfuscation/#What-is-Encoding-">How Secure Are Encryption, Hashing, Encoding and Obfuscation?</a></p>
 </blockquote>
 <h2 id="2-什么是加密？"><a href="#2-什么是加密？" class="headerlink" title="2. 什么是加密？"></a>2. 什么是加密？</h2><p>加密定义：以保证机密性的方式转换数据的过程。</p>
 <p>为此，加密需要使用一个保密工具，就密码学而言，我们称其为“密钥”。</p>
@@ -245,7 +245,7 @@
 <li>用该哈希值来与校验和文件中列出的哈希值作匹配，以校验是否一致。</li>
 </ul>
 <p>在终端中，可以用<code>openssl</code>来对文件进行哈希处理：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ openssl sha256 /Users/hiro/Downloads/非对称.png</span><br><span class="line">SHA256(<span class="regexp">/Users/</span>hiro/Downloads/非对称.png)= <span class="number">7</span>c264efc9ea7d0431e7281286949ec4c558205f690c0df601ff98d59fc3f4f64</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ openssl sha256 /<span class="title class_">Users</span>/hiro/<span class="title class_">Downloads</span>/非对称.<span class="property">png</span></span><br><span class="line"><span class="title class_">SHA256</span>(<span class="regexp">/Users/</span>hiro/<span class="title class_">Downloads</span>/非对称.<span class="property">png</span>)= 7c264efc9ea7d0431e7281286949ec4c558205f690c0df601ff98d59fc3f4f64</span><br></pre></td></tr></table></figure>
 <p>同一个文件采用相同的<code>hash</code>算法时，就可以用来校验是否同源。</p>
 <p><strong>在强大的哈希算法中，如果有两个不同的输入，则几乎不可能获得相同的输出。</strong></p>
 <p>而相反的，如果计算后的结果范围有限，就会存在不同的数据经过计算后得到的值相同，这就是哈希冲突。（两个不同的数据计算后的结果一样）</p>
@@ -285,7 +285,7 @@
 <li>PHP：urlencode、urldecode等。</li>
 </ul>
 <p>编码方法很简单，在该字节<code>ascii</code>码的16进制字符前面加<code>%</code>. 如 空格字符，<code>ascii</code>码是32，对应16进制是’20’，那么<code>urlencode</code>编码结果是:<code>%20</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 源文本：</span><br><span class="line">The quick brown fox jumps over the lazy dog</span><br><span class="line"></span><br><span class="line"># 编码后：</span><br><span class="line"><span class="meta">#!shell</span></span><br><span class="line">%<span class="number">54</span>%<span class="number">68</span>%<span class="number">65</span>%<span class="number">20</span>%<span class="number">71</span>%<span class="number">75</span>%<span class="number">69</span>%<span class="number">63</span>%<span class="number">6</span>b%<span class="number">20</span>%<span class="number">62</span>%<span class="number">72</span>%<span class="number">6</span>f%<span class="number">77</span>%<span class="number">6</span>e%<span class="number">20</span>%<span class="number">66</span>%<span class="number">6</span>f%<span class="number">78</span>%<span class="number">20</span>%<span class="number">6</span>a%<span class="number">75</span>%<span class="number">6</span>d%<span class="number">70</span>%<span class="number">73</span>%<span class="number">20</span>%<span class="number">6</span>f%<span class="number">76</span>%<span class="number">65</span>%<span class="number">72</span>%<span class="number">20</span>%<span class="number">74</span>%<span class="number">68</span>%<span class="number">65</span>%<span class="number">20</span>%<span class="number">6</span>c%<span class="number">61</span>%<span class="number">7</span>a%<span class="number">79</span>%<span class="number">20</span>%<span class="number">64</span>%<span class="number">6</span>f%<span class="number">67</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 源文本：</span><br><span class="line"><span class="title class_">The</span> quick brown fox jumps over the lazy dog</span><br><span class="line"></span><br><span class="line"># 编码后：</span><br><span class="line">#!shell</span><br><span class="line">%<span class="number">54</span>%<span class="number">68</span>%<span class="number">65</span>%<span class="number">20</span>%<span class="number">71</span>%<span class="number">75</span>%<span class="number">69</span>%<span class="number">63</span>%6b%<span class="number">20</span>%<span class="number">62</span>%<span class="number">72</span>%6f%<span class="number">77</span>%6e%<span class="number">20</span>%<span class="number">66</span>%6f%<span class="number">78</span>%<span class="number">20</span>%6a%<span class="number">75</span>%6d%<span class="number">70</span>%<span class="number">73</span>%<span class="number">20</span>%6f%<span class="number">76</span>%<span class="number">65</span>%<span class="number">72</span>%<span class="number">20</span>%<span class="number">74</span>%<span class="number">68</span>%<span class="number">65</span>%<span class="number">20</span>%6c%<span class="number">61</span>%7a%<span class="number">79</span>%<span class="number">20</span>%<span class="number">64</span>%6f%<span class="number">67</span></span><br></pre></td></tr></table></figure>
 <h3 id="4-2-HTML实体编码"><a href="#4-2-HTML实体编码" class="headerlink" title="4.2 HTML实体编码"></a>4.2 <code>HTML实体编码</code></h3><p>在<code>HTML</code>中，需要对数据进行<code>HTML</code>编码以遵守所需的<code>HTML</code>字符格式。转义避免XSS攻击也是如此。</p>
 <p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/107.jpg" alt="107"></p>
 <h3 id="4-3-Base64-32-16编码"><a href="#4-3-Base64-32-16编码" class="headerlink" title="4.3 Base64/32/16编码"></a>4.3 <code>Base64/32/16</code>编码</h3><p><code>base64</code>、<code>base32</code>、<code>base16</code>可以分别编码转化8位字节为6位、5位、4位。</p>
@@ -304,7 +304,7 @@
 <p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/108.jpg" alt="108"></p>
 <p> 举个栗子：</p>
 <blockquote>
-<p><a href="https://blog.csdn.net/wo541075754/article/details/81734770" target="_blank" rel="noopener">引自：一篇文章彻底弄懂Base64编码原理</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wo541075754/article/details/81734770">引自：一篇文章彻底弄懂Base64编码原理</a></p>
 </blockquote>
 <p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/109.jpg" alt="109"></p>
 <ul>
@@ -330,9 +330,9 @@
 </ul>
 <p>但是，如此存在许多有助于消除应用程序代码混淆的工具。那就是其它话题了。。。</p>
 <h3 id="4-1-例子一：JavaScript混淆"><a href="#4-1-例子一：JavaScript混淆" class="headerlink" title="4.1 例子一：JavaScript混淆"></a>4.1 例子一：<code>JavaScript</code>混淆</h3><p><code>JavaScript</code>源代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello, '</span> + name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hello(<span class="string">'New user'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello, &#x27;</span> + name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">hello</span>(<span class="string">&#x27;New user&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <p>混淆后：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _0xa1cc=[<span class="string">"\x48\x65\x6C\x6C\x6F\x2C\x20"</span>,<span class="string">"\x6C\x6F\x67"</span>,<span class="string">"\x4E\x65\x77\x20\x75\x73\x65\x72"</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hello</span>(<span class="params">_0x2cc8x2</span>)</span>&#123;<span class="built_in">console</span>[_0xa1cc[<span class="number">1</span>]](_0xa1cc[<span class="number">0</span>]+ _0x2cc8x2)&#125;hello(_0xa1cc[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _0xa1cc=[<span class="string">&quot;\x48\x65\x6C\x6C\x6F\x2C\x20&quot;</span>,<span class="string">&quot;\x6C\x6F\x67&quot;</span>,<span class="string">&quot;\x4E\x65\x77\x20\x75\x73\x65\x72&quot;</span>];</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">_0x2cc8x2</span>)&#123;<span class="variable language_">console</span>[_0xa1cc[<span class="number">1</span>]](_0xa1cc[<span class="number">0</span>]+ _0x2cc8x2)&#125;<span class="title function_">hello</span>(_0xa1cc[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>从机密性，完整性，真实性分析四种密码技术：</p>
 <table>
 <thead>
@@ -378,10 +378,10 @@
 <ul>
 <li><p><code>MD5</code>，一种被广泛使用的密码杂凑函数，可以产生出一个128位元（16位元组）的哈希值，用于确保信息传输完整一致。*<em>虽广泛，但过时。</em></p>
 </li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHA-256/SHA512</span><br></pre></td></tr></table></figure>
-<p> , “加盐”。在比特币中，区块链使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHA-256</span><br></pre></td></tr></table></figure>
-<p>算法作为基础的加密哈希函数。 </p>
+<li><pre><code>SHA-256/SHA512
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">, &quot;加盐&quot;。在比特币中，区块链使用</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+SHA-256
+</code></pre><p>算法作为基础的加密哈希函数。 </p>
 <ul>
 <li>安全散列算法<code>secure hash algorithm</code>，是一个密码哈希函数家族。</li>
 <li><code>SHA</code>家族有五个算法，分别是<code>SHA-1,SHA-224,SHA-256,SHA-384,SHA-512</code></li>
@@ -402,9 +402,9 @@
 </ul>
 <h2 id="后记-amp-引用"><a href="#后记-amp-引用" class="headerlink" title="后记 &amp; 引用"></a>后记 &amp; 引用</h2><blockquote>
 <ul>
-<li><a href="https://auth0.com/blog/how-secure-are-encryption-hashing-encoding-and-obfuscation/#What-is-Encoding-" target="_blank" rel="noopener">How Secure Are Encryption, Hashing, Encoding and Obfuscation?</a></li>
-<li><a href="https://www.cnblogs.com/godoforange/articles/10850493.html" target="_blank" rel="noopener">CTF中那些脑洞大开的编码和加密</a></li>
-<li><a href="https://blog.csdn.net/Dearye_1/article/details/78492021" target="_blank" rel="noopener">散列文件的存储——‘桶’</a></li>
+<li><a target="_blank" rel="noopener" href="https://auth0.com/blog/how-secure-are-encryption-hashing-encoding-and-obfuscation/#What-is-Encoding-">How Secure Are Encryption, Hashing, Encoding and Obfuscation?</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/godoforange/articles/10850493.html">CTF中那些脑洞大开的编码和加密</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Dearye_1/article/details/78492021">散列文件的存储——‘桶’</a></li>
 </ul>
 </blockquote>
 
@@ -418,7 +418,7 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/15/JavaScript/JavaScript-%E6%89%8B%E5%86%99%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%B7%E8%B4%9D/">
+            <a href="/blog/2019/11/15/JavaScript/JavaScript-%E6%89%8B%E5%86%99%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%B7%E8%B4%9D/">
                 JavaScript-手写优秀的拷贝
             </a>
         </h1>
@@ -429,7 +429,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -451,10 +451,10 @@
 <li>返回目标值</li>
 <li>Object.assign属性是不可枚举的，所以设置Object.assignMy enumerable为false。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否支持assign属性</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Object</span>.assign == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(<span class="built_in">Object</span>, <span class="string">'assignMy'</span>, &#123;</span><br><span class="line">        value: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (target == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'xxxx'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> newObj = <span class="built_in">Object</span>(target);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="built_in">arguments</span>.length; index++) &#123;</span><br><span class="line">                <span class="keyword">var</span> nextSource = <span class="built_in">arguments</span>[index];</span><br><span class="line">                <span class="keyword">if</span> (nextSource != <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">var</span> source <span class="keyword">in</span> nextSource) &#123;</span><br><span class="line">                       <span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.hasOwnProperty.call(nextSource, source)) &#123;</span><br><span class="line">                            newObj[source] = nextSource[source];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> newObj;</span><br><span class="line">        &#125;,</span><br><span class="line">        writable: <span class="literal">true</span>,</span><br><span class="line">        configurable: <span class="literal">true</span>,</span><br><span class="line">        enumerable: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否支持assign属性</span></span><br><span class="line"><span class="keyword">if</span> (<span class="title class_">Object</span>.<span class="property">assign</span> == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(<span class="title class_">Object</span>, <span class="string">&#x27;assignMy&#x27;</span>, &#123;</span><br><span class="line">        <span class="attr">value</span>: <span class="keyword">function</span>(<span class="params">target</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (target == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">TypeError</span>(<span class="string">&#x27;xxxx&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> newObj = <span class="title class_">Object</span>(target);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="variable language_">arguments</span>.<span class="property">length</span>; index++) &#123;</span><br><span class="line">                <span class="keyword">var</span> nextSource = <span class="variable language_">arguments</span>[index];</span><br><span class="line">                <span class="keyword">if</span> (nextSource != <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">var</span> source <span class="keyword">in</span> nextSource) &#123;</span><br><span class="line">                       <span class="keyword">if</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">hasOwnProperty</span>.<span class="title function_">call</span>(nextSource, source)) &#123;</span><br><span class="line">                            newObj[source] = nextSource[source];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> newObj;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">writable</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">configurable</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="attr">enumerable</span>: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/91.jpg" alt="91"></p>
 <h3 id="2-2-扩展运算符-…"><a href="#2-2-扩展运算符-…" class="headerlink" title="2.2 扩展运算符(…)"></a>2.2 扩展运算符(…)</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/93.jpg" alt="93"><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/92.jpg" alt="92"></p>
-<h3 id="2-3-Array-prototype-slice-amp-amp-Array-prototype-concat"><a href="#2-3-Array-prototype-slice-amp-amp-Array-prototype-concat" class="headerlink" title="2.3 Array.prototype.slice() &amp;&amp; Array.prototype.concat()"></a>2.3 Array.prototype.slice() &amp;&amp; Array.prototype.concat()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> m = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: &#123; <span class="attr">d</span>: <span class="number">3</span> &#125;&#125;;</span><br><span class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, m); </span><br><span class="line">m.c.d = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(list1);</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-Array-prototype-slice-amp-amp-Array-prototype-concat"><a href="#2-3-Array-prototype-slice-amp-amp-Array-prototype-concat" class="headerlink" title="2.3 Array.prototype.slice() &amp;&amp; Array.prototype.concat()"></a>2.3 Array.prototype.slice() &amp;&amp; Array.prototype.concat()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">list</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">slice</span>.<span class="title function_">call</span>(<span class="variable language_">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> m = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: &#123; <span class="attr">d</span>: <span class="number">3</span> &#125;&#125;;</span><br><span class="line"><span class="keyword">var</span> list1 = <span class="title function_">list</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, m); </span><br><span class="line">m.<span class="property">c</span>.<span class="property">d</span> = <span class="number">5</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(list1);</span><br></pre></td></tr></table></figure>
 <p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/94.jpg" alt="94"></p>
 <h2 id="三、什么是深拷贝"><a href="#三、什么是深拷贝" class="headerlink" title="三、什么是深拷贝"></a>三、什么是深拷贝</h2><p>将一个对象冲内存中完全的拷贝出来，分配一个新的内存区域存放新的对象，且修改对象不会影响到原来的对象。</p>
 <p>将 B 对象拷贝到 A 对象中，包括 B 里面的子对象。它不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。</p>
@@ -463,19 +463,19 @@
 <li>优点：简单、已使用。</li>
 <li>缺点：会忽略undefined、symbol。不能序列化函数。不能解决循环引用的问题。</li>
 </ul>
-<h3 id="4-2-消息通道messageChannel"><a href="#4-2-消息通道messageChannel" class="headerlink" title="4.2 消息通道messageChannel"></a>4.2 消息通道messageChannel</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> &#123;port1, port2&#125; = <span class="keyword">new</span> MessageChannel();</span><br><span class="line">          port2.onmessage = <span class="function"><span class="params">ev</span> =&gt;</span> resolve(ev.data);</span><br><span class="line">          port1.postMessage(obj); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-2-消息通道messageChannel"><a href="#4-2-消息通道messageChannel" class="headerlink" title="4.2 消息通道messageChannel"></a>4.2 消息通道messageChannel</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">clone</span>(<span class="params">obj</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> &#123;port1, port2&#125; = <span class="keyword">new</span> <span class="title class_">MessageChannel</span>();</span><br><span class="line">          port2.<span class="property">onmessage</span> = <span class="function"><span class="params">ev</span> =&gt;</span> <span class="title function_">resolve</span>(ev.<span class="property">data</span>);</span><br><span class="line">          port1.<span class="title function_">postMessage</span>(obj); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点：能解决undefined和循环应用的问题。</li>
 <li>缺点：是一个异步函数。</li>
 </ul>
-<h3 id="4-3-递归函数"><a href="#4-3-递归函数" class="headerlink" title="4.3 递归函数"></a>4.3 递归函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObj</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">'object'</span> || <span class="keyword">typeof</span> o === <span class="string">'function'</span>) &amp;&amp; o !== <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isObj(target)) &#123;</span><br><span class="line">        <span class="keyword">let</span> cloneTarget = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">            cloneTarget[key] = deepClone(target[key]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> target1 = &#123;</span><br><span class="line">    field1: <span class="number">1</span>,</span><br><span class="line">    field2: <span class="literal">undefined</span>,</span><br><span class="line">    field3: &#123;</span><br><span class="line">        child: <span class="string">'child'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    field4: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>],</span><br><span class="line">	field5: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">	field6: <span class="built_in">Symbol</span>(<span class="string">'field6'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'clone'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = deepClone(target1);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'clone'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-递归函数"><a href="#4-3-递归函数" class="headerlink" title="4.3 递归函数"></a>4.3 递归函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">target</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">isObj</span>(<span class="params">o</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">&#x27;object&#x27;</span> || <span class="keyword">typeof</span> o === <span class="string">&#x27;function&#x27;</span>) &amp;&amp; o !== <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isObj</span>(target)) &#123;</span><br><span class="line">        <span class="keyword">let</span> cloneTarget = <span class="title class_">Array</span>.<span class="title function_">isArray</span>(target) ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">            cloneTarget[key] = <span class="title function_">deepClone</span>(target[key]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> target1 = &#123;</span><br><span class="line">    <span class="attr">field1</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">field2</span>: <span class="literal">undefined</span>,</span><br><span class="line">    <span class="attr">field3</span>: &#123;</span><br><span class="line">        <span class="attr">child</span>: <span class="string">&#x27;child&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">field4</span>: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>],</span><br><span class="line">	<span class="attr">field5</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;&#125;,</span><br><span class="line">	<span class="attr">field6</span>: <span class="title class_">Symbol</span>(<span class="string">&#x27;field6&#x27;</span>)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&#x27;clone&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title function_">deepClone</span>(target1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&#x27;clone&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/96.jpg" alt="96"></p>
 <p>如果存在循环引用<img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/97.jpg" alt="97"></p>
 <ul>
 <li>优点：能解决undefined、Symbol和函数的问题。</li>
 <li>缺点：不能循环引用。</li>
 </ul>
-<h3 id="4-4优化递归函数"><a href="#4-4优化递归函数" class="headerlink" title="4.4优化递归函数"></a>4.4优化递归函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">target, map = new Map(</span>)) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObj</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">'object'</span> || <span class="keyword">typeof</span> o === <span class="string">'function'</span>) &amp;&amp; o !== <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isObj(target)) &#123;</span><br><span class="line">        <span class="keyword">let</span> cloneTarget = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">if</span> (map.get(target)) &#123;</span><br><span class="line">            <span class="keyword">return</span> map.get(target);</span><br><span class="line">        &#125;</span><br><span class="line">        map.set(target, cloneTarget);</span><br><span class="line">        <span class="comment">// 这里还可以使用while来提高性能</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">            cloneTarget[key] = deepClone(target[key], map);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> target1 = &#123;</span><br><span class="line">    field1: <span class="number">1</span>,</span><br><span class="line">    field2: <span class="literal">undefined</span>,</span><br><span class="line">    field3: &#123;</span><br><span class="line">        child: <span class="string">'child'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    field4: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>]</span><br><span class="line">&#125;;</span><br><span class="line">target1.target1 = target1;</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'clone'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = deepClone(target1);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'clone'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="4-4优化递归函数"><a href="#4-4优化递归函数" class="headerlink" title="4.4优化递归函数"></a>4.4优化递归函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">target, map = <span class="keyword">new</span> <span class="built_in">Map</span>()</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">isObj</span>(<span class="params">o</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">&#x27;object&#x27;</span> || <span class="keyword">typeof</span> o === <span class="string">&#x27;function&#x27;</span>) &amp;&amp; o !== <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_">isObj</span>(target)) &#123;</span><br><span class="line">        <span class="keyword">let</span> cloneTarget = <span class="title class_">Array</span>.<span class="title function_">isArray</span>(target) ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">if</span> (map.<span class="title function_">get</span>(target)) &#123;</span><br><span class="line">            <span class="keyword">return</span> map.<span class="title function_">get</span>(target);</span><br><span class="line">        &#125;</span><br><span class="line">        map.<span class="title function_">set</span>(target, cloneTarget);</span><br><span class="line">        <span class="comment">// 这里还可以使用while来提高性能</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">            cloneTarget[key] = <span class="title function_">deepClone</span>(target[key], map);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> target1 = &#123;</span><br><span class="line">    <span class="attr">field1</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">field2</span>: <span class="literal">undefined</span>,</span><br><span class="line">    <span class="attr">field3</span>: &#123;</span><br><span class="line">        <span class="attr">child</span>: <span class="string">&#x27;child&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">field4</span>: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>]</span><br><span class="line">&#125;;</span><br><span class="line">target1.<span class="property">target1</span> = target1;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">time</span>(<span class="string">&#x27;clone&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> obj = <span class="title function_">deepClone</span>(target1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">timeEnd</span>(<span class="string">&#x27;clone&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>优点：能解决undefined、Symbol、函数的问题和循环引用问题。</li>
 <li>缺点：存在一定的性能问题。</li>
@@ -491,7 +491,7 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/2019/11/15/JavaScript/%E5%8A%A8%E7%94%BB%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/">
+            <a href="/blog/2019/11/15/JavaScript/%E5%8A%A8%E7%94%BB%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/">
                 动画：什么是闭包？
             </a>
         </h1>
@@ -502,7 +502,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/JavaScript/">JavaScript</a>
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
                 </span>
             
         </div>
@@ -577,10 +577,10 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="wrap-pagination">
-                <a class="" href="/page/18/">
+                <a class="" href="/blog/page/18/">
                     <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 </a>
-                <a class="" href="/page/20/">
+                <a class="" href="/blog/page/20/">
                     <i class="fa fa-chevron-right" aria-hidden="true"></i>
                 </a>
             </div>
@@ -612,19 +612,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -639,19 +639,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -716,7 +716,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -730,7 +730,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

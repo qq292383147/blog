@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/03/22/Vue/vue%E4%B8%ADcomputed-%E5%92%8C-watch%E7%9A%84%E5%BC%82%E5%90%8C/">
+            <a href="/blog/2019/03/22/Vue/vue%E4%B8%ADcomputed-%E5%92%8C-watch%E7%9A%84%E5%BC%82%E5%90%8C/">
                 vue中computed 和 watch的异同
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/vue/">vue</a>
+                    <a href="/blog/categories/vue/">vue</a>
                 </span>
             
         </div>
@@ -173,17 +173,17 @@
         <!-- Post Content -->
         <p><strong><em>html:</em></strong></p>
 <p>我们要实现 第三个表单的值 是第一个和第二个的拼接，并且在前俩表单数值变化时，第三个表单数值也在变化</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiv"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"firstName"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"lastName"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"fullName"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;myDiv&quot;</span>&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;firstName&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;lastName&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;fullName&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <p>js: 用watch方法来实现</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#myDiv'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: <span class="string">'Foo'</span>,</span><br><span class="line">    lastName: <span class="string">'Bar'</span>,</span><br><span class="line">    fullName: <span class="string">'Foo Bar'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    firstName: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fullName = val + <span class="string">' '</span> + <span class="keyword">this</span>.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    lastName: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fullName = <span class="keyword">this</span>.firstName + <span class="string">' '</span> + val</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">  <span class="attr">el</span>: <span class="string">&#x27;#myDiv&#x27;</span>,</span><br><span class="line">  <span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">firstName</span>: <span class="string">&#x27;Foo&#x27;</span>,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="string">&#x27;Bar&#x27;</span>,</span><br><span class="line">    <span class="attr">fullName</span>: <span class="string">&#x27;Foo Bar&#x27;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">watch</span>: &#123;</span><br><span class="line">    <span class="attr">firstName</span>: <span class="keyword">function</span> (<span class="params">val</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">fullName</span> = val + <span class="string">&#x27; &#x27;</span> + <span class="variable language_">this</span>.<span class="property">lastName</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">lastName</span>: <span class="keyword">function</span> (<span class="params">val</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">fullName</span> = <span class="variable language_">this</span>.<span class="property">firstName</span> + <span class="string">&#x27; &#x27;</span> + val</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>js: 利用computed 来写</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">     el:<span class="string">"#myDiv"</span>,</span><br><span class="line">          data:&#123;</span><br><span class="line">              firstName:<span class="string">"Den"</span>,</span><br><span class="line">              lastName:<span class="string">"wang"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      computed:&#123;</span><br><span class="line">          fullName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">return</span>  <span class="keyword">this</span>.firstName  + <span class="string">" "</span> +<span class="keyword">this</span>.lastName;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">     <span class="attr">el</span>:<span class="string">&quot;#myDiv&quot;</span>,</span><br><span class="line">          <span class="attr">data</span>:&#123;</span><br><span class="line">              <span class="attr">firstName</span>:<span class="string">&quot;Den&quot;</span>,</span><br><span class="line">              <span class="attr">lastName</span>:<span class="string">&quot;wang&quot;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      <span class="attr">computed</span>:&#123;</span><br><span class="line">          <span class="attr">fullName</span>:<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">              <span class="keyword">return</span>  <span class="variable language_">this</span>.<span class="property">firstName</span>  + <span class="string">&quot; &quot;</span> +<span class="variable language_">this</span>.<span class="property">lastName</span>;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
 <p>很容易看出 computed 在实现上边的效果时，是更简单的。</p>
 <p><strong>二 、 详解 comouted 计算属性</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在vue的 模板内&#123;&#123;&#125;&#125;是可以写一些简单的js表达式的 ，很便利。但是如果在页面中使用大量或是复杂的表达式去处理数据，对页面的维护会有很大的影响。这个时候就需要用到computed 计算属性来处理复杂的逻辑运算。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在vue的 模板内&#123;&#123;&#125;&#125;是可以写一些简单的js表达式的 ，很便利。但是如果在页面中使用大量或是复杂的表达式去处理数据，对页面的维护会有很大的影响。这个时候就需要用到computed 计算属性来处理复杂的逻辑运算。</span><br></pre></td></tr></table></figure>
 <p>1.优点：<br>在数据未发生变化时，优先读取缓存。computed 计算属性只有在相关的数据发生变化时才会改变要计算的属性，当相关数据没有变化是，它会读取缓存。而不必想 motheds方法 和 watch 方法是的每次都去执行函数。</p>
 <p>2.setter 和 getter方法：（注意在vue中书写时用set 和 get）<br>setter 方法在设置值是触发。<br>getter 方法在获取值时触发。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">   fullName:&#123;</span><br><span class="line">    <span class="comment">//这里用了es6书写方法</span></span><br><span class="line">        <span class="keyword">set</span>()&#123;</span><br><span class="line">             alert(<span class="string">"set"</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="keyword">get</span>()&#123;</span><br><span class="line">           alert(<span class="string">"get"</span>);</span><br><span class="line">           <span class="keyword">return</span>  <span class="keyword">this</span>.firstName  + <span class="string">" "</span> +<span class="keyword">this</span>.lastName;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>:&#123;</span><br><span class="line">   <span class="attr">fullName</span>:&#123;</span><br><span class="line">    <span class="comment">//这里用了es6书写方法</span></span><br><span class="line">        <span class="title function_">set</span>(<span class="params"></span>)&#123;</span><br><span class="line">             <span class="title function_">alert</span>(<span class="string">&quot;set&quot;</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">           <span class="title function_">alert</span>(<span class="string">&quot;get&quot;</span>);</span><br><span class="line">           <span class="keyword">return</span>  <span class="variable language_">this</span>.<span class="property">firstName</span>  + <span class="string">&quot; &quot;</span> +<span class="variable language_">this</span>.<span class="property">lastName</span>;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <p><strong>三 、watch 方法</strong></p>
 <p>虽然计算属性在大多数情况下是非常适合的，但是在有些情况下我们需要自定义一个watcher，在数据变化时来执行异步操作，这时watch是非常有用的。</p>
 
@@ -194,7 +194,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/vue/">#vue</a>
+            <a href="/blog/tags/vue/">#vue</a>
         </div>
     
 
@@ -230,19 +230,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -257,19 +257,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -334,7 +334,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -348,7 +348,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

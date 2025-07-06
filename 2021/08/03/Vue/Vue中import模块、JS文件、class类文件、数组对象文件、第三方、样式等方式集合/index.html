@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2021/08/03/Vue/Vue%E4%B8%ADimport%E6%A8%A1%E5%9D%97%E3%80%81JS%E6%96%87%E4%BB%B6%E3%80%81class%E7%B1%BB%E6%96%87%E4%BB%B6%E3%80%81%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%96%87%E4%BB%B6%E3%80%81%E7%AC%AC%E4%B8%89%E6%96%B9%E3%80%81%E6%A0%B7%E5%BC%8F%E7%AD%89%E6%96%B9%E5%BC%8F%E9%9B%86%E5%90%88/">
+            <a href="/blog/2021/08/03/Vue/Vue%E4%B8%ADimport%E6%A8%A1%E5%9D%97%E3%80%81JS%E6%96%87%E4%BB%B6%E3%80%81class%E7%B1%BB%E6%96%87%E4%BB%B6%E3%80%81%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%96%87%E4%BB%B6%E3%80%81%E7%AC%AC%E4%B8%89%E6%96%B9%E3%80%81%E6%A0%B7%E5%BC%8F%E7%AD%89%E6%96%B9%E5%BC%8F%E9%9B%86%E5%90%88/">
                 Vue中import模块、JS文件、class类文件、数组对象文件、第三方、样式等方式集合
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/vue/">vue</a>
+                    <a href="/blog/categories/vue/">vue</a>
                 </span>
             
         </div>
@@ -176,39 +176,39 @@
 <p>第三方插件，比如echart、jquery等</p>
 <p>引入流程</p>
 <h3 id="1、先install安装"><a href="#1、先install安装" class="headerlink" title="1、先install安装"></a>1、先install安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  install 插件名称  --save</span><br></pre></td></tr></table></figure>
-<h3 id="2、import导入"><a href="#2、import导入" class="headerlink" title="2、import导入"></a>2、import导入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import echarts from &apos;echarts&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="2、import导入"><a href="#2、import导入" class="headerlink" title="2、import导入"></a>2、import导入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import echarts from &#x27;echarts&#x27;</span><br></pre></td></tr></table></figure>
 <h3 id="3、其他配置"><a href="#3、其他配置" class="headerlink" title="3、其他配置"></a>3、其他配置</h3><p>全局引入的需要再 <code>main.js</code> 中配置，一般每个js库官网中会有说明</p>
 <h2 id="二、引入函数方法"><a href="#二、引入函数方法" class="headerlink" title="二、引入函数方法"></a>二、引入函数方法</h2><blockquote>
 <p>2.1 单个函数引入<br>2.1.1 JS中export函数</p>
 </blockquote>
 <h4 id="1、js文件的写法"><a href="#1、js文件的写法" class="headerlink" title="1、js文件的写法"></a>1、js文件的写法</h4><p>新建一个JS文件 <code>util.js</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span>  <span class="function"><span class="keyword">function</span>  <span class="title">testFunciton</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2、引入需要加花括号，支持多个导入"><a href="#2、引入需要加花括号，支持多个导入" class="headerlink" title="2、引入需要加花括号，支持多个导入"></a>2、引入需要加花括号，支持多个导入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;testFunction&#125; <span class="keyword">from</span> <span class="string">'./util'</span>;   <span class="comment">//方法名需要加花括号</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span>  <span class="keyword">function</span>  <span class="title function_">testFunciton</span>(<span class="params">options</span>)&#123;</span><br><span class="line">	<span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、引入需要加花括号，支持多个导入"><a href="#2、引入需要加花括号，支持多个导入" class="headerlink" title="2、引入需要加花括号，支持多个导入"></a>2、引入需要加花括号，支持多个导入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;testFunction&#125; <span class="keyword">from</span> <span class="string">&#x27;./util&#x27;</span>;   <span class="comment">//方法名需要加花括号</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>2.1.2 JS中 <code>export default</code>函数</p>
 </blockquote>
-<h4 id="1、js文件写法"><a href="#1、js文件写法" class="headerlink" title="1、js文件写法"></a>1、js文件写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>  <span class="title">testFunciton</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line"><span class="keyword">const</span> testFunction=<span class="function">(<span class="params">options</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> x=   ;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> testFunction;</span><br></pre></td></tr></table></figure>
-<h4 id="2、引入不需要花括号，只能一个个导入"><a href="#2、引入不需要花括号，只能一个个导入" class="headerlink" title="2、引入不需要花括号，只能一个个导入"></a>2、引入不需要花括号，只能一个个导入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> testFunction <span class="keyword">from</span> <span class="string">'./util'</span>;   <span class="comment">//方法名不需要加花括号</span></span><br></pre></td></tr></table></figure>
+<h4 id="1、js文件写法"><a href="#1、js文件写法" class="headerlink" title="1、js文件写法"></a>1、js文件写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span>  <span class="title function_">testFunciton</span>(<span class="params">options</span>)&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ES6写法</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">testFunction</span>=(<span class="params">options</span>)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> x=   ;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> testFunction;</span><br></pre></td></tr></table></figure>
+<h4 id="2、引入不需要花括号，只能一个个导入"><a href="#2、引入不需要花括号，只能一个个导入" class="headerlink" title="2、引入不需要花括号，只能一个个导入"></a>2、引入不需要花括号，只能一个个导入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> testFunction <span class="keyword">from</span> <span class="string">&#x27;./util&#x27;</span>;   <span class="comment">//方法名不需要加花括号</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>2.2 多个函数引入</p>
 </blockquote>
 <h3 id="1、js文件中写函数"><a href="#1、js文件中写函数" class="headerlink" title="1、js文件中写函数"></a>1、js文件中写函数</h3><p>多个函数的引入只能用 <code>export</code> ，不能用 <code>export default</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span>  <span class="function"><span class="keyword">function</span>  <span class="title">testFuncitonA</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span>  <span class="function"><span class="keyword">function</span>  <span class="title">testFuncitonB</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span>  <span class="function"><span class="keyword">function</span>  <span class="title">testFuncitonC</span>(<span class="params">options</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2、函数引入"><a href="#2、函数引入" class="headerlink" title="2、函数引入"></a>2、函数引入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;testFunctionA,testFunctionB,testFunctionC,&#125; <span class="keyword">from</span> <span class="string">'./util'</span>;   <span class="comment">//方法名需要加花括号</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-3-成组全部引入"><a href="#2-3-成组全部引入" class="headerlink" title="2.3 成组全部引入"></a>2.3 成组全部引入</h5><h4 id="1、引入方式"><a href="#1、引入方式" class="headerlink" title="1、引入方式"></a>1、引入方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> hydroServiceUtil <span class="keyword">from</span> <span class="string">"../utils/hydroServiceUtil.js"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span>  <span class="keyword">function</span>  <span class="title function_">testFuncitonA</span>(<span class="params">options</span>)&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span>  <span class="keyword">function</span>  <span class="title function_">testFuncitonB</span>(<span class="params">options</span>)&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span>  <span class="keyword">function</span>  <span class="title function_">testFuncitonC</span>(<span class="params">options</span>)&#123;</span><br><span class="line">    <span class="comment">//执行代码，注意代码中最后一般都需要return返回值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2、函数引入"><a href="#2、函数引入" class="headerlink" title="2、函数引入"></a>2、函数引入</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;testFunctionA,testFunctionB,testFunctionC,&#125; <span class="keyword">from</span> <span class="string">&#x27;./util&#x27;</span>;   <span class="comment">//方法名需要加花括号</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-3-成组全部引入"><a href="#2-3-成组全部引入" class="headerlink" title="2.3 成组全部引入"></a>2.3 成组全部引入</h5><h4 id="1、引入方式"><a href="#1、引入方式" class="headerlink" title="1、引入方式"></a>1、引入方式</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> hydroServiceUtil <span class="keyword">from</span> <span class="string">&quot;../utils/hydroServiceUtil.js&quot;</span>;</span><br></pre></td></tr></table></figure>
 <p>将整个模块当作单一对象进行导入，该模块所有的导出都会作为对象的属性存在。</p>
 <h4 id="2、调用方式"><a href="#2、调用方式" class="headerlink" title="2、调用方式"></a>2、调用方式</h4><p>全局调用</p>
 <p><code>main.js</code> 中先引入,然后添加 vue 属性配置：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$hydroServiceUtil = hydroServiceUtil;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$hydroServiceUtil</span> = hydroServiceUtil;</span><br></pre></td></tr></table></figure>
 <p>直接用  <code>this.$hydroServiceUtil.method</code>  调用就可以了</p>
 <p>单个 vue 文件调用</p>
 <p>直接用 <code>hydroServiceUtil.method</code> 调用</p>
 <h4 id="三、引入数组、对象JS文件"><a href="#三、引入数组、对象JS文件" class="headerlink" title="三、引入数组、对象JS文件"></a>三、引入数组、对象JS文件</h4><h5 id="3-1-引入数组"><a href="#3-1-引入数组" class="headerlink" title="3.1 引入数组"></a>3.1 引入数组</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js文件</span></span><br><span class="line"><span class="keyword">const</span> config=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]   <span class="comment">//一般这种方式的数组引入的都是一个常亮，不会变了，所以const即可</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> config;</span><br></pre></td></tr></table></figure>
-<h5 id="3-2-引入对象"><a href="#3-2-引入对象" class="headerlink" title="3.2 引入对象"></a>3.2 引入对象</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js文件</span></span><br><span class="line"><span class="keyword">const</span> config=&#123;</span><br><span class="line">    id：<span class="number">1</span>,</span><br><span class="line">    name:<span class="string">"zhangsan"</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> config;	<span class="comment">//调用时候，vue中先import进去，然后名称.id即可</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-2-引入对象"><a href="#3-2-引入对象" class="headerlink" title="3.2 引入对象"></a>3.2 引入对象</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//js文件</span></span><br><span class="line"><span class="keyword">const</span> config=&#123;</span><br><span class="line">    id：<span class="number">1</span>,</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;zhangsan&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> config;	<span class="comment">//调用时候，vue中先import进去，然后名称.id即可</span></span><br></pre></td></tr></table></figure>
 <h4 id="四、引入class类js文件"><a href="#四、引入class类js文件" class="headerlink" title="四、引入class类js文件"></a>四、引入class类js文件</h4><p>有时候需要 <code>js</code> 文件写 <code>class</code> 类</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//classtest.js文件中内容</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="keyword">constructor</span>(x,y)&#123;</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">        <span class="keyword">this</span>.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    todoSome()&#123;</span><br><span class="line">        alert(<span class="keyword">this</span>.x + <span class="string">"的年龄是"</span> +<span class="keyword">this</span>.y+<span class="string">"岁"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>  Person;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//classtest.js文件中内容</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span>&#123;</span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">x,y</span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">x</span> = x;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">y</span> = y;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">todoSome</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">x</span> + <span class="string">&quot;的年龄是&quot;</span> +<span class="variable language_">this</span>.<span class="property">y</span>+<span class="string">&quot;岁&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>  <span class="title class_">Person</span>;</span><br></pre></td></tr></table></figure>
 <p>使用时候，先在 <code>vue</code> 文件中 <code>import</code> 进来，然后直接 <code>new</code> 即可</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test= <span class="keyword">new</span> classtest(<span class="string">'haha'</span>,<span class="string">'33'</span>);</span><br><span class="line">test.todoSome();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test= <span class="keyword">new</span> <span class="title function_">classtest</span>(<span class="string">&#x27;haha&#x27;</span>,<span class="string">&#x27;33&#x27;</span>);</span><br><span class="line">test.<span class="title function_">todoSome</span>();</span><br></pre></td></tr></table></figure>
 <center color="red">~end~</center>
 
     </div>
@@ -218,7 +218,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/vue/">#vue</a>
+            <a href="/blog/tags/vue/">#vue</a>
         </div>
     
 
@@ -254,19 +254,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -281,19 +281,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -358,7 +358,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -372,7 +372,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

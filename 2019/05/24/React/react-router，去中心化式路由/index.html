@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/05/24/React/react-router%EF%BC%8C%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E5%BC%8F%E8%B7%AF%E7%94%B1/">
+            <a href="/blog/2019/05/24/React/react-router%EF%BC%8C%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E5%BC%8F%E8%B7%AF%E7%94%B1/">
                 react-router 去中心化式路由
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/React-React-Native/">React & React Native</a>
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
                 </span>
             
         </div>
@@ -171,33 +171,33 @@
         
 
         <!-- Post Content -->
-        <p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/React-router-logo.jpg" alt></p>
+        <p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/React-router-logo.jpg" alt=""></p>
 <h2 id="1-静态路由-vs-动态路由"><a href="#1-静态路由-vs-动态路由" class="headerlink" title="1.静态路由 vs. 动态路由"></a>1.静态路由 vs. 动态路由</h2><p>在Web前端开发中，我们经常会需要处理页面路由问题。习惯上，路由信息会在一个地方集中配置好，我们可以称之为“<code>静态路由</code>”，或者叫“<code>中心化式路由</code>”。以react-router v3版本为例，代码类似下面这样：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Router, Route, IndexRoute, browserHistory &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;Router history=&#123;browserHistory&#125;&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;RootPage&#125;&gt;</span><br><span class="line">      &lt;IndexRoute component=&#123;HomePage&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/users"</span> component=&#123;UsersPage&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>Router&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Router</span>, <span class="title class_">Route</span>, <span class="title class_">IndexRoute</span>, browserHistory &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Router</span> <span class="attr">history</span>=<span class="string">&#123;browserHistory&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">component</span>=<span class="string">&#123;RootPage&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">IndexRoute</span> <span class="attr">component</span>=<span class="string">&#123;HomePage&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/users&quot;</span> <span class="attr">component</span>=<span class="string">&#123;UsersPage&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Route</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">Router</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>可以看到，在程序的顶层组件上配置好了所有路由信息，并通过嵌套关系体现不同的层次。但是，react-router v4版本进行了革命性的改动，使之更加符合React的“组件化”思想，我们可以称之为“<code>动态路由</code>”，或者借用区块链中的术语，称之为“<code>去中心化路由</code>”。用v4版本改写后的代码类似于下面这样：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserRouter, Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;BrowserRouter&gt;</span><br><span class="line">    &lt;RootPage /&gt;</span><br><span class="line">  &lt;<span class="regexp">/BrowserRouter&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const RootPage = () =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;Route path="/</span><span class="string">" exact component=&#123;HomePage&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path="</span>/users<span class="string">" component=&#123;UsersPage&#125; /&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">render(&lt;App /&gt;, document.getElementById('app'))</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">BrowserRouter</span>, <span class="title class_">Route</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">RootPage</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">RootPage</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">exact</span> <span class="attr">component</span>=<span class="string">&#123;HomePage&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/users&quot;</span> <span class="attr">component</span>=<span class="string">&#123;UsersPage&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;app&#x27;</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>可以发现，路由的配置不再是全部位于顶层组件中了，而是分散在不同的组件中，通过组件的嵌套关系来实现路由的层次。另外，和静态路由事先定义好所有页面不同，动态路由可以在渲染时根据路径匹配结果，动态决定渲染哪些组件，这样就可以<font color="#f00">充分实现页面的复用，减少重复渲染</font>。下面依次介绍react-router v4的相关组件。</p>
-<h2 id="2-Router"><a href="#2-Router" class="headerlink" title="2.Router"></a>2.Router</h2><p>react-router内部实际上是利用了浏览器的history API，因此在v3版本中我们需要在顶层的<router>组件中传入一个history属性。在v4版本中为我们封装了一个<browserrouter>组件，我们需要把它包在所有组件的最外层：</browserrouter></router></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;BrowserRouter&gt;</span><br><span class="line">    ... ...</span><br><span class="line">  &lt;<span class="regexp">/BrowserRouter&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
-<p>另外还有一个<hashrouter>组件，是为了兼容以前版本的浏览器，已经不推荐使用了。</hashrouter></p>
+<h2 id="2-Router"><a href="#2-Router" class="headerlink" title="2.Router"></a>2.Router</h2><p>react-router内部实际上是利用了浏览器的history API，因此在v3版本中我们需要在顶层的<Router>组件中传入一个history属性。在v4版本中为我们封装了一个<BrowserRouter>组件，我们需要把它包在所有组件的最外层：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">BrowserRouter</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">App</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    ... ...</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">BrowserRouter</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>另外还有一个<HashRouter>组件，是为了兼容以前版本的浏览器，已经不推荐使用了。</p>
 <h2 id="3-路由匹配"><a href="#3-路由匹配" class="headerlink" title="3.路由匹配"></a>3.路由匹配</h2><p>路由匹配主要涉及两个组件：<code>&lt;Route&gt;</code>和<code>&lt;Switch&gt;</code>，下面分别介绍。</p>
-<h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1 "></a>3.1 <route></route></h3><p><code>&lt;Route&gt;</code>组件包含3类属性：<font color="#f00">匹配属性、渲染方法、路由属性。</font></p>
+<h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1 "></a>3.1 <Route></h3><p><code>&lt;Route&gt;</code>组件包含3类属性：<font color="#f00">匹配属性、渲染方法、路由属性。</font></p>
 <h3 id="3-1-1-匹配属性"><a href="#3-1-1-匹配属性" class="headerlink" title="3.1.1 匹配属性"></a>3.1.1 匹配属性</h3><font color="#f00">这些属性是为了设定url匹配规则。</font>
 
 <h4 id="1-path：路由匹配正则表达式"><a href="#1-path：路由匹配正则表达式" class="headerlink" title="(1) path：路由匹配正则表达式"></a>(1) path：路由匹配正则表达式</h4><p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&apos;/&apos; /&gt;：匹配以/开头的路径，比如/，/login，/login/alice</span><br><span class="line">&lt;Route path=&apos;/login/:username&apos; /&gt;：可以匹配/login/alice，参数可以通过props.match.params.username获得</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&#x27;/&#x27; /&gt;：匹配以/开头的路径，比如/，/login，/login/alice</span><br><span class="line">&lt;Route path=&#x27;/login/:username&#x27; /&gt;：可以匹配/login/alice，参数可以通过props.match.params.username获得</span><br></pre></td></tr></table></figure>
 <h4 id="2-exact：精确匹配"><a href="#2-exact：精确匹配" class="headerlink" title="(2) exact：精确匹配"></a>(2) exact：精确匹配</h4><p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&apos;/&apos; exact /&gt;：只能精确匹配/，不能匹配/login</span><br><span class="line">在v4版本里取消了&lt;IndexRoute&gt;组件，因此如果你希望在根路径显示某个页面的话，可以用下面的方式：</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/"</span> exact component=&#123;HomePage&#125; /&gt;</span><br><span class="line">  ... ...</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&#x27;/&#x27; exact /&gt;：只能精确匹配/，不能匹配/login</span><br><span class="line">在v4版本里取消了&lt;IndexRoute&gt;组件，因此如果你希望在根路径显示某个页面的话，可以用下面的方式：</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">exact</span> <span class="attr">component</span>=<span class="string">&#123;HomePage&#125;</span> /&gt;</span></span></span><br><span class="line">  ... ...</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="3-strict：严格匹配"><a href="#3-strict：严格匹配" class="headerlink" title="(3) strict：严格匹配"></a>(3) strict：严格匹配</h3><p>如果path的最后带有/，那么url必须也带有/才能匹配。举例：</p>
-<p><route path="/login/" strict>：可以匹配/login/，不能匹配/login</route></p>
+<p><Route path='/login/' strict />：可以匹配/login/，不能匹配/login</p>
 <h3 id="4-sensitive：大小写敏感"><a href="#4-sensitive：大小写敏感" class="headerlink" title="(4) sensitive：大小写敏感"></a>(4) sensitive：大小写敏感</h3><h2 id="3-1-2-渲染方法"><a href="#3-1-2-渲染方法" class="headerlink" title="3.1.2 渲染方法"></a>3.1.2 渲染方法</h2><font color="#f00">这些属性指明在匹配上路由后如何渲染。</font>
 
 <h4 id="1-component：渲染组件"><a href="#1-component：渲染组件" class="headerlink" title="(1) component：渲染组件"></a>(1) component：渲染组件</h4><p>这是最常见的方式，路由匹配时渲染一个指定组件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&apos;/users&apos; component=&#123;UsersPage&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&#x27;/users&#x27; component=&#123;UsersPage&#125; /&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="2-render：内联渲染"><a href="#2-render：内联渲染" class="headerlink" title="(2) render：内联渲染"></a>(2) render：内联渲染</h4><p><code>component</code>方式会通过<code>React.createElement</code>创建新元素，然后<code>mount</code>到<code>DOM</code>上，如果需要频繁更新的话这种方式效率会比较低，这时候你可以选择内联渲染方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">'/users'</span> render=&#123;props =&gt; (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Component &#123;...props&#125;/&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">)&#125;/</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="3-children：根据path匹配结果渲染子元素"><a href="#3-children：根据path匹配结果渲染子元素" class="headerlink" title="(3) children：根据path匹配结果渲染子元素"></a>(3) children：根据path匹配结果渲染子元素</h3><p>前面两种渲染方法都是只有path匹配时才渲染，<code>children</code>渲染方式则比较特殊，它是针对子元素的，并且只返回一个<code>match</code>结果，你可以根据<code>match</code>结果自行决定如何渲染子元素。举个例子，在一个列表中，我们希望高亮那些被匹配上的元素：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;ListItemLink to=<span class="string">"/somewhere"</span> /&gt;</span><br><span class="line">  &lt;ListItemLink to=<span class="string">"/somewhere-else"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/ul&gt;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const ListItemLink = (&#123; to, ...rest &#125;) =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;Route</span></span><br><span class="line"><span class="regexp">    path=&#123;to&#125;</span></span><br><span class="line"><span class="regexp">    children=&#123;(&#123; match &#125;) =&gt; (</span></span><br><span class="line"><span class="regexp">      &lt;li className=&#123;match ? "active" : ""&#125;&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Link to=&#123;to&#125; &#123;...rest&#125; /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    )&#125;</span></span><br><span class="line"><span class="regexp">  /</span>&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Route</span> path=<span class="string">&#x27;/users&#x27;</span> render=&#123;<span class="function"><span class="params">props</span> =&gt;</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...props</span>&#125;/&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">)&#125;/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-children：根据path匹配结果渲染子元素"><a href="#3-children：根据path匹配结果渲染子元素" class="headerlink" title="(3) children：根据path匹配结果渲染子元素"></a>(3) children：根据path匹配结果渲染子元素</h3><p>前面两种渲染方法都是只有path匹配时才渲染，<code>children</code>渲染方式则比较特殊，它是针对子元素的，并且只返回一个<code>match</code>结果，你可以根据<code>match</code>结果自行决定如何渲染子元素。举个例子，在一个列表中，我们希望高亮那些被匹配上的元素：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ListItemLink</span> <span class="attr">to</span>=<span class="string">&quot;/somewhere&quot;</span> /&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ListItemLink</span> <span class="attr">to</span>=<span class="string">&quot;/somewhere-else&quot;</span> /&gt;</span></span></span><br><span class="line">&lt;/ul&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">ListItemLink</span> = (<span class="params">&#123; to, ...rest &#125;</span>) =&gt; (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">path</span>=<span class="string">&#123;to&#125;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">    <span class="attr">children</span>=<span class="string">&#123;(&#123;</span> <span class="attr">match</span> &#125;) =&gt;</span> (</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">className</span>=<span class="string">&#123;match</span> ? &quot;<span class="attr">active</span>&quot; <span class="attr">:</span> &quot;&quot;&#125;&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">&#123;to&#125;</span> &#123;<span class="attr">...rest</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    )&#125;</span></span><br><span class="line"><span class="language-xml">  /&gt;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
 <h3 id="3-1-3-路由属性"><a href="#3-1-3-路由属性" class="headerlink" title="3.1.3 路由属性"></a>3.1.3 路由属性</h3><p>这些属性可以在待渲染组件中通过<code>props</code>访问到。</p>
 <h4 id="1-match"><a href="#1-match" class="headerlink" title="(1) match"></a>(1) match</h4><p>match属性中包含了路由匹配相关的参数：</p>
 <p>params：参数键值对（比如前面的username）<br>isExact：是否精确匹配（是否指定了exact）<br>path：正则表达式（如/login/:username）<br>url：和path匹配上的部分（入/login/alice）</p>
@@ -205,14 +205,14 @@
 <p>pathname：当前url<br>search：url中的查询字符串（如?username=a&amp;sort=b）<br>state：携带的特定状态参数，是一个对象（如{ XXX: ‘xxx’ }）</p>
 <h4 id="3-history"><a href="#3-history" class="headerlink" title="(3) history"></a>(3) history</h4><p>history就是浏览器提供的history API，提供了一些路由函数：</p>
 <p><code>push(path, [state])</code>：页面跳转<br><code>replace(path, [state])</code>：重定向<br><code>go(n)</code>：直接跳转到第n个页面<br><code>goBack()</code>：等价于go(-1)<br><code>goForward()</code>：等价于go(1)</p>
-<h3 id="3-2-Switch"><a href="#3-2-Switch" class="headerlink" title="3.2 Switch"></a>3.2 Switch</h3><p>如果我们希望设置一系列的路由匹配规则，只渲染第一个匹配上的组件，该如何实现呢？这时候你就需要用到<switch>组件。<font color="#f00"><code>&lt;Switch&gt;</code>中包含一组<code>&lt;Route&gt;</code>或者<code>&lt;Redirect&gt;</code>，只渲染第一个匹配的路由。</font></switch></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Switch, Route &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/:user"</span> component=&#123;User&#125;/&gt;</span><br><span class="line">  &lt;Route component=&#123;NoMatch&#125;/&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-2-Switch"><a href="#3-2-Switch" class="headerlink" title="3.2 Switch"></a>3.2 Switch</h3><p>如果我们希望设置一系列的路由匹配规则，只渲染第一个匹配上的组件，该如何实现呢？这时候你就需要用到<Switch>组件。<font color="#f00"><code>&lt;Switch&gt;</code>中包含一组<code>&lt;Route&gt;</code>或者<code>&lt;Redirect&gt;</code>，只渲染第一个匹配的路由。</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Switch</span>, <span class="title class_">Route</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router&#x27;</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="title class_">Switch</span>&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">&quot;/&quot;</span> <span class="attr">component</span>=<span class="string">&#123;Home&#125;/</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/about&quot;</span> <span class="attr">component</span>=<span class="string">&#123;About&#125;/</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span> <span class="attr">path</span>=<span class="string">&quot;/:user&quot;</span> <span class="attr">component</span>=<span class="string">&#123;User&#125;/</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Route</span> <span class="attr">component</span>=<span class="string">&#123;NoMatch&#125;/</span>&gt;</span></span></span><br><span class="line">&lt;/<span class="title class_">Switch</span>&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="4-导航"><a href="#4-导航" class="headerlink" title="4.导航"></a>4.导航</h3><p><code>react-router</code>提供了一系列的导航组件，基本上就是<code>&lt;a&gt;</code>标签的一个封装。主要包括3种：</p>
 <p><code>&lt;Link&gt;</code>：最终渲染为<code>&lt;a&gt;</code><br><code>&lt;NavLink&gt;</code>：path匹配时显示为高亮样式<br><code>&lt;Redirect&gt;</code>：重定向</p>
 <p>举例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Link, NavLink &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line">&lt;Link to=<span class="string">"/about"</span>&gt;About&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">&lt;NavLink to="/</span>faq<span class="string">" activeClassName="</span>selected<span class="string">"&gt;</span></span><br><span class="line"><span class="string">  FAQs</span></span><br><span class="line"><span class="string">&lt;/NavLink&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Link</span>, <span class="title class_">NavLink</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;react-router-dom&#x27;</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="title class_">Link</span> to=<span class="string">&quot;/about&quot;</span>&gt;<span class="title class_">About</span>&lt;/<span class="title class_">Link</span>&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">NavLink</span> <span class="attr">to</span>=<span class="string">&quot;/faq&quot;</span> <span class="attr">activeClassName</span>=<span class="string">&quot;selected&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  FAQs</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">NavLink</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>另外，<code>react-router</code>还提供了其他一些工具库，比如支持组件的动态<code>import</code>（下载）的<code>react-loadable</code>，支持CSS转场动画的<code>react-transition-group</code></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/react-router需要的组件.jpg" alt></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/react-router需要的组件.jpg" alt=""></p>
 
     </div>
 
@@ -221,7 +221,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/React-React-Native/">#React & React Native</a>
+            <a href="/blog/tags/React-React-Native/">#React & React Native</a>
         </div>
     
 
@@ -257,19 +257,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -284,19 +284,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -361,7 +361,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -375,7 +375,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

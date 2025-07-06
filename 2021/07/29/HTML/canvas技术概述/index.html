@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2021/07/29/HTML/canvas%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/">
+            <a href="/blog/2021/07/29/HTML/canvas%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0/">
                 canvas技术概述
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/H5C3/">H5C3</a>
+                    <a href="/blog/categories/H5C3/">H5C3</a>
                 </span>
             
         </div>
@@ -195,25 +195,25 @@
 </ol>
 <p>回到主题。</p>
 <p>canvas是通过JavaScript进行2D图形的绘制，而 <code></code> 标签本身是没有任何绘制能力的，它仅仅是一个容器。在绘制时，canvas是逐像素的进行渲染的，一旦图形绘制完成，该元素就不再被浏览器所关注（脚本执行结束，绘制的图形也不属于DOM）。</p>
-<p>值得注意的是，在HTML标准（<a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element" target="_blank" rel="noopener">whatwg标准</a>）中明确的指出： <strong><em>Authors should not use the <code>canvas</code> element in a document when a more suitable element is available.</em></strong> 所以，不要滥用元素。</p>
+<p>值得注意的是，在HTML标准（<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">whatwg标准</a>）中明确的指出： <strong><em>Authors should not use the <code>canvas</code> element in a document when a more suitable element is available.</em></strong> 所以，不要滥用元素。</p>
 <blockquote>
 <p>canvas目前几乎被所有的浏览器支持，但是IE 9.0 之前的版本不支持 <code>canvas</code>元素</p>
 </blockquote>
 <h3 id="canvas基本使用"><a href="#canvas基本使用" class="headerlink" title="canvas基本使用"></a>canvas基本使用</h3><p>canvas是一个HTML元素，所以要使用canvas，首先需要：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span>&gt;</span>当前浏览器不支持canvas<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>在第一行HTML代码中可以看到两个属性：<code>width</code> 和 <code>height</code> ，它指明了画布的宽高，在上文中提到过，不要使用CSS规定尺寸，因为当CSS规定的尺寸和画布尺寸比例不一致时，无法成比例缩放，导致绘制出来的图形变得扭曲。在没有设置画布大小时，canvas默认会初始化成300px * 150px的画布。</p>
-<p>“当前浏览器不支持canvas”是元素的内容，但他只是作为一个后备内容（即<a href="https://html.spec.whatwg.org/multipage/dom.html#fallback-content" target="_blank" rel="noopener">fallback content</a>），只有当浏览器不支持canvas时，这个内容才会被显示出来。</p>
+<p>“当前浏览器不支持canvas”是元素的内容，但他只是作为一个后备内容（即<a target="_blank" rel="noopener" href="https://html.spec.whatwg.org/multipage/dom.html#fallback-content">fallback content</a>），只有当浏览器不支持canvas时，这个内容才会被显示出来。</p>
 <p>canvas元素本身没有绘制能力，只是作为一个容器，所以需要通过JavaScript这类脚本进行绘制：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'canvas'</span>);</span><br><span class="line"><span class="keyword">const</span> context = canvas.getContext(<span class="string">'2d'</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> canvas = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;canvas&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> context = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>);</span><br></pre></td></tr></table></figure>
 <p>上面的HTML+JS代码是使用canvas所必须的，无论要绘制什么内容，这几行代码不可缺少。</p>
 <p><code>getContext()</code> 是canvas元素提供的方法，用于获取绘制上下文（或者说渲染上下文，The rendering context），他只有一个参数：上下文格式。这里传入<code>2d</code> 表示获取2D图像绘制环境。由于<code>getContext</code>是canvas元素提供的方法，故我们可以通过检测<code>getContext</code>方法的存在性来检查浏览器的支持性。</p>
 <blockquote>
-<p>context变量的类型是 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D" target="_blank" rel="noopener"><code>CanvasRenderingContext2D</code></a> 。</p>
+<p>context变量的类型是 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D"><code>CanvasRenderingContext2D</code></a> 。</p>
 <p>渲染上下文不好理解，可以理解为画图用的笔刷。</p>
 </blockquote>
 <p>在画布中如何确定绘制的位置？是坐标。</p>
-<p>在canvas中，画布的左上角为原点，横轴为x轴表示宽，纵轴为y轴表示高<a href="https://bbs.huaweicloud.com/blogs/157235#fn1" target="_blank" rel="noopener">[1]</a>。原点的位置是可以移动的，我们暂时不考虑原点的移动问题。</p>
-<p>在<a href="https://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="noopener">w3c school</a> 中，将canvas提供的绘制API大致分为以下几种<a href="https://bbs.huaweicloud.com/blogs/157235#fn2" target="_blank" rel="noopener">[2]</a>：</p>
+<p>在canvas中，画布的左上角为原点，横轴为x轴表示宽，纵轴为y轴表示高<a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/157235#fn1">[1]</a>。原点的位置是可以移动的，我们暂时不考虑原点的移动问题。</p>
+<p>在<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/tags/html_ref_canvas.asp">w3c school</a> 中，将canvas提供的绘制API大致分为以下几种<a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/157235#fn2">[2]</a>：</p>
 <ol>
 <li>颜色、样式、阴影</li>
 <li>线条样式</li>
@@ -226,16 +226,16 @@
 <li>合成</li>
 <li>其他</li>
 </ol>
-<p>在上面这个例子中，包含了矩形，圆形，线，文字及“文字”几大块内容，细讲下去，会涉及到不少API，会使得本文变得很长，而且没有必要，值得一提的是贝塞尔曲线，这是二维图形应用程序的数学曲线，一般的矢量图形软件就是通过它来精确画出曲线的，贝塞尔曲线是计算机图形学中相当重要的参数曲线<a href="https://bbs.huaweicloud.com/blogs/157235#fn3" target="_blank" rel="noopener">[3]</a>。</p>
+<p>在上面这个例子中，包含了矩形，圆形，线，文字及“文字”几大块内容，细讲下去，会涉及到不少API，会使得本文变得很长，而且没有必要，值得一提的是贝塞尔曲线，这是二维图形应用程序的数学曲线，一般的矢量图形软件就是通过它来精确画出曲线的，贝塞尔曲线是计算机图形学中相当重要的参数曲线<a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/157235#fn3">[3]</a>。</p>
 <p><img src="https://iachieveall.com/upload/2020/3/%E4%B8%80%E6%AC%A1%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF-f3dc4156502b47fcb7997c0519b07bb7.gif" alt="一次贝塞尔曲线"></p>
 <p><img src="https://iachieveall.com/upload/2020/3/%E4%BA%8C%E6%AC%A1%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF-579634ef264e4a5785e0aac4ecbda2a8.gif" alt="二次贝塞尔曲线"></p>
 <p><img src="https://iachieveall.com/upload/2020/3/%E4%B8%89%E6%AC%A1%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF-56a8481f836948e0810c4f3e35c0947d.gif" alt="三次贝塞尔曲线"></p>
 <p>以上图片按顺序分别是一次贝塞尔曲线，二次贝塞尔曲线，三次贝塞尔曲线。从图中，可以很清楚的看到，一次贝塞尔曲线实际上是一条直线。当然，还有更高阶次的曲线，不过canvas只提供了二次和三次贝塞尔曲线。</p>
 <p>以二次贝塞尔曲线的API为例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quadraticCurveTo(cp1x, cp1y, x, y);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">quadraticCurveTo</span>(cp1x, cp1y, x, y);</span><br></pre></td></tr></table></figure>
 <p>(cp1x, cp1y)表示控制点坐标，(x, y)表示结束点坐标。这里还缺少一个起始点坐标，假设是(x0, y0)，那这个(x0, y0)是谁？</p>
 <p>就是在调用 <code>quadraticCurveTo</code> 函数时，context（绘制上下文）所处的坐标。举个例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cxt = canvas.getContext(<span class="string">'2d'</span>); <span class="comment">// 认为canvas已经获取到</span></span><br><span class="line">cxt.beginPath();</span><br><span class="line">cxt.moveTo(<span class="number">120</span>, <span class="number">90</span>);</span><br><span class="line">cxt.quadraticCurveTo(<span class="number">130</span>, <span class="number">80</span>, <span class="number">130</span>, <span class="number">70</span>);</span><br><span class="line">cxt.quadraticCurveTo(<span class="number">115</span>, <span class="number">70</span>, <span class="number">115</span>, <span class="number">50</span>);</span><br><span class="line">cxt.quadraticCurveTo(<span class="number">115</span>, <span class="number">30</span>, <span class="number">155</span>, <span class="number">30</span>);</span><br><span class="line">cxt.quadraticCurveTo(<span class="number">195</span>, <span class="number">30</span>, <span class="number">195</span>, <span class="number">50</span>);</span><br><span class="line">cxt.quadraticCurveTo(<span class="number">195</span>, <span class="number">70</span>, <span class="number">155</span>, <span class="number">70</span>);</span><br><span class="line">cxt.quadraticCurveTo(<span class="number">135</span>, <span class="number">90</span>, <span class="number">120</span>, <span class="number">90</span>);</span><br><span class="line">cxt.stroke();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cxt = canvas.<span class="title function_">getContext</span>(<span class="string">&#x27;2d&#x27;</span>); <span class="comment">// 认为canvas已经获取到</span></span><br><span class="line">cxt.<span class="title function_">beginPath</span>();</span><br><span class="line">cxt.<span class="title function_">moveTo</span>(<span class="number">120</span>, <span class="number">90</span>);</span><br><span class="line">cxt.<span class="title function_">quadraticCurveTo</span>(<span class="number">130</span>, <span class="number">80</span>, <span class="number">130</span>, <span class="number">70</span>);</span><br><span class="line">cxt.<span class="title function_">quadraticCurveTo</span>(<span class="number">115</span>, <span class="number">70</span>, <span class="number">115</span>, <span class="number">50</span>);</span><br><span class="line">cxt.<span class="title function_">quadraticCurveTo</span>(<span class="number">115</span>, <span class="number">30</span>, <span class="number">155</span>, <span class="number">30</span>);</span><br><span class="line">cxt.<span class="title function_">quadraticCurveTo</span>(<span class="number">195</span>, <span class="number">30</span>, <span class="number">195</span>, <span class="number">50</span>);</span><br><span class="line">cxt.<span class="title function_">quadraticCurveTo</span>(<span class="number">195</span>, <span class="number">70</span>, <span class="number">155</span>, <span class="number">70</span>);</span><br><span class="line">cxt.<span class="title function_">quadraticCurveTo</span>(<span class="number">135</span>, <span class="number">90</span>, <span class="number">120</span>, <span class="number">90</span>);</span><br><span class="line">cxt.<span class="title function_">stroke</span>();</span><br></pre></td></tr></table></figure>
 <p>这段代码运行结果就是一个对话框（在第一张图片中体现），可以看到，在调用二次贝塞尔曲线之前，我们设置了起点，即，将笔刷移动到坐标(120, 90)，在之后调用中，都是以前一次贝塞尔曲线的终点作为本次曲线的起点。</p>
 <p>这时候可能会有人问：我去掉这个<code>moveTo</code>的调用是不是就画不出来了？如果后续是调用<code>lineTo</code>函数，那还真就画不出来了。但是别忘了，还有一次贝塞尔曲线，这就是条直线，他是以(cp1x, cp1y)为起点，(x,y)为终点的一条直线。所以说，去掉<code>moveTo</code>后，只会影响到第一条曲线的绘制。但是如果删除最后一行代码<code>stroke()</code>，那么程序运行结束时，在浏览器上啥都看不到。</p>
 <p>由此，我们应该思考另一个问题：为什么<code>stroke()</code>函数是必须的呢？</p>
@@ -267,19 +267,19 @@
 <p>分析这么多，说点儿咱最关心的实现。</p>
 <p>在之前的分析中，我们知道想求小球任意时刻所在位置坐标，需要的参数有：v0, t, g, vh。这些参数应该存放在哪里呢？怎么设计这个数据结构？</p>
 <p>我们当然可以直接将这些参数设为全局变量，但这显然是不合适的，这些参数里，唯一适合设为全局变量的是重力加速度g。而v0, t, vh这些都应该是小球自身的“属性”，所以我们应该将其抽象成一个类。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ball</span>(<span class="params">r, v0, vh, t</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.r = r;</span><br><span class="line">    <span class="keyword">this</span>.v0 = v0;</span><br><span class="line">    <span class="keyword">this</span>.vh = vh;</span><br><span class="line">    <span class="keyword">this</span>.t = t;</span><br><span class="line">    <span class="keyword">this</span>.x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">this</span>.h = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.calcX = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/* 计算水平位移 */</span> &#125;</span><br><span class="line">    <span class="keyword">this</span>.calcH = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">/* 计算竖直位移 */</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ball = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">h</span>: <span class="number">0</span>, <span class="attr">r</span>: <span class="number">10</span>, <span class="attr">v0</span>: <span class="number">0</span>, <span class="attr">vh</span>: <span class="number">0</span>, <span class="attr">g</span>: <span class="number">10</span>&#125;;</span><br><span class="line"><span class="comment">// 重力加速度无论是作为全局变量还是小球属性，均可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6之后</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ball</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Ball</span>(<span class="params">r, v0, vh, t</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">r</span> = r;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">v0</span> = v0;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">vh</span> = vh;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">t</span> = t;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">x</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">h</span> = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">calcX</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="comment">/* 计算水平位移 */</span> &#125;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">calcH</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123; <span class="comment">/* 计算竖直位移 */</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ball = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">h</span>: <span class="number">0</span>, <span class="attr">r</span>: <span class="number">10</span>, <span class="attr">v0</span>: <span class="number">0</span>, <span class="attr">vh</span>: <span class="number">0</span>, <span class="attr">g</span>: <span class="number">10</span>&#125;;</span><br><span class="line"><span class="comment">// 重力加速度无论是作为全局变量还是小球属性，均可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// es6之后</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Ball</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上三种方式，各有各的好处，选择一个合适的方式即可。</p>
 <p>“你这说物理我就头大，有没有更简单的？”</p>
 <p>更简单也有啊，反正并没有要求100%还原物理学场景：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ball = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">r</span>: <span class="number">10</span>, <span class="attr">vx</span>: <span class="number">5</span>, <span class="attr">vy</span>: <span class="number">0</span>, <span class="attr">g</span>: <span class="number">5</span> &#125;;</span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    ball.vy += ball.g; <span class="comment">// 竖直方向速度增加</span></span><br><span class="line">    ball.y += ball.vy; <span class="comment">// 竖直方向位移</span></span><br><span class="line">    ball.x += ball.vx; <span class="comment">// 水平方向位移</span></span><br><span class="line">    cxt.clearRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">800</span>, <span class="number">300</span>);</span><br><span class="line">    cxt.beginPath();</span><br><span class="line">    cxt.fillStyle = <span class="string">'black'</span>;</span><br><span class="line">    cxt.arc(ball.x, ball.y, ball.r, <span class="number">0</span>, <span class="number">2</span>*<span class="built_in">Math</span>.PI);</span><br><span class="line">    cxt.fill();</span><br><span class="line">&#125;, <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ball = &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span>, <span class="attr">r</span>: <span class="number">10</span>, <span class="attr">vx</span>: <span class="number">5</span>, <span class="attr">vy</span>: <span class="number">0</span>, <span class="attr">g</span>: <span class="number">5</span> &#125;;</span><br><span class="line"><span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    ball.<span class="property">vy</span> += ball.<span class="property">g</span>; <span class="comment">// 竖直方向速度增加</span></span><br><span class="line">    ball.<span class="property">y</span> += ball.<span class="property">vy</span>; <span class="comment">// 竖直方向位移</span></span><br><span class="line">    ball.<span class="property">x</span> += ball.<span class="property">vx</span>; <span class="comment">// 水平方向位移</span></span><br><span class="line">    cxt.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">800</span>, <span class="number">300</span>);</span><br><span class="line">    cxt.<span class="title function_">beginPath</span>();</span><br><span class="line">    cxt.<span class="property">fillStyle</span> = <span class="string">&#x27;black&#x27;</span>;</span><br><span class="line">    cxt.<span class="title function_">arc</span>(ball.<span class="property">x</span>, ball.<span class="property">y</span>, ball.<span class="property">r</span>, <span class="number">0</span>, <span class="number">2</span>*<span class="title class_">Math</span>.<span class="property">PI</span>);</span><br><span class="line">    cxt.<span class="title function_">fill</span>();</span><br><span class="line">&#125;, <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
 <p>OK，结束了。</p>
 <p>这就是高级一点的动画。可能在学几个函数，这个动画会更炫一点。比如学完矩形填充再掌握一点rgba的知识，你可以做个“尾巴”出来，即长尾效应。具体只需要将上述代码中的<code>cxt.clearRect()</code>替换成：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cxt.fillStyle = <span class="string">'rgba(255, 255, 255, 0.2)'</span>;</span><br><span class="line">cxt.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">800</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cxt.<span class="property">fillStyle</span> = <span class="string">&#x27;rgba(255, 255, 255, 0.2)&#x27;</span>;</span><br><span class="line">cxt.<span class="title function_">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">800</span>, <span class="number">300</span>);</span><br></pre></td></tr></table></figure>
 <p>这就能显得咱们编码能力很厉害的样子。</p>
 <p>做到这一步还是不满足：小球一个劲儿的向下掉，这动画没一会儿就没了。</p>
 <p>没关系，咱们可以做“<strong>碰撞检测</strong>”啊。好像又是一个高大上的词汇，但实际上也没什么高大上的，如果基于本节第一部分的分析，那咱还得考虑一下碰撞造成的动量损失的问题，挺复杂的。</p>
 <p>但是简化版就好说了啊。小球碰到上/下边界，竖直方向速度反向，同时速率减半。左右边界可以有类似的处理。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (ball.r + ball.x &gt; canvas_width) &#123;</span><br><span class="line">    ball.vx *= <span class="number">-0.5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ball.r + ball.y &gt; canvas_height) &#123;</span><br><span class="line">    ball.vy *= <span class="number">-0.5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (ball.<span class="property">r</span> + ball.<span class="property">x</span> &gt; canvas_width) &#123;</span><br><span class="line">    ball.<span class="property">vx</span> *= -<span class="number">0.5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ball.<span class="property">r</span> + ball.<span class="property">y</span> &gt; canvas_height) &#123;</span><br><span class="line">    ball.<span class="property">vy</span> *= -<span class="number">0.5</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>NOTE：碰撞检测在这里指的是“<strong>边界检测</strong>”，小球落到边界的时候再继续下落显然是没有意义的，因为后面的动画咱们是看不到的。所以要么碰到边界就停止，要么重新开始，或者进行其他处理，总之，不能出现无意义的动画。</p>
 <p>像以前玩的贪吃蛇，会有各种墙的存在，控制的小蛇在碰到墙的时候，游戏就失败了，或者说没有墙的时候，小蛇会从另一个方向出来。</p>
@@ -292,12 +292,12 @@
 </blockquote>
 <hr>
 <ol>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" target="_blank" rel="noopener">MDN文档</a> <a href="https://bbs.huaweicloud.com/blogs/157235#fnref1" target="_blank" rel="noopener">↩︎</a></li>
-<li><a href="https://www.w3school.com.cn/tags/html_ref_canvas.asp" target="_blank" rel="noopener">HTML 5 Canvas参考手册</a> <a href="https://bbs.huaweicloud.com/blogs/157235#fnref2" target="_blank" rel="noopener">↩︎</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/29460544" target="_blank" rel="noopener">贝塞尔曲线</a> <a href="https://bbs.huaweicloud.com/blogs/157235#fnref3" target="_blank" rel="noopener">↩︎</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes">MDN文档</a> <a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/157235#fnref1">↩︎</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/tags/html_ref_canvas.asp">HTML 5 Canvas参考手册</a> <a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/157235#fnref2">↩︎</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/29460544">贝塞尔曲线</a> <a target="_blank" rel="noopener" href="https://bbs.huaweicloud.com/blogs/157235#fnref3">↩︎</a></li>
 </ol>
-<p>文章来源: <a href="http://www.cnblogs.com，作者：贪婪的君子，版权归原作者所有，如需转载，请联系作者。" target="_blank" rel="noopener">www.cnblogs.com，作者：贪婪的君子，版权归原作者所有，如需转载，请联系作者。</a></p>
-<p>原文链接：<a href="https://www.cnblogs.com/keepsmart/p/12611659.html" target="_blank" rel="noopener">https://www.cnblogs.com/keepsmart/p/12611659.html</a></p>
+<p>文章来源: <a href="http://www.cnblogs.com，作者：贪婪的君子，版权归原作者所有，如需转载，请联系作者。">www.cnblogs.com，作者：贪婪的君子，版权归原作者所有，如需转载，请联系作者。</a></p>
+<p>原文链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/keepsmart/p/12611659.html">https://www.cnblogs.com/keepsmart/p/12611659.html</a></p>
 
     </div>
 
@@ -306,7 +306,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/H5C3/">#H5C3</a>
+            <a href="/blog/tags/H5C3/">#H5C3</a>
         </div>
     
 
@@ -342,19 +342,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -369,19 +369,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -446,7 +446,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -460,7 +460,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>

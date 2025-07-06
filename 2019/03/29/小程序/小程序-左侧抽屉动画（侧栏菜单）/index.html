@@ -74,7 +74,7 @@
 
     <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/blog/css/style.css">
 
 
     <!-- Google Analytics -->
@@ -96,25 +96,25 @@
         <ul>
             
             <li class="menu-item">
-                <a href="/">
+                <a href="/blog/">
                     首页
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/archives">
+                <a href="/blog/archives">
                     档案
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/tags">
+                <a href="/blog/tags">
                     分类
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/contact">
+                <a href="/blog/contact">
                     联系
                 </a>
             </li>
@@ -137,7 +137,7 @@
         <!--Title and Logo-->
         <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
@@ -148,7 +148,7 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2019/03/29/%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%B7%A6%E4%BE%A7%E6%8A%BD%E5%B1%89%E5%8A%A8%E7%94%BB%EF%BC%88%E4%BE%A7%E6%A0%8F%E8%8F%9C%E5%8D%95%EF%BC%89/">
+            <a href="/blog/2019/03/29/%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%B7%A6%E4%BE%A7%E6%8A%BD%E5%B1%89%E5%8A%A8%E7%94%BB%EF%BC%88%E4%BE%A7%E6%A0%8F%E8%8F%9C%E5%8D%95%EF%BC%89/">
                 小程序-左侧抽屉动画（侧栏菜单）
             </a>
         </h1>
@@ -159,7 +159,7 @@
             
             
                 <span class="category">
-                    <a href="/categories/小程序/">小程序</a>
+                    <a href="/blog/categories/小程序/">小程序</a>
                 </span>
             
         </div>
@@ -174,7 +174,7 @@
         <h2 id="wxml："><a href="#wxml：" class="headerlink" title="wxml："></a>wxml：</h2><blockquote>
 <p>bindtap 是点击事件；<br>data-statu 是自己声明的数据；<br>wx:if 是条件渲染 用来控制模块是否显示 这里也可以使用hidden；<br>animation 是小程序声明动画</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--蒙版抽屉曾--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'mask'</span> <span class="attr">bindtap</span>=<span class="string">"powerDrawer"</span> <span class="attr">data-statu</span>=<span class="string">"close"</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;showModalStatus&#125;&#125;"</span>&gt;</span>  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'Drawer'</span> <span class="attr">animation</span>=<span class="string">"&#123;&#123;animationData&#125;&#125;"</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;showModalStatus&#125;&#125;"</span>&gt;</span>  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--主界面--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这里只显示要点击的左上角的图片，主界面结构省略了--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">vies</span> <span class="attr">class</span>=<span class="string">'top_img'</span>  <span class="attr">bindtap</span>=<span class="string">"powerDrawer"</span> <span class="attr">data-statu</span>=<span class="string">"open"</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--蒙版抽屉曾--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&#x27;mask&#x27;</span> <span class="attr">bindtap</span>=<span class="string">&quot;powerDrawer&quot;</span> <span class="attr">data-statu</span>=<span class="string">&quot;close&quot;</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;showModalStatus&#125;&#125;&quot;</span>&gt;</span>  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">&#x27;Drawer&#x27;</span> <span class="attr">animation</span>=<span class="string">&quot;&#123;&#123;animationData&#125;&#125;&quot;</span> <span class="attr">wx:if</span>=<span class="string">&quot;&#123;&#123;showModalStatus&#125;&#125;&quot;</span>&gt;</span>  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--主界面--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这里只显示要点击的左上角的图片，主界面结构省略了--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">vies</span> <span class="attr">class</span>=<span class="string">&#x27;top_img&#x27;</span>  <span class="attr">bindtap</span>=<span class="string">&quot;powerDrawer&quot;</span> <span class="attr">data-statu</span>=<span class="string">&quot;open&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="wxss："><a href="#wxss：" class="headerlink" title="wxss："></a>wxss：</h2><blockquote>
 <p>这里只写了蒙版层mask与抽屉层的drawer的样式</p>
 </blockquote>
@@ -182,7 +182,7 @@
 <h2 id="js："><a href="#js：" class="headerlink" title="js："></a>js：</h2><blockquote>
 <p>关键代码：<br>e.currentTarget.dataset.statu 表示手指点击的view模块的data-statu数据；（前面wxml中说名的data-statu；）；<br>整体上这个动画的逻辑是：每点击一次，动画都是重复一次，（没看错，就是重复同一个动作），只不过每次根据data-statu的数据来控制蒙版层是否显示而已。<br>下面的代码放在page({})中；</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">    showModalStatus: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// animationData:"",</span></span><br><span class="line">  &#125;,</span><br><span class="line">  powerDrawer: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> currentStatu = e.currentTarget.dataset.statu;</span><br><span class="line">    <span class="keyword">this</span>.util(currentStatu)</span><br><span class="line">  &#125;,</span><br><span class="line">  util: <span class="function"><span class="keyword">function</span> (<span class="params">currentStatu</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* 动画部分 */</span></span><br><span class="line">    <span class="comment">// 第1步：创建动画实例 </span></span><br><span class="line">    <span class="keyword">var</span> animation = wx.createAnimation(&#123;</span><br><span class="line">      duration: <span class="number">200</span>, <span class="comment">//动画时长</span></span><br><span class="line">      timingFunction: <span class="string">"linear"</span>, <span class="comment">//线性</span></span><br><span class="line">      delay: <span class="number">0</span> <span class="comment">//0则不延迟</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 第2步：这个动画实例赋给当前的动画实例</span></span><br><span class="line">    <span class="keyword">this</span>.animation = animation;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第3步：执行第一组动画：x轴不偏移；</span></span><br><span class="line">    animation.translateX(<span class="number">0</span>).step();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第4步：导出动画对象赋给数据对象储存</span></span><br><span class="line">    <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">      animationData: animation.export()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第5步：设置定时器到指定时候后，执行第二组动画</span></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 执行第二组动画：X轴偏移22px，停</span></span><br><span class="line">      animation.translateX(<span class="number">220</span>).step()</span><br><span class="line">      <span class="comment">// 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象</span></span><br><span class="line">      <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">        animationData: animation</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      <span class="comment">//关闭抽屉</span></span><br><span class="line">      <span class="keyword">if</span> (currentStatu == <span class="string">"close"</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">          showModalStatus: <span class="literal">false</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;.bind(<span class="keyword">this</span>), <span class="number">200</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示抽屉</span></span><br><span class="line">    <span class="keyword">if</span> (currentStatu == <span class="string">"open"</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.setData(&#123;</span><br><span class="line">        showModalStatus: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">data</span>: &#123;</span><br><span class="line">    <span class="attr">showModalStatus</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">// animationData:&quot;&quot;,</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">powerDrawer</span>: <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> currentStatu = e.<span class="property">currentTarget</span>.<span class="property">dataset</span>.<span class="property">statu</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">util</span>(currentStatu)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">util</span>: <span class="keyword">function</span> (<span class="params">currentStatu</span>) &#123;</span><br><span class="line">    <span class="comment">/* 动画部分 */</span></span><br><span class="line">    <span class="comment">// 第1步：创建动画实例 </span></span><br><span class="line">    <span class="keyword">var</span> animation = wx.<span class="title function_">createAnimation</span>(&#123;</span><br><span class="line">      <span class="attr">duration</span>: <span class="number">200</span>, <span class="comment">//动画时长</span></span><br><span class="line">      <span class="attr">timingFunction</span>: <span class="string">&quot;linear&quot;</span>, <span class="comment">//线性</span></span><br><span class="line">      <span class="attr">delay</span>: <span class="number">0</span> <span class="comment">//0则不延迟</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 第2步：这个动画实例赋给当前的动画实例</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">animation</span> = animation;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第3步：执行第一组动画：x轴不偏移；</span></span><br><span class="line">    animation.<span class="title function_">translateX</span>(<span class="number">0</span>).<span class="title function_">step</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第4步：导出动画对象赋给数据对象储存</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">      <span class="attr">animationData</span>: animation.<span class="title function_">export</span>()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第5步：设置定时器到指定时候后，执行第二组动画</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="comment">// 执行第二组动画：X轴偏移22px，停</span></span><br><span class="line">      animation.<span class="title function_">translateX</span>(<span class="number">220</span>).<span class="title function_">step</span>()</span><br><span class="line">      <span class="comment">// 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">        <span class="attr">animationData</span>: animation</span><br><span class="line">      &#125;)</span><br><span class="line"></span><br><span class="line">      <span class="comment">//关闭抽屉</span></span><br><span class="line">      <span class="keyword">if</span> (currentStatu == <span class="string">&quot;close&quot;</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">          <span class="attr">showModalStatus</span>: <span class="literal">false</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;.<span class="title function_">bind</span>(<span class="variable language_">this</span>), <span class="number">200</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 显示抽屉</span></span><br><span class="line">    <span class="keyword">if</span> (currentStatu == <span class="string">&quot;open&quot;</span>) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="title function_">setData</span>(&#123;</span><br><span class="line">        <span class="attr">showModalStatus</span>: <span class="literal">true</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -191,7 +191,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/小程序/">#小程序</a>
+            <a href="/blog/tags/小程序/">#小程序</a>
         </div>
     
 
@@ -227,19 +227,19 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+                <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
             </li>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -254,19 +254,19 @@
     <ul>
         
         <li>
-            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+            <a class="footer-post" href="/blog/tags/Bootstrap/">Bootstrap</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/flex/">flex</a>
+            <a class="footer-post" href="/blog/tags/flex/">flex</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
     </ul>
@@ -331,7 +331,7 @@
 <script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 <!-- Custom JavaScript -->
 
-<script src="/js/main.js"></script>
+<script src="/blog/js/main.js"></script>
 
 
 <!-- Disqus Comments -->
@@ -345,7 +345,7 @@
     <i class="fa fa-chevron-up topic"></i>
   </div>
 </div>
-<script src="/js/totop.js"></script>
+<script src="/blog/js/totop.js"></script>
 
 
 </body>
