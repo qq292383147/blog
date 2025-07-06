@@ -15,7 +15,7 @@ timezone:
 # 相对地址
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://qq292383147.github.io  # 网址 http://yoursite.com
-root: /blog/                        # 网站根目录 /
+root: /                        # 网站根目录 /
 permalink: :year/:month/:day/:title/     # 文章的 永久链接 格式
 permalink_defaults:                     # 永久链接中各部分的默认值 
 
@@ -89,7 +89,8 @@ theme: alpha-dust    # 当前主题名称。值为false时禁用主题
 deploy:
   type: git
   repo: 
-    github: https://github.com/qq292383147/blog.git
+    # github: https://github.com/qq292383147/blog.git
     gitee: https://gitee.com/zhangLong292383147/zhangLong292383147.git
   branch: blog
+  force: true  # 添加强制推送选项（慎用）
 
