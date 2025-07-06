@@ -45,7 +45,7 @@ email_url: #test@example.com
 rss_url: \#
 
 # Footer About Text
-footer_about: "张健龙的官方网站 <a href=\"http://zhanglong292383147.gitee.io/\">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com"
+footer_about: "张健龙的官方网站 <a href=\"https://qq292383147.github.io/blog/\">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com"
 
 # Footer Copyright Line
 footer_copyright: "@Acton.2019 All right reserved | Design & Acton"

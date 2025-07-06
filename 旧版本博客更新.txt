@@ -1,0 +1,13 @@
+清除public
+
+hexo clean
+
+生成 
+
+hexo generate
+
+部署到GitHub 上gh-pages分支
+
+hexo deploy
+
+在此之前需要提交下代码到gitee上同步更新 GitHub 仓库
