@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="如何远程部署CentOS前后端项目的思路"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>如何远程部署CentOS前后端项目的思路 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/12/21/%E5%85%B6%E5%AE%83/%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2CentOS%E5%89%8D%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%80%9D%E8%B7%AF/">
+                如何远程部署CentOS前后端项目的思路
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="学习到的相关知识"><a href="#学习到的相关知识" class="headerlink" title="学习到的相关知识"></a>学习到的相关知识</h2><ul>
+<li>远程登录 CentOS 系统</li>
+<li>安装node、npm、nginx、pm2、xftp、</li>
+<li>使用linux常用命令</li>
+<li>nginx 配置</li>
+<li>node + express 开发</li>
+<li>绑定域名、域名备案</li>
+</ul>
+<h2 id="远程登录-CentOS-系统"><a href="#远程登录-CentOS-系统" class="headerlink" title="远程登录 CentOS 系统"></a>远程登录 CentOS 系统</h2><p>在本机电脑打开窗口命名,输入以下命令,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@公网ip</span><br></pre></td></tr></table></figure>
+<p>回车后，输入实例密码，出现<code>Welcome to Alibaba Cloud Elastic Compute Service !</code> 表示登录成功。</p>
+<p>登录成功后,初始化是没有任何图形化界面的，刚刚开始我练习了一些<code>linux</code>命令，如</p>
+<ul>
+<li>查看目录 ls</li>
+<li>新建文件夹 mkdir</li>
+</ul>
+<p>更多命令在 <a href="https://www.runoob.com/linux/linux-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a> 中可以查询。</p>
+<h2 id="安装node环境"><a href="#安装node环境" class="headerlink" title="安装node环境"></a>安装node环境</h2><p>熟悉了一些命令后，准备完成我的任务，搭建<code>node</code>环境</p>
+<ul>
+<li>安装node命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v9.3.0/node-v9.3.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+<p>安装后输入ls发现这是个压缩包，还需要用命令进行解压</p>
+<ul>
+<li>tar.gz.zip解压命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">tar负责打包，gzip负责压缩</span><br><span class="line">tar</span><br><span class="line">-c: 建立压缩档案</span><br><span class="line">-x：解压</span><br><span class="line">-t：查看内容</span><br><span class="line">-r：向压缩归档文件末尾追加文件</span><br><span class="line">-u：更新原压缩包中的文件</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解压安装包后配置node环境变量</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s ~/node-v9.3.0-linux-x64/bin/node /usr/bin/node</span><br><span class="line">ln -s ~/node-v9.3.0-linux-x64/bin/npm /usr/bin/npm</span><br></pre></td></tr></table></figure>
+<h2 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h2><p>安装nginx后， 输入  <code>vim nginx.conf</code> 命令 打开 nginx.conf 文件，进行配置, 我的文件大概是下面的样子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># For more information on configuration, see:</span></span><br><span class="line"><span class="comment">#   * Official English Documentation: http://nginx.org/en/docs/</span></span><br><span class="line"><span class="comment">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># user nginx;</span></span><br><span class="line">user root;</span><br><span class="line">worker_processes auto;</span><br><span class="line">error_log /var/<span class="built_in">log</span>/nginx/error.log;</span><br><span class="line">pid /var/run/nginx.pid;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load dynamic modules. See /usr/share/nginx/README.dynamic.</span></span><br><span class="line">include /usr/share/nginx/modules/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">   worker_connections  1024;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">   log_format  main  <span class="string">'$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">                     <span class="string">'$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">                     <span class="string">'"$http_user_agent" "$http_x_forwarded_for"'</span>;</span><br><span class="line"></span><br><span class="line">   access_log  /var/<span class="built_in">log</span>/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">   sendfile            on;</span><br><span class="line">   tcp_nopush          on;</span><br><span class="line">   tcp_nodelay         on;</span><br><span class="line">   keepalive_timeout   65;</span><br><span class="line">   types_hash_max_size 2048;</span><br><span class="line"></span><br><span class="line">   include             /etc/nginx/mime.types;</span><br><span class="line">   default_type        application/octet-stream;</span><br><span class="line"></span><br><span class="line">   <span class="comment"># Load modular configuration files from the /etc/nginx/conf.d directory.</span></span><br><span class="line">   <span class="comment"># See http://nginx.org/en/docs/ngx_core_module.html#include</span></span><br><span class="line">   <span class="comment"># for more information.</span></span><br><span class="line">   include /etc/nginx/conf.d/*.conf;</span><br><span class="line">   server &#123;</span><br><span class="line">   <span class="comment"># 访问端口号</span></span><br><span class="line">   listen       80;</span><br><span class="line">   <span class="comment"># 服务器地址(访问ip)</span></span><br><span class="line">   server_name  公网ip;</span><br><span class="line"> </span><br><span class="line">   include /etc/nginx/default.d/*.conf;</span><br><span class="line">   <span class="comment"># 静态资源文件</span></span><br><span class="line">   location / &#123; </span><br><span class="line">     <span class="comment"># 静态资源存放路径</span></span><br><span class="line">     root /root/nodeChatRoom/client/; </span><br><span class="line">     <span class="comment"># 默认读取文件</span></span><br><span class="line">     index index.html index.htm;     </span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment"># 接口代理</span></span><br><span class="line">   location /api &#123;</span><br><span class="line">     <span class="comment"># 后端代码接口地址，node启动地址</span></span><br><span class="line">     proxy_pass http://公网ip:3000;</span><br><span class="line">   &#125;</span><br><span class="line">   error_page 404 /404.html;</span><br><span class="line">       location = /40x.html &#123;</span><br><span class="line">   &#125; </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置好nginx 后，重启nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>
+<h2 id="安装xftp"><a href="#安装xftp" class="headerlink" title="安装xftp"></a>安装xftp</h2><p>开发环境配置好后,如何把我本机的代码上传到远程服务呢, 我选择的是xftp,这样修改文件就不需要使用<code>linux</code>命令了,也方便上传文件。</p>
+<h2 id="pm2"><a href="#pm2" class="headerlink" title="pm2"></a>pm2</h2><ul>
+<li>安装pm2</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm uninstall pm2</span><br><span class="line">sudo npm i pm2@latest -g</span><br><span class="line">sudo ln -s  /root/node-v9.3.0-linux-x64/lib/node_modules/pm2/bin/pm2 /usr/<span class="built_in">local</span>/bin/pm2</span><br></pre></td></tr></table></figure>
+<p>把node项目上传到远程电脑后, 打开命令行，输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<p>后台服务启动成功, 但是这样把命令窗口关闭,服务就停止了,如果我重新上传了新的node代码,服务不会更新, 所以我选择了<code>pm2</code>,启动<code>node</code>服务, 自动更新和启动我的后台服务。</p>
+<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><ul>
+<li>安装tree 查看tree目录</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install tree</span><br><span class="line">tree <span class="comment">// 在node文件夹下查看树形目录</span></span><br></pre></td></tr></table></figure>
+<p>出现大概下面的目录结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── bin</span><br><span class="line">│   ├── node</span><br><span class="line">│   ├── npm -&gt; ../lib/node_modules/npm/bin/npm-cli.js</span><br><span class="line">│   └── npx -&gt; ../lib/node_modules/npm/bin/npx-cli.js</span><br><span class="line">├── CHANGELOG.md</span><br><span class="line">├── include</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过 whereis 查看软件所在路径 如查看 node 所在路径</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis node</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/其它/">#其它</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

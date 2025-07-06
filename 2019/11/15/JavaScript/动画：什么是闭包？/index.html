@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="动画：什么是闭包？"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>动画：什么是闭包？ - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/15/JavaScript/%E5%8A%A8%E7%94%BB%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/">
+                动画：什么是闭包？
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/80.jpg" alt="80"></p>
+<h3 id="1、什么是闭包？"><a href="#1、什么是闭包？" class="headerlink" title="1、什么是闭包？"></a>1、什么是闭包？</h3><p>学习一个陌生的概念，我们首先要去明白是什么？也就是闭包是什么？要想完全掌握闭包，一定要清楚函数作用域、内存回收机制、作用域继承。我们就简单讲一下这几个概念。</p>
+<h4 id="1-1-函数作用域"><a href="#1-1-函数作用域" class="headerlink" title="1.1 函数作用域"></a>1.1 函数作用域</h4><p>作用域的概念，形象描述的话，可以认为它是一个封闭的空间，只允许在这个封闭的空间内进行一些操作，也将这个封闭空间称为私有作用域。在 JS 中，一个函数的执行就会在内存中创建一个私有作用域——封闭的空间。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/81.jpg" alt="81"></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/82.gif" alt="82"></p>
+<p>比如在函数中定义一个变量，只能在函数这个私有作用域中使用（也就是封闭空间）。只要超出了这个作用域，就找不到该变量了。</p>
+<p>而且函数执行完成后，这个私有作用域（封闭的空间）就会销毁。有一种情况它是不会销毁的，那就是“闭包”，后边会讲到。</p>
+<h4 id="1-2-内存回收机制"><a href="#1-2-内存回收机制" class="headerlink" title="1.2 内存回收机制"></a>1.2 内存回收机制</h4><p>内存回收机制就是不在用到的内存，我们系统就自动进行回收从而清理出空间供其他程序使用。那回收的规则是什么？</p>
+<p>内部函数引用着外部的函数的变量，外部的函数尽管执行完毕，作用域也不会销毁。从而形成了一种不销毁的私有作用域。</p>
+<p>某一变量或者对象被引用着，因此在回收的时候不会释放它，因为被引用代表着被使用，回收器不会对正在引用的变量或对象回收的。</p>
+<h4 id="1-3-作用域继承"><a href="#1-3-作用域继承" class="headerlink" title="1.3 作用域继承"></a>1.3 作用域继承</h4><p>所谓的作用域继承，就像是儿子可以继承父亲的财产一样。比如小鹿这里有一个大的盒子作为一个父级的作用域，然后在这个大的盒子里边放一个小的盒子，作为子作用域。我们规定可以在小盒子中获取到大盒子中的东西，大盒子不能获取小盒子里的东西就称为作用域继承。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/83.jpg" alt="83"></p>
+<p>在 JS 中，道理是一样的，在一个函数里边我们再声明一个函数，内部函数可以访问外部函数作用域的变量，而外部的函数不能获取到内部函数的作用域变量。</p>
+<p>那好，上边的这几个概念理解了之后，什么是闭包对你来说已经不是什么问题。</p>
+<p>大白话说什么是闭包，那就是在一个函数里边再定义一个函数。这个内部函数一直保持有对外部函数中作用域的访问权限(小盒子一直可以有大盒子的访问权限)。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/84.jpg" alt="84"></p>
+<p>函数执行，形成一个私有的作用域，保护里边的私有变量不受外界的干扰，除了保护私有变量外，还可以存储一些内容，这样的模式叫做闭包。</p>
+<p><strong><font color="red">动画实现：</font></strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/85.gif" alt="85"></p>
+<h3 id="2、闭包的作用是什么？"><a href="#2、闭包的作用是什么？" class="headerlink" title="2、闭包的作用是什么？"></a>2、闭包的作用是什么？</h3><p>想必你对闭包还是有点懵懵懂懂，没关系，我们再继续深入了解。闭包主要的作用是什么呢？为什么要使用闭包呢？</p>
+<p>通过上边对闭包的解释，外部函数 return 内部函数，但是仍然还是可以有访问外部函数的作用域，因为外部一直保持着引用。这就让我们发现它的可用之处。</p>
+<p>不是有块作用域不销毁吗？我们可以用来保存一些内容，还可以用来保护一些私有的变量。我们总结出闭包有两个作用，分别为<font color="red">保护和保存</font>。</p>
+<h3 id="3、闭包的应用场景"><a href="#3、闭包的应用场景" class="headerlink" title="3、闭包的应用场景"></a>3、闭包的应用场景</h3><p>既然我们知道闭包的作用是保存和保护，那在实际项目中哪里用到了呢？</p>
+<h4 id="3-1-保护作用"><a href="#3-1-保护作用" class="headerlink" title="3.1 保护作用"></a>3.1 保护作用</h4><p>团队开发时，每个开发者把自己的代码放在一个私有的作用域中，防止相互之间的变量命名冲突；把需要提供给别人的方法，通过 return 或 window.xxx 的方式暴露在全局下。</p>
+<blockquote>
+<p>jQuery 的源码中也是利用了这种保护机制。</p>
+</blockquote>
+<h4 id="3-2-保存作用"><a href="#3-2-保存作用" class="headerlink" title="3.2 保存作用"></a>3.2 保存作用</h4><p>选项卡闭包的解决方案。我们经常在网页中使用选项卡，但是它存在一个问题，那就是索引引发的问题，其实和下边的经典面试题问题相同。</p>
+<h3 id="4、经典的闭包面试题"><a href="#4、经典的闭包面试题" class="headerlink" title="4、经典的闭包面试题"></a>4、经典的闭包面试题</h3><blockquote>
+<p>循环绑定事件引发的索引什么问题？怎么解决这种问题？</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/86.jpg" alt="86"></p>
+<p>此时运行程序，你会得出的结果都是 len 的数值。</p>
+<p>为什么会出现这种问题，我们如何解决呢？</p>
+<p>原因很简单，所有的事件绑定都是异步的，当触发点击事件，执行方法的时候，循环早就结束了。</p>
+<p>我们在多说一点，什么是同步什么是异步？</p>
+<blockquote>
+<p>同步：JS 中当前这个任务没有完成，下面的任务都不会执行，只有等当前彻底完成，才会执行下面的任务。</p>
+</blockquote>
+<blockquote>
+<p>异步：JS 中的当前任务没有完成，需要等一会在完成，此时我们可以继续执行下面的任务。</p>
+</blockquote>
+<p><strong>解决方案：</strong></p>
+<p>当点击事件执行的时候，就会在私有作用域查找 i 的值，此时私有作用域没有 i ，就回去全局作用域查找，此时全局作用域的 i 已经被改变。所以说，要创建一个私有作用域的 i 。</p>
+<p>方法一，闭包的方式。闭包终于排上用场了，用来保存私有的变量。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/87.jpg" alt="87"></p>
+<p>但是闭包解决又优点，也有缺点。优点就是通过创建私有作用域（闭包）方式解决，循环几次，就创建几个私有作用域（闭包），然后，每个私有作用域都有一个私有变量 i ，存的值分别是循环的值。</p>
+<p>缺点是生成多个不销毁的私有作用域（堆内存），对性能有一定的影响。</p>
+<p>方法二，使用自定义属性。我们给每个对象添加一个索引属性就 OK 了。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/88.jpg" alt="88"></p>
+<p>终极解决方案，这是 ES6 中的知识，因为之前在 JS 中是没有块级作用域的概念的，到了 ES6 中就有了，Let 声明的变量就可以更好的解决上述问题。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/89.jpg" alt="89"></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

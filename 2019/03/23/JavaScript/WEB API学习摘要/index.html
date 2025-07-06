@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="Web Api学习笔记"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>Web Api学习笔记 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/23/JavaScript/WEB%20API%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/">
+                Web Api学习笔记
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-23</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>Ctrl+Alt+L    webstorm 格式化代码</p>
+<h4 id="JS的组成"><a href="#JS的组成" class="headerlink" title="JS的组成"></a>JS的组成</h4><p>1.ECMAScript<br>2.DOM<br>3.BOM</p>
+<h4 id="JS是一门运行在客户端的脚本语言-弱类型动态语言"><a href="#JS是一门运行在客户端的脚本语言-弱类型动态语言" class="headerlink" title="JS是一门运行在客户端的脚本语言(弱类型动态语言)"></a>JS是一门运行在客户端的脚本语言(弱类型动态语言)</h4><p>alert()       弹出警示框<br>console.log() 控制台显示内容<br>document.write() 在页面显示内容<br>prompt()         用户输入框<br>comfirm()        选择按钮</p>
+<p>直接量：直接可以拿来使用的数据值  数字，字符串<br>用来帮助我们想计算机存储数据使用<br>变量必须下划线、字母、$开头<br>可以包含有数字\字母\下划线\$<br>区分大小写<br>不能使用关键字和保留字</p>
+<h4 id="转义符："><a href="#转义符：" class="headerlink" title="转义符："></a>转义符：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\+ 一些字符</span><br><span class="line">\n   \t  \b</span><br></pre></td></tr></table></figure>
+<p>前++：先在原来的数字上先+1，然后得到结果参与运算<br>后++：先原来的数字先参与运算，然后在原来的基础上+1</p>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><p>… === !== … （boolean）<br>==：只比较值是否相等， 不管数据类型<br>===：只要相等，数据类型也要一样</p>
+<h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><p>1.string 字符串  2.number 数字  3.boolean 布尔类型  4.undefined  5.null</p>
+<h3 id="复杂数据类型"><a href="#复杂数据类型" class="headerlink" title="复杂数据类型"></a>复杂数据类型</h3><p>1.数组 2.对象 3.函数  4.Date  5.Array  等等</p>
+<h3 id="数据类型检测-typeof"><a href="#数据类型检测-typeof" class="headerlink" title="数据类型检测  typeof"></a>数据类型检测  typeof</h3><p>注意：只要是用户输入的内容都是string类型</p>
+<p>隐式转换 可以使用+ - <em>  /   !!  +””<br>加 +a<br>减 a - 0<br>乘 a </em> 1<br>除 a / 1<br>注意：字符串只有在一种情况下会转换成false 空字符串“”</p>
+<h3 id="显示转换（强制类型转换）"><a href="#显示转换（强制类型转换）" class="headerlink" title="显示转换（强制类型转换）"></a>显示转换（强制类型转换）</h3><p>1.Number();<br>2.parseInt();  //整数<br>3.parseFloat();  //小数<br>4.Boolean();    //布尔<br>5.toString() String()  //字符串</p>
+<p>注意：NaN：not a number 不是一个数字，NaN也是number类型中的一个值。它是用来表示数字的特殊的一种状态</p>
+<p>一般都是表示不能真正意义上转换成数字的类型的值。</p>
+<p><code>Number()</code>只能将数字型的string类型的值转换成number，对于非数字型的<code>string</code>值，不能真正意义上的类型。</p>
+<p>使用<code>parseInt()</code>方法来将<code>string</code>类型的数据转换成<code>number</code>类型的时候，如果这个string类型的数据时一个数字型的<code>string</code>，这种情况下是可以完成转换。<br>如果是数字+字母型的<code>string</code> 类型，如果数字在前面，那么使用<code>parseInt()</code>来转换的时候，只会将前面的数字部分转换，后面的字母部分直接丢弃。</p>
+<p><code>null</code>和<code>undefined</code>这两个类型没有<code>tostring()</code>方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// js求数组最大值方法汇总</span></span><br><span class="line"><span class="comment">// 定义一个数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">-1</span>, <span class="number">1</span>, <span class="number">101</span>, <span class="number">-52</span>, <span class="number">10</span>, <span class="number">1001</span>, <span class="number">1001</span>]</span><br><span class="line"><span class="comment">// 1.es6拓展运算符...</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.max(...arr)</span><br><span class="line"><span class="comment">// 2.es5 apply(与方法1原理相同)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr)</span><br><span class="line"><span class="comment">// 3.for循环</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> max = arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    max = max &lt; arr[i+<span class="number">1</span>] ? arr[i+<span class="number">1</span>] : max</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 4.数组sort()</span></span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function">(<span class="params">num1, num2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 - num2 &lt; <span class="number">0</span></span><br><span class="line">&#125;)</span><br><span class="line">arr[<span class="number">0</span>]</span><br><span class="line"><span class="comment">// 5.数组reduce</span></span><br><span class="line"></span><br><span class="line">arr.reduce(<span class="function">(<span class="params">num1, num2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> num1 &gt; num2 ? num1 : num2&#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//求一组数中的所有数的和</span></span><br><span class="line">    <span class="comment">//求一组数中的所有数平均值</span></span><br><span class="line">     <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">var</span> max = <span class="number">0</span>;</span><br><span class="line">     <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">71</span>,<span class="number">23</span>,<span class="number">40</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">10</span>,<span class="number">23</span>,<span class="number">25</span>,<span class="number">16</span>,<span class="number">90</span>,<span class="number">100</span>];</span><br><span class="line">     <span class="keyword">var</span> min = arr[<span class="number">0</span>];</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        sum += arr[i];</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#125;*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">/</span>*  老师的做法  *<span class="regexp">/</span></span><br><span class="line"><span class="regexp">  /</span><span class="regexp">/ 假设数组的第一项就是数组中最大的一项</span></span><br><span class="line"><span class="regexp">  var max = arr[0];</span></span><br><span class="line"><span class="regexp">  for(var i = 0; i&lt;arr.length;i++) &#123;</span></span><br><span class="line"><span class="regexp">     if(max &lt; arr[i])&#123;</span></span><br><span class="line"><span class="regexp">         max = arr[i];</span></span><br><span class="line"><span class="regexp">     &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">  console.log(max);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  求一组数中的最大值</span></span><br><span class="line"><span class="comment">//    求一组数中的最小值</span></span><br><span class="line">     <span class="built_in">document</span>.write(sum);</span><br><span class="line">     <span class="built_in">document</span>.write(<span class="string">"&lt;div&gt;&lt;/div&gt;"</span>+sum/arr.length);</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        max = max &lt; arr[i+<span class="number">1</span>] ? arr[i+<span class="number">1</span>] : max;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">document</span>.write(<span class="string">"&lt;div&gt;&lt;/div&gt;"</span>+max);</span><br><span class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        min = min &gt; arr[i+<span class="number">1</span>] ? arr[i+<span class="number">1</span>] : min;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">document</span>.write(<span class="string">"&lt;div&gt;&lt;/div&gt;"</span>+min);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将一个字符数组用|连接成一个新的字符串</span></span><br><span class="line"><span class="keyword">var</span>  arr = [“张宇”,“关飞”，“赵备”，“刘云”]</span><br><span class="line"><span class="comment">// 张宇|关飞|赵备|刘云</span></span><br><span class="line"><span class="comment">// 要求将数组中的0项去掉，将不为0的值存入一个新的数组，生成新的数组</span></span><br><span class="line">        [<span class="number">10</span>,<span class="number">12</span>,<span class="number">14</span>,<span class="number">18</span>,<span class="number">0</span>,<span class="number">20</span>,<span class="number">0</span>,<span class="number">15</span>,<span class="number">0</span>,”hello”,<span class="number">0</span>]</span><br><span class="line"> <span class="keyword">var</span> arr = [<span class="string">"张三"</span>,<span class="string">"关飞"</span>,<span class="string">"李四"</span>,<span class="string">"刘云"</span>];</span><br><span class="line"> <span class="keyword">var</span> hebStr = <span class="string">""</span>;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;arr.length;i++) &#123;</span><br><span class="line">   </span><br><span class="line"> <span class="keyword">if</span>(i==arr.length)&#123;</span><br><span class="line">     hebStr +=arr[i];</span><br><span class="line"> &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">     hebStr +=arr[i] +<span class="string">"|"</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">document</span>.write(hebStr);</span><br><span class="line"> <span class="comment">// 第二种情况</span></span><br><span class="line">  <span class="keyword">var</span> str=<span class="string">""</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length<span class="number">-1</span>;i++) &#123;</span><br><span class="line">     str += arr[i] + <span class="string">"|"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(str+arr[arr.length<span class="number">-1</span>]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> newNum = [];</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> arr_1 = [<span class="number">10</span>,<span class="number">12</span>,<span class="number">14</span>,<span class="number">18</span>,<span class="number">0</span>,<span class="number">20</span>,<span class="number">0</span>,<span class="number">15</span>,<span class="number">0</span>,<span class="string">"hello"</span>,<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">for</span>( <span class="keyword">var</span> i = <span class="number">0</span> ; i&lt;arr_1.length;i++)&#123;</span><br><span class="line">     <span class="keyword">if</span>(arr_1[i]!=<span class="number">0</span>) &#123;</span><br><span class="line">         newNum[num] = arr_1[i];</span><br><span class="line">         num++;</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(newNum);</span><br><span class="line"> <span class="comment">/*第二种情况*/</span></span><br><span class="line">  <span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">71</span>,<span class="number">23</span>,<span class="number">40</span>,<span class="number">20</span>,<span class="number">12</span>,<span class="number">10</span>,<span class="number">23</span>,<span class="number">25</span>,<span class="number">16</span>,<span class="number">90</span>,<span class="number">100</span>];</span><br><span class="line">  <span class="keyword">var</span> newArr = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;arr.length;i++)&#123;</span><br><span class="line">     <span class="keyword">if</span>(arr[i]!=<span class="number">0</span>)&#123;</span><br><span class="line">         newArr[newArr.length] = arr[i];</span><br><span class="line">     &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.write(newArr);</span><br><span class="line">  ------------------------------------------------</span><br><span class="line">         <span class="comment">// 数组索引的规律：</span></span><br><span class="line">         <span class="comment">// 0  6   7-1  -0</span></span><br><span class="line">         <span class="comment">// 1  5   7-1  -1</span></span><br><span class="line">         <span class="comment">// 2  4   7-1  -2</span></span><br><span class="line"><span class="comment">// 翻转数组  长度/2  因为这执行一半就可以达到效果</span></span><br><span class="line"><span class="comment">// 思路：翻转数组就是数组数据之间交换位置</span></span><br><span class="line"> <span class="keyword">var</span> temp;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;arr.length/<span class="number">2</span>;i++)&#123;</span><br><span class="line">    temp = arr[i];</span><br><span class="line">    arr[i] = arr[arr.length<span class="number">-1</span>-i];</span><br><span class="line">    arr[arr.length<span class="number">-1</span>-i] = temp;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">/*数组Array(value)   --（number）值有一个是长度</span></span><br><span class="line"><span class="comment"> 数组Array(value)   --（number）值有两个或两个以上，表示为参数</span></span><br><span class="line"><span class="comment"> 数组Array("string") -- (string)值为参数*/</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="built_in">Array</span>是object类型(对象)</span><br><span class="line"></span><br><span class="line"> 函数：函数就是代码复用的一种机制或是封装某种功能的代码段</span><br><span class="line"> 第一种定义函数的的方式：使用函数声明的方式</span><br><span class="line"> 函数的语法结构：</span><br><span class="line"> 函数的三要素： 函数名称(函数功能)   参数   返回值</span><br><span class="line"> <span class="function"><span class="keyword">function</span>  函数名(<span class="params"></span>)</span>&#123;</span><br><span class="line">    函数体;(要执行的代码)</span><br><span class="line">&#125;</span><br><span class="line">函数名称一般是动词，表示某种行为或是动作，推荐使用驼峰命名法。</span><br><span class="line">函数的调用</span><br><span class="line">函数声明完了，自己是不会执行的，只有调用才会执行。</span><br><span class="line">调用函数： 函数名称();</span><br><span class="line">参数分两种： </span><br><span class="line">形参： 在定义函数的时候，写的参数就是形参，是形式意义上的参数，起占位置的作用。</span><br><span class="line">实形： 在调用函数的时候，传进来的数据才是实参，这是具有实际意义的数据值。</span><br><span class="line">实参与形参的关系： 在调用函数的时候，是将实参的数据复制一份传递给形参。</span><br><span class="line">定义函数的第一种方式： 函数声明的方式定义函数</span><br><span class="line"><span class="function"><span class="keyword">function</span>  函数名称(<span class="params">[参数列表]</span>)</span>&#123;</span><br><span class="line">  函数体(要执行的代码);</span><br></pre></td></tr></table></figure>
+<p>  }<br>  函数在声明子之后，不调用的时候，自己是不会执行的，只有调用的时候，才会执行，函数调用:   函数名称();<br>  <code>return</code> 的用法 ：</p>
+<ol>
+<li>如果函数内部需要有数据返回的话，则使用return关键字，此数据就是这个函数的返回值，返回值返回之后，退出函数，<code>return</code>后面的代码不会执行。</li>
+<li>如果函数内部没有数据要返回，但是使用了return关键字，程序执行完Return关键字之后，也是退出函数，return后面的代码不会执行。<br>函数的返回值：<br>1.如果函数中需要返回真正的数据值的话，需要使用return关键字返加，此值就是函数的返回值，undefined就不存在了。<br>2.如果函数中没有真正的数据值要返回的话，则此函数会有一个默认的返回值，是undefined.<br>函数的四种形式：   不包括undefined这个默认的返回值</li>
+<li>无参无返回值   比如： <code>tellStory()</code>;</li>
+<li>有参无返回值   比如：  alert(“弹出一个对话框”);</li>
+<li>无参有返回值        比如：  <code>Math.random()</code>;</li>
+<li><p>有参有返回值   比如 <code>getMoney()</code>   <code>prompt()</code>   <code>Number()</code>  <code>parseInt()</code>   <code>parseFloat()</code>   <code>String()</code>;<br>函数的内部调用另外其它的函数：</p>
+<p>Js中的函数没有重载<br>后台语言当中，只要是函数名称相同，但是函数的参数个数不同，或是函数的参数类型不同或是返回值不同，这样就构成了重载。重载的好处，就是在调用函数的时候，只调用一个函数名就可以。<br>但是js中没有函数的重载。</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js中没有函数的重载 ，如果函数名相同的话，后面的函数会将前面的函数给覆盖掉</span></span><br><span class="line"><span class="function"><span class="keyword">function</span>  <span class="title">getSum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">num1,num2,num3</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1+num2+num3;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sum = getSum(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(sum); <span class="comment">//30  undefined  NaN</span></span><br><span class="line">  通过上面的案例可以得出，js中的函数的形参的个数和实参的个数，可以不同</span><br><span class="line"></span><br><span class="line">  <span class="built_in">arguments</span></span><br><span class="line">   <span class="comment">// arguments是js中的任何函数都有的，相当于是实参的一个备份,所有传过来的实参数据都相当于存在arguments伪数组当中</span></span><br><span class="line">  <span class="comment">// arguments是一个伪数组   伪数组就是不是通过 Array这个构造函数创建的数组，但是使用方法和真数组一模一样</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params"></span>)</span>&#123; <span class="comment">//一个参数都不写</span></span><br><span class="line">    <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">       sum += <span class="built_in">arguments</span>[i];</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> sum =  getSum(<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">作用域</span><br><span class="line"><span class="comment">// 在没有学函数之前，js只有一个作用域，就是全局作用域(一对script标签之间的范围)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 学了函数之后，就多了一个作用域，局部作用域(函数的内部)，js中没有块级作用域</span></span><br><span class="line"><span class="comment">//  &#123;</span></span><br><span class="line"><span class="comment">//     var  a = 20;</span></span><br><span class="line"><span class="comment">//  &#125;</span></span><br><span class="line"><span class="comment">//  console.log(a);</span></span><br><span class="line">  <span class="comment">// 两个作用域之间的关系：</span></span><br><span class="line">  <span class="comment">// 1. 局部作用域可以访问全局作用域内的变量或是函数</span></span><br><span class="line">  <span class="comment">// 2. 全局作用域无法访问局部作用域内的变量或是函数</span></span><br><span class="line">  <span class="keyword">var</span> c = <span class="number">26</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params">num1,num2</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">30</span>;</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br><span class="line">    m = <span class="number">80</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  getSum(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(m);</span><br><span class="line"><span class="comment">//  console.log(a);</span></span><br><span class="line">  <span class="comment">// 全局变量和局部变量</span></span><br><span class="line">  <span class="comment">// 全局变量：就是在全局作用域内定义的变量  在函数的内部，不使用var声明的变量</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 局部变量： 就是在函数的内部使用Var定义的变量就是局部变量，它的作用范围只属于函数内部</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">20</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(n);</span><br></pre></td></tr></table></figure>
+<h3 id="封装函数的思想"><a href="#封装函数的思想" class="headerlink" title="封装函数的思想"></a>封装函数的思想</h3><blockquote>
+<p>  1.确定函数的功能（确定函数名称）<br>  2.确定哪些是可变的量，可变的量我们封装函数的时候设置成参数<br>  3.确定函数执行完是否需要得到执行后的结果，如果需要，那么使用return返回，如果不需要，那么就不用返回.</p>
+</blockquote>
+<h4 id="1-函数的声明的方式"><a href="#1-函数的声明的方式" class="headerlink" title="1.函数的声明的方式"></a>1.函数的声明的方式</h4><p>  function 函数名(){</p>
+<p>  }</p>
+<h4 id="2-函数表达式的方式"><a href="#2-函数表达式的方式" class="headerlink" title="2.函数表达式的方式"></a>2.函数表达式的方式</h4><p>var 变量名 = function(){</p>
+<p>}</p>
+<h4 id="匿名函数：没有函数名称的函数"><a href="#匿名函数：没有函数名称的函数" class="headerlink" title="匿名函数：没有函数名称的函数"></a>匿名函数：没有函数名称的函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自执行函数写法：-第一种写法"><a href="#自执行函数写法：-第一种写法" class="headerlink" title="自执行函数写法：(第一种写法)"></a>自执行函数写法：(第一种写法)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;alert(<span class="string">"哈哈"</span>)&#125;)();</span><br></pre></td></tr></table></figure>
+<h4 id="第二种写法："><a href="#第二种写法：" class="headerlink" title="第二种写法："></a>第二种写法：</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;())</span><br></pre></td></tr></table></figure>
+<p>js的预解析：js文件在被加载后，浏览器中的js引擎会先将js文件浏览一遍，然后将会变量声明和函数的声明提到js文件的最前面。</p>
+<h3 id="Math-：对数字进行操作的函数"><a href="#Math-：对数字进行操作的函数" class="headerlink" title="Math()：对数字进行操作的函数"></a>Math()：对数字进行操作的函数</h3><p>1.<code>pow(x,y)</code> :次方<br>2.<code>round(x)</code> :把数四舍五入为最接近的整数。<br>3.<code>ceil(x)</code>  :天花板函数(对数进行上舍入)。<br>4.<code>floor(x)</code> :地板函数(对数进行下舍入)。<br>5.<code>abs(x)</code>   :绝对值。<br>6.<code>max(x,y)</code> :最大值。(可以设置多个值)<br>7.<code>min(x,y)</code> :最小值。(可以设置多个值)<br>8.<code>random()</code> :随机数默认0-1<br>9.<code>sqrt(x)</code>  :返回数的平方根。<br>立方根：1/3<br>平方根：1/2</p>
+<h3 id="Date-：对日期时间进行操作的函数"><a href="#Date-：对日期时间进行操作的函数" class="headerlink" title="Date()：对日期时间进行操作的函数"></a>Date()：对日期时间进行操作的函数</h3><p>1.<code>date.getTime()</code>          获取当前整个时间的一个毫秒<br>2.<code>date.getMilliseconds()</code>  获取当前时间的毫秒<br>3.<code>date.getSeconds()</code>       获取秒数<br>4.<code>date.getMinutes()</code>       获取分钟<br>5.<code>date.getHours()</code>         获取小时<br>6.<code>date.getDay()</code>           获取星期0-6<br>7.<code>date.getDate()</code>          获取日期中的天<br>8.<code>date.getMonth()</code>         获取月份0-11<br>9.<code>date.getFullYear()</code>      获取年份</p>
+<h3 id="数组对象Array"><a href="#数组对象Array" class="headerlink" title="数组对象Array"></a>数组对象Array</h3><p>创建对象<br>变量名 = new Array();<br>变量名 = new Array(数组元素的个数);<br>变量名 = new Array(存入数组中的元素…);</p>
+<p>属性：<br><code>length</code>：返回数组的长度<br><code>prototype</code>: 显示数组中的全部数据</p>
+<p>方法：<br><code>concat()</code>    连接两个或更多的数组，并返回结果<br><code>indexOf()</code>   用来获取数据项在数组中对应的位置索引，如果存在返回该数据对应索引值，但是如果该数据不存在，返回-1，但是存在的情况下，只返回第一个匹配上得数据项对应的索引(n,m) m默认为0，indexof(“String”,开始的索引值)—返回找到当前位置，没找到返回-1，（开始匹配索引的位置 还有一个是lastindexOf）<br><code>pop()</code>       删除并返回数组的最后一个元素<br><code>push()</code>     向数组的末尾添加一个或多个元素，并返回新的长度<br><code>shift()</code>     删除并返回数组的第一个元素<br><code>unshift()</code>   向数组的开头添加一个或多个元素，并返回新的长度</p>
+<p><code>splice()</code>    删除元素，并向数组添加新元素(start, end,T) end值取不到 插入到end位置<br><code>reverse()   颠倒数组中元素的顺序（翻转）</code>sort()<code>对数组的元素进行排序  function sortNumber(a,b){return a-b;}</code>slice()     从某个已有的数组返回选定的元素(截取)<br><code>toSource()</code>  代表对象的源代码<br><code>toString()</code>  把数组转换为字符串，并返回结果<br><code>toLocaleString()</code>  把数组转换为本地数组，并返回结果<br><code>join()</code>      把数组的所有元素放入一个字符串，元素通过指定的分隔符进行分隔<br><code>valueOf()</code>   返回数组对象的原始值</p>
+<p><code>string</code>对象的包装类型：这个对象我们能够直接取使用，不要去<code>new</code>，因为js默认的情况下已经帮我们创建了一个对象，当对象使用完成之后立即销毁。<br><code>length</code>               长度<br><code>toLocalUpperCase()</code>   大写<br><code>charAt()</code>             指定索引的位置的字符<br><code>charCodeAt()</code>         指定索引字符对应ASCII表<br><code>concat()</code>            连接字符串<br><code>slice()</code>              截取字符串<br><code>substring()</code>         截取字符串<br><code>indexOf()</code>            查找字符串  默认-1   lastindexOf()<br><code>trim()</code>               去掉字符串前后<br><code>replace()</code>           替换字符串<br><code>split()</code>              分隔副直通车<br><code>/a/g</code>   <code>grobel</code>   全局</p>
+<p>注意：<code>number</code>类型和<code>boolean</code>类型也是对象的包装类型</p>
+<p>对象：一组无序的数据的集合<br>对象的作用：可以用存储数据，使用面向对象编程可以提高开发效率<br>对象组成：属性、方法<br>属性：将物体所具有的特性或者特点抽象出来<br>方法：将物体的行为动作抽象出来</p>
+<p><code>new</code>:通过<code>Object</code>创建一个对象，将创建的这个对象的方法<br><code>this</code>的使用：<br>1.<code>this</code>一般都是指向创建的这个对象<br>2.<code>this</code>指向事件的执行者</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//推荐使用（字面量创建对象）</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  <span class="comment">//属性</span></span><br><span class="line">  name：<span class="string">"涨价"</span>,</span><br><span class="line">  age:<span class="number">18</span>,</span><br><span class="line">  gender: <span class="string">"女"</span></span><br><span class="line">  <span class="comment">//方法</span></span><br><span class="line">  show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//方法体</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JSON：数据的传输格式    XML:数据格式(被放弃)<br>for(var key in JSON/对象){<br>  对象[key]<br>}</p>
+<center>———————————-WEB API—————————-</center>
+
+<h3 id="Document对象"><a href="#Document对象" class="headerlink" title="Document对象"></a>Document对象</h3><p>文档（document）对象代表浏览器窗口中的文档，该对象是window对象的子对象。由于Window对象是DOM对象模型中的默认对象。因此window对象中的方法和子对象不需要使用window来引用。通过document对象可以访问HTML文档中包含的任何HTML标记并可以动态地改变html标记中的内容。</p>
+<h3 id="JavaScript分三个部分："><a href="#JavaScript分三个部分：" class="headerlink" title="JavaScript分三个部分："></a>JavaScript分三个部分：</h3><p>ECMAScript标准:JS的基本的语法<br>1.DOM：Document Object Model  –&gt;文档对象模型—操作页面的元素<br>2.BOM：Browser Object Model   –&gt;浏览器对象模型—操作的是浏览器</p>
+<h3 id="DOM：文档对象模型"><a href="#DOM：文档对象模型" class="headerlink" title="DOM：文档对象模型"></a>DOM：文档对象模型</h3><p>文档：把一个html文件看成是一个文档，由于万物皆对象，所以把这个文档看成是一个对象<br>xml文件也可以看成是一个文档</p>
+<p>HTML：展示信息，展示数据的<br>XML：侧重于存储数据<br>html文件看成是一个文档，那么这个文档看成是一个对象，文档中的所有的标签都可以看成是一个对象</p>
+<p>页面中的每个标签，都是一个元素(element)，每个元素都可以看成是一个对象<br>标签可以嵌套，标签中有标签，元素中有元素</p>
+<p>html页面中都有一个根标签–html–也叫根元素</p>
+<p>页面中的有一个根元素（标签–html）,里面有很多的元素(有很多的标签，有很多的对象)</p>
+<p>文档：一个页面就是一个文档</p>
+<p>元素（element）：页面中的所有的标签都是元素，元素可以看成是对象<br>节点（node）：页面中所有的内容都是节点：标签，属性，文本<br>root:根</p>
+<p>页面就是文档，文档中有根元素：html<br>html—&gt;head—&gt;body—&gt;其他的标签</p>
+<p>由文档及文档中的所有的元素（标签）组成的一个树形结构图，叫树状图(DOM树)</p>
+<p>DOM经常进行的操作:</p>
+<blockquote>
+<p>1.获取元素<br>2.动态创建元素<br>3.对元素进行操作(设置其属性或调用其方法)<br>4.事件(什么时机做相应的操作)</p>
+</blockquote>
+<p>伪数组：具备数组的特征，不具备数组的行为<br>里面装有满足条件</p>
+<p>点击操作：—–事件：就是一件事，有触发和响应，事件源<br>按钮被点击，弹出对话框<br>按钮—–事件源<br>点击—–事件名字<br>被点了—触发了<br>弹框了—响应</p>
+<p>html跟js分离<br>html标签中的id属性中存储的值是唯一的<br>id属性就像的人的身份证一样，不能重复，页面中的唯一的标识：document.getElementById(“id的属性的值”)  –&gt;返回的是一个元素对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">btnObj.onclick = f2; <span class="comment">//点击的时候触发事件  不加括号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//根据id属性的值从整个文档中获取这个元素(标签)</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>);</span><br><span class="line"><span class="comment">//为该元素注册点击事件，添加事件处理函数(匿名函数)</span></span><br><span class="line">btn.onclick= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">"哦，这真是太好了"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简化版</span></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"btn1"</span>).onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">"哦，这真是太好了"</span>);</span><br><span class="line">&#125;;</span><br><span class="line">注意：先有按钮，才能获取，获取之后才能注册事件</span><br><span class="line"></span><br><span class="line">注意：disabled 禁用 <span class="literal">true</span>/<span class="literal">false</span>  （开关属性）</span><br><span class="line">只要出现就有效果</span><br><span class="line"></span><br><span class="line">设置style优先级最高</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(选择器);      ----只会得到单个</span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(选择器);   ----会得到所有(伪数组)</span><br></pre></td></tr></table></figure>
+<p>凡是成对的标签，中间的文本内容，设置的时候，都使用innerText这个属性的方式</p>
+<p>根据id获取按钮，为按钮注册点击事件，添加事件处理函数<br>document.getElementById(“btn”).onclick = function(){<br>  //根据id获取p标签，设置内容<br>  document.getElementById(“p1”).innerText=”这是一个P”;<br>};</p>
+<p>document.getElementsByTagName(“标签的名字”);返回的是一个伪数组<br>无论获取的是一个标签，还是多个标签，最终都是在数组中存储的，这行代码的返回值就是一个数组</p>
+<p>在某个元素的事件中，自己的事件中的this就是当前的这个元素对象<br>排他功能：<br>—-让所有的元素注册点击事件，然后让被点击的事件设置点击后事件</p>
+<p>规律：<br>1.在表单标签中，如果属性和值只有一个，并且值是这个属性本身，那么<br>在写js代码，dom操作的时候，这个属性值，是布尔类型就可以了<br>2.凡是css中这个属性是多个单词的写法， 在js代码中DOM操作的时候，把<br>-去掉，后面的单词的首字母大写即可。<br>阻止超链接的默认的跳转（在事件里）：return false</p>
+<p>如果想要获取body标签直接用document.body</p>
+<p>注意:getElementsByClassName()属于H5的(会有兼容问题)</p>
+<p>根据id属性的值获取元素，返回一个元素对象<br>document.getElementById(“id属性的值”);</p>
+<p>color:“gray”  //灰色<br>注意：字符串的运行效率会比数字的运行效率低<br>推荐使用数字判断</p>
+<p>设置标签中的文本内容，应该使用context属性，谷歌，火狐支持，IE8不支持</p>
+<h3 id="下面的几个，有的浏览器不支持"><a href="#下面的几个，有的浏览器不支持" class="headerlink" title="下面的几个，有的浏览器不支持"></a>下面的几个，有的浏览器不支持</h3><p>根据标签名字获取元素,返回一个伪数组，里面保存多个DOM对象</p>
+<p><code>document</code>.getElementByTagName(“标签名字”);</p>
+<p>根据name属性的值获取元素，返回一个伪数组，里面保存多个DOM对象</p>
+<p><code>document</code>.getElementsByName(“name属性的值”);</p>
+<p>根据类样式的名字来获取元素，返回一个伪数组，里面保存多个dom对象</p>
+<p><code>document</code>.getElementsByClassName(“类样式的名字”);</p>
+<p>根据选择器的方式获取元素，返回一个元素对象</p>
+<p><code>document</code>.querySelector(“选择器的名字”);</p>
+<p>根据选择器获取元素，返回一个伪数组，里面保存多个DOM对象</p>
+<p><code>document</code>.querySelectorAll(“选择器的名字”);</p>
+<p>注意：如果这个属性在浏览器中不支持，那么这个属性的类型是undefined</p>
+<p>如果使用innerText主要是设置文本的，设置标签内容，是没有标签的效果的<br>如果innerHTML是可以设置文本内容<br>innerHTML主要的作用是在标签中设置新的html标签内容，是有标签效果的<br>想要设置标签内容，使用innerHTML，想要设置文本内容，<br>innerText或者textContext，或者innerHTML,推荐用innerHTML</p>
+<p>获取的时候:<br>innerText可以获取标签中间的文本内容，但是标签中如果还有标签，<br>那么最里面的标签的文本内容也能获取</p>
+<p>结论：<br>如果想要（获取）标签及内容，使用innerHTML<br>如果想要设置标签，使用innerHTML<br>想要设置文本，用innerText，或者innerHTML，或者textContent</p>
+<p>html标签中有没有什么自带的属性可以存储成绩的  –没有<br>本身html标签没有这个属性，自己（程序员）添加的—-自定义属性—为了存储一些数据</p>
+<p>在html标签中添加的自定义属性，如果想要获取这个属性的值，需要使用getAttribute(“自定义属性名字”)才能获取这个属性的值</p>
+<p>获取所有的li标签，然后为每个标签中动态的添加自定义属性和值<br>点击的时候获取该标签的自定义属性的值</p>
+<p>↓↓↓↓↓API操作自定义属性↓↓↓↓<br>总结：<br>设置自定义属性：setAttribute(“属性的名字”,”属性的值”)<br>获取自定义属性的值：getAttribute(“属性的名字”)</p>
+<h2 id="node-节点"><a href="#node-节点" class="headerlink" title="node 节点"></a>node 节点</h2><p> 节点:页面中所有的内容都是节点(标签,属性,文本:文字,空格,换行)<br> 文档：document—页面中的顶级对象<br> 元素:页面中所有的标签,   标签—元素–对象(通过DOM的方式来获取这得到了这个对象,此时这个对象叫DOM对象)<br> 节点的属性:<br> 作用:为了将来获取很多节点,得到节点中的标签(识别节点中的标签元素</p>
+<p> 节点的类型:<br> 1 标签节点,2 属性节点,3 文本节点<br> nodeType:节点的类型,1—标签节点,2—-属性节点,3—文本节点<br> nodeName:标签节点–大写的标签名字,属性节点—小写的属文本节点—#text<br> nodeValue:标签—null,属性—属性的值,文本—文本内容<br> if(node.nodeType==1&amp;&amp;node.nodeName==”P”)</p>
+<p> 动态——&gt;元素的创建</p>
+<h3 id="三种元素创建的方式"><a href="#三种元素创建的方式" class="headerlink" title="三种元素创建的方式"></a>三种元素创建的方式</h3><blockquote>
+<p>1.document.write(“标签代码及内容”); 如果在页面加载完毕后创页面中的内容会被干掉</p>
+<p>2.父级对象.innerHTML=”标签代码及内容”;</p>
+<p>3.可创建元素节点：<br>document.createElement(“标签名字”);   得到的是一个对象,<br>可向节点的子节点列表的末尾添加新的子节点：<br>   父级元素.appendChild(子级元素对象);//移除元素到另外一个元素<br>在您指定的已有子节点之前插入新的子节点：<br>  父级元素.insertBefore(新的子级对象,参照的子级对象);<br>移除子元素：<br>  父级元素.removeChild(要干掉的子级元素对象);</p>
+</blockquote>
+<h3 id="事件的绑定-为同一个元素绑定多个相同的事件"><a href="#事件的绑定-为同一个元素绑定多个相同的事件" class="headerlink" title="事件的绑定:为同一个元素绑定多个相同的事件"></a>事件的绑定:为同一个元素绑定多个相同的事件</h3><p> 三种方式:</p>
+<blockquote>
+<p>对象.on事件名字=事件处理函数<br>如果是多个相同事件注册用这最后一个执行,之前的被覆盖了<br> my$(“btn”).onclick=function(){};</p>
+<p>对象.addEventListener(“没有on的事件名字”,事件处理函数,false);<br>my$(“btn”).addEventListener(“click”,function(){},false);</p>
+<p>对象.attachEvent(“有on的事件名字”,事件处理函数);<br>my$(“btn”).attachEvent(“onclick”,function(){});</p>
+</blockquote>
+<h3 id="事件有三个阶段："><a href="#事件有三个阶段：" class="headerlink" title="事件有三个阶段："></a>事件有三个阶段：</h3><p>捕获    -   事件从外到内传播的过程<br>目标    -   事件传播到达事件源的阶段<br>冒泡    -   事件从内到外传播的过程</p>
+<p>事件在传播的过程中，如果某个节点也注册了同类型的事件就会被触发</p>
+<p>得到某个父元素底下所有的子元素<br>children –父元素.children</p>
+<p>得到某个元素的父元素<br>parentNode  –子元素.parentNode</p>
+<p>得到的是所有的子节点，节点和 元素，节点包含元素，元素只是节点的一种<br>childNodes  –父元素.childNodes</p>
+<h3 id="兄弟元素"><a href="#兄弟元素" class="headerlink" title="兄弟元素"></a>兄弟元素</h3><p>nextSibling   下一个节点<br>next          下一个节点<br>previous      上一个<br>Sibling       兄弟</p>
+<p>previousSibling         上一个节点<br>    –元素.previousSibling</p>
+<p>previousElementSibling  上一个元素<br>join          优化拼接字符串</p>
+<p>insertBefore<br>  元素节点.insertBefore(新的节点，旧的节点);  //在旧节点前插入新节点<br>replaceChild<br>  元素节点.replaceChild(新节点，旧的节点);    //在目标节点替换新节点<br>cloneNode<br>  节点对象.cloneNode(是否深度克隆);           //克隆节点(复制)<br>innerText                                     //元素内部的文本</p>
+<p>  不可以生成元素</p>
+<p>绑定事件的区别:<br> addEventListener(“没有on的事件类型”,事件处理函数,控制事件阶段的);<br> attachEvent()</p>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  addEventListener和attachEvent用来测试兼容问题</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">- addEventListener() 方法用于向指定元素添加事件句柄。</span></span><br><span class="line"><span class="comment">- 使用 removeEventListener() 方法来移除 addEventListener() 方法添加的事件句柄。</span></span><br><span class="line"><span class="comment">- </span></span><br><span class="line"><span class="comment">- 注意: 不要使用 "on" 前缀。 例如，使用 "click" ,而不是使用 "onclick"。 </span></span><br><span class="line"><span class="comment">- */</span></span><br></pre></td></tr></table></figure>
+<p>​    </p>
+<p> 相同点: 都可以为元素绑定事件<br> 不同点:</p>
+<blockquote>
+<p>1.方法名不一样<br> 2.参数个数不一样addEventListener三个参数,attachEvent两个参数<br> 3.addEventListener 谷歌,火狐,IE11支持,IE8不支持<br>   attachEvent 谷歌火狐不支持,IE11不支持,IE8支持<br> 4.this不同,addEventListener 中的this是当前绑定事件的对象<br>   attachEvent中的this是window<br> 5.addEventListener中事件的类型(事件的名字)没有on<br>  attachEvent中的事件的类型(事件的名字)有on</p>
+</blockquote>
+<center>————————-个人理解——————————</center>
+
+<blockquote>
+<p>1、attachEvent()里面的第一个参数是onclick而不是和addEventListener()中的click一样;<br>2、attachEvent()使用和使用DOM0级的区别主要在于事件处理程序的作用域。<br>在使用DOM0级方法情况下，事件处理程序会在其所属的作用域内运行;<br>在使用attachEvent()方法的情况下，事件处理程序会在全局作用域中运行，<br>因此这里面的this相当于window。<br>必须是ie浏览器才可以使用。<br>3、另外，还有一点不同的是，使用attachEvent()绑定多个事件的时候，和addEventListener()以相反的顺序触发<br>4、和removeEventListener的作用一样，deachEvent()也可以移除attachEvent()添加的事件</p>
+</blockquote>
+<p>解绑事件：</p>
+<ul>
+<li>注意:用什么方式绑定事件,就应该用对应的方式解绑事件</li>
+<li>1.解绑事件</li>
+<li>对象.on事件名字=事件处理函数—&gt;绑定事件</li>
+<li>对象.on事件名字=null;</li>
+<li>2.解绑事件</li>
+<li>对象.addEventListener(“没有on的事件类型”,命名函数,false);</li>
+</ul>
+<p>false要一致</p>
+<p>绑定事件</p>
+<ul>
+<li>对象.removeEventListener(“没有on的事件类型”,函数名字,false);</li>
+<li>3.解绑事件</li>
+<li>对象.attachEvent(“on事件类型”,命名函数);—绑定事件</li>
+<li>对象.detachEvent(“on事件类型”,函数名字);</li>
+</ul>
+<p>事件冒泡：多个元素嵌套，有层次关系，这些元素都注册了相同的事件，如果里面的元素 的事件触发了，外面的元素的该事件自动的触发了。<br>如何阻止事件冒泡<br>window.event.cancelBubble = true;  IE特有的，谷歌支持，火狐不支持<br>e.stopPropagation();   谷歌支持和火狐支持<br>function(e)     –e表示当前事件的所有[事件源]</p>
+<p>得到鼠标移动的坐标：   clientX/clientY   浏览器的可视区坐标<br>target||srcElement      分别是谷歌和ie8里面的事件目标（事件源）<br>pageX|pageY       页面坐标，以body的左上角为原点</p>
+<p>默认行为；preventDefault    阻止默认行为（跳转）<br>1、javascript：void(0);   —a href<br>2、在事件处理程序里面return false<br>3、event.preventDefault();</p>
+<p>attachEvent——兼容：IE7、IE8；不兼容firefox、chrome、IE9、IE10、IE11、safari、opera</p>
+<p>addEventListener——兼容：firefox、chrome、IE、safari、opera；不兼容IE7、IE8</p>
+<p><center>——————————-BOM—————————–</center><br>浏览器中有个顶级对象：window<br>全局函数和变量<br>window一般可以省略</p>
+<p>页面中顶级对象：document<br>页面中所有的内容都是属于浏览器的，页面中的内容也都是window的</p>
+<p>window.onload = function() {<br>  //页面加载完执行的js代码;<br>}</p>
+<p>onunload 页面关闭后才触发的事件 –谷歌没效果</p>
+<p>onbeforeunload 页面之前触发的事件  –谷歌没效果</p>
+<p><center>——————————-定时器—————————-</center><br>参数1：函数<br>参数2：时间 - - 毫秒 - - 1000毫秒=1秒<br>执行过程：页面加载完毕后，过了1秒，执行一个函数的代码，又过了1秒再执行<br>var timeId = setInterval(function(){<br>  //执行操作<br>},1000)</p>
+<p>//要清理的定时的id的值<br>whidow.clearInterval(timeId);</p>
+<p>一次性的定时器<br>参数1:函数<br>参数2:时间 /毫秒<br>返回值：该定时器的id<br>语法：window.setTimeout(函数,时间);</p>
+<p>注意：如果样式的代码是在style的标签中设置，外面是获取不到<br>如果样式的代码是style的属性设置，外面是可以获取的</p>
+<p>如何得到left的值：设置成offsetLeft获取宽高/左右的值，返回数字类型<br>offsetLfet:父级元素margin + 父级元素padding + 父级元素的border+<br>自己的margin</p>
+<p>脱离文档流<br>主要是自己的left和自己的margin</p>
+<p><center>—————————–scroll——————————</center><br>scroll：卷曲======&gt;滚出去<br>scrollWidth：元素中内容的实际的宽（没有边框），如果没有内容就是元素的宽<br>scrollHeight：元素中内容的实际的高（没有边框），如果没有内容就是元素的高<br>scrollTop：获取或者设置元素的内容垂直滚动出去的距离<br>scrollLeft：获取或者设置元素的内容滚动出去的水平距离</p>
+<p>回到顶部：(设置javacript.void(0); 阻止跳转)<br>把滚动的距离设置为0<br>document.documentElement.scrollTop = 0;</p>
+<p><center>————————–轮播图———————————</center><br>20-30，人眼的识别的时间间隔，最低大概在30毫秒左右<br>计算机屏幕刷新频率，一般就是60帧</p>
+<p>把ul移动到对应的位置 = 索引  <em>  图片的宽度  </em> -1</p>
+<p>透明度<br>css<br>  opacity：控制整个元素的透明度的<br>  rgba() : 这是让背景透明<br>获取任意样式的当前值<br>  window.getComputedStyle(element);<br>    谷歌支持，ie8不支持<br>  element.currentStyle<br>    ie8支持的，谷歌不支持的</p>
+<p>以上的两个API返回的结果都是对象<br>    需要通过对象的方式访问里面的属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.属性名</span><br><span class="line">res[<span class="string">"属性名"</span>]</span><br></pre></td></tr></table></figure>
+<p>这两个方式都是只能获取不能设置的 - 只读</p>
+<p>兼容处理：<br>if(window.getComputedStyle != undefined){<br>  //兼容代码<br>}else if(element.currentStyle != undefined){<br>  //兼容代码<br>}</p>
+<p>computed  :   计算过后的-综合各种因素，最终谁作用在元素身上，就是计算过后的</p>
+<p>style      :  样式 </p>
+<p><center>—————————-放大镜—————————-</center><br>最大距离：small的宽高 - mask的宽高</p>
+<p>大图的当前位置 = 遮罩的当前位置 * 大图的最大移动距离/遮罩的最大移动距离</p>
+<p><center>—————————-client——————————-</center><br>可视区域:client<br>clientWidth:可视区域的宽<br>clientHeight:可视区域的高（）<br>通过arguments.length，可以得出：事件处理函数中实际上是一个参数的，这个参数和事件有关系，是一个对象    事件参数对象</p>
+<p>pageX/Y解决拖动滚动条跟随功能（会有一点卡顿）</p>
+<p>如果想要获取鼠标按下的时候的坐标，可以这样设置：e.pageX/e.pageY<br>获取元素/document.onmousedown = function(e){</p>
+<p>}<br>包含区域：padding和内容</p>
+<p>Document属性<br>alinkColor        链接文字被单击时的颜色，对应于<code>&lt;body&gt;</code>标记中的alink属性<br>all[]             存储html标记一个数组（该属性本身也是一个对象）<br>anchors[]         存储锚点的一个数组（该属性本身也是一个对象）<br>bgColor           文档的背景颜色<br>cookie            表示cookie的值<br>fgColor           文档的文本的颜色（不包含超链接的文字）<br>forms[]           存储窗口对象的一个数组<br>fileCreatedDate   创建文档的日期<br>fileModifiedDate  文档最后修改的日期<br>fileSize          当前文件的大小<br>lastModified      文档最后修改的时间<br>images[]          存储图像对象的一个数组<br>linkColor         未被访问的链接文字的颜色<br>links[]           存储link对象的一个数组<br>vlinkColor        表示已访问的链接文字的颜色<br>title             当前文档标题对象<br>body              当前文档主体对象<br>readyState        获取某个对象的当前状态<br>URL               获取或设置URL</p>
+<p>Document对象的常用方法：<br>close             关闭文档的输出流<br>open              打开一个文档输出流并接收有write()和writeln()方法的创建页面内容<br>write             向文档中写入HTML或js语句<br>writeln           向文档中写入html或js语句，并以换行符结束<br>createElement     创建一个HTML标记<br>getElementById    获取指定Rd的THML标记</p>
+<p>Doc常用事件：<br>onabort         对象载入被中断时触发<br>onblur          元素或窗口本身失去焦点时触发<br>onchange        改变<code>&lt;select&gt;</code>元素中的选项或其他表单元素失去焦点，并且在其获取焦点后内容发生过改变时触发<br>onclick         单击鼠标左键时触发。<br>ondblclick      双击鼠标左键时触发<br>onerror         出现错误时触发<br>onfocus         任何元素或窗口本身获得焦点时触发<br>onkeydown       键盘上得按键（包含Shift或alt等键）被按下时触发<br>onkeypass       键盘上得按键被按下，并产生一个字符时发生，即当按下shift或alt等键时不触发<br>onkeyup         释放键盘上得按键时触发<br>onload          页面完全载入后，在window对象上触发；所有框架都载入后，在框架集上触发；<img>标记指定的图像完全载入后，在其上触发<code>&lt;object&gt;</code> 标记指定的对象完全载入后，在其上触发<br>onmousedown     单击任何一个鼠标按键时触发<br>onmousemove     鼠标在某个元素上移动时持续触发<br>onmouseout      将鼠标从指定的元素上时触发<br>onmouseover     鼠标移到某个元素上时触发<br>onmouseup       释放任意一个鼠标按键时触发<br>onreset         单击重置按钮时，在<code>&lt;form&gt;</code>上触发<br>onresize        窗口或框架的大小发生改变时触发<br>onscroll        在任何带滚动条的元素或窗口上滚动时触发<br>onselect        选中文本时触发<br>onsubmit        单击提交按钮时，在<code>&lt;form&gt;</code>上触发<br>onunload        页面完全卸载后，在window对象上触发，或者所有框架都卸载后，在框架集上触发<br>keyup           键盘弹起<br>keydown         键盘按下</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

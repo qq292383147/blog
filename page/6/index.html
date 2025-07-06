@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2021/07/26/JavaScript/%E5%AE%9E%E7%8E%B0%E6%97%A0%E6%84%9F%E5%88%B7%E6%96%B0token%E6%88%91%E6%98%AF%E8%BF%99%E6%A0%B7%E5%81%9A%E7%9A%84/">
+                实现无感刷新token我是这样做的
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-07-26</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在做需求的时候,涉及到登录token,产品提出一个问题:能不能让token过期时间长一点，我频繁的要去登录。</p>
+<p>前端：后端，你能不能把token 过期时间设置的长一点。</p>
+<p>后端：可以,但是那样做不安全，你可以用更好的方法。</p>
+<p>前端：什么方法?</p>
+<p>后端：给你刷新token的接口，定时去刷新token</p>
+<p>前端：好，让我思考一下</p>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><p>当token过期的时候，刷新token,前端需要做到无感刷新token,即刷token时要做到用户无感知，避免频繁登录。实现思路</p>
+<ul>
+<li>方法一</li>
+</ul>
+<p>后端返回过期时间，前端判断token过期时间,去调用刷新token接口</p>
+<p>缺点：需要后端额外提供一个token过期时间的字段；使用了本地时间判断，若本地时间被篡改，特别是本地时间比服务器时间慢时，拦截会失败。</p>
+<ul>
+<li>方法二</li>
+</ul>
+<p>写个定时器，定时刷新token接口</p>
+<p>缺点：浪费资源,消耗性能,不建议采用。</p>
+<ul>
+<li>方法三</li>
+</ul>
+<p>在响应拦截器中拦截，判断token 返回过期后，调用刷新token接口</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>axios的基本骨架,利用service.interceptors.response 进行拦截</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (response.data.code === <span class="number">409</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> refreshToken(&#123; <span class="attr">refreshToken</span>: localStorage.getItem(<span class="string">'refreshToken'</span>), <span class="attr">token</span>: getToken() &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> &#123; token &#125; = res.data</span><br><span class="line">          setToken(token)</span><br><span class="line">          response.headers.Authorization = <span class="string">`<span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          removeToken()</span><br><span class="line">          router.push(<span class="string">'/login'</span>)</span><br><span class="line">          <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response &amp;&amp; response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  (error) =&gt; &#123;</span><br><span class="line">    Message.error(error.response.data.msg)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><h3 id="问题一：如何防止多次刷新token"><a href="#问题一：如何防止多次刷新token" class="headerlink" title="问题一：如何防止多次刷新token"></a>问题一：如何防止多次刷新token</h3><p>我们通过一个变量isRefreshing 去控制是否在刷新token的状态。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (response.data.code === <span class="number">409</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!isRefreshing) &#123;</span><br><span class="line">        isRefreshing = <span class="literal">true</span></span><br><span class="line">        <span class="keyword">return</span> refreshToken(&#123; <span class="attr">refreshToken</span>: localStorage.getItem(<span class="string">'refreshToken'</span>), <span class="attr">token</span>: getToken() &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> &#123; token &#125; = res.data</span><br><span class="line">          setToken(token)</span><br><span class="line">          response.headers.Authorization = <span class="string">`<span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          removeToken()</span><br><span class="line">          router.push(<span class="string">'/login'</span>)</span><br><span class="line">          <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</span><br><span class="line">        &#125;).finally(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          isRefreshing = <span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response &amp;&amp; response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  (error) =&gt; &#123;</span><br><span class="line">    Message.error(error.response.data.msg)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="问题二：同时发起两个或者两个以上的请求时，其他接口怎么解决"><a href="#问题二：同时发起两个或者两个以上的请求时，其他接口怎么解决" class="headerlink" title="问题二：同时发起两个或者两个以上的请求时，其他接口怎么解决"></a>问题二：同时发起两个或者两个以上的请求时，其他接口怎么解决</h3><p>当第二个过期的请求进来，token正在刷新，我们先将这个请求存到一个数组队列中，想办法让这个请求处于等待中，一直等到刷新token后再逐个重试清空请求队列。那么如何做到让这个请求处于等待中呢？为了解决这个问题，我们得借助Promise。将请求存进队列中后，同时返回一个Promise，让这个Promise一直处于Pending状态（即不调用resolve），此时这个请求就会一直等啊等，只要我们不执行resolve，这个请求就会一直在等待。当刷新请求的接口返回来后，我们再调用resolve，逐个重试。最终代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否正在刷新的标记</span></span><br><span class="line"><span class="keyword">let</span> isRefreshing = <span class="literal">false</span></span><br><span class="line"><span class="comment">//重试队列</span></span><br><span class="line"><span class="keyword">let</span> requests = []</span><br><span class="line">service.interceptors.response.use(</span><br><span class="line">  response =&gt; &#123;</span><br><span class="line">  <span class="comment">//约定code 409 token 过期</span></span><br><span class="line">    <span class="keyword">if</span> (response.data.code === <span class="number">409</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!isRefreshing) &#123;</span><br><span class="line">        isRefreshing = <span class="literal">true</span></span><br><span class="line">        <span class="comment">//调用刷新token的接口</span></span><br><span class="line">        <span class="keyword">return</span> refreshToken(&#123; <span class="attr">refreshToken</span>: localStorage.getItem(<span class="string">'refreshToken'</span>), <span class="attr">token</span>: getToken() &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> &#123; token &#125; = res.data</span><br><span class="line">          <span class="comment">// 替换token</span></span><br><span class="line">          setToken(token)</span><br><span class="line">          response.headers.Authorization = <span class="string">`<span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//跳到登录页</span></span><br><span class="line">          removeToken()</span><br><span class="line">          router.push(<span class="string">'/login'</span>)</span><br><span class="line">          <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</span><br><span class="line">        &#125;).finally(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">          isRefreshing = <span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 返回未执行 resolve 的 Promise</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// 用函数形式将 resolve 存入，等待刷新后再执行</span></span><br><span class="line">          requests.push(<span class="function"><span class="params">token</span> =&gt;</span> &#123;</span><br><span class="line">            response.headers.Authorization = <span class="string">`<span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line">            resolve(service(response.config))</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> response &amp;&amp; response.data</span><br><span class="line">  &#125;,</span><br><span class="line">  (error) =&gt; &#123;</span><br><span class="line">    Message.error(error.response.data.msg)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2021/07/26/Nginx/Nginx%20%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%B8%85%E5%8D%95/">
+                Nginx 常用配置清单
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-07-26</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Nginx/">Nginx</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>Nginx 是一个高性能的 HTTP 和反向代理 web 服务器，同时也提供了 IMAP/POP3/SMTP 服务，其因丰富的功能集、稳定性、示例配置文件和低系统资源的消耗受到了开发者的欢迎。</p>
+<p>本文，我们总结了一些常用的 Nginx 配置代码，希望对大家有所帮助。</p>
+<p><strong>侦听端口</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Standard HTTP Protocol</span></span><br><span class="line">listen 80;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Standard HTTPS Protocol</span></span><br><span class="line">listen 443 ssl;</span><br><span class="line"><span class="meta">#</span><span class="bash"> For http2</span></span><br><span class="line">listen 443 ssl http2;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen on 80 using IPv6</span></span><br><span class="line">listen [::]:80;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen only on using IPv6</span></span><br><span class="line">listen [::]:80 ipv6only=on;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>访问日志</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Relative or full path to <span class="built_in">log</span> file</span></span><br><span class="line">access_log /path/to/file.log;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Turn <span class="string">'on'</span> or <span class="string">'off'</span>  </span></span><br><span class="line">access_log on;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>域名</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen to yourdomain.com</span></span><br><span class="line">server_name yourdomain.com;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen to multiple domains server_name yourdomain.com www.yourdomain.com;</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen to all domains</span></span><br><span class="line">server_name *.yourdomain.com;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen to all top-level domains</span></span><br><span class="line">server_name yourdomain.*;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Listen to unspecified Hostnames (Listens to IP address itself)</span></span><br><span class="line">server_name "";</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>静态资产</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yourdomain.com;</span><br><span class="line">location / &#123;</span><br><span class="line">root /path/to/website;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>重定向</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name www.yourdomain.com;</span><br><span class="line">return 301 http://yourdomain.com$request_uri;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name www.yourdomain.com;</span><br><span class="line">location /redirect-url &#123;</span><br><span class="line">return 301 http://otherdomain.com;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>反向代理</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yourdomain.com;</span><br><span class="line">location / &#123;</span><br><span class="line">proxy_pass http://0.0.0.0:3000;</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">where</span> 0.0.0.0:3000 is your application server (Ex: node.js) bound on 0.0.0.0 listening on port 3000</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>负载均衡</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">upstream node_js &#123;</span><br><span class="line">server 0.0.0.0:3000;</span><br><span class="line">server 0.0.0.0:4000;</span><br><span class="line">server 123.131.121.122;</span><br><span class="line">&#125;</span><br><span class="line">server &#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yourdomain.com;</span><br><span class="line">location / &#123;</span><br><span class="line">proxy_pass http://node_js;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>SSL 协议</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 443 ssl;</span><br><span class="line">server_name yourdomain.com;</span><br><span class="line">ssl on;</span><br><span class="line">ssl_certificate /path/to/cert.pem;</span><br><span class="line">ssl_certificate_key /path/to/privatekey.pem;</span><br><span class="line">ssl_stapling on;</span><br><span class="line">ssl_stapling_verify on;</span><br><span class="line">ssl_trusted_certificate /path/to/fullchain.pem;</span><br><span class="line">ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">ssl_session_timeout 1h;</span><br><span class="line">ssl_session_cache shared:SSL:50m;</span><br><span class="line">add_header Strict-Transport-Security max-age=15768000;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Permanent Redirect <span class="keyword">for</span> HTTP to HTTPS</span></span><br><span class="line">server </span><br><span class="line">&#123;</span><br><span class="line">listen 80;</span><br><span class="line">server_name yourdomain.com;</span><br><span class="line">return 301 https://$host$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其实可以采用可视化的方式对 Nginx 进行配置，我在 GitHub 上发现了一款可以一键生成 Nginx 配置的神器，相当给力。</p>
+<p>先来看看它都支持什么功能的配置：反向代理、HTTPS、HTTP/2、IPv6, 缓存、WordPress、CDN、Node.js 支持、 Python (Django) 服务器等等。</p>
+<p>如果你想在线进行配置，只需要打开网站：<a href="https://nginxconfig.io/，按照自己的需求进行操作就行了。" target="_blank" rel="noopener">https://nginxconfig.io/，按照自己的需求进行操作就行了。</a></p>
+<p>开源地址：github.com/digitalocean/nginxconfig.io</p>
+<p>网站：digitalocean.com/community/tools/nginx</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2021/03/18/GIT/git%20%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81/">
+                git 解决冲突
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-03-18</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/git/">git</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="三、解决冲突"><a href="#三、解决冲突" class="headerlink" title="三、解决冲突"></a>三、解决冲突</h3><h4 id="1、使用git-pull文件时和本地文件冲突"><a href="#1、使用git-pull文件时和本地文件冲突" class="headerlink" title="1、使用git pull文件时和本地文件冲突"></a>1、使用git pull文件时和本地文件冲突</h4><p>场景：在使用 <code>git pull</code> 代码时，经常会碰到有冲突的情况<br>简要：主要是使用 <code>git stash</code> 命令分成以下几个步骤进行处理</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
+<p>先将本地修改存储起来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></table></figure>
+<p>可以看到保存的信息， stash@{0}就是刚才保存的标记</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+<p>获取内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop stash@&#123;0&#125;</span><br></pre></td></tr></table></figure>
+<p>还原暂存的内容</p>
+<p>系统提示如下类似的信息，系统自动合并修改的内容，但是其中有冲突，需要解决其中的冲突</p>
+<p>Auto-merging c/environ.c CONFLICT (content): Merge conflict in c/environ.c</p>
+<p>解决文件中冲突的的部分</p>
+<p>这里写图片描述</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream 和=====之间的内容就是pull下来的内容，</span><br><span class="line">====和stashed changes之间的内容就是本地修改的内容。自行确定需要的内容。解决完成之后，就可以正常的提交了。</span><br></pre></td></tr></table></figure>
+<p>7.最后一步清空 <code>stash</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash clear</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/5/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/7/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

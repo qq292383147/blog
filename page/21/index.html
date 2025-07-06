@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/14/React/Redux-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98store%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/">
+                Redux-如何改变store中的数据
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-14</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>下面就一起来编写todolist的添加,删除等代码的,最终的效果图如下所示</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/1.gif" alt="1"></p>
+<center><font color="red">(添加,删除todolist操作)</font></center>
+
+<p><strong>如何改变store的数据,实现页面的更新？</strong></p>
+<p>在前文的示例代码中已经知道组件怎么从store中取数据了,然而现在,如果想要更新state的数据?怎么办?</p>
+<p>在reducer函数接收的第二个参数action就是接下来要干的事情了</p>
+<p>在Redux中为了能够查看store中的各个状态,<strong>在chrome浏览器需先安装一个redux Devtools这个调试工具</strong></p>
+<p>当然<strong>安装这个插件,需要科学上网.如果没有的话,在qq浏览器的插件市场里也是能够找得到的</strong></p>
+<p>qq浏览器各种插件也是应有尽有,与在chrome控制台里调试是一样的</p>
+<p><strong>方式一:创建store的时候,进行composeEnhancers构建增强型的应用,在代码里添加配置</strong>,将window.<strong>REDUX_DEVTOOLS_EXTENSION</strong> &amp;&amp; window.<strong>REDUX_DEVTOOLS_EXTENSION</strong>(),这行代码配置添加到createStore()的第二个参数上  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = createStore(reducer, <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// createStore第二个参数添加这个redux-devtools的配置可以开启调试功能</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/2.jpg" alt="2"></p>
+<center><font color="red">(需要浏览器安装redux-devtools插件)</font></center>
+
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/3.jpg" alt="3"></p>
+<center><font color="red">（需要按照文档,对创建的store仓库配置一下）</font></center>
+
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/4.jpg" alt="4"></p>
+<center><font color="red">（配置完后,刷新浏览器Redux调试工具就会出现了）</font></center>
+
+<p><strong>方法二:终端下安装redux-devtools-extension</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux-devtools-extension</span><br></pre></td></tr></table></figure>
+<p>然后在主页面入口代码里,添加redux-devtools-extension拓展,同时引入applyMiddleware应用中间件,并在componseWidthDevTools中调用,如下所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createStore, applyMiddleware &#125; from &apos;redux&apos;; </span><br><span class="line">import &#123; composeWithDevTools &#125; from &apos;redux-devtools-extension&apos;;</span><br><span class="line"> </span><br><span class="line">const store = createStore(reducer, composeWithDevTools(</span><br><span class="line">  applyMiddleware()</span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<p>以上两种方法都可以开启Redux的调试功能,第二种方法比较强大,推荐使用,这种配置完后,在各个浏览器都是可以使用的,至于其他一些额外拓展功能的,在后续的文章中,会不断会讲到</p>
+<p>具体更改store的实例代码如下所示:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List &#125; <span class="keyword">from</span> <span class="string">'antd'</span>; <span class="comment">// 引入antd组件库</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>; <span class="comment">// 引入antd样式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 创建一个store管理仓库,从redux库中引入一个createStore函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 引入createStore后,store并没有创建,需要调用createStore()后才有store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer,<span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// 创建好reducer后,需要将reducer作为参数传到createStore当中去,这样store才能拿到reducer的state数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建reducer函数,管理组件共享的数据状态以及一些动作</span></span><br><span class="line"><span class="comment">// reducer是一个纯函数,返回一个新的state给store</span></span><br><span class="line"><span class="comment">// 4. 初始化state值,将原先组件内部的状态的数据,移除到reducer里面去管理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    inputValue: <span class="string">'itclanCoder'</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    list: [<span class="string">'itclanCoder'</span>, <span class="string">'川川'</span>, <span class="string">'学习Redux'</span>]</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;, action</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'handle_Input_Change'</span>)&#123;</span><br><span class="line">        <span class="comment">// 对原有的上一次的state做一次深拷贝,在Redux中,reducer不允许直接修改state</span></span><br><span class="line">      <span class="comment">// const newState = Object.assign(&#123;&#125;, state);这个Object.assign()也是一个非常常用浅拷贝的方法,与下面的方法最终实现的效果是一致的,等价于下面的方法</span></span><br><span class="line">      <span class="comment">// 创建了一个newState完全复制了state,通过对newState的修改避免了对state的修改</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value; <span class="comment">// 将新的value值赋值给newState</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TodoList组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="comment">// 5. 在组件内部通过getState()方法就可以拿到store里面的数据</span></span><br><span class="line">    <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">    <span class="comment">// this环境的绑定</span></span><br><span class="line">    <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">// 触发订阅,让store感知到state的变化</span></span><br><span class="line">    store.subscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 接收一个函数,重新获取store最新的数据,subscribe里面必须接收一个函数,会自动的调用this.handleStoreChange这个方法,保持store上的状态和this.state的同步,否则是会报错的,这个订阅函数放在componentWillMount或者componentDidMount生命周期函数内监听数据的变化,只要store状态发生了改变,那么就会调用这个handleStoreChange函数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// componentWillMount()&#123;</span></span><br><span class="line">    <span class="comment">// store.subscribe(this.handleStoreChange);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// 组件卸载,移除时调用该函数,一般取消,清理已注册的订阅,定时器的清理,取消网络请求,在这里面操作</span></span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        store.unsubscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 取消订阅,清理已注册的监听</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;&#123; <span class="attr">margin</span>: <span class="string">"10px 0 0 10px"</span>&#125;&#125;&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Input onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125; value=&#123;<span class="keyword">this</span>.state.inputValue&#125; style=&#123;&#123; <span class="attr">width</span>:<span class="string">"300px"</span>,<span class="attr">marginRight</span>:<span class="string">"10px"</span>&#125;&#125; placeholder=<span class="string">"请输入内容..."</span> /&gt;</span><br><span class="line">        &lt;Button type=<span class="string">"primary"</span>&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">      &lt;List</span><br><span class="line">         style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">         bordered</span><br><span class="line">         dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">         renderItem=&#123;item =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleInputChange(e)&#123;</span></span><br><span class="line"><span class="regexp">        console.log(e.target.value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action,确定一个操作,动作,注意action必须遵循一定的规范,是一个对象,type字段是确定要做的动作,类型,监听表单输入框的变化,value是输入框的值</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'handle_Input_Change',</span></span><br><span class="line"><span class="regexp">            value: e.target.value</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 通过store派发dispatch一个action,只有这里接收一个action,Reducer里面才能对新旧数据进行计算等操作,改变store中状态的唯一方法就是派发action</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleStoreChange()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("handleStorechange,触发了");</span></span><br><span class="line"><span class="regexp">        this.setState(store.getState()); /</span><span class="regexp">/ 触发setState重新获取store的数据,让input的数据与store保持同步了的</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const container = document.getElementById('root');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;TodoList /</span>&gt;, container);</span><br></pre></td></tr></table></figure>
+<p>具体的效果如下所示</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/5.gif" alt="5"></p>
+<p>通过上面新添加的action代码,实现一个更改store的数据,并达到了与页面更新的操作</p>
+<p><strong>再次来梳理一下更改store的数据的一个过程,经历了哪些具体操作</strong></p>
+<ol>
+<li>浏览器里添加redux-devtools,在创建store的createStore()的第二个参数中添加redux-devtools插件的配置,使浏览器支持Redux查看store的各种状态</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__());</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>给Input组件绑定onChange事件监听事件处理函数</li>
+</ol>
+<p>定义action对象,确定动作类型,这个action必须遵循一定的规则,得是一个对象,当然在后续当中,怎么支持函数,又是另外的知识了的</p>
+<ol start="3">
+<li>通过store的dispatch方法,接收action对象,告知store,有action这么一个事件动作,改变store中的状态的唯一方法就是派发action</li>
+</ol>
+<p>如下实例代码所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;Input onChange=&#123;this.handleInputChange&#125;&gt;</span><br><span class="line"></span><br><span class="line">handleInputChange(e)&#123;</span><br><span class="line">   const action = &#123; // 定义action，action必须是一个对象</span><br><span class="line">       type: &apos;handle_input_change&apos;,</span><br><span class="line">       value: e.target.value</span><br><span class="line">   &#125;</span><br><span class="line">   store.dispatch(action); // 派发dispatch,将action传递给store</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在Reducer中会接收到action,通过if等判断,确定要执行state的操作,这个reducer必须是个纯函数,要有返回值,返回的结果会返回给store,这里的state是上一次(原先)组件的状态</li>
+</ol>
+<p>这里需要格外注意的是:</p>
+<p><strong>reducer可以接收state的值,但是不能直接修改state的值,当拿到state的数据后,需要先拷贝一份原先state的数据,在拷贝出新的数据基础上进行操作</strong></p>
+<p>创建了一个newState完全复制了state,通过对newState的修改避免了对state的修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(action.type ==== <span class="string">'handle_input_change'</span>)&#123;</span><br><span class="line">          <span class="comment">// 对原有的state进行一个深拷贝,在redux中,redux是不允许直接修改state的,但可以接收state,这也是为什么当我们拿到state后,我们需要拷贝一份数据,一个新的state出来</span></span><br><span class="line">         <span class="comment">// const newState = Object.assign(&#123;&#125;, state);这个Object.assign()也是一个非常常用浅拷贝的方法,与下面的方法最终实现的效果是一致的</span></span><br><span class="line">          <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">          newState.inputValue = action.value;</span><br><span class="line">          <span class="keyword">return</span> newState; <span class="comment">// 返回新的state</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中值得一提的就是拷贝数据对象的方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.assign(&#123;&#125;, state)</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>当执行上述的操作后,当组件想要感知store的变化,需要在constructor函数内或者componentWillMount(在react17版本中将会被废弃)或componentDidMount生命周期函数内调用store的subscribe方法</li>
+</ol>
+<p>个人推荐放在constructor或者componentDidMount中</p>
+<p>同时它接收一个函数 这个其实是设计模式的订阅者模式,触发store的订阅,当store发生了变化,会自动的执行该函数</p>
+<p><strong>保持store上的状态和this.state的同步,监听数据的变化</strong>,只要store状态发生了改变,那么就会调用这个handleStoreChange函数</p>
+<p>subscribe(listener),用于注册回调,监听state的变化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">store.subscribe(<span class="keyword">this</span>.handleStoreChange) <span class="comment">// 这里面接收一个listen函数,主要用来获取新的store,这句代码放在constructor或者componentwillMount以及componentDidMount中都是可以的</span></span><br><span class="line">handleStoreChange()&#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(store.getState())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>最后在组件移除时,销毁时,在componentWillUnmount中取消store的订阅事件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组件卸载,移除时调用该函数,一般取消,清理已注册的订阅,定时器的清理,取消网络请求,在这里面操作</span></span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        store.unsubscribe(<span class="keyword">this</span>.handleStoreChange);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>通过以上六个步骤,就完成了一次store的更新操作</strong></p>
+<p>你可以联想到我们之前举到的那个换房的例子的,租户(组件)怎么获取拿到房源具体信息,首先房产中介经理会从内部的系统(redux)中,引入一个createStore的方法,进而创建一个store的仓库,随之创建一个实时记录本(reducer)</p>
+<p>真正的新老房信息的变更操作都是在reducer这个函数中完成的,并且它是一个纯函数,必须要有返回值</p>
+<p>在Reducer函数中,接收两个参数,第一个是上一次组件的状态值,而第二个是组件具体的动作action,具体要干的什么事情</p>
+<p><strong>在reducer中,规定只能读取state的数据,并不能直接修改state的数据,而且返回的结果是根据state与action(用户指定的动作)共同决定</strong></p>
+<p>其最新的结果返回给房产中介经理手中(store),<strong>在reducer创建完之后,必须要将reducer作为参数,让createStore函数接收,这样store才真正的拥有了state的数据</strong></p>
+<p>那么此刻,租户(组件)想要获取房源信息,则引入store,在一开始constructor函数或者componentWillMount函数中,调用getState()方法,从而获得了state的数据,最终显示到页面上</p>
+<p>而<strong>如果想要更改store的数据</strong>,租户想要换携带有沙发,电视等大房子,这个具体的动作就是action,首先换房子是一个动作,在元素上绑定相应的事件</p>
+<p>在该监听事件内,<strong>定义一个action动作,确定要做的事件类型,这个action必须遵循一定的规则,必须是一个对象</strong></p>
+<p>定义好action动作后,<strong>store接收到这个action动作请求后,store想要获取它的具体信息,便会派发一个使者dispatch,同时携带上action的具体动作信息,作为参数传递给dispatch方法</strong></p>
+<p>这样的话store就真正的知道了具体的动作,而具体的数据变更等操作,需要在reducer这个实时记录本中进行变更操作,在reducer里面进行一些逻辑判断操作</p>
+<p><strong>并且在reducer中只能读取state,并不能修改,如果想要修改,需要拷贝一份state出来,在新的state基础上进行操作,同时也要将这个新的state进行返回</strong>.达到一个以新换旧的操作</p>
+<p>最后在<strong>组件中如何感知到store的变化,实现数据的同步更新呢,**</strong>在redux中,需要在组件内的constructor或者componentWillMount,componentDidMount函数中进行触发subscribe()函数**</p>
+<p>同时它必须接收一个函数,触发store的订阅,<strong>在这个接收的函数当中重新获取一次store的数据,保持视图的this.state与store仓库的state数据的同步更新</strong></p>
+<p>这样的话,最终就完成了一次action的动作,页面也随之更新了</p>
+<p>上面的代码进行了一次action,reducer的编写,下面接着继续的,做得并不完整,<strong>那怎么实现一个添加内容的操作呢</strong> </p>
+<p>输入框表单内添加内容,点击右侧的提交按钮,将Input框的内容添加到底下的列表当中 具体效果如下所示</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/6.gif" alt="6"></p>
+<center><font color="red">（添加list操作）</font></center>
+
+<p>以下是完整的具体代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List, message &#125; <span class="keyword">from</span> <span class="string">'antd'</span>; <span class="comment">// 引入antd组件库</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>; <span class="comment">// 引入antd样式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 创建一个store管理仓库,从redux库中引入一个createStore函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 引入createStore后,store并没有创建,需要调用createStore()后才有store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer,<span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// 创建好reducer后,需要将reducer作为参数传到createStore当中去,这样store才能拿到reducer的state数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建reducer函数,管理组件共享的数据状态以及一些动作</span></span><br><span class="line"><span class="comment">// reducer是一个纯函数,返回一个新的state给store</span></span><br><span class="line"><span class="comment">// 4. 初始化state值,将原先组件内部的状态的数据,移除到reducer里面去管理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    inputValue: <span class="string">''</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    list: []</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;, action</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'handle_Input_Change'</span>)&#123;</span><br><span class="line">        <span class="comment">// 对原有的上一次的state做一次深拷贝,在Redux中,reducer不允许直接修改state</span></span><br><span class="line">       <span class="comment">// const newState = Object.assign(&#123;&#125;, state);这个Object.assign()也是一个非常常用浅拷贝的方法,与下面的方法最终实现的效果是一致的,等价于下面的方法</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value; <span class="comment">// 将新的value值赋值给newState</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'addInputcontent'</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        <span class="keyword">if</span>(newState.inputValue === <span class="string">''</span>)&#123;</span><br><span class="line">            message.error(<span class="string">'输入表单内不能为空,请输入内容'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            newState.list.push(newState.inputValue); <span class="comment">// 往list数组中添加input的内容</span></span><br><span class="line">            newState.inputValue = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">return</span> newState; <span class="comment">// 返回newState</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TodoList组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="comment">// 5. 在组件内部通过getState()方法就可以拿到store里面的数据</span></span><br><span class="line">        <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">        <span class="comment">// this环境的绑定</span></span><br><span class="line">        <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleAddClick = <span class="keyword">this</span>.handleAddClick.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 触发订阅,让store感知到state的变化</span></span><br><span class="line">        store.subscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 接收一个函数,重新获取store最新的数据,subscribe里面必须接收一个函数,否则是会报错的,这个订阅函数放在componentWillMount生命周期函数内调用操作也是可以的</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// componentWillMount()&#123;</span></span><br><span class="line">        <span class="comment">// store.subscribe(this.handleStoreChange);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div style=&#123;&#123; <span class="attr">margin</span>: <span class="string">"10px 0 0 10px"</span>&#125;&#125;&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;Input onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125; value=&#123;<span class="keyword">this</span>.state.inputValue&#125; style=&#123;&#123; <span class="attr">width</span>:<span class="string">"300px"</span>,<span class="attr">marginRight</span>:<span class="string">"10px"</span>&#125;&#125; placeholder=<span class="string">"请输入内容..."</span> /&gt;</span><br><span class="line">                        &lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleAddClick&#125;&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;/</span>div&gt;</span><br><span class="line">                    &lt;List</span><br><span class="line">                      style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">                      bordered</span><br><span class="line">                      dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">                      renderItem=&#123;item =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleInputChange(e)&#123;</span></span><br><span class="line"><span class="regexp">        console.log(e.target.value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action,确定一个操作,动作,注意action必须遵循一定的规范,是一个对象,type字段是确定要做的动作,类型,监听表单输入框的变化,value是输入框的值</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'handle_Input_Change',</span></span><br><span class="line"><span class="regexp">            value: e.target.value</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 通过store派发dispatch一个action,只有这里接收一个action,Reducer里面才能对新旧数据进行计算等操作,这是改变store数据的唯一的方法,必须要通过派发一个action给store</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleStoreChange()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("handleStorechange,触发了");</span></span><br><span class="line"><span class="regexp">        this.setState(store.getState()); /</span><span class="regexp">/ 触发setState重新获取store的数据,让input的数据与store保持同步了的</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 添加列表的操作</span></span><br><span class="line"><span class="regexp">    handleAddClick()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("添加按钮执行了");</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action动作</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'addInputcontent'</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 还要将action传递给dispatch,这样store才会接收到,这是改变store数据的唯一的方法,必须要通过派发一个action给store,必不可少的一步</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const container = document.getElementById('root');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;TodoList /</span>&gt;, container);</span><br></pre></td></tr></table></figure>
+<p><strong>上面的代码就完成一个添加列表的功能 在次梳理一下过程</strong></p>
+<ol>
+<li>给JSX元素,组件Button按钮绑定事件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleAddClick&#125;&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 添加列表的操作</span></span><br><span class="line"><span class="regexp">    handleAddClick()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("添加按钮执行了");</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action动作</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'addInputcontent'</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 还要将action传递给dispatch,这样store才会接收到,这是改变store数据的唯一的方法,必须要通过派发一个action给store,必不可少的一步</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在reducer函数中进行逻辑判断,数据变更等操作</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(action.type === <span class="string">'addInputcontent'</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        <span class="keyword">if</span>(newState.inputValue === <span class="string">''</span>)&#123;</span><br><span class="line">            message.error(<span class="string">'输入表单内不能为空,请输入内容'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            newState.list.push(newState.inputValue); <span class="comment">// 往list数组中添加input的内容</span></span><br><span class="line">            newState.inputValue = <span class="string">''</span>; <span class="comment">// 提交表单内容后,让表单内容置空操作</span></span><br><span class="line">            <span class="keyword">return</span> newState; <span class="comment">// 返回newState</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>基于原有的代码,添加这两步就完成了一个添加列表的操作的 那么删除列表的功能怎么实现呢? 以下是实现的效果</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/7.gif" alt="7"></p>
+<center><font color="red">（删除列表）</font></center>
+
+<p>以下是具体的实例代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List, message, Modal &#125; <span class="keyword">from</span> <span class="string">'antd'</span>; <span class="comment">// 引入antd组件库</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>; <span class="comment">// 引入antd样式</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 创建一个store管理仓库,从redux库中引入一个createStore函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 引入createStore后,store并没有创建,需要调用createStore()后才有store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer, <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// 创建好reducer后,需要将reducer作为参数传到createStore当中去,这样store才能拿到reducer的state数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建reducer函数,管理组件共享的数据状态以及一些动作</span></span><br><span class="line"><span class="comment">// reducer是一个纯函数,返回一个新的state给store</span></span><br><span class="line"><span class="comment">// 4. 初始化state值,将原先组件内部的状态的数据,移除到reducer里面去管理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    inputValue: <span class="string">''</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    list: []</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;, action</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">'handle_Input_Change'</span>) &#123;</span><br><span class="line">        <span class="comment">// 对原有的上一次的state做一次深拷贝,在Redux中,reducer不允许直接修改state</span></span><br><span class="line">        <span class="comment">// const newState = Object.assign(&#123;&#125;, state);与下面的是等价的</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value; <span class="comment">// 将新的value值赋值给newState</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">'addInputcontent'</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        <span class="keyword">if</span> (Trim(newState.inputValue) === <span class="string">''</span>) &#123;</span><br><span class="line">            message.error(<span class="string">'输入表单内不能为空,请输入内容'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            newState.list.push(newState.inputValue); <span class="comment">// 往list数组中添加input的内容</span></span><br><span class="line">            newState.inputValue = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">return</span> newState; <span class="comment">// 返回newState</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">'deletelist'</span>) &#123;</span><br><span class="line">        <span class="comment">// 下面这个也是拷贝原对象的一种方式与上面等价</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</span><br><span class="line">        newState.list.splice(action.index, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 去除前后空格</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Trim</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> &#123; confirm &#125; = Modal</span><br><span class="line"><span class="comment">// TodoList组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="comment">// 5. 在组件内部通过getState()方法就可以拿到store里面的数据</span></span><br><span class="line">        <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">        <span class="comment">// this环境的绑定</span></span><br><span class="line">        <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleAddClick = <span class="keyword">this</span>.handleAddClick.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 触发订阅,让store感知到state的变化</span></span><br><span class="line">        store.subscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 接收一个函数,重新获取store最新的数据,subscribe里面必须接收一个函数,否则是会报错的,这个订阅函数放在componentWillMount生命周期函数内调用操作也是可以的</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// componentWillMount()&#123;</span></span><br><span class="line">    <span class="comment">// store.subscribe(this.handleStoreChange); </span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// 组件卸载,移除时调用该函数,一般取消,清理已注册的订阅,定时器的清理,取消网络请求,在这里面操作</span></span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line">        store.unsubscribe(<span class="keyword">this</span>.handleStoreChange);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div style=&#123;&#123; <span class="attr">margin</span>: <span class="string">"10px 0 0 10px"</span>&#125;&#125;&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;Input onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125; value=&#123;<span class="keyword">this</span>.state.inputValue&#125; style=&#123;&#123; <span class="attr">width</span>:<span class="string">"300px"</span>,<span class="attr">marginRight</span>:<span class="string">"10px"</span>&#125;&#125; placeholder=<span class="string">"请输入内容..."</span> /&gt;</span><br><span class="line">                        &lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleAddClick&#125;&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;/</span>div&gt;</span><br><span class="line">                    &lt;List</span><br><span class="line">                      style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">                      bordered</span><br><span class="line">                      dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">                      renderItem=&#123;(item,index) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleDelList.bind(this,</span> <span class="attr">index</span>,<span class="attr">item</span>)&#125;&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleInputChange(e) &#123;</span></span><br><span class="line"><span class="regexp">        console.log(e.target.value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action,确定一个操作,动作,注意action必须遵循一定的规范,是一个对象,type字段是确定要做的动作,类型,监听表单输入框的变化,value是输入框的值</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'handle_Input_Change',</span></span><br><span class="line"><span class="regexp">            value: e.target.value</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 通过store派发dispatch一个action,只有这里接收一个action,Reducer里面才能对新旧数据进行计算等操作</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleStoreChange() &#123;</span></span><br><span class="line"><span class="regexp">        console.log("handleStorechange,触发了");</span></span><br><span class="line"><span class="regexp">        this.setState(store.getState()); /</span><span class="regexp">/ 触发setState重新获取store的数据,让input的数据与store保持同步了的</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 添加列表的操作</span></span><br><span class="line"><span class="regexp">    handleAddClick() &#123;</span></span><br><span class="line"><span class="regexp">        console.log("添加按钮执行了");</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action动作</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'addInputcontent'</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 还要将action传递给dispatch,这样store才会接收到</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 删除列表操作</span></span><br><span class="line"><span class="regexp">    handleDelList(index,item) &#123;</span></span><br><span class="line"><span class="regexp">        this.showDeleteConfirm(index, item);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    showDeleteConfirm(index,item) &#123;</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'deletelist',</span></span><br><span class="line"><span class="regexp">            index: index</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        confirm(&#123;</span></span><br><span class="line"><span class="regexp">            title: '确定要删除该列表?',</span></span><br><span class="line"><span class="regexp">            content: item,</span></span><br><span class="line"><span class="regexp">            okText: '确认',</span></span><br><span class="line"><span class="regexp">            okType: 'danger',</span></span><br><span class="line"><span class="regexp">            cancelText: '取消',</span></span><br><span class="line"><span class="regexp">            onOk() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('OK');</span></span><br><span class="line"><span class="regexp">                 store.dispatch(action); /</span><span class="regexp">/ 想要改变store的数据,必须通过dispatch派发一个action</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            onCancel() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('Cancel');</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const container = document.getElementById('root');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;TodoList /</span>&gt;, container);</span><br></pre></td></tr></table></figure>
+<p>实现删除列表的过程与添加列表差不多</p>
+<ol>
+<li>给列表绑定事件,添加事件处理函数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;List</span><br><span class="line">      style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">      bordered</span><br><span class="line">      dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">      renderItem=&#123;(item,index) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleDelList.bind(this,</span> <span class="attr">index</span>,<span class="attr">item</span>)&#125;&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; confirm &#125; = Modal; <span class="comment">// 记得引入这个,不然删除确认模态框不会生效的,底下调用了该确认函数</span></span><br><span class="line"> <span class="comment">// 删除列表操作</span></span><br><span class="line">    handleDelList(index,item) &#123;</span><br><span class="line">        <span class="keyword">this</span>.showDeleteConfirm(index, item);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    showDeleteConfirm(index,item) &#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">'deletelist'</span>,</span><br><span class="line">            index: index</span><br><span class="line">        &#125;</span><br><span class="line">        confirm(&#123;</span><br><span class="line">            title: <span class="string">'确定要删除该列表?'</span>,</span><br><span class="line">            content: item,</span><br><span class="line">            okText: <span class="string">'确认'</span>,</span><br><span class="line">            okType: <span class="string">'danger'</span>,</span><br><span class="line">            cancelText: <span class="string">'取消'</span>,</span><br><span class="line">            onOk() &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'OK'</span>);</span><br><span class="line">                 store.dispatch(action); <span class="comment">// 想要改变store的数据,必须通过dispatch派发一个action</span></span><br><span class="line">            &#125;,</span><br><span class="line">            onCancel() &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'Cancel'</span>);</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在reducer函数中进行对公共组件数据逻辑的操作</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (action.type === <span class="string">'deletelist'</span>) &#123;</span><br><span class="line">        <span class="comment">// 下面这个也是拷贝原对象的一种方式,也很常用</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</span><br><span class="line">        newState.list.splice(action.index, <span class="number">1</span>); <span class="comment">// 这是删除当前列表的核心方法,通过数组的splice方法实现,第一个参数代表的是删除哪个,第二个是删除一个</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>至于上面添加了一个当删除列表时,模态框的确认操作,至于添加一些组件是放在reducer里面还是放在外面,要视具体的业务逻辑而定</p>
+<p>比如这里的删除确认模态框的,点击列表时,弹出是否删除的模态框,而具体是否要删除,应当在onOk这个函数里面进行派发action的, 如果你放到reducer里面做处理,那么始终会出现一些问题的,注意逻辑的操作顺序</p>
+<p>文章写到这里,一个todolist的添加,删除操作就完成了,当然看到这样的代码,这么一个小小的demo操作,绕来绕去,估计奔溃了的,这样的代码堆叠在一起肯定是不行的</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/8.jpg" alt="8"></p>
+<center><font color="red">（放个妹子上来,让阅读产生灵魂震荡,不疲劳）</font></center>
+
+<center><font color="pink" size="5">结语</font></center>
+
+<p>本文并不是什么高大上的内容,主要是对学习Redux的一个小小的初探,在真正实际项目中,复杂度远不止像这样的一个例子的,但是作为入门,todolist确实能让自己对Redux有一定的认识</p>
+<p>也许你会觉得这么个简单的例子,竟然这么多代码,使用vue的话,几行代码就搞定了,Vue中也有vuex这样的数据流管理框架,使用起来也是大同小异,两个各有优点,都很强</p>
+<p>使用React编写代码更偏向底层一些的,虽然Redux比较绕,但都是有固定的套路流程的,其中理解Redux的工作流程是非常重要的</p>
+<p>主要开始用ant-design这个UI组件库对todolist做了一个简单的布局,然后如何将组件的数据抽离到Redux中去管理</p>
+<p>组件如何获取Redux中store的数据,以及怎么更新store的数据的更新,在上文当中都有与之对应的操作和解释</p>
+<p>用几句简单话:概括下使用Redux的流程</p>
+<ul>
+<li>安装redux,然后从redux中引入createStore这个方法,并调用它,从而创建store,</li>
+<li>紧着在创建reducer纯函数,在reducer里面进行state的逻辑操作,reducer的返回值取决于state与action这个的决定,最终该函数的返回的最新结果会返回给store,完成新旧数据的替换,</li>
+<li>而在组件中如何获取store的数据,是通过getState方法进行获取store中的所有状态</li>
+<li>如何保持页面的组件与store数据同步更新,需要注册订阅subscribe方法,该方法接收一个函数,在该接收的函数内触发重新获取store的数据 更多细枝末节内容,可见上文</li>
+</ul>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/14/Vue/kbone%EF%BC%8C%E5%8D%81%E5%88%86%E9%92%9F%E8%AE%A9Vue%E9%A1%B9%E7%9B%AE%E5%90%8C%E6%97%B6%E6%94%AF%E6%8C%81%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                kbone，十分钟让Vue项目同时支持小程序
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-14</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="什么是kbone"><a href="#什么是kbone" class="headerlink" title="什么是kbone"></a>什么是kbone</h3><p>微信小程序开发过程中，许多开发者会遇到 小程序 与 Web 端一起的需求，由于 小程序 与 Web 端的运行环境不同，开发者往往需要维护两套类似的代码，这对开发者来说比较耗费力气，并且会出现不同步的情况。</p>
+<p>为了解决上述问题，微信小程序推出了同构解决方案 kbone 来解决此问题。</p>
+<p>那么，kbone 要怎么使用呢？这里我们将通过一个 todo 的例子来跟大家讲解。</p>
+<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p>首先，我们来看下一个基本的 kbone 项目的目录结构（这里的 todo 是基于 Vue 的示例，kbone 也有 React，Preact，Omi 等版本，详情可移步 kbone github）。</p>
+<p>因为 kbone 是为了解决 小程序 与 Web 端的问题，所以每个目录下的配置都会有两份（小程序 与 Web 端各一份）</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/117.jpg" alt="117"></p>
+<h3 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h3><p>不管是 小程序 端还是 Web 端，都需要入口文件。在 src/index 目录下，main.js 为 Web 端用主入口，main.mp.js 则为 小程序 端用主入口。</p>
+<p>当然，Web 端会比 小程序 多一个入口页面，即 index.html（位于根目录下）。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/118.jpg" alt="118"></p>
+<p>下面两段代码分别是 小程序端 入口与 Web 端入口的代码，可以看到 小程序端的入口代码封装在 createApp 函数里面（这里固定即可），内部会比 Web 端多一个创建 app 节点的操作，其他的基本就是一致的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 小程序端入口</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span> </span><br><span class="line"><span class="keyword">import</span> todo <span class="keyword">from</span><span class="string">'./todo.vue'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">createApp</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// 创建app节点用于绑定</span></span><br><span class="line"><span class="keyword">const</span> container = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">container.id = <span class="string">'app'</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(container)</span><br><span class="line">returnnewVue(&#123;    <span class="attr">el</span>: <span class="string">'#app'</span>,    <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(todo)&#125;)&#125;</span><br><span class="line"><span class="comment">// web端入口</span></span><br><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> todo <span class="keyword">from</span><span class="string">'./todo.vue'</span></span><br><span class="line">newVue(&#123;  <span class="attr">el</span>: <span class="string">'#app'</span>,  <span class="attr">render</span>: <span class="function"><span class="params">h</span> =&gt;</span> h(todo)&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="todo-vue"><a href="#todo-vue" class="headerlink" title="todo.vue"></a>todo.vue</h3><p>在上面的入口图可以看到，源码目录中，除了入口文件分开之前，页面文件就是共用的了，这里直接使用 Vue 的写法即可，不用做特殊的适应。</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>写完代码之后，我们要怎么跑项目呢？这时，配置就派上用场啦。</p>
+<p>Web 端配置为正常的 Vue 配置，小程序端配置与 Web 端配置的唯一不同就是需要引入 mp-webpack-plugin 插件来将 Vue 组件转化为小程序代码。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/119.jpg" alt="119"></p>
+<h3 id="构建代码"><a href="#构建代码" class="headerlink" title="构建代码"></a>构建代码</h3><p>接着，我们需要构建代码，让代码可以运行到各自的运行环境中去。构建完成后，生产代码会位于 dist 目录中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构建 web 端代码</span></span><br><span class="line"><span class="comment">// 目标代码在 dist/web</span></span><br><span class="line">npm run build</span><br><span class="line"><span class="comment">// 构建小程序端代码</span></span><br><span class="line"><span class="comment">// 目标代码在 dist/mp</span></span><br><span class="line">npm run mp</span><br></pre></td></tr></table></figure>
+<p>小程序端 的构建会比 Web 端的构建多一个步骤，就是 npm 构建。</p>
+<p>进入 dist/mp 目录，执行 npm install 安装依赖，用开发者工具将 dist/mp 目录作为小程序项目导入之后，点击工具栏下的 构建 npm，即可预览效果。</p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>最后，我们来看一下 todo 的效果。kbone 初体验，done~</p>
+<p>todo 代码可到 kbone/demo13 自提。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/120.jpg" alt="120"></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>kbone 仓库：<a href="https://github.com/wechat-miniprogram/kbone" target="_blank" rel="noopener">https://github.com/wechat-miniprogram/kbone</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/14/JavaScript/%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%E5%BD%BB%E5%BA%95%E6%90%9E%E5%AE%9A%E5%AF%8C%E6%96%87%E6%9C%AC%E5%8E%9F%E7%90%86%20+%20%E5%AE%9E%E6%88%98/">
+                一篇文章彻底搞定富文本原理 + 实战
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-14</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h4 id="contenteditable-属性"><a href="#contenteditable-属性" class="headerlink" title="contenteditable 属性"></a>contenteditable 属性</h4><p>假如我们给一个标签加上 <code>contenteditable=&quot;true&quot;</code> 的属性，就像这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>那么在这个 <code>div</code> 中我们就可以对其进行任意编辑了。如果想要插入的子节点不可编辑，我们只需要把子节点的属性设置为 <code>contenteditable=&quot;false&quot;</code> 即可，就像这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">contenteditable</span>=<span class="string">"true"</span>&gt;</span>  <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是可编辑的<span class="tag">&lt;/<span class="name">p</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">pcontenteditable="false"</span>&gt;</span>这是不可编辑的<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>该属性最早是在 IE 上实现的（厉害哦👍），且可以作用于其它标签，不限于 <code>div</code>，大家应该或多或少都听说过这个属性。</p>
+<h4 id="document-execCommand-方法"><a href="#document-execCommand-方法" class="headerlink" title="document.execCommand 方法"></a>document.execCommand 方法</h4><p>既然我们可以对上面的 <code>div</code> 随意编辑，那具体怎么编辑呢，目前好像也还是只能输入文本，要怎样才能进行其他操作呢（比如加粗、倾斜、插入图片等等）🤔？其实浏览器给我们提供了这样的一个方法 <code>document.execCommand</code>，通过它我们就能够操纵上面的可编辑区。具体语法如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// document.execCommand(命令名称，是否展示用户界面，命令需要的额外数)</span></span><br><span class="line"><span class="built_in">document</span>.execCommand(aCommandName, aShowDefaultUI, aValueArgument)</span><br></pre></td></tr></table></figure>
+<p>其中第一个参数就是一些命令名称，具体的可以查看 MDN；第二个参数写死为 <code>false</code> 就行了，因为早前 IE 有这样一个参数，为了兼容吧，不过这个参数在现代浏览器中是没有影响的；第三个参数就是一些命令可能需要额外的参数，比如插入图片就要多传个 <code>url</code> 或 <code>base64</code> 的参数，没有的话传个 <code>null</code> 就行。<br>我们简要列举下它的几个使用方式，大家就知道怎么用了👇：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加粗</span></span><br><span class="line"><span class="built_in">document</span>.execCommand(<span class="string">'bold'</span>, <span class="literal">false</span>, <span class="literal">null</span>);</span><br><span class="line"><span class="comment">// 添加图片</span></span><br><span class="line"><span class="built_in">document</span>.execCommand(<span class="string">'insertImage'</span>, <span class="literal">false</span>, url || base64);</span><br><span class="line"><span class="comment">// 把一段文字用 p 标签包裹起来</span></span><br><span class="line"><span class="built_in">document</span>.execCommand(<span class="string">'formatblock'</span>, <span class="literal">false</span>, <span class="string">'&lt;p&gt;'</span>);</span><br></pre></td></tr></table></figure>
+<p>这个命令就是富文本的核心（所以务必记住），浏览器把大部分我们能想到的功能也都实现了，当然各浏览器之间还是有差异的，这里就不考虑了。</p>
+<h4 id="Selection-和-Range-对象"><a href="#Selection-和-Range-对象" class="headerlink" title="Selection 和 Range 对象"></a>Selection 和 Range 对象</h4><p>我们在执行 <code>document.execCommand</code> 这个命令之前首先要知道对谁执行，所以这里会有一个选区的概念，也就是 <code>Selection</code> 对象，它用来表示用户选择的范围或光标位置（光标可以看做是范围重合的特殊状态），一个页面用户可能选择多个范围（比如 Firefox）。也就是说 <code>Selection</code> 包含一个或多个 <code>Range</code> 对象（ <code>Selection</code> 可以说是 <code>Range</code> 的集合），当然对于富文本编辑器来说，一般情况下，我们只会有一个选择区域，也就是一个 <code>Range</code> 对象，事实上大部分情况也是如此。<br>所以通常我们可以用 <code>letrange = window.getSelection().getRangeAt(0)</code> 来获取选中的内容信息（ <code>getRangeAt</code> 接受一个索引值，因为会有多个 <code>Range</code>，而现在只有一个，所以写0）。<br>看得一头雾水😴？没关系，看下面两张图就懂了😮：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/72.jpg" alt="图片"></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/73.jpg" alt="图片"></p>
+<p>一句话说就是：通过上面那句命令我们能够获取到当前的选中信息，一般会先保存下来，然后在需要的时候还原。此外 <code>Selection</code> 对象还有几个常用的方法， <code>addRange</code>、 <code>removeAllRanges</code>、 <code>collapse</code> 和 <code>collapseToEnd</code> 等等。<br>这个知识点是很重要的，因为它让我们有了操纵光标的能力（比如插入内容之后设置光标的位置），不过这篇文章中我并没有去深入它，只是浅出😏。</p>
+<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><p>开篇一顿扯，下面让我们抓紧时间做一个属于自己的富文本吧💪，大概会包含以下几个功能：加粗、段落、H1、水平线、无序列表、插入链接、插入图片、后退一步、向前一步等等。🆗，Let’s do it!</p>
+<h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><p>首先一个富文本大体分为两个区域，一个是按钮区，一个是编辑区。所以它的大致结构就像下面这样：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div class="xr-editor"&gt;</span><br><span class="line">&lt;!--按钮区--&gt;    </span><br><span class="line">&lt;div class="nav"&gt;</span><br><span class="line">&lt;button&gt;加粗&lt;/button&gt;</span><br><span class="line">...    </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!--编辑区--&gt;</span><br><span class="line">&lt;div  class="editor" contenteditable="true"&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;!--全部样式就这些，这里就都先给出来了--&gt;</span><br><span class="line">&lt;style lang="scss"&gt;</span><br><span class="line"><span class="selector-class">.xr-editor</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">50px</span>auto;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">1000px</span>;</span><br><span class="line">    <span class="selector-class">.nav</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: flex;</span><br><span class="line">        <span class="selector-tag">button</span> &#123;</span><br><span class="line">        <span class="attribute">cursor</span>: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="selector-tag">&amp;</span><span class="selector-tag">__img</span> &#123;</span><br><span class="line">            <span class="attribute">position</span>: relative;</span><br><span class="line">            <span class="selector-tag">input</span> &#123;</span><br><span class="line">            <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">            <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">            <span class="attribute">position</span>: absolute;</span><br><span class="line">            <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">            <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.row</span> &#123;</span><br><span class="line"><span class="attribute">display</span>: flex;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.editor</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">outline</span>: none;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">overflow-y</span>: scroll;</span><br><span class="line">    <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">max-height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">word-break</span>: break-all;</span><br><span class="line">    <span class="attribute">word-wrap</span>: break-word;</span><br><span class="line">    <span class="attribute">overflow</span>: scroll;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>嗯，起步工作到此结束，接下来就可以直接开始实现功能了😬。</p>
+<h4 id="加粗"><a href="#加粗" class="headerlink" title="加粗"></a>加粗</h4><p>现在假如我们要实现加粗的效果，该怎么做呢？很简单，只要在点击加粗按钮的时候执行 <code>document.execCommand(&#39;bold&#39;,false,null)</code> 这句话，就能达到加粗的效果，就像下面这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav"</span>&gt;</span><br><span class="line">&lt;button @click=<span class="string">"execCommand"</span>&gt;加粗&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;    </span><br><span class="line">...</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">exportdefault &#123;</span></span><br><span class="line"><span class="regexp">    name: 'XrEditor',</span></span><br><span class="line"><span class="regexp">    methods: &#123;</span></span><br><span class="line"><span class="regexp">    execCommand() &#123;</span></span><br><span class="line"><span class="regexp">    document.execCommand('bold', false, null);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;&#125;;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<p>让我们运行一下看看效果：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/74.gif" alt="74"></p>
+<p>嗯，是的，就是这么简单的一句话就能搞定😒。<br>当然了，我们开篇也说了我们的一切命令都是基于 <code>document.execCommand</code> 的，所以我们先小小改写一下上面代码中的 <code>execCommand</code> 方法，就像下面这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav"</span>&gt;</span><br><span class="line">&lt;button @click=<span class="string">"execCommand('bold')"</span>&gt;加粗&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">...</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">exportdefault &#123;</span></span><br><span class="line"><span class="regexp">    name: 'XrEditor',</span></span><br><span class="line"><span class="regexp">    methods: &#123;</span></span><br><span class="line"><span class="regexp">        execCommand(name, args = null) &#123;</span></span><br><span class="line"><span class="regexp">        document.execCommand(name, false, args);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;&#125;;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<p>这样一来代码就更具通用性了。实现列表、水平线、前进、后退功能和加粗是一样样的，只需传入不同的命令名即可，就像下面这样，这里就不一一赘述了：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"execCommand('insertUnorderedList')"</span>&gt;</span>无序列表<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"execCommand('insertHorizontalRule')"</span>&gt;</span>水平线<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"execCommand('undo')"</span>&gt;</span>后退<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"execCommand('redo')"</span>&gt;</span>前进<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>顺带给大家说几个注意点✍️：</p>
+<ol>
+<li>有的同学可能用的不是 <code>button</code> 标签，然后执行命令就会无效，是因为点击其他标签大多都会造成先失去焦点（或者不知不觉就突然失去焦点了），再执行点击事件，此时没有选区或光标所以会没有效果，这点要留意一下。</li>
+<li>我们执行的是原生的 <code>document.execCommand</code> 方法，浏览器自身会对 <code>contenteditable</code> 这个可编辑区维护一个 <code>undo</code> 栈和一个 <code>redo</code> 栈，所以我们才能执行前进和后退的操作，如果我们改写了原生方法，就会破坏原有的栈结构，这时就需要自己去维护，那就麻烦了。</li>
+<li><code>style</code> 里面如果加上 <code>scope</code> 的话，里面的样式对编辑区的内容是不生效的，因为编辑区里面是后来才创建的元素，所以要么删了 <code>scope</code>，要么用 <code>/deep/</code> 解决（Vue 是这样）。</li>
+</ol>
+<h4 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h4><p>这个功能就是把光标所在行的文字用 <code>p</code> 标签包裹起来，为了演示方便，我们顺便把编辑区的 <code>html</code> 结构打印出来，所以让我们稍微改一下代码，就像下面这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"xr-editor"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav"</span>&gt;</span><br><span class="line">        &lt;button @click=<span class="string">"execCommand('bold')"</span>&gt;加粗&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button @click="execCommand('formatBlock', '&lt;p&gt;')"&gt;段落&lt;/</span>button&gt;</span><br><span class="line">		&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		&lt;div class="row"&gt;</span></span><br><span class="line"><span class="regexp">			&lt;div class="editor"contenteditable="true" @input="print"&gt;</span></span><br><span class="line"><span class="regexp">		&lt;/</span>div&gt;</span><br><span class="line">		&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"content"</span>&gt;&#123;&#123; html &#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		&lt;/</span>div&gt;</span><br><span class="line">	&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">exportdefault &#123;</span><br><span class="line">	name: <span class="string">'XrEditor'</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">        html: <span class="string">''</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">	execCommand(name, args = <span class="literal">null</span>) &#123;</span><br><span class="line">	<span class="built_in">document</span>.execCommand(name, <span class="literal">false</span>, args);</span><br><span class="line">	&#125;,</span><br><span class="line">	print() &#123;</span><br><span class="line">		<span class="keyword">this</span>.html = <span class="built_in">document</span>.querySelector(<span class="string">'.editor'</span> ).innerHTML;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>运行效果如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/75.gif" alt="75"></p>
+<p>怎么样，是不是也很 easy，同理， <code>h1</code> ~ <code>h6</code> 也是一样的，命令为 <code>execCommand(&#39;formatBlock&#39;,&#39;&lt;h1&gt;&#39;)</code>，也不赘述了。</p>
+<h4 id="插入链接"><a href="#插入链接" class="headerlink" title="插入链接"></a>插入链接</h4><p>这个功能因为需要第三个参数，所以我们一般会给个提示框获取用户输入，然后再执行 <code>execCommand(&#39;createLink&#39;,链接地址)</code>，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=<span class="string">"createLink"</span>&gt;链接&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">createLink() &#123;</span></span><br><span class="line"><span class="regexp">	let url = window.prompt('请输入链接地址');</span></span><br><span class="line"><span class="regexp">	if(url)</span></span><br><span class="line"><span class="regexp">		this.execCommand('createLink', url);</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/76.gif" alt="76"></p>
+<p>插入图片链接也是异曲同工，只不过命令名不一样而已：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insertImgLink() &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="built_in">window</span>.prompt(<span class="string">'请输入图片地址'</span>);</span><br><span class="line">    <span class="keyword">if</span>(url) <span class="keyword">this</span>.execCommand(<span class="string">'insertImage'</span>, url);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h4><p>图片除了可以通过添加地址的形式外，还可以添加 base64 格式的图片，这里我们通过 <code>readAsDataURL(file)</code> 来读取图片，并执行 <code>execCommand(&#39;insertImage&#39;,base64)</code> 就大功告成啦，具体代码如下，并不复杂：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"nav__img"</span>&gt;插入图片</span><br><span class="line">	&lt;!--这个 input 是隐藏的--&gt;</span><br><span class="line">	&lt;input type=<span class="string">"file"</span> accept=<span class="string">"image/gif, image/jpeg, image/png"</span> @change=<span class="string">"insertImg"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">insertImg(e) &#123;</span></span><br><span class="line"><span class="regexp">    let reader = newFileReader();</span></span><br><span class="line"><span class="regexp">    let file = e.target.files[0];</span></span><br><span class="line"><span class="regexp">    reader.onload = () =&gt; &#123;</span></span><br><span class="line"><span class="regexp">        let base64Img = reader.result;</span></span><br><span class="line"><span class="regexp">        this.execCommand('insertImage', base64Img);</span></span><br><span class="line"><span class="regexp">        document.querySelector('.nav__img input').value = '';/</span><span class="regexp">/ 解决同一张图片上传无效的问题</span></span><br><span class="line"><span class="regexp">    &#125;;</span></span><br><span class="line"><span class="regexp">reader.readAsDataURL(file);&#125;</span></span><br></pre></td></tr></table></figure>
+<p>运行一下，看看效果：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/77.gif" alt="77"></p>
+<p>这应该也不是很难。当然了，你也可以先上传到服务器处理返回 <code>url</code> 地址再插入也是可以的。<br>👌至此，一个简易版的富文本就完成了（当然了 bug 也是有的🤭，不过并不妨碍我们理解），具体代码可以参考 npm 上的 <code>pell</code> 包，它已经是个极简版的了。</p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>其实富文本对文本的操作大多都可以用原生命令来实现，但是对图片的操作也许就不那么容易了，来个拉伸、旋转啥的就够我们折腾了🤨，所以这里以图片拉伸为例子着重讲解一下。</p>
+<h4 id="图片拉伸"><a href="#图片拉伸" class="headerlink" title="图片拉伸"></a>图片拉伸</h4><p>我们先看下大致效果，大家也可以先停下来思考一分钟看看如何实现🤔：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/78.gif" alt="78"></p>
+<p>👌，首先我们要知道的是图片已经在编辑区了，所以当用户点击编辑区里面的图片时我们需要做些事件监听并有所处理，具体思路如下（这部分代码较多，不想看的可以略过，但标题要看）：</p>
+<h6 id="1-判断用户点击的是否是编辑区里面的图片"><a href="#1-判断用户点击的是否是编辑区里面的图片" class="headerlink" title="1. 判断用户点击的是否是编辑区里面的图片"></a>1. 判断用户点击的是否是编辑区里面的图片</h6><p>这个就是看点击事件 <code>e.target.tagName</code> 是不是 <code>img</code> 标签了，代码如下，应该比较简单：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line"><span class="keyword">this</span>.editor = <span class="built_in">document</span>.querySelector(<span class="string">'.editor'</span>);</span><br><span class="line"><span class="keyword">this</span>.editor.addEventListener(<span class="string">'click'</span>, <span class="keyword">this</span>.handleClick);</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    handleClick(e) &#123;</span><br><span class="line">    <span class="keyword">if</span>(e.target &amp;&amp; e.target.tagName &amp;&amp; e.target.tagName.toUpperCase() === <span class="string">'IMG'</span>) &#123;         				<span class="keyword">this</span>.handleClickImg(e.target);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="2-在点击的图片上创建个大小一样的-div"><a href="#2-在点击的图片上创建个大小一样的-div" class="headerlink" title="2. 在点击的图片上创建个大小一样的 div"></a>2. 在点击的图片上创建个大小一样的 div</h6><p>如果点击的是一个图片，那我们就创建一个 <code>div</code> ，暂且把这个 <code>div</code> 叫做蒙层吧，顺便先看张示意图：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/79.jpg" alt="79"></p>
+<p>就是动态创建一个蒙层（和图片一样大小）以及四个拖拽顶点，并定位到和图片一样的位置，代码如下（代码有点多，可跳过，知道大致意思就行😬）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">handleClickImg(img) &#123;</span><br><span class="line">    <span class="keyword">this</span>.nowImg = img;</span><br><span class="line">    <span class="keyword">this</span>.showOverlay();</span><br><span class="line">&#125;</span><br><span class="line">showOverlay() &#123;</span><br><span class="line">    <span class="comment">// 添加蒙层</span></span><br><span class="line">    <span class="keyword">this</span>.overlay = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">    <span class="keyword">this</span>.editor.appendChild(<span class="keyword">this</span>.overlay);</span><br><span class="line">    <span class="comment">// 定位蒙层和大小  </span></span><br><span class="line">    <span class="keyword">this</span>.repositionOverlay();</span><br><span class="line">&#125;,</span><br><span class="line">repositionOverlay() &#123;</span><br><span class="line">    <span class="keyword">let</span> imgRect = <span class="keyword">this</span>.nowImg.getBoundingClientRect();</span><br><span class="line">    <span class="keyword">let</span> editorRect = <span class="keyword">this</span>.editor.getBoundingClientRect();</span><br><span class="line">    <span class="comment">// 设置蒙层宽高和位置</span></span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>.overlay.style, &#123;</span><br><span class="line">        position: <span class="string">'absolute'</span>,</span><br><span class="line">        top: <span class="string">`$ &#123; imgRect.top - editorRect.top + this.editor.scrollTop&#125;px`</span>,</span><br><span class="line">        left: <span class="string">`$ &#123; imgRect.left - editorRect.left -  1 + this.editor.scrollLeft&#125;px`</span>,</span><br><span class="line">        width: <span class="string">`<span class="subst">$&#123; imgRect.width &#125;</span> px`</span>,</span><br><span class="line">        height: <span class="string">`<span class="subst">$&#123; imgRect.height &#125;</span> px`</span>,</span><br><span class="line">        boxSizing: <span class="string">'border-box'</span>,</span><br><span class="line">        border: <span class="string">'1px dashed red'</span></span><br><span class="line">	&#125;);</span><br><span class="line">    <span class="comment">// 添加四个顶点拖拽框</span></span><br><span class="line">    <span class="keyword">this</span>.createBox();</span><br><span class="line">&#125;,</span><br><span class="line">createBox() &#123;</span><br><span class="line"><span class="keyword">this</span>.boxes = [];</span><br><span class="line"><span class="keyword">this</span>.addBox(<span class="string">'nwse-resize'</span>);  <span class="comment">// top left</span></span><br><span class="line"><span class="keyword">this</span>.addBox(<span class="string">'nesw-resize'</span>);  <span class="comment">// top right</span></span><br><span class="line"><span class="keyword">this</span>.addBox(<span class="string">'nwse-resize'</span>);  <span class="comment">// bottom right</span></span><br><span class="line"><span class="keyword">this</span>.addBox(<span class="string">'nesw-resize'</span>);  <span class="comment">// bottom left</span></span><br><span class="line"><span class="keyword">this</span>.positionBoxes(); <span class="comment">// 设置四个拖拽框位置</span></span><br><span class="line">&#125;,</span><br><span class="line">addBox(cursor) &#123;</span><br><span class="line"><span class="keyword">const</span> box = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line"><span class="built_in">Object</span>.assign(box.style, &#123;</span><br><span class="line">    position: <span class="string">'absolute'</span>,</span><br><span class="line">    height: <span class="string">'12px'</span>,</span><br><span class="line">    width: <span class="string">'12px'</span>,</span><br><span class="line">    backgroundColor: <span class="string">'white'</span>,</span><br><span class="line">    border: <span class="string">'1px solid #777'</span>,</span><br><span class="line">    boxSizing: <span class="string">'border-box'</span>,</span><br><span class="line">    opacity: <span class="string">'0.80'</span></span><br><span class="line">&#125;);</span><br><span class="line">box.style.cursor = cursor;</span><br><span class="line">box.addEventListener(<span class="string">'mousedown'</span>, <span class="keyword">this</span>.handleMousedown);  <span class="comment">// 顺便添加事件</span></span><br><span class="line"><span class="keyword">this</span>.overlay.appendChild(box);</span><br><span class="line"><span class="keyword">this</span>.boxes.push(box);</span><br><span class="line">&#125;,</span><br><span class="line">positionBoxes() &#123;</span><br><span class="line">    <span class="keyword">let</span> handleXOffset = <span class="string">`-6px`</span>;</span><br><span class="line">    <span class="keyword">let</span> handleYOffset = <span class="string">`-6px`</span>;</span><br><span class="line">[&#123;</span><br><span class="line">    left: handleXOffset,</span><br><span class="line">    top: handleYOffset</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    right: handleXOffset,</span><br><span class="line">    top: handleYOffset</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    right: handleXOffset,</span><br><span class="line">    bottom: handleYOffset</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    left: handleXOffset,</span><br><span class="line">    bottom: handleYOffset</span><br><span class="line">&#125;]</span><br><span class="line">.forEach(<span class="function">(<span class="params">pos, idx</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">Object</span>.assign(<span class="keyword">this</span>.boxes[idx].style, pos);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h6 id="3-在四个顶点框上添加拖拽事件"><a href="#3-在四个顶点框上添加拖拽事件" class="headerlink" title="3. 在四个顶点框上添加拖拽事件"></a>3. 在四个顶点框上添加拖拽事件</h6><p>这里我们会在四个顶点监听 <code>mousedown</code> 事件，按下鼠标时，首先会改变鼠标样式（就是鼠标会变成调整大小的那种图标），然后监听 <code>mousemove</code> 和 <code>mouseup</code> 事件，计算出水平拖拽距离，然后重新设置图片大小和浮层大小，大概这么个意思，简要代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">handleMousedown(e) &#123;</span><br><span class="line">    <span class="keyword">this</span>.dragBox = e.target;</span><br><span class="line">    <span class="keyword">this</span>.dragStartX = e.clientX;</span><br><span class="line">    <span class="keyword">this</span>.preDragWidth = <span class="keyword">this</span>.nowImg.width;</span><br><span class="line">    <span class="keyword">this</span>.setCursor(<span class="keyword">this</span>.dragBox.style.cursor);</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'mousemove'</span>, <span class="keyword">this</span>.handleDrag);</span><br><span class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, <span class="keyword">this</span>.handleMouseup);</span><br><span class="line">&#125;,</span><br><span class="line">handleDrag(e) &#123;</span><br><span class="line">    <span class="comment">// 计算水平拖动距离</span></span><br><span class="line">    <span class="keyword">const</span> deltaX = e.clientX - <span class="keyword">this</span>.dragStartX;</span><br><span class="line">    <span class="comment">// 修改图片大小</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="keyword">this</span>.dragBox === <span class="keyword">this</span>.boxes[<span class="number">0</span>] || <span class="keyword">this</span>.dragBox === <span class="keyword">this</span>.boxes[<span class="number">3</span>]) &#123;</span><br><span class="line">    <span class="comment">// 左边的两个框</span></span><br><span class="line">    <span class="keyword">this</span>.nowImg.width = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.preDragWidth - deltaX);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 右边的两个框</span></span><br><span class="line">    <span class="keyword">this</span>.nowImg.width = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.preDragWidth + deltaX);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 同时修改蒙层大小</span></span><br><span class="line">    <span class="keyword">this</span>.repositionOverlay();</span><br><span class="line">    &#125;,</span><br><span class="line">    handleMouseup() &#123;</span><br><span class="line">        <span class="keyword">this</span>.setCursor(<span class="string">''</span>);</span><br><span class="line">        <span class="comment">// 拖拽结束移除事件监听</span></span><br><span class="line">        <span class="built_in">document</span>.removeEventListener(<span class="string">'mousemove'</span>, <span class="keyword">this</span>.handleDrag);</span><br><span class="line">        <span class="built_in">document</span>.removeEventListener(<span class="string">'mouseup'</span>, <span class="keyword">this</span>.handleMouseup);</span><br><span class="line">    &#125;,</span><br><span class="line">    setCursor(value) &#123;</span><br><span class="line">    <span class="comment">// 设置鼠标样式</span></span><br><span class="line">    [<span class="built_in">document</span>.body, <span class="keyword">this</span>.nowImg].forEach(<span class="function"><span class="params">el</span> =&gt;</span> &#123;</span><br><span class="line">    	el.style.cursor = value;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然问题还是有的，不过我们知道这个思路就行。具体代码可以去看下 npm 上的 <code>quill-image-resize-module</code> 包，我也是按照这个包的思路来讲解的😂。。。</p>
+<h4 id="操纵光标"><a href="#操纵光标" class="headerlink" title="操纵光标"></a>操纵光标</h4><p>除了不好对图片进行处理外，光标应该也是一大坑，你可能不知道什么时候就失去焦点了，此时再点击按钮执行命令就无效了；有时你又需要还原或设置光标的位置，比如插入图片后，光标要设置到图片后面等等之类的。<br>所以我们需要具有控制光标的能力，具体操作就是在点击按钮之前我们可以先存储当前光标的状态，执行完命令或者在需要的时候后再还原或设置光标的状态即可。由于在 chrome 中，失去焦点并不会清除 <code>Seleciton</code> 对象和 <code>Range</code> 对象，所以就像我一开始说的我没怎么去了解🙄。。。这里就只简要展示两个方法给大家看下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">saveSelection</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 保存当前Range对象</span></span><br><span class="line">    <span class="keyword">let</span> selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">    <span class="keyword">if</span>(selection.rangeCount &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    	<span class="keyword">return</span> sel.getRangeAt(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> selectedRange = saveSelection();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">restoreSelection</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> selection = <span class="built_in">window</span>.getSelection();</span><br><span class="line">    <span class="keyword">if</span>( selectedRange ) &#123;</span><br><span class="line">        selection.removeAllRanges(); <span class="comment">// 清空所有 Range 对象</span></span><br><span class="line">        selection.addRange(selectedRange); <span class="comment">// 恢复保存的 Range</span></span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>以上就是今天所要分享的内容，感谢你的阅读，大赞无疆👀 。。。。</p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>回到开头我们讲的那个需求，关于图片旋转的，根据上面的思路，你可以在蒙层上加个旋转图标，并添加点击事件，然后修改图片和蒙层 <code>transform</code> 属性，当然了位置也要变，可能需要些计算，我也没试过，不知道效果咋样😂。<br>另外一种方法就是在插入图片之前先对图片进行处理（比如多一步类似裁剪的功能）再上传，这样就可以不用在编辑区里面处理图片啦，嘿嘿，目前我就想到这两种方案了，实际工作中采用的是第二种方式，因为产品的需求不止于旋转😭。<br>最后的最后，不知道大家有没有更好的方法来对图片或内容进行处理，欢迎在下面留言探讨，See you👋。</p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/20/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/22/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

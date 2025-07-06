@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="自定义H5 video 播放器"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>自定义H5 video 播放器 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/10/31/JavaScript/%E8%87%AA%E5%AE%9A%E4%B9%89H5%20video%20%E6%92%AD%E6%94%BE%E5%99%A8/">
+                自定义H5 video 播放器
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-10-31</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>工作中用到video标签做视频播放器，一开始用 video.js 插件代替，如果只用这个插件进行简单的播放视频，是不是有点浪费，而且这个插件用 webpack 打包后 vendor.js 会很大，所以本文实现一个基于HTML5标签video的自定义视频播放器。其中实现了播放暂停、进度拖拽、音量控制及全屏等功能</p>
+<h2 id="一、效果预览"><a href="#一、效果预览" class="headerlink" title="一、效果预览"></a>一、效果预览</h2><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/40.gif" alt="1"></p>
+<h2 id="二、步骤简介"><a href="#二、步骤简介" class="headerlink" title="二、步骤简介"></a>二、步骤简介</h2><ol>
+<li>dom元素和css样式编写；</li>
+<li>简单的播放和暂停；</li>
+<li>时间进度显示；</li>
+<li>控制栏视频进度条点击和拖拽；</li>
+<li>声音进度条控制；</li>
+<li>全屏和退出全屏基础实现；</li>
+<li>控制栏隐藏或显示；</li>
+<li>video自带属性和方法整理：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性或者方法</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>currentTime</td>
+<td>当前视频播放的时间，单位是s</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>当前视频播放总时长，单位是s</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>声音，最小值为0，最大值为1</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>暂停状态</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>结束状态</td>
+</tr>
+<tr>
+<td>play()</td>
+<td>播放视频</td>
+</tr>
+<tr>
+<td>pause()</td>
+<td>暂停视频播放</td>
+</tr>
+<tr>
+<td>loadedmetadata()</td>
+<td>视频加载获取数据，这里获取duration</td>
+</tr>
+<tr>
+<td>timeupdate()</td>
+<td>视频变化事件，这里获取实时的currentTime</td>
+</tr>
+<tr>
+<td>ended()</td>
+<td>视频播放结束事件</td>
+</tr>
+<tr>
+<td>volumechange()</td>
+<td>视频声音事件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="三、步骤实现"><a href="#三、步骤实现" class="headerlink" title="三、步骤实现"></a>三、步骤实现</h2><h3 id="1、静态页面编写"><a href="#1、静态页面编写" class="headerlink" title="1、静态页面编写"></a>1、静态页面编写</h3><p>本实例采用vue脚手架，具体dom元素实现如下，并添加相关注释：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_container"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--video--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">video</span> </span></span><br><span class="line"><span class="tag">        <span class="attr">class</span>=<span class="string">"custom-video_video"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">ref</span>=<span class="string">"custom-video"</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">source</span> <span class="attr">type</span>=<span class="string">"video/mp4"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>设备不支持<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--播放或者暂停按钮--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"custom-video_play custom-video_play-pause iconfont icon-zanting"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 控制区域背景 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 视频进度条 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control-bg"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> </span></span><br><span class="line"><span class="tag">            <span class="attr">class</span>=<span class="string">"custom-video_control-bg-outside"</span></span></span><br><span class="line"><span class="tag">            <span class="attr">ref</span>=<span class="string">"custom-video_control-bg-outside"</span></span></span><br><span class="line"><span class="tag">          &gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> </span></span><br><span class="line"><span class="tag">              <span class="attr">class</span>=<span class="string">"custom-video_control-bg-inside"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">ref</span>=<span class="string">"custom-video_control-bg-inside"</span></span></span><br><span class="line"><span class="tag">            &gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> </span></span><br><span class="line"><span class="tag">              <span class="attr">class</span>=<span class="string">"custom-video_control-bg-inside-point"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">ref</span>=<span class="string">"custom-video_control-bg-inside-point"</span></span></span><br><span class="line"><span class="tag">            &gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 声音 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control-voice"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"custom-video_control-voice-play iconfont icon-shengyin"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control-voice-bg"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control-voice-bg-outside"</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"custom-video_control-voice-bg-inside"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"custom-video_control-voice-bg-point"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 时间 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control-time"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">span</span>&gt;</span>"00:00"<span class="tag">&lt;/<span class="name">span</span>&gt;</span>/<span class="tag">&lt;<span class="name">span</span>&gt;</span>"00:00"<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 全屏缩放 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"custom-video_control-full iconfont icon-quanping"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>与之对应css和完整的代码会附加在文章的结尾。后面相关逻辑会依据上面的dom结构进行事件绑定和拓展。</p>
+<h3 id="2、播放和暂停"><a href="#2、播放和暂停" class="headerlink" title="2、播放和暂停"></a>2、播放和暂停</h3><p>播放或者暂停有两种场景，第一种通过点击“播放”或者“暂停”按钮控制播放或者暂停；第二种是点击视频区域控制播放或者暂停。<br>第一种实现通过点击“播放”按钮，此按钮的样式变成“暂停”，修改上面注释区域<strong>播放或者暂停按钮</strong>元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!--播放或者暂停按钮--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-if</span>=<span class="string">"videoState.play"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"custom-video_play custom-video_play-pause iconfont icon-zanting"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">click</span>=<span class="string">"pause('btn')"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-else</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">"custom-video_play custom-video_play-play iconfont icon-bofang"</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">click</span>=<span class="string">"play('btn')"</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>并且对应的js如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      videoState: &#123;</span><br><span class="line">        play: <span class="literal">false</span>, <span class="comment">//播放状态</span></span><br><span class="line">        playState: <span class="literal">false</span>, <span class="comment">// 记录播放状态</span></span><br><span class="line">      &#125;,</span><br><span class="line">      videoDom: <span class="literal">null</span>, <span class="comment">// video</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    <span class="comment">// 初始化相关元数据</span></span><br><span class="line">    <span class="keyword">this</span>.videoDom = <span class="keyword">this</span>.$refs[<span class="string">"custom-video"</span>]</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    play(flag) &#123; <span class="comment">// 播放按钮事件</span></span><br><span class="line">      <span class="keyword">if</span>(flag) <span class="keyword">this</span>.videoState.playState = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">this</span>.videoState.play = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.play()</span><br><span class="line">    &#125;,</span><br><span class="line">    pause(flag) &#123; <span class="comment">// 暂停按钮事件</span></span><br><span class="line">      <span class="keyword">if</span>(flag) <span class="keyword">this</span>.videoState.playState = <span class="literal">false</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.pause()</span><br><span class="line">      <span class="keyword">this</span>.videoState.play = <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>点击“播放”按钮调用play()方法，videoState.play值变化引起按钮样式变成“暂停”，并调用video标签自带的播放方法，反之就是“暂停”。<br>第二种点击屏幕播放或者暂停是通过监听video click事件，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">    <span class="comment">// 初始化相关元数据</span></span><br><span class="line">    <span class="keyword">this</span>.videoDom = <span class="keyword">this</span>.$refs[<span class="string">"custom-video"</span>]</span><br><span class="line">    <span class="keyword">this</span>.initMedaData()</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    initMedaData() &#123; <span class="comment">// 初始化video相关事件</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.addEventListener(<span class="string">"click"</span>, () =&gt; &#123; <span class="comment">// 点击视频区域可以进行播放或者暂停</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.videoDom.paused || <span class="keyword">this</span>.videoDom.ended) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.videoDom.ended) &#123;</span><br><span class="line">              <span class="comment">// 如果视频结束，currentTime初始化为0</span></span><br><span class="line">              <span class="keyword">this</span>.videoDom.currentTime = <span class="number">0</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.play(<span class="string">'btn'</span>) <span class="comment">//调用下面play的方法</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.pause(<span class="string">'btn'</span>) <span class="comment">//调用下面pause的方法</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    play(flag) &#123; <span class="comment">// 播放按钮事件</span></span><br><span class="line">      <span class="keyword">if</span>(flag) <span class="keyword">this</span>.videoState.playState = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">this</span>.videoState.play = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.play()</span><br><span class="line">    &#125;,</span><br><span class="line">    pause(flag) &#123; <span class="comment">// 暂停按钮事件</span></span><br><span class="line">      <span class="keyword">if</span>(flag) <span class="keyword">this</span>.videoState.playState = <span class="literal">false</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.pause()</span><br><span class="line">      <span class="keyword">this</span>.videoState.play = <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、时间显示"><a href="#3、时间显示" class="headerlink" title="3、时间显示"></a>3、时间显示</h3><p>图片右下角<strong>“00:00 / 00:29”</strong>，它是当前的播放时间比上视频总时长，video自带属性currentTime和duration，这两个字段获取的值单位都是s，所以要进行格式转换，先修改对应的dom结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 时间 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"custom-video_control-time"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;currentTime ? currentTime : "00:00"&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">   / </span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;duration ? duration : "00:00"&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>相关js代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      duration: <span class="number">0</span>, <span class="comment">// 视频总时长</span></span><br><span class="line">      currentTime: <span class="number">0</span>, <span class="comment">// 视频当前播放时长</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    <span class="comment">// 初始化相关元数据</span></span><br><span class="line">    <span class="keyword">this</span>.videoDom = <span class="keyword">this</span>.$refs[<span class="string">"custom-video"</span>]</span><br><span class="line">    <span class="keyword">this</span>.initMedaData()</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    initMedaData() &#123; <span class="comment">// 初始化video相关事件</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.addEventListener(<span class="string">'loadedmetadata'</span>, () =&gt; &#123; <span class="comment">// 获取视频总时长</span></span><br><span class="line">        <span class="keyword">this</span>.duration = <span class="keyword">this</span>.timeTranslate(<span class="keyword">this</span>.videoDom.duration)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">this</span>.videoDom.addEventListener(<span class="string">"timeupdate"</span>, () =&gt; &#123; <span class="comment">// 监听视频播放过程中的时间</span></span><br><span class="line">        <span class="keyword">this</span>.currentTime = <span class="keyword">this</span>.timeTranslate(<span class="keyword">this</span>.videoDom.currentTime)</span><br><span class="line">    &#125;),</span><br><span class="line">    timeTranslate(t) &#123; <span class="comment">// 时间转化</span></span><br><span class="line">      <span class="keyword">let</span> m = <span class="built_in">Math</span>.floor(t / <span class="number">60</span>)</span><br><span class="line">      m &lt; <span class="number">10</span> &amp;&amp; (m = <span class="string">'0'</span> + m)</span><br><span class="line">      <span class="keyword">return</span> m + <span class="string">":"</span> + (t % <span class="number">60</span> / <span class="number">100</span> ).toFixed(<span class="number">2</span>).slice(<span class="number">-2</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4、播放进度显示"><a href="#4、播放进度显示" class="headerlink" title="4、播放进度显示"></a>4、播放进度显示</h4><ol>
+<li>播放进度随着播放慢慢变长，播放进度条由三部分组成：</li>
+</ol>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/41.jpg" alt="2"></p>
+<p>video自带的timeupdate的方法会实时的监听播放状态，通过实时的获取currentTime和duration的比值，这个比例值就是图中inside占整个outside的比重。代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      videoDom: <span class="literal">null</span>, <span class="comment">// video</span></span><br><span class="line">      videoProOut: <span class="literal">null</span>, <span class="comment">// 视频总进度条</span></span><br><span class="line">      videoPro: <span class="literal">null</span>, <span class="comment">// 视频进度条</span></span><br><span class="line">      videoPoi: <span class="literal">null</span>, <span class="comment">// 视频进度点</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    <span class="comment">// 初始化相关元数据</span></span><br><span class="line">    <span class="keyword">this</span>.videoDom = <span class="keyword">this</span>.$refs[<span class="string">"custom-video"</span>]</span><br><span class="line">    <span class="keyword">this</span>.videoProOut = <span class="keyword">this</span>.$refs[<span class="string">'custom-video_control-bg-outside'</span>]</span><br><span class="line">    <span class="keyword">this</span>.videoPro = <span class="keyword">this</span>.$refs[<span class="string">'custom-video_control-bg-inside'</span>]</span><br><span class="line">    <span class="keyword">this</span>.videoPoi = <span class="keyword">this</span>.$refs[<span class="string">'custom-video_control-bg-inside-point'</span>]</span><br><span class="line">    <span class="keyword">this</span>.initMedaData()</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    initMedaData() &#123; <span class="comment">// 初始化video相关事件</span></span><br><span class="line">      <span class="keyword">this</span>.videoDom.addEventListener(<span class="string">'loadedmetadata'</span>, () =&gt; &#123; <span class="comment">// 获取视频总时长</span></span><br><span class="line">        <span class="keyword">this</span>.duration = <span class="keyword">this</span>.timeTranslate(<span class="keyword">this</span>.videoDom.duration)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">this</span>.videoDom.addEventListener(<span class="string">"timeupdate"</span>, () =&gt; &#123; <span class="comment">// 监听视频播放过程中的时间</span></span><br><span class="line">        <span class="keyword">const</span> percentage = <span class="number">100</span> * <span class="keyword">this</span>.videoDom.currentTime / <span class="keyword">this</span>.videoDom.duration</span><br><span class="line">        <span class="comment">// 页面渲染进度</span></span><br><span class="line">        <span class="keyword">this</span>.videoPro.style.width = percentage + <span class="string">'%'</span></span><br><span class="line">        <span class="keyword">this</span>.videoPoi.style.left = percentage - <span class="number">1</span> + <span class="string">'%'</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>播放进度可以点击、拖动，这两步操作会用到mousedown、mousemove、mouseup事件，对应三个方法handlePrograssDown、handlePrograssMove、handlePrograssUp，这三个方法挂载到dom节点如下：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 进度条 --&gt;</span><br><span class="line">&lt;div</span><br><span class="line">  <span class="class"><span class="keyword">class</span></span>=<span class="string">"custom-video_control-bg"</span></span><br><span class="line">  @mousedown=<span class="string">"handlePrograssDown"</span></span><br><span class="line">  @mousemove=<span class="string">"handlePrograssMove"</span></span><br><span class="line">  @mouseup=<span class="string">"handlePrograssUp"</span></span><br><span class="line">&gt;</span><br><span class="line">  &lt;!--此处省略视频进度条dom结构--&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<p>拖拽或者点击进度条首先计算进度条的起点水平距离，需要计算该点的偏移量，封装偏移量getOffset方法如下（ps：貌似是zepto源码片段），</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">getOffset(node, offset) &#123; <span class="comment">// 获取当前屏幕下进度条的左偏移量和上偏移量</span></span><br><span class="line">  <span class="keyword">if</span>(!offset) &#123;</span><br><span class="line">    offset = &#123;&#125;</span><br><span class="line">    offset.left = <span class="number">0</span></span><br><span class="line">    offset.top = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(node === <span class="built_in">document</span>.body || node === <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> offset</span><br><span class="line">  &#125;</span><br><span class="line">  offset.top += node.offsetTop</span><br><span class="line">  offset.left += node.offsetLeft</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.getOffset(node.offsetParent, offset)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>点击逻辑如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">handlePrograssDown(ev) &#123; <span class="comment">// 监听点击进度条事件，方便获取初始点击的位置</span></span><br><span class="line">  <span class="keyword">this</span>.videoState.downState = <span class="literal">true</span> <span class="comment">//按下鼠标标志</span></span><br><span class="line">  <span class="keyword">this</span>.pause() <span class="comment">// 视频暂时停止</span></span><br><span class="line">  <span class="keyword">this</span>.videoState.distance = ev.clientX - <span class="keyword">this</span>.videoState.leftInit <span class="comment">//记录点击的离起点的距离</span></span><br><span class="line">  这里的leftInit就是通过getOffset方法获取的进度条起点偏移量</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>松开鼠标，通过记录的距离算出当前的currentTime，然后从此点进行视频播放或者暂停，逻辑如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">handlePrograssUp() &#123; <span class="comment">//松开鼠标，播放当前进度条视频</span></span><br><span class="line">  <span class="keyword">this</span>.videoState.downState = <span class="literal">false</span></span><br><span class="line">  <span class="comment">// 计算点击此处的currentTime</span></span><br><span class="line">  <span class="keyword">this</span>.videoDom.currentTime = <span class="keyword">this</span>.videoState.distance / <span class="keyword">this</span>.processWidth * <span class="keyword">this</span>.videoDom.duration</span><br><span class="line">  <span class="comment">// 页面回显的currentTime数据</span></span><br><span class="line">  <span class="keyword">this</span>.currentTime = <span class="keyword">this</span>.timeTranslate(<span class="keyword">this</span>.videoDom.currentTime)</span><br><span class="line">  <span class="comment">// 这个是判断当前视频是在播放状态进行点击还是在暂停状态进行点击的</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.videoState.playState) &#123;</span><br><span class="line">    <span class="keyword">this</span>.play()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>上面的<code>this.videoState.playState</code>这个状态是通过按钮或者视频区域点击进行判定的，具体在上面<code>play(flag)</code>和<code>pause(flag)</code>方法中。</p>
+<ol>
+<li>拖拽方法如下：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">handlePrograssMove(ev) &#123; <span class="comment">// 监听移动进度条事件，同步播放相关事件</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.videoState.downState) <span class="keyword">return</span> <span class="comment">//如果没有通过鼠标点击起点，则直接不进行下面计算</span></span><br><span class="line">  <span class="keyword">let</span> disX = ev.clientX - <span class="keyword">this</span>.videoState.leftInit</span><br><span class="line">  <span class="comment">// 进行边界判断</span></span><br><span class="line">  <span class="keyword">if</span>(disX &gt; <span class="keyword">this</span>.processWidth) &#123;</span><br><span class="line">    disX = <span class="keyword">this</span>.processWidth</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(disX &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    disX = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.videoState.distance = disX</span><br><span class="line">  <span class="comment">// 计算当前的currentTime</span></span><br><span class="line">  <span class="keyword">this</span>.videoDom.currentTime = <span class="keyword">this</span>.videoState.distance / <span class="keyword">this</span>.processWidth * <span class="keyword">this</span>.videoDom.duration</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>播放的进度条重点是通过点击或者拖动的位置计算当前的视频的时间点，将此值赋予video标签，这里就是</p>
+<blockquote>
+<p><code>this</code>.videoDom.currentTime = 表达式</p>
+</blockquote>
+<p>这样timeupdate方法会被触发：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.videoDom.addEventListener(<span class="string">"timeupdate"</span>, () =&gt; &#123; <span class="comment">// 监听视频播放过程中的时间</span></span><br><span class="line">    <span class="keyword">const</span> percentage = <span class="number">100</span> * <span class="keyword">this</span>.videoDom.currentTime / <span class="keyword">this</span>.videoDom.duration</span><br><span class="line">    <span class="comment">// inside进度条长度</span></span><br><span class="line">    <span class="keyword">this</span>.videoPro.style.width = percentage + <span class="string">'%'</span></span><br><span class="line">    <span class="comment">// point移动变化</span></span><br><span class="line">    <span class="keyword">this</span>.videoPoi.style.left = percentage - <span class="number">1</span> + <span class="string">'%'</span></span><br><span class="line">    <span class="keyword">this</span>.currentTime = <span class="keyword">this</span>.timeTranslate(<span class="keyword">this</span>.videoDom.currentTime)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="5、声音控制"><a href="#5、声音控制" class="headerlink" title="5、声音控制"></a>5、声音控制</h3><p>声音与视频的进度条是类似的，只不过声音的进度条是计算竖直方向的，声音相关属性volume，值的范围 0 ~ 1，监听声音的方法是volumechange。声音的样式图片样式如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/42.jpg" alt="3"></p>
+<p>相关方法如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听声音的方法，通过此方法进行进度条渲染</span></span><br><span class="line"><span class="keyword">this</span>.videoDom.addEventListener(<span class="string">"volumechange"</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> percentage =  <span class="keyword">this</span>.videoDom.volume * <span class="number">100</span></span><br><span class="line">    <span class="keyword">this</span>.voicePro.style.height = percentage + <span class="string">'%'</span></span><br><span class="line">    <span class="keyword">this</span>.voicePoi.style.bottom = percentage + <span class="string">'%'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声音控制的三个方法</span></span><br><span class="line">handleVolPrograssDown(ev) &#123; <span class="comment">// 监听声音点击事件</span></span><br><span class="line">  <span class="keyword">this</span>.voiceState.topInit = <span class="keyword">this</span>.getOffset(<span class="keyword">this</span>.voiceProOut).top</span><br><span class="line">  <span class="keyword">this</span>.volProcessHeight = <span class="keyword">this</span>.voiceProOut.clientHeight</span><br><span class="line">  <span class="keyword">this</span>.voiceState.downState = <span class="literal">true</span> <span class="comment">//按下鼠标标志</span></span><br><span class="line">  <span class="keyword">this</span>.voiceState.distance = ev.clientY - <span class="keyword">this</span>.voiceState.topInit</span><br><span class="line">&#125;,</span><br><span class="line">handleVolPrograssMove(ev) &#123; <span class="comment">// 监听声音进度条移动事件</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.voiceState.downState) <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">let</span> disY = <span class="keyword">this</span>.voiceState.topInit + <span class="keyword">this</span>.volProcessHeight - ev.clientY</span><br><span class="line">  <span class="keyword">if</span>(disY &gt; <span class="keyword">this</span>.volProcessHeight - <span class="number">2</span>) &#123;</span><br><span class="line">    disY = <span class="keyword">this</span>.volProcessHeight - <span class="number">2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(disY &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    disY = <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.voiceState.distance = disY</span><br><span class="line">  <span class="keyword">this</span>.videoDom.volume = <span class="keyword">this</span>.voiceState.distance / <span class="keyword">this</span>.volProcessHeight</span><br><span class="line">  <span class="keyword">this</span>.videoOption.volume = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.videoDom.volume * <span class="number">100</span>)</span><br><span class="line">&#125;,</span><br><span class="line">handleVolPrograssUp() &#123; <span class="comment">// 监听声音鼠标离开事件</span></span><br><span class="line">  <span class="keyword">this</span>.voiceState.downState = <span class="literal">false</span> <span class="comment">//按下鼠标标志</span></span><br><span class="line">  <span class="keyword">this</span>.videoDom.volume = <span class="keyword">this</span>.voiceState.distance / <span class="keyword">this</span>.volProcessHeight</span><br><span class="line">  <span class="keyword">this</span>.videoOption.volume = <span class="built_in">Math</span>.round(<span class="keyword">this</span>.videoDom.volume * <span class="number">100</span>)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="6、全屏和退出全屏控制"><a href="#6、全屏和退出全屏控制" class="headerlink" title="6、全屏和退出全屏控制"></a>6、全屏和退出全屏控制</h3><p>全屏方法，这里面进行了兼容处理:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fullScreen() &#123;</span><br><span class="line">  <span class="keyword">let</span> ele = <span class="built_in">document</span>.documentElement</span><br><span class="line">  <span class="keyword">if</span> (ele .requestFullscreen) &#123;</span><br><span class="line">    ele .requestFullscreen()</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ele .mozRequestFullScreen) &#123;</span><br><span class="line">    ele .mozRequestFullScreen()</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ele .webkitRequestFullScreen) &#123;</span><br><span class="line">    ele .webkitRequestFullScreen()</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 对应的video标签大小100%</span></span><br><span class="line">  <span class="keyword">this</span>.$refs[<span class="string">'custom-video_container'</span>].style.width = <span class="string">"100%"</span></span><br><span class="line">  <span class="keyword">this</span>.$refs[<span class="string">'custom-video_container'</span>].style.height = <span class="string">"100%"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>退出全屏方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">exitFullscreen() &#123;</span><br><span class="line">  <span class="keyword">let</span> de = <span class="built_in">document</span></span><br><span class="line">  <span class="keyword">if</span> (de.exitFullscreen) &#123;</span><br><span class="line">    de.exitFullscreen();</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (de.mozCancelFullScreen) &#123;</span><br><span class="line">    de.mozCancelFullScreen();</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (de.webkitCancelFullScreen) &#123;</span><br><span class="line">    de.webkitCancelFullScreen();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 返回初始化值</span></span><br><span class="line">  <span class="keyword">this</span>.$refs[<span class="string">'custom-video_container'</span>].style.width = <span class="string">"500px"</span></span><br><span class="line">  <span class="keyword">this</span>.$refs[<span class="string">'custom-video_container'</span>].style.height = <span class="string">"300px"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：这里进度条和退出全屏事件都没有对键盘按健进行处理，只是单纯的鼠标点击事件</strong></p>
+<h3 id="7、控制栏隐藏和展示"><a href="#7、控制栏隐藏和展示" class="headerlink" title="7、控制栏隐藏和展示"></a>7、控制栏隐藏和展示</h3><p>控制栏在暂停的时候显示，在播放的时候，只要鼠标在视频播放器中，也会显示，离开后几秒后消失，这里用到<code>vue</code>过渡动画：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div</span><br><span class="line">    <span class="class"><span class="keyword">class</span></span>=<span class="string">"custom-video_container"</span></span><br><span class="line">    ref=<span class="string">"custom-video_container"</span></span><br><span class="line">    @mouseover=<span class="string">"handleControls($event, 'start')"</span></span><br><span class="line">    @mouseleave=<span class="string">"handleControls($event, 'end')"</span></span><br><span class="line">&gt;</span><br><span class="line">    &lt;!--省略--&gt;</span><br><span class="line">    &lt;transition&gt;</span><br><span class="line">        name=<span class="string">"fade"</span></span><br><span class="line">    &gt;</span><br><span class="line">        &lt;div</span><br><span class="line">            <span class="class"><span class="keyword">class</span></span>=<span class="string">"custom-video_control"</span></span><br><span class="line">            v-show=<span class="string">"!videoState.hideControl || !videoState.play"</span></span><br><span class="line">        &gt;</span><br><span class="line">        &lt;!--控制栏dom元素--&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>transition&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<p>对应的css文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 控制栏隐藏动画 */</span></span><br><span class="line">.fade-enter-active &#123;</span><br><span class="line">  transition: all <span class="number">.3</span>s ease;</span><br><span class="line">&#125;</span><br><span class="line">.fade-leave-active &#123;</span><br><span class="line">  transition: all <span class="number">.8</span>s cubic-bezier(<span class="number">1.0</span>, <span class="number">0.5</span>, <span class="number">0.8</span>, <span class="number">1.0</span>);</span><br><span class="line">&#125;</span><br><span class="line">.fade-enter, .fade-leave-to &#123;</span><br><span class="line">  transform: translateY(<span class="number">50</span>px);</span><br><span class="line">  opacity: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>控制栏的消失或者展示是通过绑定最外层<code>dom</code>元素的<code>mouseover</code>、<code>mouseleave</code>事件进行逻辑控制， 这里用<code>mouseleave</code>，而不是用<code>mouseout</code>，如果使用<code>mouseout</code>事件，在经过控制栏时会出现闪烁。具体事件源码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">handleControls(ev, flag) &#123; <span class="comment">// 监听离开或者进入视频区域隐藏或者展示控制栏</span></span><br><span class="line">  <span class="keyword">switch</span> (flag) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'start'</span>:</span><br><span class="line">      <span class="keyword">this</span>.videoState.hideControl = <span class="literal">false</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'end'</span>:</span><br><span class="line">      <span class="keyword">this</span>.videoState.hideControl = <span class="literal">true</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>通过控制<code>this.videoState.hideControl</code>状态显示隐藏活隐藏控制栏。</p>
+<h3 id="四、源码"><a href="#四、源码" class="headerlink" title="四、源码"></a>四、源码</h3><p>源码地址：<a href="https://github.com/yuelinghunyu/blog-demo/tree/master/video-player" target="_blank" rel="noopener">vue-player</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

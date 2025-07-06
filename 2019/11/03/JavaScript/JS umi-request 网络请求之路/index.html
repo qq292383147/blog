@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="umi-request 网络请求之路"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>umi-request 网络请求之路 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/03/JavaScript/JS%20umi-request%20%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E4%B9%8B%E8%B7%AF/">
+                umi-request 网络请求之路
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>在做中台业务应用开发的过程中，我们发现在请求链路上存在以下问题：</p>
+<ol>
+<li><strong>请求库各式各样，没有统一。</strong> 每次新起应用都需要重复实现一套请求层逻辑，切换应用时需要重新学习请求库 API。</li>
+<li><strong>各应用接口设计不一致、混乱。</strong> 前后端同学每次需重新设计接口格式，前端同学在切换应用时需重新了解接口格式才能做业务开发。</li>
+<li><strong>接口文档维护各式各样。</strong> 有的在语雀（云端知识库）上，有的在 RAP （开源接口管理工具）上，有的靠阅读源码才能知道，无论是维护、mock 数据还是沟通都很浪费人力。</li>
+</ol>
+<p>针对以上问题，我们提出了<strong>请求层治理</strong>，希望能<strong>通过统一请求库、规范请求接口设计规范、统一接口文档</strong>这三步，对请求链路的前中后三个阶段进行<strong>提效和规范，</strong> 从而减少开发者在接口设计、文档维护、请求层逻辑开发上花费的沟通和人力成本。其中，<strong>统一请求库作为底层技术支持，需要提前打好基地，为上层提供稳定、完善的功能支持，基于此，umi-request 应运而生。</strong></p>
+<h1 id="umi-request"><a href="#umi-request" class="headerlink" title="umi-request"></a>umi-request</h1><p><a href="https://github.com/umijs/umi-request" target="_blank" rel="noopener">umi-request</a> 是基于 fetch 封装的开源 http 请求库，旨在为开发者提供一个统一的 API 调用方式，同时简化使用方式，提供了请求层常用的功能：</p>
+<ul>
+<li>URL 参数自动序列化</li>
+<li>POST 数据提交方式简化</li>
+<li>Response 返回处理简化</li>
+<li>请求超时处理</li>
+<li>请求缓存支持</li>
+<li>GBK 编码处理</li>
+<li>统一的错误处理方式</li>
+<li>请求取消支持</li>
+<li>Node 环境 http 请求</li>
+<li>拦截器机制</li>
+<li>洋葱中间件机制</li>
+</ul>
+<h2 id="与-fetch、axios-的异同？"><a href="#与-fetch、axios-的异同？" class="headerlink" title="与 fetch、axios 的异同？"></a>与 fetch、axios 的异同？</h2><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>umi-request</th>
+<th>fetch</th>
+<th>axios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实现</td>
+<td>fetch</td>
+<td>浏览器原生支持</td>
+<td>XMLHttpRequest</td>
+</tr>
+<tr>
+<td>query 简化</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>post 简化</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>超时</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>缓存</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>错误检查</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>错误处理</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>拦截器</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>前缀</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>后缀</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>处理 gbk</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>中间件</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>取消请求</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>umi-request 底层抛弃了设计粗糙、不符合关注分离的 XMLHttpRequest，选择了更加语义化、基于标准 Promise 实现的 fetch（更多细节<a href="https://github.com/camsong/blog/issues/2" target="_blank" rel="noopener">详见</a>）；同时同构更方便，使用 <a href="https://github.com/matthew-andrews/isomorphic-fetch" target="_blank" rel="noopener">isomorphic-fetch</a>（目前已内置）；而基于各业务应用场景提取常见的请求能力并支持快速配置如 post 简化、前后缀、错误检查等。</p>
+<h2 id="上手便捷"><a href="#上手便捷" class="headerlink" title="上手便捷"></a>上手便捷</h2><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save umi-request</span><br></pre></td></tr></table></figure>
+<p>执行  GET  请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">"umi-request"</span>;</span><br><span class="line">request</span><br><span class="line">  .get(<span class="string">"/api/v1/xxx?id=1"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">// 也可将 URL 的参数放到 options.params 里</span></span><br><span class="line">request</span><br><span class="line">  .get(<span class="string">"/api/v1/xxx"</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">      id: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>执行  <strong>POST</strong>  请求</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">"umi-request"</span>;</span><br><span class="line">request</span><br><span class="line">  .post(<span class="string">"/api/v1/user"</span>, &#123;</span><br><span class="line">    data: &#123;</span><br><span class="line">      name: <span class="string">"Mike"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="实例化通用配置"><a href="#实例化通用配置" class="headerlink" title="实例化通用配置"></a>实例化通用配置</h2><p>请求一般都有一些通用的配置，我们不想在每个请求里去逐个添加，例如通用的前缀、后缀、头部信息、异常处理等等，那么可以通过 <strong>extend</strong>  来新建一个 umi-request 实例，从而减少重复的代码量：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; extend &#125; <span class="keyword">from</span> <span class="string">"umi-request"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> request = extend(&#123;</span><br><span class="line">  prefix: <span class="string">"/api/v1"</span>,</span><br><span class="line">  suffix: <span class="string">".json"</span>,</span><br><span class="line">  timeout: <span class="number">1000</span>,</span><br><span class="line">  headers: &#123;</span><br><span class="line">    <span class="string">"Content-Type"</span>: <span class="string">"multipart/form-data"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  params: &#123;</span><br><span class="line">    token: <span class="string">"xxx"</span> <span class="comment">// 所有请求默认带上 token 参数</span></span><br><span class="line">  &#125;,</span><br><span class="line">  errorHandler: <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* 异常处理 */</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">request</span><br><span class="line">  .get(<span class="string">"/user"</span>)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(response);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="内置常见请求能力"><a href="#内置常见请求能力" class="headerlink" title="内置常见请求能力"></a>内置常见请求能力</h2><p>fetch 本身并不提供请求超时、缓存、取消等能力，而在业务开发中却常常需要，因此 umi-request 对常见的请求能力进行封装内置，减少重复开发：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 'params' 是即将于请求一起发送的 URL 参数，参数会自动 encode 后添加到 URL 中</span></span><br><span class="line">  <span class="comment">// 类型需为 Object 对象或者 URLSearchParams 对象</span></span><br><span class="line">  params: &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'paramsSerializer' 开发者可通过该函数对 params 做序列化（注意：此时传入的 params 为合并了 extends 中 params 参数的对象，如果传入的是 URLSearchParams 对象会转化为 Object 对象</span></span><br><span class="line">  paramsSerializer: <span class="function"><span class="keyword">function</span> (<span class="params">params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Qs.stringify(params, &#123; <span class="attr">arrayFormat</span>: <span class="string">'brackets'</span> &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'data' 作为请求主体被发送的数据</span></span><br><span class="line">  <span class="comment">// 适用于这些请求方法 'PUT', 'POST', 和 'PATCH'</span></span><br><span class="line">  <span class="comment">// 必须是以下类型之一：</span></span><br><span class="line">  <span class="comment">// - string, plain object, ArrayBuffer, ArrayBufferView, URLSearchParams</span></span><br><span class="line">  <span class="comment">// - 浏览器专属：FormData, File, Blob</span></span><br><span class="line">  <span class="comment">// - Node 专属： Stream</span></span><br><span class="line">  data: &#123; <span class="attr">name</span>: <span class="string">'Mike'</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'headers' 请求头</span></span><br><span class="line">  headers: &#123; <span class="string">'Content-Type'</span>: <span class="string">'multipart/form-data'</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'timeout' 指定请求超时的毫秒数（0 表示无超时时间）</span></span><br><span class="line">  <span class="comment">// 如果请求超过了 'timeout' 时间，请求将被中断并抛出请求异常</span></span><br><span class="line">  timeout: <span class="number">1000</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'prefix' 前缀，统一设置 url 前缀</span></span><br><span class="line">  <span class="comment">// ( e.g. request('/user/save', &#123; prefix: '/api/v1' &#125;) =&gt; request('/api/v1/user/save') )</span></span><br><span class="line">  prefix: <span class="string">''</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'suffix' 后缀，统一设置 url 后缀</span></span><br><span class="line">  <span class="comment">// ( e.g. request('/api/v1/user/save', &#123; suffix: '.json'&#125;) =&gt; request('/api/v1/user/save.json') )</span></span><br><span class="line">  suffix: <span class="string">''</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'credentials' 发送带凭据的请求</span></span><br><span class="line">  <span class="comment">// 为了让浏览器发送包含凭据的请求（即使是跨域源），需要设置 credentials: 'include'</span></span><br><span class="line">  <span class="comment">// 如果只想在请求URL与调用脚本位于同一起源处时发送凭据，请添加credentials: 'same-origin'</span></span><br><span class="line">  <span class="comment">// 要改为确保浏览器不在请求中包含凭据，请使用credentials: 'omit'</span></span><br><span class="line">  credentials: <span class="string">'same-origin'</span>, <span class="comment">// default</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'useCache' 是否使用缓存，当值为 true 时，GET 请求在 ttl 毫秒内将被缓存，缓存策略唯一 key 为 url + params 组合</span></span><br><span class="line">  useCache: <span class="literal">false</span>, <span class="comment">// default</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'ttl' 缓存时长（毫秒）， 0 为不过期</span></span><br><span class="line">  ttl: <span class="number">60000</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'maxCache' 最大缓存数， 0 为无限制</span></span><br><span class="line">  maxCache: <span class="number">0</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'charset' 当服务端返回的数据编码类型为 gbk 时可使用该参数，umi-request 会按 gbk 编码做解析，避免得到乱码, 默认为 utf8</span></span><br><span class="line">  <span class="comment">// 当 parseResponse 值为 false 时该参数无效</span></span><br><span class="line">  charset: <span class="string">'gbk'</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'responseType': 如何解析返回的数据，当 parseResponse 值为 false 时该参数无效</span></span><br><span class="line">  <span class="comment">// 默认为 'json', 对返回结果进行 Response.text().then( d =&gt; JSON.parse(d) ) 解析</span></span><br><span class="line">  <span class="comment">// 其他(text, blob, arrayBuffer, formData), 做 Response[responseType]() 解析</span></span><br><span class="line">  responseType: <span class="string">'json'</span>, <span class="comment">// default</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 'errorHandler' 统一的异常处理，供开发者对请求发生的异常做统一处理，详细使用请参考下方的错误处理文档</span></span><br><span class="line">  errorHandler: <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123; <span class="comment">/* 异常处理 */</span> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="中间件机制方便拓展"><a href="#中间件机制方便拓展" class="headerlink" title="中间件机制方便拓展"></a>中间件机制方便拓展</h2><p>复杂场景应用对请求前后有定制化的处理需求，请求库除了提供基础的内置能力外，也需要提升自身拓展性，基于此 umi-request 引入<strong>中间件机制，</strong>选择了类 KOA 的洋葱圈模型：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/56.jpg" alt="56"></p>
+<p>（中间件洋葱图）</p>
+<p>由上图可看出，每一层洋葱圈为一个中间件，请求经过一个中间件都会执行两次，开发者可以根据业务需求很方便地实现请求前后增强处理：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">"umi-request"</span>;</span><br><span class="line"></span><br><span class="line">request.use(<span class="function"><span class="keyword">function</span>(<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a1"</span>);</span><br><span class="line">  <span class="keyword">return</span> next().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"a2"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">request.use(<span class="function"><span class="keyword">function</span>(<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"b1"</span>);</span><br><span class="line">  <span class="keyword">return</span> next().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b2"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 执行顺序如下：</span></span><br><span class="line"><span class="comment">// a1 -&gt; b1 -&gt; b2 -&gt; a2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 async/await 能让结构、顺序更清晰明了：</span></span><br><span class="line">request.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a1"</span>);</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a2"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">request.use(<span class="keyword">async</span> (ctx, next) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"b1"</span>);</span><br><span class="line">  <span class="keyword">await</span> next();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"b2"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> request(<span class="string">"/api/v1/a"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行顺序如下：</span></span><br><span class="line"><span class="comment">// a1 -&gt; b1 -&gt; b2 -&gt; a2</span></span><br></pre></td></tr></table></figure>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>那么洋葱圈的中间件机制是如何实现的呢？它主要由中间件数组和中间件组合两部分组成，前者负责存储挂载的中间件，后者负责将中间件按照洋葱的结构进行组合并返回真实可执行函数：</p>
+<h4 id="存储中间件"><a href="#存储中间件" class="headerlink" title="存储中间件"></a>存储中间件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Onion</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.middlewares = [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 存储中间件</span></span><br><span class="line">  use(newMiddleware) &#123;</span><br><span class="line">    <span class="keyword">this</span>.middlewares.push(newMiddleware);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 执行中间件</span></span><br><span class="line">  execute(params = <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> fn = compose(<span class="keyword">this</span>.middlewares);</span><br><span class="line">    <span class="keyword">return</span> fn(params);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="组合中间件"><a href="#组合中间件" class="headerlink" title="组合中间件"></a>组合中间件</h4><p>上述代码中的 <strong>compose</strong>  即为组合中间件的函数实现，精简后逻辑如下（<a href="https://github.com/umijs/umi-request/blob/master/src/onion/compose.js" target="_blank" rel="noopener">详见</a>）：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">compose</span>(<span class="params">middlewares</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">wrapMiddlewares</span>(<span class="params">params</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">-1</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">      index = i;</span><br><span class="line">      <span class="keyword">const</span> fn = middlewares[i];</span><br><span class="line">      <span class="keyword">if</span> (!fn) <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve();</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(fn(params, () =&gt; dispatch(i + <span class="number">1</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dispatch(<span class="number">0</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>compose 函数通过 <strong>dispatch(0)</strong> 先执行了第一个中间件 <code>fn(params, () =&gt; dispatch(i +1))</code>  ,并提供 <code>() =&gt; dispatch(i +1)</code>  作为入参供每个中间件能在下一个中间件执行完毕后回来继续处理自己的事务，直到所有中间件完成后执行 <code>Promise.resolve()</code> ，形成洋葱圈中间件机制。</p>
+<h2 id="丰富请求能力"><a href="#丰富请求能力" class="headerlink" title="丰富请求能力"></a>丰富请求能力</h2><p>面对多端、多设备应用，umi-request 不仅支持 browser http 请求，也同时满足 node 环境、自定义内核请求等能力。</p>
+<h3 id="支持-node-环境发送-http-请求"><a href="#支持-node-环境发送-http-请求" class="headerlink" title="支持 node 环境发送 http 请求"></a>支持 node 环境发送 http 请求</h3><p>基于  isomorphic-fetch 实现对 node 环境的请求支持：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> umi = <span class="built_in">require</span>(<span class="string">"umi-request"</span>);</span><br><span class="line"><span class="keyword">const</span> extendRequest = umi.extend(&#123; <span class="attr">timeout</span>: <span class="number">10000</span> &#125;);</span><br><span class="line"></span><br><span class="line">extendRequest(<span class="string">"/api/user"</span>)</span><br><span class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="支持自定义内核请求能力"><a href="#支持自定义内核请求能力" class="headerlink" title="支持自定义内核请求能力"></a>支持自定义内核请求能力</h3><p>移动端应用一般都会有自己的请求协议如 RPC 请求，前端会通过 SDK 去调用客户端请求 API，umi-request 支持开发者自己封装请求能力，例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// service/some.js</span></span><br><span class="line"><span class="keyword">import</span> request <span class="keyword">from</span> <span class="string">"umi-request"</span>;</span><br><span class="line"><span class="comment">// 自定义请求内核中间件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SDKRequest</span>(<span class="params">ctx, next</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; req &#125; = ctx;</span><br><span class="line">  <span class="keyword">const</span> &#123; url, options &#125; = req;</span><br><span class="line">  <span class="keyword">const</span> &#123; __umiRequestCoreType__ = <span class="string">"normal"</span> &#125; = options;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (__umiRequestCoreType__.toLowerCase() !== <span class="string">"SDKRequest"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> next();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</span><br><span class="line">    .then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> SDK.request(url, options); <span class="comment">// 假设已经引入了 SDK 并且能通过 SDK 发起对应请求</span></span><br><span class="line">    &#125;)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">      ctx.res = result; <span class="comment">// 将结果注入到 ctx 的 res 里</span></span><br><span class="line">      <span class="keyword">return</span> next();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">request.use(SDKRequest, &#123; <span class="attr">core</span>: <span class="literal">true</span> &#125;); <span class="comment">// 引入内核中间件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">queryUser</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> request(<span class="string">"/api/sdk/request"</span>, &#123;</span><br><span class="line">    __umiRequestCoreType__: <span class="string">"SDKRequest"</span>, <span class="comment">// 声明使用 SDKRequest 来发起请求</span></span><br><span class="line">    data: []</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>随着 umi-request 能力的完善，已经能够支持各个场景、端应用的请求，前端开发只需要掌握一套 API 调用就能实现多端开发，再也不用关注底层协议实现，把更多的精力放在前端开发上。而基于此，umi-request 能在底层做更多的事情，如 mock 数据、自动识别请求类型、接口异常监控上报、接口规范校验等等，最终实现请求治理的目标。umi-request 还有很多能力没有在文中提及，如有兴趣欢迎查看<a href="https://github.com/umijs/umi-request/blob/master/README_zh-CN.md" target="_blank" rel="noopener">详细文档</a>，如果你有好的建议和需求，也欢迎提 <a href="https://github.com/umijs/umi/issues" target="_blank" rel="noopener">issue</a>。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

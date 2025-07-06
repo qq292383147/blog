@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="覆盖vue3.0的最全Vue知识点"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>覆盖vue3.0的最全Vue知识点 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/07/29/Vue/%E8%A6%86%E7%9B%96vue3.0%E7%9A%84%E6%9C%80%E5%85%A8Vue%E7%9F%A5%E8%AF%86%E7%82%B9/">
+                覆盖vue3.0的最全Vue知识点
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-07-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>基 础 篇</p>
+<p>说说你对MVVM的理解：</p>
+<p>Model-View-ViewModel的缩写，Model代表数据模型，View代表UI组件,ViewModel将Model和View关联起来。</p>
+<p>数据会绑定到viewModel层并自动将数据渲染到页面中，视图变化的时候会通知viewModel层更新数据。</p>
+<blockquote>
+<p>mvc/mvp/mvvm的区别</p>
+</blockquote>
+<h2 id="Vue2-x-响应式数据-双向绑定原理"><a href="#Vue2-x-响应式数据-双向绑定原理" class="headerlink" title="Vue2.x 响应式数据/双向绑定原理"></a>Vue2.x 响应式数据/双向绑定原理</h2><p>Vue 数据双向绑定主要是指：<strong>数据变化更新视图，视图变化更新数据。</strong>其中，View 变化更新 Data，可以通过事件监听的方式来实现，所以 Vue 数据双向绑定的工作主要是如何<strong>根据Data变化更新 View</strong>。</p>
+<p>简述：</p>
+<p>当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的 property，并使用 Object.defineProperty 把这些 property 全部转为 getter/setter。</p>
+<p>这些 getter/setter 对用户来说是不可见的，但是在内部它们让 Vue 能够追踪依赖，在 property 被访问和修改时通知变更。</p>
+<p>每个组件实例都对应一个 watcher 实例，它会在组件渲染的过程中把“接触”过的数据 property 记录为依赖。之后当依赖项的 setter 触发时，会通知 watcher，从而使它关联的组件重新渲染。</p>
+<p><strong>深入理解：</strong></p>
+<p><strong>监听器 Observer</strong>：对数据对象进行遍历，包括子属性对象的属性，利用 Object.de-fineProperty() 对属性都加上 setter 和 getter。</p>
+<p>这样的话，给这个对象的某个值赋值，就会触发 setter，那么就能监听到了数据变化。</p>
+<p><strong>解析器 Compile</strong>：解析 Vue 模板指令，将模板中的变量都替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，</p>
+<p>一旦数据有变动，收到通知，调用更新函数进行数据更新。</p>
+<p><strong>订阅者 Watcher</strong>：Watcher 订阅者是 Obs-erver 和 Compile 之间通信的桥梁 ，主要的任务是订阅 Observer 中的属性值变化的消息。</p>
+<p>当收到属性值变化的消息时，触发解析器 Compile 中对应的更新函数。每个组件实例都有相应的 watcher 实例对象，它会在组件渲染的过程中把属性记录为依赖，</p>
+<p>之后当依赖项的 setter 被调用时，会通知 watcher 重新计算，从而致使它关联的组件得以更新——这是一个典型的观察者模式。</p>
+<p><strong>订阅器 Dep</strong>：订阅器采用 发布-订阅 设计模式，用来收集订阅者 Watcher，对监听器 Observer 和 订阅者 Watcher 进行统一管理。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/6fb4e59c8041d8ebd8ee65b7b22b392d8567d6ab.png@1280w_800h.webp" alt="双向绑定原理"></p>
+<h2 id="你知道-Vue3-x-响应式数据原理吗？"><a href="#你知道-Vue3-x-响应式数据原理吗？" class="headerlink" title="你知道 Vue3.x 响应式数据原理吗？"></a>你知道 Vue3.x 响应式数据原理吗？</h2><p>Vue3.x 改用 Proxy 替代 Object.de-fineProperty。</p>
+<p>因为 Proxy 可以直接监听对象和数组的变化，并且有多达13种拦截方法。并且作为新标准将受到浏览器厂商重点持续的性能优化。</p>
+<p>Proxy只会代理对象的第一层，Vue3 是怎样处理这个问题的呢？</p>
+<p>判断当前 Reflect.get 的返回值是否为 Object，如果是则再通过 reactive 方法做代理， 这样就实现了深度观测。</p>
+<p>监测数组的时候可能触发多次get/set，那么如何防止触发多次呢？我们可以判断key是否为当前被代理对象target自身属性，也可以判断旧值与新值是否相等，只有满足以上两个条件之一时，才有可能执行trigger。</p>
+<p><strong>Proxy 与 Object.defineProperty 优劣对比</strong></p>
+<p><strong>Proxy 的优势如下:</strong></p>
+<p>Proxy 可以直接监听对象而非属性；</p>
+<p>Proxy 可以直接监听数组的变化：</p>
+<p>Proxy 有多达 13 种拦截方法,不限于 apply、ownKeys、deleteProperty、has 等等是 Object.defineProperty 不具备的；</p>
+<p>Proxy 返回的是一个新对象,我们可以只操作新的对象达到目的,而 Object.defineProperty 只能遍历对象属性直接修改；</p>
+<p>Proxy 作为新标准将受到浏览器厂商重点持续的性能优化，也就是传说中的新标准的性能红利。</p>
+<p>Object.defineProperty 的优势如下:</p>
+<p>兼容性好，支持 IE9，而 Proxy 的存在浏览器兼容性问题,而且无法用 polyfill 磨平，因此 Vue 的作者才声明需要等到下个大版本( 3.0 )才能用 Proxy 重写。</p>
+<center>VUEX 篇</center>
+
+
+
+<h2 id="Vuex-是什么？"><a href="#Vuex-是什么？" class="headerlink" title="Vuex 是什么？"></a>Vuex 是什么？</h2><blockquote>
+<p>运用到了js设计模式中的单例模式，单例模式想要做到的是，不管我们尝试去创建多少次，它都只给你返回第一次所创建的那唯一的一个实例。</p>
+</blockquote>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。每一个 Vuex 应用的核心就是 store（仓库）。“store” 基本上就是一个容器，它包含着你的应用中大部分的状态 ( state )。</p>
+<p>Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。</p>
+<p>改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化。</p>
+<blockquote>
+<p>Vuex 使用单一状态树，用一个对象就包含了全部的应用层级状态。至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。——Vuex官方文档</p>
+</blockquote>
+<p>主要包括以下几个模块：</p>
+<p><strong>State</strong>：定义了应用状态的数据结构，可以在这里设置默认的初始状态。</p>
+<p><strong>Getter</strong>：允许组件从 Store 中获取数据，mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性。</p>
+<p><strong>Mutation</strong>：是唯一更改 store 中状态的方法，且必须是同步函数。</p>
+<p><strong>Action</strong>：用于提交 mutation，而不是直接变更状态，可以包含任意异步操作。</p>
+<p><strong>Module</strong>：允许将单一的 Store 拆分为多个 store 且同时保存在单一的状态树中。</p>
+<h2 id="什么情况下使用-Vuex？"><a href="#什么情况下使用-Vuex？" class="headerlink" title="什么情况下使用 Vuex？"></a>什么情况下使用 Vuex？</h2><p>如果应用够简单，最好不要使用 Vuex，一个简单的 store 模式即可。</p>
+<p>需要构建一个中大型单页应用时，使用Vuex能更好地在组件外部管理状态。</p>
+<h2 id="Vuex和单纯的全局对象有什么区别？"><a href="#Vuex和单纯的全局对象有什么区别？" class="headerlink" title="Vuex和单纯的全局对象有什么区别？"></a>Vuex和单纯的全局对象有什么区别？</h2><p>Vuex 的状态存储是响应式的。</p>
+<p>当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。</p>
+<p>不能直接改变 store 中的状态。</p>
+<p>改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。</p>
+<h2 id="为什么-Vuex-的-mutation-中不能做异步操作？"><a href="#为什么-Vuex-的-mutation-中不能做异步操作？" class="headerlink" title="为什么 Vuex 的 mutation 中不能做异步操作？"></a>为什么 Vuex 的 mutation 中不能做异步操作？</h2><p>Vuex中所有的状态更新的唯一途径都是mutation，异步操作通过 Action 来提交 mutation实现。</p>
+<p>这样使得我们可以方便地跟踪每一个状态的变化，从而让我们能够实现一些工具帮助我们更好地了解我们的应用。</p>
+<p>每个mutation执行完成后都会对应到一个新的状态变更，这样devtools就可以打个快照存下来，然后就可以实现 time-travel了。</p>
+<p>如果mutation支持异步操作，就没有办法知道状态是何时更新的，无法很好的进行状态的追踪，给调试带来困难。</p>
+<h2 id="新增：vuex的action有返回值吗？返回的是什么？"><a href="#新增：vuex的action有返回值吗？返回的是什么？" class="headerlink" title="新增：vuex的action有返回值吗？返回的是什么？"></a>新增：vuex的action有返回值吗？返回的是什么？</h2><p>store.dispatch 可以处理被触发的 action 的处理函数返回的 Promise，并且 store.dispatch 仍旧返回 Promise。</p>
+<p>Action 通常是异步的。</p>
+<p>要知道 action 什么时候结束或者组合多个 action以处理更加复杂的异步流程，可以通过定义action时返回一个promise对象，就可以在派发action的时候就可以通过处理返回的 Promise处理异步流程。</p>
+<p>一个 store.dispatch 在不同模块中可以触发多个 action 函数。在这种情况下，只有当所有触发函数完成后，返回的 Promise 才会执行。</p>
+<h2 id="新增：为什么不直接分发mutation-而要通过分发action之后提交-mutation变更状态"><a href="#新增：为什么不直接分发mutation-而要通过分发action之后提交-mutation变更状态" class="headerlink" title="新增：为什么不直接分发mutation,而要通过分发action之后提交 mutation变更状态"></a>新增：为什么不直接分发mutation,而要通过分发action之后提交 mutation变更状态</h2><p>mutation 必须同步执行，我们可以在 action 内部执行异步操作。</p>
+<p>可以进行一系列的异步操作，并且通过提交 mutation 来记录 action 产生的副作用（即状态变更）。</p>
+<center>常 规 篇</center>
+
+
+
+<h2 id="computed-和-watch-的区别和运用的场景？"><a href="#computed-和-watch-的区别和运用的场景？" class="headerlink" title="computed 和 watch 的区别和运用的场景？"></a>computed 和 watch 的区别和运用的场景？</h2><p>computed：是计算属性，依赖其它属性值，并且 computed 的值有缓存。</p>
+<p>只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed 的值；</p>
+<p>watch：没有缓存性，更多的是「观察」的作用，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作；</p>
+<p>当我们需要深度监听对象中的属性时，可以打开deep：true选项，这样便会对对象中的每一项进行监听。</p>
+<p>运用场景：</p>
+<p>当我们需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</p>
+<p>当我们需要在数据变化时执行异步或开销较大的操作时，应该使用 watch。</p>
+<p>使用watch选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</p>
+<h2 id="Vue2-x-组件通信有哪些方式？"><a href="#Vue2-x-组件通信有哪些方式？" class="headerlink" title="Vue2.x 组件通信有哪些方式？"></a>Vue2.x 组件通信有哪些方式？</h2><p><strong>父子组件通信：</strong></p>
+<p>事件机制(父-&gt;子props,子-&gt;父 $on、$emit)；</p>
+<p>获取父子组件实例 $parent、$children；</p>
+<p>Ref 获取实例的方式调用组件的属性或者方法；</p>
+<p>Provide、inject (不推荐使用，组件库时很常用)。</p>
+<p><strong>兄弟组件通信：</strong></p>
+<p>eventBus 这种方法通过一个空的 Vue实例作为中央事件总线（事件中心），用它来触发事件和监听事件，从而实现任何组件间的通信，包括父子、隔代、兄弟组件；Vuex。</p>
+<blockquote>
+<p>Vue.prototype.$bus = new Vue</p>
+</blockquote>
+<p><strong><em>跨级组件通信</em></strong>：Vuex；$attrs、$listeners；Provide、inject。</p>
+<h2 id="说一下v-if和v-show的区别？"><a href="#说一下v-if和v-show的区别？" class="headerlink" title="说一下v-if和v-show的区别？"></a>说一下v-if和v-show的区别？</h2><p>当条件不成立时，v-if不会渲染DOM元素，v-show操作的是样式(display)，切换当前DOM的显示和隐藏。</p>
+<p>v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景；</p>
+<p>v-show 则适用于需要非常频繁切换条件的场景。</p>
+<h2 id="为什么-v-for-和-v-if-不建议用在一起？"><a href="#为什么-v-for-和-v-if-不建议用在一起？" class="headerlink" title="为什么 v-for 和 v-if 不建议用在一起？"></a>为什么 v-for 和 v-if 不建议用在一起？</h2><p>当 v-for 和 v-if 处于同一个节点时，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。</p>
+<p>如果要遍历的数组很大，而真正要展示的数据很少时，这将造成很大的性能浪费。</p>
+<p>这种场景建议使用 computed，先对数据进行过滤。</p>
+<h2 id="组件中的data为什么是一个函数？"><a href="#组件中的data为什么是一个函数？" class="headerlink" title="组件中的data为什么是一个函数？"></a>组件中的data为什么是一个函数？</h2><p>一个组件被复用多次的话，也就会创建多个实例。本质上，这些实例用的都是同一个构造函数。</p>
+<p>如果data是对象的话，对象属于引用类型，会影响到所有的实例。所以为了保证组件不同的实例之间data不冲突，data必须是一个函数。</p>
+<h2 id="子组件为什么不可以修改父组件传递的Prop？-怎么理解vue的单向数据流？"><a href="#子组件为什么不可以修改父组件传递的Prop？-怎么理解vue的单向数据流？" class="headerlink" title="子组件为什么不可以修改父组件传递的Prop？/怎么理解vue的单向数据流？"></a>子组件为什么不可以修改父组件传递的Prop？/怎么理解vue的单向数据流？</h2><p>Vue提倡单向数据流,即父级props的更新会流向子组件,但是反过来则不行。</p>
+<p>这是为了防止意外的改变父组件状态，使得应用的数据流变得难以理解。</p>
+<p>如果破坏了单向数据流，当应用复杂时，debug 的成本会非常高。</p>
+<h2 id="v-model是如何实现双向绑定的？"><a href="#v-model是如何实现双向绑定的？" class="headerlink" title="v-model是如何实现双向绑定的？"></a>v-model是如何实现双向绑定的？</h2><p>v-model是用来在表单控件或者组件上创建双向绑定的。</p>
+<p>他的本质是v-bind和v-on的语法糖。</p>
+<p>在一个组件上使用v-model，默认会为组件绑定名为value的prop和名为input的事件。</p>
+<h2 id="nextTick的实现原理是什么？"><a href="#nextTick的实现原理是什么？" class="headerlink" title="nextTick的实现原理是什么？"></a>nextTick的实现原理是什么？</h2><p>在下次 DOM 更新循环结束之后执行延迟回调，在修改数据之后立即使用 nextTick 来获取更新后的 DOM。</p>
+<p>nextTick主要使用了宏任务和微任务。</p>
+<p>根据执行环境分别尝试采用Promise、MutationObserver、setImmediate，</p>
+<p>如果以上都不行则采用setTimeout定义了一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列。</p>
+<h2 id="Vue不能检测数组的哪些变动？Vue-怎么用-vm-set-解决对象新增属性不能响应的问题-？"><a href="#Vue不能检测数组的哪些变动？Vue-怎么用-vm-set-解决对象新增属性不能响应的问题-？" class="headerlink" title="Vue不能检测数组的哪些变动？Vue 怎么用 vm.$set() 解决对象新增属性不能响应的问题 ？"></a>Vue不能检测数组的哪些变动？Vue 怎么用 vm.$set() 解决对象新增属性不能响应的问题 ？</h2><p><strong>Vue 不能检测以下数组的变动：</strong></p>
+<p>当你利用索引直接设置一个数组项时，例如：vm.items[indexOfItem] = newValue；</p>
+<p>当你修改数组的长度时，例如：vm.items.length = newLength；</p>
+<p>解决办法：</p>
+<p>第一类问题：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 法一：</span></span><br><span class="line">Vue.setVue.set(vm.items, indexOfItem, newValue)</span><br><span class="line"><span class="comment">// 法二：</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.splicevm.items.splice(indexOfItem, <span class="number">1</span>, newValue)</span><br></pre></td></tr></table></figure>
+<p>第二类问题，可使用 splice：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.items.splice(newLength)</span><br></pre></td></tr></table></figure>
+<p><strong>vm.$set 的实现原理是：</strong></p>
+<p>如果目标是数组，直接使用数组的 splice 方法触发相应式；</p>
+<p>如果目标是对象，会先判读属性是否存在、对象是否是响应式，</p>
+<p>最终如果要对属性进行响应式处理，则是通过调用 defineReactive 方法进行响应式处理（ defineReactive 方法就是 Vue 在初始化对象时，给对象属性采用 Object.defineProperty 动态添加 getter 和 setter 的功能所调用的方法）。</p>
+<h2 id="Vue事件绑定原理是什么？"><a href="#Vue事件绑定原理是什么？" class="headerlink" title="Vue事件绑定原理是什么？"></a>Vue事件绑定原理是什么？</h2><p>原生事件绑定是通过addEventListener绑定给真实元素的，组件事件绑定是通过Vue自定义的$on实现的。</p>
+<h2 id="说一下虚拟Dom以及key属性的作用？"><a href="#说一下虚拟Dom以及key属性的作用？" class="headerlink" title="说一下虚拟Dom以及key属性的作用？"></a>说一下虚拟Dom以及key属性的作用？</h2><p>由于在浏览器中操作DOM是很昂贵的。频繁的操作DOM，会产生一定的性能问题。这就是虚拟Dom的产生原因。</p>
+<p>Virtual DOM本质就是用一个原生的JS对象去描述一个DOM节点。是对真实DOM的一层抽象。(也就是源码中的VNode类，它定义在src/core/vdom/vnode.js中。)</p>
+<p>虚拟 DOM 的实现原理主要包括以下 3 部分：</p>
+<p>用 JavaScript 对象模拟真实 DOM 树，对真实 DOM 进行抽象；</p>
+<p>diff 算法 — 比较两棵虚拟 DOM 树的差异；</p>
+<p>pach 算法 — 将两个虚拟 DOM 对象的差异应用到真正的 DOM 树。</p>
+<p>key 是为 Vue 中 vnode 的唯一标记，通过这个 key，我们的 diff 操作可以：</p>
+<p>更准确：因为带 key 就不是就地复用了，在 sameNode 函数a.key === b.key对比中可以避免就地复用的情况。所以会更加准确。</p>
+<p>更快速：利用 key 的唯一性生成 map 对象来获取对应节点，比遍历方式更快。</p>
+<h2 id="为什么不建议用index作为key"><a href="#为什么不建议用index作为key" class="headerlink" title="为什么不建议用index作为key?"></a>为什么不建议用index作为key?</h2><p>不建议用index 作为 key，和没写基本上没区别，因为不管你数组的顺序怎么颠倒，index 都是 0, 1, 2 这样排列，导致 Vue 会复用错误的旧子节点，做很多额外的工作。</p>
+<center>生 命 周 期 篇</center>
+
+
+
+<h2 id="说一下你对Vue的生命周期的理解"><a href="#说一下你对Vue的生命周期的理解" class="headerlink" title="说一下你对Vue的生命周期的理解"></a>说一下你对Vue的生命周期的理解</h2><p><strong>简单回答：</strong></p>
+<p>beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed；</p>
+<p>keep-alive 有自己独立的钩子函数 activated 和 deactivated。</p>
+<p><strong>复杂回答：</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/8f3cef7e75c93efad128b244bd620f889e70809d.png@1264w_1476h.webp" alt="生命周期表"></p>
+<h2 id="Vue中组件生命周期调用顺序是什么样的？"><a href="#Vue中组件生命周期调用顺序是什么样的？" class="headerlink" title="Vue中组件生命周期调用顺序是什么样的？"></a>Vue中组件生命周期调用顺序是什么样的？</h2><p>组件的调用顺序都是先父后子,渲染完成的顺序是先子后父；</p>
+<p>组件的销毁操作是先父后子，销毁完成的顺序是先子后父。</p>
+<h2 id="在什么阶段才能访问操作DOM？"><a href="#在什么阶段才能访问操作DOM？" class="headerlink" title="在什么阶段才能访问操作DOM？"></a>在什么阶段才能访问操作DOM？</h2><p>在钩子函数 mounted 被调用前，Vue 已经将编译好的模板挂载到页面上，所以在 mounted 中可以访问操作 DOM。</p>
+<h2 id="你的接口请求一般放在哪个生命周期中？"><a href="#你的接口请求一般放在哪个生命周期中？" class="headerlink" title="你的接口请求一般放在哪个生命周期中？"></a>你的接口请求一般放在哪个生命周期中？</h2><p>可以在钩子函数 created、beforeMount、mounted 中进行调用，因为在这三个钩子函数中，data 已经创建，可以将服务端端返回的数据进行赋值。</p>
+<p>但是推荐在 created 钩子函数中调用异步请求，因为在 created 钩子函数中调用异步请求有以下优点：</p>
+<p>能更快获取到服务端数据，减少页面loading 时间；</p>
+<p>ssr不支持 beforeMount 、mounted 钩子函数，所以放在 created 中有助于一致性。</p>
+<center>路 由 篇</center>
+
+
+
+<h2 id="vue路由hash模式和history模式实现原理分别是什么，他们的区别是什么？"><a href="#vue路由hash模式和history模式实现原理分别是什么，他们的区别是什么？" class="headerlink" title="vue路由hash模式和history模式实现原理分别是什么，他们的区别是什么？"></a>vue路由hash模式和history模式实现原理分别是什么，他们的区别是什么？</h2><p><strong>hash 模式：</strong></p>
+<p>后面 hash 值的变化，不会导致浏览器向服务器发出请求，浏览器不发出请求，就不会刷新页面；</p>
+<p>通过监听 hashchange 事件可以知道 hash 发生了哪些变化，然后根据 hash 变化来实现更新页面部分内容的操作。</p>
+<p><strong>history 模式：</strong></p>
+<p>history 模式的实现，主要是 HTML5 标准发布的两个 API，pushState 和 replaceState，这两个 API 可以在改变 url，但是不会发送请求。这样就可以监听 url 变化来实现更新页面部分内容的操作。</p>
+<p><strong>区别：</strong></p>
+<p>url 展示上，hash 模式有“#”，history 模式没有；</p>
+<p>刷新页面时，hash 模式可以正常加载到 hash 值对应的页面，而 history 没有处理的话，会返回 404，一般需要后端将所有页面都配置重定向到首页路由；</p>
+<p>兼容性，hash 可以支持低版本浏览器和 IE。</p>
+<h2 id="路由懒加载是什么意思？如何实现路由懒加载？"><a href="#路由懒加载是什么意思？如何实现路由懒加载？" class="headerlink" title="路由懒加载是什么意思？如何实现路由懒加载？"></a>路由懒加载是什么意思？如何实现路由懒加载？</h2><p>路由懒加载的含义：把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件。</p>
+<p>实现：结合 Vue 的异步组件和 Webpack 的代码分割功能：</p>
+<p>可以将异步组件定义为返回一个 Promise 的工厂函数 (该函数返回的 Promise 应该 resolve 组件本身)；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">Promise</span>.resolve(&#123; <span class="comment">/* 组件定义对象 */</span> &#125;)</span><br></pre></td></tr></table></figure>
+<p>在 Webpack 2 中，我们可以使用动态 import语法来定义代码分块点 (split point)；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>(<span class="string">'./Foo.vue'</span>) <span class="comment">// 返回 Promise</span></span><br></pre></td></tr></table></figure>
+<p>结合这两者，这就是如何定义一个能够被 Webpack 自动代码分割的异步组件；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./Foo.vue'</span>)<span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123; <span class="attr">routes</span>: [ &#123; <span class="attr">path</span>: <span class="string">'/foo'</span>, <span class="attr">component</span>: Foo &#125; ]&#125;)</span><br></pre></td></tr></table></figure>
+<p>使用命名 chunk，和webpack中的魔法注释就可以把某个路由下的所有组件都打包在同个异步块 (chunk) 中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chunkconst Foo = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: "group-foo" */</span> <span class="string">'./Foo.vue'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Vue-router-导航守卫有哪些"><a href="#Vue-router-导航守卫有哪些" class="headerlink" title="Vue-router 导航守卫有哪些"></a>Vue-router 导航守卫有哪些</h2><p>全局前置/钩子：beforeEach、beforeR-esolve、afterEach</p>
+<p>路由独享的守卫：beforeEnter</p>
+<p>组件内的守卫：beforeRouteEnter、beforeRouteUpdate、beforeRouteLeave</p>
+<center>进 阶 篇</center>
+
+
+
+<h2 id="说说vue和react的异同："><a href="#说说vue和react的异同：" class="headerlink" title="说说vue和react的异同："></a>说说vue和react的异同：</h2><p><strong>同：</strong></p>
+<p>使用 Virtual DOM；</p>
+<p>提供了响应式 (Reactive) 和组件化 (Composable) 的视图组件；</p>
+<p>将注意力集中保持在核心库，而将其他功能如路由和全局状态管理交给相关的库。</p>
+<p><strong>异：</strong></p>
+<p>在 React 应用中，当某个组件的状态发生变化时，它会以该组件为根，重新渲染整个组件子树（除非使用PureComponent/shouldComp-onentUpdate），</p>
+<p>在 Vue 应用中，组件的依赖是在渲染过程中自动追踪的，所以系统能精确知晓哪个组件确实需要被重渲染；</p>
+<p>在 React 中，一切都是 JavaScript。不仅仅是 HTML 可以用 JSX 来表达，现在的潮流也越来越多地将 CSS 也纳入到 JavaScript 中来处理；</p>
+<p>Vue 的路由库和状态管理库都是由官方维护支持且与核心库同步更新的。</p>
+<p>React 则是选择把这些问题交给社区维护，因此创建了一个更分散的生态系统，所以有更丰富的生态系统；</p>
+<p>Vue 提供了CLI 脚手架，能让你通过交互式的脚手架引导非常容易地构建项目。你甚至可以使用它快速开发组件的原型。</p>
+<p>React 在这方面也提供了create-react-app，但是现在还存在一些局限性；</p>
+<p>React Native 能使你用相同的组件模型编写有本地渲染能力的 APP，Vue 和Weex会进行官方合作，Weex 是阿里巴巴发起的跨平台用户界面开发框架，同时也正在 Apache 基金会进行项目孵化，</p>
+<p>另一个选择是NativeScript-Vue，一个用 Vue.js 构建完全原生应用的NativeScript插件。</p>
+<h2 id="什么是-mixin-？"><a href="#什么是-mixin-？" class="headerlink" title="什么是 mixin ？"></a>什么是 mixin ？</h2><p>Mixin 使我们能够为 Vue 组件编写可插拔和可重用的功能。</p>
+<p>如果你希望在多个组件之间重用一组组件选项，例如生命周期 hook、 方法等，则可以将其编写为 mixin，并在组件中简单的引用它。</p>
+<p>然后将 mixin 的内容合并到组件中。如果你要在 mixin 中定义生命周期 hook，那么它在执行时将优化于组件自已的 hook。</p>
+<h2 id="在-Vue-实例中编写生命周期-hook-或其他-option-properties-时，为什么不使用箭头函数-？"><a href="#在-Vue-实例中编写生命周期-hook-或其他-option-properties-时，为什么不使用箭头函数-？" class="headerlink" title="在 Vue 实例中编写生命周期 hook 或其他 option/properties 时，为什么不使用箭头函数 ？"></a>在 Vue 实例中编写生命周期 hook 或其他 option/properties 时，为什么不使用箭头函数 ？</h2><p>箭头函数自已没有定义 this 上下文中。</p>
+<p>当你在 Vue 程序中使用箭头函数 ( =&gt; ) 时，this 关键字病不会绑定到 Vue 实例，因此会引发错误。所以强烈建议改用标准函数声明。</p>
+<h2 id="Vue模版编译原理知道吗，能简单说一下吗？"><a href="#Vue模版编译原理知道吗，能简单说一下吗？" class="headerlink" title="Vue模版编译原理知道吗，能简单说一下吗？"></a>Vue模版编译原理知道吗，能简单说一下吗？</h2><p>简单说，Vue的编译过程就是将template转化为render函数的过程。会经历以下阶段（生成AST树/优化/codegen）：</p>
+<p>首先解析模版，生成AST语法树(一种用JavaScript对象的形式来描述整个模板)。</p>
+<p>使用大量的正则表达式对模板进行解析，遇到标签、文本的时候都会执行对应的钩子进行相关处理。</p>
+<p>Vue的数据是响应式的，但其实模板中并不是所有的数据都是响应式的。有一些数据首次渲染后就不会再变化，对应的DOM也不会变化。</p>
+<p>那么优化过程就是深度遍历AST树，按照相关条件对树节点进行标记。这些被标记的节点(静态节点)我们就可以跳过对它们的比对，对运行时的模板起到很大的优化作用。</p>
+<p>编译的最后一步是将优化后的AST树转换为可执行的代码。</p>
+<h2 id="diff算法说一下？"><a href="#diff算法说一下？" class="headerlink" title="diff算法说一下？"></a>diff算法说一下？</h2><p>同级比较，再比较子节点；</p>
+<p>先判断一方有子节点一方没有子节点的情况(如果新的children没有子节点，将旧的子节点移除)；</p>
+<p>比较都有子节点的情况(核心diff)；</p>
+<p>递归比较子节点。</p>
+<h2 id="说说你对keep-alive组件的了解"><a href="#说说你对keep-alive组件的了解" class="headerlink" title="说说你对keep-alive组件的了解"></a>说说你对keep-alive组件的了解</h2><p>keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，避免重新渲染 ，其有以下特性：</p>
+<p>一般结合路由和动态组件一起使用，用于缓存组件；</p>
+<p>提供 include 和 exclude 属性，两者都支持字符串或正则表达式，</p>
+<p>include 表示只有名称匹配的组件会被缓存，exclude 表示任何名称匹配的组件都不会被缓存 ，其中 exclude 的优先级比 include 高；</p>
+<p>对应两个钩子函数 activated 和 deactivated ，当组件被激活时，触发钩子函数 activated，当组件被移除时，触发钩子函数 deactivated。</p>
+<h2 id="说说你对SSR的了解"><a href="#说说你对SSR的了解" class="headerlink" title="说说你对SSR的了解"></a>说说你对SSR的了解</h2><p>SSR也就是服务端渲染，也就是将Vue在客户端把标签渲染成HTML的工作放在服务端完成，然后再把html直接返回给客户端。</p>
+<p>SSR的优势：更好的SEO；首屏加载速度更快；</p>
+<p>SSR的缺点：</p>
+<p>开发条件会受到限制，服务器端渲染只支持beforeCreate和created两个钩子；</p>
+<p>当我们需要一些外部扩展库时需要特殊处理，服务端渲染应用程序也需要处于Node.js的运行环境；</p>
+<p>更多的服务端负载。</p>
+<h2 id="你都做过哪些Vue的性能优化？"><a href="#你都做过哪些Vue的性能优化？" class="headerlink" title="你都做过哪些Vue的性能优化？"></a>你都做过哪些Vue的性能优化？</h2><p><strong>编码阶段：</strong></p>
+<p>尽量减少data中的数据，data中的数据都会增加getter和setter，会收集对应的watcher；</p>
+<p>v-if和v-for不能连用；</p>
+<p>如果需要使用v-for给每项元素绑定事件时使用事件代理；</p>
+<p>SPA 页面采用keep-alive缓存组件；</p>
+<p>在更多的情况下，使用v-if替代v-show；</p>
+<p>key保证唯一；</p>
+<p>使用路由懒加载、异步组件；</p>
+<p>防抖、节流；</p>
+<p>第三方模块按需导入；</p>
+<p>长列表滚动到可视区域动态加载；</p>
+<p>图片懒加载。</p>
+<p><strong>SEO优化</strong>：预渲染；服务端渲染SSR。</p>
+<p><strong>打包优化</strong>：</p>
+<p>压缩代码；</p>
+<p>Tree Shaking/Scope Hoisting；</p>
+<p>使用cdn加载第三方模块；</p>
+<p>多线程打包happypack；</p>
+<p>splitChunks抽离公共文件；</p>
+<p>sourceMap优化。</p>
+<p><strong>用户体验</strong>：骨架屏；PWA；还可以使用缓存(客户端缓存、服务端缓存)优化、服务端开启gzip压缩等。</p>
+<h2 id="vue2-x中如何监测数组变化？"><a href="#vue2-x中如何监测数组变化？" class="headerlink" title="vue2.x中如何监测数组变化？"></a>vue2.x中如何监测数组变化？</h2><p>使用了函数劫持的方式，重写了数组的方法，Vue将data中的数组进行了原型链重写，指向了自己定义的数组原型方法，当调用数组api时，可以通知依赖更新。</p>
+<p>如果数组中包含着引用类型，会对数组中的引用类型再次递归遍历进行监控。这样就实现了监测数组变化。</p>
+<h2 id="说说你对-SPA-单页面的理解，它的优缺点分别是什么？"><a href="#说说你对-SPA-单页面的理解，它的优缺点分别是什么？" class="headerlink" title="说说你对 SPA 单页面的理解，它的优缺点分别是什么？"></a>说说你对 SPA 单页面的理解，它的优缺点分别是什么？</h2><p>SPA（ single-page application ）仅在 Web 页面初始化时加载相应的 HTML、JavaScript 和 CSS。</p>
+<p>一旦页面加载完成，SPA 不会因为用户的操作而进行页面的重新加载或跳转；取而代之的是利用路由机制实现 HTML 内容的变换，UI 与用户的交互，避免页面的重新加载。</p>
+<p><strong>优点</strong>：用户体验好、快，内容的改变不需要重新加载整个页面，避免了不必要的跳转和重复渲染；</p>
+<p>基于上面一点，SPA 相对对服务器压力小；</p>
+<p>前后端职责分离，架构清晰，前端进行交互逻辑，后端负责数据处理。</p>
+<p><strong>缺点</strong>：初次加载耗时多：为实现单页 Web 应用功能及显示效果，需要在加载页面的时候将 JavaScript、CSS 统一加载，部分页面按需加载；</p>
+<p>前进后退路由管理：由于单页应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理；</p>
+<p>SEO 难度较大：由于所有的内容都在一个页面中动态替换显示，所以在 SEO 上其有着天然的弱势。</p>
+<h2 id="对于即将到来的-vue3-0-特性你有什么了解的吗？"><a href="#对于即将到来的-vue3-0-特性你有什么了解的吗？" class="headerlink" title="对于即将到来的 vue3.0 特性你有什么了解的吗？"></a>对于即将到来的 vue3.0 特性你有什么了解的吗？</h2><p>监测机制的改变：</p>
+<p>3.0 将带来基于代理 Proxy的 observer 实现，提供全语言覆盖的反应性跟踪；</p>
+<p>消除了 Vue 2 当中基于 Object.de-fineProperty 的实现所存在的很多限制：</p>
+<p>只能监测属性，不能监测对象；</p>
+<p>检测属性的添加和删除；</p>
+<p>检测数组索引和长度的变更；</p>
+<p>支持 Map、Set、WeakMap 和 WeakSet。</p>
+<p><strong>模板：</strong></p>
+<p>模板方面没有大的变更，只改了作用域插槽，2.x 的机制导致作用域插槽变了，父组件会重新渲染，</p>
+<p>而 3.0 把作用域插槽改成了函数的方式，这样只会影响子组件的重新渲染，提升了渲染的性能。</p>
+<p>同时，对于 render 函数的方面，vue3.0 也会进行一系列更改来方便习惯直接使用 api 来生成 vdom 。</p>
+<p><strong>对象式的组件声明方式：</strong></p>
+<p>vue2.x 中的组件是通过声明的方式传入一系列 option，和 TypeScript 的结合需要通过一些装饰器的方式来做，虽然能实现功能，但是比较麻烦。</p>
+<p>3.0 修改了组件的声明方式，改成了类式的写法，这样使得和 TypeScript 的结合变得很容易。</p>
+<p><strong>其它方面的更改：</strong></p>
+<p>支持自定义渲染器，从而使得 weex 可以通过自定义渲染器的方式来扩展，而不是直接 fork 源码来改的方式。</p>
+<p>支持 Fragment（多个根节点）和 Protal（在 dom 其他部分渲染组建内容）组件，针对一些特殊的场景做了处理。</p>
+<p>基于 tree shaking 优化，提供了更多的内置功能。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

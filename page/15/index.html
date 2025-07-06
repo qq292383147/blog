@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/20/React/%E3%80%8EReact%20Navigation%203x%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%E3%80%8FcreateMaterialTopTabNavigator%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">
+                『React Navigation 3x系列教程』createSwitchNavigator开发指南
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="createSwitchNavigator"><a href="#createSwitchNavigator" class="headerlink" title="[createSwitchNavigator]"></a>[createSwitchNavigator]</h2><p>SwitchNavigator 的用途是一次只显示一个页面。 默认情况下，它不处理返回操作，并在你切换时将路由重置为默认状态。</p>
+<h2 id="createSwitchNavigator-API"><a href="#createSwitchNavigator-API" class="headerlink" title="[createSwitchNavigator API]"></a>[createSwitchNavigator API]</h2><blockquote>
+<p>createSwitchNavigator(RouteConfigs, SwitchNavigatorConfig):</p>
+</blockquote>
+<ul>
+<li><code>RouteConfigs</code>(必选，同createStackNavigator的RouteConfigs)：路由配置对象是从路由名称到路由配置的映射，告诉导航器该路由呈现什么。</li>
+<li><code>SwitchNavigatorConfig</code>(可选)：配置导航器的路由;</li>
+</ul>
+<h2 id="SwitchNavigatorConfig"><a href="#SwitchNavigatorConfig" class="headerlink" title="[SwitchNavigatorConfig]"></a>[SwitchNavigatorConfig]</h2><p>几个被传递到底层路由以修改导航逻辑的选项：</p>
+<ul>
+<li>initialRouteName -第一次加载时初始选项卡路由的 routeName。</li>
+<li>resetOnBlur - 切换离开屏幕时，重置所有嵌套导航器的状态。 默认为true。</li>
+<li>paths - 提供 routeName 到 path 配置的映射, 它重写 routeConfigs 中设置的路径。</li>
+<li>backBehavior - 控制 “返回” 按钮是否会导致 Tab 页切换到初始 Tab 页? 如果是, 设置为 initialRoute, 否则 none。 默认为none行为。</li>
+</ul>
+<h2 id="【案例1】使用createSwitchNavigator进行登录场景的跳转"><a href="#【案例1】使用createSwitchNavigator进行登录场景的跳转" class="headerlink" title="[【案例1】使用createSwitchNavigator进行登录场景的跳转]"></a>[【案例1】使用createSwitchNavigator进行登录场景的跳转]</h2><p>多数应用程序都要求用户通过某种方式进行身份验证才能访问与用户或其他私人内容相关的数据。 通常情况下，流程如下所示：</p>
+<ul>
+<li>用户打开应用。</li>
+<li>该应用程序从持久存储中加载某个身份验证状态（例如，AsyncStorage）。</li>
+<li>当状态被加载时，根据是否加载有效的认证状态，向用户呈现认证页面或主页面。</li>
+<li>当用户注销时，我们清除认证状态并跳转到认证页面。</li>
+<li>注意：我们说“认证页面”，因为通常有不止一个。 您可能会有一个主页面，其中包含用户名和密码字段，一个用于“忘记密码”的页面，一个用于注册的页面。</li>
+</ul>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\RN3.x\1.gif" alt="1"></p>
+<h2 id="第一步：创建一个createSwitchNavigator类型的导航器"><a href="#第一步：创建一个createSwitchNavigator类型的导航器" class="headerlink" title="[第一步：创建一个createSwitchNavigator类型的导航器]"></a>[第一步：创建一个createSwitchNavigator类型的导航器]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">const AppStack = createStackNavigator(&#123;</span><br><span class="line">    Home: &#123;</span><br><span class="line">        screen: HomePage</span><br><span class="line">    &#125;,</span><br><span class="line">    Page1: &#123;</span><br><span class="line">        screen: Page1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">const AuthStack = createStackNavigator(&#123;</span><br><span class="line">    Login: &#123;</span><br><span class="line">        screen: Login</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;,&#123;</span><br><span class="line">    navigationOptions: &#123;</span><br><span class="line">        // header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">export default createSwitchNavigator(</span><br><span class="line">    &#123;</span><br><span class="line">        Auth: AuthStack,</span><br><span class="line">        App: AppStack,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        initialRouteName: &apos;Auth&apos;,</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="第二步：界面跳转"><a href="#第二步：界面跳转" class="headerlink" title="[第二步：界面跳转]"></a>[第二步：界面跳转]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> const &#123;navigation&#125; = this.props;</span><br><span class="line"> ...</span><br><span class="line"> &lt;Button</span><br><span class="line">    title=&quot;Login&quot;</span><br><span class="line">    onPress=&#123;() =&gt; &#123;</span><br><span class="line">        navigation.navigate(&apos;App&apos;);</span><br><span class="line">    &#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/20/React/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B(%E4%B8%8B)/">
+                React Native之React速学教程(下)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="ES6的特性"><a href="#ES6的特性" class="headerlink" title="ES6的特性"></a>ES6的特性</h2><h3 id="何为ES6？"><a href="#何为ES6？" class="headerlink" title="何为ES6？"></a>何为ES6？</h3><p>ES6全称ECMAScript 6.0，ES6于2015年6月17日发布，ECMAScript是ECMA制定的标准化脚本语言。目前JavaScript使用的ECMAScript版本为ECMAScript-262。</p>
+<p>下面我为大家列举了ES6新特性中对我们开发影响比较大的六方面的特性。</p>
+<h3 id="1-类（class）"><a href="#1-类（class）" class="headerlink" title="1.类（class）"></a>1.类（class）</h3><p>对熟悉Java，object-c，c#等纯面向对象语言的开发者来说，都会对class有一种特殊的情怀。ES6 引入了class（类），让JavaScript的面向对象编程变得更加简单和易于理解。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">   <span class="comment">// 构造方法，实例化的时候将会被调用，如果不指定，那么会有一个不带参数的默认构造函数.</span></span><br><span class="line">   <span class="keyword">constructor</span>(name,color) &#123;</span><br><span class="line">     <span class="keyword">this</span>.name = name;</span><br><span class="line">     <span class="keyword">this</span>.color = color;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="comment">// toString 是原型对象上的属性</span></span><br><span class="line">   toString() &#123;</span><br><span class="line">     <span class="built_in">console</span>.log(<span class="string">'name:'</span> + <span class="keyword">this</span>.name + <span class="string">',color:'</span> + <span class="keyword">this</span>.color);</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> animal = <span class="keyword">new</span> Animal(<span class="string">'dog'</span>,<span class="string">'white'</span>);<span class="comment">//实例化Animal</span></span><br><span class="line">animal.toString();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(animal.hasOwnProperty(<span class="string">'name'</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(animal.hasOwnProperty(<span class="string">'toString'</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(animal.__proto__.hasOwnProperty(<span class="string">'toString'</span>)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line"> <span class="keyword">constructor</span>(action) &#123;</span><br><span class="line">   <span class="comment">// 子类必须要在constructor中指定super 方法，否则在新建实例的时候会报错.</span></span><br><span class="line">   <span class="comment">// 如果没有置顶consructor,默认带super方法的constructor将会被添加、</span></span><br><span class="line">   <span class="keyword">super</span>(<span class="string">'cat'</span>,<span class="string">'white'</span>);</span><br><span class="line">   <span class="keyword">this</span>.action = action;</span><br><span class="line"> &#125;</span><br><span class="line"> toString() &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="keyword">super</span>.toString());</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat(<span class="string">'catch'</span>)</span><br><span class="line">cat.toString();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例cat 是 Cat 和 Animal 的实例，和Es5完全一致。</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Cat); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(cat <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-模块-Module"><a href="#2-模块-Module" class="headerlink" title="2.模块(Module)"></a>2.模块(Module)</h3><p>ES5不支持原生的模块化，在ES6中，模块将作为重要的组成部分被添加进来。模块的功能主要由 export 和 import 组成。每一个模块都有自己单独的作用域，模块之间的相互调用关系是通过 export 来规定模块对外暴露的接口，通过import来引用其它模块提供的接口。同时还为模块创造了命名空间，防止函数的命名冲突。</p>
+<h4 id="导出-export"><a href="#导出-export" class="headerlink" title="导出(export)"></a>导出(export)</h4><p>ES6允许在一个模块中使用export来导出多个变量或方法。</p>
+<p><strong>导出变量</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//test.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> name = <span class="string">'Rainbow'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得：ES6不仅支持变量的导出，也支持常量的导出。 <code>export const sqrt = Math.sqrt;//导出常量</code></p>
+</blockquote>
+<p>ES6将一个文件视为一个模块，上面的模块通过 export 向外输出了一个变量。一个模块也可以同时往外面输出多个变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//test.js</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'Rainbow'</span>;</span><br><span class="line"><span class="keyword">var</span> age = <span class="string">'24'</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;name, age&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>导出函数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// myModule.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">myModule</span>(<span class="params">someArg</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> someArg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="导入-import"><a href="#导入-import" class="headerlink" title="导入(import)"></a>导入(import)</h4><p>定义好模块的输出以后就可以在另外一个模块通过import引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;myModule&#125; <span class="keyword">from</span> <span class="string">'myModule'</span>;<span class="comment">// main.js</span></span><br><span class="line"><span class="keyword">import</span> &#123;name,age&#125; <span class="keyword">from</span> <span class="string">'test'</span>;<span class="comment">// test.js</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得:一条import 语句可以同时导入默认方法和其它变量。<code>import defaultMethod, { otherMethod } from &#39;xxx.js&#39;;</code></p>
+</blockquote>
+<h3 id="3-箭头（Arrow）函数"><a href="#3-箭头（Arrow）函数" class="headerlink" title="3.箭头（Arrow）函数"></a>3.箭头（Arrow）函数</h3><p>这是ES6中最令人激动的特性之一。<code>=&gt;</code>不只是关键字function的简写，它还带来了其它好处。箭头函数与包围它的代码共享同一个<code>this</code>,能帮你很好的解决this的指向问题。有经验的JavaScript开发者都熟悉诸如<code>var self = this;</code>或<code>var that = this</code>这种引用外围this的模式。但借助<code>=&gt;</code>，就不需要这种模式了。</p>
+<h3 id="箭头函数的结构"><a href="#箭头函数的结构" class="headerlink" title="箭头函数的结构"></a>箭头函数的结构</h3><p>箭头函数的箭头=&gt;之前是一个空括号、单个的参数名、或用括号括起的多个参数名，而箭头之后可以是一个表达式（作为函数的返回值），或者是用花括号括起的函数体（需要自行通过return来返回值，否则返回的是undefined）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 箭头函数的例子</span></span><br><span class="line">()=&gt;<span class="number">1</span></span><br><span class="line">v=&gt;v+<span class="number">1</span></span><br><span class="line">(a,b)=&gt;a+b</span><br><span class="line">()=&gt;&#123;</span><br><span class="line">    alert(<span class="string">"foo"</span>);</span><br><span class="line">&#125;</span><br><span class="line">e=&gt;&#123;</span><br><span class="line">    <span class="keyword">if</span> (e == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1000</span>/e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得：不论是箭头函数还是bind，每次被执行都返回的是一个新的函数引用，因此如果你还需要函数的引用去做一些别的事情（譬如卸载监听器），那么你必须自己保存这个引用。</p>
+</blockquote>
+<h4 id="卸载监听器时的陷阱"><a href="#卸载监听器时的陷阱" class="headerlink" title="卸载监听器时的陷阱"></a>卸载监听器时的陷阱</h4><blockquote>
+<p><strong>错误的做法</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PauseMenu</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    componentWillMount()&#123;</span><br><span class="line">        AppStateIOS.addEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused.bind(<span class="keyword">this</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        AppStateIOS.removeEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused.bind(<span class="keyword">this</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    onAppPaused(event)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>正确的做法</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PauseMenu</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>._onAppPaused = <span class="keyword">this</span>.onAppPaused.bind(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillMount()&#123;</span><br><span class="line">        AppStateIOS.addEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>._onAppPaused);</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        AppStateIOS.removeEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>._onAppPaused);</span><br><span class="line">    &#125;</span><br><span class="line">    onAppPaused(event)&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除上述的做法外，我们还可以这样做：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PauseMenu</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    componentWillMount()&#123;</span><br><span class="line">        AppStateIOS.addEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused);</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        AppStateIOS.removeEventListener(<span class="string">'change'</span>, <span class="keyword">this</span>.onAppPaused);</span><br><span class="line">    &#125;</span><br><span class="line">    onAppPaused = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">//把方法直接作为一个arrow function的属性来定义，初始化的时候就绑定好了this指针</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是：不论是bind还是箭头函数，每次被执行都返回的是一个新的函数引用，因此如果你还需要函数的引用去做一些别的事情（譬如卸载监听器），那么你必须自己保存这个引用。</p>
+</blockquote>
+<h3 id="4-ES6不再支持Mixins"><a href="#4-ES6不再支持Mixins" class="headerlink" title="4.ES6不再支持Mixins"></a>4.ES6不再支持Mixins</h3><p>在ES5下，我们经常使用mixin来为组件添加一些新的方法，如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> SetIntervalMixin = &#123;</span><br><span class="line">  componentWillMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.intervals = [];</span><br><span class="line">  &#125;,</span><br><span class="line">  setInterval: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.intervals.push(setInterval.apply(<span class="literal">null</span>, <span class="built_in">arguments</span>));</span><br><span class="line">  &#125;,</span><br><span class="line">  componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.intervals.forEach(clearInterval);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> TickTock = React.createClass(&#123;</span><br><span class="line">  mixins: [SetIntervalMixin], <span class="comment">// Use the mixin</span></span><br><span class="line">  getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">seconds</span>: <span class="number">0</span>&#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<p>但，很不幸的是，ES6不支持使用Mixins了，不过我们可以使用，增强组件来替代Mixins。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Enhance.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">"React"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> Enhance = <span class="function"><span class="params">ComposedComponent</span> =&gt;</span> <span class="class"><span class="keyword">class</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.state = &#123; <span class="attr">data</span>: <span class="literal">null</span> &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123; <span class="attr">data</span>: <span class="string">'Hello'</span> &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">ComposedComponent</span> &#123;<span class="attr">...this.props</span>&#125; <span class="attr">data</span>=<span class="string">&#123;this.state.data&#125;</span> /&gt;</span></span>;     &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//HigherOrderComponent.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; Enhance &#125; <span class="keyword">from</span> <span class="string">"./Enhance"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>.data) <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Waiting...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;this.data&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Enhance(MyComponent); <span class="comment">// Enhanced component</span></span><br></pre></td></tr></table></figure>
+<p>用一个“增强组件”，来为某个类增加一些方法，并且返回一个新类，这无疑能实现mixin所实现的大部分需求。</p>
+<p>另外，网上也有很多其他的方案，如<a href="https://github.com/brigand/react-mixin" target="_blank" rel="noopener">react-mixin</a>。</p>
+<h3 id="5-ES6不再有自动绑定"><a href="#5-ES6不再有自动绑定" class="headerlink" title="5.ES6不再有自动绑定"></a>5.ES6不再有自动绑定</h3><p>在ES5中，React.createClass会把所有的方法都bind一遍，这样可以提交到任意的地方作为回调函数，而this不会变化。但在ES6中没有了自动绑定，也就是说，你需要通过bind或者箭头函数来手动绑定this引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过使用 bind() 来绑定`this`</span></span><br><span class="line">&lt;div onClick=&#123;<span class="keyword">this</span>.tick.bind(<span class="keyword">this</span>)&#125;&gt;</span><br><span class="line"><span class="comment">// 也可通过使用箭头函数来实现</span></span><br><span class="line">&lt;div onClick=&#123;() =&gt; <span class="keyword">this</span>.tick()&#125;&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得： 因为无论是箭头函数还是bind()每次被执行都返回的是一个新的函数引用，所以，推荐大家在组件的构造函数中来绑定<code>this</code>。</p>
+</blockquote>
+<blockquote>
+<p>\<figure class="highlight javascript"><figcaption><span>constructor(props) &#123; super(props); this.state </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">`html</span></span><br><span class="line"><span class="string">&lt;div onClick=&#123;this.tick&#125;&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="6-static关键字"><a href="#6-static关键字" class="headerlink" title="6.static关键字"></a>6.static关键字</h3><p>在ES6中我们可以通过static关键字来定义一个类函数。  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">People</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123; <span class="comment">//构造函数</span></span><br><span class="line">          <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    sayName() &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> formatName(name) <span class="comment">//将formatName定义为类方法</span></span><br><span class="line">        <span class="keyword">return</span> name[<span class="number">0</span>].toUpperCase() + name.sustr(<span class="number">1</span>).toLowerCase();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(People.formatName(<span class="string">"tom"</span>)); <span class="comment">//使用类方法formatName</span></span><br></pre></td></tr></table></figure>
+<h2 id="ES6-VS-ES5（ES6与ES5的区别）"><a href="#ES6-VS-ES5（ES6与ES5的区别）" class="headerlink" title="ES6 VS ES5（ES6与ES5的区别）"></a>ES6 VS ES5（ES6与ES5的区别）</h2><p>新版本的React /React Native使用了ES6标准，下面就让我们一起了解一下基于ES6的React/React Native相比ES5有哪些不同。</p>
+<blockquote>
+<p>心得：很多React/React Native的初学者经常会被ES6问题迷惑：官方建议我们ES6，但是网上搜到的很多教程和例子都是基于ES5版本的，所以很多人感觉无法下手，下面就让我们一起认识ES6与ES5在React/React Native开发上有哪些不同和需要注意的地方。</p>
+</blockquote>
+<p>下面是我们需要知道的ES6与ES5在4大方面上的区别。</p>
+<h3 id="1-在定义方面的不同"><a href="#1-在定义方面的不同" class="headerlink" title="1.在定义方面的不同"></a>1.在定义方面的不同</h3><p>在定义组件，方法，属性等方面，ES6与ES5是有所不同的，下面就让我们一起看一下有哪些不同。</p>
+<blockquote>
+<p>心得：因为向下兼容的原因，你在开发过程中可使用ES6也可以使用ES5的规范，但为了代码的风格一致性，建议尽量减少混写。</p>
+</blockquote>
+<h4 id="定义组件"><a href="#定义组件" class="headerlink" title="定义组件"></a>定义组件</h4><blockquote>
+<p><strong>ES5</strong></p>
+</blockquote>
+<p>在ES5里，通常通过React.createClass来定义一个组件类，像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Photo = React.createClass(&#123;</span><br><span class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Image source=&#123;<span class="keyword">this</span>.props.source&#125; /&gt;         );</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>ES6</strong></p>
+</blockquote>
+<p>在ES6里，我们通过继承React.Component 来定义一个组件类，像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Photo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Image source=&#123;<span class="keyword">this</span>.props.source&#125; /&gt;         );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h4><p>相比ES5，ES6在方法定义上语法更加简洁，从上面的例子里可以看到，给组件定义方法不再用 名字: function()的写法，而是直接用名字()，在方法的最后也不能有逗号了。</p>
+<blockquote>
+<p><strong>ES5</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Photo = React.createClass(&#123;</span><br><span class="line">    test: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    &#125;,</span><br><span class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Image source=&#123;<span class="keyword">this</span>.props.source&#125; /&gt;         );</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>ES6</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Photo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    test() &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;Image source=&#123;<span class="keyword">this</span>.props.source&#125; /&gt;         );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="定义组件的属性类型和默认属性"><a href="#定义组件的属性类型和默认属性" class="headerlink" title="定义组件的属性类型和默认属性"></a>定义组件的属性类型和默认属性</h4><blockquote>
+<p><strong>ES5</strong></p>
+</blockquote>
+<p>在ES5里，属性类型和默认属性分别通过propTypes成员和getDefaultProps方法来实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Video = React.createClass(&#123;</span><br><span class="line">    getDefaultProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            autoPlay: <span class="literal">false</span>,</span><br><span class="line">            maxLoops: <span class="number">10</span>,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    propTypes: &#123;</span><br><span class="line">        autoPlay: React.PropTypes.bool.isRequired,</span><br><span class="line">        maxLoops: React.PropTypes.number.isRequired,</span><br><span class="line">        posterFrameSrc: React.PropTypes.string.isRequired,</span><br><span class="line">        videoSrc: React.PropTypes.string.isRequired,</span><br><span class="line">    &#125;,</span><br><span class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;View /&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>ES6</strong></p>
+</blockquote>
+<p>在ES6里，可以统一使用static成员来实现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> defaultProps = &#123;</span><br><span class="line">        autoPlay: <span class="literal">false</span>,</span><br><span class="line">        maxLoops: <span class="number">10</span>,</span><br><span class="line">    &#125;;  <span class="comment">// 注意这里有分号</span></span><br><span class="line">    <span class="keyword">static</span> propTypes = &#123;</span><br><span class="line">        autoPlay: React.PropTypes.bool.isRequired,</span><br><span class="line">        maxLoops: React.PropTypes.number.isRequired,</span><br><span class="line">        posterFrameSrc: React.PropTypes.string.isRequired,</span><br><span class="line">        videoSrc: React.PropTypes.string.isRequired,</span><br><span class="line">    &#125;;  <span class="comment">// 注意这里有分号</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;View /&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125; <span class="comment">// 注意这里既没有分号也没有逗号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也有人这么写，虽然不推荐，但读到代码的时候你应当能明白它的意思：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;View /&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Video.defaultProps = &#123;</span><br><span class="line">    autoPlay: <span class="literal">false</span>,</span><br><span class="line">    maxLoops: <span class="number">10</span>,</span><br><span class="line">&#125;;</span><br><span class="line">Video.propTypes = &#123;</span><br><span class="line">    autoPlay: React.PropTypes.bool.isRequired,</span><br><span class="line">    maxLoops: React.PropTypes.number.isRequired,</span><br><span class="line">    posterFrameSrc: React.PropTypes.string.isRequired,</span><br><span class="line">    videoSrc: React.PropTypes.string.isRequired,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得:对React开发者而言，static在一些老版本的浏览器上是不支持的。React Native开发者可以不用担心这个问题。</p>
+</blockquote>
+<h3 id="2-在导入-import-与导出-export-组件上的不同"><a href="#2-在导入-import-与导出-export-组件上的不同" class="headerlink" title="2.在导入(import)与导出(export)组件上的不同"></a>2.在导入(import)与导出(export)组件上的不同</h3><h4 id="导入组件"><a href="#导入组件" class="headerlink" title="导入组件"></a>导入组件</h4><blockquote>
+<p><strong>ES5</strong></p>
+</blockquote>
+<p>在ES5里，如果使用CommonJS标准，引入React包基本通过require进行，代码类似这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> React = <span class="built_in">require</span>(<span class="string">"react"</span>);</span><br><span class="line"><span class="keyword">var</span> &#123;</span><br><span class="line">    Component,</span><br><span class="line">    PropTypes</span><br><span class="line">&#125; = React;  <span class="comment">//引用React抽象组件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ReactNative = <span class="built_in">require</span>(<span class="string">"react-native"</span>);</span><br><span class="line"><span class="keyword">var</span> &#123;</span><br><span class="line">    Image,</span><br><span class="line">    Text,</span><br><span class="line">&#125; = ReactNative;  <span class="comment">//引用具体的React Native组件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> AboutPage=<span class="built_in">require</span>(<span class="string">'./app/AboutPage'</span>) <span class="comment">//引入app目录下AboutPage组件，即AboutPag.js</span></span><br><span class="line"><span class="keyword">var</span> PopularPage=<span class="built_in">require</span>(<span class="string">'./app/PopularPage'</span>) <span class="comment">//引入app目录下PopularPage组件，即PopularPage.js</span></span><br><span class="line"><span class="keyword">var</span> FavoritePage=<span class="built_in">require</span>(<span class="string">'./app/FavoritePage'</span>) <span class="comment">//引入app目录下FavoritePage组件，即FavoritePage.js</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>ES6</strong></p>
+</blockquote>
+<p>在ES6里，没有了require，而是使用import来导入组件，有点像Java的写法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;</span><br><span class="line">    Component,</span><br><span class="line">    PropTypes,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react'</span>;<span class="comment">//引用React抽象组件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    Image,</span><br><span class="line">    Text</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">'react-native'</span> <span class="comment">//引用具体的React Native组件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> AboutPage <span class="keyword">from</span> <span class="string">'./app/AboutPage'</span> <span class="comment">//引入app目录下AboutPage组件，即AboutPag.js</span></span><br><span class="line"><span class="keyword">import</span> PopularPage <span class="keyword">from</span> <span class="string">'./app/PopularPage'</span> <span class="comment">//引入app目录下PopularPage组件，即PopularPage.js</span></span><br><span class="line"><span class="keyword">import</span> FavoritePage  <span class="keyword">from</span> <span class="string">'./app/FavoritePage'</span> <span class="comment">//引入app目录下FavoritePage组件，即FavoritePage.js</span></span><br></pre></td></tr></table></figure>
+<p>另外，ES6支持将组件导入作为一个对象，使用“ * as”修饰即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引入app目录下AboutPage组件作为一个对象，接下来就可使用“AboutPage.”来调用AboutPage的方法及属性了。 </span></span><br><span class="line"><span class="keyword">import</span>  * <span class="keyword">as</span> AboutPage <span class="keyword">from</span> <span class="string">'./app/AboutPage'</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得：使用“ <em> as ”修饰后，导入的组件直接被实例化成一个对象，可以使用“.”语法来调用组件的方法和属性，和没有“ </em> as ”修饰是有本质区别的，使用的时候要特别注意。</p>
+</blockquote>
+<h4 id="导出组件"><a href="#导出组件" class="headerlink" title="导出组件"></a>导出组件</h4><blockquote>
+<p><strong>ES5</strong><br>在ES5里，要导出一个类给别的模块用，一般通过module.exports来导出：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyComponent = React.createClass(&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">module</span>.exports = MyComponent;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>ES6</strong><br>在ES6里，通常用export default来实现相同的功能：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-在初始化state上的不同"><a href="#3-在初始化state上的不同" class="headerlink" title="3.在初始化state上的不同"></a>3.在初始化state上的不同</h3><blockquote>
+<p><strong>ES5</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Video = React.createClass(&#123;</span><br><span class="line">    getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            loopsRemaining: <span class="keyword">this</span>.props.maxLoops,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>ES6</strong><br>ES6下，有两种写法：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    state = &#123;</span><br><span class="line">        loopsRemaining: <span class="keyword">this</span>.props.maxLoops,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不过我们推荐更易理解的在构造函数中初始化（这样你还可以根据需要做一些计算）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Video</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            loopsRemaining: <span class="keyword">this</span>.props.maxLoops,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-在方法作为回调上的不同"><a href="#4-在方法作为回调上的不同" class="headerlink" title="4.在方法作为回调上的不同"></a>4.在方法作为回调上的不同</h3><p>在开发工作中，经常会使用到回调，如按钮的单击回调等，这也是在很多编程语言中都会经常出现的情况。ES6与ES5在使用回调方面是有区别的。</p>
+<blockquote>
+<p><strong>ES5</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> PostInfo = React.createClass(&#123;</span><br><span class="line">    handleOptionsButtonClick: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// Here, 'this' refers to the component instance.</span></span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;<span class="attr">showOptionsModal</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;TouchableHighlight onPress=&#123;<span class="keyword">this</span>.handleOptionsButtonClick&#125;&gt;</span><br><span class="line">                &lt;Text&gt;&#123;<span class="keyword">this</span>.props.label&#125;&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>TouchableHighlight&gt;)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在ES5中，React.createClass会把所有的方法都bind一遍，这样可以提交到任意的地方作为回调函数，而this不会变化。但官方现在逐步认为这反而是不标准、不易理解的。</p>
+<p>在ES6下，你需要通过bind来绑定this引用，或者使用箭头函数（它会绑定当前scope的this引用）：</p>
+<blockquote>
+<p><strong>ES6</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PostInfo</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    handleOptionsButtonClick(e)&#123;</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;<span class="attr">showOptionsModal</span>: <span class="literal">true</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;TouchableHighlight</span><br><span class="line">                onPress=&#123;<span class="keyword">this</span>.handleOptionsButtonClick.bind(<span class="keyword">this</span>)&#125;</span><br><span class="line">                <span class="comment">//onPress=&#123;e=&gt;this.handleOptionsButtonClick(e)&#125;//这种方式和上面的效果是一样的</span></span><br><span class="line">                &gt;</span><br><span class="line">                &lt;Text&gt;&#123;<span class="keyword">this</span>.props.label&#125;&lt;<span class="regexp">/Text&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>TouchableHighlight&gt;)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/20/React/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B(%E4%B8%AD)/">
+                React Native之React速学教程(中)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="组件的详细说明"><a href="#组件的详细说明" class="headerlink" title="组件的详细说明"></a>组件的详细说明</h2><p>当通过调用 React.createClass() 来创建组件的时候，每个组件必须提供render方法，并且也可以包含其它的在这里描述的生命周期方法。</p>
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><p><code>ReactComponent render()</code><br><code>render()</code> 方法是必须的。<br>当该方法被回调的时候，会检测 <code>this.props</code> 和 <code>this.state</code>，并返回一个单子级组件。该子级组件可以是虚拟的本地 DOM 组件（比如 <div> 或者 <code>React.DOM.div()</code>），也可以是自定义的复合组件。<br>你也可以返回 <code>null</code> 或者 <code>false</code> 来表明不需要渲染任何东西。实际上，React 渲染一个<code>&lt;noscript&gt;</code>标签来处理当前的差异检查逻辑。当返回 <code>null</code> 或者 <code>false</code> 的时候，<code>this.getDOMNode()</code> 将返回 <code>null</code>。</div></p>
+<p><strong>注意：</strong></p>
+<p><code>render()</code>函数应该是纯粹的，也就是说该函数不修改组件的 <code>state</code>，每次调用都返回相同的结果，不读写 DOM 信息，也不和浏览器交互（例如通过使用 <code>setTimeout</code>）。如果需要和浏览器交互，在 <code>componentDidMount()</code> 中或者其它生命周期方法中做这件事。保持 <code>render()</code> 纯粹，可以使服务器端渲染更加切实可行，也使组件更容易被理解。</p>
+<blockquote>
+<p>心得：不要在<code>render()</code>函数中做复杂的操作，更不要进行网络请求，数据库读写，I/O等操作。</p>
+</blockquote>
+<h2 id="getInitialState"><a href="#getInitialState" class="headerlink" title="getInitialState"></a>getInitialState</h2><p><code>object getInitialState()</code> 初始化组件状态，在组件挂载之前调用一次。返回值将会作为 <code>this.state</code>的初始值。</p>
+<blockquote>
+<p>心得：通常在该方法中对组件的状态进行初始化。</p>
+</blockquote>
+<h2 id="getDefaultProps"><a href="#getDefaultProps" class="headerlink" title="getDefaultProps"></a>getDefaultProps</h2><p><code>object getDefaultProps()</code><br>设置组件属性的默认值，在组件类创建的时候调用一次，然后返回值被缓存下来。如果父组件没有指定 <code>props</code> 中的某个键，则此处返回的对象中的相应属性将会合并到 <code>this.props</code> （使用 in 检测属性）。</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage:"></a>Usage:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getDefaultProps() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &apos;&apos;,</span><br><span class="line">      popEnabled:true</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br>该方法在任何实例创建之前调用，因此不能依赖于 <code>this.props</code>。另外，<code>getDefaultProps()</code> 返回的任何复杂对象将会在实例间共享，而不是每个实例拥有一份拷贝。</p>
+<blockquote>
+<p>心得：该方法在你封装一个自定义组件的时候经常用到，通常用于为组件初始化默认属性。</p>
+</blockquote>
+<h2 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a><a href="https://facebook.github.io/react/docs/top-level-api.html#react.proptypes" target="_blank" rel="noopener">PropTypes</a></h2><p><code>object propTypes</code><br><code>propTypes</code> 对象用于验证传入到组件的 <code>props</code>。 可参考<a href="https://facebook.github.io/react/docs/reusable-components.html" target="_blank" rel="noopener">可重用的组件</a>。</p>
+<h2 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage:"></a>Usage:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var NavigationBar=React.createClass(&#123;</span><br><span class="line">  propTypes: &#123;</span><br><span class="line">    navigator:React.PropTypes.object,</span><br><span class="line">    leftButtonTitle: React.PropTypes.string,</span><br><span class="line">    leftButtonIcon: Image.propTypes.source,</span><br><span class="line">    popEnabled:React.PropTypes.bool,</span><br><span class="line">    onLeftButtonClick: React.PropTypes.func,</span><br><span class="line">    title:React.PropTypes.string,</span><br><span class="line">    rightButtonTitle: React.PropTypes.string,</span><br><span class="line">    rightButtonIcon:Image.propTypes.source,</span><br><span class="line">    onRightButtonClick:React.PropTypes.func</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得：在封装组件时，对组件的属性通常会有类型限制，如：组件的背景图片，需要<code>Image.propTypes.source</code>类型，propTypes便可以帮你完成你需要的属性类型的检查。</p>
+</blockquote>
+<h2 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h2><p><code>array mixins</code><br><code>mixin</code> 数组允许使用混合来在多个组件之间共享行为。更多关于混合的信息，可参考<a href="https://facebook.github.io/react/docs/reusable-components.html#mixins" target="_blank" rel="noopener">Reusable Components</a>。</p>
+<blockquote>
+<p>心得：由于ES6不再支持mixins，所以不建议在使用mixins，我们可以用另外一种方式来替代mixins，请参考：<a href="https://www.devio.org/2016/08/10/React-Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B-(%E4%B8%AD" target="_blank" rel="noopener">React Native之React速学教程(下)-ES6不再支持Mixins</a>/)。</p>
+</blockquote>
+<h2 id="statics"><a href="#statics" class="headerlink" title="statics"></a>statics</h2><p><code>object statics</code><br><code>statics</code> 对象允许你定义静态的方法，这些静态的方法可以在组件类上调用。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var MyComponent = React.createClass(&#123;</span><br><span class="line">  statics: &#123;</span><br><span class="line">    customMethod: function(foo) &#123;</span><br><span class="line">      return foo === &apos;bar&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">MyComponent.customMethod(&apos;bar&apos;);  // true</span><br></pre></td></tr></table></figure>
+<p>在这个块儿里面定义的方法都是静态的，你可以通过<code>ClassName.funcationName</code>的形式调用它。<br><strong>注意</strong><br>这些方法不能获取组件的 <code>props</code> 和 <code>state</code>。如果你想在静态方法中检查 <code>props</code> 的值，在调用处把 <code>props</code> 作为参数传入到静态方法。</p>
+<h2 id="displayName"><a href="#displayName" class="headerlink" title="displayName"></a>displayName</h2><p><code>string displayName</code><br><code>displayName</code> 字符串用于输出调试信息。JSX 自动设置该值；可参考<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#the-transform" target="_blank" rel="noopener">JSX in Depth</a>。</p>
+<h2 id="isMounted"><a href="#isMounted" class="headerlink" title="isMounted"></a>isMounted</h2><p><code>boolean isMounted()</code>，当组件被渲染到DOM，该方法返回true，否则返回false。该方法通常用于异步任务完成后修改state前的检查，以避免修改一个没有被渲染的组件的state。</p>
+<blockquote>
+<p>心得：开发中不建议大家isMounted，大家可以使用另外一种更好的方式来避免修改没有被渲染的DOM，请下文的<a href="https://www.devio.org/2016/08/10/React-Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B-(%E4%B8%AD" target="_blank" rel="noopener">isMounted 是个反模式</a>/)。</p>
+</blockquote>
+<h2 id="组件的生命周期-Component-Lifecycle"><a href="#组件的生命周期-Component-Lifecycle" class="headerlink" title="组件的生命周期(Component Lifecycle)"></a><a href="https://facebook.github.io/react/docs/working-with-the-browser.html#component-lifecycle" target="_blank" rel="noopener">组件的生命周期(Component Lifecycle)</a></h2><p>在iOS中<code>UIViewController</code>提供了<code>(void)viewWillAppear:(BOOL)animated</code>, <code>- (void)viewDidLoad</code>,<code>(void)viewWillDisappear:(BOOL)animated</code>等生命周期方法，在Android中<code>Activity</code>则提供了<code>onCreate()</code>,<code>onStart()</code>,<code>onResume()</code>,<code>onPause()</code>,<code>onStop()</code>,<code>onDestroy()</code>等生命周期方法，这些生命周期方法展示了一个界面从创建到销毁的一生。</p>
+<p>那么在React 中组件(Component)也是有自己的生命周期方法的。</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\RN之React速学\2.jpg" alt="2"></p>
+<h2 id="组件的生命周期分成三个状态："><a href="#组件的生命周期分成三个状态：" class="headerlink" title="组件的生命周期分成三个状态："></a>组件的生命周期分成三个状态：</h2><ul>
+<li>Mounting：已插入真实 DOM</li>
+<li>Updating：正在被重新渲染</li>
+<li>Unmounting：已移出真实 DOM</li>
+</ul>
+<blockquote>
+<p>心得：你会发现这些React 中组件(Component)的生命周期方法从写法上和iOS中<code>UIViewController</code>的生命周期方法很像，React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用。</p>
+</blockquote>
+<h2 id="Mounting-装载"><a href="#Mounting-装载" class="headerlink" title="Mounting(装载)"></a>Mounting(装载)</h2><ul>
+<li><code>getInitialState()</code>: 在组件挂载之前调用一次。返回值将会作为 this.state 的初始值。</li>
+<li><code>componentWillMount()</code>：服务器端和客户端都只调用一次，在初始化渲染执行之前立刻调用。</li>
+<li><code>componentDidMount()</code>：在初始化渲染执行之后立刻调用一次，仅客户端有效（服务器端不会调用）。</li>
+</ul>
+<h2 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating (更新)"></a>Updating (更新)</h2><ul>
+<li>componentWillReceiveProps(object nextProps) 在组件接收到新的 props 的时候调用。在初始化渲染的时候，该方法不会调用。</li>
+</ul>
+<p>用此函数可以作为 react 在 prop 传入之后， render() 渲染之前更新 state 的机会。老的 props 可以通过 this.props 获取到。在该函数中调用 this.setState() 将不会引起第二次渲染。</p>
+<ul>
+<li>shouldComponentUpdate(object nextProps, object nextState): 在接收到新的 props 或者 state，将要渲染之前调用。</li>
+</ul>
+<p>该方法在初始化渲染的时候不会调用，在使用 forceUpdate 方法的时候也不会。如果确定新的 props 和 state 不会导致组件更新，则此处应该 返回 false。</p>
+<blockquote>
+<p>心得：重写次方你可以根据实际情况，来灵活的控制组件当 props 和 state 发生变化时是否要重新渲染组件。</p>
+</blockquote>
+<ul>
+<li>componentWillUpdate(object nextProps, object nextState)：在接收到新的 props 或者 state 之前立刻调用。</li>
+</ul>
+<p>在初始化渲染的时候该方法不会被调用。使用该方法做一些更新之前的准备工作。</p>
+<blockquote>
+<p>注意：你不能在该方法中使用 this.setState()。如果需要更新 state 来响应某个 prop 的改变，请使用 <code>componentWillReceiveProps</code>。</p>
+</blockquote>
+<ul>
+<li>componentDidUpdate(object prevProps, object prevState): 在组件的更新已经同步到 DOM 中之后立刻被调用。</li>
+</ul>
+<p>该方法不会在初始化渲染的时候调用。使用该方法可以在组件更新之后操作 DOM 元素。</p>
+<h2 id="Unmounting-移除"><a href="#Unmounting-移除" class="headerlink" title="Unmounting(移除)"></a>Unmounting(移除)</h2><ul>
+<li>componentWillUnmount：在组件从 DOM 中移除的时候立刻被调用。</li>
+</ul>
+<p>在该方法中执行任何必要的清理，比如无效的定时器，或者清除在 componentDidMount 中创建的 DOM 元素。</p>
+<h2 id="isMounted是个反模式"><a href="#isMounted是个反模式" class="headerlink" title="isMounted是个反模式"></a>isMounted是个反模式</h2><p>isMounted通常用于避免修改一个已经被卸载的组件的状态，因为调用一个没有被装载的组件的<code>setState()</code>方法，系统会抛出异常警告。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(this.isMounted()) &#123; //不推荐</span><br><span class="line">  this.setState(&#123;...&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面做法有点反模式，<code>isMounted()</code>起到作用的时候也就是组件被卸载之后还有异步操作在进行的时候，这就意味着一个被销毁的组件还持有着一些资源的引用，这会导致系统性能降低甚至内存溢出。</p>
+<p>React 在设计的时候通过<code>setState()</code>被调用时做了一些检查，来帮助开发者发现被卸载的组件还持有一些资源的引用的情况。如何你使用了<code>isMounted()</code>，也就是跳过的React的检查，也就无法发现被卸载的组件还持有资源的问题。</p>
+<p>既然isMounted()是反模式，那么有没有可替代方案呢？<br>我们可以通过在设置一个变量来表示组件的装载和卸载的状态，当<code>componentDidMount</code>被调用时该变量为true，当 <code>componentWillUnmount</code>被调用时，该变量为false，这样该变量就可以当<code>isMounted()</code>来使用。但还不够，到目前为止，我们只是通过变量来替代<code>isMounted()</code>，还没有做任何的优化，接下来我们需要在<code>componentWillUnmount</code>被调用时取消所有的异步回调，主动释放所有资源，这样就能避免被卸载的组件还持有资源的引用的情况，从而减少了内存溢出等情况的发生。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    mydatastore.subscribe(this);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    mydatastore.unsubscribe(this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用可取消的Promise做异步操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const cancelablePromise = makeCancelable(</span><br><span class="line">  new Promise(r =&gt; component.setState(&#123;...&#125;&#125;))</span><br><span class="line">);</span><br><span class="line">cancelablePromise</span><br><span class="line">  .promise</span><br><span class="line">  .then(() =&gt; console.log(&apos;resolved&apos;))</span><br><span class="line">  .catch((reason) =&gt; console.log(&apos;isCanceled&apos;, reason.isCanceled));</span><br><span class="line">cancelablePromise.cancel(); // Cancel the promise</span><br></pre></td></tr></table></figure>
+<p>可取消的Promise。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const makeCancelable = (promise) =&gt; &#123;</span><br><span class="line">  let hasCanceled_ = false;</span><br><span class="line">  const wrappedPromise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    promise.then((val) =&gt;</span><br><span class="line">      hasCanceled_ ? reject(&#123;isCanceled: true&#125;) : resolve(val)</span><br><span class="line">    );</span><br><span class="line">    promise.catch((error) =&gt;</span><br><span class="line">      hasCanceled_ ? reject(&#123;isCanceled: true&#125;) : reject(error)</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">  return &#123;</span><br><span class="line">    promise: wrappedPromise,</span><br><span class="line">    cancel() &#123;</span><br><span class="line">      hasCanceled_ = true;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/14/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/16/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

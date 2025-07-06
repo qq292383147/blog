@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/06/27/HTML/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+                浏览器跨域访问解决方案
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-27</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/HTML/">HTML</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="跨域的概念"><a href="#跨域的概念" class="headerlink" title="跨域的概念"></a>跨域的概念</h2><p>跨域大家都知道，不同地址，不同端口，不同级别，不同协议都会构成跨域。例如：about.haorooms.com和<a href="http://www.haorooms.com都会构成跨域。总结起来只要协议、域名、端口有任何一个不同，都被当作是不同的域。下面举例，每两个一组。" target="_blank" rel="noopener">www.haorooms.com都会构成跨域。总结起来只要协议、域名、端口有任何一个不同，都被当作是不同的域。下面举例，每两个一组。</a></p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>说明</th>
+<th>是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/b.js" target="_blank" rel="noopener">http://www.haorooms.com/b.js</a></td>
+<td>同一域名下</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/lab/a.js" target="_blank" rel="noopener">http://www.haorooms.com/lab/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/script/b.js" target="_blank" rel="noopener">http://www.haorooms.com/script/b.js</a></td>
+<td>同一域名下不同文件夹</td>
+<td>允许</td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com:8000/a.js" target="_blank" rel="noopener">http://www.haorooms.com:8000/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/b.js" target="_blank" rel="noopener">http://www.haorooms.com/b.js</a></td>
+<td>同一域名，不同端口</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.haorooms.com/b.js" target="_blank" rel="noopener">https://www.haorooms.com/b.js</a></td>
+<td>同一域名，不同协议</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>说明</th>
+<th>是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://60.32.92.74/b.js" target="_blank" rel="noopener">http://60.32.92.74/b.js</a></td>
+<td>域名和域名对应ip</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://about.haorooms.com/b.js" target="_blank" rel="noopener">http://about.haorooms.com/b.js</a></td>
+<td>主域相同，子域不同</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/a.js" target="_blank" rel="noopener">http://www.haorooms.com/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://haorooms.com/b.js" target="_blank" rel="noopener">http://haorooms.com/b.js</a></td>
+<td>同一域名，不同二级域名（同上）</td>
+<td>不允许（cookie这种情况下也不允许访问）</td>
+</tr>
+<tr>
+<td><a href="http://www.hao123.com/a.js" target="_blank" rel="noopener">http://www.hao123.com/a.js</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://www.haorooms.com/b.js" target="_blank" rel="noopener">http://www.haorooms.com/b.js</a></td>
+<td>不同域名</td>
+<td>不允许</td>
+</tr>
+</tbody>
+</table>
+<h3 id="CORS跨域资源共享"><a href="#CORS跨域资源共享" class="headerlink" title="CORS跨域资源共享"></a>CORS跨域资源共享</h3><p>众所周知，我们之前跨域很多时候用的是jsonp的方式，jsonp的方式我后面介绍。下面说说CORS跨域和jsonp跨域的优势：</p>
+<p>CORS与JSONP相比，无疑更为先进、方便和可靠。</p>
+<blockquote>
+<p>1、 JSONP 只能实现GET请求，而CORS支持所有类型的 HTTP 请求。<br><br>2、 使用 CORS，开发者可以使用普通的 XMLHttpRequest 发起请求和获得数据，比起 JSONP 有更好的错误处理。<br><br>3、 JSONP 主要被老的浏览器支持，它们往往不支持 CORS，而绝大多数现代浏览器都已经支持了 CORS。[低版本IE7以下不支持，要支持IE7还是要用 jsonp 方式]</p>
+</blockquote>
+<p><strong>CORS的使用</strong></p>
+<p>CORS要前后端同时做配置。</p>
+<p><strong>1、首先我们来看前端。</strong></p>
+<p>纯js的ajax请求。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//ie6以下用new ActiveXObject("Microsoft.XMLHTTP");可以做能力判断。</span></span></span><br><span class="line"><span class="javascript">    xhr.open(<span class="string">"￼GET"</span>, <span class="string">"/haorooms"</span>,<span class="literal">true</span>);</span></span><br><span class="line">    xhr.send();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以上的haorooms是相对路径，如果我们要使用CORS，相关Ajax代码可能如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();<span class="comment">//ie6以下用new ActiveXObject("Microsoft.XMLHTTP");可以做能力判断。</span></span></span><br><span class="line"><span class="javascript">    xhr.open(<span class="string">"￼GET"</span>, <span class="string">"http://www.haorooms.com/CORS"</span>,<span class="literal">true</span>);</span></span><br><span class="line">    xhr.send();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当然，你也可以用jquery的ajax进行。</p>
+<p> <strong>2、后端或者服务器端的配置</strong></p>
+<p>下面我们主要介绍Apache和PHP里的设置方法。</p>
+<p>Apache：Apache需要使用mod_headers模块来激活HTTP头的设置，它默认是激活的。你只需要在Apache配置文件的 &lt; Directory &gt;, &lt; Location&gt;, &lt; Files &gt;或&lt; VirtualHost&gt;的配置里加入以下内容即可：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Header set Access-Control-Allow-Origin *</span><br></pre></td></tr></table></figure>
+<p> PHP：只需要使用如下的代码设置即可。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span>  </span><br><span class="line"> header(<span class="string">"Access-Control-Allow-Origin:*"</span>);</span><br></pre></td></tr></table></figure>
+<p>以上的配置的含义是允许任何域发起的请求都可以获取当前服务器的数据。当然，这样有很大的危险性，恶意站点可能通过XSS攻击我们的服务器。所以我们应该尽量有针对性的对限制安全的来源，例如下面的设置使得只有<a href="http://www.haorooms.com这个域才能跨域访问服务器的API。" target="_blank" rel="noopener">www.haorooms.com这个域才能跨域访问服务器的API。</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access-Control-Allow-Origin: http:<span class="comment">//www.haorooms.com</span></span><br></pre></td></tr></table></figure>
+<h3 id="通过jsonp跨域"><a href="#通过jsonp跨域" class="headerlink" title="通过jsonp跨域"></a>通过jsonp跨域</h3><p>jsonp跨域也需要前后端配合使用。一般后端设置callback ，前端给后台接口中传一个callback 就可以。</p>
+<p>例如前端代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">dosomething</span>(<span class="params">jsondata</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//处理获得的json数据</span></span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://haorooms.com/data.php?callback=dosomething"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>后台代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">$callback = $_GET[<span class="string">'callback'</span>];<span class="comment">//得到回调函数名</span></span><br><span class="line">$data = <span class="keyword">array</span>(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>);<span class="comment">//要返回的数据</span></span><br><span class="line"><span class="keyword">echo</span> $callback.<span class="string">'('</span>.json_encode($data).<span class="string">')'</span>;<span class="comment">//输出</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<p>假如你用ajax方式进行jsonp跨域，我之前的一篇文章中提及过：<a href="http://www.haorooms.com/post/jquery_ajax_wg" target="_blank" rel="noopener">http://www.haorooms.com/post/jquery_ajax_wg</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  </span></span><br><span class="line"><span class="comment">//简写形式，效果相同  </span></span><br><span class="line"><span class="comment">$.getJSON("url跨域地址",  &#123;参数，要把callback作为参数传到后端&#125;，</span></span><br><span class="line"><span class="comment">        function(data)&#123;  </span></span><br><span class="line"><span class="comment">            //结构处理 </span></span><br><span class="line"><span class="comment">&#125;,"jsonp");  </span></span><br><span class="line"><span class="comment">*/</span>  </span><br><span class="line">$.ajax(&#123;  </span><br><span class="line">    type : <span class="string">"get"</span>,  </span><br><span class="line">    url : <span class="string">"跨域地址"</span>,  </span><br><span class="line">    dataType : <span class="string">"jsonp"</span>,<span class="comment">//数据类型为jsonp  </span></span><br><span class="line">    jsonp: <span class="string">"callback"</span>,<span class="comment">//服务端用于接收callback调用的function名的参数【后台接受什么参数，我们就传什么参数】我们上面设置是callback</span></span><br><span class="line">    success : <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;  </span><br><span class="line">        <span class="comment">//结果处理</span></span><br><span class="line">    &#125;,  </span><br><span class="line">    error:<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;  </span><br><span class="line">          <span class="built_in">console</span>.log(data);</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="通过修改document-domain来跨子域"><a href="#通过修改document-domain来跨子域" class="headerlink" title="通过修改document.domain来跨子域"></a>通过修改document.domain来跨子域</h3><p>我们只需要在跨域的两个页面中设置document.domain就可以了。修改document.domain的方法只适用于不同子域的框架间的交互。</p>
+<p>例如：1.在页面 http:// <a href="http://www.haorooms.com/a.html" target="_blank" rel="noopener">www.haorooms.com/a.html</a>  中设置document.domain</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe id = <span class="string">"iframe"</span> src=<span class="string">"http://haorooms.com/b.html"</span> onload = <span class="string">"test()"</span>&gt;&lt;<span class="regexp">/iframe&gt;</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    document.domain = 'haorooms.com';//设置成主域</span></span><br><span class="line"><span class="string">    function test()&#123;</span></span><br><span class="line"><span class="string">        //contentWindow 可取得子窗口的 window 对象</span></span><br><span class="line"><span class="string">        alert(document.getElementById('￼iframe').contentWindow);</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>2、在页面http:// haorooms.com/b.html   中设置document.domain</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.domain = <span class="string">'haorooms.com'</span>;<span class="comment">//在iframe载入这个页面也设置document.domain，使之与主页面的document.domain相同</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用window-name来进行跨域"><a href="#使用window-name来进行跨域" class="headerlink" title="使用window.name来进行跨域"></a>使用window.name来进行跨域</h3><p>原理：</p>
+<p>window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内,窗口载入的所有的页面都是共享一个window.name的，每个页面对window.name都有读写的权限，window.name是持久存在一个窗口载入过的所有页面中的。</p>
+<p>方法：</p>
+<p>假如有三个页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a.com/app.html：应用页面。</span><br><span class="line">a.com/proxy.html：代理文件，一般是一个没有任何内容的html文件，需要和应用页面在同一域下。</span><br><span class="line">b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</span><br></pre></td></tr></table></figure>
+<p><strong>1、在应用页面（a.com/app.html）中创建一个iframe，把其src指向数据页面（b.com/data.html）。</strong></p>
+<p>数据页面会把数据附加到这个iframe的window.name上，data.html代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.name = <span class="string">'I was there!'</span>;    <span class="comment">// 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右</span></span></span><br><span class="line"><span class="javascript">                                     <span class="comment">// 数据格式可以自定义，如json、字符串</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>2、在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件（代理文件和应用页面在同一域下，所以可以相互通信）。</strong></p>
+<p>app.html部分代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> state = <span class="number">0</span>, </span></span><br><span class="line"><span class="javascript">    iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>),</span></span><br><span class="line"><span class="javascript">    loadfn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line">        if (state === 1) &#123;</span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> data = iframe.contentWindow.name;    <span class="comment">// 读取数据</span></span></span><br><span class="line"><span class="javascript">            alert(data);    <span class="comment">//弹出'I was there!'</span></span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state === <span class="number">0</span>) &#123;</span></span><br><span class="line">            state = 1;</span><br><span class="line"><span class="javascript">            iframe.contentWindow.location = <span class="string">"http://a.com/proxy.html"</span>;    <span class="comment">// 设置的代理文件</span></span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;;</span><br><span class="line"><span class="javascript">    iframe.src = <span class="string">'http://b.com/data.html'</span>;</span></span><br><span class="line">    if (iframe.attachEvent) &#123;</span><br><span class="line"><span class="javascript">        iframe.attachEvent(<span class="string">'onload'</span>, loadfn);</span></span><br><span class="line"><span class="javascript">    &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">        iframe.onload  = loadfn;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.body.appendChild(iframe);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>3、获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    iframe.contentWindow.document.write(<span class="string">''</span>);</span></span><br><span class="line">    iframe.contentWindow.close();</span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.body.removeChild(iframe);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用HTML5的window-postMessage方法跨域"><a href="#使用HTML5的window-postMessage方法跨域" class="headerlink" title="使用HTML5的window.postMessage方法跨域"></a>使用HTML5的window.postMessage方法跨域</h3><p>具体请看上一篇博客：<a href="http://www.haorooms.com/post/window_postMessage" target="_blank" rel="noopener">http://www.haorooms.com/post/window_postMessage</a></p>
+<h2 id="webpack解决跨域问题"><a href="#webpack解决跨域问题" class="headerlink" title="webpack解决跨域问题"></a>webpack解决跨域问题</h2><p>（2017年3月补充） 除了上面的跨域解决方案之外，webpack也可以解决前端跨域问题，只需要安装webpack 的http-proxy-middleware模块就可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install http-proxy-middleware --save-dev</span><br></pre></td></tr></table></figure>
+<p>配置如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    devtool: <span class="string">'cheap-module-source-map'</span>,</span><br><span class="line">    entry: <span class="string">'./app/js/index.js'</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dev'</span>),</span><br><span class="line">        <span class="comment">// 所有输出文件的目标路径</span></span><br><span class="line">        filename: <span class="string">'js/bundle.js'</span>,</span><br><span class="line">        publicPath: <span class="string">'/'</span>,</span><br><span class="line">        chunkFilename: <span class="string">'[name].chunk.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        contentBase: path.resolve(__dirname, <span class="string">'dev'</span>),</span><br><span class="line">        publicPath: <span class="string">'/'</span>,</span><br><span class="line">        historyApiFallback: <span class="literal">true</span>,</span><br><span class="line">        proxy: &#123;</span><br><span class="line">            <span class="comment">// 请求到 '/device' 下 的请求都会被代理到 target： http://debug.haorooms.com 中</span></span><br><span class="line">            <span class="string">'/device/*'</span>: &#123; </span><br><span class="line">                target: <span class="string">'http://debug.haorooms.com'</span>,</span><br><span class="line">                secure: <span class="literal">false</span>, <span class="comment">// 接受 运行在 https 上的服务</span></span><br><span class="line">                changeOrigin: <span class="literal">true</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">fetch(<span class="string">'/device/space'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 被代理到 http://debug.haorooms.com/device/space</span></span><br><span class="line">      <span class="keyword">return</span> res.json();</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  fetch(<span class="string">'device/space'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// http://localhost:8080/device/space 访问本地服务</span></span><br><span class="line">      <span class="keyword">return</span> res.json();</span><br><span class="line">  &#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(res);</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>注：使用的url 必须以/开始 否则不会代理到指定地址</p>
+<h2 id="谷歌浏览器跨域设置"><a href="#谷歌浏览器跨域设置" class="headerlink" title="谷歌浏览器跨域设置"></a>谷歌浏览器跨域设置</h2><p>找到谷歌浏览器快捷方式，右键 =====&gt; 快捷方式 =====&gt; 目标，在后面加上这句话</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--disable-web-security --user-data-dir</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/06/27/Vue/axios%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%88vue%E4%B8%AD%E4%BD%BF%E7%94%A8axios%EF%BC%89/">
+                axios 的基本使用（vue中使用axios）
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-27</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>axios就是一个基于Promise的，发送http请求的一个工具库。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>支持Promise API</li>
+<li>拦截请求和响应。拦截请求，可以过滤请求参数；拦截响应，可以处理响应异常</li>
+<li>取消请求。请求可以手动取消</li>
+</ol>
+<h4 id="vue中使用axios"><a href="#vue中使用axios" class="headerlink" title="vue中使用axios"></a>vue中使用axios</h4><ol>
+<li>安装axios模块<br> <code>npm install --save axios</code> </li>
+<li>在index.js文件中引入axios</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// el: '#app',</span></span><br><span class="line">  <span class="comment">// router,</span></span><br><span class="line">  axios  <span class="comment">// 加入axios</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="基本API"><a href="#基本API" class="headerlink" title="基本API"></a>基本API</h4><h5 id="1-执行get请求，有两种方式"><a href="#1-执行get请求，有两种方式" class="headerlink" title="1.  执行get请求，有两种方式"></a>1.  执行get请求，有两种方式</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种方式  将参数直接写在url中</span></span><br><span class="line">axios.get(<span class="string">'/getMainInfo?id=123'</span>)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 第二种方式  将参数直接写在params中</span></span><br><span class="line">axios.get(<span class="string">'/getMainInfo'</span>, &#123;</span><br><span class="line">  params: &#123;</span><br><span class="line">    id: <span class="number">123</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2-执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。"><a href="#2-执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。" class="headerlink" title="2. 执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。"></a>2. 执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/getMainInfo'</span>, &#123;</span><br><span class="line">  id: <span class="number">123</span></span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="3-通过向axios传递的相关配置来创建请求axios-config"><a href="#3-通过向axios传递的相关配置来创建请求axios-config" class="headerlink" title="3. 通过向axios传递的相关配置来创建请求axios(config)"></a>3. 通过向axios传递的相关配置来创建请求<code>axios(config)</code></h5><h6 id="1-下面是常用的配置字段："><a href="#1-下面是常用的配置字段：" class="headerlink" title="(1)下面是常用的配置字段："></a>(1)下面是常用的配置字段：</h6><ul>
+<li>url：请求路径，<strong>string类型</strong> </li>
+<li>method：请求方法，<strong>string类型</strong> </li>
+<li>baseURL：baseURL会自动加在url前面，除非url是一个绝对URL，<strong>string类型</strong> </li>
+<li>transformRequest：允许在向服务器发送请求之前，修改请求数据，只适用于<strong>post，put，patch</strong>请求，<strong>数组类型，数组里面的最后一个函数必须返回一个字符串</strong> </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[fucntion(data) &#123;</span><br><span class="line">  <span class="comment">// 对data进行更改</span></span><br><span class="line">  <span class="keyword">return</span> data</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>transformResponse：这里提前处理返回的数据</li>
+<li>headers：自定义请求头</li>
+<li>params：即将于请求一起发送的url参数（一般只用于get请求）<strong>一般是对象类型</strong> </li>
+<li>data：作为请求主体被发送是数据（一般只用于post请求）<strong>一般是对象类型</strong> </li>
+<li>timeout：超时时间，超过时间，请求将被中断</li>
+<li>withCredentials：表示跨域请求时是否需要使用凭证</li>
+<li>responseType：响应数据的类型，默认是’json’，可以是’text’, ‘json’,’document’,’arraybuffer’,’blob’,’stream’</li>
+<li>maxContentLength：响应数据的最大尺寸</li>
+<li>proxy：代理服务器主机名称和端口</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">proxy</span>: &#123;</span><br><span class="line">  <span class="attribute">host</span>: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">  port: <span class="number">9000</span>,</span><br><span class="line">  auth: : &#123;</span><br><span class="line">    username: <span class="string">'mikeymike'</span>,</span><br><span class="line">    password: <span class="string">'rapunz3l'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h6 id="2-下面是响应的数据接口"><a href="#2-下面是响应的数据接口" class="headerlink" title="(2)下面是响应的数据接口"></a>(2)下面是响应的数据接口</h6><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">data</span>: <span class="comment">// 服务器响应数据</span></span><br><span class="line">  status: <span class="comment">// http状态码</span></span><br><span class="line">  statusText: <span class="comment">// 服务器响应的http状态信息</span></span><br><span class="line">  headers:  <span class="comment">// 响应头</span></span><br><span class="line">  config: <span class="comment">// 请求配置数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-举例"><a href="#3-举例" class="headerlink" title="(3)举例"></a>(3)举例</h6><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送 POST 请求</span></span><br><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">'post'</span>,</span><br><span class="line">  url: <span class="string">'/getMainInfo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    id: <span class="number">123</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res.data)</span><br><span class="line">  <span class="built_in">console</span>.log(res.status)</span><br><span class="line">  <span class="built_in">console</span>.log(res.statusText)</span><br><span class="line">  <span class="built_in">console</span>.log(res.headers)</span><br><span class="line">  <span class="built_in">console</span>.log(res.config)</span><br><span class="line">  </span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="4-配置默认值default"><a href="#4-配置默认值default" class="headerlink" title="4. 配置默认值default"></a>4. 配置默认值default</h5><p><code>axios.default.baseURL = &#39;&#39;</code><br> <code>axios.default.headers.common[&#39;Authorization&#39;] = AUTH_TOKEN</code><br> …等等默认配置</p>
+<h4 id="5-执行多个并发"><a href="#5-执行多个并发" class="headerlink" title="5. 执行多个并发"></a>5. 执行多个并发</h4><p><code>axios.all()</code>和Promise.all()执行机制是一样的，要么全部成功走then，要么就走catch</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/getUseName?id=123'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'getUserAge?id=123'</span>)</span><br><span class="line">&#125;</span><br><span class="line">axios.all([getUserName(), getUserAge()]) .then(</span><br><span class="line">  axios.spread(<span class="function"><span class="keyword">function</span>(<span class="params">acct, perms</span>) </span>&#123;  <span class="comment">// 处理并发请求的助手函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(acct, perms)  <span class="comment">// 全部请求成功</span></span><br><span class="line">  &#125;)).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)  <span class="comment">// 只要任意一个请求出错</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="6-拦截器"><a href="#6-拦截器" class="headerlink" title="6. 拦截器"></a>6. 拦截器</h4><h5 id="1-在请求之前拦截请求"><a href="#1-在请求之前拦截请求" class="headerlink" title="(1)在请求之前拦截请求"></a>(1)在请求之前拦截请求</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加请求拦截器</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 在发送请求之前做些什么</span></span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 对请求错误做些什么</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2-在被then，catch处理前拦截响应"><a href="#2-在被then，catch处理前拦截响应" class="headerlink" title="(2)在被then，catch处理前拦截响应"></a>(2)在被then，catch处理前拦截响应</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加响应拦截器</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 对响应数据做点什么</span></span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 对响应错误做点什么</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-可以为自定义-axios-实例添加拦截器"><a href="#3-可以为自定义-axios-实例添加拦截器" class="headerlink" title="(3)可以为自定义 axios 实例添加拦截器"></a>(3)可以为自定义 axios 实例添加拦截器</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> instance = axios.create([config]);</span><br><span class="line">instance.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">/*...*/</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="7-封装axios"><a href="#7-封装axios" class="headerlink" title="7. 封装axios"></a>7. 封装axios</h4><p>在开发中，总会有很多的http请求，那我们就要封装好一个axios，使用更方便一些</p>
+<h5 id="1-封装"><a href="#1-封装" class="headerlink" title="(1)封装"></a>(1)封装</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request.js文件</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> qs <span class="keyword">from</span> <span class="string">'qs'</span></span><br><span class="line"><span class="comment">// 引入基础参数文件  和  baseURL配置文件</span></span><br><span class="line"><span class="keyword">import</span> baseParams <span class="keyword">from</span> <span class="string">'./baseParams'</span>  <span class="comment">// 基本参数，比如一些登录信息之类的参数</span></span><br><span class="line"><span class="keyword">import</span> &#123; BASE_URL &#125; <span class="keyword">from</span> <span class="string">'./config'</span>   <span class="comment">// baseURL写在config.js文件中</span></span><br><span class="line"><span class="comment">// 默认的全局配置</span></span><br><span class="line">axios.defaults.baseURL = BASE_URL</span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span></span><br><span class="line"><span class="comment">// 请求发送之前拦截，进行处理（根据业务需求进行拦截处理）</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="params">success</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> success</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> reject(error)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// then,catch处理之前，进行拦截处理（根据业务需求进行拦截处理）</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> response</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 导出post请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span> (<span class="params">url, data, withBaseParams = false</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    axios(&#123;</span><br><span class="line">      method: <span class="string">'post'</span>,</span><br><span class="line">      url,</span><br><span class="line">      data: withBaseParams ? qs.stringify(&#123;...baseParams, data&#125;) : qs.stringify(data),</span><br><span class="line">      headers: &#123;</span><br><span class="line">        <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> successHandle(res, resolve))   <span class="comment">// 将数据处理之后传给页面</span></span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> errorHandle(err, reject))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 导出get请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span> (<span class="params">url, params</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    axios(&#123;</span><br><span class="line">      method: <span class="string">'get'</span>,</span><br><span class="line">      url,</span><br><span class="line">      params,</span><br><span class="line">      headers: &#123;&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> successHandle(res, resolve))</span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> errorHandle(err, reject))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// then处理执行了successHandle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">successHandle</span>(<span class="params">data, resolve</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (res.success &amp;&amp; res.errorCode == <span class="string">'60000'</span>) &#123;</span><br><span class="line">    resolve(res)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 弹出toast报错</span></span><br><span class="line">    Toast(&#123;</span><br><span class="line">      message: res.msg,</span><br><span class="line">      duration: <span class="number">2000</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// catch处理执行了errorHandle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">errorHandle</span>(<span class="params">err, reject</span>) </span>&#123;</span><br><span class="line">  reject(err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-引入使用"><a href="#2-引入使用" class="headerlink" title="(2)引入使用"></a>(2)引入使用</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入使用</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="keyword">get</span>, post&#125; from 'request.js'</span><br><span class="line">post('/getMainInfo', &#123;id: <span class="number">123</span>&#125;, <span class="literal">true</span>)</span><br><span class="line">.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/06/27/Vue/%E5%9F%BA%E4%BA%8Evue+%20bootstrap%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%E5%8A%9F%E8%83%BD/">
+                基于vue+ bootstrap实现图片上传图片展示功能
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-27</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/132.jpg" alt="img"></p>
+<p><strong>html</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.....</span><br><span class="line">.......</span><br><span class="line"><span class="tag">&lt;<span class="name">--</span> <span class="attr">key</span>=<span class="string">idPicUrl</span> <span class="attr">--</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-sm-7"</span> &gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"queryFirmInfo[key]"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"max-height:200px;max-width:250px"</span> <span class="attr">class</span>=<span class="string">"myimage"</span> <span class="attr">:name</span>=<span class="string">"key"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"fileForm"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span> <span class="attr">class</span>=<span class="string">"form-horizontal "</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-sm-5 "</span> <span class="attr">style</span>=<span class="string">"margin:0 25%;padding: 0"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"file"</span> @<span class="attr">change</span>=<span class="string">"handleFileChange"</span> <span class="attr">ref</span>=<span class="string">"inputer"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>vue</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"> data: &#123;</span><br><span class="line">   queryFirmInfo：&#123;</span><br><span class="line">   idPicUrl：<span class="string">""</span></span><br><span class="line">   ......</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//选择改变图片</span></span><br><span class="line">     handleFileChange(e)&#123;</span><br><span class="line">       <span class="keyword">var</span> vm=<span class="keyword">this</span>;</span><br><span class="line">       <span class="keyword">let</span> file = e.target.files[<span class="number">0</span>];</span><br><span class="line">       <span class="keyword">let</span> supportedTypes = [<span class="string">'image/jpg'</span>, <span class="string">'image/jpeg'</span>, <span class="string">'image/png'</span>];</span><br><span class="line">       <span class="keyword">if</span> (file &amp;&amp; supportedTypes.indexOf(file.type) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">         baseFileAjax(<span class="keyword">new</span> FormData($( <span class="string">"#fileForm"</span> )[<span class="number">0</span>]),<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">           <span class="keyword">if</span>(result.ret==<span class="number">0</span>)&#123;</span><br><span class="line">           <span class="comment">//提交成功后</span></span><br><span class="line">           <span class="comment">//将图片上传到后台，得到后台图片的路径。</span></span><br><span class="line">             vm.queryFirmInfo[<span class="string">"idPicUrl"</span>]=result.url;</span><br><span class="line">             $(<span class="string">"#dForm"</span>).formValidation(<span class="string">'revalidateField'</span>, <span class="string">"idPicUrl"</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">             layer.msg(<span class="string">"修改图片失败！"</span>)</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;)</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         layer.alert(<span class="string">'文件格式只支持：jpg、jpeg 和 png'</span>);</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;,</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@method </span>:form表单提交文件</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param </span>url ：请求路径</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param </span>data ：请求数据(new FormData($( "#imgForm" )[0]))</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param </span>method：回调方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseFileAjax</span>(<span class="params">data,method</span>)</span>&#123;</span><br><span class="line">  $.ajax(&#123;</span><br><span class="line">    url: <span class="string">'/dspark-firm/firmMember/uploadFile.yt'</span> ,</span><br><span class="line">    type: <span class="string">'POST'</span>,</span><br><span class="line">    data: data,</span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">    cache: <span class="literal">false</span>,</span><br><span class="line">    contentType: <span class="literal">false</span>,</span><br><span class="line">    processData: <span class="literal">false</span>,</span><br><span class="line">    success: method,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">returndata</span>) </span>&#123;</span><br><span class="line">      alert(<span class="string">"Connection error"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/7/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/9/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

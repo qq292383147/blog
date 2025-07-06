@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="Linux CentOS + Nodejs + Express部署vue项目"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>Linux CentOS + Nodejs + Express部署vue项目 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/12/21/%E5%85%B6%E5%AE%83/Linux%20CentOS%20+%20Nodejs%20+%20Express%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE/">
+                Linux CentOS + Nodejs + Express部署vue项目
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>注：服务器为CentOS 7.3.1611，使用Xshell6 + Xftp6工具完成服务器远程操作</p>
+<h2 id="一、安装Node环境"><a href="#一、安装Node环境" class="headerlink" title="一、安装Node环境"></a>一、安装Node环境</h2><p>通过Xshell连接服务器成功之后就可以开始以下工作</p>
+<h3 id="1-清理工作"><a href="#1-清理工作" class="headerlink" title="1.清理工作"></a>1.清理工作</h3><p>如果之前有安装过nodejs，用自带的包管理命名先删除一次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove nodejs npm -y</span><br></pre></td></tr></table></figure>
+<p>然后手动进入以下目录删除相关文件<br>进入 /usr/local/lib 删除所有 node 和 node_modules文件夹<br>进入 /usr/local/include 删除所有 node 和 node_modules 文件夹<br>进入 /usr/local/bin 删除 node 的可执行文件</p>
+<h3 id="2-去官网复制node安装包链接"><a href="#2-去官网复制node安装包链接" class="headerlink" title="2.去官网复制node安装包链接"></a>2.去官网复制node安装包链接</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br><img src="H:\上传到git里面的md文件图片\picture\other\24.png" alt="24"></p>
+<h3 id="3-在Xshell里cd到安装目录"><a href="#3-在Xshell里cd到安装目录" class="headerlink" title="3.在Xshell里cd到安装目录"></a>3.在Xshell里cd到安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+<h3 id="4-输入命令链接开始下载nodejs安装包"><a href="#4-输入命令链接开始下载nodejs安装包" class="headerlink" title="4.输入命令链接开始下载nodejs安装包"></a>4.输入命令链接开始下载nodejs安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+<h3 id="5-输入命令两步解压"><a href="#5-输入命令两步解压" class="headerlink" title="5.输入命令两步解压"></a>5.输入命令两步解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v10.16.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v10.16.0-linux-x64.tar</span><br></pre></td></tr></table></figure>
+<h3 id="6-重名解压的文件夹名称为nodejs"><a href="#6-重名解压的文件夹名称为nodejs" class="headerlink" title="6.重名解压的文件夹名称为nodejs"></a>6.重名解压的文件夹名称为nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v10.16.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
+<h3 id="7-进入解压目录"><a href="#7-进入解压目录" class="headerlink" title="7.进入解压目录"></a>7.进入解压目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> nodejs</span><br></pre></td></tr></table></figure>
+<h3 id="8-创建软连接"><a href="#8-创建软连接" class="headerlink" title="8.创建软连接"></a>8.创建软连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s  /usr/<span class="built_in">local</span>/nodejs/bin/node /usr/<span class="built_in">local</span>/bin/node</span><br><span class="line">ln -s  /usr/<span class="built_in">local</span>/nodejs/bin/npm /usr/<span class="built_in">local</span>/bin/npm</span><br></pre></td></tr></table></figure>
+<p>如果不小心输错了路径，重新创建会提示：‘ln: 无法创建符号链接”/usr/local/bin/npm”: 文件已存在’，输入rm /usr/local/bin/npm命令清除后可以重新创建</p>
+<h3 id="9-测试"><a href="#9-测试" class="headerlink" title="9.测试"></a>9.测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h3 id="10-安装cnpm淘宝镜像并创建软链接"><a href="#10-安装cnpm淘宝镜像并创建软链接" class="headerlink" title="10.安装cnpm淘宝镜像并创建软链接"></a>10.安装cnpm淘宝镜像并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/cnpm /usr/<span class="built_in">local</span>/bin/cnpm</span><br></pre></td></tr></table></figure>
+<h2 id="二、用Express搭建web服务"><a href="#二、用Express搭建web服务" class="headerlink" title="二、用Express搭建web服务"></a>二、用Express搭建web服务</h2><h3 id="1-在Xshell里cd到指定目录"><a href="#1-在Xshell里cd到指定目录" class="headerlink" title="1.在Xshell里cd到指定目录"></a>1.在Xshell里cd到指定目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/</span><br></pre></td></tr></table></figure>
+<p>注：如果没有www目录就在var目录下输入命令mkdir www手动创建一个，并进入到www目录</p>
+<h3 id="2-创建web服务项目文件夹"><a href="#2-创建web服务项目文件夹" class="headerlink" title="2.创建web服务项目文件夹"></a>2.创建web服务项目文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br></pre></td></tr></table></figure>
+<h3 id="3-cd进入项目目录"><a href="#3-cd进入项目目录" class="headerlink" title="3.cd进入项目目录"></a>3.cd进入项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> demo</span><br></pre></td></tr></table></figure>
+<h3 id="4-初始化项目生成package-json"><a href="#4-初始化项目生成package-json" class="headerlink" title="4.初始化项目生成package.json"></a>4.初始化项目生成package.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<p>注：这里的-y意思是省略创建过程中一直输yes的步骤</p>
+<h3 id="5-安装express"><a href="#5-安装express" class="headerlink" title="5.安装express"></a>5.安装express</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i express -D</span><br></pre></td></tr></table></figure>
+<h3 id="6-创建web服务程序文件app-js"><a href="#6-创建web服务程序文件app-js" class="headerlink" title="6.创建web服务程序文件app.js"></a>6.创建web服务程序文件app.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir app.js</span><br></pre></td></tr></table></figure>
+<h3 id="7-编写web服务程序代码app-js"><a href="#7-编写web服务程序代码app-js" class="headerlink" title="7.编写web服务程序代码app.js"></a>7.编写web服务程序代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); <span class="comment">//文件模块</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>); <span class="comment">//路径模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>); <span class="comment">//express框架模块</span></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">'11.22.33.44'</span>; <span class="comment">//ip</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">9999</span>; <span class="comment">//端口</span></span><br><span class="line"></span><br><span class="line">app.use(express.static(path.resolve(__dirname, <span class="string">'./dist'</span>))); <span class="comment">// 设置静态项目访问路径(此处的dist为webpack打包生成的项目文件夹名称)</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> html = fs.readFileSync(path.resolve(__dirname, <span class="string">'./dist/index.html'</span>), <span class="string">'utf-8'</span>); <span class="comment">// 设置所有访问服务请求默认返回index.html文件</span></span><br><span class="line">    res.send(html);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, hostName, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(服务器运行在http:<span class="comment">//$&#123;hostName&#125;:$&#123;port&#125;);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="三、打包部署vue项目"><a href="#三、打包部署vue项目" class="headerlink" title="三、打包部署vue项目"></a>三、打包部署vue项目</h2><h3 id="1-在本地开发工具里打包需要部署的vue项目"><a href="#1-在本地开发工具里打包需要部署的vue项目" class="headerlink" title="1.在本地开发工具里打包需要部署的vue项目"></a>1.在本地开发工具里打包需要部署的vue项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>生成的dist文件夹就是我们需要部署到服务器上的项目</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\other\25.png" alt="25"></p>
+<h2 id="2-把dist文件夹通过Xftp工具复制到服务器的var-www-demo目录下"><a href="#2-把dist文件夹通过Xftp工具复制到服务器的var-www-demo目录下" class="headerlink" title="2.把dist文件夹通过Xftp工具复制到服务器的var/www/demo目录下"></a>2.把dist文件夹通过Xftp工具复制到服务器的var/www/demo目录下</h2><p><img src="H:\上传到git里面的md文件图片\picture\other\26.png" alt="26"></p>
+<h2 id="四、启动web服务"><a href="#四、启动web服务" class="headerlink" title="四、启动web服务"></a>四、启动web服务</h2><h3 id="1-在Xshell里cd到var-www-demo目录，输入以下命令启动web服务程序"><a href="#1-在Xshell里cd到var-www-demo目录，输入以下命令启动web服务程序" class="headerlink" title="1.在Xshell里cd到var/www/demo目录，输入以下命令启动web服务程序"></a>1.在Xshell里cd到var/www/demo目录，输入以下命令启动web服务程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<p>如果能正常访问项目地址表示已经搭建成功。</p>
+<p>请求后端接口跨域方案请见：<br>跨域代理方案1：Nginx使用教程<br>跨域代理方案2：Nodejs 中使用http-proxy-middleware实现代理跨域</p>
+<h3 id="2-安装PM2托管Node-Web服务程序"><a href="#2-安装PM2托管Node-Web服务程序" class="headerlink" title="2.安装PM2托管Node Web服务程序"></a>2.安装PM2托管Node Web服务程序</h3><p>在xshell里用node默认的启动方式有一个缺点，xshell退出后nodejs项目便会停止<br>使用pm2这个托管工具可以很好的解决这个问题，而且当代码有更改时会自动重启服务更新</p>
+<h3 id="1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"><a href="#1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接" class="headerlink" title="1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"></a>1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install pm2 -g</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/pm2 /usr/<span class="built_in">local</span>/bin/pm2</span><br></pre></td></tr></table></figure>
+<h3 id="2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称"><a href="#2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称" class="headerlink" title="2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称"></a>2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js --name abc</span><br></pre></td></tr></table></figure>
+<h3 id="以下为pm2常用命令说明"><a href="#以下为pm2常用命令说明" class="headerlink" title="以下为pm2常用命令说明"></a>以下为pm2常用命令说明</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pm2 start app.js –name abc</td>
+<td>启动(–name为定义任务名称的指令，abc为任务名称值)</td>
+</tr>
+<tr>
+<td>pm2 start app.js –watch</td>
+<td>启动( –watch为监听应用目录的变化的指令)</td>
+</tr>
+<tr>
+<td>pm2 restart app.js</td>
+<td>重启任务</td>
+</tr>
+<tr>
+<td>pm2 stop abc</td>
+<td>结束(abc为任务名称或id)</td>
+</tr>
+<tr>
+<td>pm2 list</td>
+<td>查看所有任务列表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pm2基本功能命令"><a href="#pm2基本功能命令" class="headerlink" title="pm2基本功能命令"></a>pm2基本功能命令</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动进程/应用</td>
+<td>pm2 start bin/abc 或 pm2 start app.js</td>
+</tr>
+<tr>
+<td>重命名进程/应用</td>
+<td>pm2 start app.js –name abc</td>
+</tr>
+<tr>
+<td>添加进程/应用</td>
+<td>pm2 start bin/abc –watch</td>
+</tr>
+<tr>
+<td>结束进程/应用</td>
+<td>pm2 stop abc</td>
+</tr>
+<tr>
+<td>结束所有进程/应用</td>
+<td>pm2 stop all</td>
+</tr>
+<tr>
+<td>删除进程/应用</td>
+<td>pm2 delete abc</td>
+</tr>
+<tr>
+<td>删除所有进程/应用</td>
+<td>pm2 delete all</td>
+</tr>
+<tr>
+<td>列出所有进程/应用</td>
+<td>pm2 list</td>
+</tr>
+<tr>
+<td>查看进程/应用详情</td>
+<td>pm2 show abc 或 pm2 describe abc</td>
+</tr>
+<tr>
+<td>查看进程/应用资源消耗</td>
+<td>pm2 monit</td>
+</tr>
+<tr>
+<td>查看进程/应用日志</td>
+<td>pm2 logs abc</td>
+</tr>
+<tr>
+<td>查看所有进程/应用日志</td>
+<td>pm2 logs</td>
+</tr>
+<tr>
+<td>重新启动进程/应用</td>
+<td>pm2 restart abc</td>
+</tr>
+<tr>
+<td>重新启动所有进程/应用</td>
+<td>pm2 restart all</td>
+</tr>
+</tbody>
+</table>
+<p>pm2使用教程参考链接：<br><a href="https://www.cnblogs.com/chyingp/p/pm2-documentation.html" target="_blank" rel="noopener">https://www.cnblogs.com/chyingp/p/pm2-documentation.html</a><br><a href="https://www.jb51.net/article/113398.htm" target="_blank" rel="noopener">https://www.jb51.net/article/113398.htm</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/其它/">#其它</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

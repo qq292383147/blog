@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="JavaScript-手写优秀的拷贝"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>JavaScript-手写优秀的拷贝 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/15/JavaScript/JavaScript-%E6%89%8B%E5%86%99%E4%BC%98%E7%A7%80%E7%9A%84%E6%8B%B7%E8%B4%9D/">
+                JavaScript-手写优秀的拷贝
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <blockquote>
+<p>面试中，大家经常会遇到，面试官让你讲述什么是深拷贝，什么是浅拷贝，如何实现深拷贝，如何实现浅拷贝。这都是一下面试中经常遇到的问题。我们如果不经能说出，还能写出，那你就很叼了。</p>
+</blockquote>
+<h2 id="一、什么是浅拷贝？"><a href="#一、什么是浅拷贝？" class="headerlink" title="一、什么是浅拷贝？"></a>一、什么是浅拷贝？</h2><p>创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是引用类型的指针。如果原对象改变了这个指针，拷贝对象也会受影响。</p>
+<p>将 B 对象拷贝到 A 对象中，但不包括 B 里面的子对象。浅拷贝只复制一层对象的属性，并不包括对象里面的为引用类型的数据。 </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/90.jpg" alt="90"></p>
+<h2 id="二、如何实现浅拷贝"><a href="#二、如何实现浅拷贝" class="headerlink" title="二、如何实现浅拷贝"></a>二、如何实现浅拷贝</h2><h3 id="2-1-Object-assign"><a href="#2-1-Object-assign" class="headerlink" title="2.1 Object.assign();"></a>2.1 Object.assign();</h3><p>Object.assign();在很多的文章中，有提及到Object.assign()是一个深拷贝，大家请注意一下，它是一个浅拷贝。这里稍微扯远一点，在面试中，如果让你实现一个Object.assign()；我们该怎么做了。代码如下。</p>
+<ul>
+<li>判断浏览器是否支持Object.assign，不支持我们在Object上绑定一个。</li>
+<li>目标值需不能为空，否则进行报错。避免存在值不是对象，我们手动进行一次转换。</li>
+<li>循环拷贝对象，对每一个拷贝对象的属性进行拷贝。</li>
+<li>返回目标值</li>
+<li>Object.assign属性是不可枚举的，所以设置Object.assignMy enumerable为false。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否支持assign属性</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Object</span>.assign == <span class="literal">null</span>) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(<span class="built_in">Object</span>, <span class="string">'assignMy'</span>, &#123;</span><br><span class="line">        value: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (target == <span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'xxxx'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> newObj = <span class="built_in">Object</span>(target);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="built_in">arguments</span>.length; index++) &#123;</span><br><span class="line">                <span class="keyword">var</span> nextSource = <span class="built_in">arguments</span>[index];</span><br><span class="line">                <span class="keyword">if</span> (nextSource != <span class="literal">null</span>) &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">var</span> source <span class="keyword">in</span> nextSource) &#123;</span><br><span class="line">                       <span class="keyword">if</span>(<span class="built_in">Object</span>.prototype.hasOwnProperty.call(nextSource, source)) &#123;</span><br><span class="line">                            newObj[source] = nextSource[source];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> newObj;</span><br><span class="line">        &#125;,</span><br><span class="line">        writable: <span class="literal">true</span>,</span><br><span class="line">        configurable: <span class="literal">true</span>,</span><br><span class="line">        enumerable: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/91.jpg" alt="91"></p>
+<h3 id="2-2-扩展运算符-…"><a href="#2-2-扩展运算符-…" class="headerlink" title="2.2 扩展运算符(…)"></a>2.2 扩展运算符(…)</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/93.jpg" alt="93"><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/92.jpg" alt="92"></p>
+<h3 id="2-3-Array-prototype-slice-amp-amp-Array-prototype-concat"><a href="#2-3-Array-prototype-slice-amp-amp-Array-prototype-concat" class="headerlink" title="2.3 Array.prototype.slice() &amp;&amp; Array.prototype.concat()"></a>2.3 Array.prototype.slice() &amp;&amp; Array.prototype.concat()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">list</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> m = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: &#123; <span class="attr">d</span>: <span class="number">3</span> &#125;&#125;;</span><br><span class="line"><span class="keyword">var</span> list1 = list(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, m); </span><br><span class="line">m.c.d = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(list1);</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/94.jpg" alt="94"></p>
+<h2 id="三、什么是深拷贝"><a href="#三、什么是深拷贝" class="headerlink" title="三、什么是深拷贝"></a>三、什么是深拷贝</h2><p>将一个对象冲内存中完全的拷贝出来，分配一个新的内存区域存放新的对象，且修改对象不会影响到原来的对象。</p>
+<p>将 B 对象拷贝到 A 对象中，包括 B 里面的子对象。它不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/95.jpg" alt="95"></p>
+<h2 id="四、如何实现深拷贝"><a href="#四、如何实现深拷贝" class="headerlink" title="四、如何实现深拷贝"></a>四、如何实现深拷贝</h2><h3 id="4-1-Json-parse-JSON-stringify-xxxx"><a href="#4-1-Json-parse-JSON-stringify-xxxx" class="headerlink" title="4.1 Json.parse(JSON.stringify(xxxx))"></a>4.1 Json.parse(JSON.stringify(xxxx))</h3><ul>
+<li>优点：简单、已使用。</li>
+<li>缺点：会忽略undefined、symbol。不能序列化函数。不能解决循环引用的问题。</li>
+</ul>
+<h3 id="4-2-消息通道messageChannel"><a href="#4-2-消息通道messageChannel" class="headerlink" title="4.2 消息通道messageChannel"></a>4.2 消息通道messageChannel</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">const</span> &#123;port1, port2&#125; = <span class="keyword">new</span> MessageChannel();</span><br><span class="line">          port2.onmessage = <span class="function"><span class="params">ev</span> =&gt;</span> resolve(ev.data);</span><br><span class="line">          port1.postMessage(obj); </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：能解决undefined和循环应用的问题。</li>
+<li>缺点：是一个异步函数。</li>
+</ul>
+<h3 id="4-3-递归函数"><a href="#4-3-递归函数" class="headerlink" title="4.3 递归函数"></a>4.3 递归函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObj</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">'object'</span> || <span class="keyword">typeof</span> o === <span class="string">'function'</span>) &amp;&amp; o !== <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isObj(target)) &#123;</span><br><span class="line">        <span class="keyword">let</span> cloneTarget = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">            cloneTarget[key] = deepClone(target[key]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> target1 = &#123;</span><br><span class="line">    field1: <span class="number">1</span>,</span><br><span class="line">    field2: <span class="literal">undefined</span>,</span><br><span class="line">    field3: &#123;</span><br><span class="line">        child: <span class="string">'child'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    field4: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>],</span><br><span class="line">	field5: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">	field6: <span class="built_in">Symbol</span>(<span class="string">'field6'</span>)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'clone'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = deepClone(target1);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'clone'</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/96.jpg" alt="96"></p>
+<p>如果存在循环引用<img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/97.jpg" alt="97"></p>
+<ul>
+<li>优点：能解决undefined、Symbol和函数的问题。</li>
+<li>缺点：不能循环引用。</li>
+</ul>
+<h3 id="4-4优化递归函数"><a href="#4-4优化递归函数" class="headerlink" title="4.4优化递归函数"></a>4.4优化递归函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">target, map = new Map(</span>)) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">isObj</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">typeof</span> o === <span class="string">'object'</span> || <span class="keyword">typeof</span> o === <span class="string">'function'</span>) &amp;&amp; o !== <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (isObj(target)) &#123;</span><br><span class="line">        <span class="keyword">let</span> cloneTarget = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">        <span class="keyword">if</span> (map.get(target)) &#123;</span><br><span class="line">            <span class="keyword">return</span> map.get(target);</span><br><span class="line">        &#125;</span><br><span class="line">        map.set(target, cloneTarget);</span><br><span class="line">        <span class="comment">// 这里还可以使用while来提高性能</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">            cloneTarget[key] = deepClone(target[key], map);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cloneTarget;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> target1 = &#123;</span><br><span class="line">    field1: <span class="number">1</span>,</span><br><span class="line">    field2: <span class="literal">undefined</span>,</span><br><span class="line">    field3: &#123;</span><br><span class="line">        child: <span class="string">'child'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    field4: [<span class="number">2</span>, <span class="number">4</span>, <span class="number">8</span>]</span><br><span class="line">&#125;;</span><br><span class="line">target1.target1 = target1;</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'clone'</span>);</span><br><span class="line"><span class="keyword">var</span> obj = deepClone(target1);</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'clone'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>优点：能解决undefined、Symbol、函数的问题和循环引用问题。</li>
+<li>缺点：存在一定的性能问题。</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

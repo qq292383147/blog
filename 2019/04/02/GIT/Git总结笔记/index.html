@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="Git总结笔记"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>Git总结笔记 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/04/02/GIT/Git%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/">
+                Git总结笔记
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/git/">git</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <font color="#EE1289">工作流    工作区—-&gt;暂存区—–&gt;版本库</font><br><br><br><font color="#76EE00">初始化          git init—-&gt; git add —–&gt; git commit</font><br><br><br><font color="#00F5FF">远程仓库        git remote add—-&gt;git pull——&gt;git push —-&gt; git clone</font><br><br><br><font color="#EEEE00">分支管理   git branch —-&gt;git checkout—-&gt;git merge</font><br><br><br><font color="#FFBBFF">标签管理             git tag—-&gt;git push</font>
+
+
+
+<h2 id="Git-安装"><a href="#Git-安装" class="headerlink" title="Git 安装"></a>Git 安装</h2><p>下载window git</p>
+<ul>
+<li>Msysgit   <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a></li>
+</ul>
+<h3 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h3><ul>
+<li><p><code>git config --global user.name</code> “你的用户名”</p>
+</li>
+<li><p><code>git config --global user.email</code> “你的邮箱”</p>
+</li>
+<li><p><code>git config user.name</code> 查看用户名</p>
+</li>
+<li><p><code>git config user.password</code> 查看密码</p>
+</li>
+<li><p><code>git config user.email</code> 查看邮箱</p>
+</li>
+<li><p><code>git config --list</code> 查看配置信息</p>
+</li>
+<li><p><code>git config --global user.name &quot;xx(新的用户名)&quot;</code> 修改用户名</p>
+</li>
+<li><p><code>git config --global user.password &quot;xxx(新的密码)&quot;</code> 修改密码</p>
+</li>
+<li><p><code>git config --global user.email &quot;xxx@xxx.com(新的邮箱)&quot;</code> 修改邮箱</p>
+</li>
+</ul>
+<h3 id="可以使用两种操作方式："><a href="#可以使用两种操作方式：" class="headerlink" title="可以使用两种操作方式："></a>可以使用两种操作方式：</h3><ul>
+<li><p>1、图形化界面（初级）sourcetree</p>
+</li>
+<li><p>2、命令（高级）</p>
+</li>
+</ul>
+<h3 id="一：说明开发过程中的工作流程"><a href="#一：说明开发过程中的工作流程" class="headerlink" title="一：说明开发过程中的工作流程"></a>一：说明开发过程中的工作流程</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/1.png" alt="img"></p>
+<h3 id="二：什么是shell"><a href="#二：什么是shell" class="headerlink" title="二：什么是shell"></a>二：什么是shell</h3><p>在计算机科学中，Shell俗称壳，用来区别于Kernel（核），是指“提供使用者使用界面”的软件（命令解析器）。它类似于<a href="http://baike.baidu.com/view/365.htm" target="_blank" rel="noopener">DOS</a>下的<code>command</code>和后来的<code>cmd.exe</code>。它接收用户命令，然后调用相应的应用程序</p>
+<h2 id="三：认识bash这个shell"><a href="#三：认识bash这个shell" class="headerlink" title="三：认识bash这个shell"></a>三：认识bash这个shell</h2><p>bash常见命令</p>
+<p><code>pwd</code> (Print Working Directory) 查看当前目录</p>
+<p><code>cd</code> (Change Directory) 切换目录，如 cd /etc</p>
+<p><code>ls</code> (List) 查看当前目录下内容，如 ls -al</p>
+<p><code>mkdir</code> (Make Directory) 创建目录，如 mkdir blog</p>
+<p><code>touch</code> 创建文件，如 touch index.html</p>
+<p><code>cat</code> 查看文件全部内容，如 cat index.html</p>
+<p><code>rm</code> (remove) 删除文件，如 rm index.html、rm -rf  blog</p>
+<p><code>rmdir</code> (Remove Directory) 删除文件夹，只能删除空文件夹，不常用</p>
+<p><code>mv</code> (move) 移动文件或重命名，如 mv index.html ./demo/index.html</p>
+<p><code>cp</code> (copy) 复制文件，cp index.html ./demo/index.html</p>
+<p><code>head</code> 查看文件前几行，如 head -5 index.html </p>
+<p><code>history</code> 查看操作历史</p>
+<p><code>who am i</code> 查看当前用户</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/2.png" alt="img"> </p>
+<h2 id="四：vi编辑器"><a href="#四：vi编辑器" class="headerlink" title="四：vi编辑器"></a>四：vi编辑器</h2><p>vi编辑器提供了3种模式，分别是命令模式、插入模式、底行模式，每种模式下用户所能进行的操作是不一样的<br><img src="https://qq292383147.github.io/pictureLibrary/picture/git/3.png" alt="img"></p>
+<p>使用vi编辑器</p>
+<p>​    a) 打开/创建文件， vi 文件路径</p>
+<p>​    b) 底行模式 :w保存，:w filenme另存为</p>
+<p>​    c) 底行模式 :q退出</p>
+<p>​    d) 底行模式 :wq保存并退出</p>
+<p>​    e) 底行模式 :e! 撤销更改，返回到上一次保存的状态</p>
+<p>​    f) 底行模式 :q! 不保存强制退出</p>
+<hr>
+<p>​    h) 命令模式 ZZ（大写）保存并退出</p>
+<p>​    i) 命令模式 u辙销操作，可多次使用</p>
+<p>​    j) 命令模式 dd删除当前行</p>
+<p>​    k) 命令模式 yy复制当前行</p>
+<p>​    l) 命令模式 p 粘贴内容</p>
+<p>​    o) 命令模式 i进入编辑模式，当前光标处插入</p>
+<p>​    p) 命令模式 a进入编辑模式，当前光标后插入</p>
+<p>​    q) 命令模式 A进入编辑模式，光标移动到行尾</p>
+<p>​    r) 命令模式 o进入编辑模式，当前行下面插入新行</p>
+<p>​    s) 命令模式 O进入编辑模式，当前行上面插入新行</p>
+<p>当我们处在编辑模式的情况下，和我们在Windows编辑器的使用相似</p>
+<h2 id="五：版本控制"><a href="#五：版本控制" class="headerlink" title="五：版本控制"></a>五：版本控制</h2><ul>
+<li><p>1.本地版本控制系统</p>
+</li>
+<li><p>2.集中式版本控制系统-SVN</p>
+</li>
+<li><p>3.分布式版本控制系统-git</p>
+</li>
+</ul>
+<h2 id="六：git"><a href="#六：git" class="headerlink" title="六：git"></a>六：git</h2><ul>
+<li><ol>
+<li>git工作原理</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>Git仓库目录是Git用来保存项目的元数据和对象数据库的地方。 这是Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
+</blockquote>
+<p>工作目录是对项目的某个版本独立提取出来的内容。 这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+<p>暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”（Index），不过一般说法还是叫暂存区域。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/4.png" alt="img"> </p>
+<p>基本的Git工作流程如下：</p>
+<p>​    1、在工作目录中修改文件。</p>
+<p>​    2、暂存文件，将文件的快照放入暂存区域。</p>
+<p>​    3、提交更新，找到暂存区域的文件，将快照永久存储到Git仓库目录<br><br></p>
+<ul>
+<li><ol start="2">
+<li>git安装</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 配置用户名： git config –global user.name “用户名”<br><br><br>b) 配置邮箱： git config –global user.email “邮箱地址”<br><br><br>c) 查看配置信息： git config –list</p>
+</blockquote>
+<ul>
+<li><ol start="3">
+<li>初始化仓库：</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 命令：git init<br><br><br>b) 作用：使用Git管理项目的初始化操作，会创建一个名为.git的隐藏目录<br><br><br>c) 一般是在项目的根目录执行这个命令</p>
+</blockquote>
+<ul>
+<li><ol start="4">
+<li>跟踪文件</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 将文件由 工作区 添加到 暂存区（Index），暂存文件<br><br><br>b) 命令：git add 文件路径<br><br><br>c) git add –all 或者 git add -A（简写） 添加所有文件</p>
+</blockquote>
+<ul>
+<li><ol start="5">
+<li>提交更新</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 作用：将文件由 暂存区 添加到 仓库（HEAD）<br><br><br>b) git commit -m “提交说明”</p>
+</blockquote>
+<ul>
+<li><ol start="6">
+<li>查看文件状态</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 命令：git status</p>
+</blockquote>
+<ul>
+<li><ol start="7">
+<li>Git工作流程</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 在工作目录中修改某些文件。<br><br><br>b) 对修改后的文件进行快照，然后保存到暂存区域。<br><br><br>c) 提交更新，将保存在暂存区域的文件快照永久转储到.git目录中。</p>
+</blockquote>
+<ul>
+<li><ol start="8">
+<li>查看提交日志</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 命令：git log 查看详细的提交信息</p>
+</blockquote>
+<ul>
+<li><ol start="9">
+<li>版本回退</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 作用：恢复到已经提交的某一个版本中<br><br><br>b) 命令：git reset –hard [版本号]<br><br><br>c) 其他方式：git reset –hard head~1</p>
+</blockquote>
+<ul>
+<li><ol start="10">
+<li>git分支</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 查看分支：git branch，当前分支会标有一个*<br><br><br>b) 创建分支：git branch [分支名称]<br><br><br>c) 切换分支：git checkout [分支名称]<br><br><br>d) 合并分支：git merge [分支名称]，即：将其他分支合并到当前分支<br><br><br>e) 删除分支：git branch -d [分支名称]</p>
+</blockquote>
+<ul>
+<li><ol start="11">
+<li>创建本地共享仓库:仓库就是一个文件夹</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) <img src="https://qq292383147.github.io/pictureLibrary/picture/git/5.png" alt="img"><br><br><br>b) 通过—bare创建裸仓库<br><br><br>c) 共享的仓库必须是一个裸仓库<br><br><br>d) 通过从共享仓库中复制内容<br><br><br>e) 虽然复制的时候是从裸仓库中复制的，但是复制到的内容是真正的工作目录下的内容<img src="https://qq292383147.github.io/pictureLibrary/picture/git/6.png" alt="img"><br><br><br>f) 修改内容，并且将修改的内容更新<img src="https://qq292383147.github.io/pictureLibrary/picture/git/7.png" alt="img"><br><br><br>g) 进入到另外的目录，将之前提交的内容拉取<img src="https://qq292383147.github.io/pictureLibrary/picture/git/8.png" alt="img"></p>
+</blockquote>
+<ul>
+<li><ol start="12">
+<li>git远程仓库</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-在本地创建仓库"><a href="#1-在本地创建仓库" class="headerlink" title="1 在本地创建仓库"></a>1 在本地创建仓库</h3><p><code>git init</code></p>
+<p><code>git config</code></p>
+<p>2 新建 README.md 文件，并输入任意内容</p>
+<p>3 将 README.md 提交到本地</p>
+<p><code>git add</code></p>
+<p><code>git commit</code></p>
+<p>4 在github中新建仓库，并拿到仓库地址</p>
+<p>5 使用命令 <code>git push [仓库地址] master</code> 提交内容到github的默认分支</p>
+<p>6 刷新github仓库页面，在线修改 README.md 文件，并提交</p>
+<p>7 使用命令 <code>git pull [仓库地址] master</code> 获取仓库中的最新内容</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/9.png" alt="img"> </p>
+<h3 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h3><ul>
+<li><p>命令：git diff：将工作区与暂存区或者仓库对比</p>
+</li>
+<li><p>说明：如果暂存区没有文件，就会将工作区代码与上一次提交对比</p>
+<ul>
+<li><p>1 工作区 与 暂存区对比</p>
+</li>
+<li><p>2 工作区 与 仓库  对比</p>
+</li>
+</ul>
+</li>
+<li><p>命令：git diff –cached：将当前暂存区与仓库对比</p>
+</li>
+<li><p>命令：git diff [版本号1] [版本号2] [对比的文件路径]</p>
+<ul>
+<li>对比仓库区两次提交的差异</li>
+</ul>
+</li>
+</ul>
+<h3 id="撤销和删除"><a href="#撤销和删除" class="headerlink" title="撤销和删除"></a>撤销和删除</h3><ul>
+<li><p>git reset HEAD 文件名 从暂存区撤销（结果：变为 未 add 状态）</p>
+</li>
+<li><p>git checkout – test.txt 撤销文件变化</p>
+<ul>
+<li><p>一种是 readme.txt 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
+</li>
+<li><p>一种是 readme.txt 已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
+</li>
+</ul>
+</li>
+<li><p><code>rm [文件名称]</code>：删除文件（物理删除）</p>
+</li>
+<li><p><code>git rm [文件名称]</code>：从仓库中删除文件</p>
+</li>
+<li><p><code>git rm --cached [文件名称]</code>：从暂存区删除文件</p>
+</li>
+</ul>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/10.png" alt="img"> </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/11.png" alt="img"> </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/12.png" alt="img"> </p>
+<p>设置默认地址的几种方法：</p>
+<p><code>git push</code> [远程终端的地址] 默认节点</p>
+<p>改：</p>
+<p>1、<code>git push</code> 变量名 -u</p>
+<p>2、<code>git push</code> 地址名 -u </p>
+<p>下次就可以直接<code>git push</code></p>
+<p>清除安装的缓存</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/13.png" alt="img"> </p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/git/">#git</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

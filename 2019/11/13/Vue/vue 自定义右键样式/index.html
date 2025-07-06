@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="vue 自定义右键样式"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>vue 自定义右键样式 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/13/Vue/vue%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E6%A0%B7%E5%BC%8F/">
+                vue 自定义右键样式
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-13</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h5 id="主要是靠双击和右键来操作，可操作多个模态框，跟操作windows类似，接下来在里面拆出一个功能块来写一篇文章，就是自定义系统默认的右键。"><a href="#主要是靠双击和右键来操作，可操作多个模态框，跟操作windows类似，接下来在里面拆出一个功能块来写一篇文章，就是自定义系统默认的右键。" class="headerlink" title="主要是靠双击和右键来操作，可操作多个模态框，跟操作windows类似，接下来在里面拆出一个功能块来写一篇文章，就是自定义系统默认的右键。"></a>主要是靠<code>双击</code>和<code>右键</code>来操作，可操作多个模态框，跟操作<code>windows</code>类似，接下来在里面拆出一个功能块来写一篇文章，就是<code>自定义系统默认的右键</code>。</h5><h5 id="自定义右键操作有五个步骤："><a href="#自定义右键操作有五个步骤：" class="headerlink" title="自定义右键操作有五个步骤："></a>自定义右键操作有五个步骤：</h5><ol>
+<li><code>阻止</code>默认右键。</li>
+<li>获取当前右键点击时的<code>x</code>/<code>y</code>坐标，及<code>id</code>。</li>
+<li>自定义右键菜单样式及内容，定位在指定的位置后显示。</li>
+<li>返回对应点击目录的事件如:<code>查看</code>、<code>删除</code>、<code>编辑</code>。</li>
+<li>在任何地方点击左键时<code>隐藏右键菜单</code>。</li>
+</ol>
+<h5 id="关键方法："><a href="#关键方法：" class="headerlink" title="关键方法："></a>关键方法：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@contextmenu.prevent</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个是vue内置的，点击右键（阻止默认右键的默认行为）的一个回调方法，他返回了一大串东西这里我用到的是这两个(用于定位显示菜单的x,y位置)</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/114.jpg" alt="114"></p>
+<blockquote>
+<p><code>x_index</code>，<code>y_index</code> 是储存在<code>data</code>中的，用于定位模态框位置。<br> <code>ctrlId</code> 用于给接口处理的依据<br> <code>showMenu</code> 用于判断是否显示右键菜单</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--template--&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li class=&quot;role_list&quot; </span><br><span class="line">	v-for=&quot;(item,index) in role&quot; </span><br><span class="line">	:key=&quot;index&quot;</span><br><span class="line">	@contextmenu.prevent=&quot;(e)=&gt;&#123;</span><br><span class="line">		x_index = e.layerX;</span><br><span class="line">	        y_index = e.layerY;</span><br><span class="line">		ctrlId = item.id;</span><br><span class="line">		showMenu = true;</span><br><span class="line">	&#125;&quot;&gt;</span><br><span class="line">	    &lt;img :src=&quot;item.head_portrait&quot; alt=&quot;&quot;&gt;</span><br><span class="line">	    &lt;p&gt;&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要的参数(x,y,id)都具备了，因为右键操作很多地方都用到了，所以封装成了一个组件</p>
+</blockquote>
+<h4 id="right-menu-vue-组件代码"><a href="#right-menu-vue-组件代码" class="headerlink" title="right_menu.vue 组件代码"></a>right_menu.vue 组件代码</h4><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>注释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x</td>
+<td>x坐标</td>
+</tr>
+<tr>
+<td>y</td>
+<td>y坐标</td>
+</tr>
+<tr>
+<td>showMenu</td>
+<td>显示状态</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div v-if=&quot;show&quot;</span><br><span class="line">	     class=&quot;menu_style&quot; </span><br><span class="line">	     :style=&quot;&#123;top:y+&apos;px&apos;,left:x+&apos;px&apos;&#125;&quot;&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;!-- 分别传递事件给父元素调用 --&gt;</span><br><span class="line">			&lt;li @click=&quot;()=&gt;&#123;$emit(&apos;open&apos;)&#125;&quot;&gt;打开&lt;/li&gt;</span><br><span class="line">			&lt;li @click=&quot;()=&gt;&#123;$emit(&apos;update&apos;)&#125;&quot;&gt;编辑&lt;/li&gt;</span><br><span class="line">			&lt;li @click=&quot;()=&gt;&#123;$emit(&apos;del&apos;)&#125;&quot;&gt;删除&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default&#123;</span><br><span class="line">		name:&apos;right_menu&apos;,</span><br><span class="line">		props:&#123;</span><br><span class="line">			x:&#123;</span><br><span class="line">				type:[Number],</span><br><span class="line">				default:0</span><br><span class="line">			&#125;,</span><br><span class="line">			y:&#123;</span><br><span class="line">				type:[Number],</span><br><span class="line">				default:0</span><br><span class="line">			&#125;,</span><br><span class="line">			showMenu:&#123;</span><br><span class="line">				type:[Boolean],</span><br><span class="line">				default:false</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		data()&#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				show:false,</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods:&#123;</span><br><span class="line">			// 点击别处时隐藏目录，并传递一个关闭事件</span><br><span class="line">			closeMenu(e)&#123;</span><br><span class="line">				this.show = false;</span><br><span class="line">				this.$emit(&quot;close&quot;,false)</span><br><span class="line">			&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		mounted()&#123;</span><br><span class="line">			// 监听body上的点击</span><br><span class="line">			document.querySelector(&quot;body&quot;).addEventListener(&quot;click&quot;,this.closeMenu)</span><br><span class="line">		&#125;,</span><br><span class="line">		beforeDestroy()&#123;</span><br><span class="line">			// 移除监听</span><br><span class="line">			document.querySelector(&quot;body&quot;).removeEventListener(&quot;click&quot;,this.closeMenu)</span><br><span class="line">		&#125;,</span><br><span class="line">		watch:&#123;</span><br><span class="line">			// 监听，保持显示状态与父元素一致</span><br><span class="line">			showMenu(val)&#123;</span><br><span class="line">				this.show = val;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">	.menu_style&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		width: 150px;</span><br><span class="line">		background-color: #fff;</span><br><span class="line">		border-radius: 2px;</span><br><span class="line">		box-shadow: 2px 2px 14px #d0d0d0;</span><br><span class="line">	&#125;</span><br><span class="line">	.menu_style&gt;ul&gt;li&#123;</span><br><span class="line">		text-indent: 25px;</span><br><span class="line">		height: 38px;</span><br><span class="line">		line-height: 38px;</span><br><span class="line">		border-bottom: 1px dashed #f0f0f0;</span><br><span class="line">		cursor: pointer;</span><br><span class="line">	&#125;</span><br><span class="line">	.menu_style&gt;ul&gt;li:hover&#123;</span><br><span class="line">		background: #E0EEFF;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;modal_data_box&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li class=&quot;role_list&quot; </span><br><span class="line">                v-for=&quot;(item,index) in role&quot; </span><br><span class="line">                :key=&quot;index&quot;</span><br><span class="line">                @contextmenu.prevent=&quot;(e)=&gt;&#123;</span><br><span class="line">                    x_index = e.layerX;</span><br><span class="line">                    y_index = e.layerY;</span><br><span class="line">                    ctrlId = item.id;</span><br><span class="line">                    showMenu = true;</span><br><span class="line">                &#125;&quot;&gt;</span><br><span class="line">                &lt;img :src=&quot;item.head_portrait&quot; alt=&quot;&quot;&gt;</span><br><span class="line">                &lt;p&gt;&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">	&lt;!--组件--&gt;</span><br><span class="line">	&lt;right-menu :x=&quot;x_index&quot;</span><br><span class="line">	            :y=&quot;y_index&quot; </span><br><span class="line">	            :showMenu=&quot;showMenu&quot;</span><br><span class="line">	            @close=&quot;closeMenu&quot;</span><br><span class="line">	            @open=&quot;openDetail&quot;</span><br><span class="line">	            @del=&quot;delAttr&quot;</span><br><span class="line">	            @update=&quot;updateArr&quot;&gt;</span><br><span class="line">	&lt;/right-menu&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 导入组件</span><br><span class="line">	import rightMenu from &apos;../module/right_menu.vue&apos;;</span><br><span class="line">	export default&#123;</span><br><span class="line">		name:&quot;roleModal&quot;,</span><br><span class="line">		components:&#123;rightMenu&#125;,</span><br><span class="line">		data()&#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				x_index:0,</span><br><span class="line">				y_index:0,</span><br><span class="line">				ctrlId:&apos;&apos;,</span><br><span class="line">				showMenu:false,</span><br><span class="line">				role:[],</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods:&#123;</span><br><span class="line">		    //关闭回调  </span><br><span class="line">		    closeMenu(state)&#123;</span><br><span class="line">		        console.log(&apos;关闭&apos;)</span><br><span class="line">		        this.showMenu = state;</span><br><span class="line">		    &#125;,</span><br><span class="line">		    //打开详情回调 			</span><br><span class="line">		    openDetail()&#123;</span><br><span class="line">		        console.log(&apos;编辑&apos;)</span><br><span class="line">		    &#125;,</span><br><span class="line">		    //删除回调 			</span><br><span class="line">		    delAttr()&#123;</span><br><span class="line">		        console.log(&apos;删除&apos;)</span><br><span class="line">		    &#125;,</span><br><span class="line">		    //编辑回调 			</span><br><span class="line">		    updateArr()&#123;</span><br><span class="line">		        console.log(&apos;编辑&apos;)</span><br><span class="line">		    &#125;,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="修复漏洞"><a href="#修复漏洞" class="headerlink" title="修复漏洞"></a>修复漏洞</h4><p><a href="https://juejin.im/user/5cf2512e51882504d340ab01" target="_blank" rel="noopener">d[o_0]b</a>同学发现了一个漏洞，就是当鼠标在屏幕右边点击时，菜单会被遮挡住，这边做了一些调整。</p>
+<h5 id="修复前："><a href="#修复前：" class="headerlink" title="修复前："></a>修复前：</h5><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/115.jpg" alt="115"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原来的代码</span></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"role_list"</span> </span><br><span class="line">	v-<span class="keyword">for</span>=<span class="string">"(item,index) in role"</span> </span><br><span class="line">	:key=<span class="string">"index"</span></span><br><span class="line">	@contextmenu.prevent=<span class="string">"(e)=&gt;&#123;</span></span><br><span class="line"><span class="string">		x_index = e.layerX;</span></span><br><span class="line"><span class="string">	        y_index = e.layerY;</span></span><br><span class="line"><span class="string">		ctrlId = item.id;</span></span><br><span class="line"><span class="string">		showMenu = true;</span></span><br><span class="line"><span class="string">	&#125;"</span>&gt;</span><br><span class="line">	    &lt;img :src=<span class="string">"item.head_portrait"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">	    &lt;p&gt;&#123;&#123;item.name&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>li&gt;</span><br><span class="line">&lt;<span class="regexp">/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="修复后："><a href="#修复后：" class="headerlink" title="修复后："></a>修复后：</h5><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/116.jpg" alt="116"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改后的代码，（由于要判断，所以单独写了个方法，把e跟item都传过去）</span></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"role_list"</span> </span><br><span class="line">		v-<span class="keyword">for</span>=<span class="string">"(item,index) in role"</span> </span><br><span class="line">		:key=<span class="string">"index"</span></span><br><span class="line">		@contextmenu.prevent=<span class="string">"(e)=&gt;&#123;</span></span><br><span class="line"><span class="string">			rightClick(e,item)</span></span><br><span class="line"><span class="string">		&#125;"</span>&gt;</span><br><span class="line">		&lt;img :src=<span class="string">"item.head_portrait"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">		&lt;p&gt;&#123;&#123;item.name&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">	&lt;/</span>li&gt;</span><br><span class="line">&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/对应的rightClick方法</span></span><br><span class="line"><span class="regexp">rightClick(e,item)&#123;</span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/ 屏幕可见宽</span></span><br><span class="line"><span class="regexp">	let clientWidth = document.body.clientWidth;</span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/ 菜单宽</span></span><br><span class="line"><span class="regexp">	let menuWidth = 150;</span></span><br><span class="line"><span class="regexp">	/</span><span class="regexp">/ 点击右键时会返回对应的clientX，用这个值与(clientWidth+菜单宽度)对比，如果大于的话，就把菜单左偏移一个菜单宽</span></span><br><span class="line"><span class="regexp">	let clickClientX = e.clientX + menuWidth</span></span><br><span class="line"><span class="regexp">	if(clickClientX &gt; clientWidth)&#123;</span></span><br><span class="line"><span class="regexp">		console.log("菜单超出视线范围")</span></span><br><span class="line"><span class="regexp">		this.x_index = e.layerX - menuWidth;</span></span><br><span class="line"><span class="regexp">	&#125;else&#123;</span></span><br><span class="line"><span class="regexp">		this.x_index = e.layerX;</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">	this.y_index = e.layerY;</span></span><br><span class="line"><span class="regexp">	this.ctrlId = item.id;</span></span><br><span class="line"><span class="regexp">	this.showMenu = true;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法更新"><a href="#方法更新" class="headerlink" title="方法更新:"></a>方法更新:</h4><p>右键的优化方案  <code>$event</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@contextmenu.prevent=<span class="string">"rightClick($event,item)"</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

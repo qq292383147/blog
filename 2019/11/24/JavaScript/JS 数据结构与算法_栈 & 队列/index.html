@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="JS 数据结构与算法_栈 &amp; 队列"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>JS 数据结构与算法_栈 &amp; 队列 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/24/JavaScript/JS%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95_%E6%A0%88%20&%20%E9%98%9F%E5%88%97/">
+                JS 数据结构与算法_栈 & 队列
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h4 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h4><p>原计划是把《你不知道的Javascript》三部全部看完的，偶然间朋友推荐了数据结构与算法的一套入门视频，学之。发现数据结构并没有想象中那么遥不可及，反而发觉挺有意思的。手头上恰好有《学习Javascript数据结构与算法》的书籍，便转而先把数据结构与算法学习。</p>
+<h4 id="一、认识数据结构"><a href="#一、认识数据结构" class="headerlink" title="一、认识数据结构"></a>一、认识数据结构</h4><p>什么是数据结构？下面是维基百科的解释：</p>
+<blockquote>
+<p>数据结构是计算机存储、组织数据的方式。数据结构意味着接口或封装：一个数据结构可被视为两个函数之间的接口，或者是<strong>由数据类型联合组成的存储内容的访问方法封装</strong></p>
+</blockquote>
+<p>我们每天的编码中都会用到数据结构，因为<strong>数组是最简单的内存数据结构</strong>，下面是常见的数据结构：</p>
+<ul>
+<li>数组（Array）</li>
+<li>栈（Stack）</li>
+<li>队列（Queue）</li>
+<li>链表（Linked List）</li>
+<li>树（Tree）</li>
+<li>图（Graph）</li>
+<li>堆（Heap）</li>
+<li>散列表（Hash）</li>
+</ul>
+<p>下面来学习学习栈和队列。</p>
+<h4 id="二、栈"><a href="#二、栈" class="headerlink" title="二、栈"></a>二、栈</h4><h5 id="2-1-栈数据结构"><a href="#2-1-栈数据结构" class="headerlink" title="2.1 栈数据结构"></a>2.1 栈数据结构</h5><blockquote>
+<p>栈是一种遵循<strong>后进先出（LIFO）</strong>原则的有序集合。新添加的或待删除的元素都保存在栈的同一端，称作<strong>栈顶</strong>，另一端就叫<strong>栈底</strong>。在栈里，新元素都接近栈顶，旧元素都接近栈底。</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/112.jpg" alt="112"></p>
+<p>类比生活中的物件：一摞书📚或者推放在一起的盘子。</p>
+<h5 id="2-2-栈的实现"><a href="#2-2-栈的实现" class="headerlink" title="2.2 栈的实现"></a>2.2 栈的实现</h5><p>普通的栈常用的有以下几个方法：</p>
+<ul>
+<li><code>push</code> 添加一个（或几个）新元素到栈顶</li>
+<li><code>pop</code> 溢出栈顶元素，同时返回被移除的元素</li>
+<li><code>peek</code> 返回栈顶元素，不对栈做修改</li>
+<li><code>isEmpty</code> 栈内无元素返回 <code>true</code>，否则返回 <code>false</code></li>
+<li><code>size</code> 返回栈内元素个数</li>
+<li><code>clear</code> 清空栈</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>._items = []; <span class="comment">// 储存数据</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 向栈内压入一个元素</span></span><br><span class="line">    push(item) &#123;</span><br><span class="line">        <span class="keyword">this</span>._items.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 把栈顶元素弹出</span></span><br><span class="line">    pop() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._items.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回栈顶元素</span></span><br><span class="line">    peek() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._items[<span class="keyword">this</span>._items.length - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 判断栈是否为空</span></span><br><span class="line">    isEmpty() &#123;</span><br><span class="line">        <span class="keyword">return</span> !<span class="keyword">this</span>._items.length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 栈元素个数</span></span><br><span class="line">    size() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>._items.length;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 清空栈</span></span><br><span class="line">    clear() &#123;</span><br><span class="line">        <span class="keyword">this</span>._items = [];</span><br><span class="line">    &#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>现在再回头想想数据结构里面的栈是什么。</p>
+<p>突然发现并没有那么神奇，仅仅只是对原有数据进行了一次封装而已。而封装的结果是：<strong>并不去关心其内部的元素是什么，只是去操作栈顶元素</strong>，这样的话，在编码中会更可控一些。</p>
+<h5 id="2-3-栈的应用"><a href="#2-3-栈的应用" class="headerlink" title="2.3 栈的应用"></a>2.3 栈的应用</h5><p><strong>（1）十进制转任意进制</strong></p>
+<p><strong>要求：</strong>给定一个函数，输入目标数值和进制基数，输出对应的进制数（最大为16进制）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baseConverter(<span class="number">10</span>, <span class="number">2</span>) ==&gt; <span class="number">1010</span>baseConverter(<span class="number">30</span>, <span class="number">16</span>) ==&gt; <span class="number">1</span>E</span><br></pre></td></tr></table></figure>
+<p><strong>分析：</strong>进制转换的本质——将目标值一次一次除以进制基数，得到的取整值为新目标值，记录下余数，直到目标值小于0，最后将余数逆序组合即可。利用栈，记录余数入栈，组合时出栈。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 进制转换</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">baseConverter</span>(<span class="params">delNumber, base</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> stack = <span class="keyword">new</span> Stack();</span><br><span class="line">    <span class="keyword">let</span> rem = <span class="literal">null</span>;  <span class="keyword">let</span> ret = [];</span><br><span class="line">    <span class="comment">// 十六进制中需要依次对应A~F</span></span><br><span class="line">    <span class="keyword">const</span> digits = <span class="string">'0123456789ABCDEF'</span>;</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">while</span> (delNumber &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      rem = <span class="built_in">Math</span>.floor(delNumber % base);</span><br><span class="line">      stack.push(rem);</span><br><span class="line">      delNumber = <span class="built_in">Math</span>.floor(delNumber / base);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">      ret.push(digits[stack.pop()]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ret.join(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(baseConverter(<span class="number">100345</span>, <span class="number">2</span>)); <span class="comment">//输出11000011111111001</span></span><br><span class="line"><span class="built_in">console</span>.log(baseConverter(<span class="number">100345</span>, <span class="number">8</span>)); <span class="comment">//输出303771</span></span><br><span class="line"><span class="built_in">console</span>.log(baseConverter(<span class="number">100345</span>, <span class="number">16</span>)); <span class="comment">//输出187F9</span></span><br></pre></td></tr></table></figure>
+<p><strong>（2）逆波兰表达式计算</strong></p>
+<p><strong>要求：</strong> 逆波兰表达式，也叫后缀表达式，它将复杂表达式转换为可以依靠简单的操作得到计算结果的表达式，例如 <code>(a+b)*(c+d)</code>转换为 <code>a b+c d+*</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"4"</span>, <span class="string">"13"</span>, <span class="string">"5"</span>, <span class="string">"/"</span>, <span class="string">"+"</span>] ==&gt; (<span class="number">4</span> + (<span class="number">13</span> / <span class="number">5</span>)) = <span class="number">6</span></span><br><span class="line">[<span class="string">"10"</span>, <span class="string">"6"</span>, <span class="string">"9"</span>, <span class="string">"3"</span>, <span class="string">"+"</span>, <span class="string">"-11"</span>, <span class="string">"*"</span>, <span class="string">"/"</span>, <span class="string">"*"</span>, <span class="string">"17"</span>, <span class="string">"+"</span>, <span class="string">"5"</span>, <span class="string">"+"</span>]</span><br><span class="line">==&gt; ((<span class="number">10</span> * (<span class="number">6</span> / ((<span class="number">9</span> + <span class="number">3</span>) * <span class="number">-11</span>))) + <span class="number">17</span>) + <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p><strong>分析：</strong> 以符号为触发节点，一旦遇到符号，就将符号前两个元素按照该符号运算，并将新的结果入栈，直到栈内仅一个元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOperator</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="string">'+'</span>, <span class="string">'-'</span>, <span class="string">'*'</span>, <span class="string">'/'</span>].includes(str);&#125;</span><br><span class="line"><span class="comment">// 逆波兰表达式计算</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clacExp</span>(<span class="params">exp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> stack = <span class="keyword">new</span> Stack();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; exp.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> one = exp[i];</span><br><span class="line">        <span class="keyword">if</span> (isOperator(one)) &#123;</span><br><span class="line">            <span class="keyword">const</span> operatNum1 = stack.pop();</span><br><span class="line">            <span class="keyword">const</span> operatNum2 = stack.pop();</span><br><span class="line">            <span class="keyword">const</span> expStr = <span class="string">`<span class="subst">$&#123;operatNum2&#125;</span><span class="subst">$&#123;one&#125;</span><span class="subst">$&#123;operatNum1&#125;</span>`</span>;</span><br><span class="line">            <span class="keyword">const</span> res = <span class="built_in">eval</span>(expStr);</span><br><span class="line">            stack.push(res);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            stack.push(one);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> stack.peek();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(clacExp([<span class="string">"4"</span>, <span class="string">"13"</span>, <span class="string">"5"</span>, <span class="string">"/"</span>, <span class="string">"+"</span>])); <span class="comment">// 6.6</span></span><br></pre></td></tr></table></figure>
+<p><strong>（3）利用普通栈实现一个有 min方法的栈</strong></p>
+<p><strong>思路：</strong> 使用两个栈来存储数据，其中一个命名为 <code>dataStack</code>，专门用来存储数据，另一个命名为 <code>minStack</code>，专门用来存储栈里最小的数据。始终保持两个栈中的元素个数相同，压栈时判别压入的元素与 <code>minStack</code>栈顶元素比较大小，如果比栈顶元素小，则直接入栈，否则复制栈顶元素入栈；弹出栈顶时，两者均弹出即可。这样 <code>minStack</code>的栈顶元素始终为最小值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>._dataStack = <span class="keyword">new</span> Stack();</span><br><span class="line">        <span class="keyword">this</span>._minStack = <span class="keyword">new</span> Stack();</span><br><span class="line">    &#125;</span><br><span class="line">  push(item) &#123;</span><br><span class="line">      <span class="keyword">this</span>._dataStack.push(item);</span><br><span class="line">      <span class="comment">// 为空或入栈元素小于栈顶元素，直接压入该元素</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>._minStack.isEmpty() || <span class="keyword">this</span>._minStack.peek() &gt; item) &#123;</span><br><span class="line">          <span class="keyword">this</span>._minStack.push(item);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>._minStack.push(<span class="keyword">this</span>._minStack.peek());</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  pop() &#123;</span><br><span class="line">      <span class="keyword">this</span>._dataStack.pop();</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._minStack.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  min() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._minStack.peek();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> minstack = <span class="keyword">new</span> MinStack();</span><br><span class="line">minstack.push(<span class="number">3</span>);</span><br><span class="line">minstack.push(<span class="number">4</span>);</span><br><span class="line">minstack.push(<span class="number">8</span>);</span><br><span class="line"><span class="built_in">console</span>.log(minstack.min()); <span class="comment">// 3</span></span><br><span class="line">minstack.push(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(minstack.min()); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="三、队列"><a href="#三、队列" class="headerlink" title="三、队列"></a>三、队列</h4><h5 id="3-1-队列数据结构"><a href="#3-1-队列数据结构" class="headerlink" title="3.1 队列数据结构"></a>3.1 队列数据结构</h5><blockquote>
+<p>队列是遵循<strong>先进先出（FIFO，也称为先来先服务）原则的一组有序的项。队列在尾部添加新元素，并从顶部移除元素</strong>。最新添加的元素必须排在队列的末尾。</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/113.jpg" alt="113"></p>
+<p>类比：日常生活中的购物排队。</p>
+<h5 id="3-2-队列的实现"><a href="#3-2-队列的实现" class="headerlink" title="3.2 队列的实现"></a>3.2 队列的实现</h5><p>普通的队列常用的有以下几个方法：</p>
+<ul>
+<li><code>enqueue</code> 向队列尾部添加一个(或多个)新的项</li>
+<li><code>dequeue</code> 移除队列的第一(即排在队列最前面的)项，并返回被移除的元素</li>
+<li><code>head</code> 返回队列第一个元素，队列不做任何变动</li>
+<li><code>tail</code> 返回队列最后一个元素，队列不做任何变动</li>
+<li><code>isEmpty</code> 队列内无元素返回 <code>true</code>，否则返回 <code>false</code></li>
+<li><code>size</code> 返回队列内元素个数</li>
+<li><code>clear</code> 清空队列</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>._items = [];</span><br><span class="line">    &#125;</span><br><span class="line">  enqueue(item) &#123;</span><br><span class="line">      <span class="keyword">this</span>._items.push(item);</span><br><span class="line">  &#125;</span><br><span class="line">  dequeue() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._items.shift();</span><br><span class="line">  &#125;</span><br><span class="line">  head() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._items[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  tail() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._items[<span class="keyword">this</span>._items.length - <span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  isEmpty() &#123;</span><br><span class="line">      <span class="keyword">return</span> !<span class="keyword">this</span>._items.length;</span><br><span class="line">  &#125;</span><br><span class="line">  size() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._items.length;</span><br><span class="line">  &#125;</span><br><span class="line">  clear() &#123;</span><br><span class="line">      <span class="keyword">this</span>._items = [];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>与栈类比，栈仅能操作其头部，队列则首尾均能操作，但仅能在头部出尾部进。当然，也印证了上面的话：栈和队列并不关心其内部元素细节，也无法直接操作非首尾元素。</p>
+<h5 id="3-3-队列的应用"><a href="#3-3-队列的应用" class="headerlink" title="3.3 队列的应用"></a>3.3 队列的应用</h5><p><strong>（1）约瑟夫环（普通模式）</strong></p>
+<p><strong>要求：</strong> 有一个数组 <code>a[100]</code>存放0~99；要求每隔两个数删掉一个数，到末尾时循环至开头继续进行，求最后一个被删掉的数。</p>
+<p><strong>分析：</strong> 按数组创建队列，依次判断元素是否满足为指定位置的数，如果不是则 <code>enqueue</code>到尾部，否则忽略，当仅有一个元素时便输出。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个长度为100的数组const arr_100 = Array.from(&#123; length: 100 &#125;, (_, i) =&gt; i*i);</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">delRing</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> queue = <span class="keyword">new</span> Queue();</span><br><span class="line">    list.forEach(<span class="function"><span class="params">e</span> =&gt;</span> &#123; </span><br><span class="line">        queue.enqueue(e);</span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (queue.size() !== <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> item = queue.dequeue();</span><br><span class="line">        index += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (index % <span class="number">3</span> !== <span class="number">0</span>) &#123;</span><br><span class="line">            queue.enqueue(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> queue.tail();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(delRing(arr_100)); <span class="comment">// 8100 此时index=297</span></span><br></pre></td></tr></table></figure>
+<p><strong>（2）菲波那切数列（普通模式）</strong></p>
+<p><strong>要求：</strong> 使用队列计算斐波那契数列的第n项。</p>
+<p><strong>分析：</strong> 斐波那契数列的前两项固定为1，后面的项为前两项之和，依次向后，这便是斐波那契数列。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> queue = <span class="keyword">new</span> Queue();</span><br><span class="line">    queue.enqueue(<span class="number">1</span>);</span><br><span class="line">    queue.enqueue(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(index &lt; n - <span class="number">2</span>) &#123;</span><br><span class="line">        index += <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 出队列一个元素</span></span><br><span class="line">        <span class="keyword">const</span> delItem = queue.dequeue();</span><br><span class="line">        <span class="comment">// 获取头部值</span></span><br><span class="line">        <span class="keyword">const</span> headItem = queue.head();</span><br><span class="line">        <span class="keyword">const</span> nextItem = delItem + headItem;</span><br><span class="line">        queue.enqueue(nextItem);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> queue.tail();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fibonacci(<span class="number">9</span>)); <span class="comment">// 34</span></span><br></pre></td></tr></table></figure>
+<p><strong>（3）用队列实现一个栈</strong></p>
+<p><strong>要求：</strong> 用两个队列实现一个栈。</p>
+<p><strong>分析：</strong> 使用队列实现栈最主要的是在队列中找到栈顶元素并对其操作。具体的思路如下：</p>
+<ol>
+<li>两个队列，一个备份队列 <code>emptyQueue</code>，一个是数据队列 <code>dataQueue</code>；</li>
+<li>在确认栈顶时，依次 <code>dequeue</code>至备份队列，置换备份队列和数据队列的引用即可。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QueueStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.queue_1 = <span class="keyword">new</span> Queue();</span><br><span class="line">        <span class="keyword">this</span>.queue_2 = <span class="keyword">new</span> Queue();</span><br><span class="line">        <span class="keyword">this</span>._dataQueue = <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 放数据的队列</span></span><br><span class="line">        <span class="keyword">this</span>._emptyQueue = <span class="literal">null</span>;</span><br><span class="line">        <span class="comment">// 空队列,备份使用</span></span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">// 确认哪个队列放数据,哪个队列做备份空队列</span></span><br><span class="line">    _initQueue() &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.queue_1.isEmpty() &amp;&amp; <span class="keyword">this</span>.queue_2.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">this</span>._dataQueue = <span class="keyword">this</span>.queue_1;</span><br><span class="line">            <span class="keyword">this</span>._emptyQueue = <span class="keyword">this</span>.queue_2;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.queue_1.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">this</span>._dataQueue = <span class="keyword">this</span>.queue_2;</span><br><span class="line">            <span class="keyword">this</span>._emptyQueue = <span class="keyword">this</span>.queue_1;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>._dataQueue = <span class="keyword">this</span>.queue_1;</span><br><span class="line">            <span class="keyword">this</span>._emptyQueue = <span class="keyword">this</span>.queue_2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">  push(item) &#123;</span><br><span class="line">      <span class="keyword">this</span>.init_queue();</span><br><span class="line">      <span class="keyword">this</span>._dataQueue.enqueue(item);</span><br><span class="line">  &#125;;</span><br><span class="line">  peek() &#123;</span><br><span class="line">      <span class="keyword">this</span>.init_queue();</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._dataQueue.tail();</span><br><span class="line">  &#125;</span><br><span class="line">  pop() &#123;</span><br><span class="line">      <span class="keyword">this</span>.init_queue();</span><br><span class="line">      <span class="keyword">while</span> (<span class="keyword">this</span>._dataQueue.size() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">          <span class="keyword">this</span>._emptyQueue.enqueue(<span class="keyword">this</span>._dataQueue.dequeue());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._dataQueue.dequeue();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>同样的，一个队列也能实现栈的基本功能：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QueueStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.queue = <span class="keyword">new</span> Queue();</span><br><span class="line">    &#125;</span><br><span class="line">  push(item) &#123;</span><br><span class="line">      <span class="keyword">this</span>.queue.enqueue(item);</span><br><span class="line">  &#125;</span><br><span class="line">  pop() &#123;</span><br><span class="line">      <span class="comment">// 向队列末尾追加 队列长度-1 次，后弹出队列头部</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.queue.size(); i += <span class="number">1</span>) &#123; </span><br><span class="line">          <span class="keyword">this</span>.queue.enqueue(<span class="keyword">this</span>.queue.dequeue());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.queue.dequeue();</span><br><span class="line">  &#125;</span><br><span class="line">  peek() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.queue.tail();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>学习了栈和队列这类简单的数据结构，我们会发现。<strong>数据结构并没有之前想象中那么神秘，它们只是规定了这类数据结构的操作方式：栈只能对栈顶进行操作，队列只能在尾部添加在头部弹出；且它们不关心内部的元素状态。</strong></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

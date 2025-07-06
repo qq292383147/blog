@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="『React Navigation 3x系列教程』createDrawerNavigator开发指南"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>『React Navigation 3x系列教程』createDrawerNavigator开发指南 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/12/21/React/%E3%80%8EReact%20Navigation%203x%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%E3%80%8FcreateDrawerNavigator%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">
+                『React Navigation 3x系列教程』createDrawerNavigator开发指南
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p><code>createDrawerNavigator</code>抽屉效果，侧边滑出：</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\RN3.x\4.jpg" alt="4"></p>
+<h2 id="createDrawerNavigator-API"><a href="#createDrawerNavigator-API" class="headerlink" title="[createDrawerNavigator API]"></a>[createDrawerNavigator API]</h2><blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; createDrawerNavigator(RouteConfigs, DrawerNavigatorConfig):</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><code>RouteConfigs</code>(必选)：路由配置对象是从路由名称到路由配置的映射，告诉导航器该路由呈现什么。</li>
+<li><code>DrawerNavigatorConfig</code>(可选)：配置导航器的路由(如：默认首屏，navigationOptions，paths等)样式(如，转场模式mode、头部模式等)。</li>
+</ul>
+<p>从createDrawerNavigator API上可以看出<code>createDrawerNavigator</code>支持通过<code>RouteConfigs</code>和 <code>DrawerNavigatorConfig</code>两个参数来创建createDrawerNavigator导航器。</p>
+<h2 id="RouteConfigs"><a href="#RouteConfigs" class="headerlink" title="[RouteConfigs]"></a>[RouteConfigs]</h2><p>RouteConfigs支持三个参数<code>screen</code>、<code>path</code>以及<code>navigationOptions</code>；</p>
+<ul>
+<li><code>screen</code>(必选)：指定一个 React 组件作为屏幕的主要显示内容，当这个组件被DrawerNavigator加载时，它会被分配一个<code>navigation</code> prop。</li>
+<li><code>path</code>(可选)：用来设置支持schema跳转时使用，具体使用会在下文的有关<code>Schema</code>章节中讲到；</li>
+<li><code>navigationOptions</code>(可选)：用以配置全局的屏幕导航选项如：title、headerRight、headerLeft等；</li>
+</ul>
+<h2 id="DrawerNavigatorConfig"><a href="#DrawerNavigatorConfig" class="headerlink" title="[DrawerNavigatorConfig]"></a>[DrawerNavigatorConfig]</h2><ul>
+<li>drawerWidth: 设置侧边菜单的宽度；</li>
+<li>drawerPosition: 设置侧边菜单的位置，支持’left’、 ‘right’，默认是’left’；</li>
+<li>contentComponent: 用于呈现抽屉导航器内容的组件，例如导航项。接收抽屉导航器的 navigation 属性 。默认为DrawerItems。有关详细信息，请参阅下文；</li>
+<li>contentOptions: 配置抽屉导航器内容，见下文;</li>
+<li>useNativeAnimations: 是否启用Native动画，默认启用；</li>
+<li>drawerBackgroundColor: 侧边菜单的背景；</li>
+<li>initialRouteName: 初始化哪个界面为根界面，如果不配置，默认使用RouteConfigs中的第一个页面当做根界面；</li>
+<li>order: drawer排序，默认使用配置路由的顺序；</li>
+<li>paths: 提供routeName到path config的映射，它覆盖routeConfigs中设置的路径。</li>
+<li>backBehavior: 后退按钮是否会导致标签切换到初始drawer？ 如果是，则设切换到初始drawer，否则什么也不做。 默认为切换到初始drawer。</li>
+</ul>
+<h2 id="自定义侧边栏-contentComponent"><a href="#自定义侧边栏-contentComponent" class="headerlink" title="[自定义侧边栏(contentComponent)]"></a>[自定义侧边栏(contentComponent)]</h2><p>DrawerNavigator有个默认的带滚动的侧边栏，你也可以通过重写这个侧边栏组件来自定义侧边栏：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">contentComponent:(props) =&gt; (</span><br><span class="line">    &lt;ScrollView style=&gt;</span><br><span class="line">        &lt;SafeAreaView forceInset=&gt;</span><br><span class="line">            &lt;DrawerItems &#123;...props&#125; /&gt;</span><br><span class="line">        &lt;/SafeAreaView&gt;</span><br><span class="line">    &lt;/ScrollView&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="DrawerItems-的-contentOptions"><a href="#DrawerItems-的-contentOptions" class="headerlink" title="[ DrawerItems 的 contentOptions ]"></a>[ DrawerItems 的 contentOptions ]</h2><p>contentOptions主要配置侧滑栏item的属性，只对DrawerItems，例如我们刚才写的例子，就可以通过这个属性来配置颜色，背景色等。其主要属性有：</p>
+<ul>
+<li>items: 路由数组，如果要修改路由可以可以修改或覆盖它；</li>
+<li>activeItemKey: 定义当前选中的页面的key；</li>
+<li>activeTintColor: 选中item状态的文字颜色；</li>
+<li>activeBackgroundColor: 选中item的背景色；</li>
+<li>inactiveTintColor: 未选中item状态的文字颜色；</li>
+<li>inactiveBackgroundColor: 未选中item的背景色；</li>
+<li>onItemPress: 选中item的回调，这个参数属性为函数，会将当前路由回调过去；</li>
+<li>itemsContainerStyle: 定义itemitem容器的样式；</li>
+<li>itemStyle: 定义item的样式；</li>
+<li>labelStyle: 定义item文字的样式；</li>
+<li>iconContainerStyle: 定义item图标容器的样式；</li>
+<li>activeLabelStyle：选中状态下文本样式；</li>
+<li>inactiveLabelStyle：非选中状态下文本样式；</li>
+<li>iconContainerStyle ：用于设置图标容器的样式。</li>
+</ul>
+<blockquote>
+<p>eg:</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">contentOptions: &#123;</span><br><span class="line">  activeTintColor: &apos;#e91e63&apos;,</span><br><span class="line">  itemsContainerStyle: &#123;</span><br><span class="line">    marginVertical: 0,</span><br><span class="line">  &#125;,</span><br><span class="line">  iconContainerStyle: &#123;</span><br><span class="line">    opacity: 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="navigationOptions（屏幕导航选项）"><a href="#navigationOptions（屏幕导航选项）" class="headerlink" title="[navigationOptions（屏幕导航选项）]"></a>[navigationOptions（屏幕导航选项）]</h2><p>DrawerNavigator支持的屏幕导航选项的参数有：</p>
+<ul>
+<li><p>title: 可以用作headerTitle和drawerLabel的备选的通用标题。</p>
+</li>
+<li><p>drawerLabel：侧滑标题；</p>
+</li>
+<li><p>drawerIcon：侧滑的标题图标，这里会回传两个参数：</p>
+<ul>
+<li>{focused: boolean, tintColor: string}：<ul>
+<li>focused: 表示是否是选中状态；</li>
+<li>tintColor: 表示选中的颜色；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>drawerLockMode：指定抽屉的锁定模式。 这也可以通过在顶级路由器上使用screenProps.drawerLockMode 动态更新。</p>
+</li>
+</ul>
+<h2 id="侧边栏操作-打开、关闭、切换"><a href="#侧边栏操作-打开、关闭、切换" class="headerlink" title="[侧边栏操作(打开、关闭、切换)]"></a>[侧边栏操作(打开、关闭、切换)]</h2><p>侧边栏支持以下几种操作方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">navigation.openDrawer();</span><br><span class="line">navigation.closeDrawer();</span><br><span class="line">navigation.toggleDrawer();</span><br><span class="line"><span class="comment">//或</span></span><br><span class="line">navigation.dispatch(DrawerActions.openDrawer());</span><br><span class="line">navigation.dispatch(DrawerActions.closeDrawer());</span><br><span class="line">navigation.dispatch(DrawerActions.toggleDrawer());</span><br></pre></td></tr></table></figure>
+<p>其中路由名<code>openDrawer</code>对应这打开侧边栏的操作，<code>DrawerClose</code>对应关闭侧边栏的操作，<code>toggleDrawer</code>对应切换侧边栏操作，要进行这些操作我么还需要一个<code>navigation</code>，<code>navigation</code>可以从props中获取；</p>
+<ul>
+<li>打开侧边栏：<code>navigation.openDrawer();</code>；</li>
+<li>关闭侧边栏：<code>navigation.closeDrawer();</code>；</li>
+<li>切换侧边栏：<code>navigation.toggleDrawer();</code>；</li>
+</ul>
+<h4 id="其他API"><a href="#其他API" class="headerlink" title="其他API"></a><a href="https://coding.imooc.com/class/304.html?mc_marking=911b955aff9c2cfc95f12d0f15e1b2e7&amp;mc_channel=shouji" target="_blank" rel="noopener">其他API</a></h4><h3 id="【案例1】使用DrawerNavigator做界面导航、配置navigationOptions、自定义侧边栏"><a href="#【案例1】使用DrawerNavigator做界面导航、配置navigationOptions、自定义侧边栏" class="headerlink" title="[【案例1】使用DrawerNavigator做界面导航、配置navigationOptions、自定义侧边栏]"></a>[【案例1】使用DrawerNavigator做界面导航、配置navigationOptions、自定义侧边栏]</h3><p><img src="H:\上传到git里面的md文件图片\picture\React\RN3.x\5.gif" alt="5"></p>
+<h2 id="第一步：创建一个createDrawerNavigator类型的导航器"><a href="#第一步：创建一个createDrawerNavigator类型的导航器" class="headerlink" title="[第一步：创建一个createDrawerNavigator类型的导航器]"></a>[第一步：创建一个createDrawerNavigator类型的导航器]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">export const DrawerNav = createDrawerNavigator(&#123;</span><br><span class="line">        Page4: &#123;</span><br><span class="line">            screen: Page4,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                drawerLabel: &apos;Page4&apos;,</span><br><span class="line">                drawerIcon: (&#123;tintColor&#125;) =&gt; (</span><br><span class="line">                    &lt;MaterialIcons name=&quot;drafts&quot; size=&#123;24&#125; style=/&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        Page5: &#123;</span><br><span class="line">            screen: Page5,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                drawerLabel: &apos;Page5&apos;,</span><br><span class="line">                drawerIcon: (&#123;tintColor&#125;) =&gt; (</span><br><span class="line">                    &lt;MaterialIcons</span><br><span class="line">                        name=&quot;move-to-inbox&quot;</span><br><span class="line">                        size=&#123;24&#125;</span><br><span class="line">                        style=</span><br><span class="line">                    /&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        initialRouteName: &apos;Page4&apos;,</span><br><span class="line">        contentOptions: &#123;</span><br><span class="line">            activeTintColor: &apos;#e91e63&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        contentComponent:(props) =&gt; (</span><br><span class="line">            &lt;ScrollView style=&gt;</span><br><span class="line">                &lt;SafeAreaView forceInset=&gt;</span><br><span class="line">                    &lt;DrawerItems &#123;...props&#125; /&gt;</span><br><span class="line">                &lt;/SafeAreaView&gt;</span><br><span class="line">            &lt;/ScrollView&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h2 id="第二步：配置navigationOptions："><a href="#第二步：配置navigationOptions：" class="headerlink" title="[第二步：配置navigationOptions：]"></a>[第二步：配置navigationOptions：]</h2><p>DrawerNavigator的navigationOptions有两个关键的属性，tabBarLabel标签与tabBarIcon图标：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Page4: &#123;</span><br><span class="line">    screen: Page4,</span><br><span class="line">    navigationOptions: &#123;</span><br><span class="line">        drawerLabel: &apos;Page4&apos;,</span><br><span class="line">        drawerIcon: (&#123;tintColor&#125;) =&gt; (</span><br><span class="line">            &lt;MaterialIcons name=&quot;drafts&quot; size=&#123;24&#125; style=/&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>在上述代码中使用了<code>react-native-vector-icons</code>的矢量图标作为Tab的显示图标，drawerIcon接收一个React 组件，大家可以根据需要进行定制：</p>
+<ul>
+<li>tintColor: 当前状态下Item的颜色；</li>
+<li>focused: Item是否被选中；</li>
+</ul>
+<h2 id="第三步：界面跳转"><a href="#第三步：界面跳转" class="headerlink" title="[第三步：界面跳转]"></a>[第三步：界面跳转]</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    const &#123;navigation&#125; = this.props;</span><br><span class="line">    return &lt;View style=&gt;</span><br><span class="line">        &lt;Text style=&#123;styles.text&#125;&gt;欢迎来到Page5&lt;/Text&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            onPress=&#123;() =&gt; navigation.openDrawer()&#125;</span><br><span class="line">            title=&quot;Open drawer&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            onPress=&#123;() =&gt; navigation.toggleDrawer()&#125;</span><br><span class="line">            title=&quot;Toggle drawer&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;Button</span><br><span class="line">            onPress=&#123;() =&gt; navigation.navigate(&apos;Page4&apos;)&#125;</span><br><span class="line">            title=&quot;Go to Page4&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;/View&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>代码解析：</p>
+</blockquote>
+<p>页面跳转可分为两步：</p>
+<ul>
+<li><ol>
+<li>获取navigation：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const &#123;navigation&#125; = this.props;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><ol>
+<li>通过<code>navigate(routeName, params, action)</code>进行页面跳转：</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> navigation.navigate(&apos;Page5&apos;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="自定义侧边栏"><a href="#自定义侧边栏" class="headerlink" title="[自定义侧边栏]"></a>[自定义侧边栏]</h2><p>如果DrawerNavigator的侧边栏的效果无法满足我们的需求，我们可以通过<code>contentComponent</code>属性来自定义侧边栏：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">contentComponent:(props) =&gt; (</span><br><span class="line">    &lt;ScrollView style=&gt;</span><br><span class="line">        &lt;SafeAreaView forceInset=&gt;</span><br><span class="line">            &lt;DrawerItems &#123;...props&#125; /&gt;</span><br><span class="line">        &lt;/SafeAreaView&gt;</span><br><span class="line">    &lt;/ScrollView&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/React-React-Native/">#React & React Native</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

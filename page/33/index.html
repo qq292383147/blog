@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/05/24/React/%E5%9B%BE%E5%83%8F%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD-%E5%88%97%E8%A1%A8%E5%9B%BE%E9%A1%BA%E5%BA%8F%E5%8A%A0%E8%BD%BD/">
+                图像延迟加载 && 列表图顺序加载
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-05-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>图片延时加载十分重要，尤其是对于移动端用户。</p>
+<p>从理论上来看，图像延迟加载机制十分简单，但实际上却有很多需要注意的细节。 此外，有多个不同的用例均受益于延迟加载。 首先，我们来了解一下在 HTML 中延迟加载内联图像。</p>
+<p>延迟加载是一种在加载页面时，延迟加载非关键资源的方法， 而这些非关键资源则在需要时才进行加载。 就图像而言，“非关键”通常是指“屏幕外”。</p>
+<p>最近在做一个移动端漫画应用(id.mangaya.mobi)，涉及的图片比较多，如果图片不做额外处理，会对用户不太友好，而且lighthouse评分也会因此降低。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/实例1.jpg" alt></p>
+<p>场景</p>
+<p>主要有两种场景。</p>
+<p>有兴趣的同学可以查看<a href="https://github.com/WarrenJones/react-progressive-lazy-image" target="_blank" rel="noopener">react-progressive-lazy-image</a>,使用起来非常简单！</p>
+<p>Senario 1: 图片延时到在窗口viewport内才开始加载。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/动漫1.gif" alt></p>
+<p>Senario 2: 用户观看漫画，需要漫画一张张的顺序加载。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/动漫2.gif" alt></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>图片懒加载技术主要通过监听图片资源容器是否出现在视口区域内，来决定图片资源是否被加载。<br>那么实现图片懒加载技术的核心就是如何判断元素处于视口区域之内。<br>实践</p>
+<h3 id="那么如何实现呢？"><a href="#那么如何实现呢？" class="headerlink" title="那么如何实现呢？"></a>那么如何实现呢？</h3><p>首先，安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install --save react-progressive-lazy-image</span></span><br></pre></td></tr></table></figure>
+<p>getBoundingClientRect()<br>返回的值是一个<code>DOMRect</code>对象，它是<code>getClientRects()</code>元素返回的矩形的并集，即与元素关联的CSS边框。其结果是，其包含整个元件，具有只读的最小矩形left，top，right，bottom，x，y，width，和height性质描述在像素整体边界框。除视口左上角width和height相对于视口左上角的属性。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/图片加载问题1.jpg" alt></p>
+<p>下面代码可以判断元素是否在窗口内</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//https://gomakethings.com/how-to-test-if-an-element-is-in-the-viewport-with-vanilla-javascript/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> elementIsInsideViewport = <span class="function"><span class="params">el</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> bounding = el.getBoundingClientRect();</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    bounding.top &gt;= <span class="number">0</span> &amp;&amp;</span><br><span class="line">    bounding.left &gt;= <span class="number">0</span> &amp;&amp;</span><br><span class="line">    bounding.bottom &lt;=</span><br><span class="line">      (<span class="built_in">window</span>.innerHeight || <span class="built_in">document</span>.documentElement.clientHeight) &amp;&amp;</span><br><span class="line">    bounding.right &lt;=</span><br><span class="line">      (<span class="built_in">window</span>.innerWidth || <span class="built_in">document</span>.documentElement.clientWidth)</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>可以结合<code>window.onScroll</code>以及<code>window.onResize</code>事件以及<code>throttle</code>来实现对img元素的判断。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"DOMContentLoaded"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> lazyImages = [].slice.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">"img.lazy"</span>));</span><br><span class="line">  <span class="keyword">let</span> active = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> lazyLoad = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (active === <span class="literal">false</span>) &#123;</span><br><span class="line">      active = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        lazyImages.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">lazyImage</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> ((lazyImage.getBoundingClientRect().top &lt;= <span class="built_in">window</span>.innerHeight &amp;&amp; lazyImage.getBoundingClientRect().bottom &gt;= <span class="number">0</span>) &amp;&amp; getComputedStyle(lazyImage).display !== <span class="string">"none"</span>) &#123;</span><br><span class="line">            lazyImage.src = lazyImage.dataset.src;</span><br><span class="line">            lazyImage.srcset = lazyImage.dataset.srcset;</span><br><span class="line">            lazyImage.classList.remove(<span class="string">"lazy"</span>);</span><br><span class="line"></span><br><span class="line">            lazyImages = lazyImages.filter(<span class="function"><span class="keyword">function</span>(<span class="params">image</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> image !== lazyImage;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (lazyImages.length === <span class="number">0</span>) &#123;</span><br><span class="line">              <span class="built_in">document</span>.removeEventListener(<span class="string">"scroll"</span>, lazyLoad);</span><br><span class="line">              <span class="built_in">window</span>.removeEventListener(<span class="string">"resize"</span>, lazyLoad);</span><br><span class="line">              <span class="built_in">window</span>.removeEventListener(<span class="string">"orientationchange"</span>, lazyLoad);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        active = <span class="literal">false</span>;</span><br><span class="line">      &#125;, <span class="number">200</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">"scroll"</span>, lazyLoad);</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, lazyLoad);</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">"orientationchange"</span>, lazyLoad);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>此代码在 <code>scroll</code> 事件处理程序中使用 <code>getBoundingClientRect</code> 来检查是否有任何 <code>img.lazy</code> 元素处于视口中。 使用 <code>setTimeout</code> 调用来延迟处理，active 变量则包含处理状态，用于限制函数调用。 延迟加载图像时，这些元素随即从元素数组中移除。 当元素数组的 <code>length</code> 达到 <code>0</code> 时，滚动事件处理程序代码随即移除。</p>
+<p>虽然此代码几乎可在任何浏览器中正常运行，但却存在潜在的性能问题，即重复的 <code>setTimeout</code> 调用可能纯属浪费，即使其中的代码受限制，它们仍会运行。 在此示例中，当文档滚动或窗口调整大小时，不管视口中是否有图像，每 200 毫秒都会运行一次检查。 此外，跟踪尚未延迟加载的元素数量，以及取消绑定滚动事件处理程序的繁琐工作将由开发者来完成。</p>
+<h3 id="最佳实践-使用-Intersection-Observer"><a href="#最佳实践-使用-Intersection-Observer" class="headerlink" title="最佳实践 使用 Intersection Observer"></a>最佳实践 使用 Intersection Observer</h3><p>此方法非常简单，只需要为元素生成一个<code>IntersectionObserver</code>,并且监听该元素，然后在监听的回调判断元素的<code>intersectionRatio</code>比率即可达到所需。这是核心代码.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; src, needLazyUtilInViewPort, canLoadRightNow &#125; = <span class="keyword">this</span>.props;</span><br><span class="line">    <span class="keyword">if</span> (needLazyUtilInViewPort) &#123;</span><br><span class="line">      <span class="comment">//https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API</span></span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> node = ReactDOM.findDOMNode(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.observer = <span class="keyword">new</span> IntersectionObserver(<span class="keyword">this</span>.insideViewportCb);</span><br><span class="line">        <span class="keyword">this</span>.observer.observe(node);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"err in finding node"</span>, err);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (canLoadRightNow) &#123;</span><br><span class="line">        <span class="keyword">this</span>.loadImage(src);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">insideViewportCb(entries) &#123;</span><br><span class="line">    entries.forEach(<span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">//在viewport里面</span></span><br><span class="line">      <span class="keyword">if</span> (element.intersectionRatio &gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.loadImage(<span class="keyword">this</span>.props.src);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>不过，<code>Intersection Observer</code> 的缺点是虽然在浏览器之间获得良好的支持，但并非所有浏览器皆提供支持。<br>对于不支持 <code>Intersection Observer</code> 的浏览器，您可以使用 polyfill，或者如以上代码所述，检测 <code>Intersection Observer</code> 是否可用，并在其不可用时回退到兼容性更好的旧方法。</p>
+<p>至于列表图顺序加载的话，只需要在每个图片回调通知父组件可以加载下一张就可以了。</p>
+<p>总的来说<code>getBoundingClientRect</code>和<code>Intersection Observer</code>都可以实现图片懒加载，<br>但是<code>getBoundingClientRect</code>如果在当前页面使用到其他<code>onScroll</code>事件，<br>会出现卡顿等问题，不能非常顺畅的滑动，而<code>Intersection Observer</code>使用起来非常简单流畅。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/05/24/React/react-router%EF%BC%8C%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E5%BC%8F%E8%B7%AF%E7%94%B1/">
+                react-router 去中心化式路由
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-05-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/React-router-logo.jpg" alt></p>
+<h2 id="1-静态路由-vs-动态路由"><a href="#1-静态路由-vs-动态路由" class="headerlink" title="1.静态路由 vs. 动态路由"></a>1.静态路由 vs. 动态路由</h2><p>在Web前端开发中，我们经常会需要处理页面路由问题。习惯上，路由信息会在一个地方集中配置好，我们可以称之为“<code>静态路由</code>”，或者叫“<code>中心化式路由</code>”。以react-router v3版本为例，代码类似下面这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Router, Route, IndexRoute, browserHistory &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;Router history=&#123;browserHistory&#125;&gt;</span><br><span class="line">    &lt;Route path=<span class="string">"/"</span> component=&#123;RootPage&#125;&gt;</span><br><span class="line">      &lt;IndexRoute component=&#123;HomePage&#125; /&gt;</span><br><span class="line">      &lt;Route path=<span class="string">"/users"</span> component=&#123;UsersPage&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/Route&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>Router&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">render(<span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span>, <span class="built_in">document</span>.getElementById(<span class="string">'app'</span>))</span><br></pre></td></tr></table></figure>
+<p>可以看到，在程序的顶层组件上配置好了所有路由信息，并通过嵌套关系体现不同的层次。但是，react-router v4版本进行了革命性的改动，使之更加符合React的“组件化”思想，我们可以称之为“<code>动态路由</code>”，或者借用区块链中的术语，称之为“<code>去中心化路由</code>”。用v4版本改写后的代码类似于下面这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserRouter, Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;BrowserRouter&gt;</span><br><span class="line">    &lt;RootPage /&gt;</span><br><span class="line">  &lt;<span class="regexp">/BrowserRouter&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const RootPage = () =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;Route path="/</span><span class="string">" exact component=&#123;HomePage&#125; /&gt;</span></span><br><span class="line"><span class="string">    &lt;Route path="</span>/users<span class="string">" component=&#123;UsersPage&#125; /&gt;</span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">render(&lt;App /&gt;, document.getElementById('app'))</span></span><br></pre></td></tr></table></figure>
+<p>可以发现，路由的配置不再是全部位于顶层组件中了，而是分散在不同的组件中，通过组件的嵌套关系来实现路由的层次。另外，和静态路由事先定义好所有页面不同，动态路由可以在渲染时根据路径匹配结果，动态决定渲染哪些组件，这样就可以<font color="#f00">充分实现页面的复用，减少重复渲染</font>。下面依次介绍react-router v4的相关组件。</p>
+<h2 id="2-Router"><a href="#2-Router" class="headerlink" title="2.Router"></a>2.Router</h2><p>react-router内部实际上是利用了浏览器的history API，因此在v3版本中我们需要在顶层的<router>组件中传入一个history属性。在v4版本中为我们封装了一个<browserrouter>组件，我们需要把它包在所有组件的最外层：</browserrouter></router></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; BrowserRouter &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">const</span> App = <span class="function"><span class="params">()</span> =&gt;</span> (</span><br><span class="line">  &lt;BrowserRouter&gt;</span><br><span class="line">    ... ...</span><br><span class="line">  &lt;<span class="regexp">/BrowserRouter&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+<p>另外还有一个<hashrouter>组件，是为了兼容以前版本的浏览器，已经不推荐使用了。</hashrouter></p>
+<h2 id="3-路由匹配"><a href="#3-路由匹配" class="headerlink" title="3.路由匹配"></a>3.路由匹配</h2><p>路由匹配主要涉及两个组件：<code>&lt;Route&gt;</code>和<code>&lt;Switch&gt;</code>，下面分别介绍。</p>
+<h3 id="3-1"><a href="#3-1" class="headerlink" title="3.1 "></a>3.1 <route></route></h3><p><code>&lt;Route&gt;</code>组件包含3类属性：<font color="#f00">匹配属性、渲染方法、路由属性。</font></p>
+<h3 id="3-1-1-匹配属性"><a href="#3-1-1-匹配属性" class="headerlink" title="3.1.1 匹配属性"></a>3.1.1 匹配属性</h3><font color="#f00">这些属性是为了设定url匹配规则。</font>
+
+<h4 id="1-path：路由匹配正则表达式"><a href="#1-path：路由匹配正则表达式" class="headerlink" title="(1) path：路由匹配正则表达式"></a>(1) path：路由匹配正则表达式</h4><p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&apos;/&apos; /&gt;：匹配以/开头的路径，比如/，/login，/login/alice</span><br><span class="line">&lt;Route path=&apos;/login/:username&apos; /&gt;：可以匹配/login/alice，参数可以通过props.match.params.username获得</span><br></pre></td></tr></table></figure>
+<h4 id="2-exact：精确匹配"><a href="#2-exact：精确匹配" class="headerlink" title="(2) exact：精确匹配"></a>(2) exact：精确匹配</h4><p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&apos;/&apos; exact /&gt;：只能精确匹配/，不能匹配/login</span><br><span class="line">在v4版本里取消了&lt;IndexRoute&gt;组件，因此如果你希望在根路径显示某个页面的话，可以用下面的方式：</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/"</span> exact component=&#123;HomePage&#125; /&gt;</span><br><span class="line">  ... ...</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-strict：严格匹配"><a href="#3-strict：严格匹配" class="headerlink" title="(3) strict：严格匹配"></a>(3) strict：严格匹配</h3><p>如果path的最后带有/，那么url必须也带有/才能匹配。举例：</p>
+<p><route path="/login/" strict>：可以匹配/login/，不能匹配/login</route></p>
+<h3 id="4-sensitive：大小写敏感"><a href="#4-sensitive：大小写敏感" class="headerlink" title="(4) sensitive：大小写敏感"></a>(4) sensitive：大小写敏感</h3><h2 id="3-1-2-渲染方法"><a href="#3-1-2-渲染方法" class="headerlink" title="3.1.2 渲染方法"></a>3.1.2 渲染方法</h2><font color="#f00">这些属性指明在匹配上路由后如何渲染。</font>
+
+<h4 id="1-component：渲染组件"><a href="#1-component：渲染组件" class="headerlink" title="(1) component：渲染组件"></a>(1) component：渲染组件</h4><p>这是最常见的方式，路由匹配时渲染一个指定组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=&apos;/users&apos; component=&#123;UsersPage&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="2-render：内联渲染"><a href="#2-render：内联渲染" class="headerlink" title="(2) render：内联渲染"></a>(2) render：内联渲染</h4><p><code>component</code>方式会通过<code>React.createElement</code>创建新元素，然后<code>mount</code>到<code>DOM</code>上，如果需要频繁更新的话这种方式效率会比较低，这时候你可以选择内联渲染方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route path=<span class="string">'/users'</span> render=&#123;props =&gt; (</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;Component &#123;...props&#125;/&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">)&#125;/</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-children：根据path匹配结果渲染子元素"><a href="#3-children：根据path匹配结果渲染子元素" class="headerlink" title="(3) children：根据path匹配结果渲染子元素"></a>(3) children：根据path匹配结果渲染子元素</h3><p>前面两种渲染方法都是只有path匹配时才渲染，<code>children</code>渲染方式则比较特殊，它是针对子元素的，并且只返回一个<code>match</code>结果，你可以根据<code>match</code>结果自行决定如何渲染子元素。举个例子，在一个列表中，我们希望高亮那些被匹配上的元素：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;ListItemLink to=<span class="string">"/somewhere"</span> /&gt;</span><br><span class="line">  &lt;ListItemLink to=<span class="string">"/somewhere-else"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/ul&gt;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const ListItemLink = (&#123; to, ...rest &#125;) =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;Route</span></span><br><span class="line"><span class="regexp">    path=&#123;to&#125;</span></span><br><span class="line"><span class="regexp">    children=&#123;(&#123; match &#125;) =&gt; (</span></span><br><span class="line"><span class="regexp">      &lt;li className=&#123;match ? "active" : ""&#125;&gt;</span></span><br><span class="line"><span class="regexp">        &lt;Link to=&#123;to&#125; &#123;...rest&#125; /</span>&gt;</span><br><span class="line">      &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    )&#125;</span></span><br><span class="line"><span class="regexp">  /</span>&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-1-3-路由属性"><a href="#3-1-3-路由属性" class="headerlink" title="3.1.3 路由属性"></a>3.1.3 路由属性</h3><p>这些属性可以在待渲染组件中通过<code>props</code>访问到。</p>
+<h4 id="1-match"><a href="#1-match" class="headerlink" title="(1) match"></a>(1) match</h4><p>match属性中包含了路由匹配相关的参数：</p>
+<p>params：参数键值对（比如前面的username）<br>isExact：是否精确匹配（是否指定了exact）<br>path：正则表达式（如/login/:username）<br>url：和path匹配上的部分（入/login/alice）</p>
+<h4 id="2-location"><a href="#2-location" class="headerlink" title="(2) location"></a>(2) location</h4><p>location中包含了当前url相关的参数：</p>
+<p>pathname：当前url<br>search：url中的查询字符串（如?username=a&amp;sort=b）<br>state：携带的特定状态参数，是一个对象（如{ XXX: ‘xxx’ }）</p>
+<h4 id="3-history"><a href="#3-history" class="headerlink" title="(3) history"></a>(3) history</h4><p>history就是浏览器提供的history API，提供了一些路由函数：</p>
+<p><code>push(path, [state])</code>：页面跳转<br><code>replace(path, [state])</code>：重定向<br><code>go(n)</code>：直接跳转到第n个页面<br><code>goBack()</code>：等价于go(-1)<br><code>goForward()</code>：等价于go(1)</p>
+<h3 id="3-2-Switch"><a href="#3-2-Switch" class="headerlink" title="3.2 Switch"></a>3.2 Switch</h3><p>如果我们希望设置一系列的路由匹配规则，只渲染第一个匹配上的组件，该如何实现呢？这时候你就需要用到<switch>组件。<font color="#f00"><code>&lt;Switch&gt;</code>中包含一组<code>&lt;Route&gt;</code>或者<code>&lt;Redirect&gt;</code>，只渲染第一个匹配的路由。</font></switch></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Switch, Route &#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"></span><br><span class="line">&lt;Switch&gt;</span><br><span class="line">  &lt;Route exact path=<span class="string">"/"</span> component=&#123;Home&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/about"</span> component=&#123;About&#125;/&gt;</span><br><span class="line">  &lt;Route path=<span class="string">"/:user"</span> component=&#123;User&#125;/&gt;</span><br><span class="line">  &lt;Route component=&#123;NoMatch&#125;/&gt;</span><br><span class="line">&lt;<span class="regexp">/Switch&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-导航"><a href="#4-导航" class="headerlink" title="4.导航"></a>4.导航</h3><p><code>react-router</code>提供了一系列的导航组件，基本上就是<code>&lt;a&gt;</code>标签的一个封装。主要包括3种：</p>
+<p><code>&lt;Link&gt;</code>：最终渲染为<code>&lt;a&gt;</code><br><code>&lt;NavLink&gt;</code>：path匹配时显示为高亮样式<br><code>&lt;Redirect&gt;</code>：重定向</p>
+<p>举例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Link, NavLink &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"></span><br><span class="line">&lt;Link to=<span class="string">"/about"</span>&gt;About&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">&lt;NavLink to="/</span>faq<span class="string">" activeClassName="</span>selected<span class="string">"&gt;</span></span><br><span class="line"><span class="string">  FAQs</span></span><br><span class="line"><span class="string">&lt;/NavLink&gt;</span></span><br></pre></td></tr></table></figure>
+<p>另外，<code>react-router</code>还提供了其他一些工具库，比如支持组件的动态<code>import</code>（下载）的<code>react-loadable</code>，支持CSS转场动画的<code>react-transition-group</code></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/react-router需要的组件.jpg" alt></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/05/24/React/%E4%B8%80%E6%AC%A1-Web-%E7%AB%AF%E5%A4%A7%E9%87%8F%E5%9B%BE%E7%89%87%E5%90%8C%E6%97%B6%E5%8A%A0%E8%BD%BD%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E6%97%85/">
+                一次 Web 端大量图片同时加载卡顿问题的优化之旅
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-05-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <blockquote>
+<p>具体场景</p>
+</blockquote>
+<p>在描述如何解决问题，我们现在先来申明，问题是什么？ 笔者的需求大概是在某个页面显示 1~1000张，200~500k大小的图。好消息是这些图片来源于本地硬盘而非网络。(否则这个问题就要变成优化网络….)</p>
+<blockquote>
+<p>踩坑历程</p>
+</blockquote>
+<p>由于不是纯前端的项目，笔者可以从本地文件夹中读取文件。然后一段代码劈里啪啦的就出现了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileList = <span class="keyword">this</span>.props.fileList;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=<span class="string">"list-wrapper"</span>&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            fileList.map(<span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</span><br><span class="line">                &lt;img className=<span class="string">"img-item"</span> src=&#123;file.src&#125;&gt;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>就在笔者满心欢喜的认为这个需求基本搞定了，该去楼下加鸡腿的时候。无情的现实狠狠的抽了我一巴掌。随着网页的刷新，一张纯白的画面展示在了我的面前，然后只见图片一点一点的从上面加载出来。 我不禁陷入了沉思，是CPU跑不动道了还是内存飘了？在一想，我这电脑都这个表现，真要上线了，这客户能忍受吗？不对，就这表现，没上线前产品小姐姐就的把我ko了…</p>
+<h2>方案一 懒加载</h2>
+
+<p>这种场景下想必大家第一反应也是懒加载。简单介绍一下图片懒加载。常见的图片懒加载方案是指页面加载时只渲染屏幕可见区域及周围的图片。当页面滚动时再加载需要显示的图片。<br>出于提高效（tou）率（lan）的目的，笔者在网上找了个比较好用的懒加载库然后引入项目。然而，情况并不乐观。因为该需求场景下每一张图片的宽高都是 50*50，那么在PC端常见的 1080p 的设备上首屏需要显示的图片达到了400+张。<br>即便我们忽视这个问题，当用户滚动网页速度很快时图片加载的体验也是不ok的。所以懒加载并不是万能的。</p>
+<h2>方案二 预加载</h2>
+
+<p>首先我们要知道，在硬件性能不变且CPU调度不能更积极的前提下。理论上我们无法减少图片渲染的时间。所以我们只能想办法调整图片渲染的方式来提高用户的体验。所以我们采用预加载的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileList = <span class="keyword">this</span>.props.fileList;</span><br><span class="line">fileList.forEach(<span class="function">(<span class="params">element</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">    img.src = element.src;</span><br><span class="line">    img.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 渲染这张图</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>当然我们也可以使用img.decode()方法对图片进行解码，它会返回一个promise对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img.decode().then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 渲染这张图</span></span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>采用了这套方案后，图片会一张又一张的加载。然而，加载的速度实在是不敢恭维。如果用户想看最后那张图片，那他只能在哪里进行长久的等待…</p>
+<h2>方案三 懒加载 + 预加载</h2>
+
+<p>众所周知，3 = 1 + 2。 所以方案三就是方案一和方案二的结合体。首先我们加载一张图片未加载时的底图（占位）。而后我们继续采用方案二的方式进行图片逐个的预加载。当用户滚动图片时，我们便改变下一站预渲染的图片为用户可见区域的第一张。然而，情况还是不乐观。当用户的滚动条匀速直线不停的往下运动时，效果依然很差。</p>
+<h2>终结方案</h2>
+
+<p>综合上面几种方案，基本能优化的我们都已经优化了。那如继续何提高用户的体验呢？似乎，我们只能从图片本身去下手？<br>上文也提到，在我所面临的需求场景下一张图片的显示宽高为50 * 50。而图片的大小为200~500k。所以我们可以采用缩率图的方式，先渲染一张3~5k大小的缩略图，等用户点击图片查看详情时再去渲染大图。采用缩略图的情况下我们再使用方案三进行优化，性能表现几乎就可以满足这个场景下用户的需求了。</p>
+<h2>其他</h2>
+
+<p>当然，上面的几种优化方案只是我在某个项目中使用。我们仍然可以采用例如图片渐进式增强，CDN缓存，图片压缩，设立单独的资源服务器等诸多方式。图片的加载优化本身也是一个前端老生常谈的问题，业内已经有太多太多的解决方案。</p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/32/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/34/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="axios 的基本使用（vue中使用axios）"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>axios 的基本使用（vue中使用axios） - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2020/06/27/Vue/axios%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8%EF%BC%88vue%E4%B8%AD%E4%BD%BF%E7%94%A8axios%EF%BC%89/">
+                axios 的基本使用（vue中使用axios）
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-27</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>axios就是一个基于Promise的，发送http请求的一个工具库。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>支持Promise API</li>
+<li>拦截请求和响应。拦截请求，可以过滤请求参数；拦截响应，可以处理响应异常</li>
+<li>取消请求。请求可以手动取消</li>
+</ol>
+<h4 id="vue中使用axios"><a href="#vue中使用axios" class="headerlink" title="vue中使用axios"></a>vue中使用axios</h4><ol>
+<li>安装axios模块<br> <code>npm install --save axios</code> </li>
+<li>在index.js文件中引入axios</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  <span class="comment">// el: '#app',</span></span><br><span class="line">  <span class="comment">// router,</span></span><br><span class="line">  axios  <span class="comment">// 加入axios</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="基本API"><a href="#基本API" class="headerlink" title="基本API"></a>基本API</h4><h5 id="1-执行get请求，有两种方式"><a href="#1-执行get请求，有两种方式" class="headerlink" title="1.  执行get请求，有两种方式"></a>1.  执行get请求，有两种方式</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种方式  将参数直接写在url中</span></span><br><span class="line">axios.get(<span class="string">'/getMainInfo?id=123'</span>)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 第二种方式  将参数直接写在params中</span></span><br><span class="line">axios.get(<span class="string">'/getMainInfo'</span>, &#123;</span><br><span class="line">  params: &#123;</span><br><span class="line">    id: <span class="number">123</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2-执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。"><a href="#2-执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。" class="headerlink" title="2. 执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。"></a>2. 执行post请求，注意执行post请求的入参，不需要写在params字段中，这个地方要注意与get请求的第二种方式进行区别。</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/getMainInfo'</span>, &#123;</span><br><span class="line">  id: <span class="number">123</span></span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="3-通过向axios传递的相关配置来创建请求axios-config"><a href="#3-通过向axios传递的相关配置来创建请求axios-config" class="headerlink" title="3. 通过向axios传递的相关配置来创建请求axios(config)"></a>3. 通过向axios传递的相关配置来创建请求<code>axios(config)</code></h5><h6 id="1-下面是常用的配置字段："><a href="#1-下面是常用的配置字段：" class="headerlink" title="(1)下面是常用的配置字段："></a>(1)下面是常用的配置字段：</h6><ul>
+<li>url：请求路径，<strong>string类型</strong> </li>
+<li>method：请求方法，<strong>string类型</strong> </li>
+<li>baseURL：baseURL会自动加在url前面，除非url是一个绝对URL，<strong>string类型</strong> </li>
+<li>transformRequest：允许在向服务器发送请求之前，修改请求数据，只适用于<strong>post，put，patch</strong>请求，<strong>数组类型，数组里面的最后一个函数必须返回一个字符串</strong> </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[fucntion(data) &#123;</span><br><span class="line">  <span class="comment">// 对data进行更改</span></span><br><span class="line">  <span class="keyword">return</span> data</span><br><span class="line">&#125;]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>transformResponse：这里提前处理返回的数据</li>
+<li>headers：自定义请求头</li>
+<li>params：即将于请求一起发送的url参数（一般只用于get请求）<strong>一般是对象类型</strong> </li>
+<li>data：作为请求主体被发送是数据（一般只用于post请求）<strong>一般是对象类型</strong> </li>
+<li>timeout：超时时间，超过时间，请求将被中断</li>
+<li>withCredentials：表示跨域请求时是否需要使用凭证</li>
+<li>responseType：响应数据的类型，默认是’json’，可以是’text’, ‘json’,’document’,’arraybuffer’,’blob’,’stream’</li>
+<li>maxContentLength：响应数据的最大尺寸</li>
+<li>proxy：代理服务器主机名称和端口</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">proxy</span>: &#123;</span><br><span class="line">  <span class="attribute">host</span>: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">  port: <span class="number">9000</span>,</span><br><span class="line">  auth: : &#123;</span><br><span class="line">    username: <span class="string">'mikeymike'</span>,</span><br><span class="line">    password: <span class="string">'rapunz3l'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h6 id="2-下面是响应的数据接口"><a href="#2-下面是响应的数据接口" class="headerlink" title="(2)下面是响应的数据接口"></a>(2)下面是响应的数据接口</h6><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">data</span>: <span class="comment">// 服务器响应数据</span></span><br><span class="line">  status: <span class="comment">// http状态码</span></span><br><span class="line">  statusText: <span class="comment">// 服务器响应的http状态信息</span></span><br><span class="line">  headers:  <span class="comment">// 响应头</span></span><br><span class="line">  config: <span class="comment">// 请求配置数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-举例"><a href="#3-举例" class="headerlink" title="(3)举例"></a>(3)举例</h6><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送 POST 请求</span></span><br><span class="line">axios(&#123;</span><br><span class="line">  method: <span class="string">'post'</span>,</span><br><span class="line">  url: <span class="string">'/getMainInfo'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    id: <span class="number">123</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res.data)</span><br><span class="line">  <span class="built_in">console</span>.log(res.status)</span><br><span class="line">  <span class="built_in">console</span>.log(res.statusText)</span><br><span class="line">  <span class="built_in">console</span>.log(res.headers)</span><br><span class="line">  <span class="built_in">console</span>.log(res.config)</span><br><span class="line">  </span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="4-配置默认值default"><a href="#4-配置默认值default" class="headerlink" title="4. 配置默认值default"></a>4. 配置默认值default</h5><p><code>axios.default.baseURL = &#39;&#39;</code><br> <code>axios.default.headers.common[&#39;Authorization&#39;] = AUTH_TOKEN</code><br> …等等默认配置</p>
+<h4 id="5-执行多个并发"><a href="#5-执行多个并发" class="headerlink" title="5. 执行多个并发"></a>5. 执行多个并发</h4><p><code>axios.all()</code>和Promise.all()执行机制是一样的，要么全部成功走then，要么就走catch</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/getUseName?id=123'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'getUserAge?id=123'</span>)</span><br><span class="line">&#125;</span><br><span class="line">axios.all([getUserName(), getUserAge()]) .then(</span><br><span class="line">  axios.spread(<span class="function"><span class="keyword">function</span>(<span class="params">acct, perms</span>) </span>&#123;  <span class="comment">// 处理并发请求的助手函数</span></span><br><span class="line">    <span class="built_in">console</span>.log(acct, perms)  <span class="comment">// 全部请求成功</span></span><br><span class="line">  &#125;)).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)  <span class="comment">// 只要任意一个请求出错</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="6-拦截器"><a href="#6-拦截器" class="headerlink" title="6. 拦截器"></a>6. 拦截器</h4><h5 id="1-在请求之前拦截请求"><a href="#1-在请求之前拦截请求" class="headerlink" title="(1)在请求之前拦截请求"></a>(1)在请求之前拦截请求</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加请求拦截器</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params">config</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 在发送请求之前做些什么</span></span><br><span class="line">  <span class="keyword">return</span> config;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 对请求错误做些什么</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="2-在被then，catch处理前拦截响应"><a href="#2-在被then，catch处理前拦截响应" class="headerlink" title="(2)在被then，catch处理前拦截响应"></a>(2)在被then，catch处理前拦截响应</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加响应拦截器</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 对响应数据做点什么</span></span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 对响应错误做点什么</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="3-可以为自定义-axios-实例添加拦截器"><a href="#3-可以为自定义-axios-实例添加拦截器" class="headerlink" title="(3)可以为自定义 axios 实例添加拦截器"></a>(3)可以为自定义 axios 实例添加拦截器</h5><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> instance = axios.create([config]);</span><br><span class="line">instance.interceptors.request.use(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">/*...*/</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="7-封装axios"><a href="#7-封装axios" class="headerlink" title="7. 封装axios"></a>7. 封装axios</h4><p>在开发中，总会有很多的http请求，那我们就要封装好一个axios，使用更方便一些</p>
+<h5 id="1-封装"><a href="#1-封装" class="headerlink" title="(1)封装"></a>(1)封装</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request.js文件</span></span><br><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> qs <span class="keyword">from</span> <span class="string">'qs'</span></span><br><span class="line"><span class="comment">// 引入基础参数文件  和  baseURL配置文件</span></span><br><span class="line"><span class="keyword">import</span> baseParams <span class="keyword">from</span> <span class="string">'./baseParams'</span>  <span class="comment">// 基本参数，比如一些登录信息之类的参数</span></span><br><span class="line"><span class="keyword">import</span> &#123; BASE_URL &#125; <span class="keyword">from</span> <span class="string">'./config'</span>   <span class="comment">// baseURL写在config.js文件中</span></span><br><span class="line"><span class="comment">// 默认的全局配置</span></span><br><span class="line">axios.defaults.baseURL = BASE_URL</span><br><span class="line">axios.defaults.timeout = <span class="number">10000</span></span><br><span class="line"><span class="comment">// 请求发送之前拦截，进行处理（根据业务需求进行拦截处理）</span></span><br><span class="line">axios.interceptors.request.use(<span class="function"><span class="params">success</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> success</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> reject(error)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// then,catch处理之前，进行拦截处理（根据业务需求进行拦截处理）</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> response</span><br><span class="line">&#125;, error =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 导出post请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">post</span> (<span class="params">url, data, withBaseParams = false</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    axios(&#123;</span><br><span class="line">      method: <span class="string">'post'</span>,</span><br><span class="line">      url,</span><br><span class="line">      data: withBaseParams ? qs.stringify(&#123;...baseParams, data&#125;) : qs.stringify(data),</span><br><span class="line">      headers: &#123;</span><br><span class="line">        <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> successHandle(res, resolve))   <span class="comment">// 将数据处理之后传给页面</span></span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> errorHandle(err, reject))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 导出get请求</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">get</span> (<span class="params">url, params</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    axios(&#123;</span><br><span class="line">      method: <span class="string">'get'</span>,</span><br><span class="line">      url,</span><br><span class="line">      params,</span><br><span class="line">      headers: &#123;&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">res</span> =&gt;</span> successHandle(res, resolve))</span><br><span class="line">      .catch(<span class="function"><span class="params">err</span> =&gt;</span> errorHandle(err, reject))</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// then处理执行了successHandle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">successHandle</span>(<span class="params">data, resolve</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (res.success &amp;&amp; res.errorCode == <span class="string">'60000'</span>) &#123;</span><br><span class="line">    resolve(res)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 弹出toast报错</span></span><br><span class="line">    Toast(&#123;</span><br><span class="line">      message: res.msg,</span><br><span class="line">      duration: <span class="number">2000</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// catch处理执行了errorHandle</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">errorHandle</span>(<span class="params">err, reject</span>) </span>&#123;</span><br><span class="line">  reject(err)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-引入使用"><a href="#2-引入使用" class="headerlink" title="(2)引入使用"></a>(2)引入使用</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入使用</span></span><br><span class="line"><span class="keyword">import</span> &#123;<span class="keyword">get</span>, post&#125; from 'request.js'</span><br><span class="line">post('/getMainInfo', &#123;id: <span class="number">123</span>&#125;, <span class="literal">true</span>)</span><br><span class="line">.then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;)</span><br><span class="line">.catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

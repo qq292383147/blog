@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="原生JS灵魂之问, 请问你能接得住几个？(上)"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>原生JS灵魂之问, 请问你能接得住几个？(上) - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/03/JavaScript/%E5%8E%9F%E7%94%9FJS%E7%81%B5%E9%AD%82%E4%B9%8B%E9%97%AE,%20%E8%AF%B7%E9%97%AE%E4%BD%A0%E8%83%BD%E6%8E%A5%E5%BE%97%E4%BD%8F%E5%87%A0%E4%B8%AA%EF%BC%9F(%E4%B8%8A)/">
+                原生JS灵魂之问, 请问你能接得住几个？(上)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="第一篇-JS数据类型之问——概念篇"><a href="#第一篇-JS数据类型之问——概念篇" class="headerlink" title="第一篇: JS数据类型之问——概念篇"></a>第一篇: JS数据类型之问——概念篇</h2><h3 id="1-JS原始数据类型有哪些？引用数据类型有哪些？"><a href="#1-JS原始数据类型有哪些？引用数据类型有哪些？" class="headerlink" title="1.JS原始数据类型有哪些？引用数据类型有哪些？"></a>1.JS原始数据类型有哪些？引用数据类型有哪些？</h3><p>在 JS 中，存在着 7 种原始值，分别是：</p>
+<ul>
+<li>boolean</li>
+<li>null</li>
+<li>undefined</li>
+<li>number</li>
+<li>string</li>
+<li>symbol</li>
+<li>bigint</li>
+</ul>
+<p>引用数据类型: 对象Object（包含普通对象-Object，数组对象-Array，正则对象-RegExp，日期对象-Date，数学函数-Math，函数对象-Function）</p>
+<h3 id="2-说出下面运行的结果，解释原因。"><a href="#2-说出下面运行的结果，解释原因。" class="headerlink" title="2.说出下面运行的结果，解释原因。"></a>2.说出下面运行的结果，解释原因。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">person</span>) </span>&#123;</span><br><span class="line">  person.age = <span class="number">26</span></span><br><span class="line">  person = &#123;</span><br><span class="line">    name: <span class="string">'hzj'</span>,</span><br><span class="line">    age: <span class="number">18</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> person</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p1 = &#123;</span><br><span class="line">  name: <span class="string">'fyq'</span>,</span><br><span class="line">  age: <span class="number">19</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> p2 = test(p1)</span><br><span class="line"><span class="built_in">console</span>.log(p1) <span class="comment">// -&gt; ?</span></span><br><span class="line"><span class="built_in">console</span>.log(p2) <span class="comment">// -&gt; ?</span></span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p1：&#123;<span class="attr">name</span>: “fyq”, <span class="attr">age</span>: <span class="number">26</span>&#125;</span><br><span class="line">p2：&#123;<span class="attr">name</span>: “hzj”, <span class="attr">age</span>: <span class="number">18</span>&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原因: 在函数传参的时候传递的是对象在堆中的内存地址值，test函数中的实参person是p1对象的内存地址，通过调用person.age = 26确实改变了p1的值，但随后person变成了另一块内存空间的地址，并且在最后将这另外一份内存空间的地址返回，赋给了p2。</p>
+</blockquote>
+<h3 id="3-null是对象吗？为什么？"><a href="#3-null是对象吗？为什么？" class="headerlink" title="3.null是对象吗？为什么？"></a>3.null是对象吗？为什么？</h3><p>结论: null不是对象。</p>
+<p>解释: 虽然 typeof null 会输出 object，但是这只是 JS 存在的一个悠久 Bug。在 JS 的最初版本中使用的是 32 位系统，为了性能考虑使用低位存储变量的类型信息，000 开头代表是对象然而 null 表示为全零，所以将它错误的判断为 object 。</p>
+<h3 id="4-’1’-toString-为什么可以调用？"><a href="#4-’1’-toString-为什么可以调用？" class="headerlink" title="4.’1’.toString()为什么可以调用？"></a>4.’1’.toString()为什么可以调用？</h3><p>其实在这个语句运行的过程中做了这样几件事情：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Object</span>(<span class="string">'1'</span>);</span><br><span class="line">s.toString();</span><br><span class="line">s = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<p>第一步: 创建Object类实例。注意为什么不是String ？ 由于Symbol和BigInt的出现，对它们调用new都会报错，目前ES6规范也不建议用new来创建基本类型的包装类。</p>
+<p>第二步: 调用实例方法。</p>
+<p>第三步: 执行完方法立即销毁这个实例。</p>
+<p>整个过程体现了<code>基本包装类型</code>的性质，而基本包装类型恰恰属于基本数据类型，包括Boolean, Number和String。</p>
+<blockquote>
+<p>参考:《JavaScript高级程序设计(第三版)》P118</p>
+</blockquote>
+<h3 id="5-0-1-0-2为什么不等于0-3？"><a href="#5-0-1-0-2为什么不等于0-3？" class="headerlink" title="5.0.1+0.2为什么不等于0.3？"></a>5.0.1+0.2为什么不等于0.3？</h3><p>0.1和0.2在转换成二进制后会无限循环，由于标准位数的限制后面多余的位数会被截掉，此时就已经出现了精度的损失，相加后因浮点数小数位的限制而截断的二进制数字在转换为十进制就会变成0.30000000000000004。</p>
+<h3 id="6-如何理解BigInt"><a href="#6-如何理解BigInt" class="headerlink" title="6.如何理解BigInt?"></a>6.如何理解BigInt?</h3><h4 id="什么是BigInt"><a href="#什么是BigInt" class="headerlink" title="什么是BigInt?"></a>什么是BigInt?</h4><blockquote>
+<p>BigInt是一种新的数据类型，用于当整数值大于Number数据类型支持的范围时。这种数据类型允许我们安全地对<code>大整数</code>执行算术操作，表示高分辨率的时间戳，使用大整数id，等等，而不需要使用库。</p>
+</blockquote>
+<h4 id="为什么需要BigInt"><a href="#为什么需要BigInt" class="headerlink" title="为什么需要BigInt?"></a>为什么需要BigInt?</h4><p>在JS中，所有的数字都以双精度64位浮点格式表示，那这会带来什么问题呢？</p>
+<p>这导致JS中的Number无法精确表示非常大的整数，它会将非常大的整数四舍五入，确切地说，JS中的Number类型只能安全地表示-9007199254740991(-(2^53-1))和9007199254740991（(2^53-1)），任何超出此范围的整数值都可能失去精度。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">999999999999999</span>);  <span class="comment">//=&gt;10000000000000000</span></span><br></pre></td></tr></table></figure>
+<p>同时也会有一定的安全性问题:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">9007199254740992</span> === <span class="number">9007199254740993</span>;    <span class="comment">// → true 居然是true!</span></span><br></pre></td></tr></table></figure>
+<h4 id="如何创建并使用BigInt？"><a href="#如何创建并使用BigInt？" class="headerlink" title="如何创建并使用BigInt？"></a>如何创建并使用BigInt？</h4><p>要创建BigInt，只需要在数字末尾追加n即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log( <span class="number">9007199254740995n</span> );    <span class="comment">// → 9007199254740995n	</span></span><br><span class="line"><span class="built_in">console</span>.log( <span class="number">9007199254740995</span> );     <span class="comment">// → 9007199254740996</span></span><br></pre></td></tr></table></figure>
+<p>另一种创建BigInt的方法是用BigInt()构造函数、</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BigInt(<span class="string">"9007199254740995"</span>);    <span class="comment">// → 9007199254740995n</span></span><br></pre></td></tr></table></figure>
+<p>简单使用如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10n</span> + <span class="number">20n</span>;    <span class="comment">// → 30n	</span></span><br><span class="line"><span class="number">10n</span> - <span class="number">20n</span>;    <span class="comment">// → -10n	</span></span><br><span class="line">+<span class="number">10n</span>;         <span class="comment">// → TypeError: Cannot convert a BigInt value to a number	</span></span><br><span class="line"><span class="number">-10n</span>;         <span class="comment">// → -10n	</span></span><br><span class="line"><span class="number">10n</span> * <span class="number">20n</span>;    <span class="comment">// → 200n	</span></span><br><span class="line"><span class="number">20n</span> / <span class="number">10n</span>;    <span class="comment">// → 2n	</span></span><br><span class="line"><span class="number">23n</span> % <span class="number">10n</span>;    <span class="comment">// → 3n	</span></span><br><span class="line"><span class="number">10n</span> ** <span class="number">3n</span>;    <span class="comment">// → 1000n	</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> x = <span class="number">10n</span>;	</span><br><span class="line">++x;          <span class="comment">// → 11n	</span></span><br><span class="line">--x;          <span class="comment">// → 9n</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> x);   <span class="comment">//"bigint"</span></span><br></pre></td></tr></table></figure>
+<h4 id="值得警惕的点"><a href="#值得警惕的点" class="headerlink" title="值得警惕的点"></a>值得警惕的点</h4><ol>
+<li>BigInt不支持一元加号运算符, 这可能是某些程序可能依赖于 + 始终生成 Number 的不变量，或者抛出异常。另外，更改 + 的行为也会破坏 asm.js代码。</li>
+<li>因为隐式类型转换可能丢失信息，所以不允许在bigint和 Number 之间进行混合操作。当混合使用大整数和浮点数时，结果值可能无法由BigInt或Number精确表示。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> + <span class="number">10n</span>;    <span class="comment">// → TypeError</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>不能将BigInt传递给Web api和内置的 JS 函数，这些函数需要一个 Number 类型的数字。尝试这样做会报TypeError错误。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.max(<span class="number">2n</span>, <span class="number">4n</span>, <span class="number">6n</span>);    <span class="comment">// → TypeError</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>当 Boolean 类型与 BigInt 类型相遇时，BigInt的处理方式与Number类似，换句话说，只要不是0n，BigInt就被视为truthy的值。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="number">0n</span>)&#123;</span><br><span class="line">	<span class="comment">//条件判断为false</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="number">3n</span>)&#123;</span><br><span class="line">	<span class="comment">//条件为true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>元素都为BigInt的数组可以进行sort。</li>
+<li>BigInt可以正常地进行位运算，如|、&amp;、&lt;&lt;、&gt;&gt;和^</li>
+</ol>
+<h4 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h4><p>caniuse的结果:</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/43.jpg" alt="43"></p>
+<p>其实现在的兼容性并不怎么好，只有chrome67、firefox、Opera这些主流实现，要正式成为规范，其实还有很长的路要走。</p>
+<p>我们期待BigInt的光明前途！</p>
+<h2 id="第二篇-JS数据类型之问——检测篇"><a href="#第二篇-JS数据类型之问——检测篇" class="headerlink" title="第二篇:  JS数据类型之问——检测篇"></a>第二篇:  JS数据类型之问——检测篇</h2><h3 id="1-typeof-是否能正确判断类型？"><a href="#1-typeof-是否能正确判断类型？" class="headerlink" title="1. typeof 是否能正确判断类型？"></a>1. typeof 是否能正确判断类型？</h3><p>对于原始类型来说，除了 null 都可以调用typeof显示正确的类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="number">1</span> <span class="comment">// 'number'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="string">'1'</span> <span class="comment">// 'string'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span> <span class="comment">// 'undefined'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">true</span> <span class="comment">// 'boolean'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">Symbol</span>() <span class="comment">// 'symbol'</span></span><br></pre></td></tr></table></figure>
+<p>但对于引用数据类型，除了函数之外，都会显示”object”。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> [] <span class="comment">// 'object'</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// 'object'</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">console</span>.log <span class="comment">// 'function'</span></span><br></pre></td></tr></table></figure>
+<p>因此采用typeof判断对象数据类型是不合适的，采用instanceof会更好，instanceof的原理是基于原型链的查询，只要处于原型链中，判断永远为true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> Person()</span><br><span class="line">p1 <span class="keyword">instanceof</span> Person <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str1 = <span class="string">'hello world'</span></span><br><span class="line">str1 <span class="keyword">instanceof</span> <span class="built_in">String</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hello world'</span>)</span><br><span class="line">str2 <span class="keyword">instanceof</span> <span class="built_in">String</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-instanceof能否判断基本数据类型？"><a href="#2-instanceof能否判断基本数据类型？" class="headerlink" title="2. instanceof能否判断基本数据类型？"></a>2. instanceof能否判断基本数据类型？</h3><p>能。比如下面这种方式:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PrimitiveNumber</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> [<span class="built_in">Symbol</span>.hasInstance](x) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> x === <span class="string">'number'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">111</span> <span class="keyword">instanceof</span> PrimitiveNumber) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>如果你不知道Symbol，可以看看<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol/hasInstance" target="_blank" rel="noopener">MDN上关于hasInstance的解释</a>。</p>
+<p>其实就是自定义instanceof行为的一种方式，这里将原有的instanceof方法重定义，换成了typeof，因此能够判断基本数据类型。</p>
+<h3 id="3-能不能手动实现一下instanceof的功能？"><a href="#3-能不能手动实现一下instanceof的功能？" class="headerlink" title="3. 能不能手动实现一下instanceof的功能？"></a>3. 能不能手动实现一下instanceof的功能？</h3><p>核心: 原型链的向上查找。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myInstanceof</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//基本数据类型直接返回false</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> left !== <span class="string">'object'</span> || left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">//getProtypeOf是Object对象自带的一个方法，能够拿到参数的原型对象</span></span><br><span class="line">    <span class="keyword">let</span> proto = <span class="built_in">Object</span>.getPrototypeOf(left);</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="comment">//查找到尽头，还没找到</span></span><br><span class="line">        <span class="keyword">if</span>(proto == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="comment">//找到相同的原型对象</span></span><br><span class="line">        <span class="keyword">if</span>(proto == right.prototype) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        proto = <span class="built_in">Object</span>.getPrototypeof(proto);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(myInstanceof(<span class="string">"111"</span>, <span class="built_in">String</span>)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(myInstanceof(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"111"</span>), <span class="built_in">String</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-Object-is和-的区别？"><a href="#4-Object-is和-的区别？" class="headerlink" title="4. Object.is和===的区别？"></a>4. Object.is和===的区别？</h3><p>Object在严格等于的基础上修复了一些特殊情况下的失误，具体来说就是+0和-0，NaN和NaN。 源码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x === y) &#123;</span><br><span class="line">    <span class="comment">//运行到1/x === 1/y的时候x和y都为0，但是1/+0 = +Infinity， 1/-0 = -Infinity, 是不一样的</span></span><br><span class="line">    <span class="keyword">return</span> x !== <span class="number">0</span> || y !== <span class="number">0</span> || <span class="number">1</span> / x === <span class="number">1</span> / y;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//NaN===NaN是false,这是不对的，我们在这里做一个拦截，x !== x，那么一定是 NaN, y 同理</span></span><br><span class="line">    <span class="comment">//两个都是NaN的时候返回true</span></span><br><span class="line">    <span class="keyword">return</span> x !== x &amp;&amp; y !== y;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第三篇-JS数据类型之问——转换篇"><a href="#第三篇-JS数据类型之问——转换篇" class="headerlink" title="第三篇: JS数据类型之问——转换篇"></a>第三篇: JS数据类型之问——转换篇</h2><h3 id="1-结果是什么？为什么？"><a href="#1-结果是什么？为什么？" class="headerlink" title="1. [] == ![]结果是什么？为什么？"></a>1. [] == ![]结果是什么？为什么？</h3><p>解析:</p>
+<p>== 中，左右两边都需要转换为数字然后进行比较。</p>
+<p>[]转换为数字为0。</p>
+<p>![] 首先是转换为布尔值，由于[]作为一个引用类型转换为布尔值为true,</p>
+<p>因此![]为false，进而在转换成数字，变为0。</p>
+<p>0 == 0 ， 结果为true</p>
+<h3 id="2-JS中类型转换有哪几种？"><a href="#2-JS中类型转换有哪几种？" class="headerlink" title="2. JS中类型转换有哪几种？"></a>2. JS中类型转换有哪几种？</h3><p>JS中，类型转换只有三种：</p>
+<ul>
+<li>转换成数字</li>
+<li>转换成布尔值</li>
+<li>转换成字符串</li>
+</ul>
+<p>转换具体规则如下:</p>
+<blockquote>
+<p>注意”Boolean 转字符串”这行结果指的是 true 转字符串的例子</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/44.jpg" alt="44"></p>
+<h3 id="3-和-有什么区别？"><a href="#3-和-有什么区别？" class="headerlink" title="3. == 和 ===有什么区别？"></a>3. == 和 ===有什么区别？</h3><blockquote>
+<p>===叫做严格相等，是指：左右两边不仅值要相等，类型也要相等，例如’1’===1的结果是false，因为一边是string，另一边是number。 </p>
+</blockquote>
+<p>==不像===那样严格，对于一般情况，只要值相等，就返回true，但==还涉及一些类型转换，它的转换规则如下：</p>
+<ul>
+<li>两边的类型是否相同，相同的话就比较值的大小，例如1==2，返回false</li>
+<li>判断的是否是null和undefined，是的话就返回true</li>
+<li>判断的类型是否是String和Number，是的话，把String类型转换成Number，再进行比较</li>
+<li>判断其中一方是否是Boolean，是的话就把Boolean转换成Number，再进行比较</li>
+<li>如果其中一方为Object，且另一方为String、Number或者Symbol，会将Object转换成字符串，再进行比较</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(&#123;<span class="attr">a</span>: <span class="number">1</span>&#125; == <span class="literal">true</span>);<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(&#123;<span class="attr">a</span>: <span class="number">1</span>&#125; == <span class="string">"[object Object]"</span>);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-对象转原始类型是根据什么流程运行的？"><a href="#4-对象转原始类型是根据什么流程运行的？" class="headerlink" title="4. 对象转原始类型是根据什么流程运行的？"></a>4. 对象转原始类型是根据什么流程运行的？</h3><p>对象转原始类型，会调用内置的[ToPrimitive]函数，对于该函数而言，其逻辑如下：</p>
+<ol>
+<li>如果Symbol.toPrimitive()方法，优先调用再返回</li>
+<li>调用valueOf()，如果转换为原始类型，则返回</li>
+<li>调用toString()，如果转换为原始类型，则返回</li>
+<li>如果都没有返回原始类型，会报错</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  value: <span class="number">3</span>,</span><br><span class="line">  valueOf() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'5'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  [<span class="built_in">Symbol</span>.toPrimitive]() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">6</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(obj + <span class="number">1</span>); <span class="comment">// 输出7</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-如何让if-a-1-amp-amp-a-2-条件成立？"><a href="#5-如何让if-a-1-amp-amp-a-2-条件成立？" class="headerlink" title="5. 如何让if(a == 1 &amp;&amp; a == 2)条件成立？"></a>5. 如何让if(a == 1 &amp;&amp; a == 2)条件成立？</h3><p>其实就是上一个问题的应用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  value: <span class="number">0</span>,</span><br><span class="line">  valueOf: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.value++;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span>);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h2 id="第四篇-谈谈你对闭包的理解"><a href="#第四篇-谈谈你对闭包的理解" class="headerlink" title="第四篇: 谈谈你对闭包的理解"></a>第四篇: 谈谈你对闭包的理解</h2><h3 id="什么是闭包？"><a href="#什么是闭包？" class="headerlink" title="什么是闭包？"></a>什么是闭包？</h3><blockquote>
+<p>红宝书(p178)上对于闭包的定义：闭包是指有权访问另外一个函数作用域中的变量的函数， </p>
+</blockquote>
+<blockquote>
+<p>MDN 对闭包的定义为：闭包是指那些能够访问自由变量的函数。  （其中自由变量，指在函数中使用的，但既不是函数参数arguments也不是函数的局部变量的变量，其实就是另外一个函数作用域中的变量。） </p>
+</blockquote>
+<h3 id="闭包产生的原因"><a href="#闭包产生的原因" class="headerlink" title="闭包产生的原因?"></a>闭包产生的原因?</h3><p>首先要明白作用域链的概念，其实很简单，在ES5中只存在两种作用域————全局作用域和函数作用域，<code>当访问一个变量时，解释器会首先在当前作用域查找标示符，如果没有找到，就去父作用域找，直到找到该变量的标示符或者不在父作用域中，这就是作用域链</code>，值得注意的是，每一个子函数都会拷贝上级的作用域，形成一个作用域的链条。 比如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这段代码中，f1的作用域指向有全局作用域(window)和它本身，而f2的作用域指向全局作用域(window)、f1和它本身。而且作用域是从最底层向上找，直到找到全局作用域window为止，如果全局还没有的话就会报错。就这么简单一件事情！</p>
+<p>闭包产生的本质就是，当前环境中存在指向父级作用域的引用。还是举上面的例子:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);<span class="comment">//2</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> f2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = f1();</span><br><span class="line">x();</span><br></pre></td></tr></table></figure>
+<p>这里x会拿到父级作用域中的变量，输出2。因为在当前环境中，含有对f2的引用，f2恰恰引用了window、f1和f2的作用域。因此f2可以访问到f1的作用域的变量。</p>
+<p>那是不是只有返回函数才算是产生了闭包呢？、</p>
+<p>回到闭包的本质，我们只需要让父级作用域的引用存在即可，因此我们还可以这么做：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f3;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span></span><br><span class="line">  f3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">f1();</span><br><span class="line">f3();</span><br></pre></td></tr></table></figure>
+<p>让f1执行，给f3赋值后，等于说现在<code>f3拥有了window、f1和f3本身这几个作用域的访问权限</code>，还是自底向上查找，<code>最近是在f1</code>中找到了a,因此输出2。</p>
+<p>在这里是外面的变量<code>f3存在着父级作用域的引用</code>，因此产生了闭包，形式变了，本质没有改变。</p>
+<h3 id="闭包有哪些表现形式"><a href="#闭包有哪些表现形式" class="headerlink" title="闭包有哪些表现形式?"></a>闭包有哪些表现形式?</h3><p>明白了本质之后，我们就来看看，在真实的场景中，究竟在哪些地方能体现闭包的存在？</p>
+<ol>
+<li>返回一个函数。刚刚已经举例。</li>
+<li>作为函数参数传递</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">baz</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  bar(baz);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">fn</span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 这就是闭包</span></span><br><span class="line">  fn();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出2，而不是1</span></span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在定时器、事件监听、Ajax请求、跨窗口通信、Web Workers或者任何异步中，只要使用了回调函数，实际上就是在使用闭包。</li>
+</ol>
+<p>以下的闭包保存的仅仅是window和当前作用域。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定时器</span></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timeHandler</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'111'</span>);</span><br><span class="line">&#125;，<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件监听</span></span><br><span class="line">$(<span class="string">'#app'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'DOM Listener'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>IIFE(立即执行函数表达式)创建闭包, 保存了<code>全局作用域window</code>和<code>当前函数的作用域</code>，因此可以全局的变量。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">IIFE</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 输出2</span></span><br><span class="line">  <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h3 id="如何解决下面的循环输出问题？"><a href="#如何解决下面的循环输出问题？" class="headerlink" title="如何解决下面的循环输出问题？"></a>如何解决下面的循环输出问题？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i ++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为什么会全部输出6？如何改进，让它输出1，2，3，4，5？(方法越多越好)</p>
+<p>因为setTimeout为宏任务，由于JS中单线程eventLoop机制，在主线程同步任务执行完后才去执行宏任务，因此循环结束后setTimeout中的回调才依次执行，但输出i的时候当前作用域没有，往上一级再找，发现了i,此时循环已经结束，i变成了6。因此会全部输出6。</p>
+<p>解决方法：</p>
+<p>1、利用IIFE(立即执行函数表达式)当每次for循环时，把此时的i变量传递到定时器中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(j)</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、给定时器传入第三个参数, 作为timer函数的第一个函数参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params">j</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(j)</span><br><span class="line">  &#125;, <span class="number">0</span>, i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3、使用ES6中的let</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;,<span class="number">0</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>let使JS发生革命性的变化，让JS有函数作用域变为了块级作用域，用let后作用域链不复存在。代码的作用域以块级为单位，以上面代码为例:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// i = 1</span></span><br><span class="line">&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">  &#125;,<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// i = 2</span></span><br><span class="line">&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> <span class="title">timer</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">  &#125;,<span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// i = 3</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>因此能输出正确的结果。</p>
+<h2 id="第五篇-谈谈你对原型链的理解"><a href="#第五篇-谈谈你对原型链的理解" class="headerlink" title="第五篇: 谈谈你对原型链的理解"></a>第五篇: 谈谈你对原型链的理解</h2><h3 id="1-原型对象和构造函数有何关系？"><a href="#1-原型对象和构造函数有何关系？" class="headerlink" title="1.原型对象和构造函数有何关系？"></a>1.原型对象和构造函数有何关系？</h3><p>在JavaScript中，每当定义一个函数数据类型(普通函数、类)时候，都会天生自带一个prototype属性，这个属性指向函数的原型对象。</p>
+<p>当函数经过new调用时，这个函数就成为了构造函数，返回一个全新的实例对象，这个实例对象有一个<strong>proto</strong>属性，指向构造函数的原型对象。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/45.jpg" alt="45"></p>
+<h3 id="2-能不能描述一下原型链？"><a href="#2-能不能描述一下原型链？" class="headerlink" title="2.能不能描述一下原型链？"></a>2.能不能描述一下原型链？</h3><p>JavaScript对象通过prototype指向父类对象，直到指向Object对象为止，这样就形成了一个原型指向的链条, 即原型链。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/46.png" alt="46"></p>
+<ul>
+<li>对象的 hasOwnProperty() 来检查对象自身中是否含有该属性</li>
+<li>使用 in 检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回 true</li>
+</ul>
+<h2 id="第六篇-JS如何实现继承？"><a href="#第六篇-JS如何实现继承？" class="headerlink" title="第六篇: JS如何实现继承？"></a>第六篇: JS如何实现继承？</h2><h3 id="第一种-借助call"><a href="#第一种-借助call" class="headerlink" title="第一种: 借助call"></a>第一种: 借助call</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent1'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  Parent1.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child1'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Child1);</span><br></pre></td></tr></table></figure>
+<p>这样写的时候子类虽然能够拿到父类的属性值，但是问题是父类原型对象中一旦存在方法那么子类无法继承。那么引出下面的方法。</p>
+<h3 id="第二种-借助原型链"><a href="#第二种-借助原型链" class="headerlink" title="第二种: 借助原型链"></a>第二种: 借助原型链</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent2'</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child2'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child2.prototype = <span class="keyword">new</span> Parent2();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">new</span> Child2());</span><br></pre></td></tr></table></figure>
+<p>看似没有问题，父类的方法和属性都能够访问，但实际上有一个潜在的不足。举个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Child2();</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="keyword">new</span> Child2();</span><br><span class="line">s1.play.push(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s1.play, s2.play);</span><br></pre></td></tr></table></figure>
+<p>可以看到控制台：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/47.jpg" alt="47"></p>
+<p>明明我只改变了s1的play属性，为什么s2也跟着变了呢？很简单，因为两个实例使用的是同一个原型对象。</p>
+<p>那么还有更好的方式么？</p>
+<h3 id="第三种：将前两种组合"><a href="#第三种：将前两种组合" class="headerlink" title="第三种：将前两种组合"></a>第三种：将前两种组合</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent3</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent3'</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Parent3.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child3'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child3.prototype = <span class="keyword">new</span> Parent3();</span><br><span class="line"><span class="keyword">var</span> s3 = <span class="keyword">new</span> Child3();</span><br><span class="line"><span class="keyword">var</span> s4 = <span class="keyword">new</span> Child3();</span><br><span class="line">s3.play.push(<span class="number">4</span>);</span><br><span class="line"><span class="built_in">console</span>.log(s3.play, s4.play);</span><br></pre></td></tr></table></figure>
+<p>可以看到控制台：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/48.jpg" alt="48"></p>
+<p>之前的问题都得以解决。但是这里又徒增了一个新问题，那就是Parent3的构造函数会多执行了一次（Child3.prototype = new Parent3();）。这是我们不愿看到的。那么如何解决这个问题？</p>
+<h3 id="第四种-组合继承的优化1"><a href="#第四种-组合继承的优化1" class="headerlink" title="第四种: 组合继承的优化1"></a>第四种: 组合继承的优化1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent4</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent4'</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Parent4.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child4'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child4.prototype = Parent4.prototype;</span><br></pre></td></tr></table></figure>
+<p>这里让将父类原型对象直接给到子类，父类构造函数只执行一次，而且父类属性和方法均能访问，但是我们来测试一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s3 = <span class="keyword">new</span> Child4();</span><br><span class="line"><span class="keyword">var</span> s4 = <span class="keyword">new</span> Child4();</span><br><span class="line"><span class="built_in">console</span>.log(s3)</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/49.jpg" alt="49"></p>
+<p>子类实例的构造函数是Parent4，显然这是不对的，应该是Child4。</p>
+<h3 id="第五种-最推荐使用-组合继承的优化1"><a href="#第五种-最推荐使用-组合继承的优化1" class="headerlink" title="第五种(最推荐使用): 组合继承的优化1"></a>第五种(最推荐使用): 组合继承的优化1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent5</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent5'</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child5</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Parent5.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child5'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child5.prototype = <span class="built_in">Object</span>.create(Parent5.prototype);</span><br><span class="line">Child5.prototype.constructor = Child5;</span><br></pre></td></tr></table></figure>
+<p>这是最推荐的一种方式，接近完美的继承，它的名字也叫做寄生组合继承。</p>
+<h3 id="ES6的extends被编译后的JavaScript代码"><a href="#ES6的extends被编译后的JavaScript代码" class="headerlink" title="ES6的extends被编译后的JavaScript代码"></a>ES6的extends被编译后的JavaScript代码</h3><p>ES6的代码最后都是要在浏览器上能够跑起来的，这中间就利用了babel这个编译工具，将ES6的代码编译成ES5让一些不支持新语法的浏览器也能运行。</p>
+<p>那最后编译成了什么样子呢？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_possibleConstructorReturn</span> (<span class="params">self, call</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">return</span> call &amp;&amp; (<span class="keyword">typeof</span> call === <span class="string">'object'</span> || <span class="keyword">typeof</span> call === <span class="string">'function'</span>) ? call : self; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_inherits</span> (<span class="params">subClass, superClass</span>) </span>&#123; </span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="comment">//看到没有</span></span><br><span class="line">  subClass.prototype = <span class="built_in">Object</span>.create(superClass &amp;&amp; superClass.prototype, &#123; </span><br><span class="line">      <span class="keyword">constructor</span>: &#123; </span><br><span class="line">        value: subClass, </span><br><span class="line">        enumerable: <span class="literal">false</span>, </span><br><span class="line">        writable: <span class="literal">true</span>, </span><br><span class="line">        configurable: <span class="literal">true</span> </span><br><span class="line">      &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (superClass) <span class="built_in">Object</span>.setPrototypeOf ?</span><br><span class="line">  <span class="built_in">Object</span>.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Parent = <span class="function"><span class="keyword">function</span> <span class="title">Parent</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 验证是否是 Parent 构造出来的 this</span></span><br><span class="line">  _classCallCheck(<span class="keyword">this</span>, Parent);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Child = (<span class="function"><span class="keyword">function</span> (<span class="params">_Parent</span>) </span>&#123;</span><br><span class="line">  _inherits(Child, _Parent);</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Child</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    _classCallCheck(<span class="keyword">this</span>, Child);</span><br><span class="line">    <span class="keyword">return</span> _possibleConstructorReturn(<span class="keyword">this</span>, (Child.__proto__ || <span class="built_in">Object</span>.getPrototypeOf(Child)).apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> Child;</span><br><span class="line">&#125;(Parent));</span><br></pre></td></tr></table></figure>
+<p>核心是_inherits函数，可以看到它采用的依然也是第五种方式————寄生组合继承方式，同时证明了这种方式的成功。不过这里加了一个Object.setPrototypeOf(subClass, superClass)，这是用来干啥的呢？</p>
+<p>答案是用来继承父类的静态方法。这也是原来的继承方式疏忽掉的地方。</p>
+<blockquote>
+<p>追问: 面向对象的设计一定是好的设计吗？ </p>
+</blockquote>
+<p>不一定。从继承的角度说，这一设计是存在巨大隐患的。</p>
+<h3 id="从设计思想上谈谈继承本身的问题"><a href="#从设计思想上谈谈继承本身的问题" class="headerlink" title="从设计思想上谈谈继承本身的问题"></a>从设计思想上谈谈继承本身的问题</h3><p>假如现在有不同品牌的车，每辆车都有drive、music、addOil这三个方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(id) &#123;</span><br><span class="line">    <span class="keyword">this</span>.id = id;</span><br><span class="line">  &#125;</span><br><span class="line">  drive()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"wuwuwu!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  music()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"lalala!"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  addOil()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"哦哟！"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">otherCar</span> <span class="keyword">extends</span> <span class="title">Car</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>现在可以实现车的功能，并且以此去扩展不同的车。</p>
+<p>但是问题来了，新能源汽车也是车，但是它并不需要addOil(加油)。</p>
+<p>如果让新能源汽车的类继承Car的话，也是有问题的，俗称”大猩猩和香蕉”的问题。大猩猩手里有香蕉，但是我现在明明只需要香蕉，却拿到了一只大猩猩。也就是说加油这个方法，我现在是不需要的，但是由于继承的原因，也给到子类了。</p>
+<blockquote>
+<p>继承的最大问题在于：无法决定继承哪些属性，所有属性都得继承。</p>
+</blockquote>
+<p>当然你可能会说，可以再创建一个父类啊，把加油的方法给去掉，但是这也是有问题的，一方面父类是无法描述所有子类的细节情况的，为了不同的子类特性去增加不同的父类，<code>代码势必会大量重复</code>，另一方面一旦子类有所变动，父类也要进行相应的更新，<code>代码的耦合性太高</code>，维护性不好。</p>
+<p>那如何来解决继承的诸多问题呢？</p>
+<p>用组合，这也是当今编程语法发展的趋势，比如golang完全采用的是面向组合的设计方式。</p>
+<p>顾名思义，面向组合就是先设计一系列零件，然后将这些零件进行拼装，来形成不同的实例或者类。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">drive</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"wuwuwu!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">music</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"lalala!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addOil</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"哦哟！"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> car = compose(drive, music, addOil);</span><br><span class="line"><span class="keyword">let</span> newEnergyCar = compose(drive, music);</span><br></pre></td></tr></table></figure>
+<p>代码干净，复用性也很好。这就是面向组合的设计方式。</p>
+<p>参考出处:</p>
+<p>📚 <a href="https://juejin.im/post/5d0da727518825326d492b2f" target="_blank" rel="noopener">ES5实现继承那些事</a></p>
+<p>📚 <a href="https://yuchengkai.cn/blog/2019-03-18.html#%E5%8E%9F%E5%9E%8B" target="_blank" rel="noopener">重学JS系列:聊聊继承</a></p>
+<p>📚 <a href="https://segmentfault.com/a/1190000019912017" target="_blank" rel="noopener">JS最新基本数据类型:BigInt(译)</a></p>
+<p>📚 <a href="https://juejin.im/book/5bdc715fe51d454e755f75ef" target="_blank" rel="noopener">yck前端面试之道</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/JavaScript/">#JavaScript</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

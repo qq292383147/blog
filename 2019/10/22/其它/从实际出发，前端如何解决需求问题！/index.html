@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="从实际出发，前端如何解决需要问题"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>从实际出发，前端如何解决需要问题 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/10/22/%E5%85%B6%E5%AE%83/%E4%BB%8E%E5%AE%9E%E9%99%85%E5%87%BA%E5%8F%91%EF%BC%8C%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%9C%80%E6%B1%82%E9%97%AE%E9%A2%98%EF%BC%81/">
+                从实际出发，前端如何解决需要问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-10-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>移动端长按功能</p>
+<p>H5图片保存，一般是长按保存，所以，首先要实现一个长按功能。</p>
+<p>移动端使用<code>touchstart</code>和<code>touchend</code>来做长按功能，<code>prevent</code>阻止浏览器默认行为，浏览器很多事件有默认行为，不阻止默认行为的话，浏览器会执行它的默认行为，我们用 JavaScript 处理一个事件，通常不需要浏览器动作，所以阻止掉！<code>prevent</code>是vue中的修饰符，关于修饰符的更多内容，可以去这里看<a href="https://cn.vuejs.org/v2/guide/events.html" target="_blank" rel="noopener">事件修饰符</a>。</p>
+<p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"code"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"@/images/cloudStallUp/xyhd_05@3x.png"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">touchstart.prevent</span>=<span class="string">"touchin"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">touchend.prevent</span>=<span class="string">"cleartime"</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touchin() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.Loop); <span class="comment">//再次清空定时器，防止重复注册定时器</span></span><br><span class="line">  <span class="keyword">this</span>.Loop = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// 这里长按后执行的操作</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个方法主要是用来将每次手指移出之后将计时器清零</span></span><br><span class="line">cleartime() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.Loop);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="实现一个dialog弹窗"><a href="#实现一个dialog弹窗" class="headerlink" title="实现一个dialog弹窗"></a>实现一个dialog弹窗</h2><p>UI框架基本都有自带的dialog弹窗，如果你的项目使用了某个UI框架，直接使用它的就行。如果你的项目没有使用UI框架，那么就很有必要自己实现一个dialog弹窗</p>
+<blockquote>
+<p>tips：不是所有项目都需要使用UI框架，如果项目非常简单，就不需要，原谅我这轮子党，喜欢自己造轮子，哪怕不好用！</p>
+</blockquote>
+<p>使用H5的<code>dialog</code>标签写弹窗。</p>
+<p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dialog</span> <span class="attr">ref</span>=<span class="string">"dialog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"saveImage"</span>&gt;</span>保存图片<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"closeDialog"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CSS</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@function</span> vw($px) &#123;</span><br><span class="line">    <span class="keyword">@return</span> ($px / <span class="number">750</span>) * <span class="number">100vw</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$c_dd: #dddddd;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  div &#123;</span><br><span class="line">    <span class="selector-tag">width</span>: <span class="selector-tag">vw</span>(750);</span><br><span class="line">    <span class="selector-tag">font-size</span>: <span class="selector-tag">vw</span>(30);</span><br><span class="line">    <span class="selector-tag">height</span>: <span class="selector-tag">vw</span>(80);</span><br><span class="line">    <span class="selector-tag">line-height</span>: <span class="selector-tag">vw</span>(80);</span><br><span class="line"></span><br><span class="line">    &amp;<span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">1px</span> solid $c_dd;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置背景色 */</span></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-pseudo">::backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.6</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">touchin() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.Loop); <span class="comment">//再次清空定时器，防止重复注册定时器</span></span><br><span class="line">  <span class="keyword">this</span>.Loop = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// 显示</span></span><br><span class="line">   <span class="keyword">this</span>.$refs.dialog.showModal();</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;,</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>效果展示：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Tips/1.jpg" alt="1"></p>
+<p><code>dialog</code>标签的兼容性很有些问题</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Tips/2.jpg" alt="2"></p>
+<p>so，我们需要一个<a href="https://github.com/GoogleChrome/dialog-polyfill" target="_blank" rel="noopener">polyfill</a></p>
+<p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install dialog-polyfill</span><br></pre></td></tr></table></figure>
+<p>在页面中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dialogPolyfill <span class="keyword">from</span> <span class="string">'dialog-polyfill'</span></span><br></pre></td></tr></table></figure>
+<p>新建一个<code>dialog-polyfill.scss</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">dialog</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: -moz-fit-content;</span><br><span class="line">  <span class="attribute">width</span>: -webkit-fit-content;</span><br><span class="line">  <span class="attribute">width</span>: fit-content;</span><br><span class="line">  <span class="attribute">height</span>: -moz-fit-content;</span><br><span class="line">  <span class="attribute">height</span>: -webkit-fit-content;</span><br><span class="line">  <span class="attribute">height</span>: fit-content;</span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">  <span class="attribute">border</span>: solid;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">background</span>: white;</span><br><span class="line">  <span class="attribute">color</span>: black;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[open]</span>) &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span> + <span class="selector-class">.backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">._dialog_overlay</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-class">.fixed</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">0</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在页面中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"@/style/dialog-polyfill.scss"</span>;</span><br></pre></td></tr></table></figure>
+<p>设置了polyfill 后，背景的css和原生的有所区别</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 支持dialog */</span></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-pseudo">::backdrop</span> &#123; </span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* polyfill */</span></span><br><span class="line"><span class="selector-tag">dialog</span> + <span class="selector-class">.backdrop</span> &#123; </span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用polyfill</p>
+<p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        dialog: <span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    <span class="keyword">this</span>.dialog =  <span class="keyword">this</span>.$refs.dialog;</span><br><span class="line">    dialogPolyfill.registerDialog(<span class="keyword">this</span>.dialog);</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    touchin() &#123;</span><br><span class="line">      clearInterval(<span class="keyword">this</span>.Loop); <span class="comment">//再次清空定时器，防止重复注册定时器</span></span><br><span class="line">      <span class="keyword">this</span>.Loop = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.dialog.showModal();</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="保存图片到手机相册"><a href="#保存图片到手机相册" class="headerlink" title="保存图片到手机相册"></a>保存图片到手机相册</h2><h3 id="使用a标签保存"><a href="#使用a标签保存" class="headerlink" title="使用a标签保存"></a>使用a标签保存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 首先考虑使用a标签下载</span></span><br><span class="line">saveImage(url) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!url) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"图片地址不正确"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</span><br><span class="line">  a.href = url;</span><br><span class="line">  a.download = <span class="string">"xxxxx"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.all) &#123;</span><br><span class="line">    a.click();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 兼容 Firfox</span></span><br><span class="line">    <span class="keyword">var</span> evt = <span class="built_in">document</span>.createEvent(<span class="string">"MouseEvents"</span>);</span><br><span class="line">    evt.initEvent(<span class="string">"click"</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">    a.dispatchEvent(evt);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.closeDialog();</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">closeDialog() &#123;</span><br><span class="line">  <span class="keyword">this</span>.dialog.close();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>自测发现在pc有用，但是在手机端无用，此方案放弃</p>
+<h3 id="使用H5-API"><a href="#使用H5-API" class="headerlink" title="使用H5+ API"></a>使用H5+ API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">saveImage() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.plus) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">/* eslint-disable */</span></span><br><span class="line">    plus.gallery.save(</span><br><span class="line">      <span class="keyword">this</span>.codeImg,</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        plus.nativeUI.alert(<span class="string">"保存图片到相册成功"</span>);</span><br><span class="line">      &#125;,</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        plus.nativeUI.alert(<span class="string">"保存失败"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">    <span class="comment">/* eslint-enable */</span></span><br><span class="line">    <span class="keyword">this</span>.closeDialog();</span><br><span class="line">&#125;,</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>写完后悲催的发现，我们最开始架构设计的时候没有使用这个，无奈下也放弃了。关于更多的相关内容可以去这里了解<a href="https://ask.dcloud.net.cn/article/89" target="_blank" rel="noopener">H5+ App开发入门指南</a></p>
+<h3 id="调用app方面原生的能力实现保存功能"><a href="#调用app方面原生的能力实现保存功能" class="headerlink" title="调用app方面原生的能力实现保存功能"></a>调用app方面原生的能力实现保存功能</h3><p>在mixin.js中封装</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用app方法</span></span><br><span class="line"><span class="comment">// androidName-&gt;安卓方法名</span></span><br><span class="line"><span class="comment">// iosName-&gt;ios方法名</span></span><br><span class="line"><span class="comment">// androidData-&gt;传给安卓的参数</span></span><br><span class="line"><span class="comment">// iosData-&gt;传给ios的参数</span></span><br><span class="line"><span class="comment">// h5Fuc-&gt;不属于安卓和ios时调用的函数</span></span><br><span class="line">callAPPFunction(androidName, iosName, androidData, iosData, h5Fuc) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">this</span>.UTILS.isAndroid:</span><br><span class="line">      <span class="built_in">window</span>.hitumedia_android_js[androidName](androidData);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">this</span>.UTILS.isIOS:</span><br><span class="line">      <span class="built_in">window</span>.webkit.messageHandlers[iosName].postMessage(iosData);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      h5Fuc;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>在main.js中使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入全局混入</span></span><br><span class="line"><span class="keyword">import</span> Mixin <span class="keyword">from</span> <span class="string">"@/utils/mixin.js"</span>;</span><br><span class="line">Vue.mixin(Mixin);</span><br></pre></td></tr></table></figure>
+<p>在页面使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      codeImg: <span class="built_in">require</span>(<span class="string">"@/images/cloudStallUp/xyhd_05@3x.png"</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;,</span><br><span class="line">...</span><br><span class="line">    saveImage() &#123;</span><br><span class="line">        <span class="keyword">const</span> url = location.href.split(<span class="string">"/"</span>)[<span class="number">2</span>];</span><br><span class="line">        <span class="comment">// 获取到图片地址，架构原因，我们没有图片服务器，所以暂时只能使用使用项目的地址了</span></span><br><span class="line">        <span class="keyword">const</span> postUrl = <span class="string">`http://<span class="subst">$&#123;url&#125;</span>/activity/<span class="subst">$&#123;<span class="keyword">this</span>.codeImg&#125;</span>`</span>;</span><br><span class="line">        <span class="keyword">this</span>.callAPPFunction(<span class="string">"onDownImgs"</span>, <span class="string">""</span>, postUrl, <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">this</span>.closeDialog();</span><br><span class="line">    &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>OK，完美实现需求。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>写完此功能，自测通过后，提交产品验收，然后！！！产品说：“貌似app中很少看见保存二维码的吧，这个功能不要了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">此功能不要了~~~~~~~~~~~~</span><br></pre></td></tr></table></figure></p>
+<p>从这个实际的例子，得出总结，前端如何解决需求问题：</p>
+<ul>
+<li>1、来一个需求后，一定要先和产品确定这个需求是否必须</li>
+<li>2、一定要和项目经理沟通好时间，如果预估某个时间段完不成，一定要提前说明白</li>
+<li>3、不要高估自己的能力，不会的一定不能说会，会的东西，得要留出变量的时间</li>
+<li>4、临时需求不要接，让产品去和项目经理沟通</li>
+<li>5、开发的时候，要镇定，某一个技术在pc有用，在移动没用或者是在某一个手机没用的情况很正常，换一个技术就行了</li>
+<li>6、想法要开阔，某些web端实现不了的功能，就让APP端去做，口才一定要练好</li>
+<li>7、不要发怒，不要发怒，一个功能开发完，不要了也很正常，千万不要发怒，fuck!</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/其它/">#其它</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

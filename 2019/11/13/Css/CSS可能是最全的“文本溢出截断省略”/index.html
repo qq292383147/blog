@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="CSS可能是最全的“文本溢出截断省略”"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>CSS可能是最全的“文本溢出截断省略” - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/13/Css/CSS%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84%E2%80%9C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%88%AA%E6%96%AD%E7%9C%81%E7%95%A5%E2%80%9D/">
+                CSS可能是最全的“文本溢出截断省略”
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-13</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/css/">css</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="先来点基础的，单行文本溢出省略"><a href="#先来点基础的，单行文本溢出省略" class="headerlink" title="先来点基础的，单行文本溢出省略"></a>先来点基础的，单行文本溢出省略</h2><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li><font color="#e0246a">overflow</font>: <font color="#5cc4d8">hidden</font>；（文字长度超出限定宽度，则隐藏超出的内容）</li>
+<li><font color="#e0246a">white-space</font>:<font color="#5cc4d8">nowrap</font>；（设置文字在一行显示，不能换行）</li>
+<li><font color="#e0246a">text-overflow</font>: <font color="#5cc4d8">ellipsis</font>；（规定当文本溢出时，显示省略符号来代表被修剪的文本）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+<li>省略号位置显示刚好</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>只支持单行文本截断</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于单行文本溢出显示省略号的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/98.gif" alt="98"></p>
+<h2 id="进阶一下，多行文本溢出省略（按行数）"><a href="#进阶一下，多行文本溢出省略（按行数）" class="headerlink" title="进阶一下，多行文本溢出省略（按行数）"></a>进阶一下，多行文本溢出省略（按行数）</h2><h3 id="○-纯-CSS-实现方案"><a href="#○-纯-CSS-实现方案" class="headerlink" title="○ 纯 CSS 实现方案"></a>○ 纯 CSS 实现方案</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li><font color="#e0246a">-webkit-line-clamp</font>: <font color="#5cc4d8">2</font>；（用来限制在一个块元素显示的文本的行数, 2 表示最多显示 2 行。 为了实现该效果，它需要组合其他的WebKit属性）</li>
+<li><font color="#e0246a">display</font>: <font color="#5cc4d8">-webkit-box</font>；（和 1 结合使用，将对象作为弹性伸缩盒子模型显示 ）</li>
+<li><font color="#e0246a">-webkit-box-orient</font>: <font color="#5cc4d8">vertical</font>；（和 1 结合使用 ，设置或检索伸缩盒对象的子元素的排列方式 ）</li>
+<li><font color="#e0246a">overflow</font>: <font color="#5cc4d8">hidden</font>；（文本溢出限定的宽度就隐藏内容）</li>
+<li><font color="#e0246a">text-overflow</font>: <font color="#5cc4d8">ellipsis</font>；（多行文本的情况下，用省略号“…”隐藏溢出范围的文本)</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+<li>省略号显示位置刚好</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>兼容性一般： -webkit-line-clamp 属性只有  WebKit  内核的浏览器才支持</li>
+<li><img src="F:\图片库blog/picture_images/picture/css/99.jpg" alt="99"></li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>多适用于移动端页面，因为移动设备浏览器更多是基于 WebKit 内核</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">		  display: -webkit-box;</span><br><span class="line">	    overflow: hidden;</span><br><span class="line">	    -webkit-line-clamp: 2;</span><br><span class="line">	    -webkit-box-orient: vertical;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/100.gif" alt="100"></p>
+<h3 id="○-基于-JavaScript-的实现方案"><a href="#○-基于-JavaScript-的实现方案" class="headerlink" title="○ 基于 JavaScript 的实现方案"></a>○ 基于 JavaScript 的实现方案</h3><p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>需要 JS 实现，背离展示和行为相分离原则</li>
+<li>文本为中英文混合时，省略号显示位置略有偏差</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于响应式截断，多行文本溢出省略的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<p>当前仅适用于文本为中文，若文本中有英文，可自行修改</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> text = <span class="string">'这是一段很长的文本'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> totalTextLen = text.length;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> formatStr = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> ele = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'demo'</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> lineNum = <span class="number">2</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> baseWidth = <span class="built_in">window</span>.getComputedStyle(ele).width;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> baseFontSize = <span class="built_in">window</span>.getComputedStyle(ele).fontSize;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> lineWidth = +baseWidth.slice(<span class="number">0</span>, <span class="number">-2</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// 所计算的strNum为元素内部一行可容纳的字数(不区分中英文)</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> strNum = <span class="built_in">Math</span>.floor(lineWidth / +baseFontSize.slice(<span class="number">0</span>, <span class="number">-2</span>));</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> content = <span class="string">''</span>;</span></span><br><span class="line">        </span><br><span class="line"><span class="javascript">      	<span class="comment">// 多行可容纳总字数</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> totalStrNum = <span class="built_in">Math</span>.floor(strNum * lineNum);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> lastIndex = totalStrNum - totalTextLen;</span></span><br><span class="line"></span><br><span class="line">        if (totalTextLen &gt; totalStrNum) &#123;</span><br><span class="line"><span class="javascript">            content = text.slice(<span class="number">0</span>, lastIndex - <span class="number">3</span>).concat(<span class="string">'...'</span>);</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">            content = text;</span><br><span class="line">        &#125;</span><br><span class="line">        ele.innerHTML = content;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    formatStr();</span><br><span class="line">    </span><br><span class="line"><span class="javascript">		<span class="built_in">window</span>.onresize = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line">        formatStr();</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/101.gif" alt="101"></p>
+<h2 id="再进阶一步，多行文本溢出省略（按高度）"><a href="#再进阶一步，多行文本溢出省略（按高度）" class="headerlink" title="再进阶一步，多行文本溢出省略（按高度）"></a>再进阶一步，多行文本溢出省略（按高度）</h2><h3 id="○-多行文本溢出不显示省略号"><a href="#○-多行文本溢出不显示省略号" class="headerlink" title="○ 多行文本溢出不显示省略号"></a>○ 多行文本溢出不显示省略号</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li><font color="#e0246a">overflow</font>: <font color="#5cc4d8">hidden</font>；（文本溢出限定的宽度就隐藏内容）</li>
+<li><font color="#e0246a">line-height</font>: 20<font color="#5cc4d8">px</font>；（结合元素高度，高度固定的情况下，设定行高， 控制显示行数）</li>
+<li><font color="#e0246a">max-height</font>: 40<font color="#5cc4d8">px</font>；（设定当前元素最大高度）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>单纯截断文字, 不展示省略号，观感上较为生硬</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于文本溢出不需要显示省略号的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">		overflow: hidden;</span><br><span class="line">		max-height: 40px;</span><br><span class="line">		line-height: 20px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/102.gif" alt="102"></p>
+<h3 id="○-伪元素-定位实现多行省略"><a href="#○-伪元素-定位实现多行省略" class="headerlink" title="○ 伪元素 + 定位实现多行省略"></a>○ 伪元素 + 定位实现多行省略</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li>position: relative; （为伪元素绝对定位）</li>
+<li>overflow: hidden; （文本溢出限定的宽度就隐藏内容）</li>
+<li>position: absolute;（给省略号绝对定位）</li>
+<li>line-height: 20px; （结合元素高度,高度固定的情况下,设定行高, 控制显示行数）</li>
+<li>height: 40px; （设定当前元素高度）</li>
+<li>::after {}  （设置省略号样式）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>无法识别文字的长短，无论文本是否溢出范围, 一直显示省略号</li>
+<li>省略号显示可能不会刚刚好，有时会遮住一半文字</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于对省略效果要求较低，文本一定会溢出元素的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">        position: relative;</span><br><span class="line">        line-height: 20px;</span><br><span class="line">        height: 40px;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line">        content: "...";</span><br><span class="line">        position: absolute;</span><br><span class="line">        bottom: 0;</span><br><span class="line">        right: 0;</span><br><span class="line">        padding: 0 20px 0 10px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/103.gif" alt="103"></p>
+<h3 id="○-利用-Float-特性，纯-CSS-实现多行省略"><a href="#○-利用-Float-特性，纯-CSS-实现多行省略" class="headerlink" title="○ 利用 Float 特性，纯 CSS 实现多行省略"></a>○ 利用 Float 特性，纯 CSS 实现多行省略</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li>line-height: 20px；（结合元素高度,高度固定的情况下,设定行高, 控制显示行数）</li>
+<li>overflow: hidden；（文本溢出限定的宽度就隐藏内容）</li>
+<li>float: right/left；（利用元素浮动的特性实现）</li>
+<li>position: relative；（根据自身位置移动省略号位置, 实现文本溢出显示省略号效果）</li>
+<li>word-break: break-all；（使一个单词能够在换行时进行拆分）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>省略号显示可能不会刚刚好，有时会遮住一半文字</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于对省略效果要求较低，多行文本响应式截断的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#099</span>;</span></span><br><span class="line">        max-height: 40px;</span><br><span class="line">        line-height: 20px;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span><span class="selector-pseudo">::before</span>&#123;</span></span><br><span class="line">        float: left;</span><br><span class="line"><span class="css">        <span class="selector-tag">content</span><span class="selector-pseudo">:''</span>;</span></span><br><span class="line">        width: 20px;</span><br><span class="line">        height: 40px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> <span class="selector-class">.text</span> &#123;</span></span><br><span class="line">        float: right;</span><br><span class="line">        width: 100%;</span><br><span class="line">        margin-left: -20px;</span><br><span class="line">        word-break: break-all;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span><span class="selector-pseudo">::after</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:right</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">content</span><span class="selector-pseudo">:'...'</span>;</span></span><br><span class="line">        width: 20px;</span><br><span class="line">        height: 20px;</span><br><span class="line">        position: relative;</span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line">        transform: translate(-100%,-100%);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/104.gif" alt="104"></p>
+<p><strong>原理讲解</strong></p>
+<p>有 A、B、C 三个盒子，A 左浮动，B、C 右浮动。设置 A 盒子的高度与 B 盒子高度（或最大高度）要保持一致</p>
+<ol>
+<li>当的 B 盒子高度低于 A 盒子，C 盒子仍会处于 B 盒子右下方。</li>
+<li>如果 B 盒子文本过多，高度超过了 A 盒子，则 C 盒子不会停留在右下方，而是掉到了 A 盒子下。</li>
+<li>接下来对 C 盒子进行相对定位，将 C 盒子位置向右侧移动 100%，并向左上方向拉回一个 C 盒子的宽高（不然会看不到哟）。这样在文本未溢出时不会看到 C 盒子，在文本溢出时，显示 C 盒子。</li>
+</ol>
+<p><img src="F:\图片库blog/picture_images/picture/css/105.gif" alt="105"></p>
+<h2 id="收，大道归简，能力封装"><a href="#收，大道归简，能力封装" class="headerlink" title="收，大道归简，能力封装"></a>收，大道归简，能力封装</h2><blockquote>
+<p>凡重复的，让它单一；凡复杂的，让它简单。</p>
+</blockquote>
+<p>每次都要搞一坨代码，太麻烦。这时候你需要考虑将文本截断的能力，封装成一个可随时调用的自定义容器组件。市面上很多 UI 组件库，都提供了同类组件的封装，如基于 Vue 的 ViewUI Pro，或面向小程序提供组件化解决能力的 MinUI 。</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/106.jpg" alt="106"></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/107.jpg" alt="107"></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/css/">#css</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

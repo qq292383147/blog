@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="HTML学习笔记"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>HTML学习笔记 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/22/HTML/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                HTML学习笔记
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/html/">html</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p><strong><em>属性选择器： E：元素  att：属性  val：值</em></strong></p>
+<blockquote>
+<ol>
+<li>E[attr] ：这个元素存在attr这个属性即可被选中</li>
+<li>E[attr = val]  表示E这个元素中的attr属性的值是val才能被选中</li>
+<li>E[attr^=val]  表示E这个元素的attr属性的值中是以val开头的</li>
+<li>E[attr$=val]  表示E这个元素的attr属性的值是以val结尾的</li>
+<li>E[attr*=val]   表示E这个元素的attr属性的值中存在val即可</li>
+</ol>
+</blockquote>
+<p>类和id的命名规则：</p>
+<blockquote>
+<ol>
+<li>可以包含有数字，字母，下划线，短横线</li>
+<li>不能以数字开头</li>
+<li>不能以短横线+数字开头</li>
+<li>不能使用单个短横线</li>
+</ol>
+</blockquote>
+<p>建议：</p>
+<blockquote>
+<ol>
+<li>命名尽可能给有意义</li>
+<li>驼峰命名法</li>
+</ol>
+</blockquote>
+<p>结构伪类选择器：</p>
+<blockquote>
+<p>:first-child             表示选择第一个孩子<br>:last-child             表示选择最后一个孩子<br>:nth-child(n)             表示要选择的元素的是第几个孩子元素 从前往后算<br>:nth-last-child(n)     表示要选择的元素的是第几个孩子元素 从后往前算</p>
+</blockquote>
+<p>目标伪类选择器：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:target</span>  &#123;</span><br><span class="line">    属性:属性值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>块级元素</strong>：<font color="#EE1289" size="3" face="Comic Sans MS">display</font>：<font color="#3A5FCD" size="3" face="Comic Sans MS">block</font></p>
+<blockquote>
+<p>特点：<font color="#FFFFE0" size="3" face="楷体">1.独占一行</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFE0" size="3" face="楷体">2.可以设置有效宽高</font><br><br></p>
+<p>常见的块级元素：P h1-h6 ul li….(div)</p>
+</blockquote>
+<p><strong>行内块级元素</strong>：<font color="#EE1289" size="3" face="Comic Sans MS">display</font>：<font color="#3A5FCD" size="4" face="Comic Sans MS">inline-block</font></p>
+<blockquote>
+<p>特点：<font color="#FFFFE0" size="3" face="楷体">1.一行可以显示多个</font><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFE0" size="3" face="楷体">2.可以设置有效宽高</font><br><br></p>
+<p>常见行内块级元素：input img select</p>
+</blockquote>
+<p><strong>行内元素</strong>（<font color="#EE1289" size="4" face="Comic Sans MS">display</font>:<font color="#3A5FCD" size="3" face="Comic Sans MS">inline</font>）的特点：</p>
+<blockquote>
+<p>   <font color="#FFFFE0" size="3" face="楷体">1.   一行可以显示多个</font><br></p>
+<p>   <font color="#FFFFE0" size="3" face="楷体">2.   大小由内容决定</font><br></p>
+<p>   <font color="#FFFFE0" size="3" face="楷体">3.   不能设置有效宽高</font><br><br></p>
+<p>常见的行内元素：span a strong em ins del….</p>
+</blockquote>
+<blockquote>
+<font color="#FF3030" size="3" face="楷体"><em>注意：一般不将行内块级元素转换成行内元素<br>对于块级元素和行内块级元素设置文本内容水平居中，直接在元素本身上text-align属性<br>但是对于行内元素，要设置文本水平居中，我们需要给其父元素设置text-align属性</em></font>
+</blockquote>
+<h5 id="上间距、下间距默认2-5px"><a href="#上间距、下间距默认2-5px" class="headerlink" title="上间距、下间距默认2.5px"></a>上间距、下间距默认2.5px</h5><h5 id="span-内容-5"><a href="#span-内容-5" class="headerlink" title="span{内容$}*5"></a>span{内容$}*5</h5><p>行高：line-weight  一行的高度<br>行高：文字的大小+上间距+下间距<br>css中定义行高：两条基线之间的距离</p>
+<h4 id="注意：盒子高度-行高-盒子中的单行的文本内容垂直居中"><a href="#注意：盒子高度-行高-盒子中的单行的文本内容垂直居中" class="headerlink" title="注意：盒子高度=行高 盒子中的单行的文本内容垂直居中"></a>注意：盒子高度=行高 盒子中的单行的文本内容垂直居中</h4><h2 id="CSS三大特性"><a href="#CSS三大特性" class="headerlink" title="CSS三大特性"></a>CSS三大特性</h2><p>1.CSS层叠样式 {同一个元素的同一个属性后面的样式会覆盖前面的样式，优先级高的会覆盖优先级低的}<br>2.CSS继承性 {子元素获得父元素的样式}</p>
+<p>注意：</p>
+<blockquote>
+<ol>
+<li><font color="#EEEE00" size="3" face="楷体">a标签</font>不继承颜色 </li>
+<li><font color="#EEEE00" size="3" face="楷体">h系列标签</font>不能继承font-size和font-weight</li>
+<li>CSS优先级 { 继承 <font color="#00F5FF" size="4" face="楷体">&lt;</font> 通配符选择器 <font color="#00F5FF" size="4" face="楷体">&lt;</font> 标签选择器 <font color="#00F5FF" size="4" face="楷体">&lt;</font> 类选择器 <font color="#00F5FF" size="4" face="楷体">&lt;</font> id选择器 <font color="#00F5FF" size="4" face="楷体">&lt;</font> 行内选择器 <font color="#00F5FF" size="4" face="楷体">&lt;</font> <font color="#FF3030" size="3" face="Comic Sans MS">!important;</font>}</li>
+</ol>
+<font color="#FF3030" size="3" face="Comic Sans MS">注意：important;只能针对一个属性，而不能提高整个选择器的优先级</font>
+</blockquote>
+<p>优先级只针对基本选择器，复合选择器叫权重计算！！<br>权重计算：4个N算法（n n n n）<br>从左边开始：</p>
+<blockquote>
+<p>第一个n表示<font color="#EEEE00" size="3" face="楷体">important</font>的个数<br>第二个表示<font color="#EEEE00" size="3" face="楷体">id选择器</font>的个数<br>第三个表示<font color="#EEEE00" size="3" face="楷体">类选择器</font>的个数<br>第四个表示<font color="#EEEE00" size="3" face="楷体">标签选择器</font>的个数<br>比较的时候：从左边开始，先比较第一个n的大小，如果第一个n大，那么就是n大的这个选择器的权重高，后面的n都不需要再比较，如果一个n相等，那么比较第二个n，如果第二个n大，那么就是n大的这个选择器的权重高，那么就使用这个选择器的样式，以此类推…<br>如果比较完后，4个n的大小相同，那么就考虑css的层叠性。<br>第一个n的值，它是表示important的个数，而important只能提升一个属性的权重，不能提升整个选择器。</p>
+</blockquote>
+<p><center><font color="#FF3030" size="3" face="楷体">注意：继承的权重几乎为0，可以忽略</font></center></p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">background-position</font>可以设置的值：(背景位置)<br>1.可以设置表示方位的单词：上中下 左中右<br>                          {水平} {垂直}<br>2.一个表示方式单词的时候：设置的值就是你表示方位，另一个方位默认居中</p>
+<p>第一种方式直接将图片设置给body<br>第二种方式：在页面中添加一个div盒子<br>背景图片不占位置</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">background-repeat</font> : <font color="#3A5FCD" size="4" face="Comic Sans MS">no-repeat</font>; //背景不平铺</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">baceground-attachment</font> : <font color="#3A5FCD" size="4" face="Comic Sans MS">fixed</font>; scroll：滚动  fixed：固定 （有浮动的效果）</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">background</font>：<font color="#3A5FCD" size="4" face="Comic Sans MS">background-image background-repeat background-position</font><br>背景简写的时候 <font color="#EE1289" size="4" face="Comic Sans MS">background-image</font>一定要写，其他随意</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">background</font>：<font color="#3A5FCD" size="4" face="Comic Sans MS">[color]</font><br>颜色透明度：<font color="#EE1289" size="4" face="Comic Sans MS">rgba(n,n,n,m)</font>;<br>m透明度 0-1(范围)</p>
+<p>设置边框的圆角：border-radius:[vaule][%或px]</p>
+<p>盒子模型(组成)：<br>内容———边框———内边距——–外边距<br>content—–border——-padding——-margin<br>边框简写：border：border-width border-style border-color<br>必须属性：border-style 顺序无关<br>设置table：<br>border：1px solid pink；<br>border-collapse：collapse //合并<br>placeholder=”请输入…”</p>
+<h2 id="margin的合并问题"><a href="#margin的合并问题" class="headerlink" title="margin的合并问题"></a>margin的合并问题</h2><h3 id="一、垂直塌陷"><a href="#一、垂直塌陷" class="headerlink" title="一、垂直塌陷"></a>一、垂直塌陷</h3><h5 id="尽可能避免"><a href="#尽可能避免" class="headerlink" title="尽可能避免"></a>尽可能避免</h5><h3 id="二、包含垂直塌陷"><a href="#二、包含垂直塌陷" class="headerlink" title="二、包含垂直塌陷"></a>二、包含垂直塌陷</h3><h5 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h5><blockquote>
+<p>1.给父盒子加border<br>2.给父盒子加overflow：hidden（推荐使用）<br>网页居中div(块级元素居中)<br>margin：0px auto;</p>
+</blockquote>
+<h4 id="影响盒子的大小的因素："><a href="#影响盒子的大小的因素：" class="headerlink" title="影响盒子的大小的因素："></a>影响盒子的大小的因素：</h4><p>border边框会影响盒子的大小<br>padding在特殊情况下不影响盒子大小</p>
+<p><center><br>&lt;–继承宽度 不继承高度–&gt;<br>盒子的真实宽度：width + 左右的border + 左右padding<br>盒子的真实高度：height + 上下的border + 上下padding<br></center><br>盒子的阴影box-shadow默认就是outset(外)，不需要设置<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intset(内)<br>设置多个阴影可以用逗号隔开<br>页面常见的三种布局机制：</p>
+<blockquote>
+<p>1.标准流<br>2.浮动</p>
+</blockquote>
+<h2 id="3-定位"><a href="#3-定位" class="headerlink" title="3.定位"></a>3.定位</h2><p>浮动的特点：<br>1.浮动的元素脱标（脱离标准流），不占标准流的位置<br>2.浮动的元素都是以顶部对齐<br>3.如果浮动的元素前面是标准流的块级元素，那么浮动的元素跟在标准元素的下面<br>4.如果浮动的元素前面也是浮动的元素，那么后面浮动的元素会跟在前面浮动的元素后面<br>5.如果元素有包含关系，子元素浮动，不会跑出父元素，而且不会占据父元素的border和padding的位置<br>6.浮动能改变元素的显示方式</p>
+<p>常见的页面的三种布局方式：<br>1.版心布局<br>–版心：宽度超过页面的一半，并且在页面中水平居中(class=”w”)<br>2.通栏布局<br>–通栏：高度不到页面的一半，宽度和页面一样高<br>3.分栏布局</p>
+<h2 id="分栏：左右分类"><a href="#分栏：左右分类" class="headerlink" title="分栏：左右分类"></a>分栏：左右分类</h2><blockquote>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">清除浮动【clear：both】</font>;<br>清除浮动的方式：{清除浮动必须使用块级元素}<br>清除浮动：元素有嵌套关系，子元素浮动，父元素没有设置高度，而父元素在布局的时候又需要有高度，这个时候就需要对这个父元素中的子元素来清除浮动</p>
+<blockquote>
+<p>1.给父元素加overflow：hidden  触发BFC<br>2.额外标签法<br>3.伪元素清除浮动 –&gt;使用这种方式，必须把这个类加给父元素</p>
+</blockquote>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    content：“.”;</span><br><span class="line">    <span class="selector-tag">display</span>：<span class="selector-tag">block</span></span><br><span class="line">    <span class="selector-tag">clear</span>：<span class="selector-tag">both</span></span><br><span class="line">    visibility：hidden  //隐藏content中的内容</span><br><span class="line">    height：0  //为了去掉context的内容的高度</span><br><span class="line">    <span class="selector-tag">line-height</span>：0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>.clearfix{  *zoom:1；} 为了解决IE6-7的兼容问题<br><strong>伪元素</strong>：在html结构中没有，在浏览器加载完页面后，在浏览器中显示的HTML结构中有。<br><strong>伪元素</strong>： ::before(结构前)  ::after(结构后)  可以设置样式 必须加context，可以为空<br>因为清除浮动必须使用块级元素，而伪元素是一个行内元素</p>
+<h2 id="4-双元素清除浮动"><a href="#4-双元素清除浮动" class="headerlink" title="4.双元素清除浮动"></a>4.双元素清除浮动</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">类<span class="selector-pseudo">::before</span>,类<span class="selector-pseudo">::after</span>&#123; </span><br><span class="line">    <span class="attribute">context</span>:<span class="string">""</span>;</span><br><span class="line">    <span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line">类<span class="selector-pseudo">::after</span>&#123;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="css中的几个高级样式"><a href="#css中的几个高级样式" class="headerlink" title="css中的几个高级样式"></a>css中的几个高级样式</h2><h4 id="1-鼠标样式：cursor"><a href="#1-鼠标样式：cursor" class="headerlink" title="1.鼠标样式：cursor"></a>1.鼠标样式：cursor</h4><p>​    text<br>​    pointer</p>
+<h4 id="2-元素的显示和隐藏"><a href="#2-元素的显示和隐藏" class="headerlink" title="2.元素的显示和隐藏"></a>2.元素的显示和隐藏</h4><p><font color="#EE1289" size="4" face="Comic Sans MS">visibility</font>:<font color="#3A5FCD" size="4" face="Comic Sans MS">hidden</font>  隐藏元素，隐藏的元素占原有的位置</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">visibility</font>:<font color="#3A5FCD" size="4" face="Comic Sans MS">visible</font> 显示元素</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">display</font>：<font color="#3A5FCD" size="4" face="Comic Sans MS">none</font>      隐藏元素，隐藏的元素不占原有的位置 </p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">display</font>: <font color="#3A5FCD" size="4" face="Comic Sans MS">block</font>     显示元素，并且显示出来的元素的显示方式会被转换成块级元素</p>
+<h4 id="3-防止文本域拖拽：resize-none"><a href="#3-防止文本域拖拽：resize-none" class="headerlink" title="3.防止文本域拖拽：resize:none"></a>3.防止文本域拖拽：resize:none</h4><h4 id="4-关于垂直对齐方式"><a href="#4-关于垂直对齐方式" class="headerlink" title="4.关于垂直对齐方式"></a>4.关于垂直对齐方式</h4><p>vertical-align：baseline/top/middle;</p>
+<p>行内块元素的垂直对齐方式默认是以基线对齐,值对行内元素和行内块级元素有效<br>一般使用在<code>&lt;input&gt;&lt;img&gt;</code> 一般用在初始化！！</p>
+<h4 id="5-精灵图-雪碧图-：将很多的小图片做成的大图称为精灵图"><a href="#5-精灵图-雪碧图-：将很多的小图片做成的大图称为精灵图" class="headerlink" title="5.精灵图(雪碧图)：将很多的小图片做成的大图称为精灵图"></a>5.精灵图(雪碧图)：将很多的小图片做成的大图称为精灵图</h4><p>核心：使用背景图片  利用背景图片移动位置<br>background:url(“精灵图图片路径”) no-repeat -12px 0px<br>div:first-child{<br>    <code>background-position</code>:-389px -145px;<br>}<br>6.外轮廓线：<code>outline:none;</code> 去掉轮廓线</p>
+<p><font color="red" size="4" face="Comic Sans MS">注意：外轮廓线不占边框</font> <code>outline：1px solid #dd2321</code>;</p>
+<h3 id="定位-position"><a href="#定位-position" class="headerlink" title="定位:position"></a>定位:position</h3><p>1.偏移量<br>对于在页面中定位的元素所移动的距离<br>    top:   距离顶部的距离<br>    left:  距离左边的距离<br>    bottom:距离下面的距离<br>    right: 距离右边的距离<br>定位模式：position</p>
+<h3 id="1-静态定位"><a href="#1-静态定位" class="headerlink" title="1.静态定位"></a>1.静态定位</h3><p>​    html标准流中的元素的默认定位方式就是静态定位position<br>特点：</p>
+<blockquote>
+<p>(1)遵循HTML标准流<br>(2)不能设置有效的偏移量<br>(3)HTML标准流中元素的默认定位方式</p>
+</blockquote>
+<h3 id="2-相对定位-postion：relative"><a href="#2-相对定位-postion：relative" class="headerlink" title="2.相对定位(postion：relative)"></a>2.相对定位(postion：relative)</h3><p>​    特点相对定位的元素不脱标，占原来的位置<br>​    可以设置有效偏移量<br>​    相对定位不能改变元素的显示方式<br>​    相对定位是参照自身原来的位置做位移</p>
+<h3 id="3-绝对定位-postion：absolute"><a href="#3-绝对定位-postion：absolute" class="headerlink" title="3.绝对定位(postion：absolute)"></a>3.绝对定位(postion：absolute)</h3><p>​    元素脱标，不占位置<br>​    改变元素的显示方式<br>​    如果元素有包含关系，子元素绝对定位，如果父辈元素都是静态定位，那么这个绝对定位的<br>子元素参照浏览器来做位移;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果父辈元素中有非静态定位的元素，那么这个绝对定位的子元素参照这个非静态定位的父辈元素来做位移;</span><br><span class="line"></span><br><span class="line">如果父辈元素中有多个非静态的定位的元素，那么这个绝对定位的元素参照离自身最近的父辈元素来做位置的移动（就近元素）</span><br><span class="line"></span><br><span class="line">子绝父相：子元素绝对定位，父元素相对定位(重点)</span><br><span class="line">relative 父</span><br><span class="line">absolute 子</span><br></pre></td></tr></table></figure>
+<h3 id="4-固定定位-postion：fixed"><a href="#4-固定定位-postion：fixed" class="headerlink" title="4.固定定位(postion：fixed)"></a>4.固定定位(postion：fixed)</h3><p>特点：<br>    不管父辈元素的定位方式，只要是固定定位的元素都是参照浏览器来做位置移动<br>    固定定位的元素脱标，不占位置<br>    固定定位改变了元素的显示方式</p>
+<h3 id="层级-z-index-value"><a href="#层级-z-index-value" class="headerlink" title="层级(z-index:value)"></a>层级(z-index:value)</h3><p>特点：<br>1.层级只对非静态的元素有效<br>2.如果都是非静态的元素，后面的元素的层级比前面的层级高<br>3.非静态定位的默认层级为零</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">overflow</font>:<code>visible</code>; 默认就是这个值，不做任何处理</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">overflow</font>:<code>hidden</code>;  直接隐藏溢出的部分</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">overflow</font>:<code>auto</code>;    当文本溢出的时候，加滚动条，没有溢出不加</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">overflow</font>:<code>scroll</code>;  始终都有滚动条</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">white-space</font>:<code>nowrap</code>;  让文本不换行</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">overflow</font>:<code>hidden</code>;     隐藏溢出的文本</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">text-overflow</font>:<code>ellipsis</code>; 让溢出的文本使用省略号代替</p>
+<h3 id="属性定义及使用说明"><a href="#属性定义及使用说明" class="headerlink" title="属性定义及使用说明"></a>属性定义及使用说明</h3><p>z-index 属性指定一个元素的堆叠顺序。</p>
+<p>拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。</p>
+<p><strong>注意：</strong> <code>z-index</code> 进行定位元素(<code>position:absolute</code>, <code>position:relative</code>, or <code>position:fixed</code>)。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.index</span> &#123;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">100vh</span>;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">100vw</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="CSS3引入的”vw”和”vh”基于宽度-高度相对于窗口大小"><a href="#CSS3引入的”vw”和”vh”基于宽度-高度相对于窗口大小" class="headerlink" title="CSS3引入的”vw”和”vh”基于宽度/高度相对于窗口大小"></a>CSS3引入的”vw”和”vh”基于宽度/高度相对于窗口大小</h5><h4 id="“vw”-“view-width”-“vh”-“view-height”"><a href="#“vw”-“view-width”-“vh”-“view-height”" class="headerlink" title="“vw” = “view width”  “vh” = “view height”"></a>“vw” = “view width”  “vh” = “view height”</h4><p><font color="#EE1289" size="4" face="Comic Sans MS">overflow</font>: <code>hidden</code>; <em>自动隐藏文字</em></p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">text-overflow</font>: <code>ellipsis</code>; <em>文字隐藏后添加省略号</em></p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">white-space</font>: <code>nowrap</code>; <em>强制不换行</em></p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">width</font>: <code>20em</code>; <em>不允许出现半汉字截断</em></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*两行*/</span></span><br><span class="line"><span class="selector-class">.textview</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-box;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">  <span class="attribute">word-break</span>: break-all;</span><br><span class="line">  <span class="attribute">-webkit-box-orient</span>: vertical;</span><br><span class="line">  <span class="attribute">-webkit-line-clamp</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">////////////小字体///////////</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">10px</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="vertical-align-text-bottom"><a href="#vertical-align-text-bottom" class="headerlink" title="vertical-align: text-bottom;"></a>vertical-align: text-bottom;</h2><p><font color="#EE1289" size="4" face="Comic Sans MS">letter-spacing</font>:<code>value</code>; 设置文本的字间距(中文)</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">word-spacing</font>:<code>value</code>;    设置文本的字间距(英文)</p>
+<p>引入icon图标<br>link rel=“shortcut icon” href=“./favicon.ico”<br><a href="http://www.bitbug.com" target="_blank" rel="noopener">www.bitbug.com</a>   在线制作ico图标</p>
+<p>引入css文件：先引入兼容css，在引入初始化css，再引入第三方css文件，在引入公共的css<br>文件，在引入当前页面的css文件</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">link</font> rel=“stylesheet” href=“../css/normalize.css”   –引入兼容css</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">link</font> rel=”stylesheet” href=”../css/base.css”        –引入初始化css</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">link</font> rel=”stylesheet” href=”../css/common.css”      –引入公共的css</p>
+<p>字体图标：<br>icomoon.io<br>iconfont.cn<br>svg标签对电脑的性能消耗大</p>
+<blockquote>
+<p>1.先定义字体图标样式<br>2.引入对应的字体图标的Unicode编码<br>3.给对应的字体调用  –base.css</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.iconfont</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>:</span><br><span class="line">&#125;</span><br><span class="line"><span class="attribute">vertical-align</span>:middle;  <span class="comment">/*让行内元素对齐*/</span></span><br></pre></td></tr></table></figure>
+<p>水平行内元素才有效果</p>
+<h3 id="利用-CSS-的-content-属性-attr-抓取资料"><a href="#利用-CSS-的-content-属性-attr-抓取资料" class="headerlink" title="利用 CSS 的 content 属性 attr 抓取资料"></a>利用 CSS 的 content 属性 attr 抓取资料</h3><p>想必大家都想到了伪元素 after ，但是文字怎么获得呢，又不能用 JavaScript 。</p>
+<p>CSS 的伪元素是个很強大的东西，我们可以利用他做很多运用，通常为了做一些效果， content:” “ 多半会留空，但其实可以在里面写上 attr 抓资料哦！</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">data-msg</span>=<span class="string">"这里是获取content的内容"</span>&gt;</span>hover<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid red;  </span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="built_in">attr</span>(data-msg);</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">200%</span>;</span><br><span class="line">    <span class="attribute">line-height</span>:<span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>:center;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">25px</span>;</span><br><span class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="css3"><a href="#css3" class="headerlink" title="css3"></a><strong>css3</strong></h1><p>三角:border-right:20px solid transparent 透明的<br><code>transition</code>过渡：一个物体从一个状态到另一个状态的过程<br>帧动画：<br><code>transition</code>：all 2s[属性 过渡时间];</p>
+<h2 id="面包屑导航（表示网页中的位置）"><a href="#面包屑导航（表示网页中的位置）" class="headerlink" title="面包屑导航（表示网页中的位置）"></a>面包屑导航（表示网页中的位置）</h2><blockquote>
+<p>导语：符合下面两个条件的网站才适合使用面包屑导航。<br>1、层级较深的网站，面包屑导航适合层级较深的网站，如果只有一级分类的话，通过主导航就可以起到快速定位的作用。<br>比如“豆瓣网”类型扁平构架的网站就没有使用面包屑导航。</p>
+</blockquote>
+<blockquote>
+<p>2、独立不交叉的网站结构，由于面包屑网站导航路径是线性结构的，因此网站内容必须划分的非常清晰，且不存在交叉；<br>否则，面包屑导航的路径就不是唯一的，同一分类可能出现在不同的路径中，让用户感到困惑。</p>
+</blockquote>
+<p>导航栏设置hover高度：</p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">height</font>：<code>40px</code></p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">line-height</font>：<code>40px</code></p>
+<p><font color="#EE1289" size="4" face="Comic Sans MS">margin-top</font>：<code>10px</code></p>
+<h2 id="重点：margin-top-bottom…可以用负值，向相反方向移动"><a href="#重点：margin-top-bottom…可以用负值，向相反方向移动" class="headerlink" title="重点：margin-top/bottom…可以用负值，向相反方向移动"></a>重点：margin-top/bottom…可以用负值，向相反方向移动</h2><p>使用JQuery和JavaScript动画制作伸缩宽度：<br>JavaScript：</p>
+<script>
+window.onload=function(){
+    var aA=document.getElementsByTagName('a');
+    for(var i=0; i<aA.length; i++){
+        aA[i].onmouseover=function(){
+            var This=this;
+            clearInterval(This.time);
+            This.time=setInterval(function(){
+            This.style.width=This.offsetWidth+8+"px";
+            if(This.offsetWidth>=160)
+                clearInterval(This.time);
+            },30)
+        }
+        aA[i].onmouseout=function(){
+            clearInterval(this.time);
+            var This=this;
+            this.time=setInterval(function(){
+                This.style.width=This.offsetWidth-8+"px";
+                if(This.offsetWidth<=120){
+                    This.style.width='120px';
+                    clearInterval(This.time);
+                }
+            },30)
+        }
+    }
+}
+</script>
+
+<p>JQuery：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'a'</span>).hover(</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            $(<span class="keyword">this</span>).stop().animate(&#123;<span class="string">"width"</span>:<span class="string">"160px"</span>&#125;<span class="number">.200</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            $(<span class="keyword">this</span>).stop().animate(&#123;<span class="string">"width"</span>:<span class="string">"160px"</span>&#125;<span class="number">.200</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="float智能自适应"><a href="#float智能自适应" class="headerlink" title="float智能自适应"></a>float智能自适应</h3><p>display：table-cell   IE8</p>
+<p>display：inline-block IE7</p>
+<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js"></script>
+
+<h2 id="这个是本地百度静态API库"><a href="#这个是本地百度静态API库" class="headerlink" title="这个是本地百度静态API库"></a>这个是本地百度静态API库</h2><h3 id="JSON-基本概念"><a href="#JSON-基本概念" class="headerlink" title="JSON 基本概念:"></a>JSON 基本概念:</h3><p>JSON javascript 对象表示法（JavaScript Object Notation）<br>JSON 是存储和交换文本信息的语法，类似 XML。它采用键值对的方式来组织，易于人们阅读和编写，同时也易于机器解析和生成<br>JSON 是独立于语言的，也就是说不管什么语言，都可以解析 json，只需要按照 json 的规则来就行。</p>
+<h3 id="JSON-与-XML-比较："><a href="#JSON-与-XML-比较：" class="headerlink" title="JSON 与 XML 比较："></a>JSON 与 XML 比较：</h3><p>json 的长度和 xml 格式比起来很短小<br>json 读写的速度更快<br>json 可以使用 javascript 内建的方法直接进行解析，转换成 JavaScript 对象，非常方便。</p>
+<p>json 数据的书写格式是：名称/值对<br>名称/值对组合中的名称写在前面（在双引号中），值对写在后面（同样在引号中），中间用冒号隔开：比如：”name”：”郭靖”<br>json的值可以是下面这些类型：<br>数字（整数或浮点数），比如：123,1,23<br>    字符串（在双引号中）<br>    逻辑值（<code>true</code> 和 <code>false</code>）<br>    数组（在方括号中）<br>    对象（在花括号中）<br>    null<br>例如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"staff"</span>:[</span><br><span class="line">        &#123;<span class="string">"name"</span>:<span class="string">"洪七"</span>,<span class="string">"age"</span>:<span class="number">70</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>:<span class="string">"郭靖"</span>,<span class="string">"age"</span>:<span class="number">35</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>:<span class="string">"黄蓉"</span>,<span class="string">"age"</span>:<span class="number">30</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>推荐用 JSONLint 工具（在线）检验</strong></p>
+<p>用 jQuery 实现 ajax<br>语法：jQuery.ajax([settings])</p>
+<p><code>type</code>：类型，“POST”或“GET”，默认为“GET”<br><code>url</code>：发送请求的地址<br><code>data</code>：是一个对象，连同请求发送到服务器的数据<br><code>dataType</code>：预期服务器返回的数据类型。如果不指定，jQuery 将自动根据 Http 包 MIME 信息来智能判断，一般我们采用json 格式，可以设置为“json”<br><code>success</code>：是一个方法，请求成功后的回调函数。传入返回后的数据，以及包含成功代码的字符串<br><code>error</code>：是一个方法，请求失败时调用此函数。传入XMLHttpRequest对象</p>
+<p><code>jsonp</code>： 可用于解决主流浏览器的跨域数据访问的问题，jsonp 不支持 psot 请求，只支持 GET 请求，而且 JSONP 返回的是一个数组<br>用“.”表示<br><code>XMR2</code>：HTML5 提供的 XMLHttpRequest Level2 已经实现了跨域访问以及其他的一些新功能<br>在服务器端做一些小小的改造即可：<br>header(‘Access-Control-Allow-Origin:*’);<br>header(‘Access-Control-Allow-Methods:POST,GET’);</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/HTML/">#HTML</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

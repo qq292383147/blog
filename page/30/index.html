@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/10/22/Css/px%E5%92%8Crem%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/">
+                px和rem之间的相互转换
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-10-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/css/">css</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p><code>rem</code>是相对于根元素<code>&lt;html&gt;</code>，这样就意味着，我们只需要在根元素确定一个参考值，这个参考值设置为多少，完全可以根据您自己的需求来定。</p>
+<p>我们知道，浏览器默认的字号<code>16px</code>，来看一些<code>px</code>单位与<code>rem</code>之间的转换关系：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|  px  |     rem       |</span><br><span class="line">------------------------</span><br><span class="line">|  12  | 12/16 = .75   |</span><br><span class="line">|  14  | 14/16 = .875  |</span><br><span class="line">|  16  | 16/16 = 1     |</span><br><span class="line">|  18  | 18/16 = 1.125 |</span><br><span class="line">|  20  | 20/16 = 1.25  |</span><br><span class="line">|  24  | 24/16 = 1.5   |</span><br><span class="line">|  30  | 30/16 = 1.875 |</span><br><span class="line">|  36  | 36/16 = 2.25  |</span><br><span class="line">|  42  | 42/16 = 2.625 |</span><br><span class="line">|  48  | 48/16 = 3     |</span><br><span class="line">-------------------------</span><br></pre></td></tr></table></figure>
+<p>为了方便计算，时常将在<code>&lt;html&gt;</code>元素中设置<code>font-size</code>值为<code>62.5%</code>:</p>
+<p>相当于在<code>&lt;html&gt;</code>中设置<code>font-size</code>为<code>10px</code>，此时，上面示例中所示的值将会改变：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">|  px  |     rem        |</span><br><span class="line">-------------------------</span><br><span class="line">|  12  | 12/10 = 1.2    |</span><br><span class="line">|  14  | 14/10 = 1.4    |</span><br><span class="line">|  16  | 16/10 = 1.6    |</span><br><span class="line">|  18  | 18/10 = 1.8    |</span><br><span class="line">|  20  | 20/10 = 2.0    |</span><br><span class="line">|  24  | 24/10 = 2.4    |</span><br><span class="line">|  30  | 30/10 = 3.0    |</span><br><span class="line">|  36  | 36/10 = 3.6    |</span><br><span class="line">|  42  | 42/10 = 4.2    |</span><br><span class="line">|  48  | 48/10 = 4.8    |</span><br><span class="line">-------------------------</span><br></pre></td></tr></table></figure>
+<p>由于<code>rem</code>是<a href="http://caibaojian.com/t/css3" target="_blank" rel="noopener">css3</a>中的一个属性，很多人首先关注的就是浏览器对他的支持度，我截了一张<a href="http://caniuse.com/rem" target="_blank" rel="noopener">caniuse</a>对<code>rem</code>属性的兼容表：</p>
+<p><img src="http://caibaojian.com/d/uploads/2015/12/sass-px-rem-1.jpg" alt="sass-px-rem-1"></p>
+<p>从上图可以清楚的知道，<code>rem</code>在众多浏览器中都已得到很好的支持，如果您的项目不用考虑IE低版本的话，你就可以放心的使用了。</p>
+<p><strong>1rem等于多少px呢？</strong></p>
+<p>1rem等于html根元素设定的font-size的px值，假如我们在css里面设定下面的css。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html&#123;font-size:14px&#125;</span><br></pre></td></tr></table></figure>
+<p>那么后面的<a href="http://caibaojian.com/css3/" target="_blank" rel="noopener">CSS</a>里面的rem值则是以这个14来换算，例如设定一个div宽度为3rem,高度为2.5rem.则它换算成px为width:42px.height:35px，同理，假如一个设计稿为宽度42px,高度为35px，则换成成rem，则是42/14=3rem，35/14=2.5rem。</p>
+<p>如果css里面没有设定html的font-size，则默认浏览器以1rem=16px来换算。</p>
+<p>附上关于rem的其他相关文章：</p>
+<p><a href="http://caibaojian.com/flexible-js.html" target="_blank" rel="noopener">rem实现移动端自适应</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/10/22/%E9%9D%A2%E8%AF%95%E9%A2%98/30%20%E9%81%93%20Vue%20%E9%9D%A2%E8%AF%95%E9%A2%98%EF%BC%88%E7%B2%BE%E9%80%89%E9%A2%98%EF%BC%89/">
+                30道Vue面试题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-10-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/面试题/">面试题</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="1、说说你对-SPA-单页面的理解，它的优缺点分别是什么？"><a href="#1、说说你对-SPA-单页面的理解，它的优缺点分别是什么？" class="headerlink" title="1、说说你对 SPA 单页面的理解，它的优缺点分别是什么？"></a>1、说说你对 SPA 单页面的理解，它的优缺点分别是什么？</h2><p>SPA（ single-page application ）仅在 Web 页面初始化时加载相应的 HTML、JavaScript 和 CSS。一旦页面加载完成，SPA 不会因为用户的操作而进行页面的重新加载或跳转；取而代之的是利用路由机制实现 HTML 内容的变换，UI 与用户的交互，避免页面的重新加载。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>用户体验好、快，内容的改变不需要重新加载整个页面，避免了不必要的跳转和重复渲染；</li>
+<li>基于上面一点，SPA 相对对服务器压力小；</li>
+<li>前后端职责分离，架构清晰，前端进行交互逻辑，后端负责数据处理；</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>初次加载耗时多：为实现单页 Web 应用功能及显示效果，需要在加载页面的时候将 JavaScript、CSS 统一加载，部分页面按需加载；</li>
+<li>前进后退路由管理：由于单页应用在一个页面中显示所有的内容，所以不能使用浏览器的前进后退功能，所有的页面切换需要自己建立堆栈管理；</li>
+<li>SEO 难度较大：由于所有的内容都在一个页面中动态替换显示，所以在 SEO 上其有着天然的弱势。</li>
+</ul>
+<h2 id="2、v-show-与-v-if-有什么区别？"><a href="#2、v-show-与-v-if-有什么区别？" class="headerlink" title="2、v-show 与 v-if 有什么区别？"></a>2、v-show 与 v-if 有什么区别？</h2><p><strong>v-if</strong> 是<strong>真正</strong>的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建；也是<strong>惰性的</strong>：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。</p>
+<p><strong>v-show</strong> 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 的 “display” 属性进行切换。</p>
+<p>所以，v-if 适用于在运行时很少改变条件，不需要频繁切换条件的场景；v-show 则适用于需要非常频繁切换条件的场景。</p>
+<h2 id="3、Class-与-Style-如何动态绑定？"><a href="#3、Class-与-Style-如何动态绑定？" class="headerlink" title="3、Class 与 Style 如何动态绑定？"></a>3、Class 与 Style 如何动态绑定？</h2><p>Class 可以通过对象语法和数组语法进行动态绑定：</p>
+<ul>
+<li>对象语法：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">  isActive: true,</span></span><br><span class="line"><span class="regexp">  hasError: false</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>数组语法：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"[isActive ? activeClass : '', errorClass]"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">  activeClass: 'active',</span></span><br><span class="line"><span class="regexp">  errorClass: 'text-danger'</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Style 也可以通过对象语法和数组语法进行动态绑定：</p>
+<ul>
+<li>对象语法：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:style=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">  activeColor: 'red',</span></span><br><span class="line"><span class="regexp">  fontSize: 30</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>数组语法：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:style=<span class="string">"[styleColor, styleSize]"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data: &#123;</span></span><br><span class="line"><span class="regexp">  styleColor: &#123;</span></span><br><span class="line"><span class="regexp">     color: 'red'</span></span><br><span class="line"><span class="regexp">   &#125;,</span></span><br><span class="line"><span class="regexp">  styleSize:&#123;</span></span><br><span class="line"><span class="regexp">     fontSize:'23px'</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4、怎样理解-Vue-的单向数据流？"><a href="#4、怎样理解-Vue-的单向数据流？" class="headerlink" title="4、怎样理解 Vue 的单向数据流？"></a>4、怎样理解 Vue 的单向数据流？</h2><p>所有的 prop 都使得其父子 prop 之间形成了一个<strong>单向下行绑定</strong>：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。这样会防止从子组件意外改变父级组件的状态，从而导致你的应用的数据流向难以理解。</p>
+<p>额外的，每次父级组件发生更新时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你不应该在一个子组件内部改变 prop。如果你这样做了，Vue 会在浏览器的控制台中发出警告。子组件想修改时，只能通过 $emit 派发一个自定义事件，父组件接收到后，由父组件修改。</p>
+<p>有两种常见的试图改变一个 prop 的情形 :</p>
+<ul>
+<li><strong>这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。</strong> 在这种情况下，最好定义一个本地的 data 属性并将这个 prop 用作其初始值：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'initialCounter'</span>],</span><br><span class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    counter: <span class="keyword">this</span>.initialCounter</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>这个 prop 以一种原始的值传入且需要进行转换。</strong> 在这种情况下，最好使用这个 prop 的值来定义一个计算属性</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">props: [<span class="string">'size'</span>],</span><br><span class="line">computed: &#123;</span><br><span class="line">  normalizedSize: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.size.trim().toLowerCase()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5、computed-和-watch-的区别和运用的场景？"><a href="#5、computed-和-watch-的区别和运用的场景？" class="headerlink" title="5、computed 和 watch 的区别和运用的场景？"></a>5、computed 和 watch 的区别和运用的场景？</h2><p><strong>computed：</strong> 是计算属性，依赖其它属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed  的值；</p>
+<p><strong>watch：</strong> 更多的是「观察」的作用，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作；</p>
+<p><strong>运用场景：</strong></p>
+<ul>
+<li>当我们需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</li>
+<li>当我们需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</li>
+</ul>
+<h2 id="6、直接给一个数组项赋值，Vue-能检测到变化吗？"><a href="#6、直接给一个数组项赋值，Vue-能检测到变化吗？" class="headerlink" title="6、直接给一个数组项赋值，Vue 能检测到变化吗？"></a>6、直接给一个数组项赋值，Vue 能检测到变化吗？</h2><p>由于 JavaScript 的限制，Vue 不能检测到以下数组的变动：</p>
+<ul>
+<li>当你利用索引直接设置一个数组项时，例如：<code>vm.items[indexOfItem] = newValue</code></li>
+<li>当你修改数组的长度时，例如：<code>vm.items.length = newLength</code></li>
+</ul>
+<p>为了解决第一个问题，Vue 提供了以下操作方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Vue.set</span></span><br><span class="line">Vue.set(vm.items, indexOfItem, newValue)</span><br><span class="line"><span class="comment">// vm.$set，Vue.set的一个别名</span></span><br><span class="line">vm.$<span class="keyword">set</span>(vm.items, indexOfItem, newValue)</span><br><span class="line">// Array.prototype.splice</span><br><span class="line">vm.items.splice(indexOfItem, 1, newValue)</span><br></pre></td></tr></table></figure>
+<p>为了解决第二个问题，Vue 提供了以下操作方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Array.prototype.splice</span></span><br><span class="line">vm.items.splice(newLength)</span><br></pre></td></tr></table></figure>
+<h2 id="7、谈谈你对-Vue-生命周期的理解？"><a href="#7、谈谈你对-Vue-生命周期的理解？" class="headerlink" title="7、谈谈你对 Vue 生命周期的理解？"></a>7、谈谈你对 Vue 生命周期的理解？</h2><p><strong>（1）生命周期是什么？</strong></p>
+<p>Vue 实例有一个完整的生命周期，也就是从开始创建、初始化数据、编译模版、挂载 Dom -&gt; 渲染、更新 -&gt; 渲染、卸载等一系列过程，我们称这是 Vue 的生命周期。</p>
+<p><strong>（2）各个生命周期的作用</strong></p>
+<table>
+<thead>
+<tr>
+<th>生命周期</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>beforeCreate</td>
+<td>组件实例被创建之初，组件的属性生效之前</td>
+</tr>
+<tr>
+<td>created</td>
+<td>组件实例已经完全创建，属性也绑定，但真实 dom 还没有生成，$el 还不可用</td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>在挂载开始之前被调用：相关的 render 函数首次被调用</td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子</td>
+</tr>
+<tr>
+<td>beforeUpdate</td>
+<td>组件数据更新之前调用，发生在虚拟 DOM 打补丁之前</td>
+</tr>
+<tr>
+<td>update</td>
+<td>组件数据更新之后</td>
+</tr>
+<tr>
+<td>activited</td>
+<td>keep-alive 专属，组件被激活时调用</td>
+</tr>
+<tr>
+<td>deadctivated</td>
+<td>keep-alive 专属，组件被销毁时调用</td>
+</tr>
+<tr>
+<td>beforeDestory</td>
+<td>组件销毁前调用</td>
+</tr>
+<tr>
+<td>destoryed</td>
+<td>组件销毁后调用</td>
+</tr>
+</tbody>
+</table>
+<p><strong>（3）生命周期示意图</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/1.png" alt="1"></p>
+<h2 id="8、Vue-的父组件和子组件生命周期钩子函数执行顺序？"><a href="#8、Vue-的父组件和子组件生命周期钩子函数执行顺序？" class="headerlink" title="8、Vue 的父组件和子组件生命周期钩子函数执行顺序？"></a>8、Vue 的父组件和子组件生命周期钩子函数执行顺序？</h2><p>Vue 的父组件和子组件生命周期钩子函数执行顺序可以归类为以下 4 部分：</p>
+<ul>
+<li><p>加载渲染过程</p>
+<p>父 beforeCreate -&gt; 父 created -&gt; 父 beforeMount -&gt; 子 beforeCreate -&gt; 子 created -&gt; 子 beforeMount -&gt; 子 mounted -&gt; 父 mounted</p>
+</li>
+<li><p>子组件更新过程</p>
+<p>父 beforeUpdate -&gt; 子 beforeUpdate -&gt; 子 updated -&gt; 父 updated</p>
+</li>
+<li><p>父组件更新过程</p>
+<p>父 beforeUpdate -&gt; 父 updated</p>
+</li>
+<li><p>销毁过程</p>
+<p>父 beforeDestroy -&gt; 子 beforeDestroy -&gt; 子 destroyed -&gt; 父 destroyed</p>
+</li>
+</ul>
+<h2 id="9、在哪个生命周期内调用异步请求？"><a href="#9、在哪个生命周期内调用异步请求？" class="headerlink" title="9、在哪个生命周期内调用异步请求？"></a>9、在哪个生命周期内调用异步请求？</h2><p>可以在钩子函数 created、beforeMount、mounted 中进行调用，因为在这三个钩子函数中，data 已经创建，可以将服务端端返回的数据进行赋值。但是本人推荐在 created 钩子函数中调用异步请求，因为在 created 钩子函数中调用异步请求有以下优点：</p>
+<ul>
+<li>能更快获取到服务端数据，减少页面 loading 时间；</li>
+<li>ssr 不支持 beforeMount 、mounted 钩子函数，所以放在 created 中有助于一致性；</li>
+</ul>
+<h2 id="10、在什么阶段才能访问操作DOM？"><a href="#10、在什么阶段才能访问操作DOM？" class="headerlink" title="10、在什么阶段才能访问操作DOM？"></a>10、在什么阶段才能访问操作DOM？</h2><p>在钩子函数 mounted 被调用前，Vue 已经将编译好的模板挂载到页面上，所以在 mounted 中可以访问操作 DOM。vue 具体的生命周期示意图可以参见如下，理解了整个生命周期各个阶段的操作，关于生命周期相关的面试题就难不倒你了。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/2.png" alt="2"></p>
+<h2 id="11、父组件可以监听到子组件的生命周期吗？"><a href="#11、父组件可以监听到子组件的生命周期吗？" class="headerlink" title="11、父组件可以监听到子组件的生命周期吗？"></a>11、父组件可以监听到子组件的生命周期吗？</h2><p>比如有父组件 Parent 和子组件 Child，如果父组件监听到子组件挂载 mounted 就做一些逻辑处理，可以通过以下写法实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Parent.vue</span></span><br><span class="line">&lt;Child @mounted=<span class="string">"doSomething"</span>/&gt;</span><br><span class="line">    </span><br><span class="line"><span class="comment">// Child.vue</span></span><br><span class="line">mounted() &#123;</span><br><span class="line">  <span class="keyword">this</span>.$emit(<span class="string">"mounted"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上需要手动通过 $emit 触发父组件的事件，更简单的方式可以在父组件引用子组件时通过 @hook 来监听即可，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  Parent.vue</span></span><br><span class="line">&lt;Child @hook:mounted=<span class="string">"doSomething"</span> &gt;&lt;<span class="regexp">/Child&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">doSomething() &#123;</span></span><br><span class="line"><span class="regexp">   console.log('父组件监听到 mounted 钩子函数 ...');</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/  Child.vue</span></span><br><span class="line"><span class="regexp">mounted()&#123;</span></span><br><span class="line"><span class="regexp">   console.log('子组件触发 mounted 钩子函数 ...');</span></span><br><span class="line"><span class="regexp">&#125;,    </span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 以上输出顺序为：</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 子组件触发 mounted 钩子函数 ...</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 父组件监听到 mounted 钩子函数 ...</span></span><br></pre></td></tr></table></figure>
+<p>当然 @hook 方法不仅仅是可以监听 mounted，其它的生命周期事件，例如：created，updated 等都可以监听。</p>
+<h2 id="12、谈谈你对-keep-alive-的了解？"><a href="#12、谈谈你对-keep-alive-的了解？" class="headerlink" title="12、谈谈你对 keep-alive 的了解？"></a>12、谈谈你对 keep-alive 的了解？</h2><p>keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，避免重新渲染 ，其有以下特性：</p>
+<ul>
+<li>一般结合路由和动态组件一起使用，用于缓存组件；</li>
+<li>提供 include 和 exclude 属性，两者都支持字符串或正则表达式， include 表示只有名称匹配的组件会被缓存，exclude 表示任何名称匹配的组件都不会被缓存 ，其中 exclude 的优先级比 include 高；</li>
+<li>对应两个钩子函数 activated 和 deactivated ，当组件被激活时，触发钩子函数 activated，当组件被移除时，触发钩子函数 deactivated。</li>
+</ul>
+<h2 id="13、组件中-data-为什么是一个函数？"><a href="#13、组件中-data-为什么是一个函数？" class="headerlink" title="13、组件中 data 为什么是一个函数？"></a>13、组件中 data 为什么是一个函数？</h2><blockquote>
+<p>为什么组件中的 data 必须是一个函数，然后 return 一个对象，而 new Vue 实例里，data 可以直接是一个对象？</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// data</span></span><br><span class="line">data() &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">	message: <span class="string">"子组件"</span>,</span><br><span class="line">	childName:<span class="keyword">this</span>.name</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// new Vue</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line">  template: <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line">  components: &#123;App&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>因为组件是用来复用的，且 JS 里对象是引用关系，如果组件中 data 是一个对象，那么这样作用域没有隔离，子组件中的 data 属性值会相互影响，如果组件中 data 选项是一个函数，那么每个实例可以维护一份被返回对象的独立的拷贝，组件实例之间的 data 属性值不会互相影响；而 new Vue 的实例，是不会被复用的，因此不存在引用对象的问题。</p>
+<h2 id="14、v-model-的原理？"><a href="#14、v-model-的原理？" class="headerlink" title="14、v-model 的原理？"></a>14、v-model 的原理？</h2><p>我们在 vue 项目中主要使用 v-model 指令在表单 input、textarea、select 等元素上创建双向数据绑定，我们知道 v-model 本质上不过是语法糖，v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件：</p>
+<ul>
+<li>text 和 textarea 元素使用 value 属性和 input 事件；</li>
+<li>checkbox 和 radio 使用 checked 属性和 change 事件；</li>
+<li>select 字段将 value 作为 prop 并将 change 作为事件。</li>
+</ul>
+<p>以 input  表单元素为例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">'something'</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">相当于</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-bind:value</span>=<span class="string">"something"</span> <span class="attr">v-on:input</span>=<span class="string">"something = $event.target.value"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果在自定义组件中，v-model 默认会利用名为 value 的 prop 和名为 input 的事件，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">父组件：</span><br><span class="line">&lt;ModelChild v-model=<span class="string">"message"</span>&gt;&lt;<span class="regexp">/ModelChild&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">子组件：</span></span><br><span class="line"><span class="regexp">&lt;div&gt;&#123;&#123;value&#125;&#125;&lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">props:&#123;</span><br><span class="line">    value: <span class="built_in">String</span></span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  test1()&#123;</span><br><span class="line">     <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, <span class="string">'小红'</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="15、Vue-组件间通信有哪几种方式？"><a href="#15、Vue-组件间通信有哪几种方式？" class="headerlink" title="15、Vue 组件间通信有哪几种方式？"></a>15、Vue 组件间通信有哪几种方式？</h2><p>Vue 组件间通信是面试常考的知识点之一，这题有点类似于开放题，你回答出越多方法当然越加分，表明你对 Vue 掌握的越熟练。Vue 组件间通信只要指以下 3 类通信：父子组件通信、隔代组件通信、兄弟组件通信，下面我们分别介绍每种通信方式且会说明此种方法可适用于哪类组件间通信。</p>
+<p><strong>（1）props / $emit  适用 父子组件通信</strong></p>
+<p>这种方法是 Vue 组件的基础，相信大部分同学耳闻能详，所以此处就不举例展开介绍。</p>
+<p><strong>（2）ref 与 $parent / $children 适用 父子组件通信</strong></p>
+<ul>
+<li><code>ref</code>：如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例</li>
+<li><code>$parent</code> / <code>$children</code>：访问父 / 子实例</li>
+</ul>
+<p><strong>（3）EventBus （$emit / $on）  适用于 父子、隔代、兄弟组件通信</strong></p>
+<p>这种方法通过一个空的 Vue 实例作为中央事件总线（事件中心），用它来触发事件和监听事件，从而实现任何组件间的通信，包括父子、隔代、兄弟组件。</p>
+<p><strong>（4）$attrs/$listeners 适用于 隔代组件通信</strong></p>
+<ul>
+<li><code>$attrs</code>：包含了父作用域中不被 prop 所识别 (且获取) 的特性绑定 ( class 和 style 除外 )。当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定 ( class 和 style 除外 )，并且可以通过 <code>v-bind=&quot;$attrs&quot;</code> 传入内部组件。通常配合 inheritAttrs 选项一起使用。</li>
+<li><code>$listeners</code>：包含了父作用域中的 (不含 .native 修饰器的)  v-on 事件监听器。它可以通过 <code>v-on=&quot;$listeners&quot;</code> 传入内部组件</li>
+</ul>
+<p><strong>（5）provide / inject 适用于 隔代组件通信</strong></p>
+<p>祖先组件中通过 provider 来提供变量，然后在子孙组件中通过 inject 来注入变量。 provide / inject API 主要解决了跨级组件间的通信问题，不过它的使用场景，主要是子组件获取上级组件的状态，跨级组件间建立了一种主动提供与依赖注入的关系。</p>
+<p><strong>（6）Vuex  适用于 父子、隔代、兄弟组件通信</strong></p>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。每一个 Vuex 应用的核心就是 store（仓库）。“store” 基本上就是一个容器，它包含着你的应用中大部分的状态 ( state )。</p>
+<ul>
+<li>Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。</li>
+<li>改变 store 中的状态的唯一途径就是显式地提交  (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化。</li>
+</ul>
+<h2 id="16、你使用过-Vuex-吗？"><a href="#16、你使用过-Vuex-吗？" class="headerlink" title="16、你使用过 Vuex 吗？"></a>16、你使用过 Vuex 吗？</h2><p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。每一个 Vuex 应用的核心就是 store（仓库）。“store” 基本上就是一个容器，它包含着你的应用中大部分的状态 ( state )。</p>
+<p>（1）Vuex 的状态存储是响应式的。当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。</p>
+<p>（2）改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。这样使得我们可以方便地跟踪每一个状态的变化。</p>
+<p>主要包括以下几个模块：</p>
+<ul>
+<li>State：定义了应用状态的数据结构，可以在这里设置默认的初始状态。</li>
+<li>Getter：允许组件从 Store 中获取数据，mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性。</li>
+<li>Mutation：是唯一更改 store 中状态的方法，且必须是同步函数。</li>
+<li>Action：用于提交 mutation，而不是直接变更状态，可以包含任意异步操作。</li>
+<li>Module：允许将单一的 Store 拆分为多个 store 且同时保存在单一的状态树中。</li>
+</ul>
+<h2 id="17、使用过-Vue-SSR-吗？说说-SSR？"><a href="#17、使用过-Vue-SSR-吗？说说-SSR？" class="headerlink" title="17、使用过 Vue SSR 吗？说说 SSR？"></a>17、使用过 Vue SSR 吗？说说 SSR？</h2><blockquote>
+<p>Vue.js 是构建客户端应用程序的框架。默认情况下，可以在浏览器中输出 Vue 组件，进行生成 DOM 和操作 DOM。然而，也可以将同一个组件渲染为服务端的 HTML 字符串，将它们直接发送到浏览器，最后将这些静态标记”激活”为客户端上完全可交互的应用程序。</p>
+<p>即：SSR大致的意思就是vue在客户端将标签渲染成的整个 html 片段的工作在服务端完成，服务端形成的html 片段直接返回给客户端这个过程就叫做服务端渲染。</p>
+</blockquote>
+<p><strong>服务端渲染 SSR 的优缺点如下：</strong></p>
+<p><strong>（1）服务端渲染的优点：</strong></p>
+<ul>
+<li>更好的 SEO： 因为 SPA 页面的内容是通过 Ajax 获取，而搜索引擎爬取工具并不会等待 Ajax 异步完成后再抓取页面内容，所以在 SPA 中是抓取不到页面通过 Ajax 获取到的内容；而 SSR 是直接由服务端返回已经渲染好的页面（数据已经包含在页面中），所以搜索引擎爬取工具可以抓取渲染好的页面；</li>
+<li>更快的内容到达时间（首屏加载更快）： SPA 会等待所有 Vue 编译后的 js 文件都下载完成后，才开始进行页面的渲染，文件下载等需要一定的时间等，所以首屏渲染需要一定的时间；SSR 直接由服务端渲染好页面直接返回显示，无需等待下载 js 文件及再去渲染等，所以 SSR 有更快的内容到达时间；</li>
+</ul>
+<p><strong>（2) 服务端渲染的缺点：</strong></p>
+<ul>
+<li>更多的开发条件限制： 例如服务端渲染只支持 beforCreate 和 created 两个钩子函数，这会导致一些外部扩展库需要特殊处理，才能在服务端渲染应用程序中运行；并且与可以部署在任何静态文件服务器上的完全静态单页面应用程序 SPA 不同，服务端渲染应用程序，需要处于 Node.js server 运行环境；</li>
+<li>更多的服务器负载：在 Node.js  中渲染完整的应用程序，显然会比仅仅提供静态文件的  server 更加大量占用CPU 资源 (CPU-intensive - CPU 密集)，因此如果你预料在高流量环境 ( high traffic ) 下使用，请准备相应的服务器负载，并明智地采用缓存策略。</li>
+</ul>
+<p>如果没有 SSR 开发经验的同学，可以参考本文作者的另一篇 SSR 的实践文章<a href="https://juejin.im/post/5cb6c36e6fb9a068af37aa35" target="_blank" rel="noopener">《Vue SSR 踩坑之旅》</a>，里面 SSR 项目搭建以及附有项目源码。</p>
+<h2 id="18、vue-router-路由模式有几种？"><a href="#18、vue-router-路由模式有几种？" class="headerlink" title="18、vue-router 路由模式有几种？"></a>18、vue-router 路由模式有几种？</h2><p>vue-router 有 3 种路由模式：hash、history、abstract，对应的源码如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (mode) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">'history'</span>:</span><br><span class="line">	<span class="keyword">this</span>.history = <span class="keyword">new</span> HTML5History(<span class="keyword">this</span>, options.base)</span><br><span class="line">	<span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="string">'hash'</span>:</span><br><span class="line">	<span class="keyword">this</span>.history = <span class="keyword">new</span> HashHistory(<span class="keyword">this</span>, options.base, <span class="keyword">this</span>.fallback)</span><br><span class="line">	<span class="keyword">break</span></span><br><span class="line">  <span class="keyword">case</span> <span class="string">'abstract'</span>:</span><br><span class="line">	<span class="keyword">this</span>.history = <span class="keyword">new</span> AbstractHistory(<span class="keyword">this</span>, options.base)</span><br><span class="line">	<span class="keyword">break</span></span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">	<span class="keyword">if</span> (process.env.NODE_ENV !== <span class="string">'production'</span>) &#123;</span><br><span class="line">	  assert(<span class="literal">false</span>, <span class="string">`invalid mode: <span class="subst">$&#123;mode&#125;</span>`</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，3 种路由模式的说明如下：</p>
+<ul>
+<li>hash:  使用 URL hash 值来作路由。支持所有浏览器，包括不支持 HTML5 History Api 的浏览器；</li>
+<li>history :  依赖 HTML5 History API 和服务器配置。具体可以查看 HTML5 History 模式；</li>
+<li>abstract :  支持所有 JavaScript 运行环境，如 Node.js 服务器端。如果发现没有浏览器的 API，路由会自动强制进入这个模式.</li>
+</ul>
+<h2 id="19、能说下-vue-router-中常用的-hash-和-history-路由模式实现原理吗？"><a href="#19、能说下-vue-router-中常用的-hash-和-history-路由模式实现原理吗？" class="headerlink" title="19、能说下 vue-router 中常用的 hash 和 history 路由模式实现原理吗？"></a>19、能说下 vue-router 中常用的 hash 和 history 路由模式实现原理吗？</h2><p><strong>（1）hash 模式的实现原理</strong></p>
+<p>早期的前端路由的实现就是基于 location.hash 来实现的。其实现原理很简单，location.hash 的值就是 URL 中 # 后面的内容。比如下面这个网站，它的 location.hash 的值为 ‘#search’：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.word.com#search</span><br></pre></td></tr></table></figure>
+<p>hash  路由模式的实现主要是基于下面几个特性：</p>
+<ul>
+<li>URL 中 hash 值只是客户端的一种状态，也就是说当向服务器端发出请求时，hash 部分不会被发送；</li>
+<li>hash 值的改变，都会在浏览器的访问历史中增加一个记录。因此我们能通过浏览器的回退、前进按钮控制hash 的切换；</li>
+<li>可以通过 a 标签，并设置 href 属性，当用户点击这个标签后，URL 的 hash 值会发生改变；或者使用  JavaScript 来对 loaction.hash 进行赋值，改变 URL 的 hash 值；</li>
+<li>我们可以使用 hashchange 事件来监听 hash 值的变化，从而对页面进行跳转（渲染）。</li>
+</ul>
+<p><strong>（2）history 模式的实现原理</strong></p>
+<p>HTML5 提供了 History API 来实现 URL 的变化。其中做最主要的 API 有以下两个：history.pushState() 和 history.repalceState()。这两个 API 可以在不进行刷新的情况下，操作浏览器的历史纪录。唯一不同的是，前者是新增一个历史记录，后者是直接替换当前的历史记录，如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.history.pushState(<span class="literal">null</span>, <span class="literal">null</span>, path);</span><br><span class="line"><span class="built_in">window</span>.history.replaceState(<span class="literal">null</span>, <span class="literal">null</span>, path);</span><br></pre></td></tr></table></figure>
+<p>history 路由模式的实现主要基于存在下面几个特性：</p>
+<ul>
+<li>pushState 和 repalceState 两个 API 来操作实现 URL 的变化 ；</li>
+<li>我们可以使用 popstate  事件来监听 url 的变化，从而对页面进行跳转（渲染）；</li>
+<li>history.pushState() 或 history.replaceState() 不会触发 popstate 事件，这时我们需要手动触发页面跳转（渲染）。</li>
+</ul>
+<h2 id="20、什么是-MVVM？"><a href="#20、什么是-MVVM？" class="headerlink" title="20、什么是 MVVM？"></a>20、什么是 MVVM？</h2><p>Model–View–ViewModel （MVVM） 是一个软件架构设计模式，由微软 WPF 和 Silverlight 的架构师 Ken Cooper 和 Ted Peters 开发，是一种简化用户界面的事件驱动编程方式。由 John Gossman（同样也是 WPF 和 Silverlight 的架构师）于2005年在他的博客上发表</p>
+<p>MVVM 源自于经典的 Model–View–Controller（MVC）模式  ，MVVM 的出现促进了前端开发与后端业务逻辑的分离，极大地提高了前端开发效率，MVVM 的核心是 ViewModel 层，它就像是一个中转站（value converter），负责转换 Model 中的数据对象来让数据变得更容易管理和使用，该层向上与视图层进行双向数据绑定，向下与 Model 层通过接口请求进行数据交互，起呈上启下作用。如下图所示：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/3.png" alt="3"></p>
+<p>（1）View 层</p>
+<p>View 是视图层，也就是用户界面。前端主要由 HTML 和 CSS 来构建 。</p>
+<p>（2）Model 层</p>
+<p>Model 是指数据模型，泛指后端进行的各种业务逻辑处理和数据操控，对于前端来说就是后端提供的 api 接口。</p>
+<p>（3）ViewModel 层</p>
+<p>ViewModel 是由前端开发人员组织生成和维护的视图数据层。在这一层，前端开发者对从后端获取的 Model 数据进行转换处理，做二次封装，以生成符合 View 层使用预期的视图数据模型。需要注意的是 ViewModel 所封装出来的数据模型包括视图的状态和行为两部分，而 Model 层的数据模型是只包含状态的，比如页面的这一块展示什么，而页面加载进来时发生什么，点击这一块发生什么，这一块滚动时发生什么这些都属于视图行为（交互），视图状态和行为都封装在了 ViewModel 里。这样的封装使得 ViewModel 可以完整地去描述 View 层。</p>
+<p>MVVM 框架实现了双向绑定，这样 ViewModel 的内容会实时展现在 View 层，前端开发者再也不必低效又麻烦地通过操纵 DOM 去更新视图，MVVM 框架已经把最脏最累的一块做好了，我们开发者只需要处理和维护 ViewModel，更新数据视图就会自动得到相应更新。这样 View 层展现的不是 Model 层的数据，而是 ViewModel 的数据，由 ViewModel 负责与 Model 层交互，这就完全解耦了 View 层和 Model 层，这个解耦是至关重要的，它是前后端分离方案实施的重要一环。</p>
+<p>我们以下通过一个 Vue 实例来说明 MVVM 的具体实现，有 Vue 开发经验的同学应该一目了然：</p>
+<p>（1）View 层</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"showMessage()"</span>&gt;</span>Click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>（2）ViewModel 层</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;  <span class="comment">// 用于描述视图状态   </span></span><br><span class="line">        message: <span class="string">'Hello Vue!'</span>, </span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;  <span class="comment">// 用于描述视图行为  </span></span><br><span class="line">        showMessage()&#123;</span><br><span class="line">            <span class="keyword">let</span> vm = <span class="keyword">this</span>;</span><br><span class="line">            alert(vm.message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">        <span class="keyword">let</span> vm = <span class="keyword">this</span>;</span><br><span class="line">        <span class="comment">// Ajax 获取 Model 层的数据</span></span><br><span class="line">        ajax(&#123;</span><br><span class="line">            url: <span class="string">'/your/server/data/api'</span>,</span><br><span class="line">            success(res)&#123;</span><br><span class="line">                vm.message = res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>（3） Model 层</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"url"</span>: <span class="string">"/your/server/data/api"</span>,</span><br><span class="line">    <span class="string">"res"</span>: &#123;</span><br><span class="line">        <span class="string">"success"</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"IoveC"</span>,</span><br><span class="line">        <span class="string">"domain"</span>: <span class="string">"www.cnblogs.com"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="21、Vue-是如何实现数据双向绑定的？"><a href="#21、Vue-是如何实现数据双向绑定的？" class="headerlink" title="21、Vue 是如何实现数据双向绑定的？"></a>21、Vue 是如何实现数据双向绑定的？</h2><p>Vue 数据双向绑定主要是指：数据变化更新视图，视图变化更新数据，如下图所示：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/4.png" alt="4"></p>
+<p>即：</p>
+<ul>
+<li>输入框内容变化时，Data 中的数据同步变化。即 View =&gt; Data 的变化。</li>
+<li>Data 中的数据变化时，文本节点的内容同步变化。即 Data =&gt; View 的变化。</li>
+</ul>
+<p>其中，View 变化更新 Data ，可以通过事件监听的方式来实现，所以 Vue 的数据双向绑定的工作主要是如何根据 Data 变化更新 View。</p>
+<p>Vue 主要通过以下 4 个步骤来实现数据双向绑定的：</p>
+<p>实现一个监听器 Observer：对数据对象进行遍历，包括子属性对象的属性，利用 Object.defineProperty() 对属性都加上 setter 和 getter。这样的话，给这个对象的某个值赋值，就会触发 setter，那么就能监听到了数据变化。</p>
+<p>实现一个解析器 Compile：解析 Vue 模板指令，将模板中的变量都替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，调用更新函数进行数据更新。</p>
+<p>实现一个订阅者 Watcher：Watcher 订阅者是 Observer 和 Compile 之间通信的桥梁 ，主要的任务是订阅 Observer 中的属性值变化的消息，当收到属性值变化的消息时，触发解析器 Compile 中对应的更新函数。</p>
+<p>实现一个订阅器 Dep：订阅器采用 发布-订阅 设计模式，用来收集订阅者 Watcher，对监听器 Observer 和 订阅者 Watcher 进行统一管理。</p>
+<p>以上四个步骤的流程图表示如下，如果有同学理解不大清晰的，可以查看作者专门介绍数据双向绑定的文章<a href="https://juejin.im/post/5d421bcf6fb9a06af23853f1" target="_blank" rel="noopener">《0 到 1 掌握：Vue 核心之数据双向绑定》</a>，有进行详细的讲解、以及代码 demo 示例。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/5.jpg" alt="5"></p>
+<h2 id="22、Vue-框架怎么实现对象和数组的监听？"><a href="#22、Vue-框架怎么实现对象和数组的监听？" class="headerlink" title="22、Vue 框架怎么实现对象和数组的监听？"></a>22、Vue 框架怎么实现对象和数组的监听？</h2><p>如果被问到 Vue 怎么实现数据双向绑定，大家肯定都会回答 通过 Object.defineProperty() 对数据进行劫持，但是  Object.defineProperty() 只能对属性进行数据劫持，不能对整个对象进行劫持，同理无法对数组进行劫持，但是我们在使用 Vue 框架中都知道，Vue 能检测到对象和数组（部分方法的操作）的变化，那它是怎么实现的呢？我们查看相关代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Observe a list of Array items.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">observeArray (items: <span class="built_in">Array</span>&lt;any&gt;) &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, l = items.length; i &lt; l; i++) &#123;</span><br><span class="line">    observe(items[i])  <span class="comment">// observe 功能为监测数据的变化</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 对属性进行递归遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> childOb = !shallow &amp;&amp; observe(val) <span class="comment">// observe 功能为监测数据的变化</span></span><br></pre></td></tr></table></figure>
+<p>通过以上 Vue 源码部分查看，我们就能知道 Vue 框架是通过遍历数组 和递归遍历对象，从而达到利用  Object.defineProperty() 也能对对象和数组（部分方法的操作）进行监听。</p>
+<h2 id="23、Proxy-与-Object-defineProperty-优劣对比"><a href="#23、Proxy-与-Object-defineProperty-优劣对比" class="headerlink" title="23、Proxy 与 Object.defineProperty 优劣对比"></a>23、Proxy 与 Object.defineProperty 优劣对比</h2><p><strong>Proxy 的优势如下:</strong></p>
+<ul>
+<li>Proxy 可以直接监听对象而非属性；</li>
+<li>Proxy 可以直接监听数组的变化；</li>
+<li>Proxy 有多达 13 种拦截方法,不限于 apply、ownKeys、deleteProperty、has 等等是 Object.defineProperty 不具备的；</li>
+<li>Proxy 返回的是一个新对象,我们可以只操作新的对象达到目的,而 Object.defineProperty 只能遍历对象属性直接修改；</li>
+<li>Proxy 作为新标准将受到浏览器厂商重点持续的性能优化，也就是传说中的新标准的性能红利；</li>
+</ul>
+<p><strong>Object.defineProperty 的优势如下:</strong></p>
+<ul>
+<li>兼容性好，支持 IE9，而 Proxy 的存在浏览器兼容性问题,而且无法用 polyfill 磨平，因此 Vue 的作者才声明需要等到下个大版本( 3.0 )才能用 Proxy 重写。</li>
+</ul>
+<h2 id="24、Vue-怎么用-vm-set-解决对象新增属性不能响应的问题-？"><a href="#24、Vue-怎么用-vm-set-解决对象新增属性不能响应的问题-？" class="headerlink" title="24、Vue 怎么用 vm.$set() 解决对象新增属性不能响应的问题 ？"></a>24、Vue 怎么用 vm.$set() 解决对象新增属性不能响应的问题 ？</h2><p>受现代 JavaScript 的限制 ，Vue <strong>无法检测到对象属性的添加或删除</strong>。由于 Vue 会在初始化实例时对属性执行 getter/setter 转化，所以属性必须在 data 对象上存在才能让 Vue 将它转换为响应式的。但是 Vue 提供了 <code>Vue.set (object, propertyName, value) / vm.$set (object, propertyName, value)</code>  来实现为对象添加响应式属性，那框架本身是如何实现的呢？</p>
+<p>我们查看对应的 Vue 源码：<code>vue/src/core/instance/index.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">set</span> (<span class="params">target: Array&lt;any&gt; | Object, key: any, val: any</span>): <span class="title">any</span> </span>&#123;</span><br><span class="line">  <span class="comment">// target 为数组  </span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(target) &amp;&amp; isValidArrayIndex(key)) &#123;</span><br><span class="line">    <span class="comment">// 修改数组的长度, 避免索引&gt;数组长度导致splcie()执行有误</span></span><br><span class="line">    target.length = <span class="built_in">Math</span>.max(target.length, key)</span><br><span class="line">    <span class="comment">// 利用数组的splice变异方法触发响应式  </span></span><br><span class="line">    target.splice(key, <span class="number">1</span>, val)</span><br><span class="line">    <span class="keyword">return</span> val</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// key 已经存在，直接修改属性值  </span></span><br><span class="line">  <span class="keyword">if</span> (key <span class="keyword">in</span> target &amp;&amp; !(key <span class="keyword">in</span> <span class="built_in">Object</span>.prototype)) &#123;</span><br><span class="line">    target[key] = val</span><br><span class="line">    <span class="keyword">return</span> val</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> ob = (target: any).__ob__</span><br><span class="line">  <span class="comment">// target 本身就不是响应式数据, 直接赋值</span></span><br><span class="line">  <span class="keyword">if</span> (!ob) &#123;</span><br><span class="line">    target[key] = val</span><br><span class="line">    <span class="keyword">return</span> val</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 对属性进行响应式处理</span></span><br><span class="line">  defineReactive(ob.value, key, val)</span><br><span class="line">  ob.dep.notify()</span><br><span class="line">  <span class="keyword">return</span> val</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们阅读以上源码可知，vm.$set 的实现原理是：</p>
+<ul>
+<li>如果目标是数组，直接使用数组的 splice 方法触发相应式；</li>
+<li>如果目标是对象，会先判读属性是否存在、对象是否是响应式，最终如果要对属性进行响应式处理，则是通过调用   defineReactive 方法进行响应式处理（ defineReactive 方法就是  Vue 在初始化对象时，给对象属性采用 Object.defineProperty 动态添加 getter 和 setter 的功能所调用的方法）</li>
+</ul>
+<h2 id="25、虚拟-DOM-的优缺点？"><a href="#25、虚拟-DOM-的优缺点？" class="headerlink" title="25、虚拟 DOM 的优缺点？"></a>25、虚拟 DOM 的优缺点？</h2><p><strong>优点：</strong></p>
+<ul>
+<li><strong>保证性能下限：</strong> 框架的虚拟 DOM 需要适配任何上层 API 可能产生的操作，它的一些 DOM 操作的实现必须是普适的，所以它的性能并不是最优的；但是比起粗暴的 DOM 操作性能要好很多，因此框架的虚拟 DOM 至少可以保证在你不需要手动优化的情况下，依然可以提供还不错的性能，即保证性能的下限；</li>
+<li><strong>无需手动操作 DOM：</strong> 我们不再需要手动去操作 DOM，只需要写好 View-Model 的代码逻辑，框架会根据虚拟 DOM 和 数据双向绑定，帮我们以可预期的方式更新视图，极大提高我们的开发效率；</li>
+<li><strong>跨平台：</strong> 虚拟 DOM 本质上是 JavaScript 对象,而 DOM 与平台强相关，相比之下虚拟 DOM 可以进行更方便地跨平台操作，例如服务器渲染、weex 开发等等。</li>
+</ul>
+<p><strong>缺点:</strong></p>
+<ul>
+<li><strong>无法进行极致优化：</strong> 虽然虚拟 DOM + 合理的优化，足以应对绝大部分应用的性能需求，但在一些性能要求极高的应用中虚拟 DOM 无法进行针对性的极致优化。</li>
+</ul>
+<h2 id="26、虚拟-DOM-实现原理？"><a href="#26、虚拟-DOM-实现原理？" class="headerlink" title="26、虚拟 DOM 实现原理？"></a>26、虚拟 DOM 实现原理？</h2><p>虚拟 DOM 的实现原理主要包括以下 3 部分：</p>
+<ul>
+<li>用 JavaScript 对象模拟真实 DOM 树，对真实 DOM 进行抽象；</li>
+<li>diff 算法 — 比较两棵虚拟 DOM 树的差异；</li>
+<li>pach 算法 — 将两个虚拟 DOM 对象的差异应用到真正的 DOM 树。</li>
+</ul>
+<p>如果对以上 3 个部分还不是很了解的同学，可以查看本文作者写的另一篇详解虚拟 DOM 的文章《<a href="https://juejin.im/post/5d36cc575188257aea108a74#heading-14" target="_blank" rel="noopener">深入剖析：Vue核心之虚拟DOM</a>》</p>
+<h2 id="27、Vue-中的-key-有什么作用？"><a href="#27、Vue-中的-key-有什么作用？" class="headerlink" title="27、Vue 中的 key 有什么作用？"></a>27、Vue 中的 key 有什么作用？</h2><p>key 是为 Vue 中 vnode 的唯一标记，通过这个 key，我们的 diff 操作可以更准确、更快速。Vue 的 diff 过程可以概括为：oldCh 和 newCh 各有两个头尾的变量 oldStartIndex、oldEndIndex 和 newStartIndex、newEndIndex，它们会新节点和旧节点会进行两两对比，即一共有4种比较方式：newStartIndex 和oldStartIndex 、newEndIndex 和  oldEndIndex 、newStartIndex 和 oldEndIndex 、newEndIndex 和 oldStartIndex，如果以上 4 种比较都没匹配，如果设置了key，就会用 key 再进行比较，在比较的过程中，遍历会往中间靠，一旦 StartIdx &gt; EndIdx 表明 oldCh 和 newCh 至少有一个已经遍历完了，就会结束比较。具体有无 key 的 diff 过程，可以查看作者写的另一篇详解虚拟 DOM 的文章《<a href="https://juejin.im/post/5d36cc575188257aea108a74#heading-14" target="_blank" rel="noopener">深入剖析：Vue核心之虚拟DOM</a>》</p>
+<p>所以 Vue 中 key 的作用是：key 是为 Vue 中 vnode 的唯一标记，通过这个 key，我们的 diff 操作可以更准确、更快速</p>
+<p><strong>更准确</strong>：因为带 key 就不是就地复用了，在 sameNode 函数 <code>a.key === b.key</code> 对比中可以避免就地复用的情况。所以会更加准确。</p>
+<p><strong>更快速</strong>：利用 key 的唯一性生成 map 对象来获取对应节点，比遍历方式更快，源码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createKeyToOldIdx</span> (<span class="params">children, beginIdx, endIdx</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i, key</span><br><span class="line">  <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line">  <span class="keyword">for</span> (i = beginIdx; i &lt;= endIdx; ++i) &#123;</span><br><span class="line">    key = children[i].key</span><br><span class="line">    <span class="keyword">if</span> (isDef(key)) map[key] = i</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> map</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="28、你有对-Vue-项目进行哪些优化？"><a href="#28、你有对-Vue-项目进行哪些优化？" class="headerlink" title="28、你有对 Vue 项目进行哪些优化？"></a>28、你有对 Vue 项目进行哪些优化？</h2><p>如果没有对 Vue 项目没有进行过优化总结的同学，可以参考本文作者的另一篇文章<a href="https://juejin.im/post/5d548b83f265da03ab42471d" target="_blank" rel="noopener">《 Vue 项目性能优化 — 实践指南 》</a>，文章主要介绍从 3 个大方面，22 个小方面详细讲解如何进行 Vue 项目的优化。</p>
+<p><strong>（1）代码层面的优化</strong></p>
+<ul>
+<li>v-if 和 v-show 区分使用场景</li>
+<li>computed 和 watch  区分使用场景</li>
+<li>v-for 遍历必须为 item 添加 key，且避免同时使用 v-if</li>
+<li>长列表性能优化</li>
+<li>事件的销毁</li>
+<li>图片资源懒加载</li>
+<li>路由懒加载</li>
+<li>第三方插件的按需引入</li>
+<li>优化无限列表性能</li>
+<li>服务端渲染 SSR or 预渲染</li>
+</ul>
+<p><strong>（2）Webpack 层面的优化</strong></p>
+<ul>
+<li>Webpack 对图片进行压缩</li>
+<li>减少 ES6 转为 ES5 的冗余代码</li>
+<li>提取公共代码</li>
+<li>模板预编译</li>
+<li>提取组件的 CSS</li>
+<li>优化 SourceMap</li>
+<li>构建结果输出分析</li>
+<li>Vue 项目的编译优化</li>
+</ul>
+<p><strong>（3）基础的 Web 技术的优化</strong></p>
+<ul>
+<li>开启 gzip 压缩</li>
+<li>浏览器缓存</li>
+<li>CDN 的使用</li>
+<li>使用 Chrome Performance 查找性能瓶颈</li>
+</ul>
+<h2 id="29、对于即将到来的-vue3-0-特性你有什么了解的吗？"><a href="#29、对于即将到来的-vue3-0-特性你有什么了解的吗？" class="headerlink" title="29、对于即将到来的 vue3.0 特性你有什么了解的吗？"></a>29、对于即将到来的 vue3.0 特性你有什么了解的吗？</h2><p>Vue 3.0 正走在发布的路上，Vue 3.0 的目标是让 Vue 核心变得更小、更快、更强大，因此 Vue 3.0 增加以下这些新特性：</p>
+<p><strong>（1）监测机制的改变</strong></p>
+<p>3.0 将带来基于代理 Proxy 的 observer 实现，提供全语言覆盖的反应性跟踪。这消除了 Vue 2 当中基于 Object.defineProperty 的实现所存在的很多限制：</p>
+<ul>
+<li>只能监测属性，不能监测对象</li>
+<li>检测属性的添加和删除；</li>
+<li>检测数组索引和长度的变更；</li>
+<li>支持 Map、Set、WeakMap 和 WeakSet。</li>
+</ul>
+<p>新的 observer 还提供了以下特性：</p>
+<ul>
+<li>用于创建 observable 的公开 API。这为中小规模场景提供了简单轻量级的跨组件状态管理解决方案。</li>
+<li>默认采用惰性观察。在 2.x 中，不管反应式数据有多大，都会在启动时被观察到。如果你的数据集很大，这可能会在应用启动时带来明显的开销。在 3.x 中，只观察用于渲染应用程序最初可见部分的数据。</li>
+<li>更精确的变更通知。在 2.x 中，通过 Vue.set 强制添加新属性将导致依赖于该对象的 watcher 收到变更通知。在 3.x 中，只有依赖于特定属性的 watcher 才会收到通知。</li>
+<li>不可变的 observable：我们可以创建值的“不可变”版本（即使是嵌套属性），除非系统在内部暂时将其“解禁”。这个机制可用于冻结 prop 传递或 Vuex 状态树以外的变化。</li>
+<li>更好的调试功能：我们可以使用新的 renderTracked 和 renderTriggered 钩子精确地跟踪组件在什么时候以及为什么重新渲染。</li>
+</ul>
+<p><strong>（2）模板</strong></p>
+<p>模板方面没有大的变更，只改了作用域插槽，2.x 的机制导致作用域插槽变了，父组件会重新渲染，而 3.0 把作用域插槽改成了函数的方式，这样只会影响子组件的重新渲染，提升了渲染的性能。</p>
+<p>同时，对于 render 函数的方面，vue3.0 也会进行一系列更改来方便习惯直接使用 api 来生成 vdom 。</p>
+<p><strong>（3）对象式的组件声明方式</strong></p>
+<p>vue2.x 中的组件是通过声明的方式传入一系列 option，和 TypeScript 的结合需要通过一些装饰器的方式来做，虽然能实现功能，但是比较麻烦。3.0 修改了组件的声明方式，改成了类式的写法，这样使得和 TypeScript 的结合变得很容易。</p>
+<p>此外，vue 的源码也改用了 TypeScript 来写。其实当代码的功能复杂之后，必须有一个静态类型系统来做一些辅助管理。现在 vue3.0 也全面改用 TypeScript 来重写了，更是使得对外暴露的 api 更容易结合 TypeScript。静态类型系统对于复杂代码的维护确实很有必要。</p>
+<p><strong>（4）其它方面的更改</strong></p>
+<p>vue3.0 的改变是全面的，上面只涉及到主要的 3 个方面，还有一些其他的更改：</p>
+<ul>
+<li>支持自定义渲染器，从而使得 weex 可以通过自定义渲染器的方式来扩展，而不是直接 fork 源码来改的方式。</li>
+<li>支持 Fragment（多个根节点）和 Protal（在 dom 其他部分渲染组建内容）组件，针对一些特殊的场景做了处理。</li>
+<li>基于 treeshaking 优化，提供了更多的内置功能。</li>
+</ul>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/10/22/%E5%85%B6%E5%AE%83/%E4%BB%8E%E5%AE%9E%E9%99%85%E5%87%BA%E5%8F%91%EF%BC%8C%E5%89%8D%E7%AB%AF%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E9%9C%80%E6%B1%82%E9%97%AE%E9%A2%98%EF%BC%81/">
+                从实际出发，前端如何解决需要问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-10-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>移动端长按功能</p>
+<p>H5图片保存，一般是长按保存，所以，首先要实现一个长按功能。</p>
+<p>移动端使用<code>touchstart</code>和<code>touchend</code>来做长按功能，<code>prevent</code>阻止浏览器默认行为，浏览器很多事件有默认行为，不阻止默认行为的话，浏览器会执行它的默认行为，我们用 JavaScript 处理一个事件，通常不需要浏览器动作，所以阻止掉！<code>prevent</code>是vue中的修饰符，关于修饰符的更多内容，可以去这里看<a href="https://cn.vuejs.org/v2/guide/events.html" target="_blank" rel="noopener">事件修饰符</a>。</p>
+<p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">"code"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">src</span>=<span class="string">"@/images/cloudStallUp/xyhd_05@3x.png"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">touchstart.prevent</span>=<span class="string">"touchin"</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">touchend.prevent</span>=<span class="string">"cleartime"</span></span></span><br><span class="line"><span class="tag">  /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">touchin() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.Loop); <span class="comment">//再次清空定时器，防止重复注册定时器</span></span><br><span class="line">  <span class="keyword">this</span>.Loop = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// 这里长按后执行的操作</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个方法主要是用来将每次手指移出之后将计时器清零</span></span><br><span class="line">cleartime() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.Loop);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="实现一个dialog弹窗"><a href="#实现一个dialog弹窗" class="headerlink" title="实现一个dialog弹窗"></a>实现一个dialog弹窗</h2><p>UI框架基本都有自带的dialog弹窗，如果你的项目使用了某个UI框架，直接使用它的就行。如果你的项目没有使用UI框架，那么就很有必要自己实现一个dialog弹窗</p>
+<blockquote>
+<p>tips：不是所有项目都需要使用UI框架，如果项目非常简单，就不需要，原谅我这轮子党，喜欢自己造轮子，哪怕不好用！</p>
+</blockquote>
+<p>使用H5的<code>dialog</code>标签写弹窗。</p>
+<p>HTML</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dialog</span> <span class="attr">ref</span>=<span class="string">"dialog"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"saveImage"</span>&gt;</span>保存图片<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"closeDialog"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dialog</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>CSS</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@function</span> vw($px) &#123;</span><br><span class="line">    <span class="keyword">@return</span> ($px / <span class="number">750</span>) * <span class="number">100vw</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$c_dd: #dddddd;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: none;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  div &#123;</span><br><span class="line">    <span class="selector-tag">width</span>: <span class="selector-tag">vw</span>(750);</span><br><span class="line">    <span class="selector-tag">font-size</span>: <span class="selector-tag">vw</span>(30);</span><br><span class="line">    <span class="selector-tag">height</span>: <span class="selector-tag">vw</span>(80);</span><br><span class="line">    <span class="selector-tag">line-height</span>: <span class="selector-tag">vw</span>(80);</span><br><span class="line"></span><br><span class="line">    &amp;<span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">1px</span> solid $c_dd;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置背景色 */</span></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-pseudo">::backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.6</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JS</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">touchin() &#123;</span><br><span class="line">  clearInterval(<span class="keyword">this</span>.Loop); <span class="comment">//再次清空定时器，防止重复注册定时器</span></span><br><span class="line">  <span class="keyword">this</span>.Loop = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">// 显示</span></span><br><span class="line">   <span class="keyword">this</span>.$refs.dialog.showModal();</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;,</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>效果展示：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Tips/1.jpg" alt="1"></p>
+<p><code>dialog</code>标签的兼容性很有些问题</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/Tips/2.jpg" alt="2"></p>
+<p>so，我们需要一个<a href="https://github.com/GoogleChrome/dialog-polyfill" target="_blank" rel="noopener">polyfill</a></p>
+<p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install dialog-polyfill</span><br></pre></td></tr></table></figure>
+<p>在页面中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dialogPolyfill <span class="keyword">from</span> <span class="string">'dialog-polyfill'</span></span><br></pre></td></tr></table></figure>
+<p>新建一个<code>dialog-polyfill.scss</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">dialog</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: -moz-fit-content;</span><br><span class="line">  <span class="attribute">width</span>: -webkit-fit-content;</span><br><span class="line">  <span class="attribute">width</span>: fit-content;</span><br><span class="line">  <span class="attribute">height</span>: -moz-fit-content;</span><br><span class="line">  <span class="attribute">height</span>: -webkit-fit-content;</span><br><span class="line">  <span class="attribute">height</span>: fit-content;</span><br><span class="line">  <span class="attribute">margin</span>: auto;</span><br><span class="line">  <span class="attribute">border</span>: solid;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">1em</span>;</span><br><span class="line">  <span class="attribute">background</span>: white;</span><br><span class="line">  <span class="attribute">color</span>: black;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-pseudo">:not(</span><span class="selector-attr">[open]</span>) &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span> + <span class="selector-class">.backdrop</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgba</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">._dialog_overlay</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-class">.fixed</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">0</span>, -<span class="number">50%</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在页面中引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"@/style/dialog-polyfill.scss"</span>;</span><br></pre></td></tr></table></figure>
+<p>设置了polyfill 后，背景的css和原生的有所区别</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 支持dialog */</span></span><br><span class="line"><span class="selector-tag">dialog</span><span class="selector-pseudo">::backdrop</span> &#123; </span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* polyfill */</span></span><br><span class="line"><span class="selector-tag">dialog</span> + <span class="selector-class">.backdrop</span> &#123; </span><br><span class="line">  <span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用polyfill</p>
+<p>js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        dialog: <span class="literal">null</span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;,</span><br><span class="line">mounted() &#123;</span><br><span class="line">    <span class="keyword">this</span>.dialog =  <span class="keyword">this</span>.$refs.dialog;</span><br><span class="line">    dialogPolyfill.registerDialog(<span class="keyword">this</span>.dialog);</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">    touchin() &#123;</span><br><span class="line">      clearInterval(<span class="keyword">this</span>.Loop); <span class="comment">//再次清空定时器，防止重复注册定时器</span></span><br><span class="line">      <span class="keyword">this</span>.Loop = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">       <span class="keyword">this</span>.dialog.showModal();</span><br><span class="line">      &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="保存图片到手机相册"><a href="#保存图片到手机相册" class="headerlink" title="保存图片到手机相册"></a>保存图片到手机相册</h2><h3 id="使用a标签保存"><a href="#使用a标签保存" class="headerlink" title="使用a标签保存"></a>使用a标签保存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 首先考虑使用a标签下载</span></span><br><span class="line">saveImage(url) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!url) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"图片地址不正确"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> a = <span class="built_in">document</span>.createElement(<span class="string">"a"</span>);</span><br><span class="line">  a.href = url;</span><br><span class="line">  a.download = <span class="string">"xxxxx"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">document</span>.all) &#123;</span><br><span class="line">    a.click();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 兼容 Firfox</span></span><br><span class="line">    <span class="keyword">var</span> evt = <span class="built_in">document</span>.createEvent(<span class="string">"MouseEvents"</span>);</span><br><span class="line">    evt.initEvent(<span class="string">"click"</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">    a.dispatchEvent(evt);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.closeDialog();</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">closeDialog() &#123;</span><br><span class="line">  <span class="keyword">this</span>.dialog.close();</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>自测发现在pc有用，但是在手机端无用，此方案放弃</p>
+<h3 id="使用H5-API"><a href="#使用H5-API" class="headerlink" title="使用H5+ API"></a>使用H5+ API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">saveImage() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="built_in">window</span>.plus) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">/* eslint-disable */</span></span><br><span class="line">    plus.gallery.save(</span><br><span class="line">      <span class="keyword">this</span>.codeImg,</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        plus.nativeUI.alert(<span class="string">"保存图片到相册成功"</span>);</span><br><span class="line">      &#125;,</span><br><span class="line">      () =&gt; &#123;</span><br><span class="line">        plus.nativeUI.alert(<span class="string">"保存失败"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">    <span class="comment">/* eslint-enable */</span></span><br><span class="line">    <span class="keyword">this</span>.closeDialog();</span><br><span class="line">&#125;,</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+<p>写完后悲催的发现，我们最开始架构设计的时候没有使用这个，无奈下也放弃了。关于更多的相关内容可以去这里了解<a href="https://ask.dcloud.net.cn/article/89" target="_blank" rel="noopener">H5+ App开发入门指南</a></p>
+<h3 id="调用app方面原生的能力实现保存功能"><a href="#调用app方面原生的能力实现保存功能" class="headerlink" title="调用app方面原生的能力实现保存功能"></a>调用app方面原生的能力实现保存功能</h3><p>在mixin.js中封装</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用app方法</span></span><br><span class="line"><span class="comment">// androidName-&gt;安卓方法名</span></span><br><span class="line"><span class="comment">// iosName-&gt;ios方法名</span></span><br><span class="line"><span class="comment">// androidData-&gt;传给安卓的参数</span></span><br><span class="line"><span class="comment">// iosData-&gt;传给ios的参数</span></span><br><span class="line"><span class="comment">// h5Fuc-&gt;不属于安卓和ios时调用的函数</span></span><br><span class="line">callAPPFunction(androidName, iosName, androidData, iosData, h5Fuc) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">this</span>.UTILS.isAndroid:</span><br><span class="line">      <span class="built_in">window</span>.hitumedia_android_js[androidName](androidData);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="keyword">this</span>.UTILS.isIOS:</span><br><span class="line">      <span class="built_in">window</span>.webkit.messageHandlers[iosName].postMessage(iosData);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      h5Fuc;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>在main.js中使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入全局混入</span></span><br><span class="line"><span class="keyword">import</span> Mixin <span class="keyword">from</span> <span class="string">"@/utils/mixin.js"</span>;</span><br><span class="line">Vue.mixin(Mixin);</span><br></pre></td></tr></table></figure>
+<p>在页面使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      codeImg: <span class="built_in">require</span>(<span class="string">"@/images/cloudStallUp/xyhd_05@3x.png"</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;,</span><br><span class="line">...</span><br><span class="line">    saveImage() &#123;</span><br><span class="line">        <span class="keyword">const</span> url = location.href.split(<span class="string">"/"</span>)[<span class="number">2</span>];</span><br><span class="line">        <span class="comment">// 获取到图片地址，架构原因，我们没有图片服务器，所以暂时只能使用使用项目的地址了</span></span><br><span class="line">        <span class="keyword">const</span> postUrl = <span class="string">`http://<span class="subst">$&#123;url&#125;</span>/activity/<span class="subst">$&#123;<span class="keyword">this</span>.codeImg&#125;</span>`</span>;</span><br><span class="line">        <span class="keyword">this</span>.callAPPFunction(<span class="string">"onDownImgs"</span>, <span class="string">""</span>, postUrl, <span class="string">""</span>);</span><br><span class="line">        <span class="keyword">this</span>.closeDialog();</span><br><span class="line">    &#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>OK，完美实现需求。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>写完此功能，自测通过后，提交产品验收，然后！！！产品说：“貌似app中很少看见保存二维码的吧，这个功能不要了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">此功能不要了~~~~~~~~~~~~</span><br></pre></td></tr></table></figure></p>
+<p>从这个实际的例子，得出总结，前端如何解决需求问题：</p>
+<ul>
+<li>1、来一个需求后，一定要先和产品确定这个需求是否必须</li>
+<li>2、一定要和项目经理沟通好时间，如果预估某个时间段完不成，一定要提前说明白</li>
+<li>3、不要高估自己的能力，不会的一定不能说会，会的东西，得要留出变量的时间</li>
+<li>4、临时需求不要接，让产品去和项目经理沟通</li>
+<li>5、开发的时候，要镇定，某一个技术在pc有用，在移动没用或者是在某一个手机没用的情况很正常，换一个技术就行了</li>
+<li>6、想法要开阔，某些web端实现不了的功能，就让APP端去做，口才一定要练好</li>
+<li>7、不要发怒，不要发怒，一个功能开发完，不要了也很正常，千万不要发怒，fuck!</li>
+</ul>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/29/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/31/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="SVG超简单实现豆瓣loading动画"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>SVG超简单实现豆瓣loading动画 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/02/Css/SVG%E8%B6%85%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E8%B1%86%E7%93%A3loading%E5%8A%A8%E7%94%BB/">
+                SVG超简单实现豆瓣loading动画
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/css/">css</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>这段时间在豆瓣上看有什么剧的时候，发现豆瓣的loading动画还挺棒的。所以决定模仿着来写一个。</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/88.gif" alt="效果图"></p>
+<p>我通过<code>CSS3</code>配合<code>SVG</code>来完成这次模仿豆瓣的loading动画。没用过<code>SVG</code>的也不用慌，我下面会写出相应的属性方便你去理解。因为这个真的超简单。那么我们就直奔主题吧</p>
+<h1 id="初始化svg"><a href="#初始化svg" class="headerlink" title="初始化svg"></a>初始化svg</h1><p>我们需要先完成一个静态的<code>笑脸</code></p>
+<p>始化SVG视图的大小</p>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我指定了一个宽高都为<code>100px</code>的区域，<code>width=”100”</code>和<code>width=”100px”</code>是等价的。</p>
+<h1 id="画嘴巴"><a href="#画嘴巴" class="headerlink" title="画嘴巴"></a>画嘴巴</h1><p>我们把<code>嘴巴</code>给画出来，在<code>svg</code>内先画一个圆</p>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"mouth"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>cx</code> 和 <code>cy</code> 属性定义圆点的 <code>x</code> 和 <code>y</code> 坐标。</p>
+<p><strong>看到浏览器上面多了一个填充的黑色圆点</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/89.png" alt="原型"></p>
+<p>接下来我们给我们的嘴巴加上<code>css</code>样式</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mouth</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;   <span class="comment">/* transform动画时以自身中心作为基点 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对应的属性</p>
+<table>
+<thead>
+<tr>
+<th>css属性</th>
+<th>说明</th>
+<th>此处</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fill</td>
+<td>填充颜色</td>
+<td>none(不填充)</td>
+</tr>
+<tr>
+<td>stroke</td>
+<td>轮廓的颜色</td>
+<td>#00B51D</td>
+</tr>
+<tr>
+<td>stroke-width</td>
+<td>轮廓的宽度</td>
+<td>5</td>
+</tr>
+<tr>
+<td>stroke-linecap</td>
+<td>开放路径两端的形状</td>
+<td>round</td>
+</tr>
+<tr>
+<td>stroke-dasharray</td>
+<td>创建虚线</td>
+<td>44, 44</td>
+</tr>
+<tr>
+<td>transform-origin</td>
+<td>旋转元素的基点位置</td>
+<td>center(自身中心)</td>
+</tr>
+</tbody>
+</table>
+<p>这里重点讲一下<code>stroke-dasharray</code>，它的属性值可为<code>none</code>、<code>&lt;dasharray&gt;</code>和<code>inherit</code>。</p>
+<p><code>&lt;dasharray&gt;</code>它是一个<code>&lt;length&gt;</code>和<code>&lt;percentage&gt;</code>数列，数与数之间用逗号或者空白隔开，指定短划线和缺口的长度。</p>
+<blockquote>
+<p>一个参数时： 其实是表示虚线长度和每段虚线之间的间距<br>  两个参数或者多个参数时：一个表示长度，一个表示间距</p>
+</blockquote>
+<ul>
+<li>stroke-dasharray = ‘10’ 表示：虚线长<code>10</code>，间距<code>10</code>，然后重复 虚线长<code>10</code>，间距<code>10</code></li>
+<li>stroke-dasharray = ‘10, 5’ 表示：虚线长<code>10</code>，间距<code>5</code>，然后重复 虚线长<code>10</code>，间距<code>5</code></li>
+<li>stroke-dasharray = ‘20, 10, 5’ 表示：虚线长<code>20</code>，间距<code>10</code>，虚线长<code>5</code>，接着是间距<code>20</code>，虚线<code>10</code>，间距<code>5</code>，之后开始如此循环</li>
+</ul>
+<p><strong>根据圆的周长公式L=2πr，圆的半径r=14，所以L=87.96452≈88，那么我们取虚线长度为44，间距44做一条虚线，刚好就是圆周长的一半。</strong></p>
+<p>可见此时我们的<code>嘴巴</code>部分已经完成了</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/90.png" alt="原型"></p>
+<h1 id="画眼睛"><a href="#画眼睛" class="headerlink" title="画眼睛"></a>画眼睛</h1><p>接下来开始画<code>眼睛</code>，我又画了一个<code>circle</code>。</p>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"eye"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="F:\图片库blog/picture_images/picture/css/91.png" alt="原型"></p>
+<p><strong>我们依然可以通过stroke-dasharray来画出一对眼睛</strong></p>
+<p>先把<code>嘴巴</code>注释掉，避免影响我们调试。</p>
+<p><strong>stroke-dasharray的虚线长度为0的时，则可以得到无数个点状的圆。根据上面圆的周长公式我们可以得到周长为88，那么我们每1/4个长度就为22，此时我们再把间距调整为66。此时两个点的垂直距离刚好为90度</strong></p>
+<p>接下来我们给我们的眼睛加上<code>css</code>样式</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.eye</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="F:\图片库blog/picture_images/picture/css/92.png" alt="原型"></p>
+<p>为了让嘴巴对齐，我们左旋转<code>45度</code>，给<code>eye</code>加上<code>transform</code>属性</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transform-origin</span>: center;</span><br><span class="line"><span class="attribute">transform</span>: rotate(-<span class="number">45deg</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="F:\图片库blog/picture_images/picture/css/93.png" alt="原型"></p>
+<p>这样子我们就完成了<code>眼睛</code>了</p>
+<h1 id="加动画"><a href="#加动画" class="headerlink" title="加动画"></a>加动画</h1><p>经过我无数遍慢放（一帧一帧）的观察豆瓣的加载动画，终于找到了规律（哭）。</p>
+<h2 id="嘴巴动画"><a href="#嘴巴动画" class="headerlink" title="嘴巴动画"></a>嘴巴动画</h2><p>加动画效果，这也是最激动的一步，我们先来看下<code>嘴巴</code>部分</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/94.gif" alt="原型"></p>
+<p>通过动画我们可以看出<code>嘴巴</code>部分是旋转了<code>两圈</code>的，并且在旋转<code>第一圈</code>的时候，两边的间距缩小为<code>1/4</code>，在<code>第二圈</code>的时候，间距恢复为<code>1/2</code>，且最后有一段的<code>停留时间</code>。</p>
+<p><strong>根据最后的一段停留时间和旋转两圈</strong></p>
+<p>我们可以通过<code>transform</code>完成，简单</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>第一圈的时候两边间距缩小为1/4，也就是此时stroke-dasharray的值为 44, 22，后续再恢复为1/2</strong></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">22</span>;   <span class="comment">/* 间距改为1/4 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;   <span class="comment">/* 间距恢复为1/2 */</span></span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>动画的运行速度为<strong>开始快，结束慢</strong>，所以我们使用<code>ease-out</code>作为<strong>贝塞尔曲线函数值</strong></p>
+<p>这样<code>嘴巴</code>的动画就完成了</p>
+<h2 id="眼睛动画"><a href="#眼睛动画" class="headerlink" title="眼睛动画"></a>眼睛动画</h2><p><img src="F:\图片库blog/picture_images/picture/css/95.gif" alt="原型"></p>
+<p>同样的，通过动画我们可以看出<code>眼睛</code>部分同样是旋转了<code>两圈</code>，并且在旋转<code>第一圈</code>的时候，两边的间距增大为<code>7/8</code>，在<code>第二圈</code>的时候，间距恢复为<code>3/4</code>，且最后有一段的<code>停留时间</code>。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> eyeAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">77</span>;    <span class="comment">/* 间距改为7/8 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">675deg</span>);  <span class="comment">/* 间距恢复为3/4 */</span></span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>动画的运行速度为<strong>开始和结束慢</strong>，所以我们使用<code>ease-in-out</code>作为<strong>贝塞尔曲线函数值</strong></p>
+<p>至此我们的<code>眼睛</code>动画也就完成了</p>
+<p>我们把两个动画整合起来，这样就完成了模仿豆瓣的loading动画了，特简单。</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/96.gif" alt="效果图"></p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><em>html</em></p>
+<figure class="highlight svg"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"100"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"mouth"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">class</span>=<span class="string">"eye"</span> <span class="attr">cx</span>=<span class="string">"50"</span> <span class="attr">cy</span>=<span class="string">"50"</span> <span class="attr">r</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">circle</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><em>css</em></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.mouth</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;   <span class="comment">/* transform动画时以自身中心作为基点 */</span></span><br><span class="line">    <span class="attribute">animation</span>: mounthAni <span class="number">2.3s</span> ease-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.eye</span> &#123;</span><br><span class="line">    <span class="attribute">fill</span>: none;</span><br><span class="line">    <span class="attribute">stroke</span>: <span class="number">#00B51D</span>;</span><br><span class="line">    <span class="attribute">stroke-width</span>: <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">stroke-linecap</span>: round;</span><br><span class="line">    <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    <span class="attribute">transform-origin</span>: center;</span><br><span class="line">    <span class="attribute">transform</span>: rotate(-<span class="number">45deg</span>);</span><br><span class="line">    <span class="attribute">animation</span>: eyeAni <span class="number">2.3s</span> ease-in-out infinite;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> mounthAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">22</span>;   <span class="comment">/* 间距改为1/4 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">44</span>, <span class="number">44</span>;   <span class="comment">/* 间距恢复为1/2 */</span></span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">720deg</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> eyeAni &#123;</span><br><span class="line">    <span class="selector-tag">40%</span> &#123;</span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">77</span>;    <span class="comment">/* 间距改为7/8 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">80%</span>, <span class="selector-tag">100%</span> &#123;</span><br><span class="line">        <span class="attribute">transform</span>: rotate(<span class="number">675deg</span>);  <span class="comment">/* 间距恢复为3/4 */</span></span><br><span class="line">        <span class="attribute">stroke-dasharray</span>: <span class="number">0</span>, <span class="number">66</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><code>CSS3</code>动画已足够强大，但是如果要实现上面那种间距可<code>变大变小</code>的动画效果，只用<code>CSS</code>的话我还是没有想到怎么实现，如果各位有方法的话欢迎评论告诉我😀，所以使用了<code>SVG</code>加<code>CSS</code>来完成，<code>眼睛</code>部分原本想过使用<code>animateMotion</code>来完成，奈何看了半天还是不会用🤣，所以就想着只用<code>CSS</code>的动画效果完成了这次的动画，没想到意外的简单，所以把方法分享给大家。整个loading动画都围绕着<code>stroke-dasharray</code>展开，用到的<code>SVG</code>属性真的是冰山一角，上面的内容如果有什么错误的话还望各位多多指教。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/css/">#css</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

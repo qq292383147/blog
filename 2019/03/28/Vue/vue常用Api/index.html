@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="vue常用API"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>vue常用API - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/28/Vue/vue%E5%B8%B8%E7%94%A8Api/">
+                vue常用API
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-28</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="1-全局配置"><a href="#1-全局配置" class="headerlink" title="1.全局配置"></a>1.全局配置</h2><blockquote>
+<p>全局配置在 <font color="#c7254e">Vue.config</font> 下，需要在启动应用之前配置</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"></span><br><span class="line">Vue.config.silent = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>1.silent: true | false 取消Vue所有日志与警告<br>2.devtools: true | false 是否允许 vue-devtools 检查代码，开发版本默认为 true，生产版本默认为 false。生产版本设为 true 可以启用检查。<br>  keyCodes: <code>{f1: 112}</code> 给 v-on 自定义键盘事件的键名修饰符<br>  productionTip: true | false 显示或者阻止 vue 启动时的提示</p>
+<h2 id="2-全局-API"><a href="#2-全局-API" class="headerlink" title="2. 全局 API"></a>2. 全局 API</h2><h3 id="1-Vue-extend"><a href="#1-Vue-extend" class="headerlink" title="1.Vue.extend({})"></a>1.Vue.extend({})</h3><blockquote>
+<p>参数是一个组件的配置对象，结果是一个类，实例化这个类用来创建Vue组件</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    template: <span class="string">'&lt;div&gt;&#123;&#123;text&#125;&#125;&lt;/div&gt;'</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">          text: <span class="string">'this is text'</span></span><br><span class="line">       &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 创建构造器</span></span><br><span class="line"> <span class="keyword">const</span> Child = Vue.extend(config);</span><br><span class="line"> <span class="keyword">const</span> child = <span class="keyword">new</span> Child();</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 将实例挂在到元素上</span></span><br><span class="line"> child.$mount(<span class="string">'#app'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="2-Vue-set-traget-key-value"><a href="#2-Vue-set-traget-key-value" class="headerlink" title="2.Vue.set(traget, key, value)"></a>2.Vue.set(traget, key, value)</h2><blockquote>
+<p>设置对象的属性，如果是响应式的，确保创建后也是响应式的，目标对象不能是一个 Vue 实例或 Vue 实例的根数据对象。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">     el:<span class="string">'#app'</span>,</span><br><span class="line">     data:&#123;</span><br><span class="line">         <span class="comment">// info 属性已存在</span></span><br><span class="line">         info:&#123;</span><br><span class="line">             name:<span class="string">'小明'</span>;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;);</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 给info添加一个性别属性</span></span><br><span class="line"> Vue.set(vm.info,<span class="string">'sex'</span>,<span class="string">'男'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="3-Vue-delete-target-key"><a href="#3-Vue-delete-target-key" class="headerlink" title="3.Vue.delete(target, key)"></a>3.Vue.delete(target, key)</h2><blockquote>
+<p>删除对象的属性，如果是响应式的，确保删除能触发更新视图</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm=<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        info:&#123;</span><br><span class="line">            name:<span class="string">'小明'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除 info 的 name 属性</span></span><br><span class="line">Vue.delete(vm.info, <span class="string">'name'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="4-Vue-component-id-definition"><a href="#4-Vue-component-id-definition" class="headerlink" title="4.Vue.component(id, [definition])"></a>4.Vue.component(id, [definition])</h2><blockquote>
+<p>注册或者获取全局组件</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注册组件，传入一个扩展过的构造器</span></span><br><span class="line">  Vue.component(<span class="string">'my-component'</span>, Vue.extend(&#123;&#125;))</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 注册组件，传入一个选项对象 (自动调用 Vue.extend)</span></span><br><span class="line">  Vue.component(<span class="string">'my-component'</span>, &#123;<span class="attr">tempalte</span>: <span class="string">'&lt;div&gt;&lt;/div&gt;'</span>, ...&#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 获取注册的组件 (始终返回构造器)</span></span><br><span class="line">  <span class="keyword">var</span> MyComponent = Vue.component(<span class="string">'my-component'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="5-Vue-use-plugin"><a href="#5-Vue-use-plugin" class="headerlink" title="5.Vue.use(plugin)"></a>5.Vue.use(plugin)</h2><blockquote>
+<p>安装 Vue 插件, 插件需要提供 install 方法</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.use(Vuex);</span><br></pre></td></tr></table></figure>
+<h2 id="3-实例属性与方法"><a href="#3-实例属性与方法" class="headerlink" title="3.实例属性与方法"></a>3.实例属性与方法</h2><blockquote>
+<p>Vue 实例暴露了一些有用的实例属性与方法，他们在创建实例时，写在配置对象中，创建实例后可以通过<br>添加前缀 <code>$</code> 后的属性名调用，以便与用户定义的属性区分， 例如： data、data、prop。</p>
+</blockquote>
+<h2 id="1-vm-parent"><a href="#1-vm-parent" class="headerlink" title="1.vm.$parent"></a>1.vm.$parent</h2><blockquote>
+<p>父实例，如果当前实例有的话。</p>
+</blockquote>
+<h2 id="2-vm-root"><a href="#2-vm-root" class="headerlink" title="2.vm.$root"></a>2.vm.$root</h2><blockquote>
+<p>当前组件树的根 Vue 实例。</p>
+</blockquote>
+<h2 id="3-vm-children"><a href="#3-vm-children" class="headerlink" title="3.vm.$children"></a>3.vm.$children</h2><blockquote>
+<p>当前实例的直接子组件</p>
+</blockquote>
+<h2 id="4-vm-slots"><a href="#4-vm-slots" class="headerlink" title="4.vm.slots"></a>4.vm.slots</h2><blockquote>
+<p>访问被插槽分发的内容 （子组件中获得插入的内容）</p>
+</blockquote>
+<h2 id="5-vm-refs"><a href="#5-vm-refs" class="headerlink" title="5.vm.$refs"></a>5.vm.$refs</h2><blockquote>
+<p>一个对象，持有已注册过 ref 的所有子组件。（父组件中对子组件设置）</p>
+</blockquote>
+<h2 id="6-vm-attrs"><a href="#6-vm-attrs" class="headerlink" title="6.vm.$attrs"></a>6.vm.$attrs</h2><blockquote>
+<p>包含了父作用域中不被认为 (且不预期为) props 的特性绑定 (class 和 style 除外)。当一个组件没有声明任何 props 时，这里会包含所有父作用域的绑定 (class 和 style 除外)，并且可以通过 v-bind=”​$attrs” 传入内部组件 （子组件中调用，得到父组件传入的没有在 props 属性中声明的属性）</p>
+</blockquote>
+<h2 id="7-vm-on-event-callback"><a href="#7-vm-on-event-callback" class="headerlink" title="7.vm.$on(event, callback)"></a>7.vm.$on(event, callback)</h2><blockquote>
+<p>监听当前实例（调用 on()的对象）上的自定义事件。事件可以由vm.on()的对象）上的自定义事件。事件可以由vm.emit触发。回调函数会接收所有传入事件触发函数的额外参数。（是一个事件监听函数，可以监听同一个事件，做多个处理）</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.on(<span class="string">'test'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="8-vm-emit-event-args"><a href="#8-vm-emit-event-args" class="headerlink" title="8.vm.$emit(event, [..args])"></a>8.vm.$emit(event, [..args])</h2><blockquote>
+<p>触发当前实例上的事件，附加参数都会传给监听器回调</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.$emit(<span class="string">'test'</span>, <span class="string">'this is data'</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>更加详细的使用看 组件通信部分</p>
+</blockquote>
+<h2 id="9-vm-once-event-callback"><a href="#9-vm-once-event-callback" class="headerlink" title="9.vm.$once(event, callback)"></a>9.vm.$once(event, callback)</h2><blockquote>
+<p>与 vm.​$on() 一致用法，监听一个自定义事件，但是只触发一次，在第一次触发之后移除监听器。</p>
+</blockquote>
+<h2 id="10-vm-off-event-callback"><a href="#10-vm-off-event-callback" class="headerlink" title="10.vm.$off([event, callback])"></a>10.vm.$off([event, callback])</h2><blockquote>
+<p>移除自定义事件监听器。</p>
+</blockquote>
+<p><font color="#c7254e">如果没有提供参数，则移除所有的事件监听器；</font><br><br><br></p>
+<p><font color="#c7254e">如果只提供了事件，则移除该事件所有的监听器；</font><br><br><br></p>
+<p><font color="#c7254e">如果同时提供了事件与回调，则只移除这个回调的监听器。</font><br></p>
+<h2 id="11-vm-mount"><a href="#11-vm-mount" class="headerlink" title="11.vm.$mount()"></a>11.vm.$mount()</h2><blockquote>
+<p>如果 Vue 实例在实例化时没有收到 el 选项，则它处于“未挂载”状态，没有关联的 DOM 元素。可以使用 vm.​$mount() 手动地挂载一个未挂载的实例；参数为一个 dom 或者一个选择器</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> component = <span class="keyword">new</span> MyComponent().$mount(<span class="string">'#app'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="12-vm-forceUpdate"><a href="#12-vm-forceUpdate" class="headerlink" title="12.vm.$forceUpdate()"></a>12.vm.$forceUpdate()</h2><blockquote>
+<p>迫使 Vue 实例重新渲染。注意它仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。</p>
+</blockquote>
+<h2 id="13-vm-nextTick-callback"><a href="#13-vm-nextTick-callback" class="headerlink" title="13.vm.$nextTick(callback)"></a>13.vm.$nextTick(callback)</h2><blockquote>
+<p>将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。</p>
+</blockquote>
+<h2 id="14-vm-destroy"><a href="#14-vm-destroy" class="headerlink" title="14.vm.$destroy()"></a>14.vm.$destroy()</h2><blockquote>
+<p>完全销毁一个实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。触发 beforeDestroy 和 destroyed 的钩子。</p>
+</blockquote>
+<h2 id="4-组件间通信"><a href="#4-组件间通信" class="headerlink" title="4.组件间通信"></a>4.组件间通信</h2><h3 id="1-父组件向子组件传递数据"><a href="#1-父组件向子组件传递数据" class="headerlink" title="1.父组件向子组件传递数据"></a>1.父组件向子组件传递数据</h3><blockquote>
+<p>组件实例的作用域是孤立的，这意味着不能在子组件的模板内直接引用父组件的数据，父组件的数据需要通过 prop 才能下发到子组件中，子组件要显式的使用 props 选项声明它预期的数据</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"home-basic-container"</span> &gt;</span><br><span class="line">    &lt;!-- 传递 ‘prop’ 给子组件 --&gt;</span><br><span class="line">    &lt;child :parentName=<span class="string">"parentName"</span>&gt;&lt;<span class="regexp">/child&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!-- 将所有 data 中数据传递给子组件 --&gt;</span></span><br><span class="line"><span class="regexp">    &lt;child v-bind="$data"&gt;&lt;/</span>child&gt;</span><br><span class="line">    &lt;!-- 将一组数据传递给子组件 --&gt;</span><br><span class="line">    &lt;child v-bind=<span class="string">"&#123;name: parentName, age: parentAge&#125;"</span>&gt;&lt;<span class="regexp">/child&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="regexp">&lt;template&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="child-container"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;!-- 使用父组件传入的数据 --&gt;</span></span><br><span class="line"><span class="regexp">   &#123;&#123;parentName&#125;&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">export default &#123;</span></span><br><span class="line"><span class="regexp">    name: 'HomeBasic',</span></span><br><span class="line"><span class="regexp">    props: ['parentName'] /</span><span class="regexp">/ 显式的声明需要的数据</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：</p>
+</blockquote>
+<p>● prop 是单向的，父组件的变化会传给子组件，但是子组件的变化不会改变父组件的数据<br>● 子组件收到的 prop 只能由父组件改变，子组件内部不允许改变 prop</p>
+<blockquote>
+<p>对比 : 与 react 中父组件向子组件传递数据方式类似</p>
+</blockquote>
+<h2 id="2-子组件向父组件传递信息"><a href="#2-子组件向父组件传递信息" class="headerlink" title="2.子组件向父组件传递信息"></a>2.子组件向父组件传递信息</h2><blockquote>
+<p>父组件可以在使用子组件的地方直接用 <font color="#c7254e">v-on</font> 来监听子组件触发的事件，在事件回调中处理来自子组件的数据<br>子组件内部可以使用 <font color="#c7254e">this.$emit(event, […args])</font> 来触发事件</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;child v-bind=<span class="string">"$data"</span> v-on:changeName=<span class="string">"handleNameChange"</span>&gt;&lt;<span class="regexp">/child&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件</span></span><br><span class="line">   data() &#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">           parentName: <span class="string">'parent name'</span>,</span><br><span class="line">           parentAge: <span class="number">80</span></span><br><span class="line">      &#125;;</span><br><span class="line">   &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">       handleNameChange(newName) &#123;</span><br><span class="line">           <span class="keyword">this</span>.parentName = newName;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;,</span><br><span class="line"></span><br><span class="line">   &lt;!-- 子组件 --&gt;</span><br><span class="line">   &lt;input @input=<span class="string">"handleChange"</span> /&gt;</span><br><span class="line"></span><br><span class="line">   methods: &#123;</span><br><span class="line">     handleChange(e) &#123;</span><br><span class="line">        <span class="keyword">const</span> newName = e.target.value;</span><br><span class="line">         <span class="keyword">this</span>.$emit(<span class="string">'changeName'</span>, newName);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对比：</p>
+</blockquote>
+<p>● react 中 子组件向父组件传递数据会：在父组件中定义一个函数，用来更新状态；将这个函数像普通 prop 一样传入子组件中；子组件调用这个函数并传入参数；父组件进行相应的数据更新；<br>● 实测，vue 中这样的操作也可以达到目的，但是官方提供了另外一种自定义事件的方式，如上；</p>
+<h2 id="3-父组件中直接使用子组件"><a href="#3-父组件中直接使用子组件" class="headerlink" title="3.父组件中直接使用子组件"></a>3.父组件中直接使用子组件</h2><blockquote>
+<p>可以通过在子组件上添加 ref 属性，然后在需要使用的地方通过 ref 属性名称获取到子组件的实例</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件中 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Child</span> <span class="attr">ref</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">Child</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">method: &#123;</span><br><span class="line">      some() &#123;</span><br><span class="line">          <span class="keyword">this</span>.$refs.child.doSomeThing();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>对比：react 中有同样的方式。</p>
+</blockquote>
+<h2 id="4-子组件中直接使用父组件"><a href="#4-子组件中直接使用父组件" class="headerlink" title="4.子组件中直接使用父组件"></a>4.子组件中直接使用父组件</h2><blockquote>
+<p>在子组件中 直接通过 this.$parent 就可以获得父组件的实例</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">method: &#123;</span><br><span class="line">      some() &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="keyword">this</span>.$parent);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-非父子组件间通信"><a href="#5-非父子组件间通信" class="headerlink" title="5.非父子组件间通信"></a>5.非父子组件间通信</h2><blockquote>
+<p>1.如果两个组件有同一个父组件（不推荐的方法）</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">child</span> <span class="attr">v-bind</span>=<span class="string">"$data"</span> <span class="attr">ref</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Test</span> <span class="attr">v-on:changeName</span>=<span class="string">"handleChange"</span>&gt;</span><span class="tag">&lt;/<span class="name">Test</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 父组件中的函数用来调用其中一个子组件的方法</span></span><br><span class="line">handleChange(newName) &#123;</span><br><span class="line">    <span class="keyword">this</span>.$refs.child.changeName(newName);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 触发事件的子组件 Test</span></span><br><span class="line">handleChange() &#123;</span><br><span class="line">    <span class="keyword">this</span>.$emit(<span class="string">'changeName'</span>, <span class="string">'this is newName'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收事件的子组件 Child</span></span><br><span class="line">changeName(newName) &#123;</span><br><span class="line">    <span class="keyword">this</span>.showName = newName;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果两个组件间没有直接的联系（推荐）</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在两个组件外制作一个事件总线</span></span><br><span class="line">  <span class="keyword">const</span> bus = <span class="keyword">new</span> Vue();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 组件 A 中触发事件</span></span><br><span class="line">  bus.$emit(<span class="string">'event'</span>, [...args]);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 组件 B 中监听事件（要在钩子函数中）</span></span><br><span class="line">  bus.$on(<span class="string">'event'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="5-使用插槽分发内容"><a href="#5-使用插槽分发内容" class="headerlink" title="5.使用插槽分发内容"></a>5.使用插槽分发内容</h2><blockquote>
+<p>为了让组件可以组合，我们需要一种方式来混合父组件的内容与子组件自己的模板，这个过程被称为内容分发，Vue 中使用<font color="#c7254e"> <code>&lt;slot&gt;</code> </font>元素作为原始内容的插槽</p>
+<p>父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件的作用域内编译</p>
+</blockquote>
+<h2 id="1-单个插槽"><a href="#1-单个插槽" class="headerlink" title="1.单个插槽"></a>1.单个插槽</h2><p>子组件中包含一个<font color="#c7254e"> <slot></slot></font> 插口，表示在父组件中添加的内容片段，要在子组件中显示的位置，子组件的 <font color="#c7254e"> <slot></slot></font> 标签中可以内容，表示在父组件传入片段为空时的显示内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是子组件的标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">slot</span>&gt;</span></span><br><span class="line">     只有在没有要分发的内容时才会显示。</span><br><span class="line">   <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 父组件 --&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是父组件的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">my-component</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一些初始内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是更多的初始内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 渲染结果 --&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是父组件的标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">h2</span>&gt;</span>我是子组件的标题<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一些初始内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是更多的初始内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-具名插槽"><a href="#2-具名插槽" class="headerlink" title="2.具名插槽"></a>2.具名插槽</h2><blockquote>
+<p>具名插槽可以 用来分配父组件传入的内容在子组件中的位置， <font color="#c72594"><slot> </slot></font>可以有一个 name 的特性，用来标记插槽的名字，父组件中传入的片段可以有一个 slot 的特性，值为具名插槽的名字，片段会插入到对应的具名插槽中。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Test</span> <span class="attr">v-on:changeName</span>=<span class="string">"handleChange"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"a"</span>&gt;</span>parentName is &#123;&#123;parentName&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>parentName is &#123;&#123;parentName&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"b"</span>&gt;</span>parentName is &#123;&#123;parentName&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Test</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 子组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"a"</span>&gt;</span></span><br><span class="line">  名为 a 的具名插槽</span><br><span class="line"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleChange"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">slot</span>&gt;</span></span><br><span class="line">  普通插槽，父组件中没有 slot 特性的片段会显示在这里</span><br><span class="line">  如果父组件中的 slot 指向的具名插槽不存在，则不显示</span><br><span class="line"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-作用域插槽"><a href="#3-作用域插槽" class="headerlink" title="3.作用域插槽"></a>3.作用域插槽</h2><blockquote>
+<p>作用域插槽允许在父组件中的 插入片段中使用来自子组件对应插槽的数据</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子组件中，需要将数据传递到插槽，就像将 prop 传递给组件一样 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">slot</span> <span class="attr">child-info</span>=<span class="string">"this is child info"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- 父组件中，的子组件标签下要有含有 slot-scope 特性的 &lt;template&gt;标签，值为一个临时的对象，接收子组件的 prop --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">child</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">template</span> <span class="attr">slot-scope</span>=<span class="string">"props"</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;props.childInfo&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">child</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+</blockquote>
+<p>● 作用域插槽可以是具名的也可以是非具名的<br>● vue 2.5 之前的版本 使用的是 scope 2.5 及其之后的版本使用的是 slot-scope<br>● 在 2.5.0+，slot-scope 能被用在任意元素或组件中而不再局限于</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

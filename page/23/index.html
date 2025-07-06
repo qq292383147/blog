@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/13/Css/CSS%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84%E2%80%9C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%88%AA%E6%96%AD%E7%9C%81%E7%95%A5%E2%80%9D/">
+                CSS可能是最全的“文本溢出截断省略”
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-13</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/css/">css</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="先来点基础的，单行文本溢出省略"><a href="#先来点基础的，单行文本溢出省略" class="headerlink" title="先来点基础的，单行文本溢出省略"></a>先来点基础的，单行文本溢出省略</h2><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li><font color="#e0246a">overflow</font>: <font color="#5cc4d8">hidden</font>；（文字长度超出限定宽度，则隐藏超出的内容）</li>
+<li><font color="#e0246a">white-space</font>:<font color="#5cc4d8">nowrap</font>；（设置文字在一行显示，不能换行）</li>
+<li><font color="#e0246a">text-overflow</font>: <font color="#5cc4d8">ellipsis</font>；（规定当文本溢出时，显示省略符号来代表被修剪的文本）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+<li>省略号位置显示刚好</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>只支持单行文本截断</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于单行文本溢出显示省略号的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">        white-space: nowrap;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/98.gif" alt="98"></p>
+<h2 id="进阶一下，多行文本溢出省略（按行数）"><a href="#进阶一下，多行文本溢出省略（按行数）" class="headerlink" title="进阶一下，多行文本溢出省略（按行数）"></a>进阶一下，多行文本溢出省略（按行数）</h2><h3 id="○-纯-CSS-实现方案"><a href="#○-纯-CSS-实现方案" class="headerlink" title="○ 纯 CSS 实现方案"></a>○ 纯 CSS 实现方案</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li><font color="#e0246a">-webkit-line-clamp</font>: <font color="#5cc4d8">2</font>；（用来限制在一个块元素显示的文本的行数, 2 表示最多显示 2 行。 为了实现该效果，它需要组合其他的WebKit属性）</li>
+<li><font color="#e0246a">display</font>: <font color="#5cc4d8">-webkit-box</font>；（和 1 结合使用，将对象作为弹性伸缩盒子模型显示 ）</li>
+<li><font color="#e0246a">-webkit-box-orient</font>: <font color="#5cc4d8">vertical</font>；（和 1 结合使用 ，设置或检索伸缩盒对象的子元素的排列方式 ）</li>
+<li><font color="#e0246a">overflow</font>: <font color="#5cc4d8">hidden</font>；（文本溢出限定的宽度就隐藏内容）</li>
+<li><font color="#e0246a">text-overflow</font>: <font color="#5cc4d8">ellipsis</font>；（多行文本的情况下，用省略号“…”隐藏溢出范围的文本)</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+<li>省略号显示位置刚好</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>兼容性一般： -webkit-line-clamp 属性只有  WebKit  内核的浏览器才支持</li>
+<li><img src="F:\图片库blog/picture_images/picture/css/99.jpg" alt="99"></li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>多适用于移动端页面，因为移动设备浏览器更多是基于 WebKit 内核</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">		  display: -webkit-box;</span><br><span class="line">	    overflow: hidden;</span><br><span class="line">	    -webkit-line-clamp: 2;</span><br><span class="line">	    -webkit-box-orient: vertical;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/100.gif" alt="100"></p>
+<h3 id="○-基于-JavaScript-的实现方案"><a href="#○-基于-JavaScript-的实现方案" class="headerlink" title="○ 基于 JavaScript 的实现方案"></a>○ 基于 JavaScript 的实现方案</h3><p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>需要 JS 实现，背离展示和行为相分离原则</li>
+<li>文本为中英文混合时，省略号显示位置略有偏差</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于响应式截断，多行文本溢出省略的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<p>当前仅适用于文本为中文，若文本中有英文，可自行修改</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> text = <span class="string">'这是一段很长的文本'</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> totalTextLen = text.length;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> formatStr = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> ele = <span class="built_in">document</span>.getElementsByClassName(<span class="string">'demo'</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> lineNum = <span class="number">2</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> baseWidth = <span class="built_in">window</span>.getComputedStyle(ele).width;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> baseFontSize = <span class="built_in">window</span>.getComputedStyle(ele).fontSize;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> lineWidth = +baseWidth.slice(<span class="number">0</span>, <span class="number">-2</span>);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// 所计算的strNum为元素内部一行可容纳的字数(不区分中英文)</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> strNum = <span class="built_in">Math</span>.floor(lineWidth / +baseFontSize.slice(<span class="number">0</span>, <span class="number">-2</span>));</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> content = <span class="string">''</span>;</span></span><br><span class="line">        </span><br><span class="line"><span class="javascript">      	<span class="comment">// 多行可容纳总字数</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> totalStrNum = <span class="built_in">Math</span>.floor(strNum * lineNum);</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> lastIndex = totalStrNum - totalTextLen;</span></span><br><span class="line"></span><br><span class="line">        if (totalTextLen &gt; totalStrNum) &#123;</span><br><span class="line"><span class="javascript">            content = text.slice(<span class="number">0</span>, lastIndex - <span class="number">3</span>).concat(<span class="string">'...'</span>);</span></span><br><span class="line"><span class="javascript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">            content = text;</span><br><span class="line">        &#125;</span><br><span class="line">        ele.innerHTML = content;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    formatStr();</span><br><span class="line">    </span><br><span class="line"><span class="javascript">		<span class="built_in">window</span>.onresize = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line">        formatStr();</span><br><span class="line">    &#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/101.gif" alt="101"></p>
+<h2 id="再进阶一步，多行文本溢出省略（按高度）"><a href="#再进阶一步，多行文本溢出省略（按高度）" class="headerlink" title="再进阶一步，多行文本溢出省略（按高度）"></a>再进阶一步，多行文本溢出省略（按高度）</h2><h3 id="○-多行文本溢出不显示省略号"><a href="#○-多行文本溢出不显示省略号" class="headerlink" title="○ 多行文本溢出不显示省略号"></a>○ 多行文本溢出不显示省略号</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li><font color="#e0246a">overflow</font>: <font color="#5cc4d8">hidden</font>；（文本溢出限定的宽度就隐藏内容）</li>
+<li><font color="#e0246a">line-height</font>: 20<font color="#5cc4d8">px</font>；（结合元素高度，高度固定的情况下，设定行高， 控制显示行数）</li>
+<li><font color="#e0246a">max-height</font>: 40<font color="#5cc4d8">px</font>；（设定当前元素最大高度）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>单纯截断文字, 不展示省略号，观感上较为生硬</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于文本溢出不需要显示省略号的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">		overflow: hidden;</span><br><span class="line">		max-height: 40px;</span><br><span class="line">		line-height: 20px;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/102.gif" alt="102"></p>
+<h3 id="○-伪元素-定位实现多行省略"><a href="#○-伪元素-定位实现多行省略" class="headerlink" title="○ 伪元素 + 定位实现多行省略"></a>○ 伪元素 + 定位实现多行省略</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li>position: relative; （为伪元素绝对定位）</li>
+<li>overflow: hidden; （文本溢出限定的宽度就隐藏内容）</li>
+<li>position: absolute;（给省略号绝对定位）</li>
+<li>line-height: 20px; （结合元素高度,高度固定的情况下,设定行高, 控制显示行数）</li>
+<li>height: 40px; （设定当前元素高度）</li>
+<li>::after {}  （设置省略号样式）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>无法识别文字的长短，无论文本是否溢出范围, 一直显示省略号</li>
+<li>省略号显示可能不会刚刚好，有时会遮住一半文字</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于对省略效果要求较低，文本一定会溢出元素的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line">        position: relative;</span><br><span class="line">        line-height: 20px;</span><br><span class="line">        height: 40px;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line">        content: "...";</span><br><span class="line">        position: absolute;</span><br><span class="line">        bottom: 0;</span><br><span class="line">        right: 0;</span><br><span class="line">        padding: 0 20px 0 10px;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/103.gif" alt="103"></p>
+<h3 id="○-利用-Float-特性，纯-CSS-实现多行省略"><a href="#○-利用-Float-特性，纯-CSS-实现多行省略" class="headerlink" title="○ 利用 Float 特性，纯 CSS 实现多行省略"></a>○ 利用 Float 特性，纯 CSS 实现多行省略</h3><p><strong>核心 CSS 语句</strong></p>
+<ul>
+<li>line-height: 20px；（结合元素高度,高度固定的情况下,设定行高, 控制显示行数）</li>
+<li>overflow: hidden；（文本溢出限定的宽度就隐藏内容）</li>
+<li>float: right/left；（利用元素浮动的特性实现）</li>
+<li>position: relative；（根据自身位置移动省略号位置, 实现文本溢出显示省略号效果）</li>
+<li>word-break: break-all；（使一个单词能够在换行时进行拆分）</li>
+</ul>
+<p><strong>优点</strong></p>
+<ul>
+<li>无兼容问题</li>
+<li>响应式截断</li>
+<li>文本溢出范围才显示省略号，否则不显示省略号</li>
+</ul>
+<p><strong>短板</strong></p>
+<ul>
+<li>省略号显示可能不会刚刚好，有时会遮住一半文字</li>
+</ul>
+<p><strong>适用场景</strong></p>
+<ul>
+<li>适用于对省略效果要求较低，多行文本响应式截断的情况</li>
+</ul>
+<p><strong>Demo</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#099</span>;</span></span><br><span class="line">        max-height: 40px;</span><br><span class="line">        line-height: 20px;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span><span class="selector-pseudo">::before</span>&#123;</span></span><br><span class="line">        float: left;</span><br><span class="line"><span class="css">        <span class="selector-tag">content</span><span class="selector-pseudo">:''</span>;</span></span><br><span class="line">        width: 20px;</span><br><span class="line">        height: 40px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span> <span class="selector-class">.text</span> &#123;</span></span><br><span class="line">        float: right;</span><br><span class="line">        width: 100%;</span><br><span class="line">        margin-left: -20px;</span><br><span class="line">        word-break: break-all;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="css">    <span class="selector-class">.demo</span><span class="selector-pseudo">::after</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:right</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">content</span><span class="selector-pseudo">:'...'</span>;</span></span><br><span class="line">        width: 20px;</span><br><span class="line">        height: 20px;</span><br><span class="line">        position: relative;</span><br><span class="line"><span class="css">        <span class="selector-tag">left</span><span class="selector-pseudo">:100</span>%;</span></span><br><span class="line">        transform: translate(-100%,-100%);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'demo'</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"text"</span>&gt;</span>这是一段很长的文本<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例图片</strong></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/104.gif" alt="104"></p>
+<p><strong>原理讲解</strong></p>
+<p>有 A、B、C 三个盒子，A 左浮动，B、C 右浮动。设置 A 盒子的高度与 B 盒子高度（或最大高度）要保持一致</p>
+<ol>
+<li>当的 B 盒子高度低于 A 盒子，C 盒子仍会处于 B 盒子右下方。</li>
+<li>如果 B 盒子文本过多，高度超过了 A 盒子，则 C 盒子不会停留在右下方，而是掉到了 A 盒子下。</li>
+<li>接下来对 C 盒子进行相对定位，将 C 盒子位置向右侧移动 100%，并向左上方向拉回一个 C 盒子的宽高（不然会看不到哟）。这样在文本未溢出时不会看到 C 盒子，在文本溢出时，显示 C 盒子。</li>
+</ol>
+<p><img src="F:\图片库blog/picture_images/picture/css/105.gif" alt="105"></p>
+<h2 id="收，大道归简，能力封装"><a href="#收，大道归简，能力封装" class="headerlink" title="收，大道归简，能力封装"></a>收，大道归简，能力封装</h2><blockquote>
+<p>凡重复的，让它单一；凡复杂的，让它简单。</p>
+</blockquote>
+<p>每次都要搞一坨代码，太麻烦。这时候你需要考虑将文本截断的能力，封装成一个可随时调用的自定义容器组件。市面上很多 UI 组件库，都提供了同类组件的封装，如基于 Vue 的 ViewUI Pro，或面向小程序提供组件化解决能力的 MinUI 。</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/106.jpg" alt="106"></p>
+<p><img src="F:\图片库blog/picture_images/picture/css/107.jpg" alt="107"></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/13/Css/CSS%E7%AC%AC%E5%9B%9B%E7%BA%A7%E9%80%89%E6%8B%A9%E5%99%A8/">
+                CSS第四级选择器
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-13</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/css/">css</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>选择器是 CSS 的核心部分。你用来做一些操作比如说选择某种类型的所有元素，就像下面这样：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;<span class="comment">/* 一些应用在所有 div 元素上的样式 */</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>或者你可以选择一个在它的父元素下的最后一个子元素：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;<span class="comment">/* 一些只应用在列表的最后一个子元素上的样式 */</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，你也可以去做一些更复杂的事情，比如说选择选择列表中除了最后一个子元素之外的所有子元素。</p>
+<p>事实上，这样做的方法不止一种，一些方法甚至更复杂。</p>
+<p>例如，比较以下这两个：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;<span class="comment">/* 一些应用在所有子元素上的样式 */</span>&#125;</span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span><span class="selector-pseudo">:last-child</span> &#123;<span class="comment">/* 一些样式用来重置上面生效的样式，因为上面的样式不适用于上面最后一个子元素 */</span>&#125;</span><br><span class="line"><span class="selector-tag">ui</span> <span class="selector-tag">li</span><span class="selector-pseudo">:nth-last-child(n+2)</span> &#123;<span class="comment">/* 一些应用在除了最后一个子元素之外的所有子元素上面的样式 */</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>ul li属于第一级选择器。</p>
+<p><code>last-child</code>和 <code>nth-last-child</code>属于第三级选择器。</p>
+<p>你可以把级别看作是 CSS 选择器的版本，其中每个级别都会添加一些功能更强大的选择器。</p>
+<p>在这篇文章中，我会根据截至 2019 年 1 月的草案规范，和你一起过一遍下一代选择器（第四级），主要有以下分类：</p>
+<ul>
+<li>逻辑组合</li>
+<li>属性选择器</li>
+<li>语言伪类</li>
+<li>位置伪类</li>
+<li>用户操作伪类</li>
+<li>输入伪类</li>
+<li>树结构伪类</li>
+<li>网格结构伪类</li>
+</ul>
+<p>在我写这篇文章的时候，第四级选择器的规范还处于草案阶段。直到官方推荐之前，它可能还会改，而且你可能还会发现很多选择器甚至都还没有被一些浏览器支持或者需要添加一些前缀（ <code>:-moz-</code>或 <code>:-webkit-</code>）。</p>
+<p>对于每一个选择器，我都会提供一个can I use的链接以便你可以看到哪些浏览器支持它（如果有的话）、一些简短的介绍、一个例子、和一个 Codepen 的链接，这样你就能自己去尝试一下（即使它暂时无法使用，因为将来可能会改）。</p>
+<p>好了，让我们中逻辑组合选择器开始。</p>
+<h2 id="逻辑组合选择器"><a href="#逻辑组合选择器" class="headerlink" title="逻辑组合选择器"></a>逻辑组合选择器</h2><p>这个类别包括通过组合选择其他选择器而起作用的选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:not(selector1</span>,<span class="selector-tag">selector2</span>,...)</span><br><span class="line"></span><br><span class="line">它选择那些与传入的参数不匹配的元素列表。例如：</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:not(.beginning</span>, <span class="selector-class">.middle</span>)&#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有的没有 .beginning和 .middle类的p元素设置颜色为红色的样式。</p>
+<p>这个选择器的第三级版本只能允许一个选择器，而不是两个或更多的的选择器。例如，上面的样式可以写成：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">p</span>:not(.beginning):</span><br><span class="line">not(.middle)&#123;  <span class="attribute">color</span>: red; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:is(selector1</span>,<span class="selector-tag">selector2</span>)</span><br></pre></td></tr></table></figure>
+<p>它选择那些与传入的参数匹配的元素列表。例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">p</span>:is(.beginning, .middle)&#123; <span class="attribute">color</span>: blur; &#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有的具有 <code>.beginning</code>和 <code>.middle</code>类的p元素设置颜色为蓝色的样式。</p>
+<p>自从上一个工作草案版本以来最重大的变化之一就是 :matches()选择器被更名为 :is()并且已经被 Safari（唯一一个完全支持这个选择器的浏览器）弃用，因此它和与之相反的选择器 :not()可以更好的配对。</p>
+<p>如果要向后兼容，可以用 :is()作为 :matches()的别名。</p>
+<p>然而， <code>:matches()</code>以前叫做 <code>:any()</code>，因此大多数浏览器都支持带前缀的伪类：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">p</span>:-webkit-any(.beginning, .middle)&#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">p</span>:-moz-any(.beginning, .middle) &#123; <span class="attribute">color</span>: blue; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-pseudo">:where(selector1</span>,<span class="selector-tag">selector</span>,...)</span><br></pre></td></tr></table></figure>
+<p>在我写这篇文章的时候，还没有任何一个浏览器支持这个选择器。</p>
+<p>它具有和 <code>:is()</code>相同的语法和功能，但是不管这个选择器接受多少个参数，这个选择器的权重都是 0。</p>
+<p>权重是 CSS 的应用规则。如果两个选择器同时应用在同一个元素上面，则权重高的那个生效。如果不同规则具有相同的权重，那么应用在这个元素上的最后一个规则将会生效。</p>
+<p>这个选择器可以用来实现筛选和覆盖与之关联的元素的样式。</p>
+<p>下面是一个权重的例子：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span>:not (:hover) &#123; <span class="attribute">text-decoration</span>: none; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123; <span class="comment">/* 不会生效 */</span></span><br><span class="line"><span class="attribute">text-decoration</span>: underline; &#125;</span><br><span class="line"><span class="comment">/* 使用新的第四级选择器 :where */</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">a</span>:where(:not(:hover)) &#123; <span class="attribute">text-decoration</span>: none; &#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">nav</span> <span class="selector-tag">a</span> &#123; <span class="comment">/* 生效 */</span></span><br><span class="line"><span class="attribute">text-decoration</span>: underline;&#125;</span><br><span class="line"><span class="selector-pseudo">:has(reslativeSelector1</span>,<span class="selector-tag">reslativeSelector2</span>,...)</span><br></pre></td></tr></table></figure>
+<p>浏览器支持（在写这篇文章的时候，还没有任何一个浏览器支持这个选择器）</p>
+<p>这个选择器将一个相对选择器列表作为参数。它选择那些在指定范围内匹配相对选择器列表的元素。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">p</span>:has(strong, em) &#123; <span class="attribute">color</span>: red; &#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有的包含<code>&lt;strong&gt;</code>或者 <code>&lt;em&gt;</code>元素的p元素添加一个颜色为红色的样式。</p>
+<h2 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h2><p>这类选择器包含那些应用在元素属性上的选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[foo="bar"i]</span></span><br></pre></td></tr></table></figure>
+<p>它选择那些foo属性的值等于bar的元素，忽略大小写。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class="text" i]</span> &#123;  <span class="attribute">color</span>: green;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有的class属性的值为Text、TEXT、或者是text、又或者是其他组合的p元素添加一个颜色为绿色的样式。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[foo="bar"s]</span></span><br></pre></td></tr></table></figure>
+<p>在我写这篇文章的时候，还没有任何一个浏览器支持这个选择器。</p>
+<p>它选择那些foo属性的值严格等于bar的元素。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-attr">[class="text" s]</span>&#123;  <span class="attribute">color</span>: green;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有class属性的值为text（例如，不是Text）的p元素添加一个颜色为绿色的样式。</p>
+<h2 id="语言伪类？"><a href="#语言伪类？" class="headerlink" title="语言伪类？"></a>语言伪类？</h2><p>这类选择器包括那些使用语言相关设置的选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:dir(ltr)</span></span><br></pre></td></tr></table></figure>
+<p>它选择那些具有从左到右方向性的元素，其中文档语言指定如何确定方向性。与之对应的：<code>:dir(rtl)</code>表示具有从右到左方向性的元素。其他值是无效的也不会匹配任何元素。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">p</span>:dir(rtl) &#123;  <span class="attribute">background-color</span>: red;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给设置了从左到右方向的p元素添加一个背景色为红色的样式。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:lang(zh,"*-hant")</span><br></pre></td></tr></table></figure>
+<p>在我写这篇文章的时候，还没有任何一个浏览器支持这个第四级选择器。</p>
+<p>它选择那些被标记为中文的元素（或者选择其他语言标记的元素，只需要把zh改为其他的语言代码就可以了）或者用繁体字书写的元素（或者在其他字符的系统中，将-hant替换为其它字符代码）。</p>
+<p>实际上，第二级选择器里面就有这个选择器，但是在第四级选择器里面新增了通配符和逗号分隔列表。</p>
+<p>它接收一个或多个以逗号为分隔的语言代码作为参数。如果语言代码里面包含 <code>*，则必须对它们进行正确的转义（:lang(es-*)）或字符串引号（:lang(&quot;es-*&quot;)）</code>。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">p</span>:lang(<span class="string">"*-CH"</span>) &#123;  <span class="attribute">background-color</span>: red;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有被标记为使用瑞士语言的p元素添加一个背景色为红色的背景色。</p>
+<h2 id="位置伪类"><a href="#位置伪类" class="headerlink" title="位置伪类"></a>位置伪类</h2><p>这类选择器包括那些与超链接有关得选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:any-link</span></span><br></pre></td></tr></table></figure>
+<p>在Can I use上并没有这个选择器的兼容性介绍，但是大多数主流浏览器都支持这个选择器。</p>
+<p>它选择那些具有href属性的元素（例如 <code>&lt;a&gt;</code>或 <code>&lt;link&gt;</code>。或者说，所有与 <code>:link</code>或 <code>:visited</code>伪类匹配的元素。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span>:any-link &#123;  <span class="attribute">color</span>: red;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有具有<code>href</code>属性的的所有a元素添加一个颜色为红色的样式。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:local-link</span></span><br></pre></td></tr></table></figure>
+<p>在我写这篇文章的时候，还没有任何一个浏览器支持这个第四级选择器。</p>
+<p>它选择那些链接到当前 URL 的元素。如果链接的指向包括 URL 片段，则 URL 片段和和当前 URL 也必须要匹配。比如不匹配，则在比较中不考虑当前 URL 的片段 URL 部分。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span>:local-link &#123;  <span class="attribute">text-decoration</span>: none;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所有的具有<code>href</code>属性的指向当前页面的a元素（也许它们是导航菜单的一部分）去掉下划线。</p>
+<h2 id="用户操作伪类"><a href="#用户操作伪类" class="headerlink" title="用户操作伪类"></a>用户操作伪类</h2><p>这类选择器包括那些用户正在操作的元素的选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:focus-within</span></span><br></pre></td></tr></table></figure>
+<p>它选择那些与 <code>:focus</code>伪类匹配的元素（当元素具有焦点时）或具有与 <code>:focus</code>匹配的子元素。</p>
+<p>例如，使用如下的一个表单：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">from</span>&gt;</span><span class="tag">&lt;<span class="name">inputtype="text"id="name"placeholder="Enter</span> <span class="attr">your</span> <span class="attr">name</span>"/&gt;</span><span class="tag">&lt;/<span class="name">from</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>当表单里的输入框获得焦点的时候，它会给表单添加一个边框。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:focus-visible</span></span><br></pre></td></tr></table></figure>
+<p>它选择一个处于焦点状态的元素（与 <code>:focus</code>伪类匹配），浏览器通常会为了让获得焦点的元素清晰可见，给它添加一个焦点环。</p>
+<p>和 <code>:focus</code>的区别和细微。</p>
+<p>如果 <code>:focus-visible</code>匹配了， <code>:focus</code>一定会匹配，但是反过来就不一定了，它取决于浏览器（如果启用了聚焦环的绘制）和获取焦点的元素（通过鼠标点击或者 tab 键）。</p>
+<p>Firefox 把这个选择器实现为 <code>:-moz-focusring</code>伪类。</p>
+<p>例如，在某些场景下，有以下样式：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 标准第四级选择器 */</span></span><br><span class="line"><span class="selector-pseudo">:focus-visible</span> &#123;  <span class="attribute">background-color</span>: lightgary;&#125;</span><br><span class="line"><span class="comment">/* 基于 Firefox 的第四级选择器 */</span></span><br><span class="line"><span class="selector-pseudo">:moz-focusring</span> &#123;  <span class="attribute">background-color</span>: lightgary;&#125;</span><br></pre></td></tr></table></figure>
+<p>只有在元素通过 tab 获得焦点的时候才会生效。</p>
+<h2 id="输入伪类"><a href="#输入伪类" class="headerlink" title="输入伪类"></a>输入伪类</h2><p>这类选择包括那些应用于接受用户输入的元素的选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:read-write</span> <span class="selector-tag">and</span><span class="selector-pseudo">:read-only</span></span><br></pre></td></tr></table></figure>
+<p><code>:read-write</code>选择可读可写的元素（例如那些不具有 readonly属性的 <code>&lt;input&gt;</code>的元素）。</p>
+<p><code>:read-only</code>选择那些只能读的元素（例如具有readonly属性的 <code>&lt;input&gt;</code>的元素）。</p>
+<p>然而，这些选择器不仅仅选择 <code>&lt;input&gt;</code>或 <code>&lt;textarea&gt;</code>元素，它们也可以选择用户能输入的任何选择，例如将contenteditable属性设置为true的 <code>&lt;p&gt;</code>元素。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:read-write</span> &#123;  <span class="attribute">background-color</span>: lightyellow;&#125;</span><br><span class="line"><span class="selector-pseudo">:read-only</span> &#123;  <span class="attribute">background-color</span>: lightgary;&#125;</span><br><span class="line"><span class="comment">/* Firefox */</span></span><br><span class="line"><span class="selector-pseudo">:-moz-read-write</span> &#123;  <span class="attribute">background-color</span>: lightyellow;&#125;</span><br><span class="line"><span class="selector-pseudo">:moz-read-only</span> &#123;  <span class="attribute">background-color</span>: lightgary;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会把页面上所有的不可编辑元素背景色设置为浅灰色，把可以编辑的元素的背景色设置为浅黄色。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:placeholder-shown</span></span><br></pre></td></tr></table></figure>
+<p>它选择一个当前正在显示占位符文本的输入框元素。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">input</span>:placeholder-shown &#123;  <span class="attribute">color</span>: red;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给当前显示占位符文本的input元素设置一个颜色为红色的样式，注意这里设置的只是光标的颜色。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:default</span></span><br></pre></td></tr></table></figure>
+<p>它选择那些在一组相关元素里面作为默认选项的元素。通常用于按钮和选择列表 / 菜单。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">input</span>:default&#123;  <span class="attribute">box-shadow</span>: <span class="number">002px</span>2px green;&#125;</span><br><span class="line"><span class="attribute">input</span>:defaut + lable &#123;  <span class="attribute">color</span>: green;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给默认 <code>&lt;input&gt;</code>元素的标签设置绿色阴影和颜色。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:indeterminate</span></span><br></pre></td></tr></table></figure>
+<p>它选择那些处于不确定状态的元素。例如，单选框组和复选框组里包含的那些未被选中的元素，或者进度百分比未知的进度条。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-attr">[type="radio"]</span><span class="selector-pseudo">:indeterminate</span> + <span class="selector-tag">label</span> &#123;  <span class="attribute">color</span>: red;&#125;</span><br></pre></td></tr></table></figure>
+<p>如果组中还没有任何一个元素被选，。这会给这个组的标签添加一个颜色为红色的样式。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:valid</span>` 和 `<span class="selector-pseudo">:invalid</span></span><br></pre></td></tr></table></figure>
+<p>它选择那些根据有效性语义或值的有效或无效的元素。如果没有定义值的有效性规则，则这个元素既不满足 <code>:valid</code>也不满足 <code>:invalid</code>。</p>
+<p>例如：对于一个输入类型为email的元素：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">input</span>:invalid &#123;  <span class="attribute">color</span>: red;&#125;<span class="attribute">input</span>:valid &#123;  <span class="attribute">color</span>: green;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会根据元素里面输入的电子邮件是否有效为依据去为元素的文本设置不同颜色。</p>
+<p><code>:in-range</code> 和 <code>:out-of-range</code></p>
+<p>这些选择器只适用于那些具有范围限制的元素，例如，定义了最大最小值的元素。如果没有定义，则都不匹配。</p>
+<p>例如：一个设置了最小只为 1 最大值为 5 的输入框。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">input</span>:out-of-range &#123;  <span class="attribute">color</span>: red;&#125;</span><br><span class="line"><span class="attribute">input</span>:in-range &#123;  <span class="attribute">color</span>: green;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给依据输入的值设置不同的颜色样式。</p>
+<p>在某些情况下，某些选择器会具有与 <code>:valid</code>和 <code>:invalid</code>相同的效果。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:required</span>`和 `<span class="selector-pseudo">:optional</span></span><br></pre></td></tr></table></figure>
+<p>这些选择器分别适用于在提交表单的之前必填的和选填的表单元素。那些非表单元素不会被匹配。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">input</span>:optional &#123;  <span class="attribute">color</span>: gray;&#125;<span class="attribute">input</span>:required &#123;  <span class="attribute">color</span>: red;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给那些必填的元素添加设置红色的样式，给非必填的元素添加灰色的样式。</p>
+<h2 id="树结构伪类"><a href="#树结构伪类" class="headerlink" title="树结构伪类"></a>树结构伪类</h2><p>这类选择器包括那些允许基于文档树中的信息进行选择，但是不能由其它选择器表示的选择器，例如元素相对于其父元素的位置。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:nth-child(n</span><span class="selector-attr">[of selector]</span>?)`和 `<span class="selector-pseudo">:nth-last-child(n</span><span class="selector-attr">[of selector]</span>?)</span><br></pre></td></tr></table></figure>
+<p>浏览器支持（在我写这篇文章的时候，还没有任何一个浏览器支持这个第四级选择器。）</p>
+<p><code>:nth-child</code>选择器匹配作为其父级的第 n 个子元素。<code>:nth-last-child</code>也一样的，只不过它是从最后一个元素开始计数的。你可以使用:nth测试来了解它们之间的区别，并进一步了解 An+B 表示法。</p>
+<p>在这篇文章的开头，我举了一个 <code>:nth.last-child</code>的例子，我说这个第三级的选择器。然而，对于第四级选择器，这个选择器接收一个可选的of选择器用来筛选仅与该选择器匹配的子元素。</p>
+<p>除了功能更加强大之外，它的声明方式也可以不同。例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-class">.item</span><span class="selector-pseudo">:nth-child(-n+2)</span></span><br></pre></td></tr></table></figure>
+<p>复制代码选择前面两个具有item类的 <code>&lt;li&gt;</code>元素。</p>
+<p>它和以下的不同：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:nth-child(-n+2</span> <span class="selector-tag">of</span> <span class="selector-tag">li</span><span class="selector-class">.item</span>)</span><br></pre></td></tr></table></figure>
+<p>复制代码这会选择前面两个带有item类的 <code>&lt;li&gt;</code>元素即使它们并不是列表的前两个元素。</p>
+<p>尝试一下（在支持该选择器的浏览器中，例如 Safari）：</p>
+<h2 id="网格结构伪类"><a href="#网格结构伪类" class="headerlink" title="网格结构伪类"></a>网格结构伪类</h2><p>这类选择器包括使用表格的列的选择器。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">F</span> || <span class="selector-tag">E</span></span><br></pre></td></tr></table></figure>
+<p>在我写这篇文章的时候，还没有任何一个浏览器支持这个选择器。</p>
+<p>列组合器选择器（||）选择类型 E 的元素，该元素表示表中的单元格并属于由类型 F 的元素表示的列。</p>
+<p>例如，有如下表：</p>
+<p><img src="F:\图片库blog/picture_images/picture/css/97.png" alt="第四级选择器"></p>
+<p>对于以下样式</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">col</span><span class="selector-class">.selected</span> || <span class="selector-tag">td</span> &#123;  <span class="attribute">background-color</span>: lightyellow;&#125;</span><br></pre></td></tr></table></figure>
+<p>这会给所选列（价格）的单元格（ <code>&lt;td&gt;</code>元素）设置浅黄色的背景色。 </p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:nth-col(An+B)</span>`和 `<span class="selector-pseudo">:nth-last-col(An+B)</span></span><br></pre></td></tr></table></figure>
+<p>在我写这篇文章的时候，这个选择器还没有被任何一个浏览器支持。</p>
+<p>你可以把这些选择器看作是 <code>:nth-child</code>和 <code>:nth-last-child</code>的列版本。</p>
+<p><code>:nth-col(An+B)</code>选择网格或表格中的一个在该元素之间还有 An+B-1 个元素的元素（n 为 0 或任意一个整数）。</p>
+<p>例如：</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">col</span><span class="selector-class">.nth-col</span>(<span class="number">1</span>) &#123;  <span class="attribute">background-color</span>: lightyellow; &#125;</span><br><span class="line"><span class="selector-tag">col</span><span class="selector-class">.nth-last-col</span>(<span class="number">1</span>) &#123;  <span class="attribute">background-color</span>: lightgreen; &#125;</span><br></pre></td></tr></table></figure>
+<p>这会给表格的第一列元素添加一个浅黄色背景色，。被最后一列元素添加一个浅绿色背景色。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>第四级选择器使您可以轻松声明复杂的选择规则。</p>
+<p>我们涵盖了2019年1月《编辑器草案》规范中定义的大多数选择器，但是，我遗漏了一些可能会很快消失或很快改变的选择器，或者关于它们的信息不多（除了不受支持） 任何浏览器）：</p>
+<ul>
+<li>:target-within</li>
+<li>:scope（不要将它和作用域样式混淆）</li>
+<li>时间伪类（你可以在这里了解更多信息）</li>
+<li>:blank</li>
+<li>:user-invalid</li>
+</ul>
+<p>但绝对要注意这些以及第4级选择器的其余部分。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/11/11/%E5%85%B6%E5%AE%83/%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E6%B5%8B%E8%AF%95/">
+                小项目实战测试
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-11</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <center><h1>小程序</h1></center>
+
+<p><a href></a></p>
+<center><h1>Vue</h1></center>
+
+<p><a href></a></p>
+<center><h1>Jquery</h1></center>
+
+<p><a href></a></p>
+<center><h1>JavaScript</h1></center>
+
+<p><a href></a></p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/22/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/24/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

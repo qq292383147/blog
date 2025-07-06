@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/06/26/JavaScript/%E5%8E%9F%E7%94%9Fjs%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/">
+                原生js实现图片懒加载
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-26</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="图片懒加载的基本原理"><a href="#图片懒加载的基本原理" class="headerlink" title="图片懒加载的基本原理"></a>图片懒加载的基本原理</h2><ol>
+<li>DOM结构中的img标签的src属性默认为空</li>
+<li>img标签中使用一个自定义属性(例如data-src)保存图片的路径</li>
+<li>当页面滚动到图片(img)底部时将自定义属性（data-src）中的图片路径填入src的属性中</li>
+</ol>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/147.gif" alt="img"> </p>
+<h2 id="js原生实现单张图片懒加载"><a href="#js原生实现单张图片懒加载" class="headerlink" title="js原生实现单张图片懒加载"></a>js原生实现单张图片懒加载</h2><h4 id="代码的基本原理"><a href="#代码的基本原理" class="headerlink" title="代码的基本原理"></a>代码的基本原理</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/148.jpg" alt="img"> </p>
+<p>HTML 结构与样式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">   * &#123;</span><br><span class="line">     margin: 0;</span><br><span class="line">     padding: 0;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="css">   <span class="selector-class">.container</span> &#123;</span></span><br><span class="line">     width: 960px;</span><br><span class="line">     margin: 500px auto 0;</span><br><span class="line">     text-align: center;</span><br><span class="line">   &#125;</span><br><span class="line"><span class="css">   <span class="selector-class">.container</span> <span class="selector-class">.img-box</span> &#123;</span></span><br><span class="line">     width: 500px;</span><br><span class="line">     height: 667px;</span><br><span class="line">     margin: 0 auto;</span><br><span class="line">     overflow: hidden;</span><br><span class="line">     background-color: #aaaaaa; // 作为占位图</span><br><span class="line">     margin-bottom: 20px;</span><br><span class="line">   &#125;</span><br><span class="line"> <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img-box"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">""</span> <span class="attr">data-src</span>=<span class="string">"https://images.pexels.com/photos/2755165/pexels-photo-2755165.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>JavaSricpt</strong> 代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> imgBox = <span class="built_in">document</span>.querySelector(<span class="string">'.img-box'</span>)</span><br><span class="line">  <span class="keyword">const</span> img = <span class="built_in">document</span>.querySelector(<span class="string">'.img-box img'</span>)</span><br><span class="line">  <span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 已经将src填入就不再需要执行设置src值的代码</span></span><br><span class="line">    <span class="keyword">if</span> (img.getAttribute(<span class="string">'src'</span>)) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> A = imgBox.offsetTop + imgBox.clientHeight</span><br><span class="line">    <span class="keyword">let</span> B = <span class="built_in">window</span>.innerHeight + <span class="built_in">window</span>.scrollY</span><br><span class="line">    <span class="keyword">if</span> (B &gt; A) &#123;</span><br><span class="line">      <span class="keyword">const</span> dataSrc = img.getAttribute(<span class="string">'data-src'</span>)</span><br><span class="line">      img.setAttribute(<span class="string">'src'</span>, dataSrc)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="js实现多张图片的懒加载"><a href="#js实现多张图片的懒加载" class="headerlink" title="js实现多张图片的懒加载"></a>js实现多张图片的懒加载</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假数据</span></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> container = <span class="built_in">document</span>.querySelector(<span class="string">'.container'</span>)</span><br><span class="line">  <span class="keyword">const</span> imgBox = <span class="built_in">document</span>.querySelector(<span class="string">'.img-box'</span>)</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>).fill(<span class="literal">null</span>).forEach(<span class="function"><span class="params">el</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> node = imgBox.cloneNode(<span class="literal">true</span>)</span><br><span class="line">    container.appendChild(node)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> imgBoxes = [...document.querySelectorAll(<span class="string">'.img-box'</span>)]</span><br><span class="line">  imgBoxes.forEach(<span class="function">(<span class="params">el</span>) =&gt;</span> &#123;</span><br><span class="line">    lazyLoad(el, el.firstElementChild)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 懒加载函数</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*图片容器&#125;</span> </span>imgWrapperNode </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;*图片&#125;</span> </span>imgNode </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">lazyLoad</span> (<span class="params">imgWrapperNode, imgNode</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (imgNode.getAttribute(<span class="string">'src'</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> A = imgWrapperNode.offsetTop + imgWrapperNode.clientHeight</span><br><span class="line">  <span class="keyword">let</span> B = <span class="built_in">window</span>.innerHeight + <span class="built_in">window</span>.scrollY</span><br><span class="line">  <span class="keyword">if</span> (B &gt; A) &#123;</span><br><span class="line">    <span class="keyword">const</span> dataSrc = imgNode.getAttribute(<span class="string">'data-src'</span>)</span><br><span class="line">    imgNode.setAttribute(<span class="string">'src'</span>, dataSrc)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/06/26/Vue/Vue%E4%B8%ADVuex%E7%9A%84%E8%AF%A6%E8%A7%A3%E4%B8%8E%E4%BD%BF%E7%94%A8(%E7%AE%80%E6%B4%81%E6%98%93%E6%87%82%E7%9A%84%E5%85%A5%E9%97%A8%E5%B0%8F%E5%AE%9E%E4%BE%8B)/">
+                Vue中Vuex的详解与使用(简洁易懂的入门小实例)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-26</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p><strong>Vuex 是一个专为 Vue.js 应用程序开发的<code>状态管理模式</code>。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</strong></p>
+<p><strong>例如：你有几个数据，几个操作，在多个组件上都需要使用，如果每个组件都去调用都是写，就会很麻烦，代码又臭又长。当然 如果没有大量的操作和数据需要在多个组件内使用的话呢，其实也就可以不用这个 Vuex了。看个人吧！</strong></p>
+<p><strong>这里我就用自己对 Vuex 的理解来介绍这个东西怎么去使用，我人也不聪明，整好久才整明白，话不多说，下面开始上代码。</strong></p>
+<p><strong>1、首先为了项目格式便于维护和相对规范一点，我们先在 目录下建立一个 store 文件夹，并且在下面建立一个 store.js 文件：</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/1.jpg" alt="img"></p>
+<h2 id="2、简单明了，先引入-Vue-和-Vuex-并且别忘了-Vue-use-Vuex"><a href="#2、简单明了，先引入-Vue-和-Vuex-并且别忘了-Vue-use-Vuex" class="headerlink" title="2、简单明了，先引入 Vue 和 Vuex 并且别忘了 Vue.use(Vuex);"></a>2、简单明了，先引入 Vue 和 Vuex 并且别忘了 Vue.use(Vuex);</h2><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/2.jpg" alt="img"></p>
+<p><strong>当然你 Vuex 首先得跟 main.js 扯上点关系嘛。这里的m_index.js === main.js 因为项目原因，暂时换了个名字，不过也无影响，好了我们继续。</strong></p>
+<p><strong>=》引入 store 文件  =》   并且 Vue 实例上得将 挂载 store ，这下万无一失。可以继续了</strong> </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/3.jpg" alt="img"></p>
+<p> <strong>然后我们就可以开始编写我们的vuex业务代码了，那么，我们的数据如何保存？</strong></p>
+<h2 id="3、现在开始-Vuex-的主宰部分-new-Vuex-Store（-）"><a href="#3、现在开始-Vuex-的主宰部分-new-Vuex-Store（-）" class="headerlink" title="3、现在开始 Vuex 的主宰部分 new Vuex.Store（{}）"></a>3、现在开始 Vuex 的主宰部分 new Vuex.Store（{}）</h2><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/4.jpg" alt="img"></p>
+<p> <strong>在这张图上可以清楚的看到 new Vuex.Store 里面有一个 state:{ } 注释也写了，</strong></p>
+<p><strong>这是你要设置的全局访问的 state 对象，也就是你需要 count 就丢个 count进去，需要 price 就丢个 price进去，</strong></p>
+<p><strong>这里我丢了个 count 和 ChangeShowCom 两个不同的数据类型 作为一个对比。</strong></p>
+<h2 id="4、如何在页面中获取-state-里面的-数据呢？"><a href="#4、如何在页面中获取-state-里面的-数据呢？" class="headerlink" title="4、如何在页面中获取 state 里面的 数据呢？"></a>4、如何在页面中获取 state 里面的 数据呢？</h2><p><strong>通过 this.$store.state.count 可以拿到 state里面的 count 也就是0，话不多说，看看吧</strong></p>
+<p> <img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/5.jpg" alt="img"></p>
+<h2 id="5、getters-》getters-和-组件的-computed-类似，方便直接生成一些可以直接用的数据。当组装的数据要在多个页面使用时，就可以使用-getters-来做。"><a href="#5、getters-》getters-和-组件的-computed-类似，方便直接生成一些可以直接用的数据。当组装的数据要在多个页面使用时，就可以使用-getters-来做。" class="headerlink" title="5、getters  =》getters 和 组件的 computed 类似，方便直接生成一些可以直接用的数据。当组装的数据要在多个页面使用时，就可以使用 getters 来做。"></a>5、getters  =》getters 和 组件的 computed 类似，方便直接生成一些可以直接用的数据。当组装的数据要在多个页面使用时，就可以使用 getters 来做。</h2><p>　<strong>注释也写了，getters 可以实时监听state值的变化(最新状态)</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/6.jpg" alt="img"></p>
+<p> <strong>我给 getters 里面获取 count 值的方法命名为 getCount 并且需要传入 state</strong></p>
+<p><strong>那么如何获取 通过 getters 获取 承载变化的 count 的值呢？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.getters.getCount  具体效果在 第4 栏里面有些，这里就不作重复了。</span><br></pre></td></tr></table></figure>
+<h2 id="6、那么，-我们如果想改变-count-的值，应该怎么做呢？-这时候就可以用到-mutations-。"><a href="#6、那么，-我们如果想改变-count-的值，应该怎么做呢？-这时候就可以用到-mutations-。" class="headerlink" title="6、那么， 我们如果想改变 count 的值，应该怎么做呢？ 这时候就可以用到  mutations 。"></a>6、那么， 我们如果想改变 count 的值，应该怎么做呢？ 这时候就可以用到  mutations 。</h2><p><strong>要修改 store 中的值唯一的方法就是提交 mutation 来修改，我们现在 Hello World.vue 文件中添加两个按钮，一个加1，一个减1；</strong></p>
+<p><strong>这里我们点击按钮调用 add（执行加的方法）和 del（执行减法的方法），然后在里面直接提交 mutations 中的方法修改值：</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/7.jpg" alt="img"></p>
+<p><strong>修改 store.js 文件，添加 mutations，在 mutations 中定义两个函数，用来对 count 加 1 和减 1，</strong></p>
+<p><strong>这里定义的两个方法就是上面 commit 提交的两个方法如下：</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/8.jpg" alt="img"></p>
+<p>　　<strong>我们可以将参数传递给 mutations 中的函数进行计算 这里是 num 。</strong></p>
+<p>​      <strong>现在我们看看效果 ：</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/9.jpg" alt="img"></p>
+<p>  <strong>很好，count 数值都发生了改变，我点击了两下，并且 是可以在 Vue Devtools 中的 Vuex 看到过程效果</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/10.jpg" alt="img"></p>
+<p><strong>payload ：1 就是数值变化1 type 操作的方法是 addCount 也就是 mutations 根方法</strong></p>
+<p><strong>ok！完美。</strong></p>
+<p><strong>7、到了 Actions 了</strong>  </p>
+<p><strong>Action 类似于 mutation，不同在于：</strong></p>
+<ul>
+<li><strong>Action 提交的是 mutation，而不是直接变更状态。</strong></li>
+<li><strong>Action 可以包含任意异步操作。</strong></li>
+</ul>
+<p><strong>我们来看一下：</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/11.jpg" alt="img"></p>
+<p><strong>然后我们去修改 Hello World.vue 文件：</strong></p>
+<p><strong>这里我们把 commit 提交 mutations 修改为使用 dispatch 来提交 actions；我们点击页面，效果是一样的。</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/12.jpg" alt="img"></p>
+<p><strong>现在让我们来看看效果，这里我又点击了6下，很显然，效果是一样的。</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/13.jpg" alt="img"></p>
+<p>注意，当实际写项目的时候  里面未必直接传的是 数字1 可能是对象啊 或者字符串啊。所以这个时候就要注意了，我举个例子：</p>
+<p>这里写个 input 输入框 双向绑定一个 something 记得在 data 里面初始化一下，</p>
+<p>然后，我们将 something 传入这个方法里面 add(something) </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/14.jpg" alt="img"></p>
+<p>这个时候，看着好像没有什么问题，那么问题这时候就来了，我们先试试点加号会发生什么？</p>
+<p> <img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/15.jpg" alt="img"></p>
+<p>   我点击了三下加号，看到没，直接在 0后面拼接了111 变成0111 这显然不是我们想要的效果了，这是为什么呢？</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/16.jpg" alt="img"></p>
+<p>我们来打印一下 这个 1 的数据类型</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/17.jpg" alt="img"></p>
+<p> 原来如此，这个是字符串类型，难怪不能直接加，那么现在我们该怎么办呢？当然是 字符串转换成数字啦 parseInt()</p>
+<p> <img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/18.jpg" alt="img"></p>
+<p>  当然是 字符串转换成数字啦  哈哈哈哈哈哈 parseInt(); 方法  然后继续打印结果</p>
+<p>  <img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/19.jpg" alt="img"></p>
+<p> <img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/20.jpg" alt="img"></p>
+<p>  好了，现在就是数字类型了，那么我们继续最后一步，并且看看效果吧</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/21.jpg" alt="img"></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/22.jpg" alt="img"></p>
+<p> 这里我点击了三下，结果成功的变成了 6.</p>
+<p><strong>8、来看一下 Vuex 里面的好东西，辅助函数 mapState、mapGetters、mapActions</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果我们不喜欢这种在页面上使用“this.stroe.state.count”和“this.store.dispatch(&apos;funName&apos;)”这种很长的写法，</span><br><span class="line"></span><br><span class="line">那么我们可以使用 mapState、mapGetters、mapActions就不会这么麻烦了；</span><br><span class="line"></span><br><span class="line">并且我们配合 ... 拓展符 一起使用。</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/23.jpg" alt="img"></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/24.jpg" alt="img"></p>
+<p> <img src="https://qq292383147.github.io/pictureLibrary/picture/vuex/25.jpg" alt="img"></p>
+<p><strong>正常显示，效果是一样的，我们就可以不再使用很长的写法来调用了。</strong></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2020/03/18/%E9%9D%A2%E8%AF%95%E9%A2%98/%E3%80%8C%E5%90%90%E8%A1%80%E6%95%B4%E7%90%86%E3%80%8D%E5%86%8D%E6%9D%A5%E4%B8%80%E6%89%93Webpack%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                「吐血整理」再来一打Webpack面试题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-03-18</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/面试题/">面试题</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>从头发的浓密程度和干练的走路姿势我察觉到，面前坐着的这位面试官也是一把好手。我像以往一样，准备花3分钟的时间进行自我介绍。在此期间，我的目光被16寸的MacBook Pro所吸引，这次的自我介绍我做足了准备，很有信心征服面试官。不出我所料，面试官被我引入了我擅长的领域。</p>
+<blockquote>
+<p>看来你对Webpack很熟悉，那我来考考你</p>
+</blockquote>
+<h2 id="0-有哪些常见的Loader？你用过哪些Loader？"><a href="#0-有哪些常见的Loader？你用过哪些Loader？" class="headerlink" title="0.有哪些常见的Loader？你用过哪些Loader？"></a>0.有哪些常见的Loader？你用过哪些Loader？</h2><p>(我开始熟悉的报起了菜名)</p>
+<ul>
+<li><code>raw-loader</code>：加载文件原始内容（utf-8）</li>
+<li><code>file-loader</code>：把文件输出到一个文件夹中，在代码中通过相对 URL 去引用输出的文件 (处理图片和字体)</li>
+<li><code>url-loader</code>：与 file-loader 类似，区别是用户可以设置一个阈值，大于阈值时返回其 publicPath，小于阈值时返回文件 base64 形式编码 (处理图片和字体)</li>
+<li><code>source-map-loader</code>：加载额外的 Source Map 文件，以方便断点调试</li>
+<li><code>svg-inline-loader</code>：将压缩后的 SVG 内容注入代码中</li>
+<li><code>image-loader</code>：加载并且压缩图片文件</li>
+<li><code>json-loader</code> 加载 JSON 文件（默认包含）</li>
+<li><code>handlebars-loader</code>: 将 Handlebars 模版编译成函数并返回</li>
+<li><code>babel-loader</code>：把 ES6 转换成 ES5</li>
+<li><code>ts-loader</code>: 将 TypeScript 转换成 JavaScript</li>
+<li><code>awesome-typescript-loader</code>：将 TypeScript 转换成 JavaScript，性能优于 ts-loader</li>
+<li><code>sass-loader</code>：将 CSS 代码注入 JavaScript 中，通过 DOM 操作去加载 CSS</li>
+<li><code>css-loader</code>：加载 CSS，支持模块化、压缩、文件导入等特性</li>
+<li><code>style-loader</code>：把 CSS 代码注入到 JavaScript 中，通过 DOM 操作去加载 CSS</li>
+<li><code>postcss-loader</code>：扩展 CSS 语法，使用下一代 CSS，可以配合 autoprefixer 插件自动补齐 CSS3 前缀</li>
+<li><code>eslint-loader</code>：通过 ESLint 检查 JavaScript 代码</li>
+<li><code>tslint-loader</code>：通过 TSLint检查 TypeScript 代码</li>
+<li><code>mocha-loader</code>：加载 Mocha 测试用例的代码</li>
+<li><code>coverjs-loader</code>：计算测试的覆盖率</li>
+<li><code>vue-loader</code>：加载 Vue.js 单文件组件</li>
+<li><code>i18n-loader</code>: 国际化</li>
+<li><code>cache-loader</code>: 可以在一些性能开销较大的 Loader 之前添加，目的是将结果缓存到磁盘里</li>
+</ul>
+<p>更多 Loader 请参考官网</p>
+<p><a href="https://webpack.docschina.org/loaders" target="_blank" rel="noopener">https://webpack.docschina.org/loaders</a></p>
+<p>(面试官：挺好，知道的还挺多)</p>
+<h2 id="1-有哪些常见的Plugin？你用过哪些Plugin？"><a href="#1-有哪些常见的Plugin？你用过哪些Plugin？" class="headerlink" title="1.有哪些常见的Plugin？你用过哪些Plugin？"></a>1.有哪些常见的Plugin？你用过哪些Plugin？</h2><p>(这大兄弟好像听上瘾了，继续开启常规操作)</p>
+<ul>
+<li><code>define-plugin</code>：定义环境变量 (Webpack4 之后指定 mode 会自动配置)</li>
+<li><code>ignore-plugin</code>：忽略部分文件</li>
+<li><code>html-webpack-plugin</code>：简化 HTML 文件创建 (依赖于 html-loader)</li>
+<li><code>web-webpack-plugin</code>：可方便地为单页应用输出 HTML，比 html-webpack-plugin 好用</li>
+<li><code>uglifyjs-webpack-plugin</code>：不支持 ES6 压缩 (Webpack4 以前)</li>
+<li><code>terser-webpack-plugin</code>: 支持压缩 ES6 (Webpack4)</li>
+<li><code>webpack-parallel-uglify-plugin</code>: 多进程执行代码压缩，提升构建速度</li>
+<li><code>mini-css-extract-plugin</code>: 分离样式文件，CSS 提取为独立文件，支持按需加载 (替代extract-text-webpack-plugin)</li>
+<li><code>serviceworker-webpack-plugin</code>：为网页应用增加离线缓存功能</li>
+<li><code>clean-webpack-plugin</code>: 目录清理</li>
+<li><code>ModuleConcatenationPlugin</code>: 开启 Scope Hoisting</li>
+<li><code>speed-measure-webpack-plugin</code>: 可以看到每个 Loader 和 Plugin 执行耗时 (整个打包耗时、每个 Plugin 和 Loader 耗时)</li>
+<li><code>webpack-bundle-analyzer</code>: 可视化 Webpack 输出文件的体积 (业务组件、依赖第三方模块)</li>
+</ul>
+<p>更多 Plugin 请参考官网</p>
+<p><a href="https://webpack.docschina.org/plugins" target="_blank" rel="noopener">https://webpack.docschina.org/plugins</a></p>
+<p>(Double Kill)</p>
+<h2 id="2-那你再说一说Loader和Plugin的区别？"><a href="#2-那你再说一说Loader和Plugin的区别？" class="headerlink" title="2.那你再说一说Loader和Plugin的区别？"></a>2.那你再说一说Loader和Plugin的区别？</h2><p>(就知道你会问这个，我用手掩盖着嘴角的微笑)</p>
+<p><code>Loader</code> 本质就是一个函数，在该函数中对接收到的内容进行转换，返回转换后的结果。因为 Webpack 只认识 JavaScript，所以 Loader 就成了翻译官，对其他类型的资源进行转译的预处理工作。</p>
+<p><code>Plugin</code> 就是插件，基于事件流框架 <code>Tapable</code>，插件可以扩展 Webpack 的功能，在 Webpack 运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在合适的时机通过 Webpack 提供的 API 改变输出结果。</p>
+<p><code>Loader</code> 在 module.rules 中配置，作为模块的解析规则，类型为数组。每一项都是一个 Object，内部包含了 test(类型文件)、loader、options (参数)等属性。</p>
+<p><code>Plugin</code> 在 plugins 中单独配置，类型为数组，每一项是一个 Plugin 的实例，参数都通过构造函数传入。</p>
+<h2 id="3-Webpack构建流程简单说一下"><a href="#3-Webpack构建流程简单说一下" class="headerlink" title="3.Webpack构建流程简单说一下"></a>3.Webpack构建流程简单说一下</h2><p>Webpack 的运行流程是一个串行的过程，从启动到结束会依次执行以下流程：</p>
+<ul>
+<li><code>初始化参数</code>：从配置文件和 Shell 语句中读取与合并参数，得出最终的参数</li>
+<li><code>开始编译</code>：用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译</li>
+<li><code>确定入口</code>：根据配置中的 entry 找出所有的入口文件</li>
+<li><code>编译模块</code>：从入口文件出发，调用所有配置的 Loader 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理</li>
+<li><code>完成模块编译</code>：在经过第4步使用 Loader 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系</li>
+<li><code>输出资源</code>：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会</li>
+<li><code>输出完成</code>：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统</li>
+</ul>
+<p>在以上过程中，<code>Webpack</code> 会在特定的时间点广播出特定的事件，插件在监听到感兴趣的事件后会执行特定的逻辑，并且插件可以调用 Webpack 提供的 API 改变 Webpack 的运行结果。</p>
+<p>简单说</p>
+<ul>
+<li>初始化：启动构建，读取与合并配置参数，加载 Plugin，实例化 Compiler</li>
+<li>编译：从 Entry 出发，针对每个 Module 串行调用对应的 Loader 去翻译文件的内容，再找到该 Module 依赖的 Module，递归地进行编译处理</li>
+<li>输出：将编译后的 Module 组合成 Chunk，将 Chunk 转换成文件，输出到文件系统中</li>
+</ul>
+<p>对源码感兴趣的同学可以移步我的另一篇专栏<a href="http://mp.weixin.qq.com/s?__biz=MzUxMjkwMjU1MQ==&amp;mid=2247483932&amp;idx=1&amp;sn=f329747e60213ffcc2397edfcc188310&amp;chksm=f95c16e4ce2b9ff21d1656d8dc71fe28ec3bafec14aff34c27e490b3fecbe9da047b457bce31&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">从源码窥探Webpack4.x原理</a></p>
+<h2 id="4-使用webpack开发时，你用过哪些可以提高效率的插件？"><a href="#4-使用webpack开发时，你用过哪些可以提高效率的插件？" class="headerlink" title="4.使用webpack开发时，你用过哪些可以提高效率的插件？"></a>4.使用webpack开发时，你用过哪些可以提高效率的插件？</h2><p>(这道题还蛮注重实际，用户的体验还是要从小抓起的)</p>
+<ul>
+<li><code>webpack-dashboard</code>：可以更友好的展示相关打包信息。</li>
+<li><code>webpack-merge</code>：提取公共配置，减少重复配置代码</li>
+<li><code>speed-measure-webpack-plugin</code>：简称 SMP，分析出 Webpack 打包过程中 Loader 和 Plugin 的耗时，有助于找到构建过程中的性能瓶颈。</li>
+<li><code>size-plugin</code>：监控资源体积变化，尽早发现问题</li>
+<li><code>HotModuleReplacementPlugin</code>：模块热替换</li>
+</ul>
+<h2 id="5-source-map是什么？生产环境怎么用？"><a href="#5-source-map是什么？生产环境怎么用？" class="headerlink" title="5.source map是什么？生产环境怎么用？"></a>5.source map是什么？生产环境怎么用？</h2><p><code>source map</code> 是将编译、打包、压缩后的代码映射回源代码的过程。打包压缩后的代码不具备良好的可读性，想要调试源码就需要 soucre map。</p>
+<p>map文件只要不打开开发者工具，浏览器是不会加载的。</p>
+<p>线上环境一般有三种处理方案：</p>
+<ul>
+<li><code>hidden-source-map</code>：借助第三方错误监控平台 Sentry 使用</li>
+<li><code>nosources-source-map</code>：只会显示具体行数以及查看源代码的错误栈。安全性比 sourcemap 高</li>
+<li><code>sourcemap</code>：通过 nginx 设置将 .map 文件只对白名单开放(公司内网)</li>
+</ul>
+<p>注意：避免在生产中使用 <code>inline-</code> 和 <code>eval-</code>，因为它们会增加 bundle 体积大小，并降低整体性能。</p>
+<h2 id="6-模块打包原理知道吗？"><a href="#6-模块打包原理知道吗？" class="headerlink" title="6.模块打包原理知道吗？"></a>6.模块打包原理知道吗？</h2><p>Webpack 实际上为每个模块创造了一个可以导出和导入的环境，本质上并没有修改 代码的执行逻辑，代码执行顺序与模块加载顺序也完全一致。</p>
+<h2 id="7-文件监听原理呢？"><a href="#7-文件监听原理呢？" class="headerlink" title="7.文件监听原理呢？"></a>7.文件监听原理呢？</h2><p>在发现源码发生变化时，自动重新构建出新的输出文件。</p>
+<p>Webpack开启监听模式，有两种方式：</p>
+<ul>
+<li>启动 webpack 命令时，带上 –watch 参数</li>
+<li>在配置 webpack.config.js 中设置 watch:true</li>
+</ul>
+<p>缺点：每次需要手动刷新浏览器</p>
+<p>原理：轮询判断文件的最后编辑时间是否变化，如果某个文件发生了变化，并不会立刻告诉监听者，而是先缓存起来，等 <code>aggregateTimeout</code> 后再执行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.export = &#123;</span><br><span class="line">    // 默认false,也就是不开启</span><br><span class="line">    watch: true,</span><br><span class="line">    // 只有开启监听模式时，watchOptions才有意义</span><br><span class="line">    watchOptions: &#123;</span><br><span class="line">        // 默认为空，不监听的文件或者文件夹，支持正则匹配</span><br><span class="line">        ignored: /node_modules/,</span><br><span class="line">        // 监听到变化发生后会等300ms再去执行，默认300ms</span><br><span class="line">        aggregateTimeout:300,</span><br><span class="line">        // 判断文件是否发生变化是通过不停询问系统指定文件有没有变化实现的，默认每秒问1000次</span><br><span class="line">        poll:1000</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="8-说一下-Webpack-的热更新原理吧"><a href="#8-说一下-Webpack-的热更新原理吧" class="headerlink" title="8.说一下 Webpack 的热更新原理吧"></a>8.说一下 Webpack 的热更新原理吧</h2><p>(敲黑板，这道题必考)</p>
+<p><code>Webpack</code> 的热更新又称热替换（<code>Hot Module Replacement</code>），缩写为 <code>HMR</code>。这个机制可以做到不用刷新浏览器而将新变更的模块替换掉旧的模块。</p>
+<p>HMR的核心就是客户端从服务端拉去更新后的文件，准确的说是 chunk diff (chunk 需要更新的部分)，实际上 WDS 与浏览器之间维护了一个 <code>Websocket</code>，当本地资源发生变化时，WDS 会向浏览器推送更新，并带上构建时的 hash，让客户端与上一次资源进行对比。客户端对比出差异后会向 WDS 发起 <code>Ajax</code> 请求来获取更改内容(文件列表、hash)，这样客户端就可以再借助这些信息继续向 WDS 发起 <code>jsonp</code> 请求获取该chunk的增量更新。</p>
+<p>后续的部分(拿到增量更新之后如何处理？哪些状态该保留？哪些又需要更新？)由 <code>HotModulePlugin</code> 来完成，提供了相关 API 以供开发者针对自身场景进行处理，像<code>react-hot-loader</code> 和 <code>vue-loader</code> 都是借助这些 API 实现 HMR。</p>
+<p>细节请参考Webpack HMR 原理解析</p>
+<p><a href="https://zhuanlan.zhihu.com/p/30669007" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30669007</a></p>
+<p>(面试官：不错不错，小伙子表达能力不错)</p>
+<p>(基操，勿6)</p>
+<h2 id="9-如何对bundle体积进行监控和分析？"><a href="#9-如何对bundle体积进行监控和分析？" class="headerlink" title="9.如何对bundle体积进行监控和分析？"></a>9.如何对bundle体积进行监控和分析？</h2><p><code>VSCode</code> 中有一个插件 <code>Import Cost</code> 可以帮助我们对引入模块的大小进行实时监测，还可以使用 <code>webpack-bundle-analyzer</code> 生成 <code>bundle</code> 的模块组成图，显示所占体积。</p>
+<p><code>bundlesize</code> 工具包可以进行自动化资源体积监控。</p>
+<h2 id="10-文件指纹是什么？怎么用？"><a href="#10-文件指纹是什么？怎么用？" class="headerlink" title="10.文件指纹是什么？怎么用？"></a>10.文件指纹是什么？怎么用？</h2><p>文件指纹是打包后输出的文件名的后缀。</p>
+<ul>
+<li><code>Hash</code>：和整个项目的构建相关，只要项目文件有修改，整个项目构建的 hash 值就会更改</li>
+<li><code>Chunkhash</code>：和 Webpack 打包的 chunk 有关，不同的 entry 会生出不同的 chunkhash</li>
+<li><code>Contenthash</code>：根据文件内容来定义 hash，文件内容不变，则 contenthash 不变</li>
+</ul>
+<h3 id="JS的文件指纹设置"><a href="#JS的文件指纹设置" class="headerlink" title="JS的文件指纹设置"></a>JS的文件指纹设置</h3><p>设置 output 的 filename，用 chunkhash。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        app: &apos;./scr/app.js&apos;,</span><br><span class="line">        search: &apos;./src/search.js&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &apos;[name][chunkhash:8].js&apos;,</span><br><span class="line">        path:__dirname + &apos;/dist&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS的文件指纹设置"><a href="#CSS的文件指纹设置" class="headerlink" title="CSS的文件指纹设置"></a>CSS的文件指纹设置</h3><p>设置 MiniCssExtractPlugin 的 filename，使用 contenthash。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &#123;</span><br><span class="line">        app: &apos;./scr/app.js&apos;,</span><br><span class="line">        search: &apos;./src/search.js&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: &apos;[name][chunkhash:8].js&apos;,</span><br><span class="line">        path:__dirname + &apos;/dist&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins:[</span><br><span class="line">        new MiniCssExtractPlugin(&#123;</span><br><span class="line">            filename: `[name][contenthash:8].css`</span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="图片的文件指纹设置"><a href="#图片的文件指纹设置" class="headerlink" title="图片的文件指纹设置"></a>图片的文件指纹设置</h3><p>设置file-loader的name，使用hash。</p>
+<p>占位符名称及含义</p>
+<ul>
+<li>ext               资源后缀名</li>
+<li>name            文件名称</li>
+<li>path             文件的相对路径</li>
+<li>folder           文件所在的文件夹</li>
+<li>contenthash   文件的内容hash，默认是md5生成</li>
+<li>hash             文件内容的hash，默认是md5生成</li>
+<li>emoji            一个随机的指代文件内容的emoji</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    entry: &apos;./src/index.js&apos;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        filename:&apos;bundle.js&apos;,</span><br><span class="line">        path:path.resolve(__dirname, &apos;dist&apos;)</span><br><span class="line">    &#125;,</span><br><span class="line">    module:&#123;</span><br><span class="line">        rules:[&#123;</span><br><span class="line">            test:/\.(png|svg|jpg|gif)$/,</span><br><span class="line">            use:[&#123;</span><br><span class="line">                loader:&apos;file-loader&apos;,</span><br><span class="line">                options:&#123;</span><br><span class="line">                    name:&apos;img/[name][hash:8].[ext]&apos;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="11-在实际工程中，配置文件上百行乃是常事，如何保证各个loader按照预想方式工作？"><a href="#11-在实际工程中，配置文件上百行乃是常事，如何保证各个loader按照预想方式工作？" class="headerlink" title="11.在实际工程中，配置文件上百行乃是常事，如何保证各个loader按照预想方式工作？"></a>11.在实际工程中，配置文件上百行乃是常事，如何保证各个loader按照预想方式工作？</h2><p>可以使用 <code>enforce</code> 强制执行 <code>loader</code> 的作用顺序，<code>pre</code> 代表在所有正常 loader 之前执行，<code>post</code> 是所有 loader 之后执行。(inline 官方不推荐使用)</p>
+<h2 id="12-如何优化-Webpack-的构建速度？"><a href="#12-如何优化-Webpack-的构建速度？" class="headerlink" title="12.如何优化 Webpack 的构建速度？"></a>12.如何优化 Webpack 的构建速度？</h2><p>(这个问题就像能不能说一说<strong>「从URL输入到页面显示发生了什么」</strong>一样）</p>
+<p>(我只想说：您希望我讲多长时间呢？)</p>
+<p>(面试官：。。。)</p>
+<ul>
+<li><p>使用<code>高版本</code>的 Webpack 和 Node.js</p>
+</li>
+<li><p><code>多进程/多实例构建</code>：HappyPack(不维护了)、thread-loader</p>
+</li>
+<li><p><code>压缩代码</code></p>
+</li>
+</ul>
+<blockquote>
+<p>webpack-paralle-uglify-plugin<br>uglifyjs-webpack-plugin 开启 parallel 参数 (不支持ES6)<br>terser-webpack-plugin 开启 parallel 参数</p>
+<p>多进程并行压缩<br>通过 mini-css-extract-plugin 提取 Chunk 中的 CSS 代码到单独文件，通过 css-loader 的 minimize 选项开启 cssnano 压缩 CSS。</p>
+</blockquote>
+<ul>
+<li><code>图片压缩</code></li>
+</ul>
+<blockquote>
+<p>使用基于 Node 库的 imagemin (很多定制选项、可以处理多种图片格式)<br>配置 image-webpack-loader</p>
+</blockquote>
+<ul>
+<li><code>缩小打包作用域</code>：</li>
+</ul>
+<blockquote>
+<p>exclude/include (确定 loader 规则范围)<br>resolve.modules 指明第三方模块的绝对路径 (减少不必要的查找)<br>resolve.mainFields 只采用 main 字段作为入口文件描述字段 (减少搜索步骤，需要考虑到所有运行时依赖的第三方模块的入口文件描述字段)<br>resolve.extensions 尽可能减少后缀尝试的可能性<br>noParse 对完全不需要解析的库进行忽略 (不去解析但仍会打包到 bundle 中，注意被忽略掉的文件里不应该包含 import、require、define 等模块化语句)<br>IgnorePlugin (完全排除模块)<br>合理使用alias</p>
+</blockquote>
+<ul>
+<li><code>提取页面公共资源</code>：</li>
+</ul>
+<blockquote>
+<p>使用 html-webpack-externals-plugin，将基础包通过 CDN 引入，不打入 bundle 中<br>使用 SplitChunksPlugin 进行(公共脚本、基础包、页面公共文件)分离(Webpack4内置) ，替代了 CommonsChunkPlugin 插件</p>
+</blockquote>
+<ul>
+<li><p>基础包分离：</p>
+</li>
+<li><p><code>DLL</code>：</p>
+</li>
+</ul>
+<blockquote>
+<p>使用 DllPlugin 进行分包，使用 DllReferencePlugin(索引链接) 对 manifest.json 引用，让一些基本不会改动的代码先打包成静态资源，避免反复编译浪费时间。</p>
+</blockquote>
+<ul>
+<li><p>HashedModuleIdsPlugin 可以解决模块数字id问题</p>
+</li>
+<li><p><code>充分利用缓存提升二次构建速度</code>：</p>
+</li>
+</ul>
+<blockquote>
+<p>babel-loader 开启缓存<br>terser-webpack-plugin 开启缓存<br>使用 cache-loader 或者 hard-source-webpack-plugin</p>
+</blockquote>
+<ul>
+<li><code>Tree shaking</code></li>
+</ul>
+<blockquote>
+<p>purgecss-webpack-plugin 和 mini-css-extract-plugin配合使用(建议)</p>
+</blockquote>
+<blockquote>
+<p>打包过程中检测工程中没有引用过的模块并进行标记，在资源压缩时将它们从最终的bundle中去掉(只能对ES6 Modlue生效) 开发中尽可能使用ES6 Module的模块，提高tree shaking效率</p>
+</blockquote>
+<ul>
+<li>禁用 babel-loader 的模块依赖解析，否则 Webpack 接收到的就都是转换过的 CommonJS 形式的模块，无法进行 tree-shaking</li>
+<li>使用 PurifyCSS(不在维护) 或者 uncss 去除无用 CSS 代码</li>
+</ul>
+<ul>
+<li><code>Scope hoisting</code></li>
+</ul>
+<blockquote>
+<p>构建后的代码会存在大量闭包，造成体积增大，运行代码时创建的函数作用域变多，内存开销变大。Scope hoisting 将所有模块的代码按照引用顺序放在一个函数作用域里，然后适当的重命名一些变量以防止变量名冲突</p>
+</blockquote>
+<ul>
+<li><p>必须是ES6的语法，因为有很多第三方库仍采用 CommonJS 语法，为了充分发挥 Scope hoisting 的作用，需要配置 mainFields 对第三方模块优先采用 jsnext:main 中指向的ES6模块化语法</p>
+</li>
+<li><p><code>动态Polyfill</code></p>
+</li>
+</ul>
+<blockquote>
+<p>建议采用 polyfill-service 只给用户返回需要的polyfill，社区维护。(部分国内奇葩浏览器UA可能无法识别，但可以降级返回所需全部polyfill)</p>
+</blockquote>
+<p>更多优化请参考官网-构建性能</p>
+<p><a href="https://www.webpackjs.com/guides/build-performance" target="_blank" rel="noopener">https://www.webpackjs.com/guides/build-performance</a></p>
+<h2 id="13-你刚才也提到了代码分割，那代码分割的本质是什么？有什么意义呢？"><a href="#13-你刚才也提到了代码分割，那代码分割的本质是什么？有什么意义呢？" class="headerlink" title="13.你刚才也提到了代码分割，那代码分割的本质是什么？有什么意义呢？"></a>13.你刚才也提到了代码分割，那代码分割的本质是什么？有什么意义呢？</h2><p>代码分割的本质其实就是在<code>源代码直接上线</code>和<code>打包成唯一脚本main.bundle.js</code>这两种极端方案之间的一种更适合实际场景的中间状态。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">阿卡丽：荣耀剑下取，均衡乱中求</span><br></pre></td></tr></table></figure>
+<p><strong>「用可接受的服务器性能压力增加来换取更好的用户体验。」</strong></p>
+<p>源代码直接上线：虽然过程可控，但是http请求多，性能开销大。</p>
+<p>打包成唯一脚本：一把梭完自己爽，服务器压力小，但是页面空白期长，用户体验不好。</p>
+<p>(Easy peezy right)</p>
+<h2 id="14-是否写过Loader？简单描述一下编写loader的思路？"><a href="#14-是否写过Loader？简单描述一下编写loader的思路？" class="headerlink" title="14.是否写过Loader？简单描述一下编写loader的思路？"></a>14.是否写过Loader？简单描述一下编写loader的思路？</h2><p>Loader 支持链式调用，所以开发上需要严格遵循“单一职责”，每个 Loader 只负责自己需要负责的事情。</p>
+<p>Loader的API 可以去官网查阅</p>
+<p><a href="https://www.webpackjs.com/api/loaders" target="_blank" rel="noopener">https://www.webpackjs.com/api/loaders</a></p>
+<ul>
+<li><p>Loader 运行在 Node.js 中，我们可以调用任意 Node.js 自带的 API 或者安装第三方模块进行调用</p>
+</li>
+<li><p>Webpack 传给 Loader 的原内容都是 UTF-8 格式编码的字符串，当某些场景下 Loader 处理二进制文件时，需要通过 exports.raw = true 告诉 Webpack 该 Loader 是否需要二进制数据</p>
+</li>
+<li><p>尽可能的异步化 Loader，如果计算量很小，同步也可以</p>
+</li>
+<li><p>Loader 是无状态的，我们不应该在 Loader 中保留状态</p>
+</li>
+<li><p>使用 loader-utils 和 schema-utils 为我们提供的实用工具</p>
+</li>
+<li><p>加载本地 Loader 方法</p>
+</li>
+</ul>
+<blockquote>
+<p>Npm link<br>ResolveLoader</p>
+</blockquote>
+<h2 id="15-是否写过Plugin？简单描述一下编写Plugin的思路？"><a href="#15-是否写过Plugin？简单描述一下编写Plugin的思路？" class="headerlink" title="15.是否写过Plugin？简单描述一下编写Plugin的思路？"></a>15.是否写过Plugin？简单描述一下编写Plugin的思路？</h2><p>webpack在运行的生命周期中会广播出许多事件，Plugin 可以监听这些事件，在特定的阶段钩入想要添加的自定义功能。Webpack 的 Tapable 事件流机制保证了插件的有序性，使得整个系统扩展性良好。</p>
+<p>Plugin的API 可以去官网查阅</p>
+<p><a href="https://www.webpackjs.com/api/plugins" target="_blank" rel="noopener">https://www.webpackjs.com/api/plugins</a></p>
+<ul>
+<li><p>compiler 暴露了和 Webpack 整个生命周期相关的钩子</p>
+</li>
+<li><p>compilation 暴露了与模块和依赖有关的粒度更小的事件钩子</p>
+</li>
+<li><p>插件需要在其原型上绑定apply方法，才能访问 compiler 实例</p>
+</li>
+<li><p>传给每个插件的 compiler 和 compilation对象都是同一个引用，若在一个插件中修改了它们身上的属性，会影响后面的插件</p>
+</li>
+<li><p>找出合适的事件点去完成想要的功能</p>
+</li>
+</ul>
+<blockquote>
+<p>emit 事件发生时，可以读取到最终输出的资源、代码块、模块及其依赖，并进行修改(emit 事件是修改 Webpack 输出资源的最后时机)<br>watch-run 当依赖的文件发生变化时会触发</p>
+</blockquote>
+<ul>
+<li>异步的事件需要在插件处理完任务时调用回调函数通知 Webpack 进入下一个流程，不然会卡住</li>
+</ul>
+<h2 id="16-聊一聊Babel原理吧"><a href="#16-聊一聊Babel原理吧" class="headerlink" title="16.聊一聊Babel原理吧"></a>16.聊一聊Babel原理吧</h2><p>大多数JavaScript Parser遵循 <code>estree</code> 规范，Babel 最初基于 <code>acorn</code> 项目(轻量级现代 JavaScript 解析器) Babel大概分为三大部分：</p>
+<ul>
+<li>解析：将代码转换成 AST</li>
+</ul>
+<blockquote>
+<p>词法分析：将代码(字符串)分割为 token 流，即语法单元成的数组<br>语法分析：分析 token 流(上面生成的数组)并生成 AST</p>
+</blockquote>
+<ul>
+<li>转换：访问 AST 的节点进行变换操作生产新的 AST</li>
+</ul>
+<blockquote>
+<p>Taro 就是利用 babel 完成的小程序语法转换</p>
+</blockquote>
+<p><a href="https://github.com/NervJS/taro/blob/master/packages/taro-transformer-wx/src/index.ts#L15" target="_blank" rel="noopener">https://github.com/NervJS/taro/blob/master/packages/taro-transformer-wx/src/index.ts#L15</a></p>
+<ul>
+<li>生成：以新的 AST 为基础生成代码</li>
+</ul>
+<p>想了解如何一步一步实现一个编译器的同学可以移步 Babel 官网曾经推荐的开源项目 the-super-tiny-compiler</p>
+<p><a href="https://github.com/jamiebuilds/the-super-tiny-compiler" target="_blank" rel="noopener">https://github.com/jamiebuilds/the-super-tiny-compiler</a></p>
+<blockquote>
+<p>面试官：(我听的口渴了，咱们休息一会，一会进行下半场)</p>
+</blockquote>
+<p>面试官拿起旁边已经凉透的龙井，喝了一口。</p>
+<p>(这小伙子有点东西)</p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/8/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/10/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

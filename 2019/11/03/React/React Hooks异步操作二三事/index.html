@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="React Hooks异步操作二三事"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>React Hooks异步操作二三事 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/03/React/React%20Hooks%E5%BC%82%E6%AD%A5%E6%93%8D%E4%BD%9C%E4%BA%8C%E4%B8%89%E4%BA%8B/">
+                React Hooks异步操作二三事
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>React Hooks 是 React 16.8 的新功能，可以在不编写 class 的情况下使用状态等功能，从而使得函数式组件从无状态的变化为有状态的。React 的类型包 @types/react 中也同步把 React.SFC (Stateless Functional Component) 改为了 React.FC (Functional Component)。</p>
+<p>通过这一升级，原先 class 写法的组件也就完全可以被函数式组件替代。虽然是否要把老项目中所有类组件全部改为函数式组件因人而异，但新写的组件还是值得尝试的，因为代码量的确减少了很多，尤其是重复的代码（例如 componentDidMount + componentDidUpdate + componentWillUnmount = useEffect）。</p>
+<p>从 16.8 发布（今年2月）至今也有大半年了，但本人水平有限，尤其在 useEffect 和异步任务搭配使用的时候经常踩到一些坑。特作本文，权当记录，供遇到同样问题的同僚借鉴参考。我会讲到三个项目中非常常见的问题：</p>
+<ol>
+<li>如何在组件加载时发起异步任务</li>
+<li>如何在组件交互时发起异步任务</li>
+<li>其他陷阱</li>
+</ol>
+<h4 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h4><ol>
+<li>使用 <code>useEffect</code> 发起异步任务，第二个参数使用空数组可实现组件加载时执行方法体，返回值函数在组件卸载时执行一次，用来清理一些东西，例如计时器。</li>
+<li>使用 AbortController 或者某些库自带的信号量 ( <code>axios.CancelToken</code>) 来控制中止请求，更加优雅地退出。</li>
+<li>当需要在其他地方（例如点击处理函数中）设定计时器，在 <code>useEffect</code> 返回值中清理时，使用局部变量或者 <code>useRef</code> 来记录这个 <code>timer</code>。不要使用 <code>useState</code>。</li>
+<li>组件中出现 <code>setTimeout</code> 等闭包时，尽量在闭包内部引用 ref 而不是 state，否则容易出现读取到旧值的情况。</li>
+<li><code>useState</code> 返回的更新状态方法是异步的，要在下次重绘才能获取新值。不要试图在更改状态之后立马获取状态。</li>
+</ol>
+<h4 id="如何在组件加载时发起异步任务"><a href="#如何在组件加载时发起异步任务" class="headerlink" title="如何在组件加载时发起异步任务"></a>如何在组件加载时发起异步任务</h4><p>这类需求非常常见，典型的例子是在列表组件加载时发送请求到后端，获取列表后展现。</p>
+<p>发送请求也属于 React 定义的副作用之一，因此应当使用 <code>useEffect</code> 来编写。基本语法我就不再过多说明，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">const</span> SOME_API = <span class="string">'/api/get/value'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [loading, setLoading] = useState(<span class="literal">true</span>);</span><br><span class="line">	<span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">	useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">			<span class="keyword">const</span> res = <span class="keyword">await</span> fetch(SOME_API);</span><br><span class="line">			<span class="keyword">const</span> data = <span class="keyword">await</span> res.json();</span><br><span class="line">			setValue(data.value);</span><br><span class="line">			setLoading(<span class="literal">false</span>);</span><br><span class="line">			&#125;)();</span><br><span class="line">         &#125;, []);</span><br><span class="line">	<span class="keyword">return</span> (&#123;</span><br><span class="line">        loading ? (<span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Loading...<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span>) : (<span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>value is &#123;value&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span>)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如上是一个基础的带 Loading 功能的组件，会发送异步请求到后端获取一个值并显示到页面上。如果以示例的标准来说已经足够，但要实际运用到项目中，还不得不考虑几个问题。</p>
+<h5 id="如果在响应回来之前组件被销毁了会怎样？"><a href="#如果在响应回来之前组件被销毁了会怎样？" class="headerlink" title="如果在响应回来之前组件被销毁了会怎样？"></a>如果在响应回来之前组件被销毁了会怎样？</h5><p>React 会报一个 Warning</p>
+<blockquote>
+<p>Warning: Can’t perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup <a href="http://function.in" target="_blank" rel="noopener">http://function.in</a> Notification</p>
+</blockquote>
+<p>大意是说在一个组件卸载了之后不应该再修改它的状态。虽然不影响运行，但作为完美主义者代表的程序员群体是无法容忍这种情况发生的，那么如何解决呢？</p>
+<p>问题的核心在于，在组件卸载后依然调用了 <code>setValue(data.value)</code> 和 <code>setLoading(false)</code>来更改状态。因此一个简单的办法是标记一下组件有没有被卸载，可以利用 <code>useEffect</code> 的返回值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 省略组件其他内容，只列出 diffuseEffect(() =&gt; &#123;</span></span><br><span class="line"><span class="keyword">let</span> isUnmounted = <span class="literal">false</span>;</span><br><span class="line">(<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">	<span class="keyword">const</span> res = <span class="keyword">await</span> fetch(SOME_API);</span><br><span class="line">	<span class="keyword">const</span> data = <span class="keyword">await</span> res.json();</span><br><span class="line">	<span class="keyword">if</span> (!isUnmounted) &#123;</span><br><span class="line">		setValue(data.value);</span><br><span class="line">		setLoading(<span class="literal">false</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	isUnmounted = <span class="literal">true</span>;</span><br><span class="line">&#125;&#125;, []);</span><br></pre></td></tr></table></figure>
+<p>这样可以顺利避免这个 Warning。</p>
+<h5 id="有没有更加优雅的解法？"><a href="#有没有更加优雅的解法？" class="headerlink" title="有没有更加优雅的解法？"></a>有没有更加优雅的解法？</h5><p>上述做法是在收到响应时进行判断，即无论如何需要等响应完成，略显被动。一个更加主动的方式是探知到卸载时直接中断请求，自然也不必再等待响应了。这种主动方案需要用到 AbortController。</p>
+<p>AbortController 是一个浏览器的实验接口，它可以返回一个信号量(singal)，从而中止发送的请求。这个接口的兼容性不错，除了 IE 之外全都兼容（如 Chrome, Edge, FF 和绝大部分移动浏览器，包括 Safari）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="keyword">let</span> isUnmounted = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">const</span> abortController = <span class="keyword">new</span> AbortController(); <span class="comment">// 创建</span></span><br><span class="line">    (<span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">    	<span class="keyword">const</span> res = <span class="keyword">await</span> fetch(SOME_API, &#123;</span><br><span class="line">        	singal: abortController.singal, <span class="comment">// 当做信号量传入</span></span><br><span class="line">            &#125;);</span><br><span class="line">         <span class="keyword">const</span> data = <span class="keyword">await</span> res.json();</span><br><span class="line">         <span class="keyword">if</span> (!isUnmounted) &#123;</span><br><span class="line">         	setValue(data.value);</span><br><span class="line">            setLoading(<span class="literal">false</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">		isUnmounted = <span class="literal">true</span>;</span><br><span class="line">		abortController.abort(); <span class="comment">// 在组件卸载时中断</span></span><br><span class="line">    &#125;&#125;, []);</span><br></pre></td></tr></table></figure>
+<p>singal 的实现依赖于实际发送请求使用的方法，如上述例子的 <code>fetch</code> 方法接受 <code>singal</code> 属性。如果使用的是 axios，它的内部已经包含了 <code>axios.CancelToken</code>，可以直接使用，例子在这里。</p>
+<h4 id="如何在组件交互时发起异步任务"><a href="#如何在组件交互时发起异步任务" class="headerlink" title="如何在组件交互时发起异步任务"></a>如何在组件交互时发起异步任务</h4><p>另一种常见的需求是要在组件交互（比如点击某个按钮）时发送请求或者开启计时器，待收到响应后修改数据进而影响页面。这里和上面一节（组件加载时）最大的差异在于 React Hooks 只能在组件级别编写，不能在方法（ <code>dealClick</code>）或者控制逻辑（ <code>if</code>, <code>for</code> 等）内部编写，所以不能在点击的响应函数中再去调用 <code>useEffect</code>。但我们依然要利用 <code>useEffect</code> 的返回函数来做清理工作。</p>
+<p>以计时器为例，假设我们想做一个组件，点击按钮后开启一个计时器(5s)，计时器结束后修改状态。但如果在计时未到就销毁组件时，我们想停止这个计时器，避免内存泄露。用代码实现的话，会发现开启计时器和清理计时器会在不同的地方，因此就必须记录这个 timer。看如下的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">let</span> timer: number;</span><br><span class="line">	useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;        <span class="comment">// timer 需要在点击时建立，因此这里只做清理使用</span></span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(<span class="string">'in useEffect return'</span>, timer); <span class="comment">// &lt;- 正确的值            </span></span><br><span class="line">        	<span class="built_in">window</span>.clearTimeout(timer);</span><br><span class="line">	&#125;&#125;, []);</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		timer = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">			setValue(<span class="number">100</span>);</span><br><span class="line">		&#125;, <span class="number">5000</span>);&#125;</span><br><span class="line">	<span class="keyword">return</span> (</span><br><span class="line">		&lt;span&gt;Value is &#123;value&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">		&lt;button onClick=&#123;dealClick&#125;&gt;Click Me!&lt;/</span>button&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>既然要记录 timer，自然是用一个内部变量来存储即可（暂不考虑连续点击按钮导致多个 timer 出现，假设只点一次。因为实际情况下点了按钮还会触发其他状态变化，继而界面变化，也就点不到了）。</p>
+<p>这里需要注意的是，如果把 <code>timer</code> 升级为状态(state)，则代码反而会出现问题。考虑如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> [timer, setTimer] = useState(<span class="number">0</span>); <span class="comment">// 把 timer 升级为状态</span></span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;        <span class="comment">// timer 需要在点击时建立，因此这里只做清理使用</span></span><br><span class="line">    	<span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(<span class="string">'in useEffect return'</span>, timer); <span class="comment">// &lt;- 0            					</span></span><br><span class="line">        	<span class="built_in">window</span>.clearTimeout(timer);</span><br><span class="line">            &#125;    </span><br><span class="line">         &#125;, []);</span><br><span class="line">    	<span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        	<span class="keyword">let</span> tmp = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            	setValue(<span class="number">100</span>);</span><br><span class="line">             &#125;, <span class="number">5000</span>);</span><br><span class="line">             setTimer(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    	<span class="keyword">return</span> (</span><br><span class="line">        	&lt;span&gt;Value is &#123;value&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        	&lt;button onClick=&#123;dealClick&#125;&gt;Click Me!&lt;/</span>button&gt;</span><br><span class="line">        );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>有关语义上 <code>timer</code> 到底算不算作组件的状态我们先抛开不谈，仅就代码层面来看。利用 <code>useState</code> 来记住 <code>timer</code> 状态，利用 <code>setTimer</code> 去更改状态，看似合理。但实际运行下来，在 <code>useEffect</code> 返回的清理函数中，得到的 <code>timer</code> 却是初始值，即 <code>0</code>。</p>
+<p>为什么两种写法会有差异呢？</p>
+<p>其核心在于写入的变量和读取的变量是否是同一个变量。</p>
+<p>第一种写法代码是把 <code>timer</code> 作为组件内的局部变量使用。在初次渲染组件时， <code>useEffect</code> 返回的闭包函数中指向了这个局部变量 <code>timer</code>。在 <code>dealClick</code> 中设置计时器时返回值依旧写给了这个局部变量（即读和写都是同一个变量），因此在后续卸载时，虽然组件重新运行导致出现一个新的局部变量 <code>timer</code>，但这不影响闭包内老的 <code>timer</code>，所以结果是正确的。</p>
+<p>第二种写法， <code>timer</code> 是一个 <code>useState</code> 的返回值，并不是一个简单的变量。从 React Hooks 的源码来看，它返回的是 <code>[hook.memorizedState,dispatch]</code>，对应我们接的值和变更方法。当调用<code>setTimer</code> 和 <code>setValue</code> 时，分别触发两次重绘，使得 <code>hook.memorizedState</code> 指向了 <code>newState</code>（注意：不是修改，而是重新指向）。但 <code>useEffect</code> 返回闭包中的 <code>timer</code> 依然指向旧的状态，从而得不到新的值。（即读的是旧值，但写的是新值，不是同一个）</p>
+<p>如果觉得阅读 Hooks 源码有困难，可以从另一个角度去理解：虽然 React 在 16.8 推出了 Hooks，但实际上只是加强了函数式组件的写法，使之拥有状态，用来作为类组件的一种替代，但 React 状态的内部机制没有变化。在 React 中 <code>setState</code> 内部是通过 merge 操作将新状态和老状态合并后，重新返回一个新的状态对象。不论 Hooks 写法如何，这条原理没有变化。现在闭包内指向了旧的状态对象，而 <code>setTimer</code> 和 <code>setValue</code> 重新生成并指向了新的状态对象，并不影响闭包，导致了闭包读不到新的状态。</p>
+<p>我们注意到 React 还提供给我们一个 <code>useRef</code>， 它的定义是</p>
+<blockquote>
+<p>useRef 返回一个可变的 ref 对象，其 <code>current</code> 属性被初始化为传入的参数（initialValue）。返回的 ref 对象在组件的整个生命周期内保持不变。</p>
+</blockquote>
+<p>ref 对象可以确保在整个生命周期中值不变，且同步更新，是因为 ref 的返回值始终只有一个实例，所有读写都指向它自己。所以也可以用来解决这里的问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> timer = useRef(<span class="number">0</span>);</span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;        <span class="comment">// timer 需要在点击时建立，因此这里只做清理使用</span></span><br><span class="line">    	<span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">window</span>.clearTimeout(timer.current);</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;, []);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    	timer.current = <span class="built_in">window</span>.setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        setValue(<span class="number">100</span>);</span><br><span class="line">        &#125;, <span class="number">5000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	&lt;span&gt;Value is &#123;value&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button onClick=&#123;dealClick&#125;&gt;Click Me!&lt;/</span>button&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>事实上我们后面会看到， <code>useRef</code> 和异步任务配合更加安全稳妥。</p>
+<h4 id="其他陷阱"><a href="#其他陷阱" class="headerlink" title="其他陷阱"></a>其他陷阱</h4><h5 id="修改状态是异步的"><a href="#修改状态是异步的" class="headerlink" title="修改状态是异步的"></a>修改状态是异步的</h5><p>这个其实比较基础了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    	setValue(<span class="number">100</span>);</span><br><span class="line">    	<span class="built_in">console</span>.log(value); <span class="comment">// &lt;- 0    </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	&lt;span&gt;Value is &#123;value&#125;, AnotherValue is &#123;anotherValue&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><code>useState</code> 返回的修改函数是异步的，调用后并不会直接生效，因此立马读取 <code>value</code> 获取到的是旧值（ <code>0</code>）。</p>
+<p>React 这样设计的目的是为了性能考虑，争取把所有状态改变后只重绘一次就能解决更新问题，而不是改一次重绘一次，也是很容易理解的。</p>
+<h5 id="在-timeout-中读不到其他状态的新值"><a href="#在-timeout-中读不到其他状态的新值" class="headerlink" title="在 timeout 中读不到其他状态的新值"></a>在 timeout 中读不到其他状态的新值</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> [anotherValue, setAnotherValue] = useState(<span class="number">0</span>);</span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">window</span>.setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(<span class="string">'setAnotherValue'</span>, value) <span class="comment">// &lt;- 0</span></span><br><span class="line">            	setAnotherValue(value);</span><br><span class="line">                &#125;, <span class="number">1000</span>);</span><br><span class="line">             setValue(<span class="number">100</span>);</span><br><span class="line">             &#125;, []);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	&lt;span&gt;Value is &#123;value&#125;, AnotherValue is &#123;anotherValue&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>这个问题和上面使用 <code>useState</code> 去记录 <code>timer</code> 类似，在生成 timeout 闭包时，value 的值是 0。虽然之后通过 <code>setValue</code> 修改了状态，但 React 内部已经指向了新的变量，而旧的变量仍被闭包引用，所以闭包拿到的依然是旧的初始值，也就是 0。</p>
+<p>要修正这个问题，也依然是使用 <code>useRef</code>，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect, useRef &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">const</span> [value, setValue] = useState(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> [anotherValue, setAnotherValue] = useState(<span class="number">0</span>);</span><br><span class="line"><span class="keyword">const</span> valueRef = useRef(value);</span><br><span class="line">valueRef.current = value;</span><br><span class="line">    useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">window</span>.setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(<span class="string">'setAnotherValue'</span>, valueRef.current) <span class="comment">// &lt;- 100</span></span><br><span class="line">        	setAnotherValue(valueRef.current);</span><br><span class="line">        	&#125;, <span class="number">1000</span>);</span><br><span class="line">        setValue(<span class="number">100</span>);&#125;, []);</span><br><span class="line">    <span class="keyword">return</span> (        </span><br><span class="line">    	&lt;span&gt;Value is &#123;value&#125;, AnotherValue is &#123;anotherValue&#125;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h5 id="还是-timeout-的问题"><a href="#还是-timeout-的问题" class="headerlink" title="还是 timeout 的问题"></a>还是 timeout 的问题</h5><p>假设我们要实现一个按钮，默认显示 false。当点击后更改为 true，但两秒后变回 false（ true 和 false 可以互换）。考虑如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">const</span> [flag, setFlag] = useState(<span class="literal">false</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    setFlag(!flag);</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        setFlag(!flag);        </span><br><span class="line">        &#125;, <span class="number">2000</span>);    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	&lt;button onClick=&#123;dealClick&#125;&gt;&#123;flag ? <span class="string">"true"</span> : <span class="string">"false"</span>&#125;&lt;<span class="regexp">/button&gt;    </span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>我们会发现点击时能够正常切换，但是两秒后并不会变回来。究其原因，依然在于 <code>useState</code> 的更新是重新指向新值，但 timeout 的闭包依然指向了旧值。所以在例子中， <code>flag</code> 一直是 <code>false</code>，虽然后续 <code>setFlag(!flag)</code>，但依然没有影响到 timeout 里面的 <code>flag</code>。</p>
+<p>解决方法有二</p>
+<p>第一个还是利用 <code>useRef</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useRef &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [flag, setFlag] = useState(<span class="literal">false</span>);    </span><br><span class="line">	<span class="keyword">const</span> flagRef = useRef(flag);    </span><br><span class="line">	flagRef.current = flag;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;        </span><br><span class="line">    setFlag(!flagRef.current);</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;            </span><br><span class="line">        setFlag(!flagRef.current);        </span><br><span class="line">        &#125;, <span class="number">2000</span>);    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (        </span><br><span class="line">    &lt;button onClick=&#123;dealClick&#125;&gt;&#123;flag ? <span class="string">"true"</span> : <span class="string">"false"</span>&#125;&lt;<span class="regexp">/button&gt;    </span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>第二个是利用 <code>setFlag</code> 可以接收函数作为参数，并利用闭包和参数来实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> MyComponent: React.FC&lt;&#123;&#125;&gt; = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">const</span> [flag, setFlag] = useState(<span class="literal">false</span>);</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dealClick</span>(<span class="params"></span>) </span>&#123;        </span><br><span class="line">    setFlag(!flag);</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    	setFlag(<span class="function"><span class="params">flag</span> =&gt;</span> !flag);</span><br><span class="line">        &#125;, <span class="number">2000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (        </span><br><span class="line">    &lt;button onClick=&#123;dealClick&#125;&gt;&#123;flag ? <span class="string">"true"</span> : <span class="string">"false"</span>&#125;&lt;<span class="regexp">/button&gt;    </span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>当 <code>setFlag</code> 参数为函数类型时，这个函数的意义是告诉 React 如何从当前状态产生出新的状态（类似于 redux 的 reducer，不过是只针对一个状态的子 reducer）。既然是当前状态，因此返回值取反，就能够实现效果。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>在 Hook 中出现异步任务尤其是 timeout 的时候，我们要格外注意。<code>useState</code> 只能保证多次重绘之间的状态值是一样的，但不保证它们就是同一个对象，因此出现闭包引用的时候，尽量使用 <code>useRef</code> 而不是直接使用 state 本身，否则就容易踩坑。反之如果的确碰到了设置了新值但读取到旧值的情况，也可以往这个方向想想，可能就是这个原因所致。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/React-React-Native/">#React & React Native</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

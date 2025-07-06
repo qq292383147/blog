@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/22/Vue/vue%E4%B8%AD%E6%8F%92%E5%80%BC/">
+                vue中插值
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>插值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用&#123;&#123;属性&#125;&#125;进行插值，将其中的值转为字符串</span></span><br><span class="line"><span class="comment">//使用&#123;&#123;&#123;属性&#125;&#125;进行插值，将其中的值转为HTML片段</span></span><br><span class="line"><span class="comment">//Vue指令和自身特性不允许插值，否则会发出警告</span></span><br></pre></td></tr></table></figure>
+<p>表达式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在&#123;&#123;&#125;&#125;中，支持三目运算符，且只支持单个表达式，不支持语句和流控制，不能使用用户自定义的全局变量，只能使用Vue白名单内的全局变量，如Math和Date</span></span><br><span class="line"><span class="comment">//Vue支持在&#123;&#123;&#125;&#125;中插入|号，对数据进行过滤，需要在实例的filters中设定，可以串联使用，也可以传递参数，第一个参数总是上一个过滤器处理后的结果：如&#123;&#123;data | 过滤器（第二个参数）&#125;&#125;</span></span><br><span class="line"><span class="comment">//过滤属性应当用于处理简单的文本转换，如果要实现更复杂的数据变换，应该使用计算属性</span></span><br></pre></td></tr></table></figure>
+<p>指令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在实例中使用v-bind绑定数据，动态更新HTML元素上的属性，可以简写为：（语法糖）</span></span><br><span class="line"><span class="comment">//在实例中使用v-bind绑定类</span></span><br><span class="line"><span class="comment">//可以使用对象语法绑定class，并可以传递多个，如标签中:class = "&#123;类名：布尔值，类名：布尔值&#125;"</span></span><br><span class="line"><span class="comment">//可以直接绑定data或者computed中的属性，进行动态设置</span></span><br><span class="line"><span class="comment">//可以使用数组，数组项中为data或computed的值</span></span><br><span class="line"><span class="comment">//可以在其中使用三目运算符</span></span><br><span class="line"><span class="comment">//当写复用组件或表达式较长或逻辑复杂尽可能使用计算属性</span></span><br><span class="line"><span class="comment">//在自定义组件上使用，样式规则会直接应用到此组件的根元素上</span></span><br><span class="line"><span class="comment">//在实例中使用v-bind绑定style</span></span><br><span class="line"><span class="comment">//与class中的类似，其绑定的CSS名称可使用驼峰命名或短横分隔命名</span></span><br><span class="line"><span class="comment">//Vue会自动给特殊的CSS属性名称增加前缀</span></span><br><span class="line"><span class="comment">//在实例中使用v-on绑定数据，实现事件监听，其绑定的数据为methods属性中的函数，可以简写为@（语法糖）</span></span><br></pre></td></tr></table></figure>
+<p>分隔符：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue中数据绑定的语法被设计为可配置的。</span><br><span class="line">Vue.config是一个包含Vue的所有全局配置的对象。</span><br><span class="line">可以在Vue.config中配置绑定的语法，在Vue实例化之前修改其中的属性。</span><br><span class="line">源码中（src/config.js）:<span class="keyword">let</span> delimiters = [<span class="string">'&#123;&#123;'</span>,<span class="string">'&#125;&#125;'</span>]；<span class="keyword">let</span> unsafeDelimiters = [<span class="string">'&#123;&#123;&#123;'</span>,<span class="string">'&#125;&#125;&#125;'</span>]</span><br></pre></td></tr></table></figure>
+<h4 id="所以在实例化前可以使用Vue-config-delimiters和Vue-config-unsafeDelimiters来更改分隔符"><a href="#所以在实例化前可以使用Vue-config-delimiters和Vue-config-unsafeDelimiters来更改分隔符" class="headerlink" title="所以在实例化前可以使用Vue.config.delimiters和Vue.config.unsafeDelimiters来更改分隔符"></a>所以在实例化前可以使用Vue.config.delimiters和Vue.config.unsafeDelimiters来更改分隔符</h4>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/22/Vue/vue%E4%B8%ADcomputed-%E5%92%8C-watch%E7%9A%84%E5%BC%82%E5%90%8C/">
+                vue中computed 和 watch的异同
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p><strong><em>html:</em></strong></p>
+<p>我们要实现 第三个表单的值 是第一个和第二个的拼接，并且在前俩表单数值变化时，第三个表单数值也在变化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"myDiv"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"firstName"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"lastName"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"fullName"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+<p>js: 用watch方法来实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#myDiv'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    firstName: <span class="string">'Foo'</span>,</span><br><span class="line">    lastName: <span class="string">'Bar'</span>,</span><br><span class="line">    fullName: <span class="string">'Foo Bar'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    firstName: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fullName = val + <span class="string">' '</span> + <span class="keyword">this</span>.lastName</span><br><span class="line">    &#125;,</span><br><span class="line">    lastName: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.fullName = <span class="keyword">this</span>.firstName + <span class="string">' '</span> + val</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>js: 利用computed 来写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">     el:<span class="string">"#myDiv"</span>,</span><br><span class="line">          data:&#123;</span><br><span class="line">              firstName:<span class="string">"Den"</span>,</span><br><span class="line">              lastName:<span class="string">"wang"</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      computed:&#123;</span><br><span class="line">          fullName:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">return</span>  <span class="keyword">this</span>.firstName  + <span class="string">" "</span> +<span class="keyword">this</span>.lastName;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<p>很容易看出 computed 在实现上边的效果时，是更简单的。</p>
+<p><strong>二 、 详解 comouted 计算属性</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在vue的 模板内&#123;&#123;&#125;&#125;是可以写一些简单的js表达式的 ，很便利。但是如果在页面中使用大量或是复杂的表达式去处理数据，对页面的维护会有很大的影响。这个时候就需要用到computed 计算属性来处理复杂的逻辑运算。</span><br></pre></td></tr></table></figure>
+<p>1.优点：<br>在数据未发生变化时，优先读取缓存。computed 计算属性只有在相关的数据发生变化时才会改变要计算的属性，当相关数据没有变化是，它会读取缓存。而不必想 motheds方法 和 watch 方法是的每次都去执行函数。</p>
+<p>2.setter 和 getter方法：（注意在vue中书写时用set 和 get）<br>setter 方法在设置值是触发。<br>getter 方法在获取值时触发。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">computed:&#123;</span><br><span class="line">   fullName:&#123;</span><br><span class="line">    <span class="comment">//这里用了es6书写方法</span></span><br><span class="line">        <span class="keyword">set</span>()&#123;</span><br><span class="line">             alert(<span class="string">"set"</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="keyword">get</span>()&#123;</span><br><span class="line">           alert(<span class="string">"get"</span>);</span><br><span class="line">           <span class="keyword">return</span>  <span class="keyword">this</span>.firstName  + <span class="string">" "</span> +<span class="keyword">this</span>.lastName;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>三 、watch 方法</strong></p>
+<p>虽然计算属性在大多数情况下是非常适合的，但是在有些情况下我们需要自定义一个watcher，在数据变化时来执行异步操作，这时watch是非常有用的。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/03/17/JavaScript/%E7%94%A8async-await-%E6%9D%A5%E5%A4%84%E7%90%86%E5%BC%82%E6%AD%A5/">
+                用async await 来处理异步
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-17</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="Async-await"><a href="#Async-await" class="headerlink" title="Async/await"></a>Async/await</h2><p>有一种特殊的语法可以更舒适地与promise协同工作，它叫做<code>async/await</code>，它是非常的容易理解和使用。</p>
+<h3 id="Async-functions"><a href="#Async-functions" class="headerlink" title="Async functions"></a>Async functions</h3><p>让我们先从<code>async</code>关键字说起，它被放置在一个函数前面。就像下面这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>函数前面的<code>async</code>一词意味着一个简单的事情：这个函数总是返回一个promise，如果代码中有<code>return &lt;非promise&gt;</code>语句，JavaScript会自动把返回的这个value值包装成promise的resolved值。</p>
+<p>例如，上面的代码返回resolved值为1的promise，我们可以测试一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line">f().then(alert) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>我们也可以显式的返回一个promise，这个将会是同样的结果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">f().then(alert) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>所以，<code>async</code>确保了函数返回一个promise，即使其中包含非promise。够简单了吧？但是不仅仅只是如此，还有另一个关键词<code>await</code>，只能在<code>async</code>函数里使用，同样，它也很cool。</p>
+<h3 id="Await"><a href="#Await" class="headerlink" title="Await"></a>Await</h3><p>语法如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只能在async函数内部使用</span></span><br><span class="line"><span class="keyword">let</span> value = <span class="keyword">await</span> promise</span><br></pre></td></tr></table></figure>
+<p>关键词<code>await</code>可以让JavaScript进行等待，直到一个promise执行并返回它的结果，JavaScript才会继续往下执行。</p>
+<p>以下是一个promise在1s之后resolve的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> resolve(<span class="string">'done!'</span>), <span class="number">1000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">let</span> result = <span class="keyword">await</span> promise <span class="comment">// 直到promise返回一个resolve值（*）</span></span><br><span class="line">    alert(result) <span class="comment">// 'done!' </span></span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<p>函数执行到（*）行会‘暂停’，当<code>promise</code>处理完成后重新恢复运行， <code>resolve</code>的值成了最终的<code>result</code>，所以上面的代码会在1s后输出<code>&#39;done!&#39;</code></p>
+<p>我们强调一下：<code>await</code>字面上使得JavaScript等待，直到<code>promise</code>处理完成，<br>然后将结果继续下去。这并不会花费任何的cpu资源，因为引擎能够同时做其他工作：执行其他脚本，处理事件等等。</p>
+<p>这只是一个更优雅的得到<code>promise</code>值的语句，它比<code>promise</code>更加容易阅读和书写。</p>
+<blockquote>
+<p><strong>不能在常规函数里使用await</strong><br>如果我们试图在非async函数里使用await，就会出现一个语法错误：</p>
+</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> promise = <span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">   <span class="keyword">let</span> result = <span class="keyword">await</span> promise <span class="comment">// syntax error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果我们忘记了在函数之前放置async，我们就会得到这样一个错误。如上所述，await只能在async函数中工作。</p>
+</blockquote>
+<p>让我们来看<a href="https://javascript.info/promise-chaining" target="_blank" rel="noopener">promise链式操作</a>一章中提到的<code>showAvatar()</code>例子，并用<code>async/await</code>重写它。</p>
+<p>1.我们需要将<code>.then()</code>替换为<code>await</code><br>2.此外，我们应该让函数变成<code>async</code>，这样<code>await</code>才能够工作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">showAvatar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// read our JSON</span></span><br><span class="line">    <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'/article/promise-chaining/user.json'</span>)</span><br><span class="line">    <span class="keyword">let</span> user = <span class="keyword">await</span> response.json()</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// read github user</span></span><br><span class="line">    <span class="keyword">let</span> githubResponse = <span class="keyword">await</span> fetch(<span class="string">`https://api.github.com/users/<span class="subst">$&#123;user.name&#125;</span>`</span>)</span><br><span class="line">    <span class="keyword">let</span> githubUser = <span class="keyword">await</span> githubResponse.json()</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 展示头像</span></span><br><span class="line">    <span class="keyword">let</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">    img.src = githubUser.avatar_url</span><br><span class="line">    img.className = <span class="string">'promise-avatar-example'</span></span><br><span class="line">    documenmt.body.append(img)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 等待3s</span></span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        setTimeout(resolve, <span class="number">3000</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    img.remove()</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> githubUser</span><br><span class="line">&#125;</span><br><span class="line">showAvatar()</span><br></pre></td></tr></table></figure>
+<p>相当的简洁和易读，比以前的要好得多。</p>
+<blockquote>
+<p><strong>await不能工作在顶级作用域</strong><br>那些刚开始使用await的人们老是忘记这一点，那就是我们不能将await放在代码的顶层，那样是行不通的：</p>
+</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 顶层代码处syntax error</span></span><br><span class="line"><span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'/article/promise-chaining/user.json'</span>)</span><br><span class="line"><span class="keyword">let</span> user = <span class="keyword">await</span> response.json()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所以我们需要将await代码包裹在一个async函数中，就像上面的例子一样。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>await接受thenables</strong>（好吧我这个渣渣并不知道thenables该如何翻译，有人能告知吗？）</p>
+<p>就像promise.then，await也允许使用thenable对象（那些具有可调用的then方法的对象）。同样，第三方对象可能不是一个promise，但是promise的兼容性表示，如果它支持.then方法，那么它就能用于await。</p>
+<p>例如，这里await接受了new Thenable(1)</p>
+</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Thenable</span> </span>&#123;</span><br><span class="line">   <span class="keyword">constructor</span>(num) &#123;</span><br><span class="line">       <span class="keyword">this</span>.num = num</span><br><span class="line">   &#125;</span><br><span class="line">   then(resolve, reject) &#123;</span><br><span class="line">       alert(resolve) <span class="comment">// function() &#123;native code&#125;</span></span><br><span class="line">       <span class="comment">// 1000ms后将this.num*2作为resolve值</span></span><br><span class="line">       setTimeout(<span class="function"><span class="params">()</span>=&gt;</span> &#123;resolve(<span class="keyword">this</span>.num * <span class="number">2</span>), <span class="number">1000</span>&#125;)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">   <span class="comment">// 等待1s，result变为2</span></span><br><span class="line">   <span class="keyword">let</span> result = <span class="keyword">await</span> <span class="keyword">new</span> Thenable(<span class="number">1</span>)</span><br><span class="line">   alert(result)</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果await得到了一个带有then方法的非promise对象，它将会调用提供原生函数resolve、reject作为参数的方法，然后await一直等待，直到他们其中的一个被调用（在上面的例子它发生在（*）行）。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>async方法</strong><br>一个class方法同样能够使用async，只需要将async放在它之前就可以<br>就像这样：</p>
+</blockquote>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Waiter</span> </span>&#123;</span><br><span class="line">   <span class="keyword">async</span> wait () &#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">await</span> <span class="built_in">Promise</span>.resolve(<span class="number">1</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> Waiter().wait().then(alert) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的意思是一样的：它确保了返回值是一个promise，支持await</p>
+</blockquote>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><p>如果一个promise正常resolve，那么<code>await</code>返回这个结果，但是在reject的情况下会抛出一个错误，就好像在那一行有一个throw语句一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'whoops!'</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>和下面一样</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Whoops!'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在真实的使用场景中，promise在reject抛出错误之前可能需要一段时间，所以<code>await</code>将会等待，然后才抛出一个错误。<br>我们可以使用try-catch语句捕获错误，就像在正常抛出中处理异常一样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'http://no-such-url'</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        alet(err) <span class="comment">// TypeError: failed to fetch</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<p>如果发生了一个错误，控制会跳转到catch块。当然我们也能够捕获多行语句：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'/no-user-here'</span>)</span><br><span class="line">        <span class="keyword">let</span> user = <span class="keyword">await</span> response.json()</span><br><span class="line">    &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">        <span class="comment">// 在fetch和response.json中都能捕获错误</span></span><br><span class="line">        alert(err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">f()</span><br></pre></td></tr></table></figure>
+<p>如果我们不使用try-catch，然后async函数f()的调用产生的promise变成reject状态的话，我们可以添加.catch去处理它：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> response = <span class="keyword">await</span> fetch(<span class="string">'http://no-such-url'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// f()变成了一个rejected的promise</span></span><br><span class="line">f().catch(alert) <span class="comment">// TypeError: failed to fetch</span></span><br></pre></td></tr></table></figure>
+<p>如果我们忘记添加.catch，我们就会得到一个未被处理的promise错误（能够在控制台里看到它），这时我们可以通过使用一个全局的事件处理器去捕获错误，就像在<a href="https://javascript.info/promise-chaining" target="_blank" rel="noopener">Promise链式操作</a>一章讲的那样。</p>
+<blockquote>
+<p><code>async/await</code>和<code>promise.then/catch</code></p>
+<p>当我们使用async/await，我们很少需要<code>.then</code>，因为<code>await</code>总是等待着我们，而且我们能够使用常规的<code>try-catch</code>而不是<code>.catch</code>，这通常（并不总是）更方便。</p>
+<p>但是在代码的顶层，当我们在async函数的外部时，我们在语法上是不能使用<code>await</code>的，所以通常添加<code>.then/catch</code>去处理最终结果或者错误。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>async/await能够与Promise.all友好的协作</strong><br>当我们需要等待多个promise时，我们可以将他们包装在Promise.all中然后使用await：</p>
+</blockquote>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直到数组全部返回结果</span></span><br><span class="line"><span class="keyword">let</span> results = <span class="keyword">await</span> <span class="built_in">Promise</span>.all([</span><br><span class="line">   fetch(url1),</span><br><span class="line">   fetch(url2),</span><br><span class="line">   ...</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果发生了一个错误，它就像普通情况一样：从一个失败状态的promise到Promise.all，然后变成了一个我们能够使用try-cathc去捕获的异常。</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>放在一个函数前的async有两个作用：<br>1.使函数总是返回一个promise<br>2.允许在这其中使用await</p>
+<p>promise前面的await关键字能够使JavaScript等待，直到promise处理结束。然后：<br>1.如果它是一个错误，异常就产生了，就像在那个地方调用了throw error一样。<br>2.否则，它会返回一个结果，我们可以将它分配给一个值</p>
+<p>他们一起提供了一个很好的框架来编写易于读写的异步代码。</p>
+<p>有了async/await，我们很少需要写promise.then/catch，但是我们仍然不应该忘记它们是基于promise的，因为有些时候（例如在最外面的范围内）我们不得不使用这些方法。Promise.all也是一个非常棒的东西，它能够同时等待很多任务。</p>
+<h2 id="以下是另一种理解"><a href="#以下是另一种理解" class="headerlink" title="以下是另一种理解"></a>以下是另一种理解</h2><h3 id="异步功能"><a href="#异步功能" class="headerlink" title="异步功能"></a>异步功能</h3><p>异步功能函数包含<code>async</code>关键词。你可以在正常的函数声明中使用它：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">functionName</span> (<span class="params">arguments</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Do something asynchronous</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你也可以使用箭头函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> functionName = <span class="keyword">async</span> (<span class="built_in">arguments</span>) =&gt; &#123;</span><br><span class="line">    <span class="comment">// Do something asynchronous</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>异步函数总是返回<code>promises</code></p>
+<p>（异步函数）它不管你返回什么。其返回值都是<code>promise</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getOne = <span class="keyword">async</span> _ =&gt; &#123; </span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promise = getOne()</span><br><span class="line"><span class="built_in">console</span>.log(promise) <span class="comment">// Promise</span></span><br></pre></td></tr></table></figure>
+<h3 id="await关键字"><a href="#await关键字" class="headerlink" title="await关键字"></a>await关键字</h3><p>当你调用promise时，你会在then中处理下一步，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getOne = <span class="keyword">async</span> _ =&gt; &#123; </span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span> </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">getOne()</span><br><span class="line">.then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value) <span class="comment">// 1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><code>await</code>关键字允许你等待<code>promise</code>去解析。一旦解析完<code>promise</code>，它就会返回参数传递给<code>then</code>调用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">await</span> getOne()</span><br><span class="line"><span class="built_in">console</span>.log(one) <span class="comment">// 1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p>返回await</p>
+<p>在返回承诺（promise）之前没有必要等待（await）。你可以直接退回承诺。</p>
+<blockquote>
+<p>如果你return await些内容，则你首先是解决了原先promise。然后，你从已经解析的内容（resolved value）创建新的promise。return await真的没做什么有效的东西。无需额外的步骤。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Don't need to do this </span></span><br><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">await</span> getOne()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line">.then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value) <span class="comment">// 1</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Do this instead</span></span><br><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="keyword">return</span> getOne()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line">.then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value) <span class="comment">// 1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果你不需要await，则不需要使用异步功能（async function）。上面的例子可以改写如下:</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Do this instead</span></span><br><span class="line"><span class="keyword">const</span> test = <span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> getOne()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line">.then(<span class="function"><span class="params">value</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value) <span class="comment">// 1</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>处理错误</p>
+<p>如果一个promise出错了，你可以使用catch调用来处理它，如下所示:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getOne = <span class="keyword">async</span> (success = <span class="literal">true</span>) =&gt; &#123; </span><br><span class="line"><span class="keyword">if</span> (success) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Failure!'</span>)</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">getOne(<span class="literal">false</span>)</span><br><span class="line">.catch(<span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(error)) <span class="comment">// Failure!</span></span><br></pre></td></tr></table></figure>
+<p>如果你想在一个异步函数中处理错误，你需要调用<code>try/catch</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> one = <span class="keyword">await</span> getOne(<span class="literal">false</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error) <span class="comment">// Failure!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p>如果你有多个<code>await</code>关键字，错误处理可能变得很难看…</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> one = <span class="keyword">await</span> getOne(<span class="literal">false</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error) <span class="comment">// Failure!</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> two = <span class="keyword">await</span> getTwo(<span class="literal">false</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error) <span class="comment">// Failure!</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> three = <span class="keyword">await</span> getThree(<span class="literal">false</span>)</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error) <span class="comment">// Failure!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p>还有更好的方法。</p>
+<p>我们知道异步函数总是返回一个<code>promise</code>。当我们调用<code>promise</code>时，我们可以在<code>catch</code>调用中处理错误。这意味着我们可以通过添加<code>.catch</code>来处理异步函数中的任何错误。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">await</span> getOne(<span class="literal">false</span>)</span><br><span class="line"><span class="keyword">const</span> two = <span class="keyword">await</span> getTwo(<span class="literal">false</span>)</span><br><span class="line"><span class="keyword">const</span> three = <span class="keyword">await</span> getThree(<span class="literal">false</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br><span class="line">.catch(<span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(error)))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：<code>Promise</code>的<code>catch</code>方法只允许你捕获一个错误。</p>
+</blockquote>
+<p>多个awaits</p>
+<p><code>await</code>阻止<code>JavaScript</code>执行下一行代码，直到<code>promise</code>解析为止。这可能会导致代码执行速度减慢的意外效果。</p>
+<p>为了实际演示这点，我们需要在解析<code>promise</code>之前创建一个延迟。我们可以使用<code>sleep</code>功能来创建延迟。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sleep = <span class="function"><span class="params">ms</span> =&gt;</span> &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(resolve, ms))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>ms</code>是解析前等待的毫秒数。如果你传入1000到<code>sleep</code>函数，<code>JavaScript</code>将等待一秒才能解析<code>promise</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Using Sleep</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Now'</span>)</span><br><span class="line">sleep(<span class="number">1000</span>)</span><br><span class="line">.then(<span class="function"><span class="params">v</span> =&gt;</span> &#123; </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'After one second'</span>) </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/36.gif" alt></p>
+<p>假设 <code>getOne</code> 需要一秒来解析。为了创建这个延迟，我们将1000（一秒）传入到<code>sleep</code>。一秒过后，<code>sleeppromise</code>解析后，我们返回值1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getOne = <span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> sleep(<span class="number">1000</span>).then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你使用<code>await getOne()</code>，你会发现在<code>getOne</code>解析之前需要一秒钟。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Now'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">await</span> getOne()</span><br><span class="line"><span class="built_in">console</span>.log(one)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/37.gif" alt></p>
+<p>现在，假设你需要处理三个promises。每个promise都有一秒钟的延迟。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getOne = <span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> sleep(<span class="number">1000</span>).then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getTwo = <span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> sleep(<span class="number">1000</span>).then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="number">2</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getThree = <span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> sleep(<span class="number">1000</span>).then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="number">3</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果你连续<code>await</code>这三个<code>promises</code>，你将要等待三秒才能解析完所有<code>promises</code>。这并不好，因为我们强迫JavaScript在做我们需要做的事情之前等待了两秒钟。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> one = <span class="keyword">await</span> getOne()</span><br><span class="line"><span class="built_in">console</span>.log(one)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> two = <span class="keyword">await</span> getTwo()</span><br><span class="line"><span class="built_in">console</span>.log(two)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> three = <span class="keyword">await</span> getThree()</span><br><span class="line"><span class="built_in">console</span>.log(three)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Done'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/38.gif" alt></p>
+<p>如果<code>getOne</code>，<code>getTwo</code>和<code>getThree</code>可以同时获取，你将节省两秒钟。你可以使用<code>Promise.all</code>同时获取这三个<code>promises</code>。</p>
+<p>有三个步骤：</p>
+<blockquote>
+<p>1、创建三个<code>promises</code><br>2、将三个<code>promises</code>添加到一个数组中<br>3、使用<code>Promise.all</code>来<code>awaitpromises</code>数组</p>
+</blockquote>
+<p>如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = <span class="keyword">async</span> _ =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> promises = [getOne(), getTwo(), getThree()]</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Now'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [one, two, three] = <span class="keyword">await</span> <span class="built_in">Promise</span>.all(promises)</span><br><span class="line"><span class="built_in">console</span>.log(one)</span><br><span class="line"><span class="built_in">console</span>.log(two)</span><br><span class="line"><span class="built_in">console</span>.log(three)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Done'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/39.gif" alt></p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/40/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/42/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

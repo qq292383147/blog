@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="Vue-Test-Utils + Jest 单元测试入门与实践"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>Vue-Test-Utils + Jest 单元测试入门与实践 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/03/Vue/Vue-Test-Utils%20+%20Jest%20%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%85%A5%E9%97%A8%E4%B8%8E%E5%AE%9E%E8%B7%B5/">
+                Vue-Test-Utils + Jest 单元测试入门与实践
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://vue-test-utils.vuejs.org/zh/" target="_blank" rel="noopener"><code>Vue-Test-Utils</code></a> 是 <code>Vue.js</code> 官方的单元测试实用工具库，它提供了一系列的 <code>API</code> 来使得我们可以很便捷的去写 <code>Vue</code> 应用中的单元测试。</p>
+<p>主流的单元测试运行器有很多，比如 <a href="https://jestjs.io/docs/zh-Hans/getting-started" target="_blank" rel="noopener"><code>Jest</code></a>、<a href="https://mochajs.org/" target="_blank" rel="noopener"><code>Mocha</code></a> 和 <code>Karma</code> 等，这几个在 <code>Vue-Test-Utils</code> 文档里都有对应的教程，这里我们只介绍 <code>Vue-Test-Utils + Jest</code> 结合的示例。</p>
+<blockquote>
+<p>Jest 是一个由 Facebook 开发的测试框架。Vue 对其进行描述：是功能最全的测试运行器。它所需的配置是最少的，默认安装了 JSDOM，内置断言且命令行的用户体验非常好。不过你需要一个能够将单文件组件导入到测试中的预处理器。我们已经创建了 vue-jest 预处理器来处理最常见的单文件组件特性，但仍不是 vue-loader 100% 的功能。</p>
+</blockquote>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>通过脚手架 <code>vue-cli</code> 来新建项目的时候，如果选择了 <code>Unit Testing</code> 单元测试且选择的是 <code>Jest</code> 作为测试运行器，那么在项目创建好后，就会自动配置好单元测试需要的环境，直接能用 <code>Vue-Test-Utils</code> 和 <code>Jest</code> 的 <code>API</code> 来写测试用例了。</p>
+<p>但是新建项目之初没有选择单元测试功能，需要后面去添加的话，有两种方案：</p>
+<p>第一种配置：</p>
+<p>直接在项目中添加一个 <a href="https://github.com/vuejs/vue-docs-zh-cn/tree/master/vue-cli-plugin-unit-jest" target="_blank" rel="noopener"><code>unit-jest</code></a> 插件，会自动将需要的依赖安装配置好。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue add @vue/unit-jest</span><br></pre></td></tr></table></figure>
+<p>第二种配置：</p>
+<p>这种配置会麻烦一点，下面是具体的操作步骤。</p>
+<h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><ul>
+<li><p>安装 <code>Jest</code> 和 <code>Vue Test Utils</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev jest @vue/test-utils</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 <code>babel-jest</code> 、 <code>vue-jest</code> 和 <code>7.0.0-bridge.0</code> 版本的 <code>babel-core</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-jest vue-jest babel-core@7.0.0-bridge.0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 <code>jest-serializer-vue</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev jest-serializer-vue</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="配置-Jest"><a href="#配置-Jest" class="headerlink" title="配置 Jest"></a>配置 <code>Jest</code></h3><p><code>Jest</code> 的配置可以在 <code>package.json</code> 里配置；也可以新建一个文件 <code>jest.config.js</code>， 放在项目根目录即可。这里我选择的是配置在 <code>jest.config.js</code> 中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    moduleFileExtensions: [</span><br><span class="line">        <span class="string">'js'</span>,</span><br><span class="line">        <span class="string">'vue'</span></span><br><span class="line">    ],</span><br><span class="line">    transform: &#123;</span><br><span class="line">        <span class="string">'^.+\\.vue$'</span>: <span class="string">'&lt;rootDir&gt;/node_modules/vue-jest'</span>,</span><br><span class="line">        <span class="string">'^.+\\.js$'</span>: <span class="string">'&lt;rootDir&gt;/node_modules/babel-jest'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    moduleNameMapper: &#123;</span><br><span class="line">        <span class="string">'^@/(.*)$'</span>: <span class="string">'&lt;rootDir&gt;/src/$1'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    snapshotSerializers: [</span><br><span class="line">        <span class="string">'jest-serializer-vue'</span></span><br><span class="line">    ],</span><br><span class="line">    testMatch: [<span class="string">'**/__tests__/**/*.spec.js'</span>],</span><br><span class="line">    transformIgnorePatterns: [<span class="string">'&lt;rootDir&gt;/node_modules/'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>各配置项说明：</p>
+<ul>
+<li><code>moduleFileExtensions</code> 告诉 <code>Jest</code> 需要匹配的文件后缀</li>
+<li><code>transform</code> 匹配到 <code>.vue</code> 文件的时候用 <code>vue-jest</code> 处理， 匹配到 <code>.js</code> 文件的时候用 <code>babel-jest</code> 处理</li>
+<li><code>moduleNameMapper</code> 处理 <code>webpack</code> 的别名，比如：将 <code>@</code> 表示 <code>/src</code> 目录</li>
+<li><code>snapshotSerializers</code> 将保存的快照测试结果进行序列化，使得其更美观</li>
+<li><code>testMatch</code> 匹配哪些文件进行测试</li>
+<li><code>transformIgnorePatterns</code> 不进行匹配的目录</li>
+</ul>
+<h3 id="配置-package-json"><a href="#配置-package-json" class="headerlink" title="配置 package.json"></a>配置 <code>package.json</code></h3><p>写一个执行测试的命令脚本：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"script"</span>: &#123;</span><br><span class="line">        <span class="string">"test"</span>: <span class="string">"jest"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第一个测试用例"><a href="#第一个测试用例" class="headerlink" title="第一个测试用例"></a>第一个测试用例</h2><p>为了保证环境的一致性，我们从创建项目开始一步一步演示操作步骤。</p>
+<h3 id="用-vue-cli-创建一个项目"><a href="#用-vue-cli-创建一个项目" class="headerlink" title="用 vue-cli 创建一个项目"></a>用 <code>vue-cli</code> 创建一个项目</h3><p>当前我用到的是 <code>3.10.0</code> 版本的 <code>vue-cli</code>。开始创建项目：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create first-vue-jest</span><br></pre></td></tr></table></figure>
+<p>选择 <code>Manually select features</code> 进行手动选择功能配置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Vue CLI v3.10.0</span><br><span class="line">┌───────────────────────────┐</span><br><span class="line">│  Update available: 4.0.4  │</span><br><span class="line">└───────────────────────────┘</span><br><span class="line">? Please pick a preset:</span><br><span class="line">  VUE-CLI3 (vue-router, node-sass, babel, eslint)</span><br><span class="line">  default (babel, eslint)</span><br><span class="line">❯ Manually select features</span><br></pre></td></tr></table></figure>
+<p>勾选 <code>Babel</code>、<code>Unit Testing</code>：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">? Check the features needed for your project:</span><br><span class="line"> ◉ Babel</span><br><span class="line"> ◯ TypeScript</span><br><span class="line"> ◯ Progressive Web App (PWA) Support</span><br><span class="line"> ◯ Router</span><br><span class="line"> ◯ Vuex</span><br><span class="line"> ◯ CSS Pre-processors</span><br><span class="line"> ◯ Linter / Formatter</span><br><span class="line"> ◉ Unit Testing</span><br><span class="line"> ◯ E2E Testing</span><br></pre></td></tr></table></figure>
+<p>选择 <code>Jest</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">? Pick a unit testing solution:</span><br><span class="line">  Mocha + Chai</span><br><span class="line">❯ Jest</span><br></pre></td></tr></table></figure>
+<p>选择 <code>In dedicated config files</code> 将各配置信息配置在对应的 <code>config</code> 文件里：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">? Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)</span><br><span class="line">❯ In dedicated config files</span><br><span class="line">  In package.json</span><br></pre></td></tr></table></figure>
+<p>输入n，不保存预设：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">? Save this as a preset for future projects? (y/N) n</span><br></pre></td></tr></table></figure>
+<p>项目创建完成后，部分文件的配置信息如下：</p>
+<p><code>babel.config.js</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    presets: [</span><br><span class="line">        <span class="string">'@vue/cli-plugin-babel/preset'</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>jest.config.js</code>， 这个文件的配置默认是预设插件的，可以按实际需求改成上面提到的配置 <code>Jest</code> 里的配置一样。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    preset: <span class="string">'@vue/cli-plugin-unit-jest'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>package.json</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"first-vue-jest"</span>,</span><br><span class="line">    <span class="string">"version"</span>: <span class="string">"0.1.0"</span>,</span><br><span class="line">    <span class="string">"private"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"scripts"</span>: &#123;</span><br><span class="line">        <span class="string">"serve"</span>: <span class="string">"vue-cli-service serve"</span>,</span><br><span class="line">        <span class="string">"build"</span>: <span class="string">"vue-cli-service build"</span>,</span><br><span class="line">        <span class="string">"test:unit"</span>: <span class="string">"vue-cli-service test:unit"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">        <span class="string">"core-js"</span>: <span class="string">"^3.1.2"</span>,</span><br><span class="line">        <span class="string">"vue"</span>: <span class="string">"^2.6.10"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">        <span class="string">"@vue/cli-plugin-babel"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">        <span class="string">"@vue/cli-plugin-unit-jest"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">        <span class="string">"@vue/cli-service"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">        <span class="string">"@vue/test-utils"</span>: <span class="string">"1.0.0-beta.29"</span>,</span><br><span class="line">        <span class="string">"vue-template-compiler"</span>: <span class="string">"^2.6.10"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行测试命令"><a href="#执行测试命令" class="headerlink" title="执行测试命令"></a>执行测试命令</h3><p>用上面的步骤创建的项目完成项目后，我们可以在 <code>package.json</code> 的 <code>scripts</code> 项中看到有个 <code>test:unit</code> ，执行它：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd first-vue-jest</span><br><span class="line">npm run test:unit</span><br></pre></td></tr></table></figure>
+<p>然后终端里会看到输出结果，<code>PASS</code> 表示测试用例通过了，这个是官方提供单元测试例子。下面我们来写点自己的东西。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/103.jpg" alt="103"></p>
+<h2 id="实现一个ToDoList"><a href="#实现一个ToDoList" class="headerlink" title="实现一个ToDoList"></a>实现一个ToDoList</h2><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/104.png" alt="104"></p>
+<p>看上面的原型图，有这么几点明确的需求：</p>
+<ul>
+<li>在头部右侧输入框输入要做的事情，敲回车后，内容跑到待完成列表里，同时清空输入框</li>
+<li>输入框为空的时候敲回车，不做任何变化</li>
+<li>待完成列表支持编辑功能，已完成列表不能进行编辑</li>
+<li>每个列表项的右侧都有删除按钮，用 <code>-</code> 号表示，点击后删除该项</li>
+<li>待完成列表有标记为已完成的按钮，用 <code>√</code> 号表示，点击后当前项移动到已完成列表</li>
+<li>已完成列表有标记为未完成的按钮，用 <code>x</code> 号表示，点击后当前项移动到未完成列表</li>
+<li>列表序号从1开始递增</li>
+<li>当待完成列表为空的时候，不显示待完成字样</li>
+<li>当已完成列表为空的时候，不显示已完成字样</li>
+</ul>
+<h3 id="先把上面的页面写好"><a href="#先把上面的页面写好" class="headerlink" title="先把上面的页面写好"></a>先把上面的页面写好</h3><p>写页面之前先把创建项目的时候生成的 <code>HelloWorld.vue</code> 和对应的测试文件 <code>example.spec.js</code> 删除；同时修改 <code>App.vue</code> 文件，引入 <code>ToDoList</code> 组件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;ToDoList&gt;&lt;<span class="regexp">/ToDoList&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">import ToDoList from './</span>components/ToDoList<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">export default &#123;</span></span><br><span class="line"><span class="string">    components: &#123;</span></span><br><span class="line"><span class="string">        ToDoList</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在 <code>src/compoents</code> 下新建一个文件 <code>ToDoList.vue</code>，样式较多就不贴出来了，具体可以去看<a href="https://github.com/Bulandent/first-vue-jest.git" target="_blank" rel="noopener">本项目源码</a>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"todolist"</span>&gt;</span><br><span class="line">        &lt;header&gt;</span><br><span class="line">            &lt;h5&gt;ToDoList&lt;<span class="regexp">/h5&gt;</span></span><br><span class="line"><span class="regexp">            &lt;input class="to-do-text" </span></span><br><span class="line"><span class="regexp">                v-model="toDoText" </span></span><br><span class="line"><span class="regexp">                @keyup.enter="enterText" </span></span><br><span class="line"><span class="regexp">                placeholder="输入计划要做的事情"/</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/header&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h4 v-show="toDoList.length &gt; 0"&gt;待完成&lt;/</span>h4&gt;</span><br><span class="line">        &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"wait-to-do"</span>&gt;</span><br><span class="line">            &lt;li v-<span class="keyword">for</span>=<span class="string">"(item, index) in toDoList"</span> :keys=<span class="string">"item"</span>&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    &lt;i&gt;&#123;&#123;index + <span class="number">1</span>&#125;&#125;&lt;<span class="regexp">/i&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;input :value="item" @blur="setValue(index, $event)" type="text" /</span>&gt;</span><br><span class="line">                &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                &lt;p&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;span class="move" @click="removeToComplete(item, index)"&gt;√&lt;/</span>span&gt;</span><br><span class="line">                    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"del"</span> @click=<span class="string">"deleteWait(index)"</span>&gt;-&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>p&gt;</span><br><span class="line">            &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">        &lt;h4 v-show=<span class="string">"completedList.length &gt; 0"</span>&gt;已完成&lt;<span class="regexp">/h4&gt;</span></span><br><span class="line"><span class="regexp">        &lt;ul class="has-completed"&gt;</span></span><br><span class="line"><span class="regexp">            &lt;li v-for="(item, index) in completedList" :keys="item"&gt;</span></span><br><span class="line"><span class="regexp">                &lt;p&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;i&gt;&#123;&#123;index + 1&#125;&#125;&lt;/i</span>&gt;</span><br><span class="line">                    &lt;input :value=<span class="string">"item"</span> disabled=<span class="string">"true"</span> type=<span class="string">"text"</span> /&gt;</span><br><span class="line">                &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">                &lt;p&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;span class="move" @click="removeToWait(item, index)"&gt;x&lt;/</span>span&gt;</span><br><span class="line">                    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"del"</span> @click=<span class="string">"deleteComplete(index)"</span>&gt;-&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">                &lt;/</span>p&gt;</span><br><span class="line">            &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            toDoText: <span class="string">''</span>,</span><br><span class="line">            toDoList: [],</span><br><span class="line">            completedList: []</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        setValue(index, e) &#123;</span><br><span class="line">            <span class="keyword">this</span>.toDoList.splice(index, <span class="number">1</span>, e.target.value)</span><br><span class="line">        &#125;,</span><br><span class="line">        removeToComplete(item, index) &#123;</span><br><span class="line">            <span class="keyword">this</span>.completedList.splice(<span class="keyword">this</span>.completedList.length, <span class="number">0</span>, item)</span><br><span class="line">            <span class="keyword">this</span>.toDoList.splice(index, <span class="number">1</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        removeToWait(item, index) &#123;</span><br><span class="line">            <span class="keyword">this</span>.toDoList.splice(<span class="keyword">this</span>.toDoList.length, <span class="number">0</span>, item)</span><br><span class="line">            <span class="keyword">this</span>.completedList.splice(index, <span class="number">1</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        enterText() &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.toDoText.trim().length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">this</span>.toDoList.splice(<span class="keyword">this</span>.toDoList.length, <span class="number">0</span>, <span class="keyword">this</span>.toDoText)</span><br><span class="line">                <span class="keyword">this</span>.toDoText = <span class="string">''</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        deleteWait(index) &#123;</span><br><span class="line">            <span class="keyword">this</span>.toDoList.splice(index, <span class="number">1</span>)</span><br><span class="line">        &#125;,</span><br><span class="line">        deleteComplete(index) &#123;</span><br><span class="line">            <span class="keyword">this</span>.completedList.splice(index, <span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>页面写完，原型上的需求也大概开发完成，页面大概长如下样子：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/105.jpg" alt="105"></p>
+<h3 id="修改目录配置"><a href="#修改目录配置" class="headerlink" title="修改目录配置"></a>修改目录配置</h3><p>接下来就是开始编写单元测试文件了，写之前我们先把测试文件目录修改下为 <code>__tests__</code>，同时修改 <code>jest.config.js</code> 为如下配置，注意其中的 <code>testMatch</code> 已经修改为匹配 <code>__tests__</code> 目录下的所有 <code>.js</code> 文件了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    moduleFileExtensions: [</span><br><span class="line">        <span class="string">'js'</span>,</span><br><span class="line">        <span class="string">'vue'</span></span><br><span class="line">    ],</span><br><span class="line">    transform: &#123;</span><br><span class="line">        <span class="string">'^.+\\.vue$'</span>: <span class="string">'&lt;rootDir&gt;/node_modules/vue-jest'</span>,</span><br><span class="line">        <span class="string">'^.+\\.js$'</span>: <span class="string">'&lt;rootDir&gt;/node_modules/babel-jest'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    moduleNameMapper: &#123;</span><br><span class="line">        <span class="string">'^@/(.*)$'</span>: <span class="string">'&lt;rootDir&gt;/src/$1'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    snapshotSerializers: [</span><br><span class="line">        <span class="string">'jest-serializer-vue'</span></span><br><span class="line">    ],</span><br><span class="line">    testMatch: [<span class="string">'**/__tests__/**/*.spec.js'</span>],</span><br><span class="line">    transformIgnorePatterns: [<span class="string">'&lt;rootDir&gt;/node_modules/'</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="编写测试文件"><a href="#编写测试文件" class="headerlink" title="编写测试文件"></a>编写测试文件</h3><p>在 <code>__tests__/unit/</code> 目录下新建文件 <code>todolist.spec.js</code>，我们约定测试某个 <code>vue</code> 文件，那么它的单元测试文件习惯命名成 <code>*.spec.js</code> 或 <code>*.test.js</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; shallowMount &#125; <span class="keyword">from</span> <span class="string">'@vue/test-utils'</span></span><br><span class="line"><span class="keyword">import</span> ToDoList <span class="keyword">from</span> <span class="string">'@/components/ToDoList'</span></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'test ToDoList'</span>, () =&gt; &#123;</span><br><span class="line">    it(<span class="string">'输入框初始值为空字符串'</span>, () =&gt; &#123;</span><br><span class="line">        <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">        expect(wrapper.vm.toDoText).toBe(<span class="string">''</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面这个测试文件简要说明：</p>
+<ul>
+<li><code>shallowMount</code> 将会创建一个包含被挂载和渲染的 <code>Vue</code> 组件的 <code>Wrapper</code>，只存根当前组件，不包含子组件。</li>
+<li><code>describe(name, fn)</code> 这边是定义一个测试套件，<code>test ToDoList</code> 是测试套件的名字，<code>fn</code> 是具体的可执行的函数</li>
+<li><code>it(name, fn)</code> 是一个测试用例，<code>输入框初始值为空字符串</code> 是测试用例的名字，<code>fn</code> 是具体的可执行函数；一个测试套件里可以保护多个测试用例。</li>
+<li><code>expect</code> 是 <code>Jest</code> 内置的断言风格，业界还存在别的断言风格比如 <code>Should</code>、<code>Assert</code> 等。</li>
+<li><code>toBe</code> 是 <code>Jest</code> 提供的断言方法， 更多的可以到<a href="https://jestjs.io/docs/zh-Hans/expect" target="_blank" rel="noopener"><code>Jest Expect</code></a> 查看具体用法。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'待完成列表初始值应该为空数组'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">0</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">it(<span class="string">'已完成列表初始值应该为空数组'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    expect(wrapper.vm.completedList).toEqual([])</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>待完成和已完成列表，居然是列表，所以存放数据的字段必须是 <code>Array</code> 类型，空列表就是空数组。如果第二个测试用例改成：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expect(wrapper.vm.completedList).toBe([])</span><br></pre></td></tr></table></figure>
+<p>将会报错，因为 <code>toBe</code> 方法内部是调用 <code>Object.is(value1, value2)</code> 来比较2个值是否相等的，和 <code>==</code> 或 <code>===</code> 的判断逻辑不一样。显然 <code>Object.is([], [])</code> 会返回 <code>false</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'输入框值变化的时候，toDoText应该跟着变化'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.find(<span class="string">'.to-do-text'</span>).setValue(<span class="string">'晚上要陪妈妈逛超市'</span>)</span><br><span class="line">    expect(wrapper.vm.toDoText).toBe(<span class="string">'晚上要陪妈妈逛超市'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">it(<span class="string">'输入框没有值，敲入回车的时候，无变化'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    <span class="keyword">const</span> length = wrapper.vm.toDoList.length</span><br><span class="line">    <span class="keyword">const</span> input = wrapper.find(<span class="string">'.to-do-text'</span>)</span><br><span class="line">    input.setValue(<span class="string">''</span>)</span><br><span class="line">    input.trigger(<span class="string">'keyup.enter'</span>)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(length)</span><br><span class="line">&#125;)</span><br><span class="line">it(<span class="string">'输入框有值，敲入回车的时候，待完成列表将新增一条数据，同时清空输入框'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    <span class="keyword">const</span> length = wrapper.vm.toDoList.length</span><br><span class="line">    <span class="keyword">const</span> input = wrapper.find(<span class="string">'.to-do-text'</span>)</span><br><span class="line">    input.setValue(<span class="string">'晚上去吃大餐'</span>)</span><br><span class="line">    input.trigger(<span class="string">'keyup.enter'</span>)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(length + <span class="number">1</span>)</span><br><span class="line">    expect(wrapper.vm.toDoText).toBe(<span class="string">''</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>setValue</code> 可以设置一个文本控件的值并更新 <code>v-model</code> 绑定的数据。</p>
+</li>
+<li><p><code>.to-do-text</code> 是一个 <code>CSS</code> 选择器；<code>Vue-Test-Utils</code> 提供了 <code>find</code> 方法来通过查找选择器，来返回一个 <code>Wrapper</code>；</p>
+</li>
+</ul>
+<p>选择器可以是 <code>CSS</code> 选择器、可以是 <code>Vue</code> 组件也可以是一个对象，这个对象包含了组件的 <code>name</code> 或 <code>ref</code> 属性，比如可以这样用：<code>wrapper.find({ name: &#39;my-button&#39; })</code></p>
+<ul>
+<li><code>wrapper.vm</code> 是一个 <code>Vue</code> 实例，只有 <code>Vue</code> 组件的包裹器才有 <code>vm</code> 这个属性；</li>
+</ul>
+<p>通过 <code>wrapper.vm</code> 可以访问所有 <a href="https://vuejs.org/v2/api/#Instance-Properties" target="_blank" rel="noopener"><code>Vue</code> 实例的属性和方法</a>。</p>
+<p>比如：<code>wrapper.vm.$data</code>、<code>wrapper.vm.$nextTick()</code>。</p>
+<ul>
+<li><code>trigger</code> 方法可以用来触发一个 <code>DOM</code> 事件，这里触发的事件都是同步的，所以不必将断言放到 <code>$nextTick()</code> 里去执行；</li>
+</ul>
+<p>同时支持传入一个对象，当捕获到事件的时候，可以获取到传入对象的属性。<br>可以这样写：<code>wrapper.trigger(&#39;click&#39;, {name: &quot;bubuzou.com&quot;})</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'待完成列表支持编辑功能，编辑后更新toDoList数组'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">toDoList</span>: [<span class="string">'跑步半小时'</span>]&#125;)</span><br><span class="line">    wrapper.find(<span class="string">'.wait-to-do li'</span>).find(<span class="string">'input'</span>).setValue(<span class="string">'绕着公园跑3圈'</span>) </span><br><span class="line">    wrapper.find(<span class="string">'.wait-to-do li'</span>).find(<span class="string">'input'</span>).trigger(<span class="string">'blur'</span>) </span><br><span class="line">    expect(wrapper.vm.toDoList[<span class="number">0</span>]).toBe(<span class="string">'绕着公园跑3圈'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>先用 <code>setData</code> 给 <code>toDoList</code> 设置一个初始值，使其渲染出一个列表项；然后找到这个列表项，用 <code>setValue</code> 给其设置值，模拟了编辑；</p>
+<p>列表项的输入框是用 <code>:value=&quot;item&quot;</code> 绑定的 <code>value</code>, 所以 <code>setValue</code> 无法触发更新；</p>
+<p>只能通过 <code>trigger</code> 来触发更新 <code>toDoList</code> 的值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'待完成列表点击删除，同时更新toDoList数组'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">toDoList</span>: [<span class="string">'睡前看一小时书'</span>]&#125;)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">1</span>)</span><br><span class="line">    wrapper.find(<span class="string">'.wait-to-do li'</span>).find(<span class="string">'.del'</span>).trigger(<span class="string">'click'</span>)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">0</span>)</span><br><span class="line">&#125;)</span><br><span class="line">it(<span class="string">'点击待完成列表中某项的已完成按钮，数据对应更新'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">toDoList</span>: [<span class="string">'中午饭后吃一个苹果'</span>]&#125;)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">1</span>)</span><br><span class="line">    expect(wrapper.vm.completedList.length).toBe(<span class="number">0</span>)</span><br><span class="line">    wrapper.find(<span class="string">'.wait-to-do li'</span>).find(<span class="string">'.move'</span>).trigger(<span class="string">'click'</span>)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">0</span>)</span><br><span class="line">    expect(wrapper.vm.completedList.length).toBe(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br><span class="line">it(<span class="string">'点击已完成列表中某项的未完成按钮，数据对应更新'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">completedList</span>: [<span class="string">'唱了一首歌'</span>]&#125;)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">0</span>)</span><br><span class="line">    expect(wrapper.vm.completedList.length).toBe(<span class="number">1</span>)</span><br><span class="line">    wrapper.find(<span class="string">'.has-completed li'</span>).find(<span class="string">'.move'</span>).trigger(<span class="string">'click'</span>)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">1</span>)</span><br><span class="line">    expect(wrapper.vm.completedList.length).toBe(<span class="number">0</span>)</span><br><span class="line">&#125;)</span><br><span class="line">it(<span class="string">'列表序号从1开始递增'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">toDoList</span>: [<span class="string">'早上做作业'</span>, <span class="string">'下午去逛街'</span>]&#125;)</span><br><span class="line">    expect(wrapper.vm.toDoList.length).toBe(<span class="number">2</span>)</span><br><span class="line">    expect(wrapper.find(<span class="string">'.wait-to-do'</span>).html()).toMatch(<span class="string">'&lt;i&gt;1&lt;/i&gt;'</span>)</span><br><span class="line">    expect(wrapper.find(<span class="string">'.wait-to-do'</span>).html()).toMatch(<span class="string">'&lt;i&gt;2&lt;/i&gt;'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">it(<span class="string">'当待完成列表为空的时候，不显示待完成字样'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> wrapper = shallowMount(ToDoList)</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">toDoList</span>: []&#125;)</span><br><span class="line">    expect(wrapper.find(<span class="string">'h4'</span>).isVisible()).toBeFalsy()</span><br><span class="line">    wrapper.setData(&#123;<span class="attr">toDoList</span>: [<span class="string">'明天去爬北山'</span>]&#125;)</span><br><span class="line">    expect(wrapper.find(<span class="string">'h4'</span>).isVisible()).toBeTruthy()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>一个测试用例中可以写多个 <code>expect</code> 以保证断言的准确性。</p>
+<h3 id="异步测试"><a href="#异步测试" class="headerlink" title="异步测试"></a>异步测试</h3><p>最后我们为了模拟异步测试，所以加一个需求，即页面加载的时候会去请求远程待完成列表的数据。 在项目根目录新建 <code>__mocks__</code> 目录，同时新建 <code>axios.js</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> toToList = &#123;</span><br><span class="line">    success: <span class="literal">true</span>,</span><br><span class="line">    data: [<span class="string">'上午去图书馆看书'</span>, <span class="string">'下去出去逛街'</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="keyword">get</span> = (url) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (url === <span class="string">'toToList.json'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (toToList.success) &#123;</span><br><span class="line">                resolve(toToList)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                reject(<span class="keyword">new</span> <span class="built_in">Error</span>())</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改 <code>ToDoList.vue</code>，导入 <code>axios</code> 和增加 <code>mounted</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> axios <span class="keyword">from</span> <span class="string">'../../__mocks__/axios'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    mounted () &#123;</span><br><span class="line">        axios.get(<span class="string">'toToList.json'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.toDoList = res.data</span><br><span class="line">        &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">            </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>测试用例编写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it(<span class="string">'当页面挂载的时候去请求数据，请求成功后应该会返回2条数据'</span>, (done) =&gt; &#123;</span><br><span class="line">    wrapper.vm.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        expect(wrapper.vm.toDoList.length).toBe(<span class="number">2</span>)</span><br><span class="line">        done()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>对于异步的代码，写断言的时候需要放在 <code>wrapper.vm.$nextTick()</code> 里，且手动调用 <code>done()</code>。</p>
+<h3 id="配置测试覆盖率"><a href="#配置测试覆盖率" class="headerlink" title="配置测试覆盖率"></a>配置测试覆盖率</h3><p>测试用例写了部分，如果我们看下覆盖率如何，就需要要配置测试覆盖率。在 <code>jest.config.js</code> 里新增配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">collectCoverage: <span class="literal">true</span>,</span><br><span class="line">collectCoverageFrom: [<span class="string">"**/*.&#123;js,vue&#125;"</span>, <span class="string">"!**/node_modules/**"</span>],</span><br></pre></td></tr></table></figure>
+<p>在 <code>package.json</code> 的 <code>scripts</code> 中新增一条配置:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"test:cov"</span>: <span class="string">"vue-cli-service test:unit --coverage"</span></span><br></pre></td></tr></table></figure>
+<p>然后我们在终端运行： <code>npm run test:cov</code>，结果如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/106.jpg" alt="106"></p>
+<p>运行测试覆盖率命名后会在项目根目录生成 <code>coverage</code> 目录，浏览器打开里面的 <code>index.html</code> ：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/107.jpg" alt="107"></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

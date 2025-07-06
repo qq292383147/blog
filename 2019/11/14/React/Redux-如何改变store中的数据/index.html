@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="Redux-如何改变store中的数据"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>Redux-如何改变store中的数据 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/14/React/Redux-%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98store%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE/">
+                Redux-如何改变store中的数据
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-14</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>下面就一起来编写todolist的添加,删除等代码的,最终的效果图如下所示</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/1.gif" alt="1"></p>
+<center><font color="red">(添加,删除todolist操作)</font></center>
+
+<p><strong>如何改变store的数据,实现页面的更新？</strong></p>
+<p>在前文的示例代码中已经知道组件怎么从store中取数据了,然而现在,如果想要更新state的数据?怎么办?</p>
+<p>在reducer函数接收的第二个参数action就是接下来要干的事情了</p>
+<p>在Redux中为了能够查看store中的各个状态,<strong>在chrome浏览器需先安装一个redux Devtools这个调试工具</strong></p>
+<p>当然<strong>安装这个插件,需要科学上网.如果没有的话,在qq浏览器的插件市场里也是能够找得到的</strong></p>
+<p>qq浏览器各种插件也是应有尽有,与在chrome控制台里调试是一样的</p>
+<p><strong>方式一:创建store的时候,进行composeEnhancers构建增强型的应用,在代码里添加配置</strong>,将window.<strong>REDUX_DEVTOOLS_EXTENSION</strong> &amp;&amp; window.<strong>REDUX_DEVTOOLS_EXTENSION</strong>(),这行代码配置添加到createStore()的第二个参数上  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = createStore(reducer, <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// createStore第二个参数添加这个redux-devtools的配置可以开启调试功能</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/2.jpg" alt="2"></p>
+<center><font color="red">(需要浏览器安装redux-devtools插件)</font></center>
+
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/3.jpg" alt="3"></p>
+<center><font color="red">（需要按照文档,对创建的store仓库配置一下）</font></center>
+
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/4.jpg" alt="4"></p>
+<center><font color="red">（配置完后,刷新浏览器Redux调试工具就会出现了）</font></center>
+
+<p><strong>方法二:终端下安装redux-devtools-extension</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save redux-devtools-extension</span><br></pre></td></tr></table></figure>
+<p>然后在主页面入口代码里,添加redux-devtools-extension拓展,同时引入applyMiddleware应用中间件,并在componseWidthDevTools中调用,如下所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import &#123; createStore, applyMiddleware &#125; from &apos;redux&apos;; </span><br><span class="line">import &#123; composeWithDevTools &#125; from &apos;redux-devtools-extension&apos;;</span><br><span class="line"> </span><br><span class="line">const store = createStore(reducer, composeWithDevTools(</span><br><span class="line">  applyMiddleware()</span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<p>以上两种方法都可以开启Redux的调试功能,第二种方法比较强大,推荐使用,这种配置完后,在各个浏览器都是可以使用的,至于其他一些额外拓展功能的,在后续的文章中,会不断会讲到</p>
+<p>具体更改store的实例代码如下所示:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List &#125; <span class="keyword">from</span> <span class="string">'antd'</span>; <span class="comment">// 引入antd组件库</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>; <span class="comment">// 引入antd样式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 创建一个store管理仓库,从redux库中引入一个createStore函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 引入createStore后,store并没有创建,需要调用createStore()后才有store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer,<span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// 创建好reducer后,需要将reducer作为参数传到createStore当中去,这样store才能拿到reducer的state数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建reducer函数,管理组件共享的数据状态以及一些动作</span></span><br><span class="line"><span class="comment">// reducer是一个纯函数,返回一个新的state给store</span></span><br><span class="line"><span class="comment">// 4. 初始化state值,将原先组件内部的状态的数据,移除到reducer里面去管理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    inputValue: <span class="string">'itclanCoder'</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    list: [<span class="string">'itclanCoder'</span>, <span class="string">'川川'</span>, <span class="string">'学习Redux'</span>]</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;, action</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'handle_Input_Change'</span>)&#123;</span><br><span class="line">        <span class="comment">// 对原有的上一次的state做一次深拷贝,在Redux中,reducer不允许直接修改state</span></span><br><span class="line">      <span class="comment">// const newState = Object.assign(&#123;&#125;, state);这个Object.assign()也是一个非常常用浅拷贝的方法,与下面的方法最终实现的效果是一致的,等价于下面的方法</span></span><br><span class="line">      <span class="comment">// 创建了一个newState完全复制了state,通过对newState的修改避免了对state的修改</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value; <span class="comment">// 将新的value值赋值给newState</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TodoList组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="comment">// 5. 在组件内部通过getState()方法就可以拿到store里面的数据</span></span><br><span class="line">    <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">    <span class="comment">// this环境的绑定</span></span><br><span class="line">    <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">// 触发订阅,让store感知到state的变化</span></span><br><span class="line">    store.subscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 接收一个函数,重新获取store最新的数据,subscribe里面必须接收一个函数,会自动的调用this.handleStoreChange这个方法,保持store上的状态和this.state的同步,否则是会报错的,这个订阅函数放在componentWillMount或者componentDidMount生命周期函数内监听数据的变化,只要store状态发生了改变,那么就会调用这个handleStoreChange函数</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// componentWillMount()&#123;</span></span><br><span class="line">    <span class="comment">// store.subscribe(this.handleStoreChange);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// 组件卸载,移除时调用该函数,一般取消,清理已注册的订阅,定时器的清理,取消网络请求,在这里面操作</span></span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        store.unsubscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 取消订阅,清理已注册的监听</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    &lt;div style=&#123;&#123; <span class="attr">margin</span>: <span class="string">"10px 0 0 10px"</span>&#125;&#125;&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Input onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125; value=&#123;<span class="keyword">this</span>.state.inputValue&#125; style=&#123;&#123; <span class="attr">width</span>:<span class="string">"300px"</span>,<span class="attr">marginRight</span>:<span class="string">"10px"</span>&#125;&#125; placeholder=<span class="string">"请输入内容..."</span> /&gt;</span><br><span class="line">        &lt;Button type=<span class="string">"primary"</span>&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">      &lt;List</span><br><span class="line">         style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">         bordered</span><br><span class="line">         dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">         renderItem=&#123;item =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleInputChange(e)&#123;</span></span><br><span class="line"><span class="regexp">        console.log(e.target.value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action,确定一个操作,动作,注意action必须遵循一定的规范,是一个对象,type字段是确定要做的动作,类型,监听表单输入框的变化,value是输入框的值</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'handle_Input_Change',</span></span><br><span class="line"><span class="regexp">            value: e.target.value</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 通过store派发dispatch一个action,只有这里接收一个action,Reducer里面才能对新旧数据进行计算等操作,改变store中状态的唯一方法就是派发action</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleStoreChange()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("handleStorechange,触发了");</span></span><br><span class="line"><span class="regexp">        this.setState(store.getState()); /</span><span class="regexp">/ 触发setState重新获取store的数据,让input的数据与store保持同步了的</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const container = document.getElementById('root');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;TodoList /</span>&gt;, container);</span><br></pre></td></tr></table></figure>
+<p>具体的效果如下所示</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/5.gif" alt="5"></p>
+<p>通过上面新添加的action代码,实现一个更改store的数据,并达到了与页面更新的操作</p>
+<p><strong>再次来梳理一下更改store的数据的一个过程,经历了哪些具体操作</strong></p>
+<ol>
+<li>浏览器里添加redux-devtools,在创建store的createStore()的第二个参数中添加redux-devtools插件的配置,使浏览器支持Redux查看store的各种状态</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__());</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>给Input组件绑定onChange事件监听事件处理函数</li>
+</ol>
+<p>定义action对象,确定动作类型,这个action必须遵循一定的规则,得是一个对象,当然在后续当中,怎么支持函数,又是另外的知识了的</p>
+<ol start="3">
+<li>通过store的dispatch方法,接收action对象,告知store,有action这么一个事件动作,改变store中的状态的唯一方法就是派发action</li>
+</ol>
+<p>如下实例代码所示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;Input onChange=&#123;this.handleInputChange&#125;&gt;</span><br><span class="line"></span><br><span class="line">handleInputChange(e)&#123;</span><br><span class="line">   const action = &#123; // 定义action，action必须是一个对象</span><br><span class="line">       type: &apos;handle_input_change&apos;,</span><br><span class="line">       value: e.target.value</span><br><span class="line">   &#125;</span><br><span class="line">   store.dispatch(action); // 派发dispatch,将action传递给store</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在Reducer中会接收到action,通过if等判断,确定要执行state的操作,这个reducer必须是个纯函数,要有返回值,返回的结果会返回给store,这里的state是上一次(原先)组件的状态</li>
+</ol>
+<p>这里需要格外注意的是:</p>
+<p><strong>reducer可以接收state的值,但是不能直接修改state的值,当拿到state的数据后,需要先拷贝一份原先state的数据,在拷贝出新的数据基础上进行操作</strong></p>
+<p>创建了一个newState完全复制了state,通过对newState的修改避免了对state的修改</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state, action</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(action.type ==== <span class="string">'handle_input_change'</span>)&#123;</span><br><span class="line">          <span class="comment">// 对原有的state进行一个深拷贝,在redux中,redux是不允许直接修改state的,但可以接收state,这也是为什么当我们拿到state后,我们需要拷贝一份数据,一个新的state出来</span></span><br><span class="line">         <span class="comment">// const newState = Object.assign(&#123;&#125;, state);这个Object.assign()也是一个非常常用浅拷贝的方法,与下面的方法最终实现的效果是一致的</span></span><br><span class="line">          <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">          newState.inputValue = action.value;</span><br><span class="line">          <span class="keyword">return</span> newState; <span class="comment">// 返回新的state</span></span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中值得一提的就是拷贝数据对象的方法:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.assign(&#123;&#125;, state)</span><br><span class="line"><span class="comment">// 等价于</span></span><br><span class="line"><span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>当执行上述的操作后,当组件想要感知store的变化,需要在constructor函数内或者componentWillMount(在react17版本中将会被废弃)或componentDidMount生命周期函数内调用store的subscribe方法</li>
+</ol>
+<p>个人推荐放在constructor或者componentDidMount中</p>
+<p>同时它接收一个函数 这个其实是设计模式的订阅者模式,触发store的订阅,当store发生了变化,会自动的执行该函数</p>
+<p><strong>保持store上的状态和this.state的同步,监听数据的变化</strong>,只要store状态发生了改变,那么就会调用这个handleStoreChange函数</p>
+<p>subscribe(listener),用于注册回调,监听state的变化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">store.subscribe(<span class="keyword">this</span>.handleStoreChange) <span class="comment">// 这里面接收一个listen函数,主要用来获取新的store,这句代码放在constructor或者componentwillMount以及componentDidMount中都是可以的</span></span><br><span class="line">handleStoreChange()&#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(store.getState())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>最后在组件移除时,销毁时,在componentWillUnmount中取消store的订阅事件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 组件卸载,移除时调用该函数,一般取消,清理已注册的订阅,定时器的清理,取消网络请求,在这里面操作</span></span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        store.unsubscribe(<span class="keyword">this</span>.handleStoreChange);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>通过以上六个步骤,就完成了一次store的更新操作</strong></p>
+<p>你可以联想到我们之前举到的那个换房的例子的,租户(组件)怎么获取拿到房源具体信息,首先房产中介经理会从内部的系统(redux)中,引入一个createStore的方法,进而创建一个store的仓库,随之创建一个实时记录本(reducer)</p>
+<p>真正的新老房信息的变更操作都是在reducer这个函数中完成的,并且它是一个纯函数,必须要有返回值</p>
+<p>在Reducer函数中,接收两个参数,第一个是上一次组件的状态值,而第二个是组件具体的动作action,具体要干的什么事情</p>
+<p><strong>在reducer中,规定只能读取state的数据,并不能直接修改state的数据,而且返回的结果是根据state与action(用户指定的动作)共同决定</strong></p>
+<p>其最新的结果返回给房产中介经理手中(store),<strong>在reducer创建完之后,必须要将reducer作为参数,让createStore函数接收,这样store才真正的拥有了state的数据</strong></p>
+<p>那么此刻,租户(组件)想要获取房源信息,则引入store,在一开始constructor函数或者componentWillMount函数中,调用getState()方法,从而获得了state的数据,最终显示到页面上</p>
+<p>而<strong>如果想要更改store的数据</strong>,租户想要换携带有沙发,电视等大房子,这个具体的动作就是action,首先换房子是一个动作,在元素上绑定相应的事件</p>
+<p>在该监听事件内,<strong>定义一个action动作,确定要做的事件类型,这个action必须遵循一定的规则,必须是一个对象</strong></p>
+<p>定义好action动作后,<strong>store接收到这个action动作请求后,store想要获取它的具体信息,便会派发一个使者dispatch,同时携带上action的具体动作信息,作为参数传递给dispatch方法</strong></p>
+<p>这样的话store就真正的知道了具体的动作,而具体的数据变更等操作,需要在reducer这个实时记录本中进行变更操作,在reducer里面进行一些逻辑判断操作</p>
+<p><strong>并且在reducer中只能读取state,并不能修改,如果想要修改,需要拷贝一份state出来,在新的state基础上进行操作,同时也要将这个新的state进行返回</strong>.达到一个以新换旧的操作</p>
+<p>最后在<strong>组件中如何感知到store的变化,实现数据的同步更新呢,**</strong>在redux中,需要在组件内的constructor或者componentWillMount,componentDidMount函数中进行触发subscribe()函数**</p>
+<p>同时它必须接收一个函数,触发store的订阅,<strong>在这个接收的函数当中重新获取一次store的数据,保持视图的this.state与store仓库的state数据的同步更新</strong></p>
+<p>这样的话,最终就完成了一次action的动作,页面也随之更新了</p>
+<p>上面的代码进行了一次action,reducer的编写,下面接着继续的,做得并不完整,<strong>那怎么实现一个添加内容的操作呢</strong> </p>
+<p>输入框表单内添加内容,点击右侧的提交按钮,将Input框的内容添加到底下的列表当中 具体效果如下所示</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/6.gif" alt="6"></p>
+<center><font color="red">（添加list操作）</font></center>
+
+<p>以下是完整的具体代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List, message &#125; <span class="keyword">from</span> <span class="string">'antd'</span>; <span class="comment">// 引入antd组件库</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>; <span class="comment">// 引入antd样式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 创建一个store管理仓库,从redux库中引入一个createStore函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 引入createStore后,store并没有创建,需要调用createStore()后才有store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer,<span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// 创建好reducer后,需要将reducer作为参数传到createStore当中去,这样store才能拿到reducer的state数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建reducer函数,管理组件共享的数据状态以及一些动作</span></span><br><span class="line"><span class="comment">// reducer是一个纯函数,返回一个新的state给store</span></span><br><span class="line"><span class="comment">// 4. 初始化state值,将原先组件内部的状态的数据,移除到reducer里面去管理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    inputValue: <span class="string">''</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    list: []</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;, action</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'handle_Input_Change'</span>)&#123;</span><br><span class="line">        <span class="comment">// 对原有的上一次的state做一次深拷贝,在Redux中,reducer不允许直接修改state</span></span><br><span class="line">       <span class="comment">// const newState = Object.assign(&#123;&#125;, state);这个Object.assign()也是一个非常常用浅拷贝的方法,与下面的方法最终实现的效果是一致的,等价于下面的方法</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value; <span class="comment">// 将新的value值赋值给newState</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(action.type === <span class="string">'addInputcontent'</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        <span class="keyword">if</span>(newState.inputValue === <span class="string">''</span>)&#123;</span><br><span class="line">            message.error(<span class="string">'输入表单内不能为空,请输入内容'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            newState.list.push(newState.inputValue); <span class="comment">// 往list数组中添加input的内容</span></span><br><span class="line">            newState.inputValue = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">return</span> newState; <span class="comment">// 返回newState</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// TodoList组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="comment">// 5. 在组件内部通过getState()方法就可以拿到store里面的数据</span></span><br><span class="line">        <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">        <span class="comment">// this环境的绑定</span></span><br><span class="line">        <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleAddClick = <span class="keyword">this</span>.handleAddClick.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 触发订阅,让store感知到state的变化</span></span><br><span class="line">        store.subscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 接收一个函数,重新获取store最新的数据,subscribe里面必须接收一个函数,否则是会报错的,这个订阅函数放在componentWillMount生命周期函数内调用操作也是可以的</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// componentWillMount()&#123;</span></span><br><span class="line">        <span class="comment">// store.subscribe(this.handleStoreChange);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div style=&#123;&#123; <span class="attr">margin</span>: <span class="string">"10px 0 0 10px"</span>&#125;&#125;&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;Input onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125; value=&#123;<span class="keyword">this</span>.state.inputValue&#125; style=&#123;&#123; <span class="attr">width</span>:<span class="string">"300px"</span>,<span class="attr">marginRight</span>:<span class="string">"10px"</span>&#125;&#125; placeholder=<span class="string">"请输入内容..."</span> /&gt;</span><br><span class="line">                        &lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleAddClick&#125;&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;/</span>div&gt;</span><br><span class="line">                    &lt;List</span><br><span class="line">                      style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">                      bordered</span><br><span class="line">                      dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">                      renderItem=&#123;item =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span>&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleInputChange(e)&#123;</span></span><br><span class="line"><span class="regexp">        console.log(e.target.value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action,确定一个操作,动作,注意action必须遵循一定的规范,是一个对象,type字段是确定要做的动作,类型,监听表单输入框的变化,value是输入框的值</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'handle_Input_Change',</span></span><br><span class="line"><span class="regexp">            value: e.target.value</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 通过store派发dispatch一个action,只有这里接收一个action,Reducer里面才能对新旧数据进行计算等操作,这是改变store数据的唯一的方法,必须要通过派发一个action给store</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleStoreChange()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("handleStorechange,触发了");</span></span><br><span class="line"><span class="regexp">        this.setState(store.getState()); /</span><span class="regexp">/ 触发setState重新获取store的数据,让input的数据与store保持同步了的</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 添加列表的操作</span></span><br><span class="line"><span class="regexp">    handleAddClick()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("添加按钮执行了");</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action动作</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'addInputcontent'</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 还要将action传递给dispatch,这样store才会接收到,这是改变store数据的唯一的方法,必须要通过派发一个action给store,必不可少的一步</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const container = document.getElementById('root');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;TodoList /</span>&gt;, container);</span><br></pre></td></tr></table></figure>
+<p><strong>上面的代码就完成一个添加列表的功能 在次梳理一下过程</strong></p>
+<ol>
+<li>给JSX元素,组件Button按钮绑定事件</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleAddClick&#125;&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 添加列表的操作</span></span><br><span class="line"><span class="regexp">    handleAddClick()&#123;</span></span><br><span class="line"><span class="regexp">        console.log("添加按钮执行了");</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action动作</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'addInputcontent'</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 还要将action传递给dispatch,这样store才会接收到,这是改变store数据的唯一的方法,必须要通过派发一个action给store,必不可少的一步</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在reducer函数中进行逻辑判断,数据变更等操作</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(action.type === <span class="string">'addInputcontent'</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        <span class="keyword">if</span>(newState.inputValue === <span class="string">''</span>)&#123;</span><br><span class="line">            message.error(<span class="string">'输入表单内不能为空,请输入内容'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            newState.list.push(newState.inputValue); <span class="comment">// 往list数组中添加input的内容</span></span><br><span class="line">            newState.inputValue = <span class="string">''</span>; <span class="comment">// 提交表单内容后,让表单内容置空操作</span></span><br><span class="line">            <span class="keyword">return</span> newState; <span class="comment">// 返回newState</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>基于原有的代码,添加这两步就完成了一个添加列表的操作的 那么删除列表的功能怎么实现呢? 以下是实现的效果</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/7.gif" alt="7"></p>
+<center><font color="red">（删除列表）</font></center>
+
+<p>以下是具体的实例代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Input, Button, List, message, Modal &#125; <span class="keyword">from</span> <span class="string">'antd'</span>; <span class="comment">// 引入antd组件库</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">'antd/dist/antd.css'</span>; <span class="comment">// 引入antd样式</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 创建一个store管理仓库,从redux库中引入一个createStore函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 引入createStore后,store并没有创建,需要调用createStore()后才有store</span></span><br><span class="line"><span class="keyword">const</span> store = createStore(reducer, <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; <span class="built_in">window</span>.__REDUX_DEVTOOLS_EXTENSION__()); <span class="comment">// 创建好reducer后,需要将reducer作为参数传到createStore当中去,这样store才能拿到reducer的state数据</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 创建reducer函数,管理组件共享的数据状态以及一些动作</span></span><br><span class="line"><span class="comment">// reducer是一个纯函数,返回一个新的state给store</span></span><br><span class="line"><span class="comment">// 4. 初始化state值,将原先组件内部的状态的数据,移除到reducer里面去管理</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reducer</span>(<span class="params">state = &#123;</span></span></span><br><span class="line"><span class="function"><span class="params">    inputValue: <span class="string">''</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    list: []</span></span></span><br><span class="line"><span class="function"><span class="params">&#125;, action</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(state, action);</span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">'handle_Input_Change'</span>) &#123;</span><br><span class="line">        <span class="comment">// 对原有的上一次的state做一次深拷贝,在Redux中,reducer不允许直接修改state</span></span><br><span class="line">        <span class="comment">// const newState = Object.assign(&#123;&#125;, state);与下面的是等价的</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        newState.inputValue = action.value; <span class="comment">// 将新的value值赋值给newState</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">'addInputcontent'</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(state));</span><br><span class="line">        <span class="keyword">if</span> (Trim(newState.inputValue) === <span class="string">''</span>) &#123;</span><br><span class="line">            message.error(<span class="string">'输入表单内不能为空,请输入内容'</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            newState.list.push(newState.inputValue); <span class="comment">// 往list数组中添加input的内容</span></span><br><span class="line">            newState.inputValue = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">return</span> newState; <span class="comment">// 返回newState</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (action.type === <span class="string">'deletelist'</span>) &#123;</span><br><span class="line">        <span class="comment">// 下面这个也是拷贝原对象的一种方式与上面等价</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</span><br><span class="line">        newState.list.splice(action.index, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> state;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 去除前后空格</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Trim</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> str.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> &#123; confirm &#125; = Modal</span><br><span class="line"><span class="comment">// TodoList组件</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TodoList</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="comment">// 5. 在组件内部通过getState()方法就可以拿到store里面的数据</span></span><br><span class="line">        <span class="keyword">this</span>.state = store.getState();</span><br><span class="line">        <span class="comment">// this环境的绑定</span></span><br><span class="line">        <span class="keyword">this</span>.handleInputChange = <span class="keyword">this</span>.handleInputChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleStoreChange = <span class="keyword">this</span>.handleStoreChange.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.handleAddClick = <span class="keyword">this</span>.handleAddClick.bind(<span class="keyword">this</span>);</span><br><span class="line">        <span class="comment">// 触发订阅,让store感知到state的变化</span></span><br><span class="line">        store.subscribe(<span class="keyword">this</span>.handleStoreChange); <span class="comment">// 接收一个函数,重新获取store最新的数据,subscribe里面必须接收一个函数,否则是会报错的,这个订阅函数放在componentWillMount生命周期函数内调用操作也是可以的</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// componentWillMount()&#123;</span></span><br><span class="line">    <span class="comment">// store.subscribe(this.handleStoreChange); </span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="comment">// 组件卸载,移除时调用该函数,一般取消,清理已注册的订阅,定时器的清理,取消网络请求,在这里面操作</span></span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line">        store.unsubscribe(<span class="keyword">this</span>.handleStoreChange);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div style=&#123;&#123; <span class="attr">margin</span>: <span class="string">"10px 0 0 10px"</span>&#125;&#125;&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;Input onChange=&#123;<span class="keyword">this</span>.handleInputChange&#125; value=&#123;<span class="keyword">this</span>.state.inputValue&#125; style=&#123;&#123; <span class="attr">width</span>:<span class="string">"300px"</span>,<span class="attr">marginRight</span>:<span class="string">"10px"</span>&#125;&#125; placeholder=<span class="string">"请输入内容..."</span> /&gt;</span><br><span class="line">                        &lt;Button type=<span class="string">"primary"</span> onClick=&#123;<span class="keyword">this</span>.handleAddClick&#125;&gt;提交&lt;<span class="regexp">/Button&gt;</span></span><br><span class="line"><span class="regexp">                    &lt;/</span>div&gt;</span><br><span class="line">                    &lt;List</span><br><span class="line">                      style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">                      bordered</span><br><span class="line">                      dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">                      renderItem=&#123;(item,index) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleDelList.bind(this,</span> <span class="attr">index</span>,<span class="attr">item</span>)&#125;&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleInputChange(e) &#123;</span></span><br><span class="line"><span class="regexp">        console.log(e.target.value);</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action,确定一个操作,动作,注意action必须遵循一定的规范,是一个对象,type字段是确定要做的动作,类型,监听表单输入框的变化,value是输入框的值</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'handle_Input_Change',</span></span><br><span class="line"><span class="regexp">            value: e.target.value</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 通过store派发dispatch一个action,只有这里接收一个action,Reducer里面才能对新旧数据进行计算等操作</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    handleStoreChange() &#123;</span></span><br><span class="line"><span class="regexp">        console.log("handleStorechange,触发了");</span></span><br><span class="line"><span class="regexp">        this.setState(store.getState()); /</span><span class="regexp">/ 触发setState重新获取store的数据,让input的数据与store保持同步了的</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 添加列表的操作</span></span><br><span class="line"><span class="regexp">    handleAddClick() &#123;</span></span><br><span class="line"><span class="regexp">        console.log("添加按钮执行了");</span></span><br><span class="line"><span class="regexp">        /</span><span class="regexp">/ 定义action动作</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'addInputcontent'</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        store.dispatch(action); /</span><span class="regexp">/ 还要将action传递给dispatch,这样store才会接收到</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 删除列表操作</span></span><br><span class="line"><span class="regexp">    handleDelList(index,item) &#123;</span></span><br><span class="line"><span class="regexp">        this.showDeleteConfirm(index, item);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    showDeleteConfirm(index,item) &#123;</span></span><br><span class="line"><span class="regexp">        const action = &#123;</span></span><br><span class="line"><span class="regexp">            type: 'deletelist',</span></span><br><span class="line"><span class="regexp">            index: index</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        confirm(&#123;</span></span><br><span class="line"><span class="regexp">            title: '确定要删除该列表?',</span></span><br><span class="line"><span class="regexp">            content: item,</span></span><br><span class="line"><span class="regexp">            okText: '确认',</span></span><br><span class="line"><span class="regexp">            okType: 'danger',</span></span><br><span class="line"><span class="regexp">            cancelText: '取消',</span></span><br><span class="line"><span class="regexp">            onOk() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('OK');</span></span><br><span class="line"><span class="regexp">                 store.dispatch(action); /</span><span class="regexp">/ 想要改变store的数据,必须通过dispatch派发一个action</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">            onCancel() &#123;</span></span><br><span class="line"><span class="regexp">                console.log('Cancel');</span></span><br><span class="line"><span class="regexp">            &#125;,</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">const container = document.getElementById('root');</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;TodoList /</span>&gt;, container);</span><br></pre></td></tr></table></figure>
+<p>实现删除列表的过程与添加列表差不多</p>
+<ol>
+<li>给列表绑定事件,添加事件处理函数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;List</span><br><span class="line">      style=&#123;&#123; <span class="attr">width</span>: <span class="string">'300px'</span>,<span class="attr">marginTop</span>:<span class="string">'10px'</span>&#125;&#125;</span><br><span class="line">      bordered</span><br><span class="line">      dataSource=&#123;<span class="keyword">this</span>.state.list&#125;</span><br><span class="line">      renderItem=&#123;(item,index) =&gt; <span class="xml"><span class="tag">&lt;<span class="name">List.Item</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleDelList.bind(this,</span> <span class="attr">index</span>,<span class="attr">item</span>)&#125;&gt;</span>&#123;item&#125;<span class="tag">&lt;/<span class="name">List.Item</span>&gt;</span></span>&#125;/&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; confirm &#125; = Modal; <span class="comment">// 记得引入这个,不然删除确认模态框不会生效的,底下调用了该确认函数</span></span><br><span class="line"> <span class="comment">// 删除列表操作</span></span><br><span class="line">    handleDelList(index,item) &#123;</span><br><span class="line">        <span class="keyword">this</span>.showDeleteConfirm(index, item);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    showDeleteConfirm(index,item) &#123;</span><br><span class="line">        <span class="keyword">const</span> action = &#123;</span><br><span class="line">            type: <span class="string">'deletelist'</span>,</span><br><span class="line">            index: index</span><br><span class="line">        &#125;</span><br><span class="line">        confirm(&#123;</span><br><span class="line">            title: <span class="string">'确定要删除该列表?'</span>,</span><br><span class="line">            content: item,</span><br><span class="line">            okText: <span class="string">'确认'</span>,</span><br><span class="line">            okType: <span class="string">'danger'</span>,</span><br><span class="line">            cancelText: <span class="string">'取消'</span>,</span><br><span class="line">            onOk() &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'OK'</span>);</span><br><span class="line">                 store.dispatch(action); <span class="comment">// 想要改变store的数据,必须通过dispatch派发一个action</span></span><br><span class="line">            &#125;,</span><br><span class="line">            onCancel() &#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">'Cancel'</span>);</span><br><span class="line">            &#125;,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在reducer函数中进行对公共组件数据逻辑的操作</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (action.type === <span class="string">'deletelist'</span>) &#123;</span><br><span class="line">        <span class="comment">// 下面这个也是拷贝原对象的一种方式,也很常用</span></span><br><span class="line">        <span class="keyword">const</span> newState = <span class="built_in">Object</span>.assign(&#123;&#125;, state);</span><br><span class="line">        newState.list.splice(action.index, <span class="number">1</span>); <span class="comment">// 这是删除当前列表的核心方法,通过数组的splice方法实现,第一个参数代表的是删除哪个,第二个是删除一个</span></span><br><span class="line">        <span class="keyword">return</span> newState;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>至于上面添加了一个当删除列表时,模态框的确认操作,至于添加一些组件是放在reducer里面还是放在外面,要视具体的业务逻辑而定</p>
+<p>比如这里的删除确认模态框的,点击列表时,弹出是否删除的模态框,而具体是否要删除,应当在onOk这个函数里面进行派发action的, 如果你放到reducer里面做处理,那么始终会出现一些问题的,注意逻辑的操作顺序</p>
+<p>文章写到这里,一个todolist的添加,删除操作就完成了,当然看到这样的代码,这么一个小小的demo操作,绕来绕去,估计奔溃了的,这样的代码堆叠在一起肯定是不行的</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/Redux笔记/8.jpg" alt="8"></p>
+<center><font color="red">（放个妹子上来,让阅读产生灵魂震荡,不疲劳）</font></center>
+
+<center><font color="pink" size="5">结语</font></center>
+
+<p>本文并不是什么高大上的内容,主要是对学习Redux的一个小小的初探,在真正实际项目中,复杂度远不止像这样的一个例子的,但是作为入门,todolist确实能让自己对Redux有一定的认识</p>
+<p>也许你会觉得这么个简单的例子,竟然这么多代码,使用vue的话,几行代码就搞定了,Vue中也有vuex这样的数据流管理框架,使用起来也是大同小异,两个各有优点,都很强</p>
+<p>使用React编写代码更偏向底层一些的,虽然Redux比较绕,但都是有固定的套路流程的,其中理解Redux的工作流程是非常重要的</p>
+<p>主要开始用ant-design这个UI组件库对todolist做了一个简单的布局,然后如何将组件的数据抽离到Redux中去管理</p>
+<p>组件如何获取Redux中store的数据,以及怎么更新store的数据的更新,在上文当中都有与之对应的操作和解释</p>
+<p>用几句简单话:概括下使用Redux的流程</p>
+<ul>
+<li>安装redux,然后从redux中引入createStore这个方法,并调用它,从而创建store,</li>
+<li>紧着在创建reducer纯函数,在reducer里面进行state的逻辑操作,reducer的返回值取决于state与action这个的决定,最终该函数的返回的最新结果会返回给store,完成新旧数据的替换,</li>
+<li>而在组件中如何获取store的数据,是通过getState方法进行获取store中的所有状态</li>
+<li>如何保持页面的组件与store数据同步更新,需要注册订阅subscribe方法,该方法接收一个函数,在该接收的函数内触发重新获取store的数据 更多细枝末节内容,可见上文</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/React-React-Native/">#React & React Native</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

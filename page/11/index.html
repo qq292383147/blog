@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="张健龙个人技术博客"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="website" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>page - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+            <h1 id="main-title" class="title">张健龙个人技术博客</h1>
+            <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/28/React/React%E8%B7%AF%E7%94%B1%E9%89%B4%E6%9D%83/">
+                React路由鉴权
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-28</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="一、vue之beforeEach路由鉴权"><a href="#一、vue之beforeEach路由鉴权" class="headerlink" title="一、vue之beforeEach路由鉴权"></a>一、vue之beforeEach路由鉴权</h1><blockquote>
+<p>一般我们会相应的把路由表角色菜单配置在后端，当用户未通过页面菜单，直接从地址栏访问非权限范围内的url时，拦截用户访问并重定向到首页。</p>
+</blockquote>
+<p><code>vue</code>的初期是可以通过动态路由的方式，按照权限加载对应的路由表<code>AddRouter</code>，但是由于权限交叉，导致权限路由表要做判断结合，想想还是挺麻烦的，所以采用的是在<code>beforeEach</code>里面直判断用非动态路由的方式</p>
+<blockquote>
+<p>在使用 Vue的时候，框架提供了路由守卫功能，用来在进入某个路有前进行一些校验工作，如果校验失败，就跳转到 404 或者登陆页面，比如 Vue 中的 <code>beforeEnter</code> 函数：</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">router.beforeEach(async(to, from, next) =&gt; &#123;</span><br><span class="line">    const toPath = to.path;</span><br><span class="line">    const fromPath = from.path;</span><br><span class="line">&#125;)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="1、路由概览"><a href="#1、路由概览" class="headerlink" title="1、路由概览"></a>1、路由概览</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">// index.js</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br><span class="line"></span><br><span class="line">import LabelMarket from &apos;./modules/label-market&apos;</span><br><span class="line">import PersonalCenter from &apos;./modules/personal-center&apos;</span><br><span class="line">import SystemSetting from &apos;./modules/system-setting&apos;</span><br><span class="line"></span><br><span class="line">import API from &apos;@/utils/api&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line">const routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;/label&apos;,</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: &quot;index&quot; */ &apos;@/views/index.vue&apos;),</span><br><span class="line">    redirect: &#123; name: &apos;LabelMarket&apos; &#125;,</span><br><span class="line">    children: [</span><br><span class="line">      &#123; // 基础公共页面</span><br><span class="line">        path: &apos;label-market&apos;,</span><br><span class="line">        name: &apos;LabelMarket&apos;,</span><br><span class="line">        component: () =&gt; import(/* webpackChunkName: &quot;label-market&quot; */ &apos;@/components/page-layout/OneColLayout.vue&apos;),</span><br><span class="line">        redirect: &#123; name: &apos;LabelMarketIndex&apos; &#125;,</span><br><span class="line">        children: LabelMarket</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123; // 个人中心</span><br><span class="line">        path: &apos;personal-center&apos;,</span><br><span class="line">        name: &apos;PersonalCenter&apos;,</span><br><span class="line">        redirect: &apos;/label/personal-center/my-apply&apos;,</span><br><span class="line">        component: () =&gt; import(/* webpackChunkName: &quot;personal-center&quot; */ &apos;@/components/page-layout/TwoColLayout.vue&apos;),</span><br><span class="line">        children: PersonalCenter</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123; // 系统设置</span><br><span class="line">        path: &apos;system-setting&apos;,</span><br><span class="line">        name: &apos;SystemSetting&apos;,</span><br><span class="line">        redirect: &apos;/label/system-setting/theme&apos;,</span><br><span class="line">        component: () =&gt; import(/* webpackChunkName: &quot;system-setting&quot; */ &apos;@/components/page-layout/TwoColLayout.vue&apos;),</span><br><span class="line">        children: SystemSetting</span><br><span class="line">      &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: &apos;*&apos;,</span><br><span class="line">    redirect: &apos;/label&apos;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">const router = new Router(&#123; mode: &apos;history&apos;, routes &#125;)</span><br><span class="line">// personal-center.js</span><br><span class="line">export default [</span><br><span class="line">    ...</span><br><span class="line">  &#123; // 我的审批</span><br><span class="line">    path: &apos;my-approve&apos;,</span><br><span class="line">    name: &apos;PersonalCenterMyApprove&apos;,</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: &quot;personal-center&quot; */ &apos;@/views/personal-center/index.vue&apos;),</span><br><span class="line">    children: [</span><br><span class="line">      &#123; // 数据服务审批</span><br><span class="line">        path: &apos;api&apos;,</span><br><span class="line">        name: &apos;PersonalCenterMyApproveApi&apos;,</span><br><span class="line">        meta: &#123;</span><br><span class="line">          requireAuth: true,</span><br><span class="line">          authRole: &apos;dataServiceAdmin&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        component: () =&gt; import(/* webpackChunkName: &quot;personal-center&quot; */ &apos;@/views/personal-center/api-approve/index.vue&apos;)</span><br><span class="line">      &#125;,</span><br><span class="line">      ...</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br><span class="line">export default [</span><br><span class="line">    ...</span><br><span class="line">  &#123; // 数据服务设置</span><br><span class="line">    path: &apos;api&apos;,</span><br><span class="line">    name: &apos;SystemSettingApi&apos;,</span><br><span class="line">    meta: &#123;</span><br><span class="line">      requireAuth: true,</span><br><span class="line">      authRole: &apos;dataServiceAdmin&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: &quot;system-setting&quot; */ &apos;@/views/system-setting/api/index.vue&apos;)</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; // 主题设置</span><br><span class="line">    path: &apos;theme&apos;,</span><br><span class="line">    name: &apos;SystemSettingTheme&apos;,</span><br><span class="line">    meta: &#123;</span><br><span class="line">      requireAuth: true,</span><br><span class="line">      authRole: &apos;topicAdmin&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    component: () =&gt; import(/* webpackChunkName: &quot;system-setting&quot; */ &apos;@/views/system-setting/theme/index.vue&apos;)</span><br><span class="line">  &#125;,</span><br><span class="line">    ...</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="2、鉴权判断"><a href="#2、鉴权判断" class="headerlink" title="2、鉴权判断"></a>2、鉴权判断</h2><p>用户登陆信息请求后端接口，返回菜单、权限、版权信息等公共信息，存入vuex。此处用到权限字段如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_userInfo: &#123;</span><br><span class="line">    admin:false, // 是否超级管理员</span><br><span class="line">    dataServiceAdmin:true, // 是否数据服务管理员</span><br><span class="line">    topicAdmin:false // 是否主题管理员</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>判断当前路由是否需要鉴权（router中meta字段下requireAuth是否为true），让公共页面直接放行；</li>
+<li>判断角色是超级管理员，直接放行；</li>
+<li>（本系统特殊逻辑）判断跳转路径是主题设置但角色不为主题管理员，继续判断角色是否为数据服务管理员，跳转数据服务设置页or重定向（‘系统设置’菜单’/label/system-setting’默认重定向到’/label/system-setting/theme’，其他菜单默认重定向的都是基础公共页面，故需要对这里的重定向鉴权。系统设置的权限不是主题管理员就一定是数据服务管理员，所以能这样做）；</li>
+<li>判断路由需求权限是否符合，若不符合直接重定向。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// index.js</span><br><span class="line">router.beforeEach(async (to, from, next) =&gt; &#123;</span><br><span class="line">  try &#123;</span><br><span class="line">    // get user login info</span><br><span class="line">    const _userInfo = await API.get(&apos;/common/query/menu&apos;, &#123;&#125;, false)</span><br><span class="line">    router.app.$store.dispatch(&apos;setLoginUser&apos;, _userInfo)</span><br><span class="line"></span><br><span class="line">    if (_userInfo &amp;&amp; Object.keys(_userInfo).length &gt; 0 &amp;&amp;</span><br><span class="line">      to.matched.some(record =&gt; record.meta.requireAuth)) &#123;</span><br><span class="line">      if (_userInfo.admin) &#123; // super admin can pass</span><br><span class="line">        next()</span><br><span class="line">      &#125; else if (to.fullPath === &apos;/label/system-setting/theme&apos; &amp;&amp;</span><br><span class="line">        !_userInfo.topicAdmin) &#123;</span><br><span class="line">        if (_userInfo.dataServiceAdmin) &#123;</span><br><span class="line">          next(&#123; path: &apos;/label/system-setting/api&apos; &#125;)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          next(&#123; path: &apos;/label&apos; &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else if (!(_userInfo[to.meta.authRole])) &#123;</span><br><span class="line">        next(&#123; path: &apos;/label&apos; &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    router.app.$message.error(&apos;获取用户登陆信息失败！&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="二、简介"><a href="#二、简介" class="headerlink" title="二、简介"></a>二、简介</h1><h2 id="1、路由简介"><a href="#1、路由简介" class="headerlink" title="1、路由简介"></a>1、路由简介</h2><p>路由是干什么的？</p>
+<p>根据不同的 url 地址展示不同的内容或页面。</p>
+<p>单页面应用最大的特点就是只有一个 web 页面。因而所有的页面跳转都需要通过javascript实现。当需要根据用户操作展示不同的页面时，我们就需要根据访问路径使用js控制页面展示内容。</p>
+<h2 id="2、React-router-简介"><a href="#2、React-router-简介" class="headerlink" title="2、React-router 简介"></a>2、React-router 简介</h2><p>React Router 是专为 React 设计的路由解决方案。它利用HTML5 的history API，来操作浏览器的 session history (会话历史)。</p>
+<h2 id="3、使用"><a href="#3、使用" class="headerlink" title="3、使用"></a>3、使用</h2><p>React Router被拆分成四个包：react-router，react-router-dom，react-router-native和react-router-config。react-router提供核心的路由组件与函数。react-router-config用来配置静态路由（还在开发中），其余两个则提供了运行环境（浏览器与react-native）所需的特定组件。</p>
+<p>进行网站（将会运行在浏览器环境中）构建，我们应当安装react-router-dom。因为react-router-dom已经暴露出react-router中暴露的对象与方法，因此你只需要安装并引用react-router-dom即可。</p>
+<h2 id="4、相关组件"><a href="#4、相关组件" class="headerlink" title="4、相关组件"></a>4、相关组件</h2><h3 id="4-1、"><a href="#4-1、" class="headerlink" title="4-1、"></a>4-1、</h3><p>使用了 HTML5 的 history API (pushState, replaceState and the popstate event) 用于保证你的地址栏信息与界面保持一致。</p>
+<p>主要属性:</p>
+<p>basename：设置根路径</p>
+<p>getUserConfirmation：获取用户确认的函数</p>
+<p>forceRefresh：是否刷新整个页面</p>
+<p>keyLength：location.key的长度</p>
+<p>children：子节点（单个）</p>
+<h3 id="4-2、"><a href="#4-2、" class="headerlink" title="4-2、"></a>4-2、</h3><p>为旧版本浏览器开发的组件，通常简易使用BrowserRouter。</p>
+<h3 id="4-3、"><a href="#4-3、" class="headerlink" title="4-3、"></a>4-3、</h3><p>为项目提供声明性的、可访问的导航</p>
+<p>主要属性:</p>
+<p>to：可以是一个字符串表示目标路径，也可以是一个对象，包含四个属性：</p>
+<blockquote>
+<p>  pathname:表示指向的目标路径</p>
+<p>  search: 传递的搜索参数</p>
+<p>  hash:路径的hash值</p>
+<p>  state: 地址状态</p>
+</blockquote>
+<p>replace：是否替换整个历史栈</p>
+<p>innerRef：访问部件的底层引用</p>
+<p>同时支持所有a标签的属性例如className，title等等</p>
+<h3 id="4-4、"><a href="#4-4、" class="headerlink" title="4-4、"></a>4-4、</h3><p>React-router 中最重要的组件，最主要的职责就是根据匹配的路径渲染指定的组件</p>
+<p>主要属性:</p>
+<p>path：需要匹配的路径</p>
+<p>component：需要渲染的组件</p>
+<p>render：渲染组件的函数</p>
+<p>children ：渲染组件的函数，常用在path无法匹配时呈现的’空’状态即所谓的默认显示状态</p>
+<h3 id="4-5、"><a href="#4-5、" class="headerlink" title="4-5、"></a>4-5、</h3><p>重定向组件</p>
+<p>主要属性: to:指向的路径</p>
+<switch>
+
+<p>嵌套组件：唯一的渲染匹配路径的第一个子 <route> 或者 <redirect></redirect></route></p>
+<h1 id="三、react-router-config之路由鉴权"><a href="#三、react-router-config之路由鉴权" class="headerlink" title="三、react-router-config之路由鉴权"></a>三、react-router-config之路由鉴权</h1><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>在之前的版本中，React Router 也提供了类似的 <code>onEnter</code> 钩子，但在 React Router 4.0 版本中，取消了这个方法。React Router 4.0 采用了声明式的组件，路由即组件，要实现路由守卫功能，就得我们自己去写了。</p>
+</blockquote>
+<h2 id="1、react-router-config-是一个帮助我们配置静态路由的小助手。其源码就是一个高阶函数-利用一个map函数生成静态路由"><a href="#1、react-router-config-是一个帮助我们配置静态路由的小助手。其源码就是一个高阶函数-利用一个map函数生成静态路由" class="headerlink" title="1、react-router-config 是一个帮助我们配置静态路由的小助手。其源码就是一个高阶函数 利用一个map函数生成静态路由"></a>1、react-router-config 是一个帮助我们配置静态路由的小助手。其源码就是一个高阶函数 利用一个map函数生成静态路由</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import React from &quot;react&quot;;</span><br><span class="line">import Switch from &quot;react-router/Switch&quot;;</span><br><span class="line">import Route from &quot;react-router/Route&quot;;</span><br><span class="line">const renderRoutes = (routes, extraProps = &#123;&#125;, switchProps = &#123;&#125;) =&gt;</span><br><span class="line">routes ? (</span><br><span class="line">    &lt;Switch &#123;...switchProps&#125;&gt;</span><br><span class="line">        &#123;routes.map((route, i) =&gt; ( </span><br><span class="line">        &lt;Route</span><br><span class="line">          key=&#123;route.key || i&#125;</span><br><span class="line">          path=&#123;route.path&#125;</span><br><span class="line">          exact=&#123;route.exact&#125;</span><br><span class="line">          strict=&#123;route.strict&#125;</span><br><span class="line">          render=&#123;props =&gt; (</span><br><span class="line">            &lt;route.component &#123;...props&#125; &#123;...extraProps&#125; route=&#123;route&#125; /&gt;</span><br><span class="line">          )&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;/Switch&gt;</span><br><span class="line">  ) : null;</span><br><span class="line"> export default renderRoutes;</span><br></pre></td></tr></table></figure>
+<p>//router.js 假设这是我们设置的路由数组（这种写法和vue很相似是不是?)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">const routes = [</span><br><span class="line">    &#123; path: &apos;/&apos;,</span><br><span class="line">        exact: true,</span><br><span class="line">        component: Home,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;/login&apos;,</span><br><span class="line">        component: Login,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;/user&apos;,</span><br><span class="line">        component: User,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;*&apos;,</span><br><span class="line">        component: NotFound</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>//app.js 那么我们在app.js里这么使用就能帮我生成静态的路由了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; renderRoutes &#125; from &apos;react-router-config&apos;</span><br><span class="line">import routes from &apos;./router.js&apos;</span><br><span class="line">const App = () =&gt; (</span><br><span class="line">   &lt;main&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">         &#123;renderRoutes(routes)&#125;</span><br><span class="line">      &lt;/Switch&gt;</span><br><span class="line">   &lt;/main&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">export default App</span><br></pre></td></tr></table></figure>
+<p>用过vue的小朋友都知道，vue的router.js 里面添加 <code>meta: { requiresAuth: true }</code></p>
+<p>然后利用<code>导航守卫</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  // 在每次路由进入之前判断requiresAuth的值，如果是true的话呢就先判断是否已登陆</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="2、基于类似vue的路由鉴权想法，我们稍稍改造一下react-router-config"><a href="#2、基于类似vue的路由鉴权想法，我们稍稍改造一下react-router-config" class="headerlink" title="2、基于类似vue的路由鉴权想法，我们稍稍改造一下react-router-config"></a>2、基于类似vue的路由鉴权想法，我们稍稍改造一下react-router-config</h2><p>// utils/renderRoutes.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; Route, Redirect, Switch &#125; from &apos;react-router-dom&apos;</span><br><span class="line">const renderRoutes = (routes, authed, authPath = &apos;/login&apos;, extraProps = &#123;&#125;, switchProps = &#123;&#125;) =&gt; routes ? (</span><br><span class="line">  &lt;Switch &#123;...switchProps&#125;&gt;</span><br><span class="line">    &#123;routes.map((route, i) =&gt; (</span><br><span class="line">      &lt;Route</span><br><span class="line">        key=&#123;route.key || i&#125;</span><br><span class="line">        path=&#123;route.path&#125;</span><br><span class="line">        exact=&#123;route.exact&#125;</span><br><span class="line">        strict=&#123;route.strict&#125;</span><br><span class="line">        render=&#123;(props) =&gt; &#123;</span><br><span class="line">          if (!route.requiresAuth || authed || route.path === authPath) &#123;</span><br><span class="line">            return &lt;route.component &#123;...props&#125; &#123;...extraProps&#125; route=&#123;route&#125; /&gt;</span><br><span class="line">          &#125;</span><br><span class="line">          return &lt;Redirect to=&#123;&#123; pathname: authPath, state: &#123; from: props.location &#125; &#125;&#125; /&gt;</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    ))&#125;</span><br><span class="line">  &lt;/Switch&gt;</span><br><span class="line">) : null</span><br><span class="line">export default renderRoutes</span><br></pre></td></tr></table></figure>
+<p>修改后的源码增加了两个参数 authed 、 authPath 和一个属性 route.requiresAuth</p>
+<p>然后再来看一下最关键的一段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (!route.requiresAuth || authed || route.path === authPath) &#123;</span><br><span class="line">    return &lt;route.component &#123;...props&#125; &#123;...extraProps&#125; route=&#123;route&#125; /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">    return &lt;Redirect to=&#123;&#123; pathname: authPath, state: &#123; from: props.location &#125; &#125;&#125; /&gt;</span><br></pre></td></tr></table></figure>
+<p>很简单 如果 route.requiresAuth = false 或者 authed = true 或者 route.path === authPath（参数默认值’/login’）则渲染我们页面，否则就渲染我们设置的<strong>authPath</strong>页面，并记录从哪个页面跳转。</p>
+<p>相应的router.js也要稍微修改一下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">const routes = [</span><br><span class="line">    &#123; path: &apos;/&apos;,</span><br><span class="line">        exact: true,</span><br><span class="line">        component: Home,</span><br><span class="line">        requiresAuth: false,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;/login&apos;,</span><br><span class="line">        component: Login,</span><br><span class="line">        requiresAuth: false,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;/user&apos;,</span><br><span class="line">        component: User,</span><br><span class="line">        requiresAuth: true, //需要登陆后才能跳转的页面</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;*&apos;,</span><br><span class="line">        component: NotFound,</span><br><span class="line">        requiresAuth: false,</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>//app.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import React from &apos;react&apos;</span><br><span class="line">import &#123; Switch &#125; from &apos;react-router-dom&apos;</span><br><span class="line">//import &#123; renderRoutes &#125; from &apos;react-router-config&apos;</span><br><span class="line">import renderRoutes from &apos;./utils/renderRoutes&apos;</span><br><span class="line">import routes from &apos;./router.js&apos;</span><br><span class="line">const authed = false // 如果登陆之后可以利用redux修改该值(关于redux不在我们这篇文章的讨论范围之内）</span><br><span class="line">const authPath = &apos;/login&apos; // 默认未登录的时候返回的页面，可以自行设置</span><br><span class="line">const App = () =&gt; (</span><br><span class="line">   &lt;main&gt;</span><br><span class="line">      &lt;Switch&gt;</span><br><span class="line">         &#123;renderRoutes(routes, authed, authPath)&#125;</span><br><span class="line">      &lt;/Switch&gt;</span><br><span class="line">   &lt;/main&gt;</span><br><span class="line">)</span><br><span class="line">export default App</span><br><span class="line">//登陆之后返回原先要去的页面login函数</span><br><span class="line">login()&#123;</span><br><span class="line">    const &#123; from &#125; = this.props.location.state || &#123; from: &#123; pathname: &apos;/&apos; &#125; &#125;</span><br><span class="line">     // authed = true // 这部分逻辑自己写吧。。。</span><br><span class="line">    this.props.history.push(from.pathname)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到此<code>react-router-config</code>就结束了并完成了我们想要的效果</p>
+<h2 id="3、注意⚠️"><a href="#3、注意⚠️" class="headerlink" title="3、注意⚠️"></a>3、注意⚠️</h2><blockquote>
+<p>很多人会发现，有时候达不到我们想要的效果，那么怎么办呢，接着往下看</p>
+</blockquote>
+<h3 id="1、设计全局组建来管理是否登陆"><a href="#1、设计全局组建来管理是否登陆" class="headerlink" title="1、设计全局组建来管理是否登陆"></a>1、设计全局组建来管理是否登陆</h3><p>configLogin.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;</span><br><span class="line">import PropTypes from &apos;prop-types&apos;</span><br><span class="line">import &#123; withRouter &#125; from &apos;react-router-dom&apos;</span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line">  static propTypes = &#123;</span><br><span class="line">    children: PropTypes.object,</span><br><span class="line">    location: PropTypes.object,</span><br><span class="line">    isLogin: PropTypes.bool,</span><br><span class="line">    history: PropTypes.object</span><br><span class="line">  &#125;;</span><br><span class="line">  componentDidMount () &#123;</span><br><span class="line">    if (!this.props.isLogin) &#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.props.history.push(&apos;/login&apos;)</span><br><span class="line">      &#125;, 300)</span><br><span class="line">    &#125;</span><br><span class="line">    if (this.props.isLogin &amp;&amp; this.props.location.pathname === &apos;/login&apos;) &#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.props.history.push(&apos;/&apos;)</span><br><span class="line">      &#125;, 300)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidUpdate () &#123;</span><br><span class="line">    if (!this.props.isLogin) &#123;</span><br><span class="line">      setTimeout(() =&gt; &#123;</span><br><span class="line">        this.props.history.push(&apos;/login&apos;)</span><br><span class="line">      &#125;, 300)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return this.props.children</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default withRouter(App)</span><br></pre></td></tr></table></figure>
+<p>通过在主路由模块index.js中引入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import &#123;</span><br><span class="line">  BrowserRouter as Router,</span><br><span class="line">  Redirect,</span><br><span class="line">  Route,</span><br><span class="line">  Switch</span><br><span class="line">&#125; from &apos;react-router-dom&apos;</span><br><span class="line"></span><br><span class="line">&lt;Router</span><br><span class="line">   history=&#123; history &#125;</span><br><span class="line">   basename=&quot;/&quot;</span><br><span class="line">   getUserConfirmation=&#123; getConfirmation(history, &apos;yourCallBack&apos;) &#125;</span><br><span class="line">   forceRefresh=&#123; !supportsHistory &#125;</span><br><span class="line"> &gt;</span><br><span class="line">  &lt;App isLogin=&#123; isLogin ? true : false &#125;&gt;</span><br><span class="line">    &lt;Switch&gt;</span><br><span class="line">     &lt;Route</span><br><span class="line">     exact</span><br><span class="line">     path=&quot;/&quot;</span><br><span class="line">     render=&#123; () =&gt; &lt;Redirect to=&quot;/layout/dashboard&quot; push /&gt; &#125;</span><br><span class="line">     /&gt;</span><br><span class="line">     &lt;Route path=&quot;/login&quot; component=&#123; Login &#125; /&gt;</span><br><span class="line">     &lt;Route path=&quot;/layout&quot; component=&#123; RootLayout &#125; /&gt;</span><br><span class="line">     &lt;Route component=&#123; NotFound &#125; /&gt;</span><br><span class="line">   &lt;/Switch&gt;</span><br><span class="line">  &lt;/App&gt;</span><br><span class="line"> &lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>很多时候我们是可以通过监听路由变化实现的比如<code>getUserConfirmation</code>钩子就是做这件事情的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const getConfirmation = (message, callback) =&gt; &#123;</span><br><span class="line">  if (!isLogin) &#123;</span><br><span class="line">    message.push(&apos;/login&apos;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    message.push(message.location.pathname)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>接下来我们看一下<a href="https://github.com/AlanWei/react-acl-router" target="_blank" rel="noopener"><code>react-acl-router</code></a>又是怎么实现的</p>
+<h1 id="四、权限管理机制"><a href="#四、权限管理机制" class="headerlink" title="四、权限管理机制"></a>四、权限管理机制</h1><p>本节参考代码：</p>
+<blockquote>
+<ol>
+<li><a href="https://github.com/AlanWei/react-acl-router" target="_blank" rel="noopener">react-acl-router</a></li>
+<li><a href="https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/init/router.js" target="_blank" rel="noopener">react-boilerplate-pro/src/app/init/router.js</a></li>
+<li><a href="https://github.com/AlanWei/react-boilerplate-pro/blob/master/src/app/config/routes.js" target="_blank" rel="noopener">react-boilerplate-pro/src/app/config/routes.js</a></li>
+</ol>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/23.jpg" alt="1"></p>
+<p>权限管理作为企业管理系统中非常核心的一个部分，一直以来因为业务方很多时候无法使用准确的术语来描述需求成为了困扰开发者们的一大难题。这里我们先来介绍两种常见的权限管理设计模式，即基于角色的访问控制以及访问控制列表。</p>
+<h2 id="1、布局与路由"><a href="#1、布局与路由" class="headerlink" title="1、布局与路由"></a>1、布局与路由</h2><p>在讨论具体的布局组件设计前，我们首先要解决一个更为基础的问题，那就是如何将布局组件与应用路由结合起来。</p>
+<p>下面的这个例子是 <code>react-router</code> 官方提供的侧边栏菜单与路由结合的例子，笔者这里做了一些简化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">const SidebarExample = () =&gt; (</span><br><span class="line">  &lt;Router&gt;</span><br><span class="line">    &lt;div style=&#123;&#123; display: &quot;flex&quot; &#125;&#125;&gt;</span><br><span class="line">      &lt;div</span><br><span class="line">        style=&#123;&#123;</span><br><span class="line">          padding: &quot;10px&quot;,</span><br><span class="line">          width: &quot;40%&quot;,</span><br><span class="line">          background: &quot;#f0f0f0&quot;</span><br><span class="line">        &#125;&#125;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;ul style=&#123;&#123; listStyleType: &quot;none&quot;, padding: 0 &#125;&#125;&gt;</span><br><span class="line">          &lt;li&gt;</span><br><span class="line">            &lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;</span><br><span class="line">          &lt;/li&gt;</span><br><span class="line">          &lt;li&gt;</span><br><span class="line">            &lt;Link to=&quot;/bubblegum&quot;&gt;Bubblegum&lt;/Link&gt;</span><br><span class="line">          &lt;/li&gt;</span><br><span class="line">          &lt;li&gt;</span><br><span class="line">            &lt;Link to=&quot;/shoelaces&quot;&gt;Shoelaces&lt;/Link&gt;</span><br><span class="line">          &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">      &lt;div style=&#123;&#123; flex: 1, padding: &quot;10px&quot; &#125;&#125;&gt;</span><br><span class="line">        &#123;routes.map((route, index) =&gt; (</span><br><span class="line">          &lt;Route</span><br><span class="line">            key=&#123;index&#125;</span><br><span class="line">            path=&#123;route.path&#125;</span><br><span class="line">            exact=&#123;route.exact&#125;</span><br><span class="line">            component=&#123;route.main&#125;</span><br><span class="line">          /&gt;</span><br><span class="line">        ))&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/Router&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>抽象为布局的思想，写成简单的伪代码就是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;BasicLayout&gt;                   // with sidebar</span><br><span class="line">    &#123;routes.map(route =&gt; (</span><br><span class="line">      &lt;Route &#123;...route&#125; /&gt;</span><br><span class="line">    ))&#125;</span><br><span class="line">  &lt;/BasicLayout&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>这样的确是一种非常优雅的解决方案，但它的局限性在于无法支持多种不同的布局。受限于一个 <code>Router</code> 只能包含一个子组件，即使我们将多个布局组件包裹在一个容器组件中，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;BasicLayout&gt;                 // with sidebar</span><br><span class="line">      &#123;routes.map(route =&gt; (</span><br><span class="line">        &lt;Route &#123;...route&#125; /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">    &lt;/BasicLayout&gt;</span><br><span class="line">    &lt;FlexLayout&gt;                  // with footer</span><br><span class="line">      &#123;routes.map(route =&gt; (</span><br><span class="line">        &lt;Route &#123;...route&#125; /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">    &lt;/FlexLayout&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>路由在匹配到 <code>FlexLayout</code> 下的页面时，<code>BasicLayout</code> 中的 <code>sidebar</code> 也会同时显示出来，这显然不是我们想要的结果。换个思路，我们可不可以将布局组件当做 <code>children</code> 直接传给更底层的 <code>Route</code> 组件呢？代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;basicLayoutRoutes.map(route =&gt; (</span><br><span class="line">      &lt;Route &#123;...route&#125;&gt;</span><br><span class="line">        &lt;BasicLayout component=&#123;route.component&#125; /&gt;</span><br><span class="line">      &lt;/Route&gt;</span><br><span class="line">    ))&#125;</span><br><span class="line">    &#123;flexLayoutRoutes.map(route =&gt; (</span><br><span class="line">      &lt;Route &#123;...route&#125;&gt;</span><br><span class="line">        &lt;FlexLayout component=&#123;route.component&#125; /&gt;</span><br><span class="line">      &lt;/Route&gt;</span><br><span class="line">    ))&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>这里我们将不同的布局组件当做高阶组件，相应地包裹在了不同的页面组件上，这样就实现了对多种不同布局的支持。还有一点需要注意的是，<code>react-router</code> 默认会将 <code>match</code>、<code>location</code>、<code>history</code> 等路由信息传递给 <code>Route</code> 的下一级组件，由于在上述方案中，<code>Route</code> 的下一级组件并不是真正的页面组件而是布局组件，因而我们需要在布局组件中手动将这些路由信息传递给页面组件，或者统一改写 <code>Route</code> 的 <code>render</code> 方法为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Route</span><br><span class="line">  render=&#123;props =&gt; (                 // props contains match, location, history</span><br><span class="line">    &lt;BasicLayout &#123;...props&#125;&gt;          </span><br><span class="line">      &lt;PageComponent &#123;...props&#125; /&gt;</span><br><span class="line">    &lt;/BasicLayout&gt;</span><br><span class="line">  )&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p>另外一个可能会遇到的问题是，<code>connected-react-router</code> 并不会将路由中非常重要的 <code>match</code> 对象（包含当前路由的 <code>params</code> 等数据 ）同步到 redux store 中，所以我们一定要保证布局及页面组件在路由部分就可以接收到 <code>match</code> 对象，否则在后续处理页面页眉等与当前路由参数相关的需求时就会变得非常麻烦。</p>
+<h2 id="2、页眉-amp-页脚"><a href="#2、页眉-amp-页脚" class="headerlink" title="2、页眉 &amp; 页脚"></a>2、页眉 &amp; 页脚</h2><p>解决了与应用路由相结合的问题，具体到布局组件内部，其中最重要的两部分就是页面的页眉和页脚部分，而页眉又可以分为应用页眉与页面页眉两部分。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/24.jpg" alt="2"></p>
+<p>应用页眉指的是整个应用层面的页眉，与具体的页面无关，一般来说会包含用户头像、通知栏、搜索框、多语言切换等这些应用级别的信息与操作。页面页眉则一般来讲会包含页面标题、面包屑导航、页面通用操作等与具体页面相关的内容。</p>
+<p>在以往的项目中，尤其是在项目初期许多开发者因为对项目本身还没有一个整体的认识，很多时候会倾向于将应用页眉做成一个展示型组件并在不同的页面中直接调用。这样做当然有其方便之处，比如说页面与布局之间的数据同步环节就被省略掉了，每个页面都可以直接向页眉传递自己内部的数据。</p>
+<p>但从理想的项目架构角度来讲这样做却是一个<a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">反模式（anti-pattern）</a>。因为应用页眉实际是一个应用级别的组件，但按照上述做法的话却变成了一个页面级别的组件，伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;App&gt;</span><br><span class="line">  &lt;BasicLayout&gt;</span><br><span class="line">    &lt;PageA&gt;</span><br><span class="line">      &lt;AppHeader title=&quot;Page A&quot; /&gt;</span><br><span class="line">    &lt;/PageA&gt;</span><br><span class="line">  &lt;/BasicLayout&gt;</span><br><span class="line">  &lt;BasicLayout&gt;</span><br><span class="line">    &lt;PageB&gt;</span><br><span class="line">      &lt;AppHeader title=&quot;Page B&quot; /&gt;</span><br><span class="line">    &lt;/PageB&gt;</span><br><span class="line">  &lt;/BasicLayout&gt;</span><br><span class="line">&lt;/App&gt;</span><br></pre></td></tr></table></figure>
+<p>从应用数据流的角度来讲也存在着同样的问题，那就是应用页眉应该是向不同的页面去传递数据的，而不是反过来去接收来自页面的数据。这导致应用页眉丧失了控制自己何时 rerender（重绘) 的机会，作为一个纯展示型组件，一旦接收到的 props 发生变化页眉就需要进行一次重绘。</p>
+<p>另一方面，除了通用的应用页眉外，页面页眉与页面路由之间是有着严格的一一对应的关系的，那么我们能不能将页面页眉部分的配置也做到路由配置中去，以达到新增加一个页面时只需要在 <code>config/routes.js</code> 中多配置一个路由对象就可以完成页面页眉部分的创建呢？理想情况下的伪代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;App&gt;</span><br><span class="line">  &lt;BasicLayout&gt;                    // with app &amp; page header already</span><br><span class="line">    &lt;PageA /&gt;</span><br><span class="line">  &lt;/BasicLayout&gt;</span><br><span class="line">  &lt;BasicLayout&gt;</span><br><span class="line">    &lt;PageB /&gt;</span><br><span class="line">  &lt;/BasicLayout&gt;</span><br><span class="line">&lt;/App&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1、配置优于代码"><a href="#1、配置优于代码" class="headerlink" title="1、配置优于代码"></a>1、配置优于代码</h3><p>在过去关于组件库的讨论中我们曾经得出过代码优于配置的结论，即需要使用者自定义的部分，应该尽量抛出回调函数让使用者可以使用代码去控制自定义的需求。这是因为组件作为极细粒度上的抽象，配置式的使用模式往往很难满足使用者多变的需求。但在企业管理系统中，作为一个应用级别的解决方案，能使用配置项解决的问题我们都应该尽量避免让使用者编写代码。</p>
+<p>配置项（配置文件）天然就是一种集中式的管理模式，可以极大地降低应用复杂度。以页眉为例来说，如果我们每个页面文件中都调用了页眉组件，那么一旦页眉组件出现问题我们就需要修改所有用到页眉组件页面的代码。除去 debug 的情况外，哪怕只是修改一个页面标题这样简单的需求，开发者也需要先找到这个页面相对应的文件，并在其 <code>render</code> 函数中进行修改。这些隐性成本都是我们在设计企业管理系统解决方案时需要注意的，因为就是这样一个个的小细节造成了本身并不复杂的企业管理系统在维护、迭代了一段时间后应用复杂度陡增。理想情况下，一个优秀的企业管理系统解决方案应该可以做到 80% 以上非功能性需求变更都可以使用修改配置文件的方式解决。</p>
+<h3 id="2、配置式页眉"><a href="#2、配置式页眉" class="headerlink" title="2、配置式页眉"></a>2、配置式页眉</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/25.jpg" alt="3"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import &#123; matchRoutes &#125; from &apos;react-router-config&apos;;</span><br><span class="line"></span><br><span class="line">// routes config</span><br><span class="line">const routes = [&#123;</span><br><span class="line">  path: &apos;/outlets&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;admin&apos;, &apos;user&apos;],</span><br><span class="line">  component: Outlets,</span><br><span class="line">  unauthorized: Unauthorized,</span><br><span class="line">  pageTitle: &apos;门店管理&apos;,</span><br><span class="line">  breadcrumb: [&apos;/outlets&apos;],</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: &apos;/outlets/:id&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;admin&apos;, &apos;user&apos;],</span><br><span class="line">  component: OutletDetail,</span><br><span class="line">  unauthorized: Unauthorized,</span><br><span class="line">  pageTitle: &apos;门店详情&apos;,</span><br><span class="line">  breadcrumb: [&apos;/outlets&apos;, &apos;/outlets/:id&apos;],</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">// find current route object</span><br><span class="line">const pathname = get(state, &apos;router.location.pathname&apos;, &apos;&apos;);</span><br><span class="line">const &#123; route &#125; = head((matchRoutes(routes, pathname)));</span><br></pre></td></tr></table></figure>
+<p>基于这样一种思路，我们可以在通用的布局组件中根据当前页面的 <code>pathname</code> 使用 <code>react-router-config</code> 提供的 <code>matchRoutes</code> 方法来获取到当前页面 <code>route</code> 对象的所有配置项，也就意味着我们可以对所有的这些配置项做统一的处理。这不仅为处理通用逻辑带来了方便，同时对于编写页面代码的同事来说也是一种约束，能够让不同开发者写出的代码带有更少的个人色彩，方便对于代码库的整体管理。</p>
+<h3 id="3、页面标题"><a href="#3、页面标题" class="headerlink" title="3、页面标题"></a>3、页面标题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">renderPageHeader = () =&gt; &#123;</span><br><span class="line">  const &#123; prefixCls, route: &#123; pageTitle &#125;, intl &#125; = this.props;</span><br><span class="line"></span><br><span class="line">  if (isEmpty(pageTitle)) &#123;</span><br><span class="line">    return null;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  const pageTitleStr = intl.formatMessage(&#123; id: pageTitle &#125;);</span><br><span class="line">  return (</span><br><span class="line">    &lt;div className=&#123;`$&#123;prefixCls&#125;-pageHeader`&#125;&gt;</span><br><span class="line">      &#123;this.renderBreadcrumb()&#125;</span><br><span class="line">      &lt;div className=&#123;`$&#123;prefixCls&#125;-pageTitle`&#125;&gt;&#123;pageTitleStr&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4、面包屑导航"><a href="#4、面包屑导航" class="headerlink" title="4、面包屑导航"></a>4、面包屑导航</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">renderBreadcrumb = () =&gt; &#123;</span><br><span class="line">  const &#123; route: &#123; breadcrumb &#125;, intl, prefixCls &#125; = this.props;</span><br><span class="line">  const breadcrumbData = generateBreadcrumb(breadcrumb);</span><br><span class="line"></span><br><span class="line">  return (</span><br><span class="line">    &lt;Breadcrumb className=&#123;`$&#123;prefixCls&#125;-breadcrumb`&#125;&gt;</span><br><span class="line">      &#123;map(breadcrumbData, (item, idx) =&gt; (</span><br><span class="line">        idx === breadcrumbData.length - 1 ?</span><br><span class="line">          &lt;Breadcrumb.Item key=&#123;item.href&#125;&gt;</span><br><span class="line">            &#123;intl.formatMessage(&#123; id: item.text &#125;)&#125;</span><br><span class="line">          &lt;/Breadcrumb.Item&gt;</span><br><span class="line">          :</span><br><span class="line">          &lt;Breadcrumb.Item key=&#123;item.href&#125;&gt;</span><br><span class="line">            &lt;Link href=&#123;item.href&#125; to=&#123;item.href&#125;&gt;</span><br><span class="line">              &#123;intl.formatMessage(&#123; id: item.text &#125;)&#125;</span><br><span class="line">            &lt;/Link&gt;</span><br><span class="line">          &lt;/Breadcrumb.Item&gt;</span><br><span class="line">      ))&#125;</span><br><span class="line">    &lt;/Breadcrumb&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3、设计策略"><a href="#3、设计策略" class="headerlink" title="3、设计策略"></a>3、设计策略</h2><h3 id="1、基于角色的访问控制"><a href="#1、基于角色的访问控制" class="headerlink" title="1、基于角色的访问控制"></a>1、基于角色的访问控制</h3><p>基于角色的访问控制不直接将系统操作的各种权限赋予具体用户，而是在用户与权限之间建立起角色集合，将权限赋予角色再将角色赋予用户。这样就实现了对于权限和角色的集中管理，避免用户与权限之间直接产生复杂的多对多关系。</p>
+<h3 id="2、访问控制列表"><a href="#2、访问控制列表" class="headerlink" title="2、访问控制列表"></a>2、访问控制列表</h3><p>具体到角色与权限之间，访问控制列表指代的是某个角色所拥有的系统权限列表。在传统计算机科学中，权限一般指的是对于文件系统进行增删改查的权力。而在 Web 应用中，大部分系统只需要做到页面级别的权限控制即可，简单来说就是根据当前用户的角色来决定其是否拥有查看当前页面的权利。</p>
+<p>下面就让我们按照这样的思路实现一个基础版的包含权限管理功能的应用路由。</p>
+<h2 id="4、实战代码"><a href="#4、实战代码" class="headerlink" title="4、实战代码"></a>4、实战代码</h2><h3 id="1、路由容器"><a href="#1、路由容器" class="headerlink" title="1、路由容器"></a>1、路由容器</h3><p>在编写权限管理相关的代码前，我们需要先为所有的页面路由找到一个合适的容器，即 <code>react-router</code> 中的 <code>Switch</code> 组件。与多个独立路由不同的是，包裹在 <code>Switch</code> 中的路由每次只会渲染路径匹配成功的第一个，而不是所有符合路径匹配条件的路由。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Route path=&quot;/about&quot; component=&#123;About&#125;/&gt;</span><br><span class="line">  &lt;Route path=&quot;/:user&quot; component=&#123;User&#125;/&gt;</span><br><span class="line">  &lt;Route component=&#123;NoMatch&#125;/&gt;</span><br><span class="line">&lt;/Router&gt;</span><br><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Switch&gt;</span><br><span class="line">    &lt;Route path=&quot;/about&quot; component=&#123;About&#125;/&gt;</span><br><span class="line">    &lt;Route path=&quot;/:user&quot; component=&#123;User&#125;/&gt;</span><br><span class="line">    &lt;Route component=&#123;NoMatch&#125;/&gt;</span><br><span class="line">  &lt;/Switch&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>以上面两段代码为例，如果当前页面路径是 <code>/about</code> 的话，因为 <code>&lt;About /&gt;</code>、<code>&lt;User /&gt;</code> 及 <code>&lt;NoMatch /&gt;</code> 这三个路由的路径都符合 <code>/about</code>，所以它们会同时被渲染在当前页面。而将它们包裹在 <code>Switch</code> 中后，<code>react-router</code> 在找到第一个符合条件的 <code>&lt;About /&gt;</code> 路由后就会停止查找直接渲染 <code>&lt;About /&gt;</code> 组件。</p>
+<p>在企业管理系统中因为页面与页面之间一般都是平行且排他的关系，所以利用好 <code>Switch</code> 这个特性对于我们简化页面渲染逻辑有着极大的帮助。</p>
+<p>另外值得一提的是，在 <code>react-router</code> 作者 <a href="https://github.com/ryanflorence" target="_blank" rel="noopener">Ryan Florence</a> 的新作 <a href="https://reach.tech/router" target="_blank" rel="noopener">@reach/router</a> 中，<code>Switch</code> 的这一特性被默认包含了进去，而且 <code>@reach/router</code> 会自动匹配最符合当前路径的路由。这就使得使用者不必再去担心路由的书写顺序，感兴趣的朋友可以关注一下。</p>
+<h3 id="2、权限管理"><a href="#2、权限管理" class="headerlink" title="2、权限管理"></a>2、权限管理</h3><p>现在我们的路由已经有了一个大体的框架，下面就让我们为其添加具体的权限判断逻辑。</p>
+<p>对于一个应用来说，除去需要鉴权的页面外，一定还存在着不需要鉴权的页面，让我们先将这些页面添加到我们的路由中，如登录页。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Switch&gt;</span><br><span class="line">    &lt;Route path=&quot;/login&quot; component=&#123;Login&#125;/&gt;</span><br><span class="line">  &lt;/Switch&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>对于需要鉴权的路由，我们需要先抽象出一个判断当前用户是否有权限的函数来作为判断依据，而根据具体的需求，用户可以拥有单个角色或多个角色，抑或更复杂的一个鉴权函数。这里笔者提供一个最基础的版本，即我们将用户的角色以字符串的形式存储在后台，如一个用户的角色是 admin，另一个用户的角色是 user。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import isEmpty from &apos;lodash/isEmpty&apos;;</span><br><span class="line">import isArray from &apos;lodash/isArray&apos;;</span><br><span class="line">import isString from &apos;lodash/isString&apos;;</span><br><span class="line">import isFunction from &apos;lodash/isFunction&apos;;</span><br><span class="line">import indexOf from &apos;lodash/indexOf&apos;;</span><br><span class="line"></span><br><span class="line">const checkPermissions = (authorities, permissions) =&gt; &#123;</span><br><span class="line">  if (isEmpty(permissions)) &#123;</span><br><span class="line">    return true;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (isArray(authorities)) &#123;</span><br><span class="line">    for (let i = 0; i &lt; authorities.length; i += 1) &#123;</span><br><span class="line">      if (indexOf(permissions, authorities[i]) !== -1) &#123;</span><br><span class="line">        return true;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (isString(authorities)) &#123;</span><br><span class="line">    return indexOf(permissions, authorities) !== -1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (isFunction(authorities)) &#123;</span><br><span class="line">    return authorities(permissions);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  throw new Error(&apos;[react-acl-router]: Unsupport type of authorities.&apos;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">export default checkPermissions;</span><br></pre></td></tr></table></figure>
+<p>在上面我们提到了路由的配置文件，这里我们为每一个需要鉴权的路由再添加一个属性 <code>permissions</code>，即哪些角色可以访问该页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const routes = [&#123;</span><br><span class="line">  path: &apos;/outlets&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;admin&apos;, &apos;user&apos;],</span><br><span class="line">  component: Outlets,</span><br><span class="line">  unauthorized: Unauthorized,</span><br><span class="line">  pageTitle: &apos;Outlet Management&apos;,</span><br><span class="line">  breadcrumb: [&apos;/outlets&apos;],</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: &apos;/outlets/:id&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;admin&apos;],</span><br><span class="line">  component: OutletDetail,</span><br><span class="line">  redirect: &apos;/&apos;,</span><br><span class="line">  pageTitle: &apos;Outlet Detail&apos;,</span><br><span class="line">  breadcrumb: [&apos;/outlets&apos;, &apos;/outlets/:id&apos;],</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>在上面的配置中，admin 和 user 都可以访问门店列表页面，但只有 admin 才可以访问门店详情页面。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/26.jpg" alt="4"></p>
+<p>对于没有权限查看当前页面的情况，一般来讲有两种处理方式，一是直接重定向到另一个页面（如首页），二是渲染一个无权限页面，提示用户因为没有当前页面的权限所以无法查看。二者是排他的，即每个页面只需要使用其中一种即可，于是我们在路由配置中可以根据需要去配置 <code>redirect</code> 或 <code>unauthorized</code> 属性，分别对应<strong>无权限重定向</strong>及<strong>无权限显示无权限页面</strong>两种处理方式。具体代码大家可以参考示例项目 <a href="https://github.com/AlanWei/react-acl-router/blob/master/src/AclRouter.jsx" target="_blank" rel="noopener">react-acl-router</a> 中的实现，这里摘录一小段核心部分。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">renderRedirectRoute = route =&gt; (</span><br><span class="line">  &lt;Route</span><br><span class="line">    key=&#123;route.path&#125;</span><br><span class="line">    &#123;...omitRouteRenderProperties(route)&#125;</span><br><span class="line">    render=&#123;() =&gt; &lt;Redirect to=&#123;route.redirect&#125; /&gt;&#125;</span><br><span class="line">  /&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">renderAuthorizedRoute = (route) =&gt; &#123;</span><br><span class="line">  const &#123; authorizedLayout: AuthorizedLayout &#125; = this.props;</span><br><span class="line">  const &#123; authorities &#125; = this.state;</span><br><span class="line">  const &#123;</span><br><span class="line">    permissions,</span><br><span class="line">    path,</span><br><span class="line">    component: RouteComponent,</span><br><span class="line">    unauthorized: Unauthorized,</span><br><span class="line">  &#125; = route;</span><br><span class="line">  const hasPermission = checkPermissions(authorities, permissions);</span><br><span class="line"></span><br><span class="line">  if (!hasPermission &amp;&amp; route.unauthorized) &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;Route</span><br><span class="line">        key=&#123;path&#125;</span><br><span class="line">        &#123;...omitRouteRenderProperties(route)&#125;</span><br><span class="line">        render=&#123;props =&gt; (</span><br><span class="line">          &lt;AuthorizedLayout &#123;...props&#125;&gt;</span><br><span class="line">            &lt;Unauthorized &#123;...props&#125; /&gt;</span><br><span class="line">          &lt;/AuthorizedLayout&gt;</span><br><span class="line">        )&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (!hasPermission &amp;&amp; route.redirect) &#123;</span><br><span class="line">    return this.renderRedirectRoute(route);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return (</span><br><span class="line">    &lt;Route</span><br><span class="line">      key=&#123;path&#125;</span><br><span class="line">      &#123;...omitRouteRenderProperties(route)&#125;</span><br><span class="line">      render=&#123;props =&gt; (</span><br><span class="line">        &lt;AuthorizedLayout &#123;...props&#125;&gt;</span><br><span class="line">          &lt;RouteComponent &#123;...props&#125; /&gt;</span><br><span class="line">        &lt;/AuthorizedLayout&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">    /&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>于是，在最终的路由中，我们会优先匹配无需鉴权的页面路径，保证所有用户在访问无需鉴权的页面时，第一时间就可以看到页面。然后再去匹配需要鉴权的页面路径，最终如果所有的路径都匹配不到的话，再渲染 404 页面告知用户当前页面路径不存在。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/27.jpg" alt="5"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;Switch&gt;</span><br><span class="line">  &#123;map(normalRoutes, route =&gt; (</span><br><span class="line">    this.renderNormalRoute(route)</span><br><span class="line">  ))&#125;</span><br><span class="line">  &#123;map(authorizedRoutes, route =&gt; (</span><br><span class="line">    this.renderAuthorizedRoute(route)</span><br><span class="line">  ))&#125;</span><br><span class="line">  &#123;this.renderNotFoundRoute()&#125;</span><br><span class="line">&lt;/Switch&gt;</span><br></pre></td></tr></table></figure>
+<p>需要鉴权的路由和不需要鉴权的路由作为两种不同的页面，一般而言它们的页面布局也是不同的。如登录页面使用的就是普通页面布局：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/28.jpg" alt="6"></p>
+<p>在这里我们可以将不同的页面布局与鉴权逻辑相结合以达到只需要在路由配置中配置相应的属性，新增加的页面就可以同时获得鉴权逻辑和基础布局的效果。这将极大地提升开发者们的工作效率，尤其是对于项目组的新成员来说纯配置的上手方式是最友好的。</p>
+<h2 id="5、应用集成"><a href="#5、应用集成" class="headerlink" title="5、应用集成"></a>5、应用集成</h2><p>至此一个包含基础权限管理的应用路由就大功告成了，我们可以将它抽象为一个独立的路由组件，使用时只需要配置需要鉴权的路由和不需要鉴权的路由两部分即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">const authorizedRoutes = [&#123;</span><br><span class="line">  path: &apos;/outlets&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;admin&apos;, &apos;user&apos;],</span><br><span class="line">  component: Outlets,</span><br><span class="line">  unauthorized: Unauthorized,</span><br><span class="line">  pageTitle: &apos;pageTitle_outlets&apos;,</span><br><span class="line">  breadcrumb: [&apos;/outlets&apos;],</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: &apos;/outlets/:id&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;admin&apos;, &apos;user&apos;],</span><br><span class="line">  component: OutletDetail,</span><br><span class="line">  unauthorized: Unauthorized,</span><br><span class="line">  pageTitle: &apos;pageTitle_outletDetail&apos;,</span><br><span class="line">  breadcrumb: [&apos;/outlets&apos;, &apos;/outlets/:id&apos;],</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: &apos;/exception/403&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  permissions: [&apos;god&apos;],</span><br><span class="line">  component: WorkInProgress,</span><br><span class="line">  unauthorized: Unauthorized,</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">const normalRoutes = [&#123;</span><br><span class="line">  path: &apos;/&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  redirect: &apos;/outlets&apos;,</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  path: &apos;/login&apos;,</span><br><span class="line">  exact: true,</span><br><span class="line">  component: Login,</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">const Router = props =&gt; (</span><br><span class="line">  &lt;ConnectedRouter history=&#123;props.history&#125;&gt;</span><br><span class="line">    &lt;MultiIntlProvider</span><br><span class="line">      defaultLocale=&#123;locale&#125;</span><br><span class="line">      messageMap=&#123;messages&#125;</span><br><span class="line">    &gt;</span><br><span class="line">      // the router component</span><br><span class="line">      &lt;AclRouter</span><br><span class="line">        authorities=&#123;props.user.authorities&#125;</span><br><span class="line">        authorizedRoutes=&#123;authorizedRoutes&#125;</span><br><span class="line">        authorizedLayout=&#123;BasicLayout&#125;</span><br><span class="line">        normalRoutes=&#123;normalRoutes&#125;</span><br><span class="line">        normalLayout=&#123;NormalLayout&#125;</span><br><span class="line">        notFound=&#123;NotFound&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/MultiIntlProvider&gt;</span><br><span class="line">  &lt;/ConnectedRouter&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const mapStateToProps = state =&gt; (&#123;</span><br><span class="line">  user: state.app.user,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">Router.propTypes = propTypes;</span><br><span class="line">export default connect(mapStateToProps)(Router);</span><br></pre></td></tr></table></figure>
+<p>在实际项目中，我们可以使用 <code>react-redux</code> 提供的 <code>connect</code> 组件将应用路由 connect 至 redux store，以方便我们直接读取当前用户的角色信息。一旦登录用户的角色发生变化，客户端路由就可以进行相应的判断与响应。</p>
+<h2 id="6、组合式开发：权限管理"><a href="#6、组合式开发：权限管理" class="headerlink" title="6、组合式开发：权限管理"></a>6、组合式开发：权限管理</h2><p>对于页面级别的权限管理来说，权限管理部分的逻辑是独立于页面的，是与页面中的具体内容无关的。也就是说，权限管理部分的代码并不应该成为页面中的一部分，而是应该在拿到用户权限后创建应用路由时就将没有权限的页面替换为重定向或无权限页面。</p>
+<p>这样一来，页面部分的代码就可以实现与权限管理逻辑的彻底解耦，以至于如果抽掉权限管理这一层后，页面就变成了一个无需权限判断的页面依然可以独立运行。而通用部分的权限管理代码也可以在根据业务需求微调后服务于更多的项目。</p>
+<h2 id="7、小结"><a href="#7、小结" class="headerlink" title="7、小结"></a>7、小结</h2><p>文中我们从权限管理的基础设计思想讲起，实现了一套基于角色的页面级别的应用权限管理系统并分别讨论了无权限重定向及无权限显示无权限页面两种无权限查看时的处理方法。</p>
+<p>接下来我们来看一下多级菜单是如何实现的</p>
+<h1 id="五、菜单匹配逻辑"><a href="#五、菜单匹配逻辑" class="headerlink" title="五、菜单匹配逻辑"></a>五、菜单匹配逻辑</h1><blockquote>
+<p>本节参考代码：</p>
+<p><a href="https://github.com/AlanWei/react-sider" target="_blank" rel="noopener">react-sider</a></p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/29.jpg" alt="7"></p>
+<p>在大部分企业管理系统中，页面的基础布局所采取的一般都是侧边栏菜单加页面内容这样的组织形式。在成熟的组件库支持下，UI 层面想要做出一个漂亮的侧边栏菜单并不困难，但因为在企业管理系统中菜单还承担着页面导航的功能，于是就导致了两大难题，一是多级菜单如何处理，二是菜单项的子页面（如点击门店管理中的某一个门店进入的门店详情页在菜单中并没有对应的菜单项）如何高亮其隶属于的父级菜单。</p>
+<h2 id="1、多级菜单"><a href="#1、多级菜单" class="headerlink" title="1、多级菜单"></a>1、多级菜单</h2><p>为了增强系统的可扩展性，企业管理系统中的菜单一般都需要提供多级支持，对应的数据结构就是在每一个菜单项中都要有 children 属性来配置下一级菜单项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const menuData = [&#123;</span><br><span class="line">  name: &apos;仪表盘&apos;,</span><br><span class="line">  icon: &apos;dashboard&apos;,</span><br><span class="line">  path: &apos;dashboard&apos;,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: &apos;分析页&apos;,</span><br><span class="line">    path: &apos;analysis&apos;,</span><br><span class="line">    children: [&#123;</span><br><span class="line">      name: &apos;实时数据&apos;,</span><br><span class="line">      path: &apos;realtime&apos;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;离线数据&apos;,</span><br><span class="line">      path: &apos;offline&apos;,</span><br><span class="line">    &#125;],</span><br><span class="line">  &#125;],</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<h3 id="递归渲染父菜单及子菜单"><a href="#递归渲染父菜单及子菜单" class="headerlink" title="递归渲染父菜单及子菜单"></a>递归渲染父菜单及子菜单</h3><p>想要支持多级菜单，首先要解决的问题就是如何统一不同级别菜单项的交互。</p>
+<p>在大多数的情况下，每一个菜单项都代表着一个不同的页面路径，点击后会触发 url 的变化并跳转至相应页面，也就是上面配置中的 path 字段。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/30.jpg" alt="8"></p>
+<p>但对于一个父菜单来说，点击还意味着打开或关闭相应的子菜单，这就与点击跳转页面发生了冲突。为了简化这个问题，我们先统一菜单的交互为点击父菜单（包含 children 属性的菜单项）为打开或关闭子菜单，点击子菜单（不包含 children 属性的菜单项）为跳转至相应页面。</p>
+<p>首先，为了成功地渲染多级菜单，菜单的渲染函数是需要支持递归的，即如果当前菜单项含有 children 属性就将其渲染为父菜单并优先渲染其 children 字段下的子菜单，这在算法上被叫做<a href="https://baike.baidu.com/item/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86" target="_blank" rel="noopener">深度优先遍历</a>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">renderMenu = data =&gt; (</span><br><span class="line">  map(data, (item) =&gt; &#123;</span><br><span class="line">    if (item.children) &#123;</span><br><span class="line">      return (</span><br><span class="line">        &lt;SubMenu</span><br><span class="line">          key=&#123;item.path&#125;</span><br><span class="line">          title=&#123;</span><br><span class="line">            &lt;span&gt;</span><br><span class="line">              &lt;Icon type=&#123;item.icon&#125; /&gt;</span><br><span class="line">              &lt;span&gt;&#123;item.name&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">          &#125;</span><br><span class="line">        &gt;</span><br><span class="line">          &#123;this.renderMenu(item.children)&#125;</span><br><span class="line">        &lt;/SubMenu&gt;</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return (</span><br><span class="line">      &lt;Menu.Item key=&#123;item.path&#125;&gt;</span><br><span class="line">        &lt;Link to=&#123;item.path&#125; href=&#123;item.path&#125;&gt;</span><br><span class="line">          &lt;Icon type=&#123;item.icon&#125; /&gt;</span><br><span class="line">          &lt;span&gt;&#123;item.name&#125;&lt;/span&gt;</span><br><span class="line">        &lt;/Link&gt;</span><br><span class="line">      &lt;/Menu.Item&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>这样我们就拥有了一个支持多级展开、子菜单分别对应页面路由的侧边栏菜单。细心的朋友可能还发现了，虽然父菜单并不对应一个具体的路由但在配置项中依然还有 path 这个属性，这是为什么呢？</p>
+<h2 id="2、处理菜单高亮"><a href="#2、处理菜单高亮" class="headerlink" title="2、处理菜单高亮"></a>2、处理菜单高亮</h2><p>在传统的企业管理系统中，为不同的页面配置页面路径是一件非常痛苦的事情，对于页面路径，许多开发者唯一的要求就是不重复即可，如上面的例子中，我们把菜单数据配置成这样也是可以的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const menuData = [&#123;</span><br><span class="line">  name: &apos;仪表盘&apos;,</span><br><span class="line">  icon: &apos;dashboard&apos;,</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: &apos;分析页&apos;,</span><br><span class="line">    children: [&#123;</span><br><span class="line">      name: &apos;实时数据&apos;,</span><br><span class="line">      path: &apos;/realtime&apos;,</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;离线数据&apos;,</span><br><span class="line">      path: &apos;/offline&apos;,</span><br><span class="line">    &#125;],</span><br><span class="line">  &#125;],</span><br><span class="line">&#125;];</span><br><span class="line"></span><br><span class="line">&lt;Router&gt;</span><br><span class="line">  &lt;Route path=&quot;/realtime&quot; render=&#123;() =&gt; &lt;div /&gt;&#125;</span><br><span class="line">  &lt;Route path=&quot;/offline&quot; render=&#123;() =&gt; &lt;div /&gt;&#125;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>用户在点击菜单项时一样可以正确地跳转到相应页面。但这样做的一个致命缺陷就是，对于 <code>/realtime</code> 这样一个路由，如果只根据当前的 <code>pathname</code> 去匹配菜单项中 <code>path</code> 属性的话，要怎样才能同时也匹配到「分析页」与「仪表盘」呢？因为如果匹配不到的话，「分析页」和「仪表盘」就不会被高亮了。我们能不能在页面的路径中直接体现出菜单项之间的继承关系呢？来看下面这个工具函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import map from &apos;lodash/map&apos;;</span><br><span class="line"></span><br><span class="line">const formatMenuPath = (data, parentPath = &apos;/&apos;) =&gt; (</span><br><span class="line">  map(data, (item) =&gt; &#123;</span><br><span class="line">    const result = &#123;</span><br><span class="line">      ...item,</span><br><span class="line">      path: `$&#123;parentPath&#125;$&#123;item.path&#125;`,</span><br><span class="line">    &#125;;</span><br><span class="line">    if (item.children) &#123;</span><br><span class="line">      result.children = formatMenuPath(item.children, `$&#123;parentPath&#125;$&#123;item.path&#125;/`);</span><br><span class="line">    &#125;</span><br><span class="line">    return result;</span><br><span class="line">  &#125;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>这个工具函数把菜单项中可能有的 <code>children</code> 字段考虑了进去，将一开始的菜单数据传入就可以得到如下完整的菜单数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[&#123;</span><br><span class="line">  name: &apos;仪表盘&apos;,</span><br><span class="line">  icon: &apos;dashboard&apos;,</span><br><span class="line">  path: &apos;/dashboard&apos;,  // before is &apos;dashboard&apos;</span><br><span class="line">  children: [&#123;</span><br><span class="line">    name: &apos;分析页&apos;,</span><br><span class="line">    path: &apos;/dashboard/analysis&apos;, // before is &apos;analysis&apos;</span><br><span class="line">    children: [&#123;</span><br><span class="line">      name: &apos;实时数据&apos;,</span><br><span class="line">      path: &apos;/dashboard/analysis/realtime&apos;, // before is &apos;realtime&apos;</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;离线数据&apos;,</span><br><span class="line">      path: &apos;/dashboard/analysis/offline&apos;, // before is &apos;offline&apos;</span><br><span class="line">    &#125;],</span><br><span class="line">  &#125;],</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>然后让我们再对当前页面的路由做一下逆向推导，即假设当前页面的路由为 <code>/dashboard/analysis/realtime</code>，我们希望可以同时匹配到 <code>[&#39;/dashboard&#39;, &#39;/dashboard/analysis&#39;, &#39;/dashboard/analysis/realtime&#39;]</code>，方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import map from &apos;lodash/map&apos;;</span><br><span class="line"></span><br><span class="line">const urlToList = (url) =&gt; &#123;</span><br><span class="line">  if (url) &#123;</span><br><span class="line">    const urlList = url.split(&apos;/&apos;).filter(i =&gt; i);</span><br><span class="line">    return map(urlList, (urlItem, index) =&gt; `/$&#123;urlList.slice(0, index + 1).join(&apos;/&apos;)&#125;`);</span><br><span class="line">  &#125;</span><br><span class="line">  return [];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面的这个数组代表着不同级别的菜单项，将这三个值分别与菜单数据中的 <code>path</code> 属性进行匹配就可以一次性地匹配到所有当前页面应当被高亮的菜单项了。</p>
+<p>这里需要注意的是，虽然菜单项中的 <code>path</code> 一般都是普通字符串，但有些特殊的路由也可能是正则的形式，如 <code>/outlets/:id</code>。所以我们在对二者进行匹配时，还需要引入 <code>path-to-regexp</code> 这个库来处理类似 <code>/outlets/1</code> 和 <code>/outlets/:id</code> 这样的路径。又因为初始时菜单数据是树形结构的，不利于进行 <code>path</code> 属性的匹配，所以我们还需要先将树形结构的菜单数据扁平化，然后再传入 <code>getMeunMatchKeys</code> 中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import pathToRegexp from &apos;path-to-regexp&apos;;</span><br><span class="line">import reduce from &apos;lodash/reduce&apos;;</span><br><span class="line">import filter from &apos;lodash/filter&apos;;</span><br><span class="line"></span><br><span class="line">const getFlatMenuKeys = menuData =&gt; (</span><br><span class="line">  reduce(menuData, (keys, item) =&gt; &#123;</span><br><span class="line">    keys.push(item.path);</span><br><span class="line">    if (item.children) &#123;</span><br><span class="line">      return keys.concat(getFlatMenuKeys(item.children));</span><br><span class="line">    &#125;</span><br><span class="line">    return keys;</span><br><span class="line">  &#125;, [])</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const getMeunMatchKeys = (flatMenuKeys, paths) =&gt;</span><br><span class="line">  reduce(paths, (matchKeys, path) =&gt; (</span><br><span class="line">    matchKeys.concat(filter(flatMenuKeys, item =&gt; pathToRegexp(item).test(path)))</span><br><span class="line">  ), []);</span><br></pre></td></tr></table></figure>
+<p>在这些工具函数的帮助下，多级菜单的高亮也不再是问题了。</p>
+<h2 id="3、知识点：记忆化（Memoization）"><a href="#3、知识点：记忆化（Memoization）" class="headerlink" title="3、知识点：记忆化（Memoization）"></a>3、知识点：记忆化（Memoization）</h2><p>在侧边栏菜单中，有两个重要的状态：一个是 <code>selectedKeys</code>，即当前选定的菜单项；另一个是 <code>openKeys</code>，即多个多级菜单的打开状态。这二者的含义是不同的，因为在 <code>selectedKeys</code> 不变的情况下，用户在打开或关闭其他多级菜单后，<code>openKeys</code> 是会发生变化的，如下面二图所示，<code>selectedKeys</code> 相同但 <code>openKeys</code> 不同。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/31.jpg" alt="9"></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/32.jpg" alt="10"></p>
+<p>对于 <code>selectedKeys</code> 来说，由于它是由页面路径（<code>pathname</code>）决定的，所以每一次 <code>pathname</code> 发生变化都需要重新计算 <code>selectedKeys</code> 的值。又因为通过 <code>pathname</code> 以及最基础的菜单数据 <code>menuData</code> 去计算 <code>selectedKeys</code> 是一件非常昂贵的事情（要做许多数据格式处理和计算），有没有什么办法可以优化一下这个过程呢？</p>
+<p><a href="https://en.wikipedia.org/wiki/Memoization" target="_blank" rel="noopener">Memoization</a> 可以赋予普通函数记忆输出结果的功能，它会在每次调用函数之前检查传入的参数是否与之前执行过的参数完全相同，如果完全相同则直接返回上次计算过的结果，就像常用的缓存一样。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import memoize from &apos;memoize-one&apos;;</span><br><span class="line"></span><br><span class="line">constructor(props) &#123;</span><br><span class="line">  super(props);</span><br><span class="line"></span><br><span class="line">  this.fullPathMenuData = memoize(menuData =&gt; formatMenuPath(menuData));</span><br><span class="line">  this.selectedKeys = memoize((pathname, fullPathMenu) =&gt; (</span><br><span class="line">    getMeunMatchKeys(getFlatMenuKeys(fullPathMenu), urlToList(pathname))</span><br><span class="line">  ));</span><br><span class="line"></span><br><span class="line">  const &#123; pathname, menuData &#125; = props;</span><br><span class="line"></span><br><span class="line">  this.state = &#123;</span><br><span class="line">    openKeys: this.selectedKeys(pathname, this.fullPathMenuData(menuData)),</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在组件的构造器中我们可以根据当前 props 传来的 <code>pathname</code> 及 <code>menuData</code> 计算出当前的 <code>selectedKeys</code> 并将其当做 <code>openKeys</code> 的初始值初始化组件内部 state。因为 <code>openKeys</code> 是由用户所控制的，所以对于后续 <code>openKeys</code> 值的更新我们只需要配置相应的回调将其交给 <code>Menu</code> 组件控制即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import Menu from &apos;antd/lib/menu&apos;;</span><br><span class="line"></span><br><span class="line">handleOpenChange = (openKeys) =&gt; &#123;</span><br><span class="line">  this.setState(&#123;</span><br><span class="line">    openKeys,</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&lt;Menu</span><br><span class="line">  style=&#123;&#123; padding: &apos;16px 0&apos;, width: &apos;100%&apos; &#125;&#125;</span><br><span class="line">  mode=&quot;inline&quot;</span><br><span class="line">  theme=&quot;dark&quot;</span><br><span class="line">  openKeys=&#123;openKeys&#125;</span><br><span class="line">  selectedKeys=&#123;this.selectedKeys(pathname, this.fullPathMenuData(menuData))&#125;</span><br><span class="line">  onOpenChange=&#123;this.handleOpenChange&#125;</span><br><span class="line">&gt;</span><br><span class="line">  &#123;this.renderMenu(this.fullPathMenuData(menuData))&#125;</span><br><span class="line">&lt;/Menu&gt;</span><br></pre></td></tr></table></figure>
+<p>这样我们就实现了对于 <code>selectedKeys</code> 及 <code>openKeys</code> 的分别管理，开发者在使用侧边栏组件时只需要将应用当前的页面路径同步到侧边栏组件中的 <code>pathname</code> 属性即可，侧边栏组件会自动处理相应的菜单高亮（<code>selectedKeys</code>）和多级菜单的打开与关闭（<code>openKeys</code>）。</p>
+<h2 id="4、知识点：正确区分-prop-与-state"><a href="#4、知识点：正确区分-prop-与-state" class="headerlink" title="4、知识点：正确区分 prop 与 state"></a>4、知识点：正确区分 prop 与 state</h2><p>上述这个场景也是一个非常经典的关于如何正确区分 prop 与 state 的例子。</p>
+<p><code>selectedKeys</code> 由传入的 <code>pathname</code> 决定，于是我们就可以将 <code>selectedKeys</code> 与 <code>pathname</code> 之间的转换关系封装在组件中，使用者只需要传入正确的 <code>pathname</code> 就可以获得相应的 <code>selectedKeys</code> 而不需要关心它们之间的转换是如何完成的。而 <code>pathname</code> 作为组件渲染所需的基础数据，组件无法从自身内部获得，所以就需要使用者通过 props 将其传入进来。</p>
+<p>另一方面， <code>openKeys</code> 作为组件内部的 state，初始值可以由 <code>pathname</code> 计算而来，后续的更新则与组件外部的数据无关而是会根据用户的操作在组件内部完成，那么它就是一个 state，与其相关的所有逻辑都可以彻底地被封装在组件内部而不需要暴露给使用者。</p>
+<p>简而言之，一个数据如果想成为 prop 就必须是组件内部无法获得的，而且在它成为了 prop 之后，所有可以根据它的值推导出来的数据都不再需要成为另外的 props，否则将违背 React 单一数据源的原则。对于 state 来说也是同样，如果一个数据想成为 state，那么它就不应该再能够被组件外部的值所改变，否则也会违背单一数据源的原则而导致组件的表现不可预测，产生难解的 bug。</p>
+<h2 id="5、组合式开发：应用菜单"><a href="#5、组合式开发：应用菜单" class="headerlink" title="5、组合式开发：应用菜单"></a>5、组合式开发：应用菜单</h2><p>严格来说，在这一小节中着重探讨的应用菜单部分的思路并不属于组合式开发思想的范畴，更多地是如何写出一个支持无限级子菜单及自动匹配当前路由的菜单组件。组件当然是可以随意插拔的，但前提是应用该组件的父级部分不依赖于组件所提供的信息。这也是我们在编写组件时所应当遵循的一个规范，即组件可以从外界获取信息并在此基础上进行组件内部的逻辑判断。但当组件向其外界抛出信息时，更多的时候应该是以回调的形式让调用者去主动触发，然后更新外部的数据再以 props 的形式传递给组件以达到更新组件的目的，而不是强制需要在外部再配置一个回调的接收函数去直接改变组件的内部状态。</p>
+<p>从这点上来说，组合式开发与组件封装其实是有着异曲同工之妙的，关键都在于对内部状态的严格控制。不论一个模块或一个组件需要向外暴露多少接口，在它的内部都应该是解决了某一个或某几个具体问题的。就像工厂产品生产流水线上的一个环节，在经过了这一环节后产品相较于进入前一定产生了某种区别，不论是增加了某些功能还是被打上某些标签，产品一定会变得更利于下游合作者使用。更理想的情况则是即使删除掉了这一环节，原来这一环节的上下游依然可以无缝地衔接在一起继续工作，这就是我们所说的模块或者说组件的可插拔性。</p>
+<h1 id="六、后端路由服务的意义"><a href="#六、后端路由服务的意义" class="headerlink" title="六、后端路由服务的意义"></a>六、后端路由服务的意义</h1><p>在前后端分离架构的背景下，前端已经逐渐代替后端接管了所有固定路由的判断与处理，但在动态路由这样一个场景下，我们会发现单纯前端路由服务的灵活度是远远不够的。在用户到达某个页面后，可供下一步逻辑判断的依据就只有当前页面的 url，而根据 url 后端的路由服务是可以返回非常丰富的数据的。</p>
+<p>常见的例子如页面的类型。假设应用中营销页和互动页的渲染逻辑并不相同，那么在页面的 DSL 数据之外，我们就还需要获取到页面的类型以进行相应的渲染。再比如页面的 SEO 数据，创建和更新时间等等，这些数据都对应用能够在前端灵活地展示页面，处理业务逻辑有着巨大的帮助。</p>
+<p>甚至我们还可以推而广之，彻底抛弃掉由 react-router 等提供的前端路由服务，转而写一套自己的路由分发器，即根据页面类型的不同分别调用不同的页面渲染服务，以多种类型页面的方式来组成一个完整的前端应用。</p>
+<h1 id="七、组合式开发"><a href="#七、组合式开发" class="headerlink" title="七、组合式开发"></a>七、组合式开发</h1><p>为了解决大而全的方案在实践中不够灵活的问题，我们是不是可以将其中包含的各个模块解耦后，独立发布出来供开发者们按需取用呢？让我们先来看一段理想中完整的企业管理系统应用架构部分的伪代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">const App = props =&gt; (</span><br><span class="line">  &lt;Provider&gt;                                        // react-redux bind</span><br><span class="line">    &lt;ConnectedRouter&gt;                               // react-router-redux bind</span><br><span class="line">      &lt;MultiIntlProvider&gt;                           // intl support</span><br><span class="line">        &lt;AclRouter&gt;                                 // router with access control list</span><br><span class="line">          &lt;Route path=&quot;/login&quot;&gt;                     // route that doesn&apos;t need authentication</span><br><span class="line">            &lt;NormalLayout&gt;                          // layout component</span><br><span class="line">              &lt;View /&gt;                              // page content (view component)</span><br><span class="line">            &lt;/NormalLayout&gt;</span><br><span class="line">          &lt;Route path=&quot;/login&quot;&gt;</span><br><span class="line">          ...                                       // more routes that don&apos;t need authentication</span><br><span class="line">          &lt;Route path=&quot;/analysis&quot;&gt;                  // route that needs authentication</span><br><span class="line">            &lt;LoginChecker&gt;                          // hoc for user login check</span><br><span class="line">              &lt;BasicLayout&gt;                         // layout component</span><br><span class="line">                &lt;SiderMenu /&gt;                       // sider menu</span><br><span class="line">                &lt;Content&gt;</span><br><span class="line">                  &lt;PageHeader /&gt;                    // page header</span><br><span class="line">                  &lt;View /&gt;                          // page content (view component)</span><br><span class="line">                  &lt;PageFooter /&gt;                    // page footer</span><br><span class="line">                &lt;/Content&gt;</span><br><span class="line">              &lt;/BasicLayout&gt;</span><br><span class="line">            &lt;/LoginChecker&gt;</span><br><span class="line">          &lt;/Route&gt;</span><br><span class="line">          ...                                       // more routes that need authentication</span><br><span class="line">          &lt;Route render=&#123;() =&gt; &lt;div&gt;404&lt;/div&gt;&#125; /&gt;   // 404 page</span><br><span class="line">        &lt;/AclRouter&gt;</span><br><span class="line">      &lt;/MultiIntlProvider&gt;</span><br><span class="line">    &lt;/ConnectedRouter&gt;</span><br><span class="line">  &lt;/Provider&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>在上面的这段伪代码中，我们抽象出了多语言支持、基于路由的权限管理、登录鉴权、基础布局、侧边栏菜单等多个独立模块，可以根据需求添加或删除任意一个模块，而且添加或删除任意一个模块都不会对应用的其他部分产生不可接受的副作用。这让我们对接下来要做的事情有了一个大体的认识，但在具体的实践中，如 props 如何传递、模块之间如何共享数据、如何灵活地让用户自定义某些特殊逻辑等都仍然面临着巨大的挑战。我们需要时刻注意，在处理一个具体问题时哪些部分应当放在某个独立模块内部去处理，哪些部分应当暴露出接口供使用者自定义，模块与模块之间如何做到零耦合以至于使用者可以随意插拔任意一个模块去适应当前项目的需要。</p>
+<h1 id="八、学习路线"><a href="#八、学习路线" class="headerlink" title="八、学习路线"></a>八、学习路线</h1><p>从一个具体的前端应用直接切入开发技巧与理念的讲解，所以对于刚入门 React 的朋友来说可能存在着一定的基础知识部分梳理的缺失，这里为大家提供一份较为详细的 React 开发者学习路线图，希望能够为刚入门 React 的朋友提供一条规范且便捷的学习之路。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/33.png" alt="11"></p>
+</switch>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/21/%E9%9D%A2%E8%AF%95%E9%A2%98/%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3Vue%E5%92%8CReact%E5%8C%BA%E5%88%AB/">
+                个人理解Vue和React区别
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/面试题/">面试题</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="监听数据变化的实现原理不同"><a href="#监听数据变化的实现原理不同" class="headerlink" title="监听数据变化的实现原理不同"></a>监听数据变化的实现原理不同</h1><ul>
+<li>Vue 通过 getter/setter 以及一些函数的劫持，能精确知道数据变化，不需要特别的优化就能达到很好的性能</li>
+<li>React 默认是通过比较引用的方式进行的，如果不优化（PureComponent/shouldComponentUpdate）可能导致大量不必要的VDOM的重新渲染</li>
+</ul>
+<p>为什么 React 不精确监听数据变化呢？这是因为 Vue 和 React 设计理念上的区别，Vue 使用的是可变数据，而React更强调数据的不可变。所以应该说没有好坏之分，Vue更加简单，而React构建大型应用的时候更加鲁棒。</p>
+<p>因为一般都会用一个数据层的框架比如 Vuex 和 Redux，所以这部分不作过多解释，在最后的 vuex 和 redux的区别 中也会讲到。</p>
+<h1 id="数据流的不同"><a href="#数据流的不同" class="headerlink" title="数据流的不同"></a>数据流的不同</h1><p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/6.jpg" alt="6"></p>
+<p>大家都知道Vue中默认是支持双向绑定的。在Vue1.0中我们可以实现两种双向绑定：</p>
+<ol>
+<li>父子组件之间，props 可以双向绑定</li>
+<li>组件与DOM之间可以通过 v-model 双向绑定</li>
+</ol>
+<p>在 Vue2.x 中去掉了第一种，也就是父子组件之间不能双向绑定了（但是提供了一个语法糖自动帮你通过事件的方式修改），并且 Vue2.x 已经不鼓励组件对自己的 props 进行任何修改了。<br>所以现在我们只有 组件 <--> DOM 之间的双向绑定这一种。</--></p>
+<p>然而 React 从诞生之初就不支持双向绑定，React一直提倡的是单向数据流，他称之为 onChange/setState()模式。</p>
+<p>不过由于我们一般都会用 Vuex 以及 Redux 等单向数据流的状态管理框架，因此很多时候我们感受不到这一点的区别了。</p>
+<h1 id="HoC-和-mixins"><a href="#HoC-和-mixins" class="headerlink" title="HoC 和 mixins"></a>HoC 和 mixins</h1><p>在 Vue 中我们组合不同功能的方式是通过 mixin，而在React中我们通过 HoC (高阶组件）。</p>
+<p>React 最早也是使用 mixins 的，不过后来他们觉得这种方式对组件侵入太强会导致很多问题，就弃用了 mixinx 转而使用 HoC，关于mixin究竟哪里不好，可以参考React官方的这篇文章 Mixins Considered Harmful</p>
+<p>而 Vue 一直是使用 mixin 来实现的。</p>
+<p>为什么 Vue 不采用 HoC 的方式来实现呢？</p>
+<p>高阶组件本质就是高阶函数，React 的组件是一个纯粹的函数，所以高阶函数对React来说非常简单。</p>
+<p>但是Vue就不行了，Vue中组件是一个被包装的函数，并不简单的就是我们定义组件的时候传入的对象或者函数。比如我们定义的模板怎么被编译的？比如声明的props怎么接收到的？这些都是vue创建组件实例的时候隐式干的事。由于vue默默帮我们做了这么多事，所以我们自己如果直接把组件的声明包装一下，返回一个高阶组件，那么这个被包装的组件就无法正常工作了。</p>
+<p>推荐一篇很棒的文章讲的是vue中如何实现高阶组件 探索Vue高阶组件</p>
+<h1 id="组件通信的区别"><a href="#组件通信的区别" class="headerlink" title="组件通信的区别"></a>组件通信的区别</h1><p><img src="https://qq292383147.github.io/pictureLibrary/picture/Mianjingxuan/7.jpg" alt="7"></p>
+<p>其实这部分两个比较相似。</p>
+<p>在Vue 中有三种方式可以实现组件通信：</p>
+<ul>
+<li>父组件通过 props 向子组件传递数据或者回调，虽然可以传递回调，但是我们一般只传数据，而通过 事件的机制来处理子组件向父组件的通信</li>
+<li>子组件通过 事件 向父组件发送消息</li>
+<li>通过 V2.2.0 中新增的 provide/inject 来实现父组件向子组件注入数据，可以跨越多个层级。</li>
+</ul>
+<p>另外有一些比如访问 $parent/$children等比较dirty的方式这里就不讲了。</p>
+<p>在 React 中，也有对应的三种方式：</p>
+<ul>
+<li>父组件通过 props 可以向子组件传递数据或者回调</li>
+<li>可以通过 context 进行跨层级的通信，这其实和 provide/inject 起到的作用差不多。</li>
+</ul>
+<p>可以看到，React 本身并不支持自定义事件，Vue中子组件向父组件传递消息有两种方式：事件和回调函数，而且Vue更倾向于使用事件。但是在 React 中我们都是使用回调函数的，这可能是他们二者最大的区别。</p>
+<h1 id="模板渲染方式的不同"><a href="#模板渲染方式的不同" class="headerlink" title="模板渲染方式的不同"></a>模板渲染方式的不同</h1><p>在表层上， 模板的语法不同</p>
+<ul>
+<li>React 是通过JSX渲染模板</li>
+<li>而Vue是通过一种拓展的HTML语法进行渲染</li>
+</ul>
+<p>但其实这只是表面现象，毕竟React并不必须依赖JSX。</p>
+<p>在深层上，模板的原理不同，这才是他们的本质区别：</p>
+<ul>
+<li>React是在组件JS代码中，通过原生JS实现模板中的常见语法，比如插值，条件，循环等，都是通过JS语法实现的</li>
+<li>Vue是在和组件JS代码分离的单独的模板中，通过指令来实现的，比如条件语句就需要 v-if 来实现</li>
+</ul>
+<p>对这一点，我个人比较喜欢React的做法，因为他更加纯粹更加原生，而Vue的做法显得有些独特，会把HTML弄得很乱。举个例子，说明React的好处：</p>
+<p>react中render函数是支持闭包特性的，所以我们import的组件在render中可以直接调用。但是在Vue中，由于模板中使用的数据都必须挂在 this 上进行一次中转，所以我们import 一个组件完了之后，还需要在 components 中再声明下，这样显然是很奇怪但又不得不这样的做法。</p>
+<h1 id="Vuex-和-Redux-的区别"><a href="#Vuex-和-Redux-的区别" class="headerlink" title="Vuex 和 Redux 的区别"></a>Vuex 和 Redux 的区别</h1><p>从表面上来说，store 注入和使用方式有一些区别。</p>
+<p>在 Vuex 中，$store 被直接注入到了组件实例中，因此可以比较灵活的使用：</p>
+<ul>
+<li>使用 dispatch 和 commit 提交更新</li>
+<li>通过 mapState 或者直接通过 this.$store 来读取数据</li>
+</ul>
+<p>在 Redux 中，我们每一个组件都需要显示的用 connect 把需要的 props 和 dispatch 连接起来。</p>
+<p>另外 Vuex 更加灵活一些，组件中既可以 dispatch action 也可以 commit updates，而 Redux 中只能进行 dispatch，并不能直接调用 reducer 进行修改。</p>
+<p>从实现原理上来说，最大的区别是两点：</p>
+<ul>
+<li>Redux 使用的是不可变数据，而Vuex的数据是可变的。Redux每次都是用新的state替换旧的state，而Vuex是直接修改</li>
+<li>Redux 在检测数据变化的时候，是通过 diff 的方式比较差异的，而Vuex其实和Vue的原理一样，是通过 getter/setter来比较的（如果看Vuex源码会知道，其实他内部直接创建一个Vue实例用来跟踪数据变化）</li>
+</ul>
+<p>而这两点的区别，其实也是因为 React 和 Vue的设计理念上的区别。React更偏向于构建稳定大型的应用，非常的科班化。相比之下，Vue更偏向于简单迅速的解决问题，更灵活，不那么严格遵循条条框框。因此也会给人一种大型项目用React，小型项目用 Vue 的感觉。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/2019/12/21/%E5%85%B6%E5%AE%83/Linux%20CentOS%20+%20Nodejs%20+%20Express%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE/">
+                Linux CentOS + Nodejs + Express部署vue项目
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>注：服务器为CentOS 7.3.1611，使用Xshell6 + Xftp6工具完成服务器远程操作</p>
+<h2 id="一、安装Node环境"><a href="#一、安装Node环境" class="headerlink" title="一、安装Node环境"></a>一、安装Node环境</h2><p>通过Xshell连接服务器成功之后就可以开始以下工作</p>
+<h3 id="1-清理工作"><a href="#1-清理工作" class="headerlink" title="1.清理工作"></a>1.清理工作</h3><p>如果之前有安装过nodejs，用自带的包管理命名先删除一次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove nodejs npm -y</span><br></pre></td></tr></table></figure>
+<p>然后手动进入以下目录删除相关文件<br>进入 /usr/local/lib 删除所有 node 和 node_modules文件夹<br>进入 /usr/local/include 删除所有 node 和 node_modules 文件夹<br>进入 /usr/local/bin 删除 node 的可执行文件</p>
+<h3 id="2-去官网复制node安装包链接"><a href="#2-去官网复制node安装包链接" class="headerlink" title="2.去官网复制node安装包链接"></a>2.去官网复制node安装包链接</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a><br><img src="H:\上传到git里面的md文件图片\picture\other\24.png" alt="24"></p>
+<h3 id="3-在Xshell里cd到安装目录"><a href="#3-在Xshell里cd到安装目录" class="headerlink" title="3.在Xshell里cd到安装目录"></a>3.在Xshell里cd到安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br></pre></td></tr></table></figure>
+<h3 id="4-输入命令链接开始下载nodejs安装包"><a href="#4-输入命令链接开始下载nodejs安装包" class="headerlink" title="4.输入命令链接开始下载nodejs安装包"></a>4.输入命令链接开始下载nodejs安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+<h3 id="5-输入命令两步解压"><a href="#5-输入命令两步解压" class="headerlink" title="5.输入命令两步解压"></a>5.输入命令两步解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v10.16.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v10.16.0-linux-x64.tar</span><br></pre></td></tr></table></figure>
+<h3 id="6-重名解压的文件夹名称为nodejs"><a href="#6-重名解压的文件夹名称为nodejs" class="headerlink" title="6.重名解压的文件夹名称为nodejs"></a>6.重名解压的文件夹名称为nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv node-v10.16.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
+<h3 id="7-进入解压目录"><a href="#7-进入解压目录" class="headerlink" title="7.进入解压目录"></a>7.进入解压目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> nodejs</span><br></pre></td></tr></table></figure>
+<h3 id="8-创建软连接"><a href="#8-创建软连接" class="headerlink" title="8.创建软连接"></a>8.创建软连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s  /usr/<span class="built_in">local</span>/nodejs/bin/node /usr/<span class="built_in">local</span>/bin/node</span><br><span class="line">ln -s  /usr/<span class="built_in">local</span>/nodejs/bin/npm /usr/<span class="built_in">local</span>/bin/npm</span><br></pre></td></tr></table></figure>
+<p>如果不小心输错了路径，重新创建会提示：‘ln: 无法创建符号链接”/usr/local/bin/npm”: 文件已存在’，输入rm /usr/local/bin/npm命令清除后可以重新创建</p>
+<h3 id="9-测试"><a href="#9-测试" class="headerlink" title="9.测试"></a>9.测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h3 id="10-安装cnpm淘宝镜像并创建软链接"><a href="#10-安装cnpm淘宝镜像并创建软链接" class="headerlink" title="10.安装cnpm淘宝镜像并创建软链接"></a>10.安装cnpm淘宝镜像并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/cnpm /usr/<span class="built_in">local</span>/bin/cnpm</span><br></pre></td></tr></table></figure>
+<h2 id="二、用Express搭建web服务"><a href="#二、用Express搭建web服务" class="headerlink" title="二、用Express搭建web服务"></a>二、用Express搭建web服务</h2><h3 id="1-在Xshell里cd到指定目录"><a href="#1-在Xshell里cd到指定目录" class="headerlink" title="1.在Xshell里cd到指定目录"></a>1.在Xshell里cd到指定目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/</span><br></pre></td></tr></table></figure>
+<p>注：如果没有www目录就在var目录下输入命令mkdir www手动创建一个，并进入到www目录</p>
+<h3 id="2-创建web服务项目文件夹"><a href="#2-创建web服务项目文件夹" class="headerlink" title="2.创建web服务项目文件夹"></a>2.创建web服务项目文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br></pre></td></tr></table></figure>
+<h3 id="3-cd进入项目目录"><a href="#3-cd进入项目目录" class="headerlink" title="3.cd进入项目目录"></a>3.cd进入项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> demo</span><br></pre></td></tr></table></figure>
+<h3 id="4-初始化项目生成package-json"><a href="#4-初始化项目生成package-json" class="headerlink" title="4.初始化项目生成package.json"></a>4.初始化项目生成package.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
+<p>注：这里的-y意思是省略创建过程中一直输yes的步骤</p>
+<h3 id="5-安装express"><a href="#5-安装express" class="headerlink" title="5.安装express"></a>5.安装express</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i express -D</span><br></pre></td></tr></table></figure>
+<h3 id="6-创建web服务程序文件app-js"><a href="#6-创建web服务程序文件app-js" class="headerlink" title="6.创建web服务程序文件app.js"></a>6.创建web服务程序文件app.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir app.js</span><br></pre></td></tr></table></figure>
+<h3 id="7-编写web服务程序代码app-js"><a href="#7-编写web服务程序代码app-js" class="headerlink" title="7.编写web服务程序代码app.js"></a>7.编写web服务程序代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>); <span class="comment">//文件模块</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>); <span class="comment">//路径模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>); <span class="comment">//express框架模块</span></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">'11.22.33.44'</span>; <span class="comment">//ip</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">9999</span>; <span class="comment">//端口</span></span><br><span class="line"></span><br><span class="line">app.use(express.static(path.resolve(__dirname, <span class="string">'./dist'</span>))); <span class="comment">// 设置静态项目访问路径(此处的dist为webpack打包生成的项目文件夹名称)</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> html = fs.readFileSync(path.resolve(__dirname, <span class="string">'./dist/index.html'</span>), <span class="string">'utf-8'</span>); <span class="comment">// 设置所有访问服务请求默认返回index.html文件</span></span><br><span class="line">    res.send(html);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(port, hostName, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(服务器运行在http:<span class="comment">//$&#123;hostName&#125;:$&#123;port&#125;);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="三、打包部署vue项目"><a href="#三、打包部署vue项目" class="headerlink" title="三、打包部署vue项目"></a>三、打包部署vue项目</h2><h3 id="1-在本地开发工具里打包需要部署的vue项目"><a href="#1-在本地开发工具里打包需要部署的vue项目" class="headerlink" title="1.在本地开发工具里打包需要部署的vue项目"></a>1.在本地开发工具里打包需要部署的vue项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>生成的dist文件夹就是我们需要部署到服务器上的项目</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\other\25.png" alt="25"></p>
+<h2 id="2-把dist文件夹通过Xftp工具复制到服务器的var-www-demo目录下"><a href="#2-把dist文件夹通过Xftp工具复制到服务器的var-www-demo目录下" class="headerlink" title="2.把dist文件夹通过Xftp工具复制到服务器的var/www/demo目录下"></a>2.把dist文件夹通过Xftp工具复制到服务器的var/www/demo目录下</h2><p><img src="H:\上传到git里面的md文件图片\picture\other\26.png" alt="26"></p>
+<h2 id="四、启动web服务"><a href="#四、启动web服务" class="headerlink" title="四、启动web服务"></a>四、启动web服务</h2><h3 id="1-在Xshell里cd到var-www-demo目录，输入以下命令启动web服务程序"><a href="#1-在Xshell里cd到var-www-demo目录，输入以下命令启动web服务程序" class="headerlink" title="1.在Xshell里cd到var/www/demo目录，输入以下命令启动web服务程序"></a>1.在Xshell里cd到var/www/demo目录，输入以下命令启动web服务程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
+<p>如果能正常访问项目地址表示已经搭建成功。</p>
+<p>请求后端接口跨域方案请见：<br>跨域代理方案1：Nginx使用教程<br>跨域代理方案2：Nodejs 中使用http-proxy-middleware实现代理跨域</p>
+<h3 id="2-安装PM2托管Node-Web服务程序"><a href="#2-安装PM2托管Node-Web服务程序" class="headerlink" title="2.安装PM2托管Node Web服务程序"></a>2.安装PM2托管Node Web服务程序</h3><p>在xshell里用node默认的启动方式有一个缺点，xshell退出后nodejs项目便会停止<br>使用pm2这个托管工具可以很好的解决这个问题，而且当代码有更改时会自动重启服务更新</p>
+<h3 id="1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"><a href="#1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接" class="headerlink" title="1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"></a>1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install pm2 -g</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/nodejs/bin/pm2 /usr/<span class="built_in">local</span>/bin/pm2</span><br></pre></td></tr></table></figure>
+<h3 id="2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称"><a href="#2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称" class="headerlink" title="2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称"></a>2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js --name abc</span><br></pre></td></tr></table></figure>
+<h3 id="以下为pm2常用命令说明"><a href="#以下为pm2常用命令说明" class="headerlink" title="以下为pm2常用命令说明"></a>以下为pm2常用命令说明</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pm2 start app.js –name abc</td>
+<td>启动(–name为定义任务名称的指令，abc为任务名称值)</td>
+</tr>
+<tr>
+<td>pm2 start app.js –watch</td>
+<td>启动( –watch为监听应用目录的变化的指令)</td>
+</tr>
+<tr>
+<td>pm2 restart app.js</td>
+<td>重启任务</td>
+</tr>
+<tr>
+<td>pm2 stop abc</td>
+<td>结束(abc为任务名称或id)</td>
+</tr>
+<tr>
+<td>pm2 list</td>
+<td>查看所有任务列表</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pm2基本功能命令"><a href="#pm2基本功能命令" class="headerlink" title="pm2基本功能命令"></a>pm2基本功能命令</h3><table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>启动进程/应用</td>
+<td>pm2 start bin/abc 或 pm2 start app.js</td>
+</tr>
+<tr>
+<td>重命名进程/应用</td>
+<td>pm2 start app.js –name abc</td>
+</tr>
+<tr>
+<td>添加进程/应用</td>
+<td>pm2 start bin/abc –watch</td>
+</tr>
+<tr>
+<td>结束进程/应用</td>
+<td>pm2 stop abc</td>
+</tr>
+<tr>
+<td>结束所有进程/应用</td>
+<td>pm2 stop all</td>
+</tr>
+<tr>
+<td>删除进程/应用</td>
+<td>pm2 delete abc</td>
+</tr>
+<tr>
+<td>删除所有进程/应用</td>
+<td>pm2 delete all</td>
+</tr>
+<tr>
+<td>列出所有进程/应用</td>
+<td>pm2 list</td>
+</tr>
+<tr>
+<td>查看进程/应用详情</td>
+<td>pm2 show abc 或 pm2 describe abc</td>
+</tr>
+<tr>
+<td>查看进程/应用资源消耗</td>
+<td>pm2 monit</td>
+</tr>
+<tr>
+<td>查看进程/应用日志</td>
+<td>pm2 logs abc</td>
+</tr>
+<tr>
+<td>查看所有进程/应用日志</td>
+<td>pm2 logs</td>
+</tr>
+<tr>
+<td>重新启动进程/应用</td>
+<td>pm2 restart abc</td>
+</tr>
+<tr>
+<td>重新启动所有进程/应用</td>
+<td>pm2 restart all</td>
+</tr>
+</tbody>
+</table>
+<p>pm2使用教程参考链接：<br><a href="https://www.cnblogs.com/chyingp/p/pm2-documentation.html" target="_blank" rel="noopener">https://www.cnblogs.com/chyingp/p/pm2-documentation.html</a><br><a href="https://www.jb51.net/article/113398.htm" target="_blank" rel="noopener">https://www.jb51.net/article/113398.htm</a></p>
+
+        </div>
+    
+
+</div>
+            
+        </section>
+    </div>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="" href="/page/10/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/page/12/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->

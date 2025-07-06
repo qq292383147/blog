@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--描述-->
+    
+        <meta name="description" content="做人以清心为根本，做事以尽心为准则">
+    
+
+    <!--作者-->
+    
+        <meta name="author" content="Acton">
+    
+
+    <!-- 开图标题 -->
+    
+        <meta property="og:title" content="vue-router 的超神之路"/>
+    
+
+    <!-- 开图描述 -->
+    
+        <meta property="og:description" content="做人以清心为根本，做事以尽心为准则" />
+    
+
+    <!-- 开图形站点名 -->
+    <meta property="og:site_name" content="张健龙个人技术博客"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+    
+    <!-- Title -->
+    
+    <title>vue-router 的超神之路 - 张健龙个人技术博客</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <!-- 过期了 -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- 过期 -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> -->
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <!-- 过期了 -->
+    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" /> -->
+    <!-- 可用的 -->
+    <link href="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.css" rel="stylesheet">
+    <!-- y技术博客专属图标y -->
+    <link rel="icon" href="/img/Acton_logo_main.ico">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <!-- <canvas id="canvas-club" width="100vw" height="100vh"></canvas> -->
+    <!-- Menu -->
+    <!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/archives">
+                    档案
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/tags">
+                    分类
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/contact">
+                    联系
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+    <div class="container">
+
+        <!-- Main Content -->
+        <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/11/03/Vue/vue-router%20%E7%9A%84%E8%B6%85%E7%A5%9E%E4%B9%8B%E8%B7%AF/">
+                vue-router 的超神之路
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li>✅ pushState/replaceState/popstate 解析</li>
+<li>✅ vue-router 实现原理</li>
+<li>✅ route 跟 router 的区别</li>
+<li>✅ 通过路由元信息设置登录</li>
+<li>✅ 设置滚动行为</li>
+<li>✅ vue 路由 按需 keep-alive</li>
+<li>✅ watch 监听路由变化</li>
+<li>✅ 如何检测物理键返回</li>
+<li>✅ 如何做出翻书效果</li>
+<li>✅ 如何做一个优雅的路由分区</li>
+</ul>
+<blockquote>
+<p>“先了解了浏览器的<code>history</code>原理，才能更好的结合<code>vue-router</code>源码一步步了解它的实现。如果这块已经有了解可以直接跳过。</p>
+</blockquote>
+<h2 id="pushState-replaceState-popstate-解析"><a href="#pushState-replaceState-popstate-解析" class="headerlink" title="pushState/replaceState/popstate 解析"></a>pushState/replaceState/popstate 解析</h2><p><code>HTML5</code>提供了对<code>history</code>栈中内容的操作。通过<code>history.pushState/replaceState</code>实现添加地址到<code>history</code>栈中。</p>
+<h3 id="pushState-replaceState-方法"><a href="#pushState-replaceState-方法" class="headerlink" title="pushState/replaceState() 方法"></a>pushState/replaceState() 方法</h3><blockquote>
+<p>pushState() 需要三个参数: 一个状态对象, 一个标题 (目前被忽略), 和 (可选的) 一个URL. 让我们来解释下这三个参数详细内容：</p>
+</blockquote>
+<ul>
+<li><p><code>状态对象</code> — 状态对象state是一个JavaScript对象，通过pushState () 创建新的历史记录条目。无论什么时候用户导航到新的状态，popstate事件就会被触发，且该事件的state属性包含该历史记录条目状态对象的副本。</p>
+<p>状态对象可以是能被序列化的任何东西。原因在于Firefox将状态对象保存在用户的磁盘上，以便在用户重启浏览器时使用，我们规定了状态对象在序列化表示后有640k的大小限制。如果你给 pushState() 方法传了一个序列化后大于640k的状态对象，该方法会抛出异常。如果你需要更大的空间，建议使用 sessionStorage 以及 localStorage.</p>
+</li>
+<li><p><code>标题</code> — Firefox 目前忽略这个参数，但未来可能会用到。在此处传一个空字符串应该可以安全的防范未来这个方法的更改。或者，你可以为跳转的state传递一个短标题。</p>
+</li>
+<li><p><code>URL</code> — 该参数定义了新的历史URL记录。注意，调用 pushState() 后浏览器并不会立即加载这个URL，但可能会在稍后某些情况下加载这个URL，比如在用户重新打开浏览器时。新URL不必须为绝对路径。如果新URL是相对路径，那么它将被作为相对于当前URL处理。新URL必须与当前URL同源，否则 pushState() 会抛出一个异常。该参数是可选的，缺省为当前URL。</p>
+</li>
+</ul>
+<p>改变历史记录条目</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@clickA</span><br><span class="line">history.pushState(&#123; <span class="attr">page</span>: <span class="number">1</span> &#125;, <span class="string">""</span>, <span class="string">"a.html"</span>);</span><br><span class="line"></span><br><span class="line">@clickB</span><br><span class="line">history.pushState(&#123; <span class="attr">page</span>: <span class="number">2</span> &#125;, <span class="string">""</span>, <span class="string">"b.html"</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/108.gif" alt="108"></p>
+<p>当历史记录条目更改时，将触发<code>popstate</code>事件。如果被激活的历史记录条目是通过对<code>history.pushState（）</code>的调用创建的，或者受到对<code>history.replaceState（）</code>的调用的影响，<code>popstate</code>事件的<code>state</code>属性包含历史条目的状态对象的副本。</p>
+<p>需要注意的是调用<code>history.pushState()</code>或<code>history.replaceState()</code>不会触发<code>popstate</code>事件。只有在做出<code>浏览器动作</code>时，才会触发该事件，如用户点击浏览器的回退按钮（或者在<code>Javascript</code>代码中调用<code>history.back()</code>）</p>
+<p>触发浏览器回退按钮</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, ()=&gt;&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(location.href)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/109.gif" alt="109"></p>
+<h2 id="vue-router-实现原理"><a href="#vue-router-实现原理" class="headerlink" title="vue-router 实现原理"></a>vue-router 实现原理</h2><blockquote>
+<p>总体来说就是使用了<code>history</code>的方法来控制浏览器的路由，结合<code>vue</code>实现数据与视图更新。上面我们已经讲了<code>history</code>的使用原理，接下来结合<code>vue-router</code>具体来看一下</p>
+</blockquote>
+<h3 id="安装-vue-router"><a href="#安装-vue-router" class="headerlink" title="安装 vue-router"></a>安装 vue-router</h3><p><code>install.js</code></p>
+<ul>
+<li>通过 <code>Object.defineProperty</code> 将 <code>_router</code> 挂载在 <code>Vue</code> 原型的 <code>$router</code> 属性的 <code>get</code> 函数上。这样可以通过 <code>this.$router</code> 来调用 <code>_router</code>。使用<code>get</code>的好处是，保证了安全性，只能读不能修改 <code>$router</code>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 项目内可以通过 this.$router 来获取到</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(Vue.prototype, <span class="string">'$router'</span>, &#123;</span><br><span class="line">  <span class="keyword">get</span> () &#123; <span class="keyword">return</span> <span class="keyword">this</span>._routerRoot._router &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>然后，在 <code>Vue.mixin</code> 中注入 <code>beforeCreate</code> 钩子函数，每个组件都会调用 <code>registerInstance</code> ， 通过 <code>Vue.util.defineReactive</code> 将 <code>_route</code> 进行监听，这样每次进入到新的页面就会设置当前的路由。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在 `beforeCreate` 中调用了 `registerInstance`</span></span><br><span class="line"><span class="comment">// 其实就是调用了 router-view 组件中的 registerRouteInstance 方法</span></span><br><span class="line"><span class="keyword">const</span> registerInstance = <span class="function">(<span class="params">vm, callVal</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> i = vm.$options._parentVnode</span><br><span class="line">  <span class="keyword">if</span> (isDef(i) &amp;&amp; isDef(i = i.data) &amp;&amp; isDef(i = i.registerRouteInstance)) &#123;</span><br><span class="line">    i(vm, callVal)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Vue.mixin(&#123;</span><br><span class="line">  beforeCreate () &#123;</span><br><span class="line">    <span class="keyword">if</span> (isDef(<span class="keyword">this</span>.$options.router)) &#123;</span><br><span class="line">      <span class="keyword">this</span>._routerRoot = <span class="keyword">this</span></span><br><span class="line">      <span class="keyword">this</span>._router = <span class="keyword">this</span>.$options.router</span><br><span class="line">      <span class="comment">// 初始化设置监听 popstate</span></span><br><span class="line">      <span class="comment">// 并将 this._route = route</span></span><br><span class="line">      <span class="keyword">this</span>._router.init(<span class="keyword">this</span>)</span><br><span class="line">      <span class="comment">// 亮点在这！！！</span></span><br><span class="line">      <span class="comment">// 将 _route 添加监听，当修改 history.current 时就可以触发更新了</span></span><br><span class="line">      Vue.util.defineReactive(<span class="keyword">this</span>, <span class="string">'_route'</span>, <span class="keyword">this</span>._router.history.current)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>._routerRoot = (<span class="keyword">this</span>.$parent &amp;&amp; <span class="keyword">this</span>.$parent._routerRoot) || <span class="keyword">this</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 注册实例，调用 router-view 中的方法，修改 route 值，从而更新视图</span></span><br><span class="line">    registerInstance(<span class="keyword">this</span>, <span class="keyword">this</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  destroyed () &#123;</span><br><span class="line">    <span class="comment">// 销毁注册实例，因为注册的实例是 undefined</span></span><br><span class="line">    registerInstance(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="router-view-实现视图更新"><a href="#router-view-实现视图更新" class="headerlink" title="router-view 实现视图更新"></a><code>router-view</code> 实现视图更新</h3><p><code>router-view</code> 是一个函数式组件，页面中 <code>beforeCreate</code> 钩子调用<code>registerRouteInstance</code> 来修改当前 <code>route</code> 实例，由于 <code>_route</code> 已经被监听了，所以当 <code>matched.instances[name]</code> 发生变化的时候，会重新触发 <code>render</code> 更新视图。</p>
+<font color="#ffe090"><strong>components/view.js</strong></font>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data.registerRouteInstance = <span class="function">(<span class="params">vm, val</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> current = matched.instances[name]</span><br><span class="line">  <span class="comment">// 注册路由实例，如果与当前路由与原来路由相等则不变，如果不相等则更新实例</span></span><br><span class="line">  <span class="keyword">if</span> (</span><br><span class="line">    (val &amp;&amp; current !== vm) ||</span><br><span class="line">    (!val &amp;&amp; current === vm)</span><br><span class="line">  ) &#123;</span><br><span class="line">    <span class="comment">// 修改当前路由实例</span></span><br><span class="line">    matched.instances[name] = val</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建-route-对象"><a href="#创建-route-对象" class="headerlink" title="创建 route 对象"></a>创建 route 对象</h3><p>创建路由 <code>createRoute</code>，通过解析<code>location</code>等操作，返回一个<code>route</code>对象</p>
+<font color="#ffe090"><strong>src/util/route.js</strong></font>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">createRoute</span> (<span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">  record: ?RouteRecord,</span></span></span><br><span class="line"><span class="function"><span class="params">  location: Location,</span></span></span><br><span class="line"><span class="function"><span class="params">  redirectedFrom?: ?Location,</span></span></span><br><span class="line"><span class="function"><span class="params">  router?: VueRouter</span></span></span><br><span class="line"><span class="function"><span class="params"></span>): <span class="title">Route</span> </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> stringifyQuery = router &amp;&amp; router.options.stringifyQuery</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> query: any = location.query || &#123;&#125;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    query = clone(query)</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> route: Route = &#123;</span><br><span class="line">    name: location.name || (record &amp;&amp; record.name),</span><br><span class="line">    meta: (record &amp;&amp; record.meta) || &#123;&#125;,</span><br><span class="line">    path: location.path || <span class="string">'/'</span>,</span><br><span class="line">    hash: location.hash || <span class="string">''</span>,</span><br><span class="line">    query,</span><br><span class="line">    params: location.params || &#123;&#125;,</span><br><span class="line">    fullPath: getFullPath(location, stringifyQuery),</span><br><span class="line">    matched: record ? formatMatch(record) : []</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (redirectedFrom) &#123;</span><br><span class="line">    route.redirectedFrom = getFullPath(redirectedFrom, stringifyQuery)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Object</span>.freeze(route)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里主要讲了，<code>vue-router</code> 的 <code>install</code>，<code>router-view</code> 实现视图渲染，<code>create-route</code> 创建路由实例，还有如何实现与vue的结合，实现数据绑定等。由于篇幅的问题，再多细节的东西就没有讲了，有兴趣大家可以翻翻源码。</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/110.jpg" alt="110"></p>
+<h2 id="route-跟-router-的区别"><a href="#route-跟-router-的区别" class="headerlink" title="route 跟 router 的区别"></a>route 跟 router 的区别</h2><p>讲完原理给大家捋一下 route 跟 router 的区别，通过源码很容易看出他们的不同</p>
+<p><code>$router</code> 是VueRouter的一个对象，通过Vue.use(VueRouter)和VueRouter构造函数得到一个router的实例对象，这个对象中是一个全局的对象，他包含了所有的路由包含了许多关键的对象和属性。</p>
+<p>$route 就是一个路由的对象，我们通过 createRoute 创建出来的 route 对象，里面包括</p>
+<ul>
+<li><code>path</code>字符串，等于当前路由对象的路径，会被解析为绝对路径，如 “/home/news” 。</li>
+<li><code>params</code>对象，包含路由中的动态片段和全匹配片段的键值对</li>
+<li><code>query</code>对象，包含路由中查询参数的键值对。例如，对于 /home/news/detail/01?favorite=yes ，会得到$route.query.favorite == ‘yes’ 。</li>
+<li><code>router</code>路由规则所属的路由器（以及其所属的组件）。</li>
+<li><code>matched</code>数组，包含当前匹配的路径中所包含的所有片段所对应的配置参数对象。</li>
+<li><code>name</code>当前路径的名字，如果没有使用具名路径，则名字为空。</li>
+</ul>
+<h2 id="通过路由元信息，设置登录"><a href="#通过路由元信息，设置登录" class="headerlink" title="通过路由元信息，设置登录"></a>通过路由元信息，设置登录</h2><p>原理是在路由的 <code>meta</code> 里设置 <code>auth</code> 属性，进入路由之前判断 <code>meta.auth</code> 是否为 <code>true</code> ，如果为 <code>true</code> 再判断，是否已经登陆，没有登陆的话调 <code>login</code> 方法去登陆，登陆成功后 回调 <code>code === 0</code> 继续进入页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> beforeEnter = <span class="function">(<span class="params">to, <span class="keyword">from</span>, next</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (to.meta &amp;&amp; to.meta.auth) &#123;</span><br><span class="line">    <span class="comment">// 未登陆走登陆逻辑</span></span><br><span class="line">    <span class="keyword">if</span> (!isLogin()) &#123;</span><br><span class="line">      <span class="keyword">const</span> nextPage = <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.code === <span class="number">0</span>) &#123;</span><br><span class="line">          next(<span class="literal">true</span>)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          next(<span class="literal">false</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;;</span><br><span class="line">      <span class="keyword">let</span> targetUrl = location.href.split(<span class="string">'#'</span>)[<span class="number">0</span>] + <span class="string">'#'</span> + to.fullPath</span><br><span class="line">      <span class="comment">// 这里是你的登陆逻辑</span></span><br><span class="line">      login(&#123;</span><br><span class="line">        <span class="comment">// 回调后进入页面</span></span><br><span class="line">        callback: nextPage,</span><br><span class="line">        <span class="comment">// 目标页面，登陆成功后进入目标页面</span></span><br><span class="line">        targetUrl: targetUrl</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      next(<span class="literal">true</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 Foo 组件设置登陆</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/Foo'</span>,</span><br><span class="line">    name: <span class="string">'Foo'</span>,</span><br><span class="line">    meta: &#123;</span><br><span class="line">      auth: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    component: <span class="function"><span class="params">()</span> =&gt;</span> (<span class="string">'Foo.vue'</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/Bar'</span>,</span><br><span class="line">    name: <span class="string">'Bar'</span>,</span><br><span class="line">    component: <span class="function"><span class="params">()</span> =&gt;</span> (<span class="string">'Bar.vue'</span>),</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h2 id="设置滚动行为"><a href="#设置滚动行为" class="headerlink" title="设置滚动行为"></a>设置滚动行为</h2><p>设置滚动行为，并添加路由，如果有 <code>savedPosition</code> 说明是第二次进入并已经触发过滚动，所以会滚动到之前打开的位置，如果是第一次进入没有<code>savedPosition</code>则滚动到最顶层。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  scrollBehavior(to, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">      <span class="keyword">return</span> savedPosition</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; <span class="attr">x</span>: <span class="number">0</span>, <span class="attr">y</span>: <span class="number">0</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="vue-路由-按需-keep-alive"><a href="#vue-路由-按需-keep-alive" class="headerlink" title="vue 路由 按需 keep-alive"></a>vue 路由 按需 keep-alive</h2><p><code>&lt;keep-alive&gt;</code> 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。和 <code>&lt;transition&gt;</code> 相似，<code>&lt;keep-alive&gt;</code> 是一个抽象组件：它自身不会渲染一个 <code>DOM</code> 元素，也不会出现在父组件链中。</p>
+<p>当组件在 <code>&lt;keep-alive&gt;</code> 内被切换，它的 <code>activated</code> 和 <code>deactivated</code> 这两个生命周期钩子函数将会被对应执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 需要缓存的视图组件 --&gt;</span><br><span class="line">&lt;router-view v-<span class="keyword">if</span>=<span class="string">"$route.meta.keepAlive"</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/router-view&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 不需要缓存的视图组件 --&gt;</span><br><span class="line">&lt;router-view v-<span class="keyword">if</span>=<span class="string">"!$route.meta.keepAlive"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/router-view&gt;</span></span><br></pre></td></tr></table></figure>
+<p>路由配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routers = [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/list'</span>,</span><br><span class="line">    name: <span class="string">'list'</span>,</span><br><span class="line">    component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">'./views/keep-alive/list.vue'</span>),</span><br><span class="line">    meta: &#123;</span><br><span class="line">      keepAlive: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>因为在我们项目里面经常会有列表跳详情，然后又详情返回列表的情况，所以我们可以根据项目需求来判断是否需要被缓存，如果被缓存了就会出现下面的情况需要注意</p>
+<h2 id="watch-监听路由变化"><a href="#watch-监听路由变化" class="headerlink" title="watch 监听路由变化"></a>watch 监听路由变化</h2><p>有时我们需要通过给页面传参来判断页面展示什么内容，比如详情页 <code>#/detail?infoId=123456</code>，我们需要根据 <code>infoId</code> 来展示不同的内容</p>
+<p>我们一般习惯会这样写</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> created() &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">this</span>.pullData()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> pullData () &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.$http.get(<span class="string">'http://test.m.com/detail'</span>, &#123; infoId &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们通过列表再次进入详情页时，虽然<code>infoId</code>已经变了<code>infoId=234567</code>，但是页面并没有改变，是因为该页面被<code>keep-alive</code>了，<code>created</code>不会再次触发，<code>created</code>只在创建的时候执行一次。</p>
+<p>为了解决这个问题，我们就需要对 <code>$route</code> 进行监听，只要 <code>route</code> 发生变化我们就更新页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">  <span class="string">'$route'</span>: &#123;</span><br><span class="line">    <span class="comment">// 页面初始化时立即触发一次</span></span><br><span class="line">    immediate: <span class="literal">true</span>,</span><br><span class="line">    handler(to, <span class="keyword">from</span>) &#123;</span><br><span class="line">      <span class="comment">// 只有进入当前页面的时候，拉取数据</span></span><br><span class="line">      <span class="keyword">if</span>(to.path === <span class="string">'/detail'</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.pullData();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样还会带来下面的问题，就是物理键返回的时候也会刷新页面，下面是对物理键返回的处理</p>
+<h2 id="如何检测物理键返回"><a href="#如何检测物理键返回" class="headerlink" title="如何检测物理键返回"></a>如何检测物理键返回</h2><p>为什么要检测物理返回键？比如你有这样列表页，点击进去是一个详情页，然后返回的时候列表刷新了，找不到原来的位置，这种时候对用户的体验非常不好。我们看一下例子。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/111.gif" alt="111"></p>
+<blockquote>
+<p>那么我们如何去优化它？</p>
+</blockquote>
+<p>思路就是在用户返回到列表页的时候不刷新数据，只有在用户主动进入列表的时候才会刷新数据，我们看一下效果</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/112.gif" alt="112"></p>
+<p>下面是实现的代码，原理就是监听 <code>popstate</code>，当浏览器返回的时候会触发 <code>popstate</code>，这时我们标记 <code>isBack</code> 为 <code>ture</code>。在 <code>setTimeout 0</code> 之后判断 <code>isBack</code>（是否为浏览器返回），如果不是浏览器返回的再刷新数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">// 用来判断是否是通过返回键返回的</span></span><br><span class="line">      isBack: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created () &#123;</span><br><span class="line">    <span class="comment">// 如果是物理键返回的就设置 isBack = true</span></span><br><span class="line">    <span class="keyword">this</span>.$_onBack(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.isBack = <span class="literal">true</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="string">'$route'</span>: &#123;</span><br><span class="line">      immediate: <span class="literal">true</span>,</span><br><span class="line">      handler(to, <span class="keyword">from</span>) &#123;</span><br><span class="line">        <span class="comment">// 每次进入路由重置 isBack = false</span></span><br><span class="line">        <span class="keyword">this</span>.isBack = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(to.path === <span class="string">'/list'</span>) &#123;</span><br><span class="line">          <span class="comment">// 等待路由的 popstate 监听结束</span></span><br><span class="line">          setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            !<span class="keyword">this</span>.isBack &amp;&amp; <span class="keyword">this</span>.pullData();</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>_onBack 实现</code>，就是监听了 <code>popstate</code> ，因为<code>vue-router</code>是操作了<code>history</code>的状态，而浏览器返回的时候就会触发 popstate ，利用这个特性来判断是否为浏览器返回键返回</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">_onBack(cb) &#123;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(</span><br><span class="line">    <span class="string">"popstate"</span>,</span><br><span class="line">    (e) =&gt; &#123;</span><br><span class="line">      <span class="keyword">if</span>(<span class="keyword">typeof</span> cb  === <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(e.state) &#123;</span><br><span class="line">          cb(<span class="literal">true</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="literal">false</span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="如何做出翻书效果"><a href="#如何做出翻书效果" class="headerlink" title="如何做出翻书效果"></a>如何做出翻书效果</h2><p>利用的是 <code>vue</code> 的 <code>transition</code> 组件，结合 <code>vue-router</code>，在路由上做一些过渡效果。先看图说话</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"wrap"</span>&gt;</span><br><span class="line">    &lt;transition :name=<span class="string">"transitionName"</span>&gt;</span><br><span class="line">      &lt;router-view <span class="class"><span class="keyword">class</span></span>=<span class="string">"child-view"</span>&gt;&lt;<span class="regexp">/router-view&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>transition&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      transitionName: <span class="string">'turning-down'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    <span class="string">'$route'</span> (to, <span class="keyword">from</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(to.path &gt; <span class="keyword">from</span>.path) &#123;</span><br><span class="line">        <span class="comment">// 进入下一页</span></span><br><span class="line">        <span class="keyword">this</span>.transitionName = <span class="string">'turning-up'</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="comment">// 返回上一页</span></span><br><span class="line">        <span class="keyword">this</span>.transitionName = <span class="string">'turning-down'</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style scoped lang="scss"&gt;</span></span><br><span class="line"><span class="regexp">.child-view &#123;</span></span><br><span class="line"><span class="regexp">  position: absolute;</span></span><br><span class="line"><span class="regexp">  left: 0;</span></span><br><span class="line"><span class="regexp">  top: 0;</span></span><br><span class="line"><span class="regexp">  width: 100%;</span></span><br><span class="line"><span class="regexp">  height: 100%;</span></span><br><span class="line"><span class="regexp">  transition: all 4s ease;</span></span><br><span class="line"><span class="regexp">  transform-origin: 0% center;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">.turning-down-enter&#123;</span></span><br><span class="line"><span class="regexp">  opacity: 1;</span></span><br><span class="line"><span class="regexp">  transform-origin: left;</span></span><br><span class="line"><span class="regexp">  transform-style: preserve-3d;</span></span><br><span class="line"><span class="regexp">  -webkit-transform: perspective(1000px) rotateY(-180deg);</span></span><br><span class="line"><span class="regexp">  transform: perspective(1000px) rotateY(-180deg);</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">.turning-up-leave-active &#123;</span></span><br><span class="line"><span class="regexp">  transform-style: preserve-3d;</span></span><br><span class="line"><span class="regexp">  transform: perspective(1000px) rotateY(-180deg);</span></span><br><span class="line"><span class="regexp">  z-index: 100;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
+<p>配置路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> [</span><br><span class="line">  &#123;</span><br><span class="line">    path: <span class="string">'/Home'</span>,</span><br><span class="line">    name: <span class="string">'home'</span>,</span><br><span class="line">    component: <span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">      <span class="keyword">import</span>(<span class="string">'../views/vue/vue-router/Home.vue'</span>),</span><br><span class="line">    children: [</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'/Home/First'</span>,</span><br><span class="line">        name: <span class="string">'Home-First'</span>,</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">          <span class="keyword">import</span>(<span class="string">'../views/vue/vue-router/First.vue'</span>),</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        path: <span class="string">'/Home/Second'</span>,</span><br><span class="line">        name: <span class="string">'Home-Second'</span>,</span><br><span class="line">        component: <span class="function"><span class="params">()</span> =&gt;</span></span><br><span class="line">          <span class="keyword">import</span>(<span class="string">'../views/vue/vue-router/Second.vue'</span>),</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>通过监听 <code>Home</code> 页面的路由变化，来改变 <code>transitionName</code>，路由切换时切换 <code>transition</code> 组件的 <code>enter/leave-active</code> 样式，因此可以在路由切换时做到翻书效果。</p>
+<h2 id="如何做一个优雅的路由分区"><a href="#如何做一个优雅的路由分区" class="headerlink" title="如何做一个优雅的路由分区"></a>如何做一个优雅的路由分区</h2><p>随着项目的增大，项目中的页面可能达到好几十个，甚至更多，那么如何将这些页面进行管理呢？我们的做法就是，将路由按照功能进行区分。</p>
+<p>比如我们分了5个区间，每个区间有个数不同的路由</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-- a.js</span><br><span class="line">-- b.js</span><br><span class="line">-- c.js</span><br><span class="line">-- d.js</span><br><span class="line">-- e.js</span><br></pre></td></tr></table></figure>
+<p>我们需要将这五个路由分别引进来，并进行结合</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> a <span class="keyword">from</span> <span class="string">'routers/a'</span></span><br><span class="line"><span class="keyword">import</span> b <span class="keyword">from</span> <span class="string">'routers/b'</span></span><br><span class="line"><span class="keyword">import</span> c <span class="keyword">from</span> <span class="string">'routers/c'</span></span><br><span class="line"><span class="keyword">import</span> d <span class="keyword">from</span> <span class="string">'routers/d'</span></span><br><span class="line"><span class="keyword">import</span> e <span class="keyword">from</span> <span class="string">'routers/e'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routers = [].concat(a, b, c, d, e)</span><br></pre></td></tr></table></figure>
+<p>以后我们每次建一个新的分区，都要手动加上相应的逻辑，这样看起来很不方便，那么我们有没有好的解决办法呢？</p>
+<p>下面是我做的路由分区，利用 <code>webpack</code> 的 <code>require.context</code> 方法，将所有需要的路径导出来，<code>require.context</code> 有三个参数</p>
+<ul>
+<li><code>第一个参数</code>，匹配的路径目录，（从当前目录开始算起）</li>
+<li><code>第二个参数</code>，是否需要深层遍历</li>
+<li><code>第三个参数</code>，正则匹配，匹配出你需要的路径</li>
+</ul>
+<font color="red"><strong>需要注意的点,require 不能直接导出变量名</strong></font>
+
+<p>例如，下面的例子会报错</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="string">'./route/a.js'</span></span><br><span class="line"><span class="comment">// 会报错，a 不是一个模块</span></span><br><span class="line"><span class="built_in">require</span>(a)</span><br></pre></td></tr></table></figure>
+<p>所以 <code>require</code> 中只能加字符串或者使用字符串拼接</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="string">'a.js'</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./route/'</span> + a)</span><br></pre></td></tr></table></figure>
+<p>这样webpack会把 <code>./route/</code> 下所有文件打包成模块，你才可以使用 <code>require</code> 去引用</p>
+<p>下面是一个完整的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> routes = []</span><br><span class="line"><span class="keyword">const</span> context = <span class="built_in">require</span>.context(<span class="string">'./router'</span>, <span class="literal">true</span>, /\/[\w]+\.(js|ts)$/)</span><br><span class="line"></span><br><span class="line">context.keys().forEach(<span class="function"><span class="params">_</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> path = _.replace(<span class="string">'./'</span>, <span class="string">''</span>)</span><br><span class="line">  routes.push(...require(<span class="string">'./router/'</span> +  path).routes)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">'/'</span>, <span class="attr">redirect</span>: <span class="string">'/Home'</span> &#125;,</span><br><span class="line">    ...routes</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p align="center"><font face="Brush Script Std" size="8">End</font></p>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Footer -->
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>关于</h2>
+                <p>
+                    张健龙的官方网站 <a target="_blank" rel="noopener" href="http://zhanglong292383147.gitee.io/">Acton</a>. 欢迎来到Acton技术博客,如有问题及技术交流可以直接联系我. 我的邮箱是 292383147@qq.com
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <!-- recent_posts -->
+        <h2>最新文章</h2>
+        <ul>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20async%20await%20%E6%9B%B4%E4%BC%98%E9%9B%85%E7%9A%84%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/">JavaScript async/await 更优</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <!-- <h2>分类</h2> -->
+    <h2>分类</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/tags/Bootstrap/">Bootstrap</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/flex/">flex</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/nodeJS/">nodeJS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/tags/php/">php</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Acton.2019 All right reserved | Design & Acton
+                    <div class="powered-by">
+                        <i class="fa fa-user-md"></i><span id="busuanzi_container_site_pv">
+                            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<!-- <script src="//code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<!-- <script src="//cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script> -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!-- Tween Max -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script> -->
+<!-- 可用的(暂无)(引入本地文件) -->
+<script src="/js/Tween/minified/TweenMax.min.js" type="text/javascript"></script>
+<!-- Gallery -->
+<!-- 过期了 -->
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script> -->
+<!-- 可用的 -->
+<script src="https://lib.baomitu.com/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+<!-- Custom JavaScript -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+<script type="text/javascript" src="/js/clicklove.js"></script>
+
+<div id="totop" style="position:fixed;bottom:150px;right:1.9em;cursor: pointer;">
+  <div title="返回顶部">
+    <!-- <img src="/img/scrollup.png"/> -->
+    <i class="fa fa-chevron-up topic"></i>
+  </div>
+</div>
+<script src="/js/totop.js"></script>
+
+
+</body>
+
+</html>
+<!-- <script>
+    window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+    var c = document.getElementById("canvas-club");
+    var w = c.width = window.innerWidth;
+    var h = c.height = window.innerHeight;
+    var ctx = c.getContext("2d");
+
+    var maxParticles = 30;
+    var particles = [];
+    var hue = 183;
+
+    mouse = {};
+    mouse.size = 200;
+    mouse.x = mouse.tx = w / 2;
+    mouse.y = mouse.ty = h / 2;
+
+    var clearColor = "rgba(0, 0, 0, .2)";
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min
+    }
+
+    function distance(x1, y1, x2, y2) {
+        return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+    }
+
+    function P() {}
+
+    P.prototype = {
+        init: function () {
+            this.size = this.origSize = random(10, 100);
+            this.x = random(0, w);
+            this.y = Math.random() > .5 ? -this.size : h + this.size;
+            this.speed = this.origSpeed = random(.01, .03);
+        },
+
+        draw: function () {
+            this.distanceFromMouse = distance(this.x, this.y, mouse.x, mouse.y);
+            ctx.strokeStyle = "hsla(" + hue + ", 90%, 50%, 1)";
+            ctx.shadowColor = "hsla(" + hue + ", 100%, 55%, 1)";
+            ctx.shadowBlur = this.size * 2;
+            ctx.beginPath();
+            ctx.moveTo(this.x + this.size * Math.cos(0), this.y + this.size * Math.sin(0));
+
+            for (var i = 0; i < 6; i++) {
+                ctx.lineTo(this.x + this.size * Math.cos(i * 2 * Math.PI / 6), this.y + this.size * Math.sin(i *
+                    2 * Math.PI / 6));
+            }
+
+            ctx.closePath();
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            this.update();
+        },
+
+        update: function () {
+            if (this.distanceFromMouse > 20) {
+                this.x += (mouse.x - this.x) * this.speed;
+                this.y += (mouse.y - this.y) * this.speed;
+                if (this.distanceFromMouse < mouse.size) {
+                    this.size += (0 - this.size) * this.speed;
+                    this.speed += .01;
+                } else {
+                    this.size += (this.origSize - this.size) * this.speed;
+                }
+            } else {
+                this.init();
+            }
+        }
+    }
+
+    mouse.move = function () {
+        if (!distance(mouse.x, mouse.y, mouse.tx, mouse.ty) <= .1) {
+            mouse.x += (mouse.tx - mouse.x) * .2;
+            mouse.y += (mouse.ty - mouse.y) * .2;
+        }
+    };
+
+    mouse.touches = function (e) {
+        var touches = e.touches;
+        if (touches) {
+            mouse.tx = touches[0].clientX;
+            mouse.ty = touches[0].clientY;
+        } else {
+            mouse.tx = e.clientX;
+            mouse.ty = e.clientY;
+        }
+        e.preventDefault();
+    };
+
+    mouse.mouseleave = function (e) {
+        mouse.tx = w / 2;
+        mouse.ty = h / 2;
+    };
+
+    window.addEventListener("mousemove", mouse.touches);
+    window.addEventListener("touchstart", mouse.touches);
+    window.addEventListener("touchmove", mouse.touches)
+
+    c.addEventListener("mouseleave", mouse.mouseleave)
+
+    window.addEventListener("resize", function () {
+        w = c.width = window.innerWidth;
+        h = c.height = window.innerHeight;
+    });
+
+    for (var i = 1; i <= maxParticles; i++) {
+        setTimeout(function () {
+            var p = new P();
+            p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->
