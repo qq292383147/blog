@@ -44,7 +44,7 @@
     
     <!-- Title -->
     
-    <title>HTML - 张健龙个人技术博客</title>
+    <title>html - 张健龙个人技术博客</title>
 
     <!-- Bootstrap Core CSS -->
     <!-- 过期 -->
@@ -145,7 +145,7 @@
     <div class="logo">
         <a href="/blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">HTML</h1>
+            <h1 id="main-title" class="title">html</h1>
             <h3 class="s_title">做人以清心为根本，做事以尽心为准则</h3>
         
     </div>
@@ -154,24 +154,13 @@
         <section class="main archive-container">
             
                 <div class="archive-post">
-    <a href="/blog/2021/08/18/HTML/iframe%E6%9C%89%E4%BB%80%E4%B9%88%E5%A5%BD%E5%A4%84%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E5%9D%8F%E5%A4%84/">
+    <a href="/blog/2019/03/22/HTML/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
         <span class="archive-date">
-            Aug 2021
+            Mar 2019
         </span>
 
-        <!-- iframe有什么好处，有什么坏处 -->
-        iframe有什么好处，有什么坏处
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/blog/2020/06/27/HTML/%E6%B5%8F%E8%A7%88%E5%99%A8%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-
-        <!-- 浏览器跨域访问解决方案 -->
-        浏览器跨域访问解决方案
+        <!-- HTML学习笔记 -->
+        HTML学习笔记
     </a>
 </div>
             
@@ -201,6 +190,10 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -210,10 +203,6 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -436,6 +425,29 @@
         setTimeout(function () {
             var p = new P();
             p.init();
+            particles.push(p);
+        }, i * 50);
+    }
+
+
+
+    function anim() {
+        ctx.fillStyle = clearColor;
+        ctx.shadowColor = clearColor;
+        ctx.shadowBlur = 0;
+        ctx.globalCompositeOperation = "source-over";
+        ctx.fillRect(0, 0, w, h);
+        mouse.move();
+
+        for (var i in particles) {
+            var p = particles[i];
+            p.draw();
+        }
+        hue++;
+        requestAnimationFrame(anim);
+    }
+    anim();
+</script> -->.init();
             particles.push(p);
         }, i * 50);
     }

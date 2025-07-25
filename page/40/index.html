@@ -157,6 +157,64 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/blog/2019/03/23/JavaScript/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/">
+                JS高级笔记
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-23</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="实例对象和构造函数之间的关系："><a href="#实例对象和构造函数之间的关系：" class="headerlink" title="实例对象和构造函数之间的关系："></a>实例对象和构造函数之间的关系：</h3><p>1.实例对象时通过构造个数来创建的—创建的过程叫实例化<br>2.如何判断对象是不是这个数据类型？<br>    1、通过构造器的方式 实例对象，构造器=构造函数名字<br>    2、对象instanceof 构造函数名字<br>尽可能的使用第二种方式来识别</p>
+<p>实例对象中有两个属性（这两个属性是通过构造函数来获取的），<code>__proto__</code>这个属性<br>构造函数中并没有sex和age的两个属性</p>
+<p>实例对象中有个属性，<code>__proto__</code>也是对象，叫原型，不是标准的属性，浏览器使用的</p>
+<p>构造函数中有一个属性，<code>prototype</code>也是对象，叫原型，是标准属性，程序员使用</p>
+<h3 id="构造函数可以实例化对象"><a href="#构造函数可以实例化对象" class="headerlink" title="构造函数可以实例化对象"></a>构造函数可以实例化对象</h3><p>构造函数中有一个属性叫<code>prototype</code>，是构造函数的原型对象<br>构造函数的原型对象（prototype）中有一个constructor构造器，这个构造器向的就是直接所在的原型对象所在的构造函数<br>实例对象的原型对象(<code>__proto__</code>)指向的是该构造函数的原型对象<br>构造函数的原型对象(prototype)中的方法是可以被实例对象直接访问的</p>
+<p>什么样子的数据是需要写在原型中？<br>需要共享的数据就可以写原型中<br>原型的作用之一：数据共享</p>
+<p>属性需要共享，方法也需要共享<br>不需要共享的数据写在构造函数中，需要共享的数据写在原型中</p>
+<p>实例对象使用的属性或者方法，先在实例中查找，找到了则直接使用，找不到则去实例对象的<code>__proto__</code>指向的原型对象<code>prototype</code>中找，找到了则使用，找不到则报错</p>
+<p>面向过程和面向对象都是编程的思想，方式不一样<br>面向过程：凡事都是亲力亲为，所有的代码都要自己写，每一步都要很清楚，注重的是结果<br>面向对象的特性：封装，继承，多态<br>封装：就是代码的封装，把一些特征和行为封装在对象中<br>面向对象的编程思想：根据需求，抽象出相关的对象，总结对象的特征和行为，把特征变成属性 行为变成方法，然后定义js构造函数，实例化对象，通过对象调用属性和方法，完成相应的需求</p>
+<p>对象：具体特指的某个事物，有特征（属性）和行为（方法）</p>
+<h3 id="如何创建对象？"><a href="#如何创建对象？" class="headerlink" title="如何创建对象？"></a>如何创建对象？</h3><p>通过调用<code>new</code> Object()，还有<code>&#123;&#125;</code>,自定义构造函数</p>
+<h3 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h3><blockquote>
+<p>1、调用系统Object()  创建出来的对象都是Object类型的，不能很明确的指出 这个对象是属于什么类型<br>2、字面量的方式{}    只能创建一个对象（一次只能创建一个）<br>3、工厂模式创建对象  推论   自定义构造函数的方式</p>
+<blockquote>
+<p>自定义构造函数(优化后的工厂模式)<br>自定义构造函数创建对象：4件事<br>1、在内存中申请一块空闲的空间，存储创建的对象<br>2、<code>this</code>就是当前实例化的对象<br>3、设置对象中的属性和方法（为对象添加属性和方法，为属性和方法赋值）<br>4、把创建后的对象返回<br>都是需要通过new的方式</p>
+</blockquote>
+</blockquote>
+<h3 id="调用构造函数会经历以下4个步骤："><a href="#调用构造函数会经历以下4个步骤：" class="headerlink" title="调用构造函数会经历以下4个步骤："></a>调用构造函数会经历以下4个步骤：</h3><blockquote>
+<p>1、创建一个新对象<br>2、将构造函数的作用域赋给新对象（因此this就指向了这个新对象）<br>3、执行构造函数中的代码<br>4、返回新对象</p>
+</blockquote>
+<h3 id="构造函数和实例对象的关系"><a href="#构造函数和实例对象的关系" class="headerlink" title="构造函数和实例对象的关系"></a>构造函数和实例对象的关系</h3><p>使用构造函数的好处不仅仅在与代码的简洁性，更重要的是我们可识别对象的具体类型了、<br>在每一个实例对象中同时有一个constructor属性，该属性指向创建该实例的构造函数</p>
+<p>对象的constructor属性最初是用来标识对象类型的，<br>但是，如果要检测对象的类型，还是使用instarceof操作符更可靠一些</p>
+<h3 id="startsWith-方法的运用"><a href="#startsWith-方法的运用" class="headerlink" title="startsWith() 方法的运用"></a>startsWith() 方法的运用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;Hello world, welcome to the RO&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> n = str.<span class="title function_">startsWith</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>startsWith()  方法用于检测字符串是否以指定的子字符串开始</p>
+<p>如果是以指定的子字符串开头返回 <code>true，否则</code> <code>false</code></p>
+<p>startsWith() 方法对大小写敏感</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string.<span class="title function_">startsWith</span>(searchvalue, start)</span><br></pre></td></tr></table></figure>
+<p>[end]</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/blog/2019/03/23/JavaScript/WEB%20API%E5%AD%A6%E4%B9%A0%E6%91%98%E8%A6%81/">
                 Web Api学习笔记
             </a>
@@ -610,55 +668,6 @@ window.onload=function(){
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/blog/2019/03/22/JavaScript/js%E6%97%B6%E9%97%B4%E6%88%B3/">
-                js时间戳
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-03-22</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/JavaScript/">JavaScript</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p><strong>一：时间转时间戳：javascript获得时间戳的方法有四种，都是通过实例化时间对象 new Date() 来进一步获取当前的时间戳</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp1 = <span class="title class_">Date</span>.<span class="title function_">parse</span>(<span class="keyword">new</span> <span class="title class_">Date</span>()); <span class="comment">// 结果：1477808630000 不推荐这种办法，毫秒级别的数值被转化为000</span></span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(timestamp1);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp2 = (<span class="keyword">new</span> <span class="title class_">Date</span>()).<span class="title function_">valueOf</span>(); <span class="comment">// 结果：1477808630404 通过`valueOf()`函数返回指定对象的原始值获得准确的时间戳值</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(timestamp2);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp3 = <span class="keyword">new</span> <span class="title class_">Date</span>().<span class="title function_">getTime</span>(); <span class="comment">// 结果：1477808630404 ，通过原型方法直接获得当前时间的毫秒值，准确</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(timestamp3);</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timetamp4 = <span class="title class_">Number</span>(<span class="keyword">new</span> <span class="title class_">Date</span>()) ; <span class="comment">//结果：1477808630404 ,将时间转化为一个number类型的数值，即时间戳*</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(timetamp4);</span><br></pre></td></tr></table></figure>
-<p>打印结果 如下：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/19.jpg" alt="img"></p>
-<p><strong>二，时间戳转时间</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timestamp4 = <span class="keyword">new</span> <span class="title class_">Date</span>(<span class="number">1472048779952</span>);<span class="comment">//直接用 new Date(时间戳) 格式转化获得当前时间</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(timestamp4);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(tmestamp4.<span class="title function_">toLocaleDateString</span>().<span class="title function_">replace</span>(<span class="regexp">/\//g</span>, <span class="string">&quot;-&quot;</span>) + <span class="string">&quot; &quot;</span> + timestamp4.<span class="title function_">toTimeString</span>().<span class="title function_">substr</span>(<span class="number">0</span>, <span class="number">8</span>)); <span class="comment">//再利用拼接正则等手段转化为yyyy-MM-dd hh:mm:ss 格式</span></span><br></pre></td></tr></table></figure>
-<p><em>效果如下：</em></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/20.jpg" alt="img"></p>
-<p><em>不过这样转换在某些浏览器上会出现不理想的效果，因为toLocaleDateString()方法是因浏览器而异的，比如 IE为2016年8月24日 22:26:19 格式 搜狗为Wednesday, August 24, 2016 22:39:42</em></p>
-<p><em>可以通过分别获取时间的年月日进行拼接，比如：</em></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getdate</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> now = <span class="keyword">new</span> <span class="title class_">Date</span>(),</span><br><span class="line">                y = now.<span class="title function_">getFullYear</span>(),</span><br><span class="line">                m = now.<span class="title function_">getMonth</span>() + <span class="number">1</span>,</span><br><span class="line">                d = now.<span class="title function_">getDate</span>();</span><br><span class="line">            <span class="keyword">return</span> y + <span class="string">&quot;-&quot;</span> + (m &lt; <span class="number">10</span> ? <span class="string">&quot;0&quot;</span> + m : m) + <span class="string">&quot;-&quot;</span> + (d &lt; <span class="number">10</span> ? <span class="string">&quot;0&quot;</span> + d : d) + <span class="string">&quot; &quot;</span> + now.<span class="title function_">toTimeString</span>().<span class="title function_">substr</span>(<span class="number">0</span>, <span class="number">8</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>##时间戳转时间</p>
-<p><img src="C:\Users\Administrator\Desktop\33.jpg" alt=""></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 时间戳转时间</span></span><br><span class="line">    <span class="title function_">getLocalTime</span>(<span class="params">number</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>(number);</span><br><span class="line">      <span class="keyword">var</span> Y = date.<span class="title function_">getFullYear</span>() + <span class="string">&quot;/&quot;</span>;</span><br><span class="line">      <span class="keyword">var</span> M = (date.<span class="title function_">getMonth</span>() + <span class="number">1</span> &lt; <span class="number">10</span> ? <span class="string">&quot;0&quot;</span> + (date.<span class="title function_">getMonth</span>() + <span class="number">1</span>) : date.<span class="title function_">getMonth</span>() + <span class="number">1</span>) + <span class="string">&quot;/&quot;</span>;</span><br><span class="line">      <span class="keyword">var</span> D = date.<span class="title function_">getDate</span>() &lt; <span class="number">10</span> ? <span class="string">&quot;0&quot;</span> + date.<span class="title function_">getDate</span>() : date.<span class="title function_">getDate</span>();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> hour = date.<span class="title function_">getHours</span>();</span><br><span class="line">      <span class="keyword">var</span> minute = date.<span class="title function_">getMinutes</span>();</span><br><span class="line">      <span class="comment">// var second = date.getSeconds();</span></span><br><span class="line">      <span class="keyword">return</span> (Y + M + D +<span class="string">&quot;   &quot;</span>+ hour + <span class="string">&quot;:&quot;</span>+minute);</span><br><span class="line">      <span class="comment">// return (Y + M + D +&quot;   &quot;+ hour + &quot;:&quot;+minute +&quot;:&quot;+ second);</span></span><br></pre></td></tr></table></figure>
-<h2 id="获取时间戳的方法"><a href="#获取时间戳的方法" class="headerlink" title="获取时间戳的方法"></a>获取时间戳的方法</h2><p><img src="C:\Users\Administrator\Desktop\34.jpg" alt="获取时间戳的方法"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取时间戳</span></span><br><span class="line">    <span class="title function_">selectTimeStamp</span>(<span class="params">time</span>)&#123;</span><br><span class="line">      <span class="comment">// 获取某个时间格式的时间戳</span></span><br><span class="line">      <span class="keyword">var</span> timestamp2 = <span class="title class_">Date</span>.<span class="title function_">parse</span>(<span class="keyword">new</span> <span class="title class_">Date</span>(time));  </span><br><span class="line">      <span class="comment">// 如果想获取的时间戳为13位那就不用除1000</span></span><br><span class="line">      timestamp2 = timestamp2 / <span class="number">1000</span>;</span><br><span class="line">      <span class="keyword">return</span> timestamp2</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -703,6 +712,10 @@ window.onload=function(){
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -712,10 +725,6 @@ window.onload=function(){
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>

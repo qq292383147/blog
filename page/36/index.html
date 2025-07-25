@@ -157,6 +157,286 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/blog/2019/04/02/GIT/Git%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/">
+                Git总结笔记
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/git/">git</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <font color="#EE1289">工作流    工作区—-&gt;暂存区—–&gt;版本库</font><br><br><br><font color="#76EE00">初始化          git init—-&gt; git add —–&gt; git commit</font><br><br><br><font color="#00F5FF">远程仓库        git remote add—-&gt;git pull——&gt;git push —-&gt; git clone</font><br><br><br><font color="#EEEE00">分支管理   git branch —-&gt;git checkout—-&gt;git merge</font><br><br><br><font color="#FFBBFF">标签管理             git tag—-&gt;git push</font>
+
+
+
+<h2 id="Git-安装"><a href="#Git-安装" class="headerlink" title="Git 安装"></a>Git 安装</h2><p>下载window git</p>
+<ul>
+<li>Msysgit   <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
+</ul>
+<h3 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h3><ul>
+<li><p><code>git config --global user.name</code> “你的用户名”</p>
+</li>
+<li><p><code>git config --global user.email</code> “你的邮箱”</p>
+</li>
+<li><p><code>git config user.name</code> 查看用户名</p>
+</li>
+<li><p><code>git config user.password</code> 查看密码</p>
+</li>
+<li><p><code>git config user.email</code> 查看邮箱</p>
+</li>
+<li><p><code>git config --list</code> 查看配置信息</p>
+</li>
+<li><p><code>git config --global user.name &quot;xx(新的用户名)&quot;</code> 修改用户名</p>
+</li>
+<li><p><code>git config --global user.password &quot;xxx(新的密码)&quot;</code> 修改密码</p>
+</li>
+<li><p><code>git config --global user.email &quot;xxx@xxx.com(新的邮箱)&quot;</code> 修改邮箱</p>
+</li>
+</ul>
+<h3 id="可以使用两种操作方式："><a href="#可以使用两种操作方式：" class="headerlink" title="可以使用两种操作方式："></a>可以使用两种操作方式：</h3><ul>
+<li><p>1、图形化界面（初级）sourcetree</p>
+</li>
+<li><p>2、命令（高级）</p>
+</li>
+</ul>
+<h3 id="一：说明开发过程中的工作流程"><a href="#一：说明开发过程中的工作流程" class="headerlink" title="一：说明开发过程中的工作流程"></a>一：说明开发过程中的工作流程</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/1.png" alt="img"></p>
+<h3 id="二：什么是shell"><a href="#二：什么是shell" class="headerlink" title="二：什么是shell"></a>二：什么是shell</h3><p>在计算机科学中，Shell俗称壳，用来区别于Kernel（核），是指“提供使用者使用界面”的软件（命令解析器）。它类似于<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/365.htm">DOS</a>下的<code>command</code>和后来的<code>cmd.exe</code>。它接收用户命令，然后调用相应的应用程序</p>
+<h2 id="三：认识bash这个shell"><a href="#三：认识bash这个shell" class="headerlink" title="三：认识bash这个shell"></a>三：认识bash这个shell</h2><p>bash常见命令</p>
+<p><code>pwd</code> (Print Working Directory) 查看当前目录</p>
+<p><code>cd</code> (Change Directory) 切换目录，如 cd /etc</p>
+<p><code>ls</code> (List) 查看当前目录下内容，如 ls -al</p>
+<p><code>mkdir</code> (Make Directory) 创建目录，如 mkdir blog</p>
+<p><code>touch</code> 创建文件，如 touch index.html</p>
+<p><code>cat</code> 查看文件全部内容，如 cat index.html</p>
+<p><code>rm</code> (remove) 删除文件，如 rm index.html、rm -rf  blog</p>
+<p><code>rmdir</code> (Remove Directory) 删除文件夹，只能删除空文件夹，不常用</p>
+<p><code>mv</code> (move) 移动文件或重命名，如 mv index.html ./demo/index.html</p>
+<p><code>cp</code> (copy) 复制文件，cp index.html ./demo/index.html</p>
+<p><code>head</code> 查看文件前几行，如 head -5 index.html </p>
+<p><code>history</code> 查看操作历史</p>
+<p><code>who am i</code> 查看当前用户</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/2.png" alt="img"> </p>
+<h2 id="四：vi编辑器"><a href="#四：vi编辑器" class="headerlink" title="四：vi编辑器"></a>四：vi编辑器</h2><p>vi编辑器提供了3种模式，分别是命令模式、插入模式、底行模式，每种模式下用户所能进行的操作是不一样的<br><img src="https://qq292383147.github.io/pictureLibrary/picture/git/3.png" alt="img"></p>
+<p>使用vi编辑器</p>
+<p>​    a) 打开/创建文件， vi 文件路径</p>
+<p>​    b) 底行模式 :w保存，:w filenme另存为</p>
+<p>​    c) 底行模式 :q退出</p>
+<p>​    d) 底行模式 :wq保存并退出</p>
+<p>​    e) 底行模式 :e! 撤销更改，返回到上一次保存的状态</p>
+<p>​    f) 底行模式 :q! 不保存强制退出</p>
+<hr>
+<p>​    h) 命令模式 ZZ（大写）保存并退出</p>
+<p>​    i) 命令模式 u辙销操作，可多次使用</p>
+<p>​    j) 命令模式 dd删除当前行</p>
+<p>​    k) 命令模式 yy复制当前行</p>
+<p>​    l) 命令模式 p 粘贴内容</p>
+<p>​    o) 命令模式 i进入编辑模式，当前光标处插入</p>
+<p>​    p) 命令模式 a进入编辑模式，当前光标后插入</p>
+<p>​    q) 命令模式 A进入编辑模式，光标移动到行尾</p>
+<p>​    r) 命令模式 o进入编辑模式，当前行下面插入新行</p>
+<p>​    s) 命令模式 O进入编辑模式，当前行上面插入新行</p>
+<p>当我们处在编辑模式的情况下，和我们在Windows编辑器的使用相似</p>
+<h2 id="五：版本控制"><a href="#五：版本控制" class="headerlink" title="五：版本控制"></a>五：版本控制</h2><ul>
+<li><p>1.本地版本控制系统</p>
+</li>
+<li><p>2.集中式版本控制系统-SVN</p>
+</li>
+<li><p>3.分布式版本控制系统-git</p>
+</li>
+</ul>
+<h2 id="六：git"><a href="#六：git" class="headerlink" title="六：git"></a>六：git</h2><ul>
+<li><ol>
+<li>git工作原理</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>Git仓库目录是Git用来保存项目的元数据和对象数据库的地方。 这是Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
+</blockquote>
+<p>工作目录是对项目的某个版本独立提取出来的内容。 这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
+<p>暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”（Index），不过一般说法还是叫暂存区域。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/4.png" alt="img"> </p>
+<p>基本的Git工作流程如下：</p>
+<p>​    1、在工作目录中修改文件。</p>
+<p>​    2、暂存文件，将文件的快照放入暂存区域。</p>
+<p>​    3、提交更新，找到暂存区域的文件，将快照永久存储到Git仓库目录<br><br></p>
+<ul>
+<li><ol start="2">
+<li>git安装</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 配置用户名： git config –global user.name “用户名”<br><br><br>b) 配置邮箱： git config –global user.email “邮箱地址”<br><br><br>c) 查看配置信息： git config –list</p>
+</blockquote>
+<ul>
+<li><ol start="3">
+<li>初始化仓库：</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 命令：git init<br><br><br>b) 作用：使用Git管理项目的初始化操作，会创建一个名为.git的隐藏目录<br><br><br>c) 一般是在项目的根目录执行这个命令</p>
+</blockquote>
+<ul>
+<li><ol start="4">
+<li>跟踪文件</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 将文件由 工作区 添加到 暂存区（Index），暂存文件<br><br><br>b) 命令：git add 文件路径<br><br><br>c) git add –all 或者 git add -A（简写） 添加所有文件</p>
+</blockquote>
+<ul>
+<li><ol start="5">
+<li>提交更新</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 作用：将文件由 暂存区 添加到 仓库（HEAD）<br><br><br>b) git commit -m “提交说明”</p>
+</blockquote>
+<ul>
+<li><ol start="6">
+<li>查看文件状态</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 命令：git status</p>
+</blockquote>
+<ul>
+<li><ol start="7">
+<li>Git工作流程</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 在工作目录中修改某些文件。<br><br><br>b) 对修改后的文件进行快照，然后保存到暂存区域。<br><br><br>c) 提交更新，将保存在暂存区域的文件快照永久转储到.git目录中。</p>
+</blockquote>
+<ul>
+<li><ol start="8">
+<li>查看提交日志</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 命令：git log 查看详细的提交信息</p>
+</blockquote>
+<ul>
+<li><ol start="9">
+<li>版本回退</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 作用：恢复到已经提交的某一个版本中<br><br><br>b) 命令：git reset –hard [版本号]<br><br><br>c) 其他方式：git reset –hard head~1</p>
+</blockquote>
+<ul>
+<li><ol start="10">
+<li>git分支</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) 查看分支：git branch，当前分支会标有一个*<br><br><br>b) 创建分支：git branch [分支名称]<br><br><br>c) 切换分支：git checkout [分支名称]<br><br><br>d) 合并分支：git merge [分支名称]，即：将其他分支合并到当前分支<br><br><br>e) 删除分支：git branch -d [分支名称]</p>
+</blockquote>
+<ul>
+<li><ol start="11">
+<li>创建本地共享仓库:仓库就是一个文件夹</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>a) <img src="https://qq292383147.github.io/pictureLibrary/picture/git/5.png" alt="img"><br><br><br>b) 通过—bare创建裸仓库<br><br><br>c) 共享的仓库必须是一个裸仓库<br><br><br>d) 通过从共享仓库中复制内容<br><br><br>e) 虽然复制的时候是从裸仓库中复制的，但是复制到的内容是真正的工作目录下的内容<img src="https://qq292383147.github.io/pictureLibrary/picture/git/6.png" alt="img"><br><br><br>f) 修改内容，并且将修改的内容更新<img src="https://qq292383147.github.io/pictureLibrary/picture/git/7.png" alt="img"><br><br><br>g) 进入到另外的目录，将之前提交的内容拉取<img src="https://qq292383147.github.io/pictureLibrary/picture/git/8.png" alt="img"></p>
+</blockquote>
+<ul>
+<li><ol start="12">
+<li>git远程仓库</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-在本地创建仓库"><a href="#1-在本地创建仓库" class="headerlink" title="1 在本地创建仓库"></a>1 在本地创建仓库</h3><p><code>git init</code></p>
+<p><code>git config</code></p>
+<p>2 新建 README.md 文件，并输入任意内容</p>
+<p>3 将 README.md 提交到本地</p>
+<p><code>git add</code></p>
+<p><code>git commit</code></p>
+<p>4 在github中新建仓库，并拿到仓库地址</p>
+<p>5 使用命令 <code>git push [仓库地址] master</code> 提交内容到github的默认分支</p>
+<p>6 刷新github仓库页面，在线修改 README.md 文件，并提交</p>
+<p>7 使用命令 <code>git pull [仓库地址] master</code> 获取仓库中的最新内容</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/9.png" alt="img"> </p>
+<h3 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h3><ul>
+<li><p>命令：git diff：将工作区与暂存区或者仓库对比</p>
+</li>
+<li><p>说明：如果暂存区没有文件，就会将工作区代码与上一次提交对比</p>
+<ul>
+<li><p>1 工作区 与 暂存区对比</p>
+</li>
+<li><p>2 工作区 与 仓库  对比</p>
+</li>
+</ul>
+</li>
+<li><p>命令：git diff –cached：将当前暂存区与仓库对比</p>
+</li>
+<li><p>命令：git diff [版本号1] [版本号2] [对比的文件路径]</p>
+<ul>
+<li>对比仓库区两次提交的差异</li>
+</ul>
+</li>
+</ul>
+<h3 id="撤销和删除"><a href="#撤销和删除" class="headerlink" title="撤销和删除"></a>撤销和删除</h3><ul>
+<li><p>git reset HEAD 文件名 从暂存区撤销（结果：变为 未 add 状态）</p>
+</li>
+<li><p>git checkout – test.txt 撤销文件变化</p>
+<ul>
+<li><p>一种是 readme.txt 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
+</li>
+<li><p>一种是 readme.txt 已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
+</li>
+</ul>
+</li>
+<li><p><code>rm [文件名称]</code>：删除文件（物理删除）</p>
+</li>
+<li><p><code>git rm [文件名称]</code>：从仓库中删除文件</p>
+</li>
+<li><p><code>git rm --cached [文件名称]</code>：从暂存区删除文件</p>
+</li>
+</ul>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/10.png" alt="img"> </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/11.png" alt="img"> </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/12.png" alt="img"> </p>
+<p>设置默认地址的几种方法：</p>
+<p><code>git push</code> [远程终端的地址] 默认节点</p>
+<p>改：</p>
+<p>1、<code>git push</code> 变量名 -u</p>
+<p>2、<code>git push</code> 地址名 -u </p>
+<p>下次就可以直接<code>git push</code></p>
+<p>清除安装的缓存</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/13.png" alt="img"> </p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/blog/2019/04/01/NodeJS/ES6%E5%92%8CnodeJS%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                 ES6和nodeJS学习笔记
             </a>
@@ -451,101 +731,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/blog/2019/03/31/Css/CSS%E5%AE%9E%E7%8E%B0%E5%90%84%E7%A7%8D%E5%9B%BE%E5%BD%A2/">
-                CSS实现各种图形
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/css/">css</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <center><font color="#B452CD" size="9">三角形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/13.jpg" alt="img"></p>
-<h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.triangle</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">50px</span> solid blue;</span><br><span class="line">  <span class="comment">/* 通过改变边框颜色，可以改变三角形的方向 */</span></span><br><span class="line">  <span class="attribute">border-color</span>: blue transparent transparent transparent;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;triangle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">梯形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/14.jpg" alt="img"></p>
-<h3 id="css-1"><a href="#css-1" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.trapzoid</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">50px</span> solid burlywood;</span><br><span class="line">      <span class="attribute">border-color</span>: transparent transparent burlywood transparent;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-1"><a href="#html-1" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;trapzoid&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">椭圆</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/15.jpg" alt="img"></p>
-<h3 id="css-2"><a href="#css-2" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.ellipse</span> &#123;</span><br><span class="line">   <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">   <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">   <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">   <span class="attribute">background</span>: <span class="built_in">rgb</span>(<span class="number">122</span>, <span class="number">234</span>, <span class="number">200</span>);</span><br><span class="line">   <span class="attribute">margin</span>: <span class="number">30px</span> auto;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-2"><a href="#html-2" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ellipse&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">球体</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/16.jpg" alt="img"></p>
-<h3 id="css-3"><a href="#css-3" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sphere</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">radial-gradient</span>(circle at <span class="number">70px</span> <span class="number">70px</span>, <span class="number">#5cabff</span>, <span class="number">#000</span>);</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-3"><a href="#html-3" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;sphere&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">半圆</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/17.jpg" alt="img"></p>
-<h3 id="css-4"><a href="#css-4" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.semicircle</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">10%</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="comment">/* 前四个值表示圆角的水平半径，后四个值表示圆角的垂直半径 */</span></span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">200%</span> <span class="number">0</span> <span class="number">0</span> <span class="number">200%</span> / <span class="number">100%</span> <span class="number">0</span> <span class="number">0</span> <span class="number">100%</span>;</span><br><span class="line">      <span class="comment">/* 效果和用%一样 */</span></span><br><span class="line">      <span class="comment">/* border-radius: 50px 0 0 50px; */</span></span><br><span class="line">      <span class="attribute">background</span>: <span class="built_in">rgb</span>(<span class="number">170</span>, <span class="number">11</span>, <span class="number">149</span>);</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-4"><a href="#html-4" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;semicircle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">菱形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/18.jpg" alt="img"></p>
-<h3 id="css-5"><a href="#css-5" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.rhombus</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(<span class="number">45deg</span>) <span class="built_in">skew</span>(<span class="number">30deg</span>, <span class="number">30deg</span>);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">rgb</span>(<span class="number">23</span>, <span class="number">55</span>, <span class="number">52</span>);</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-5"><a href="#html-5" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;rhombus&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">扇形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/19.jpg" alt="img"></p>
-<h3 id="css-6"><a href="#css-6" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.sector</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">142px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">142px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, transparent <span class="number">50%</span>, <span class="number">#655</span> <span class="number">0</span>);</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sector</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">142px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: inherit;</span><br><span class="line">    <span class="attribute">transform-origin</span>: left;</span><br><span class="line">    <span class="comment">/* 调整角度，改变扇形大小 */</span></span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">100deg</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-6"><a href="#html-6" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;sector&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">五边形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/20.jpg" alt="img"></p>
-<h3 id="css-7"><a href="#css-7" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pentagonal</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">border-width</span>: <span class="number">105px</span> <span class="number">50px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-style</span>: solid;</span><br><span class="line">  <span class="attribute">border-color</span>: blueviolet transparent;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">50px</span> auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pentagonal</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">185px</span>;</span><br><span class="line">    <span class="attribute">left</span>: -<span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">0px</span> <span class="number">100px</span> <span class="number">80px</span>;</span><br><span class="line">    <span class="attribute">border-style</span>: solid;</span><br><span class="line">    <span class="attribute">border-color</span>: transparent transparent blueviolet;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-7"><a href="#html-7" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pentagonal&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">六边形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/21.jpg" alt="img"></p>
-<h3 id="css-8"><a href="#css-8" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.hexagon</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#000</span>;</span><br><span class="line">      <span class="attribute">position</span>: relative;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.hexagon</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">top</span>: -<span class="number">60px</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">border-left</span>: <span class="number">100px</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-right</span>: <span class="number">100px</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-bottom</span>: <span class="number">60px</span> solid <span class="number">#000</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.hexagon</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">bottom</span>: -<span class="number">60px</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">border-left</span>: <span class="number">100px</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-right</span>: <span class="number">100px</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-top</span>: <span class="number">60px</span> solid <span class="number">#000</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-8"><a href="#html-8" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hexagon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="red" size="9">心形</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/22.jpg" alt="img"></p>
-<h3 id="css-9"><a href="#css-9" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.heart</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateZ</span>(<span class="number">45deg</span>);</span><br><span class="line">      <span class="attribute">background</span>: red;</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 心形是由两个圆形和一个矩形进行组合得到的。 */</span></span><br><span class="line">    <span class="selector-class">.heart</span><span class="selector-pseudo">::after</span>,</span><br><span class="line">    <span class="selector-class">.heart</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">display</span>: block;</span><br><span class="line">      <span class="attribute">background</span>: red;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">top</span>: -<span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.heart</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">left</span>: -<span class="number">50%</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-9"><a href="#html-9" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;heart&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">长方体</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/23.jpg" alt="img"></p>
-<h3 id="css-10"><a href="#css-10" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 长方体是由六个矩形进行组合得到的 */</span></span><br><span class="line">    <span class="selector-class">.cuboid</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(-<span class="number">30deg</span>) <span class="built_in">rotateY</span>(-<span class="number">80deg</span>);</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">0.8</span>;</span><br><span class="line">      <span class="attribute">transition</span>: .<span class="number">4s</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-class">.front</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(<span class="number">0deg</span>) <span class="built_in">translateZ</span>(<span class="number">100px</span>);</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#a3daff</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-class">.back</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(-<span class="number">100px</span>) <span class="built_in">rotateY</span>(<span class="number">180deg</span>);</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#a3daff</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-class">.left</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(-<span class="number">90deg</span>) <span class="built_in">translateZ</span>(<span class="number">100px</span>);</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#1ec0ff</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-class">.right</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateY</span>(<span class="number">90deg</span>) <span class="built_in">translateZ</span>(<span class="number">100px</span>);</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#1ec0ff</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-class">.top</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(<span class="number">90deg</span>) <span class="built_in">translateZ</span>(<span class="number">100px</span>);</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#0080ff</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.cuboid</span> <span class="selector-class">.bottom</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(-<span class="number">90deg</span>) <span class="built_in">translateZ</span>(<span class="number">100px</span>);</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#0080ff</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-10"><a href="#html-10" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;cuboid&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 前面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;front&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 后面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;back&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 左面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 右面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;top&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 下面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bottom&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">圆柱体</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/24.jpg" alt="img"></p>
-<h3 id="css-11"><a href="#css-11" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.cylinder</span> &#123;</span><br><span class="line">      <span class="attribute">position</span>: relative;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(<span class="number">70deg</span>);</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.ellipse</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">background</span>: deepskyblue;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.rectangle</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">opacity</span>: <span class="number">0.6</span>;</span><br><span class="line">      <span class="attribute">background</span>: deepskyblue;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">493px</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="number">50px</span>;</span><br><span class="line">      <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-11"><a href="#html-11" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;cylinder&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;ellipse&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;rectangle&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<center><font color="#B452CD" size="9">棱锥</font></center>
-
-<p><img src="F:\图片库blog/picture_images/picture/css/25.jpg" alt="img"></p>
-<h3 id="css-12"><a href="#css-12" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pyramid</span> &#123;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">transform-style</span>: preserve-<span class="number">3</span>d;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">rotateX</span>(-<span class="number">30deg</span>) <span class="built_in">rotateY</span>(-<span class="number">80deg</span>);</span><br><span class="line">      <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pyramid</span> <span class="selector-tag">div</span> &#123;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">top</span>: -<span class="number">100px</span>;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">0px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">100px</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-bottom-width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">opacity</span>: .<span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pyramid</span> <span class="selector-class">.front</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(<span class="number">100px</span>) <span class="built_in">rotateX</span>(<span class="number">30deg</span>);</span><br><span class="line">      <span class="attribute">border-bottom-color</span>: <span class="number">#a3daff</span>;</span><br><span class="line">      <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pyramid</span> <span class="selector-class">.back</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateZ</span>(-<span class="number">100px</span>) <span class="built_in">rotateX</span>(-<span class="number">30deg</span>);</span><br><span class="line">      <span class="attribute">border-bottom-color</span>: <span class="number">#1ec0ff</span>;</span><br><span class="line">      <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pyramid</span> <span class="selector-class">.left</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">100px</span>) <span class="built_in">rotateZ</span>(<span class="number">30deg</span>) <span class="built_in">rotateY</span>(<span class="number">90deg</span>);</span><br><span class="line">      <span class="attribute">border-bottom-color</span>: <span class="number">#0080ff</span>;</span><br><span class="line">      <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pyramid</span> <span class="selector-class">.right</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">100px</span>) <span class="built_in">rotateZ</span>(-<span class="number">30deg</span>) <span class="built_in">rotateY</span>(<span class="number">90deg</span>);</span><br><span class="line">      <span class="attribute">border-bottom-color</span>: <span class="number">#03a6ff</span>;</span><br><span class="line">      <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.pyramid</span> <span class="selector-class">.bottom</span> &#123;</span><br><span class="line">      <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">100px</span>) <span class="built_in">rotateZ</span>(<span class="number">90deg</span>) <span class="built_in">rotateY</span>(<span class="number">90deg</span>);</span><br><span class="line">      <span class="attribute">background</span>: cyan;</span><br><span class="line">      <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">      <span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">      <span class="attribute">transform-origin</span>: <span class="number">50%</span> <span class="number">100%</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="html-12"><a href="#html-12" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 棱锥是由四个三角形和一个矩形进行组合得到的 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pyramid&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 前面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;front&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 后面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;back&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 左面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;left&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 右面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;right&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 下面 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;bottom&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -590,6 +775,10 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -599,10 +788,6 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>

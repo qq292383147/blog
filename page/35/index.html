@@ -157,6 +157,133 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/blog/2019/04/19/JavaScript/%E7%AE%97%E6%B3%95%E6%8E%92%E5%BA%8F/">
+                算法排序
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-19</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="十大经典排序算法（动图演示）"><a href="#十大经典排序算法（动图演示）" class="headerlink" title="十大经典排序算法（动图演示）"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/onepixel/p/7674659.html">十大经典排序算法（动图演示）</a></h1><h3 id="0、算法概述"><a href="#0、算法概述" class="headerlink" title="0、算法概述"></a>0、算法概述</h3><h4 id="0-1-算法分类"><a href="#0-1-算法分类" class="headerlink" title="0.1 算法分类"></a>0.1 算法分类</h4><p>十种常见排序算法可以分为两大类：</p>
+<p><strong>非线性时间比较类排序</strong>：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破O(nlogn)，因此称为非线性时间比较类排序。</p>
+<p><strong>线性时间非比较类排序</strong>：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。 </p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/21.png" alt="img"> </p>
+<h4 id="0-2-算法复杂度"><a href="#0-2-算法复杂度" class="headerlink" title="0.2 算法复杂度"></a>0.2 算法复杂度</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/22.png" alt="img"> </p>
+<p><strong>0.3 相关概念</strong></p>
+<p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。</p>
+<p><strong>不稳定</strong>：如果a原本在b的前面，而a=b，排序之后 a 可能会出现在 b 的后面。</p>
+<p><strong>时间复杂度</strong>：对排序数据的总的操作次数。反映当n变化时，操作次数呈现什么规律。</p>
+<p><strong>空间复杂度：</strong>是指算法在计算机内执行时所需存储空间的度量，它也是数据规模n的函数。 </p>
+<h3 id="1、冒泡排序（Bubble-Sort）"><a href="#1、冒泡排序（Bubble-Sort）" class="headerlink" title="1、冒泡排序（Bubble Sort）"></a>1、冒泡排序（Bubble Sort）</h3><p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。 </p>
+<h4 id="1-1-算法描述"><a href="#1-1-算法描述" class="headerlink" title="1.1 算法描述"></a>1.1 算法描述</h4><p>· 比较相邻的元素。如果第一个比第二个大，就交换它们两个；</p>
+<p>· 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</p>
+<p>· 针对所有的元素重复以上的步骤，除了最后一个；</p>
+<p>· 重复步骤1~3，直到排序完成。</p>
+<p><strong>1.2 动图演示</strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/23.gif" alt="img"> </p>
+<p> (动画请看文件)</p>
+<h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">bubbleSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; len - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &gt; arr[j+<span class="number">1</span>]) &#123;       <span class="comment">// 相邻元素两两对比</span></span><br><span class="line">                <span class="keyword">var</span> temp = arr[j+<span class="number">1</span>];       <span class="comment">// 元素交换</span></span><br><span class="line">                arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、选择排序（Selection-Sort）"><a href="#2、选择排序（Selection-Sort）" class="headerlink" title="2、选择排序（Selection Sort）"></a>2、选择排序（Selection Sort）</h3><p>选择排序(Selection-sort)是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 </p>
+<h4 id="2-1-算法描述"><a href="#2-1-算法描述" class="headerlink" title="2.1 算法描述"></a>2.1 算法描述</h4><p>n个记录的直接选择排序可经过n-1趟直接选择排序得到有序结果。具体算法描述如下：</p>
+<p>· 初始状态：无序区为R[1..n]，有序区为空；</p>
+<p>· 第i趟排序(i=1,2,3…n-1)开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中-选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R[i+1..n)分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区；</p>
+<p>· n-1趟结束，数组有序化了。</p>
+<h4 id="2-2-动图演示"><a href="#2-2-动图演示" class="headerlink" title="2.2 动图演示"></a>2.2 动图演示</h4><p> <img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/24.gif" alt="img"></p>
+<p>(动画请看文件)</p>
+<h4 id="2-3-代码实现"><a href="#2-3-代码实现" class="headerlink" title="2.3 代码实现"></a>2.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">selectionSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">var</span> minIndex, temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        minIndex = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[minIndex]) &#123;    <span class="comment">// 寻找最小的数</span></span><br><span class="line">                minIndex = j;                <span class="comment">// 将最小数的索引保存</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp = arr[i];</span><br><span class="line">        arr[i] = arr[minIndex];</span><br><span class="line">        arr[minIndex] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+<h4 id="2-4-算法分析"><a href="#2-4-算法分析" class="headerlink" title="2.4 算法分析"></a>2.4 算法分析</h4><p>表现最稳定的排序算法之一，因为无论什么数据进去都是O(n2)的时间复杂度，所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。理论上讲，选择排序可能也是平时排序一般人想到的最多的排序方法了吧。</p>
+<h3 id="3、插入排序（Insertion-Sort）"><a href="#3、插入排序（Insertion-Sort）" class="headerlink" title="3、插入排序（Insertion Sort）"></a>3、插入排序（Insertion Sort）</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<h4 id="3-1-算法描述"><a href="#3-1-算法描述" class="headerlink" title="3.1 算法描述"></a>3.1 算法描述</h4><p>一般来说，插入排序都采用in-place在数组上实现。具体算法描述如下：</p>
+<p>· 从第一个元素开始，该元素可以认为已经被排序；</p>
+<p>· 取出下一个元素，在已经排序的元素序列中从后向前扫描；</p>
+<p>· 如果该元素（已排序）大于新元素，将该元素移到下一位置；</p>
+<p>· 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；</p>
+<p>· 将新元素插入到该位置后；</p>
+<p>· 重复步骤2~5。</p>
+<h4 id="3-2-动图演示"><a href="#3-2-动图演示" class="headerlink" title="3.2 动图演示"></a>3.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/25.gif" alt="img"> </p>
+<p> (动画请看文件)</p>
+<h4 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">insertionSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">var</span> preIndex, current;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">        preIndex = i - <span class="number">1</span>;</span><br><span class="line">        current = arr[i];</span><br><span class="line">        <span class="keyword">while</span> (preIndex &gt;= <span class="number">0</span> &amp;&amp; arr[preIndex] &gt; current) &#123;</span><br><span class="line">            arr[preIndex + <span class="number">1</span>] = arr[preIndex];</span><br><span class="line">            preIndex--;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[preIndex + <span class="number">1</span>] = current;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-4-算法分析"><a href="#3-4-算法分析" class="headerlink" title="3.4 算法分析"></a>3.4 算法分析</h4><p>插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<h3 id="4、希尔排序（Shell-Sort）"><a href="#4、希尔排序（Shell-Sort）" class="headerlink" title="4、希尔排序（Shell Sort）"></a>4、希尔排序（Shell Sort）</h3><p>1959年Shell发明，第一个突破O(n2)的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
+<h4 id="4-1-算法描述"><a href="#4-1-算法描述" class="headerlink" title="4.1 算法描述"></a>4.1 算法描述</h4><p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，具体算法描述：</p>
+<p>· 选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1；</p>
+<p>· 按增量序列个数k，对序列进行k 趟排序；</p>
+<p>· 每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子表进行直接插入排序。仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</p>
+<h4 id="4-2-动图演示"><a href="#4-2-动图演示" class="headerlink" title="4.2 动图演示"></a>4.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/26.gif" alt="img"> </p>
+<h4 id="4-3-代码实现（代码有点问题）"><a href="#4-3-代码实现（代码有点问题）" class="headerlink" title="4.3 代码实现（代码有点问题）"></a>4.3 代码实现（代码有点问题）</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">shellSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.<span class="property">length</span>,</span><br><span class="line">        temp,</span><br><span class="line">        gap = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (gap &lt; len / <span class="number">3</span>) &#123;         <span class="comment">// 动态定义间隔序列</span></span><br><span class="line">        gap = gap * <span class="number">3</span> + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (gap; gap &gt; <span class="number">0</span>; gap = <span class="title class_">Math</span>.<span class="title function_">floor</span>(gap / <span class="number">3</span>)) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = gap; i &lt; len; i++) &#123;</span><br><span class="line">            temp = arr[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = i-gap; j &gt; <span class="number">0</span> &amp;&amp; arr[j]&gt; temp; j-=gap) &#123;</span><br><span class="line">                arr[j + gap] = arr[j];</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j + gap] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br></pre></td></tr></table></figure>
+<h4 id="4-4-算法分析"><a href="#4-4-算法分析" class="headerlink" title="4.4 算法分析"></a>4.4 算法分析</h4><p>希尔排序的核心在于间隔序列的设定。既可以提前设定好间隔序列，也可以动态的定义间隔序列。动态定义间隔序列的算法是《算法（第4版）》的合著者Robert Sedgewick提出的。　</p>
+<h3 id="5、归并排序（Merge-Sort）"><a href="#5、归并排序（Merge-Sort）" class="headerlink" title="5、归并排序（Merge Sort）"></a>5、归并排序（Merge Sort）</h3><p>归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为2-路归并。 </p>
+<h4 id="5-1-算法描述"><a href="#5-1-算法描述" class="headerlink" title="5.1 算法描述"></a>5.1 算法描述</h4><p>· 把长度为n的输入序列分成两个长度为n/2的子序列；</p>
+<p>· 对这两个子序列分别采用归并排序；</p>
+<p>· 将两个排序好的子序列合并成一个最终的排序序列。</p>
+<h4 id="5-2-动图演示"><a href="#5-2-动图演示" class="headerlink" title="5.2 动图演示"></a>5.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/27.gif" alt="img"> </p>
+<p> (动画请看文件)</p>
+<h4 id="5-3-代码实现"><a href="#5-3-代码实现" class="headerlink" title="5.3 代码实现"></a>5.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">mergeSort</span>(<span class="params">arr</span>) &#123; <span class="comment">// 采用自上而下的递归方法</span></span><br><span class="line">    <span class="keyword">var</span> len = arr.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> middle = <span class="title class_">Math</span>.<span class="title function_">floor</span>(len / <span class="number">2</span>),</span><br><span class="line">        left = arr.<span class="title function_">slice</span>(<span class="number">0</span>, middle),</span><br><span class="line">        right = arr.<span class="title function_">slice</span>(middle);</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">merge</span>(<span class="title function_">mergeSort</span>(left), <span class="title function_">mergeSort</span>(right));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">merge</span>(<span class="params">left, right</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> result = [];</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (left.<span class="property">length</span>&gt;<span class="number">0</span> &amp;&amp; right.<span class="property">length</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (left[<span class="number">0</span>] &lt;= right[<span class="number">0</span>]) &#123;</span><br><span class="line">            result.<span class="title function_">push</span>(left.<span class="title function_">shift</span>());</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            result.<span class="title function_">push</span>(right.<span class="title function_">shift</span>());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (left.<span class="property">length</span>)</span><br><span class="line">        result.<span class="title function_">push</span>(left.<span class="title function_">shift</span>());</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (right.<span class="property">length</span>)</span><br><span class="line">        result.<span class="title function_">push</span>(right.<span class="title function_">shift</span>());</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-4-算法分析"><a href="#5-4-算法分析" class="headerlink" title="5.4 算法分析"></a>5.4 算法分析</h4><p>归并排序是一种稳定的排序方法。和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是O(nlogn）的时间复杂度。代价是需要额外的内存空间。</p>
+<h3 id="6、快速排序（Quick-Sort）"><a href="#6、快速排序（Quick-Sort）" class="headerlink" title="6、快速排序（Quick Sort）"></a>6、快速排序（Quick Sort）</h3><p>快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
+<h4 id="6-1-算法描述"><a href="#6-1-算法描述" class="headerlink" title="6.1 算法描述"></a>6.1 算法描述</h4><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p>
+<p>· 从数列中挑出一个元素，称为 “基准”（pivot）；</p>
+<p>· 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</p>
+<p>· 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</p>
+<h4 id="6-2-动图演示"><a href="#6-2-动图演示" class="headerlink" title="6.2 动图演示"></a>6.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/28.gif" alt="img"> </p>
+<p> (动画请看文件)</p>
+<h4 id="6-3-代码实现"><a href="#6-3-代码实现" class="headerlink" title="6.3 代码实现"></a>6.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">quickSort</span>(<span class="params">arr, left, right</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> len = arr.<span class="property">length</span>,</span><br><span class="line">        partitionIndex,</span><br><span class="line">        left =<span class="keyword">typeof</span> left !=<span class="string">&#x27;number&#x27;</span> ? <span class="number">0</span> : left,</span><br><span class="line">        right =<span class="keyword">typeof</span> right !=<span class="string">&#x27;number&#x27;</span> ? len - <span class="number">1</span> : right;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (left &lt; right) &#123;</span><br><span class="line">        partitionIndex = <span class="title function_">partition</span>(arr, left, right);</span><br><span class="line">        <span class="title function_">quickSort</span>(arr, left, partitionIndex-<span class="number">1</span>);</span><br><span class="line">        <span class="title function_">quickSort</span>(arr, partitionIndex+<span class="number">1</span>, right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">partition</span>(<span class="params">arr, left ,right</span>) &#123;    <span class="comment">// 分区操作</span></span><br><span class="line">    <span class="keyword">var</span> pivot = left,                     <span class="comment">// 设定基准值（pivot）</span></span><br><span class="line">        index = pivot + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = index; i &lt;= right; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; arr[pivot]) &#123;</span><br><span class="line">            <span class="title function_">swap</span>(arr, i, index);</span><br><span class="line">            index++;</span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">swap</span>(arr, pivot, index - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> index-<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">arr, i, j</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">    arr[i] = arr[j];</span><br><span class="line">    arr[j] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="7、堆排序（Heap-Sort）"><a href="#7、堆排序（Heap-Sort）" class="headerlink" title="7、堆排序（Heap Sort）"></a>7、堆排序（Heap Sort）</h3><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
+<h4 id="7-1-算法描述"><a href="#7-1-算法描述" class="headerlink" title="7.1 算法描述"></a>7.1 算法描述</h4><p>· 将初始待排序关键字序列(R1,R2….Rn)构建成大顶堆，此堆为初始的无序区；</p>
+<p>· 将堆顶元素R[1]与最后一个元素R[n]交换，此时得到新的无序区(R1,R2,……Rn-1)和新的有序区(Rn),且满足R[1,2…n-1]&lt;=R[n]；</p>
+<p>· 由于交换后新的堆顶R[1]可能违反堆的性质，因此需要对当前无序区(R1,R2,……Rn-1)调整为新堆，然后再次将R[1]与无序区最后一个元素交换，得到新的无序区(R1,R2….Rn-2)和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为n-1，则整个排序过程完成。</p>
+<h4 id="7-2-动图演示"><a href="#7-2-动图演示" class="headerlink" title="7.2 动图演示"></a>7.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/29.gif" alt="img"> </p>
+<h4 id="7-3-代码实现"><a href="#7-3-代码实现" class="headerlink" title="7.3 代码实现"></a>7.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> len;   <span class="comment">// 因为声明的多个函数都需要数据长度，所以把len设置成为全局变量</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">buildMaxHeap</span>(<span class="params">arr</span>) &#123;  <span class="comment">// 建立大顶堆</span></span><br><span class="line">    len = arr.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="title class_">Math</span>.<span class="title function_">floor</span>(len/<span class="number">2</span>); i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="title function_">heapify</span>(arr, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapify</span>(<span class="params">arr, i</span>) &#123;    <span class="comment">// 堆调整</span></span><br><span class="line">    <span class="keyword">var</span> left = <span class="number">2</span> * i + <span class="number">1</span>,</span><br><span class="line">        right = <span class="number">2</span> * i + <span class="number">2</span>,</span><br><span class="line">        largest = i;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;</span><br><span class="line">        largest = left;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;</span><br><span class="line">        largest = right;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (largest != i) &#123;</span><br><span class="line">        <span class="title function_">swap</span>(arr, i, largest);</span><br><span class="line">        <span class="title function_">heapify</span>(arr, largest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">arr, i, j</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">    arr[i] = arr[j];</span><br><span class="line">    arr[j] = temp;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="title function_">heapSort</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="title function_">buildMaxHeap</span>(arr);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = arr.<span class="property">length</span> - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="title function_">swap</span>(arr, <span class="number">0</span>, i);</span><br><span class="line">        len--;</span><br><span class="line">        <span class="title function_">heapify</span>(arr, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="8、计数排序（Counting-Sort）"><a href="#8、计数排序（Counting-Sort）" class="headerlink" title="8、计数排序（Counting Sort）"></a>8、计数排序（Counting Sort）</h3><p>计数排序不是基于比较的排序算法，其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。 作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
+<h4 id="8-1-算法描述"><a href="#8-1-算法描述" class="headerlink" title="8.1 算法描述"></a>8.1 算法描述</h4><p>· 找出待排序的数组中最大和最小的元素；</p>
+<p>· 统计数组中每个值为i的元素出现的次数，存入数组C的第i项；</p>
+<p>· 对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）；</p>
+<p>· 反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1。</p>
+<h4 id="8-2-动图演示"><a href="#8-2-动图演示" class="headerlink" title="8.2 动图演示"></a>8.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/30.gif" alt="img"> </p>
+<p> (动画请看文件)</p>
+<h4 id="8-3-代码实现"><a href="#8-3-代码实现" class="headerlink" title="8.3 代码实现"></a>8.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">countingSort</span>(<span class="params">arr, maxValue</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> bucket =<span class="keyword">new</span> <span class="title class_">Array</span>(maxValue + <span class="number">1</span>),</span><br><span class="line">        sortedIndex = <span class="number">0</span>;</span><br><span class="line">        arrLen = arr.<span class="property">length</span>,</span><br><span class="line">        bucketLen = maxValue + <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arrLen; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!bucket[arr[i]]) &#123;</span><br><span class="line">            bucket[arr[i]] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        bucket[arr[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; bucketLen; j++) &#123;</span><br><span class="line">        <span class="keyword">while</span>(bucket[j] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            arr[sortedIndex++] = j;</span><br><span class="line">            bucket[j]--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="8-4-算法分析"><a href="#8-4-算法分析" class="headerlink" title="8.4 算法分析"></a>8.4 算法分析</h4><p>计数排序是一个稳定的排序算法。当输入的元素是 n 个 0到 k 之间的整数时，时间复杂度是O(n+k)，空间复杂度也是O(n+k)，其排序速度快于任何比较排序算法。当k不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。</p>
+<h3 id="9、桶排序（Bucket-Sort）"><a href="#9、桶排序（Bucket-Sort）" class="headerlink" title="9、桶排序（Bucket Sort）"></a>9、桶排序（Bucket Sort）</h3><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。桶排序 (Bucket sort)的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）。</p>
+<h4 id="9-1-算法描述"><a href="#9-1-算法描述" class="headerlink" title="9.1 算法描述"></a>9.1 算法描述</h4><p>· 设置一个定量的数组当作空桶；</p>
+<p>· 遍历输入数据，并且把数据一个一个放到对应的桶里去；</p>
+<p>· 对每个不是空的桶进行排序；</p>
+<p>· 从不是空的桶里把排好序的数据拼接起来。 </p>
+<h4 id="9-2-图片演示"><a href="#9-2-图片演示" class="headerlink" title="9.2 图片演示"></a>9.2 图片演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/31.png" alt="img"> </p>
+<h4 id="9-3-代码实现"><a href="#9-3-代码实现" class="headerlink" title="9.3 代码实现"></a>9.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">bucketSort</span>(<span class="params">arr, bucketSize</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (arr.<span class="property">length</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">var</span> i;</span><br><span class="line">    <span class="keyword">var</span> minValue = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> maxValue = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr[i] &lt; minValue) &#123;</span><br><span class="line">          minValue = arr[i];               <span class="comment">// 输入数据的最小值</span></span><br><span class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span> (arr[i] &gt; maxValue) &#123;</span><br><span class="line">          maxValue = arr[i];               <span class="comment">// 输入数据的最大值</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 桶的初始化</span></span><br><span class="line">    <span class="keyword">var</span> <span class="variable constant_">DEFAULT_BUCKET_SIZE</span> = <span class="number">5</span>;           <span class="comment">// 设置桶的默认数量为5</span></span><br><span class="line">    bucketSize = bucketSize || <span class="variable constant_">DEFAULT_BUCKET_SIZE</span>;</span><br><span class="line">    <span class="keyword">var</span> bucketCount = <span class="title class_">Math</span>.<span class="title function_">floor</span>((maxValue - minValue) / bucketSize) + <span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">var</span> buckets =<span class="keyword">new</span> <span class="title class_">Array</span>(bucketCount);</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; buckets.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        buckets[i] = [];</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 利用映射函数将数据分配到各个桶中</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        buckets[<span class="title class_">Math</span>.<span class="title function_">floor</span>((arr[i] - minValue) / bucketSize)].<span class="title function_">push</span>(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    arr.<span class="property">length</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; buckets.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="title function_">insertionSort</span>(buckets[i]);                     <span class="comment">// 对每个桶进行排序，这里使用了插入排序</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; buckets[i].<span class="property">length</span>; j++) &#123;</span><br><span class="line">            arr.<span class="title function_">push</span>(buckets[i][j]);                     </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="9-4-算法分析"><a href="#9-4-算法分析" class="headerlink" title="9.4 算法分析"></a>9.4 算法分析</h4><p>桶排序最好情况下使用线性时间O(n)，桶排序的时间复杂度，取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为O(n)。很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。 </p>
+<h3 id="10、基数排序（Radix-Sort）"><a href="#10、基数排序（Radix-Sort）" class="headerlink" title="10、基数排序（Radix Sort）"></a>10、基数排序（Radix Sort）</h3><p>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。</p>
+<h4 id="10-1-算法描述"><a href="#10-1-算法描述" class="headerlink" title="10.1 算法描述"></a>10.1 算法描述</h4><p>· 取得数组中的最大数，并取得位数；</p>
+<p>· arr为原始数组，从最低位开始取每个位组成radix数组；</p>
+<p>· 对radix进行计数排序（利用计数排序适用于小范围数的特点）；</p>
+<h4 id="10-2-动图演示"><a href="#10-2-动图演示" class="headerlink" title="10.2 动图演示"></a>10.2 动图演示</h4><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/32.gif" alt="img"> (动画请看文件)</p>
+<h4 id="10-3-代码实现"><a href="#10-3-代码实现" class="headerlink" title="10.3 代码实现"></a>10.3 代码实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LSD Radix Sort</span></span><br><span class="line"><span class="keyword">var</span> counter = [];</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">radixSort</span>(<span class="params">arr, maxDigit</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> mod = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">var</span> dev = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; maxDigit; i++, dev *= <span class="number">10</span>, mod *= <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; arr.<span class="property">length</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">var</span> bucket = <span class="built_in">parseInt</span>((arr[j] % mod) / dev);</span><br><span class="line">            <span class="keyword">if</span>(counter[bucket]==<span class="literal">null</span>) &#123;</span><br><span class="line">                counter[bucket] = [];</span><br><span class="line">            &#125;</span><br><span class="line">            counter[bucket].<span class="title function_">push</span>(arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> pos = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; counter.<span class="property">length</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">var</span> value =<span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">if</span>(counter[j]!=<span class="literal">null</span>) &#123;</span><br><span class="line">                <span class="keyword">while</span> ((value = counter[j].<span class="title function_">shift</span>()) !=<span class="literal">null</span>) &#123;</span><br><span class="line">                      arr[pos++] = value;</span><br><span class="line">                &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="10-4-算法分析"><a href="#10-4-算法分析" class="headerlink" title="10.4 算法分析"></a>10.4 算法分析</h4><p>基数排序基于分别排序，分别收集，所以是稳定的。但基数排序的性能比桶排序要略差，每一次关键字的桶分配都需要O(n)的时间复杂度，而且分配之后得到新的关键字序列又需要O(n)的时间复杂度。假如待排数据可以分为d个关键字，则基数排序的时间复杂度将是O(d*2n) ，当然d要远远小于n，因此基本上还是线性级别的。</p>
+<p>基数排序的空间复杂度为O(n+k)，其中k为桶的数量。一般来说n&gt;&gt;k，因此额外空间需要大概n个左右。</p>
+<h2 id="倒序排序"><a href="#倒序排序" class="headerlink" title="倒序排序"></a>倒序排序</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  倒序</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=newList.<span class="property">length</span>-<span class="number">1</span>; i&gt;=<span class="number">0</span>;i--) &#123;</span><br><span class="line">    nowList.<span class="title function_">push</span>(newList[i])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\Administrator\Desktop\35.jpg" alt=""></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/blog/2019/04/08/%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E7%AC%94%E8%AE%B0/">
                 小程序-笔记
             </a>
@@ -1260,286 +1387,6 @@ News Detail - &#123;&#123;$route.params.id&#125;&#125; ......
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/blog/2019/04/02/GIT/Git%E6%80%BB%E7%BB%93%E7%AC%94%E8%AE%B0/">
-                Git总结笔记
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-04-02</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/git/">git</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <font color="#EE1289">工作流    工作区—-&gt;暂存区—–&gt;版本库</font><br><br><br><font color="#76EE00">初始化          git init—-&gt; git add —–&gt; git commit</font><br><br><br><font color="#00F5FF">远程仓库        git remote add—-&gt;git pull——&gt;git push —-&gt; git clone</font><br><br><br><font color="#EEEE00">分支管理   git branch —-&gt;git checkout—-&gt;git merge</font><br><br><br><font color="#FFBBFF">标签管理             git tag—-&gt;git push</font>
-
-
-
-<h2 id="Git-安装"><a href="#Git-安装" class="headerlink" title="Git 安装"></a>Git 安装</h2><p>下载window git</p>
-<ul>
-<li>Msysgit   <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></li>
-</ul>
-<h3 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h3><ul>
-<li><p><code>git config --global user.name</code> “你的用户名”</p>
-</li>
-<li><p><code>git config --global user.email</code> “你的邮箱”</p>
-</li>
-<li><p><code>git config user.name</code> 查看用户名</p>
-</li>
-<li><p><code>git config user.password</code> 查看密码</p>
-</li>
-<li><p><code>git config user.email</code> 查看邮箱</p>
-</li>
-<li><p><code>git config --list</code> 查看配置信息</p>
-</li>
-<li><p><code>git config --global user.name &quot;xx(新的用户名)&quot;</code> 修改用户名</p>
-</li>
-<li><p><code>git config --global user.password &quot;xxx(新的密码)&quot;</code> 修改密码</p>
-</li>
-<li><p><code>git config --global user.email &quot;xxx@xxx.com(新的邮箱)&quot;</code> 修改邮箱</p>
-</li>
-</ul>
-<h3 id="可以使用两种操作方式："><a href="#可以使用两种操作方式：" class="headerlink" title="可以使用两种操作方式："></a>可以使用两种操作方式：</h3><ul>
-<li><p>1、图形化界面（初级）sourcetree</p>
-</li>
-<li><p>2、命令（高级）</p>
-</li>
-</ul>
-<h3 id="一：说明开发过程中的工作流程"><a href="#一：说明开发过程中的工作流程" class="headerlink" title="一：说明开发过程中的工作流程"></a>一：说明开发过程中的工作流程</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/1.png" alt="img"></p>
-<h3 id="二：什么是shell"><a href="#二：什么是shell" class="headerlink" title="二：什么是shell"></a>二：什么是shell</h3><p>在计算机科学中，Shell俗称壳，用来区别于Kernel（核），是指“提供使用者使用界面”的软件（命令解析器）。它类似于<a target="_blank" rel="noopener" href="http://baike.baidu.com/view/365.htm">DOS</a>下的<code>command</code>和后来的<code>cmd.exe</code>。它接收用户命令，然后调用相应的应用程序</p>
-<h2 id="三：认识bash这个shell"><a href="#三：认识bash这个shell" class="headerlink" title="三：认识bash这个shell"></a>三：认识bash这个shell</h2><p>bash常见命令</p>
-<p><code>pwd</code> (Print Working Directory) 查看当前目录</p>
-<p><code>cd</code> (Change Directory) 切换目录，如 cd /etc</p>
-<p><code>ls</code> (List) 查看当前目录下内容，如 ls -al</p>
-<p><code>mkdir</code> (Make Directory) 创建目录，如 mkdir blog</p>
-<p><code>touch</code> 创建文件，如 touch index.html</p>
-<p><code>cat</code> 查看文件全部内容，如 cat index.html</p>
-<p><code>rm</code> (remove) 删除文件，如 rm index.html、rm -rf  blog</p>
-<p><code>rmdir</code> (Remove Directory) 删除文件夹，只能删除空文件夹，不常用</p>
-<p><code>mv</code> (move) 移动文件或重命名，如 mv index.html ./demo/index.html</p>
-<p><code>cp</code> (copy) 复制文件，cp index.html ./demo/index.html</p>
-<p><code>head</code> 查看文件前几行，如 head -5 index.html </p>
-<p><code>history</code> 查看操作历史</p>
-<p><code>who am i</code> 查看当前用户</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/2.png" alt="img"> </p>
-<h2 id="四：vi编辑器"><a href="#四：vi编辑器" class="headerlink" title="四：vi编辑器"></a>四：vi编辑器</h2><p>vi编辑器提供了3种模式，分别是命令模式、插入模式、底行模式，每种模式下用户所能进行的操作是不一样的<br><img src="https://qq292383147.github.io/pictureLibrary/picture/git/3.png" alt="img"></p>
-<p>使用vi编辑器</p>
-<p>​    a) 打开/创建文件， vi 文件路径</p>
-<p>​    b) 底行模式 :w保存，:w filenme另存为</p>
-<p>​    c) 底行模式 :q退出</p>
-<p>​    d) 底行模式 :wq保存并退出</p>
-<p>​    e) 底行模式 :e! 撤销更改，返回到上一次保存的状态</p>
-<p>​    f) 底行模式 :q! 不保存强制退出</p>
-<hr>
-<p>​    h) 命令模式 ZZ（大写）保存并退出</p>
-<p>​    i) 命令模式 u辙销操作，可多次使用</p>
-<p>​    j) 命令模式 dd删除当前行</p>
-<p>​    k) 命令模式 yy复制当前行</p>
-<p>​    l) 命令模式 p 粘贴内容</p>
-<p>​    o) 命令模式 i进入编辑模式，当前光标处插入</p>
-<p>​    p) 命令模式 a进入编辑模式，当前光标后插入</p>
-<p>​    q) 命令模式 A进入编辑模式，光标移动到行尾</p>
-<p>​    r) 命令模式 o进入编辑模式，当前行下面插入新行</p>
-<p>​    s) 命令模式 O进入编辑模式，当前行上面插入新行</p>
-<p>当我们处在编辑模式的情况下，和我们在Windows编辑器的使用相似</p>
-<h2 id="五：版本控制"><a href="#五：版本控制" class="headerlink" title="五：版本控制"></a>五：版本控制</h2><ul>
-<li><p>1.本地版本控制系统</p>
-</li>
-<li><p>2.集中式版本控制系统-SVN</p>
-</li>
-<li><p>3.分布式版本控制系统-git</p>
-</li>
-</ul>
-<h2 id="六：git"><a href="#六：git" class="headerlink" title="六：git"></a>六：git</h2><ul>
-<li><ol>
-<li>git工作原理</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>Git仓库目录是Git用来保存项目的元数据和对象数据库的地方。 这是Git 中最重要的部分，从其它计算机克隆仓库时，拷贝的就是这里的数据。</p>
-</blockquote>
-<p>工作目录是对项目的某个版本独立提取出来的内容。 这些从Git仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改。</p>
-<p>暂存区域是一个文件，保存了下次将提交的文件列表信息，一般在Git仓库目录中。有时候也被称作“索引”（Index），不过一般说法还是叫暂存区域。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/4.png" alt="img"> </p>
-<p>基本的Git工作流程如下：</p>
-<p>​    1、在工作目录中修改文件。</p>
-<p>​    2、暂存文件，将文件的快照放入暂存区域。</p>
-<p>​    3、提交更新，找到暂存区域的文件，将快照永久存储到Git仓库目录<br><br></p>
-<ul>
-<li><ol start="2">
-<li>git安装</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 配置用户名： git config –global user.name “用户名”<br><br><br>b) 配置邮箱： git config –global user.email “邮箱地址”<br><br><br>c) 查看配置信息： git config –list</p>
-</blockquote>
-<ul>
-<li><ol start="3">
-<li>初始化仓库：</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 命令：git init<br><br><br>b) 作用：使用Git管理项目的初始化操作，会创建一个名为.git的隐藏目录<br><br><br>c) 一般是在项目的根目录执行这个命令</p>
-</blockquote>
-<ul>
-<li><ol start="4">
-<li>跟踪文件</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 将文件由 工作区 添加到 暂存区（Index），暂存文件<br><br><br>b) 命令：git add 文件路径<br><br><br>c) git add –all 或者 git add -A（简写） 添加所有文件</p>
-</blockquote>
-<ul>
-<li><ol start="5">
-<li>提交更新</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 作用：将文件由 暂存区 添加到 仓库（HEAD）<br><br><br>b) git commit -m “提交说明”</p>
-</blockquote>
-<ul>
-<li><ol start="6">
-<li>查看文件状态</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 命令：git status</p>
-</blockquote>
-<ul>
-<li><ol start="7">
-<li>Git工作流程</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 在工作目录中修改某些文件。<br><br><br>b) 对修改后的文件进行快照，然后保存到暂存区域。<br><br><br>c) 提交更新，将保存在暂存区域的文件快照永久转储到.git目录中。</p>
-</blockquote>
-<ul>
-<li><ol start="8">
-<li>查看提交日志</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 命令：git log 查看详细的提交信息</p>
-</blockquote>
-<ul>
-<li><ol start="9">
-<li>版本回退</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 作用：恢复到已经提交的某一个版本中<br><br><br>b) 命令：git reset –hard [版本号]<br><br><br>c) 其他方式：git reset –hard head~1</p>
-</blockquote>
-<ul>
-<li><ol start="10">
-<li>git分支</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) 查看分支：git branch，当前分支会标有一个*<br><br><br>b) 创建分支：git branch [分支名称]<br><br><br>c) 切换分支：git checkout [分支名称]<br><br><br>d) 合并分支：git merge [分支名称]，即：将其他分支合并到当前分支<br><br><br>e) 删除分支：git branch -d [分支名称]</p>
-</blockquote>
-<ul>
-<li><ol start="11">
-<li>创建本地共享仓库:仓库就是一个文件夹</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>a) <img src="https://qq292383147.github.io/pictureLibrary/picture/git/5.png" alt="img"><br><br><br>b) 通过—bare创建裸仓库<br><br><br>c) 共享的仓库必须是一个裸仓库<br><br><br>d) 通过从共享仓库中复制内容<br><br><br>e) 虽然复制的时候是从裸仓库中复制的，但是复制到的内容是真正的工作目录下的内容<img src="https://qq292383147.github.io/pictureLibrary/picture/git/6.png" alt="img"><br><br><br>f) 修改内容，并且将修改的内容更新<img src="https://qq292383147.github.io/pictureLibrary/picture/git/7.png" alt="img"><br><br><br>g) 进入到另外的目录，将之前提交的内容拉取<img src="https://qq292383147.github.io/pictureLibrary/picture/git/8.png" alt="img"></p>
-</blockquote>
-<ul>
-<li><ol start="12">
-<li>git远程仓库</li>
-</ol>
-</li>
-</ul>
-<h3 id="1-在本地创建仓库"><a href="#1-在本地创建仓库" class="headerlink" title="1 在本地创建仓库"></a>1 在本地创建仓库</h3><p><code>git init</code></p>
-<p><code>git config</code></p>
-<p>2 新建 README.md 文件，并输入任意内容</p>
-<p>3 将 README.md 提交到本地</p>
-<p><code>git add</code></p>
-<p><code>git commit</code></p>
-<p>4 在github中新建仓库，并拿到仓库地址</p>
-<p>5 使用命令 <code>git push [仓库地址] master</code> 提交内容到github的默认分支</p>
-<p>6 刷新github仓库页面，在线修改 README.md 文件，并提交</p>
-<p>7 使用命令 <code>git pull [仓库地址] master</code> 获取仓库中的最新内容</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/9.png" alt="img"> </p>
-<h3 id="文件对比"><a href="#文件对比" class="headerlink" title="文件对比"></a>文件对比</h3><ul>
-<li><p>命令：git diff：将工作区与暂存区或者仓库对比</p>
-</li>
-<li><p>说明：如果暂存区没有文件，就会将工作区代码与上一次提交对比</p>
-<ul>
-<li><p>1 工作区 与 暂存区对比</p>
-</li>
-<li><p>2 工作区 与 仓库  对比</p>
-</li>
-</ul>
-</li>
-<li><p>命令：git diff –cached：将当前暂存区与仓库对比</p>
-</li>
-<li><p>命令：git diff [版本号1] [版本号2] [对比的文件路径]</p>
-<ul>
-<li>对比仓库区两次提交的差异</li>
-</ul>
-</li>
-</ul>
-<h3 id="撤销和删除"><a href="#撤销和删除" class="headerlink" title="撤销和删除"></a>撤销和删除</h3><ul>
-<li><p>git reset HEAD 文件名 从暂存区撤销（结果：变为 未 add 状态）</p>
-</li>
-<li><p>git checkout – test.txt 撤销文件变化</p>
-<ul>
-<li><p>一种是 readme.txt 自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p>
-</li>
-<li><p>一种是 readme.txt 已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p>
-</li>
-</ul>
-</li>
-<li><p><code>rm [文件名称]</code>：删除文件（物理删除）</p>
-</li>
-<li><p><code>git rm [文件名称]</code>：从仓库中删除文件</p>
-</li>
-<li><p><code>git rm --cached [文件名称]</code>：从暂存区删除文件</p>
-</li>
-</ul>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/10.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/11.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/12.png" alt="img"> </p>
-<p>设置默认地址的几种方法：</p>
-<p><code>git push</code> [远程终端的地址] 默认节点</p>
-<p>改：</p>
-<p>1、<code>git push</code> 变量名 -u</p>
-<p>2、<code>git push</code> 地址名 -u </p>
-<p>下次就可以直接<code>git push</code></p>
-<p>清除安装的缓存</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/git/13.png" alt="img"> </p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -1584,6 +1431,10 @@ News Detail - &#123;&#123;$route.params.id&#125;&#125; ......
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -1593,10 +1444,6 @@ News Detail - &#123;&#123;$route.params.id&#125;&#125; ......
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>

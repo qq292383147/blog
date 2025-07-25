@@ -157,6 +157,121 @@
 
     <div class="post-header index">
         <h1 class="title">
+            <a href="/blog/2019/12/20/React/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B(%E4%B8%AD)/">
+                React Native之React速学教程(中)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="组件的详细说明"><a href="#组件的详细说明" class="headerlink" title="组件的详细说明"></a>组件的详细说明</h2><p>当通过调用 React.createClass() 来创建组件的时候，每个组件必须提供render方法，并且也可以包含其它的在这里描述的生命周期方法。</p>
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><p><code>ReactComponent render()</code><br><code>render()</code> 方法是必须的。<br>当该方法被回调的时候，会检测 <code>this.props</code> 和 <code>this.state</code>，并返回一个单子级组件。该子级组件可以是虚拟的本地 DOM 组件（比如 <div /> 或者 <code>React.DOM.div()</code>），也可以是自定义的复合组件。<br>你也可以返回 <code>null</code> 或者 <code>false</code> 来表明不需要渲染任何东西。实际上，React 渲染一个<code>&lt;noscript&gt;</code>标签来处理当前的差异检查逻辑。当返回 <code>null</code> 或者 <code>false</code> 的时候，<code>this.getDOMNode()</code> 将返回 <code>null</code>。</p>
+<p><strong>注意：</strong></p>
+<p><code>render()</code>函数应该是纯粹的，也就是说该函数不修改组件的 <code>state</code>，每次调用都返回相同的结果，不读写 DOM 信息，也不和浏览器交互（例如通过使用 <code>setTimeout</code>）。如果需要和浏览器交互，在 <code>componentDidMount()</code> 中或者其它生命周期方法中做这件事。保持 <code>render()</code> 纯粹，可以使服务器端渲染更加切实可行，也使组件更容易被理解。</p>
+<blockquote>
+<p>心得：不要在<code>render()</code>函数中做复杂的操作，更不要进行网络请求，数据库读写，I/O等操作。</p>
+</blockquote>
+<h2 id="getInitialState"><a href="#getInitialState" class="headerlink" title="getInitialState"></a>getInitialState</h2><p><code>object getInitialState()</code> 初始化组件状态，在组件挂载之前调用一次。返回值将会作为 <code>this.state</code>的初始值。</p>
+<blockquote>
+<p>心得：通常在该方法中对组件的状态进行初始化。</p>
+</blockquote>
+<h2 id="getDefaultProps"><a href="#getDefaultProps" class="headerlink" title="getDefaultProps"></a>getDefaultProps</h2><p><code>object getDefaultProps()</code><br>设置组件属性的默认值，在组件类创建的时候调用一次，然后返回值被缓存下来。如果父组件没有指定 <code>props</code> 中的某个键，则此处返回的对象中的相应属性将会合并到 <code>this.props</code> （使用 in 检测属性）。</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage:"></a>Usage:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getDefaultProps() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &#x27;&#x27;,</span><br><span class="line">      popEnabled:true</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br>该方法在任何实例创建之前调用，因此不能依赖于 <code>this.props</code>。另外，<code>getDefaultProps()</code> 返回的任何复杂对象将会在实例间共享，而不是每个实例拥有一份拷贝。</p>
+<blockquote>
+<p>心得：该方法在你封装一个自定义组件的时候经常用到，通常用于为组件初始化默认属性。</p>
+</blockquote>
+<h2 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a><a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/top-level-api.html#react.proptypes">PropTypes</a></h2><p><code>object propTypes</code><br><code>propTypes</code> 对象用于验证传入到组件的 <code>props</code>。 可参考<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/reusable-components.html">可重用的组件</a>。</p>
+<h2 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage:"></a>Usage:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var NavigationBar=React.createClass(&#123;</span><br><span class="line">  propTypes: &#123;</span><br><span class="line">    navigator:React.PropTypes.object,</span><br><span class="line">    leftButtonTitle: React.PropTypes.string,</span><br><span class="line">    leftButtonIcon: Image.propTypes.source,</span><br><span class="line">    popEnabled:React.PropTypes.bool,</span><br><span class="line">    onLeftButtonClick: React.PropTypes.func,</span><br><span class="line">    title:React.PropTypes.string,</span><br><span class="line">    rightButtonTitle: React.PropTypes.string,</span><br><span class="line">    rightButtonIcon:Image.propTypes.source,</span><br><span class="line">    onRightButtonClick:React.PropTypes.func</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得：在封装组件时，对组件的属性通常会有类型限制，如：组件的背景图片，需要<code>Image.propTypes.source</code>类型，propTypes便可以帮你完成你需要的属性类型的检查。</p>
+</blockquote>
+<h2 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h2><p><code>array mixins</code><br><code>mixin</code> 数组允许使用混合来在多个组件之间共享行为。更多关于混合的信息，可参考<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/reusable-components.html#mixins">Reusable Components</a>。</p>
+<blockquote>
+<p>心得：由于ES6不再支持mixins，所以不建议在使用mixins，我们可以用另外一种方式来替代mixins，请参考：<a target="_blank" rel="noopener" href="https://www.devio.org/2016/08/10/React-Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B-(%E4%B8%AD">React Native之React速学教程(下)-ES6不再支持Mixins</a>/)。</p>
+</blockquote>
+<h2 id="statics"><a href="#statics" class="headerlink" title="statics"></a>statics</h2><p><code>object statics</code><br><code>statics</code> 对象允许你定义静态的方法，这些静态的方法可以在组件类上调用。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var MyComponent = React.createClass(&#123;</span><br><span class="line">  statics: &#123;</span><br><span class="line">    customMethod: function(foo) &#123;</span><br><span class="line">      return foo === &#x27;bar&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">MyComponent.customMethod(&#x27;bar&#x27;);  // true</span><br></pre></td></tr></table></figure>
+<p>在这个块儿里面定义的方法都是静态的，你可以通过<code>ClassName.funcationName</code>的形式调用它。<br><strong>注意</strong><br>这些方法不能获取组件的 <code>props</code> 和 <code>state</code>。如果你想在静态方法中检查 <code>props</code> 的值，在调用处把 <code>props</code> 作为参数传入到静态方法。</p>
+<h2 id="displayName"><a href="#displayName" class="headerlink" title="displayName"></a>displayName</h2><p><code>string displayName</code><br><code>displayName</code> 字符串用于输出调试信息。JSX 自动设置该值；可参考<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/jsx-in-depth.html#the-transform">JSX in Depth</a>。</p>
+<h2 id="isMounted"><a href="#isMounted" class="headerlink" title="isMounted"></a>isMounted</h2><p><code>boolean isMounted()</code>，当组件被渲染到DOM，该方法返回true，否则返回false。该方法通常用于异步任务完成后修改state前的检查，以避免修改一个没有被渲染的组件的state。</p>
+<blockquote>
+<p>心得：开发中不建议大家isMounted，大家可以使用另外一种更好的方式来避免修改没有被渲染的DOM，请下文的<a target="_blank" rel="noopener" href="https://www.devio.org/2016/08/10/React-Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B-(%E4%B8%AD">isMounted 是个反模式</a>/)。</p>
+</blockquote>
+<h2 id="组件的生命周期-Component-Lifecycle"><a href="#组件的生命周期-Component-Lifecycle" class="headerlink" title="组件的生命周期(Component Lifecycle)"></a><a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/working-with-the-browser.html#component-lifecycle">组件的生命周期(Component Lifecycle)</a></h2><p>在iOS中<code>UIViewController</code>提供了<code>(void)viewWillAppear:(BOOL)animated</code>, <code>- (void)viewDidLoad</code>,<code>(void)viewWillDisappear:(BOOL)animated</code>等生命周期方法，在Android中<code>Activity</code>则提供了<code>onCreate()</code>,<code>onStart()</code>,<code>onResume()</code>,<code>onPause()</code>,<code>onStop()</code>,<code>onDestroy()</code>等生命周期方法，这些生命周期方法展示了一个界面从创建到销毁的一生。</p>
+<p>那么在React 中组件(Component)也是有自己的生命周期方法的。</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\RN之React速学\2.jpg" alt="2"></p>
+<h2 id="组件的生命周期分成三个状态："><a href="#组件的生命周期分成三个状态：" class="headerlink" title="组件的生命周期分成三个状态："></a>组件的生命周期分成三个状态：</h2><ul>
+<li>Mounting：已插入真实 DOM</li>
+<li>Updating：正在被重新渲染</li>
+<li>Unmounting：已移出真实 DOM</li>
+</ul>
+<blockquote>
+<p>心得：你会发现这些React 中组件(Component)的生命周期方法从写法上和iOS中<code>UIViewController</code>的生命周期方法很像，React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用。</p>
+</blockquote>
+<h2 id="Mounting-装载"><a href="#Mounting-装载" class="headerlink" title="Mounting(装载)"></a>Mounting(装载)</h2><ul>
+<li><code>getInitialState()</code>: 在组件挂载之前调用一次。返回值将会作为 this.state 的初始值。</li>
+<li><code>componentWillMount()</code>：服务器端和客户端都只调用一次，在初始化渲染执行之前立刻调用。</li>
+<li><code>componentDidMount()</code>：在初始化渲染执行之后立刻调用一次，仅客户端有效（服务器端不会调用）。</li>
+</ul>
+<h2 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating (更新)"></a>Updating (更新)</h2><ul>
+<li>componentWillReceiveProps(object nextProps) 在组件接收到新的 props 的时候调用。在初始化渲染的时候，该方法不会调用。</li>
+</ul>
+<p>用此函数可以作为 react 在 prop 传入之后， render() 渲染之前更新 state 的机会。老的 props 可以通过 this.props 获取到。在该函数中调用 this.setState() 将不会引起第二次渲染。</p>
+<ul>
+<li>shouldComponentUpdate(object nextProps, object nextState): 在接收到新的 props 或者 state，将要渲染之前调用。</li>
+</ul>
+<p>该方法在初始化渲染的时候不会调用，在使用 forceUpdate 方法的时候也不会。如果确定新的 props 和 state 不会导致组件更新，则此处应该 返回 false。</p>
+<blockquote>
+<p>心得：重写次方你可以根据实际情况，来灵活的控制组件当 props 和 state 发生变化时是否要重新渲染组件。</p>
+</blockquote>
+<ul>
+<li>componentWillUpdate(object nextProps, object nextState)：在接收到新的 props 或者 state 之前立刻调用。</li>
+</ul>
+<p>在初始化渲染的时候该方法不会被调用。使用该方法做一些更新之前的准备工作。</p>
+<blockquote>
+<p>注意：你不能在该方法中使用 this.setState()。如果需要更新 state 来响应某个 prop 的改变，请使用 <code>componentWillReceiveProps</code>。</p>
+</blockquote>
+<ul>
+<li>componentDidUpdate(object prevProps, object prevState): 在组件的更新已经同步到 DOM 中之后立刻被调用。</li>
+</ul>
+<p>该方法不会在初始化渲染的时候调用。使用该方法可以在组件更新之后操作 DOM 元素。</p>
+<h2 id="Unmounting-移除"><a href="#Unmounting-移除" class="headerlink" title="Unmounting(移除)"></a>Unmounting(移除)</h2><ul>
+<li>componentWillUnmount：在组件从 DOM 中移除的时候立刻被调用。</li>
+</ul>
+<p>在该方法中执行任何必要的清理，比如无效的定时器，或者清除在 componentDidMount 中创建的 DOM 元素。</p>
+<h2 id="isMounted是个反模式"><a href="#isMounted是个反模式" class="headerlink" title="isMounted是个反模式"></a>isMounted是个反模式</h2><p>isMounted通常用于避免修改一个已经被卸载的组件的状态，因为调用一个没有被装载的组件的<code>setState()</code>方法，系统会抛出异常警告。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(this.isMounted()) &#123; //不推荐</span><br><span class="line">  this.setState(&#123;...&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面做法有点反模式，<code>isMounted()</code>起到作用的时候也就是组件被卸载之后还有异步操作在进行的时候，这就意味着一个被销毁的组件还持有着一些资源的引用，这会导致系统性能降低甚至内存溢出。</p>
+<p>React 在设计的时候通过<code>setState()</code>被调用时做了一些检查，来帮助开发者发现被卸载的组件还持有一些资源的引用的情况。如何你使用了<code>isMounted()</code>，也就是跳过的React的检查，也就无法发现被卸载的组件还持有资源的问题。</p>
+<p>既然isMounted()是反模式，那么有没有可替代方案呢？<br>我们可以通过在设置一个变量来表示组件的装载和卸载的状态，当<code>componentDidMount</code>被调用时该变量为true，当 <code>componentWillUnmount</code>被调用时，该变量为false，这样该变量就可以当<code>isMounted()</code>来使用。但还不够，到目前为止，我们只是通过变量来替代<code>isMounted()</code>，还没有做任何的优化，接下来我们需要在<code>componentWillUnmount</code>被调用时取消所有的异步回调，主动释放所有资源，这样就能避免被卸载的组件还持有资源的引用的情况，从而减少了内存溢出等情况的发生。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    mydatastore.subscribe(this);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    mydatastore.unsubscribe(this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用可取消的Promise做异步操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const cancelablePromise = makeCancelable(</span><br><span class="line">  new Promise(r =&gt; component.setState(&#123;...&#125;&#125;))</span><br><span class="line">);</span><br><span class="line">cancelablePromise</span><br><span class="line">  .promise</span><br><span class="line">  .then(() =&gt; console.log(&#x27;resolved&#x27;))</span><br><span class="line">  .catch((reason) =&gt; console.log(&#x27;isCanceled&#x27;, reason.isCanceled));</span><br><span class="line">cancelablePromise.cancel(); // Cancel the promise</span><br></pre></td></tr></table></figure>
+<p>可取消的Promise。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const makeCancelable = (promise) =&gt; &#123;</span><br><span class="line">  let hasCanceled_ = false;</span><br><span class="line">  const wrappedPromise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    promise.then((val) =&gt;</span><br><span class="line">      hasCanceled_ ? reject(&#123;isCanceled: true&#125;) : resolve(val)</span><br><span class="line">    );</span><br><span class="line">    promise.catch((error) =&gt;</span><br><span class="line">      hasCanceled_ ? reject(&#123;isCanceled: true&#125;) : reject(error)</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">  return &#123;</span><br><span class="line">    promise: wrappedPromise,</span><br><span class="line">    cancel() &#123;</span><br><span class="line">      hasCanceled_ = true;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
             <a href="/blog/2019/12/20/React/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B(%E4%B8%8A)/">
                 React Native之React速学教程(上)
             </a>
@@ -342,40 +457,6 @@
 
 </div>
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/blog/2019/11/27/%E5%85%B6%E5%AE%83/%E6%9C%89%E5%93%AA%E4%BA%9B%E8%B6%8A%E6%97%A9%E7%9F%A5%E9%81%93%E8%B6%8A%E5%A5%BD%E7%9A%84%E4%BA%BA%E7%94%9F%E7%BB%8F%E9%AA%8C%EF%BC%9F/">
-                有哪些越早知道越好的人生经验？
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-27</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/其它/">其它</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p><img src="https://qq292383147.github.io/pictureLibrary/picture/other/人生1.jpg" alt="图片"></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/other/人生2.jpg" alt="图片"></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/other/人生3.jpg" alt="图片"></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/other/人生4.jpg" alt="图片"></p>
-
-        </div>
-    
-
-</div>
-            
         </section>
     </div>
 </div>
@@ -420,6 +501,10 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -429,10 +514,6 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
