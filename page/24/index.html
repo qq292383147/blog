@@ -157,48 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/11/11/%E5%85%B6%E5%AE%83/%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E6%B5%8B%E8%AF%95/">
-                小项目实战测试
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-11</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/其它/">其它</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <center><h1>小程序</h1></center>
-
-<p><a href=""></a></p>
-<center><h1>Vue</h1></center>
-
-<p><a href=""></a></p>
-<center><h1>Jquery</h1></center>
-
-<p><a href=""></a></p>
-<center><h1>JavaScript</h1></center>
-
-<p><a href=""></a></p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/11/03/Vue/vue-router%20%E7%9A%84%E8%B6%85%E7%A5%9E%E4%B9%8B%E8%B7%AF/">
                 vue-router 的超神之路
             </a>
@@ -512,6 +470,187 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/11/03/Vue/vue%20%E3%80%8C%E5%89%8D%E7%AB%AF%E8%BF%9B%E9%98%B6%E3%80%8D%E9%AB%98%E6%80%A7%E8%83%BD%E6%B8%B2%E6%9F%93%E5%8D%81%E4%B8%87%E6%9D%A1%E6%95%B0%E6%8D%AE(%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8)/">
+                「前端进阶」高性能渲染十万条数据(虚拟列表)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-03</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在工作中，有时会遇到需要一些不能使用分页方式来加载列表数据的业务情况，对于此，我们称这种列表叫做<code>长列表</code>。比如，在一些外汇交易系统中，前端会实时的展示用户的持仓情况(收益、亏损、手数等)，此时对于用户的持仓列表一般是不能分页的。</p>
+<p>在<a target="_blank" rel="noopener" href="https://juejin.im/post/5d76f469f265da039a28aff7">高性能渲染十万条数据(时间分片)</a>一文中，提到了可以使用<code>时间分片</code>的方式来对长列表进行渲染，但这种方式更适用于列表项的DOM结构十分简单的情况。本文会介绍使用<code>虚拟列表</code>的方式，来同时加载大量数据。</p>
+<h2 id="为什么需要使用虚拟列表"><a href="#为什么需要使用虚拟列表" class="headerlink" title="为什么需要使用虚拟列表"></a>为什么需要使用虚拟列表</h2><p>假设我们的长列表需要展示10000条记录，我们同时将10000条记录渲染到页面中，先来看看需要花费多长时间：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;button&quot;</span>&gt;button&lt;/button&gt;&lt;br&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span>  </span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;button&#x27;</span>).<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">// 记录任务开始时间</span></span><br><span class="line">    <span class="keyword">let</span> now = <span class="title class_">Date</span>.<span class="title function_">now</span>();</span><br><span class="line">    <span class="comment">// 插入一万条数据</span></span><br><span class="line">    <span class="keyword">const</span> total = <span class="number">10000</span>;</span><br><span class="line">    <span class="comment">// 获取容器</span></span><br><span class="line">    <span class="keyword">let</span> ul = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;container&#x27;</span>);</span><br><span class="line">    <span class="comment">// 将数据插入容器中</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; total; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> li = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line">        li.<span class="property">innerText</span> = ~~(<span class="title class_">Math</span>.<span class="title function_">random</span>() * total)</span><br><span class="line">        ul.<span class="title function_">appendChild</span>(li);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;JS运行时间：&#x27;</span>,<span class="title class_">Date</span>.<span class="title function_">now</span>() - now);</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;总运行时间：&#x27;</span>,<span class="title class_">Date</span>.<span class="title function_">now</span>() - now);</span><br><span class="line">    &#125;,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// print JS运行时间： 38</span></span><br><span class="line">    <span class="comment">// print 总运行时间： 957 </span></span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>当我们点击按钮，会同时向页面中加入一万条记录，通过控制台的输出，我们可以粗略的统计到，JS的运行时间为<code>38ms</code>,但渲染完成后的总时间为<code>957ms</code>。</p>
+<p>简单说明一下，为何两次<code>console.log</code>的结果时间差异巨大，并且是如何简单来统计<code>JS运行时间</code>和<code>总渲染时间</code>：</p>
+<ul>
+<li>在 JS 的<code>Event Loop</code>中，当JS引擎所管理的执行栈中的事件以及所有微任务事件全部执行完后，才会触发渲染线程对页面进行渲染</li>
+<li>第一个<code>console.log</code>的触发时间是在页面进行渲染之前，此时得到的间隔时间为JS运行所需要的时间</li>
+<li>第二个<code>console.log</code>是放到 setTimeout 中的，它的触发时间是在渲染完成，在下一次<code>Event Loop</code>中执行的</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5d5b4c2df265da03dd3d73e5">关于Event Loop的详细内容请参见这篇文章–&gt;</a></p>
+<p>然后，我们通过<code>Chrome</code>的<code>Performance</code>工具来详细的分析这段代码的性能瓶颈在哪里：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/94.gif" alt="94"></p>
+<p>从<code>Performance</code>可以看出，代码从执行到渲染结束，共消耗了<code>960.8ms</code>,其中的主要时间消耗如下：</p>
+<ul>
+<li>Event(click) : <code>40.84ms</code></li>
+<li>Recalculate Style : <code>105.08ms</code></li>
+<li>Layout : <code>731.56ms</code></li>
+<li>Update Layer Tree : <code>58.87ms</code></li>
+<li>Paint : <code>15.32ms</code></li>
+</ul>
+<p>从这里我们可以看出，我们的代码的执行过程中，消耗时间最多的两个阶段是<code>Recalculate Style</code>和<code>Layout</code>。</p>
+<ul>
+<li><code>Recalculate Style</code>：样式计算，浏览器根据css选择器计算哪些元素应该应用哪些规则，确定每个元素具体的样式。</li>
+<li><code>Layout</code>：布局，知道元素应用哪些规则之后，浏览器开始计算它要占据的空间大小及其在屏幕的位置。</li>
+</ul>
+<p>在实际的工作中，列表项必然不会像例子中仅仅只由一个li标签组成，必然是由复杂DOM节点组成的。</p>
+<p>那么可以想象的是，当列表项数过多并且列表项结构复杂的时候，同时渲染时，会在<code>Recalculate Style</code>和<code>Layout</code>阶段消耗大量的时间。</p>
+<p>而<code>虚拟列表</code>就是解决这一问题的一种实现。</p>
+<h2 id="什么是虚拟列表"><a href="#什么是虚拟列表" class="headerlink" title="什么是虚拟列表"></a>什么是虚拟列表</h2><p><code>虚拟列表</code>其实是按需显示的一种实现，即只对<code>可见区域</code>进行渲染，对<code>非可见区域</code>中的数据不渲染或部分渲染的技术，从而达到极高的渲染性能。</p>
+<p>假设有1万条记录需要同时渲染，我们屏幕的<code>可见区域</code>的高度为<code>500px</code>,而列表项的高度为<code>50px</code>，则此时我们在屏幕中最多只能看到10个列表项，那么在首次渲染的时候，我们只需加载10条即可。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/95.jpg" alt="95"></p>
+<p>说完首次加载，再分析一下当滚动发生时，我们可以通过计算当前滚动值得知此时在屏幕<code>可见区域</code>应该显示的列表项。</p>
+<p>假设滚动发生，滚动条距顶部的位置为<code>150px</code>,则我们可得知在<code>可见区域</code>内的列表项为<code>第4项</code>至`第13项。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/96.png" alt="96"></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>虚拟列表的实现，实际上就是在首屏加载的时候，只加载<code>可视区域</code>内需要的列表项，当滚动发生时，动态通过计算获得<code>可视区域</code>内的列表项，并将<code>非可视区域</code>内存在的列表项删除。</p>
+<ul>
+<li>计算当前<code>可视区域</code>起始数据索引(<code>startIndex</code>)</li>
+<li>计算当前<code>可视区域</code>结束数据索引(<code>endIndex</code>)</li>
+<li>计算当前<code>可视区域的</code>数据，并渲染到页面中</li>
+<li>计算<code>startIndex</code>对应的数据在整个列表中的偏移位置<code>startOffset</code>并设置到列表上</li>
+</ul>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/97.png" alt="97"></p>
+<p>由于只是对<code>可视区域</code>内的列表项进行渲染，所以为了保持列表容器的高度并可正常的触发滚动，将Html结构设计成如下结构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="keyword">class</span>=<span class="string">&quot;infinite-list-container&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;infinite-list-phantom&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;infinite-list&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="comment">&lt;!-- item-1 --&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="comment">&lt;!-- item-2 --&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="comment">&lt;!-- ...... --&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="comment">&lt;!-- item-n --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>infinite-list-container</code> 为<code>可视区域</code>的容器</li>
+<li><code>infinite-list-phantom</code> 为容器内的占位，高度为总列表高度，用于形成滚动条</li>
+<li><code>infinite-list</code> 为列表项的<code>渲染区域</code></li>
+</ul>
+<p>接着，监听<code>infinite-list-container</code>的<code>scroll</code>事件，获取滚动位置<code>scrollTop</code></p>
+<ul>
+<li>假定<code>可视区域</code>高度固定，称之为<code>screenHeight</code></li>
+<li>假定<code>列表每项</code>高度固定，称之为<code>itemSize</code></li>
+<li>假定<code>列表数据</code>称之为<code>listData</code></li>
+<li>假定<code>当前滚动位置</code>称之为<code>scrollTop</code></li>
+</ul>
+<p>则可推算出：</p>
+<ul>
+<li>列表总高度<code>listHeight</code> = listData.length * itemSize</li>
+<li>可显示的列表项数<code>visibleCount</code> = Math.ceil(screenHeight / itemSize)</li>
+<li>数据的起始索引<code>startIndex</code> = Math.floor(scrollTop / itemSize)</li>
+<li>数据的结束索引<code>endIndex</code> = startIndex + visibleCount</li>
+<li>列表显示数据为<code>visibleData</code> = listData.slice(startIndex,endIndex)</li>
+</ul>
+<p>当滚动后，由于<code>渲染区域</code>相对于<code>可视区域</code>已经发生了偏移，此时我需要获取一个偏移量<code>startOffset</code>，通过样式控制将<code>渲染区域</code>偏移至<code>可视区域</code>中。</p>
+<ul>
+<li>偏移量<code>startOffset</code> = scrollTop - (scrollTop % itemSize);</li>
+</ul>
+<p>最终的<code>简易代码</code>如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&quot;list&quot;</span> <span class="attr">class</span>=<span class="string">&quot;infinite-list-container&quot;</span> @<span class="attr">scroll</span>=<span class="string">&quot;scrollEvent($event)&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;infinite-list-phantom&quot;</span> <span class="attr">:style</span>=<span class="string">&quot;&#123; height: listHeight + &#x27;px&#x27; &#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;infinite-list&quot;</span> <span class="attr">:style</span>=<span class="string">&quot;&#123; transform: getTransform &#125;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&quot;items&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">class</span>=<span class="string">&quot;infinite-list-item&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">v-for</span>=<span class="string">&quot;item in visibleData&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">:style</span>=<span class="string">&quot;&#123; height: itemSize + &#x27;px&#x27;,lineHeight: itemSize + &#x27;px&#x27; &#125;&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">      &gt;</span>&#123;&#123; item.value &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">name</span>:<span class="string">&#x27;VirtualList&#x27;</span>,</span><br><span class="line">  <span class="attr">props</span>: &#123;</span><br><span class="line">    <span class="comment">//所有列表数据</span></span><br><span class="line">    <span class="attr">listData</span>:&#123;</span><br><span class="line">      <span class="attr">type</span>:<span class="title class_">Array</span>,</span><br><span class="line">      <span class="attr">default</span>:<span class="function">()=&gt;</span>[]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//每项高度</span></span><br><span class="line">    <span class="attr">itemSize</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="title class_">Number</span>,</span><br><span class="line">      <span class="attr">default</span>:<span class="number">200</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">computed</span>:&#123;</span><br><span class="line">    <span class="comment">//列表总高度</span></span><br><span class="line">    <span class="title function_">listHeight</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">listData</span>.<span class="property">length</span> * <span class="variable language_">this</span>.<span class="property">itemSize</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//可显示的列表项数</span></span><br><span class="line">    <span class="title function_">visibleCount</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="variable language_">this</span>.<span class="property">screenHeight</span> / <span class="variable language_">this</span>.<span class="property">itemSize</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//偏移量对应的style</span></span><br><span class="line">    <span class="title function_">getTransform</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`translate3d(0,<span class="subst">$&#123;<span class="variable language_">this</span>.startOffset&#125;</span>px,0)`</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//获取真实显示列表数据</span></span><br><span class="line">    <span class="title function_">visibleData</span>(<span class="params"></span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">listData</span>.<span class="title function_">slice</span>(<span class="variable language_">this</span>.<span class="property">start</span>, <span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="variable language_">this</span>.<span class="property">end</span>,<span class="variable language_">this</span>.<span class="property">listData</span>.<span class="property">length</span>));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">screenHeight</span> = <span class="variable language_">this</span>.<span class="property">$el</span>.<span class="property">clientHeight</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">start</span> = <span class="number">0</span>;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">end</span> = <span class="variable language_">this</span>.<span class="property">start</span> + <span class="variable language_">this</span>.<span class="property">visibleCount</span>;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="comment">//可视区域高度</span></span><br><span class="line">      <span class="attr">screenHeight</span>:<span class="number">0</span>,</span><br><span class="line">      <span class="comment">//偏移量</span></span><br><span class="line">      <span class="attr">startOffset</span>:<span class="number">0</span>,</span><br><span class="line">      <span class="comment">//起始索引</span></span><br><span class="line">      <span class="attr">start</span>:<span class="number">0</span>,</span><br><span class="line">      <span class="comment">//结束索引</span></span><br><span class="line">      <span class="attr">end</span>:<span class="literal">null</span>,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">scrollEvent</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="comment">//当前滚动位置</span></span><br><span class="line">      <span class="keyword">let</span> scrollTop = <span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">list</span>.<span class="property">scrollTop</span>;</span><br><span class="line">      <span class="comment">//此时的开始索引</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">start</span> = <span class="title class_">Math</span>.<span class="title function_">floor</span>(scrollTop / <span class="variable language_">this</span>.<span class="property">itemSize</span>);</span><br><span class="line">      <span class="comment">//此时的结束索引</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">end</span> = <span class="variable language_">this</span>.<span class="property">start</span> + <span class="variable language_">this</span>.<span class="property">visibleCount</span>;</span><br><span class="line">      <span class="comment">//此时的偏移量</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">startOffset</span> = scrollTop - (scrollTop % <span class="variable language_">this</span>.<span class="property">itemSize</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/virtuallist-1-rp8pi">点击查看在线DEMO及完整代码</a></p>
+<p>最终效果如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/98.gif" alt="98"></p>
+<h2 id="列表项动态高度"><a href="#列表项动态高度" class="headerlink" title="列表项动态高度"></a>列表项动态高度</h2><p>在之前的实现中，列表项的高度是固定的，因为高度固定，所以可以很轻易的获取列表项的整体高度以及滚动时的显示数据与对应的偏移量。而实际应用的时候，当列表中包含文本之类的可变内容，会导致列表项的高度并不相同。</p>
+<p>比如这种情况：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/99.jpg" alt="99"></p>
+<p>在虚拟列表中应用动态高度的解决方案一般有如下三种：</p>
+<blockquote>
+<p>1.对组件属性<code>itemSize</code>进行扩展，支持传递类型为<code>数字</code>、<code>数组</code>、<code>函数</code></p>
+</blockquote>
+<ul>
+<li>可以是一个固定值，如 100，此时列表项是固高的</li>
+<li>可以是一个包含所有列表项高度的数据，如 [50, 20, 100, 80, …]</li>
+<li>可以是一个根据列表项索引返回其高度的函数：(index: number): number</li>
+</ul>
+<p>这种方式虽然有比较好的灵活度，但仅适用于可以预先知道或可以通过计算得知列表项高度的情况，依然无法解决列表项高度由内容撑开的情况。</p>
+<blockquote>
+<p>2.将列表项<code>渲染到屏幕外</code>，对其高度进行测量并缓存，然后再将其渲染至可视区域内。</p>
+</blockquote>
+<p>由于预先渲染至屏幕外，再渲染至屏幕内，这导致渲染成本增加一倍，这对于数百万用户在低端移动设备上使用的产品来说是不切实际的。</p>
+<blockquote>
+<p>3.以<code>预估高度</code>先行渲染，然后获取真实高度并缓存。</p>
+</blockquote>
+<p>这是我选择的实现方式，可以避免前两种方案的不足。</p>
+<p>接下来，来看如何简易的实现：</p>
+<p>定义组件属性<code>estimatedItemSize</code>,用于接收<code>预估高度</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>: &#123;</span><br><span class="line">  <span class="comment">//预估高度</span></span><br><span class="line">  <span class="attr">estimatedItemSize</span>:&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="title class_">Number</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义<code>positions</code>，用于列表项渲染后存储<code>每一项的高度以及位置</code>信息，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">positions</span> = [</span><br><span class="line">  <span class="comment">// &#123;</span></span><br><span class="line">  <span class="comment">//   top:0,</span></span><br><span class="line">  <span class="comment">//   bottom:100,</span></span><br><span class="line">  <span class="comment">//   height:100</span></span><br><span class="line">  <span class="comment">// &#125;</span></span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p>并在初始时根据<code>estimatedItemSize</code>对<code>positions</code>进行初始化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">initPositions</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">positions</span> = <span class="variable language_">this</span>.<span class="property">listData</span>.<span class="title function_">map</span>(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      index,</span><br><span class="line">      <span class="attr">height</span>:<span class="variable language_">this</span>.<span class="property">estimatedItemSize</span>,</span><br><span class="line">      <span class="attr">top</span>:index * <span class="variable language_">this</span>.<span class="property">estimatedItemSize</span>,</span><br><span class="line">      <span class="attr">bottom</span>:(index + <span class="number">1</span>) * <span class="variable language_">this</span>.<span class="property">estimatedItemSize</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于列表项高度不定，并且我们维护了<code>positions</code>，用于记录每一项的位置，而<code>列表高度</code>实际就等于列表中最后一项的底部距离列表顶部的位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//列表总高度</span></span><br><span class="line"><span class="title function_">listHeight</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">positions</span>[<span class="variable language_">this</span>.<span class="property">positions</span>.<span class="property">length</span> - <span class="number">1</span>].<span class="property">bottom</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于需要在<code>渲染完成</code>后，获取列表每项的位置信息并缓存，所以使用钩子函数<code>updated</code>来实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">updated</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> nodes = <span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">items</span>;</span><br><span class="line">  nodes.<span class="title function_">forEach</span>(<span class="function">(<span class="params">node</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> rect = node.<span class="title function_">getBoundingClientRect</span>();</span><br><span class="line">    <span class="keyword">let</span> height = rect.<span class="property">height</span>;</span><br><span class="line">    <span class="keyword">let</span> index = +node.<span class="property">id</span>.<span class="title function_">slice</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">let</span> oldHeight = <span class="variable language_">this</span>.<span class="property">positions</span>[index].<span class="property">height</span>;</span><br><span class="line">    <span class="keyword">let</span> dValue = oldHeight - height;</span><br><span class="line">    <span class="comment">//存在差值</span></span><br><span class="line">    <span class="keyword">if</span>(dValue)&#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">positions</span>[index].<span class="property">bottom</span> = <span class="variable language_">this</span>.<span class="property">positions</span>[index].<span class="property">bottom</span> - dValue;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">positions</span>[index].<span class="property">height</span> = height;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">let</span> k = index + <span class="number">1</span>;k&lt;<span class="variable language_">this</span>.<span class="property">positions</span>.<span class="property">length</span>; k++)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">positions</span>[k].<span class="property">top</span> = <span class="variable language_">this</span>.<span class="property">positions</span>[k-<span class="number">1</span>].<span class="property">bottom</span>;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">positions</span>[k].<span class="property">bottom</span> = <span class="variable language_">this</span>.<span class="property">positions</span>[k].<span class="property">bottom</span> - dValue;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>滚动后获取列表<code>开始索引</code>的方法修改为通过<code>缓存</code>获取：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取列表起始索引</span></span><br><span class="line"><span class="title function_">getStartIndex</span>(<span class="params">scrollTop = <span class="number">0</span></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> item = <span class="variable language_">this</span>.<span class="property">positions</span>.<span class="title function_">find</span>(<span class="function"><span class="params">i</span> =&gt;</span> i &amp;&amp; i.<span class="property">bottom</span> &gt; scrollTop);</span><br><span class="line">  <span class="keyword">return</span> item.<span class="property">index</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于我们的缓存数据，本身就是有顺序的，所以获取<code>开始索引</code>的方法可以考虑通过<code>二分查找</code>的方式来降低检索次数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取列表起始索引</span></span><br><span class="line"><span class="title function_">getStartIndex</span>(<span class="params">scrollTop = <span class="number">0</span></span>)&#123;</span><br><span class="line">  <span class="comment">//二分法查找</span></span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">binarySearch</span>(<span class="variable language_">this</span>.<span class="property">positions</span>,scrollTop)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">//二分法查找</span></span><br><span class="line"><span class="title function_">binarySearch</span>(<span class="params">list,value</span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">let</span> end = list.<span class="property">length</span> - <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> tempIndex = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">while</span>(start &lt;= end)&#123;</span><br><span class="line">    <span class="keyword">let</span> midIndex = <span class="built_in">parseInt</span>((start + end)/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">let</span> midValue = list[midIndex].<span class="property">bottom</span>;</span><br><span class="line">    <span class="keyword">if</span>(midValue === value)&#123;</span><br><span class="line">      <span class="keyword">return</span> midIndex + <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(midValue &lt; value)&#123;</span><br><span class="line">      start = midIndex + <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(midValue &gt; value)&#123;</span><br><span class="line">      <span class="keyword">if</span>(tempIndex === <span class="literal">null</span> || tempIndex &gt; midIndex)&#123;</span><br><span class="line">        tempIndex = midIndex;</span><br><span class="line">      &#125;</span><br><span class="line">      end = end - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> tempIndex;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>滚动后将<code>偏移量</code>的获取方式变更：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">scrollEvent</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">//...省略</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="variable language_">this</span>.<span class="property">start</span> &gt;= <span class="number">1</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">startOffset</span> = <span class="variable language_">this</span>.<span class="property">positions</span>[<span class="variable language_">this</span>.<span class="property">start</span> - <span class="number">1</span>].<span class="property">bottom</span></span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">startOffset</span> = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过<a target="_blank" rel="noopener" href="https://github.com/marak/Faker.js/">faker.js</a> 来创建一些<code>随机数据</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> data = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> id = <span class="number">0</span>; id &lt; <span class="number">10000</span>; id++) &#123;</span><br><span class="line">  data.<span class="title function_">push</span>(&#123;</span><br><span class="line">    id,</span><br><span class="line">    <span class="attr">value</span>: faker.<span class="property">lorem</span>.<span class="title function_">sentences</span>() <span class="comment">// 长文本</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/virtuallist2-1bqk6">点击查看在线DEMO及完整代码</a></p>
+<p>最终效果如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/100.gif" alt="100"></p>
+<p>从演示效果上看，我们实现了基于<code>文字内容动态撑高列表项</code>情况下的<code>虚拟列表</code>，但是我们可能会发现，当滚动过快时，会出现短暂的<code>白屏现象</code>。</p>
+<p>为了使页面平滑滚动，我们还需要在<code>可见区域</code>的上方和下方渲染额外的项目，在滚动时给予一些<code>缓冲</code>，所以将屏幕分为三个区域：</p>
+<ul>
+<li>可视区域上方：<code>above</code></li>
+<li>可视区域：<code>screen</code></li>
+<li>可视区域下方：<code>below</code></li>
+</ul>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/101.png" alt="101"></p>
+<p>定义组件属性<code>bufferScale</code>,用于接收<code>缓冲区数据</code>与<code>可视区数据</code>的<code>比例</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>: &#123;</span><br><span class="line">  <span class="comment">//缓冲区比例</span></span><br><span class="line">  <span class="attr">bufferScale</span>:&#123;</span><br><span class="line">    <span class="attr">type</span>:<span class="title class_">Number</span>,</span><br><span class="line">    <span class="attr">default</span>:<span class="number">1</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可视区上方渲染条数<code>aboveCount</code>获取方式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">aboveCount</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="variable language_">this</span>.<span class="property">start</span>,<span class="variable language_">this</span>.<span class="property">bufferScale</span> * <span class="variable language_">this</span>.<span class="property">visibleCount</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可视区下方渲染条数<code>belowCount</code>获取方式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">belowCount</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">min</span>(<span class="variable language_">this</span>.<span class="property">listData</span>.<span class="property">length</span> - <span class="variable language_">this</span>.<span class="property">end</span>,<span class="variable language_">this</span>.<span class="property">bufferScale</span> * <span class="variable language_">this</span>.<span class="property">visibleCount</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>真实渲染数据<code>visibleData</code>获取方式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">visibleData</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> start = <span class="variable language_">this</span>.<span class="property">start</span> - <span class="variable language_">this</span>.<span class="property">aboveCount</span>;</span><br><span class="line">  <span class="keyword">let</span> end = <span class="variable language_">this</span>.<span class="property">end</span> + <span class="variable language_">this</span>.<span class="property">belowCount</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">_listData</span>.<span class="title function_">slice</span>(start, end);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/virtuallist-3-i3h9v">点击查看在线DEMO及完整代码</a></p>
+<p>最终效果如下：</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/102.gif" alt="102"></p>
+<blockquote>
+<p>基于这个方案，个人开发了一个基于Vue2.x的虚拟列表组件：<a target="_blank" rel="noopener" href="https://github.com/chenqf/vue-virtual-listview">vue-virtual-listview</a>,可<a target="_blank" rel="noopener" href="https://github.com/chenqf/vue-virtual-listview">点击查看完整代码</a>。</p>
+</blockquote>
+<h2 id="面向未来"><a href="#面向未来" class="headerlink" title="面向未来"></a>面向未来</h2><p>在前文中我们使用<code>监听scroll事件</code>的方式来触发可视区域中数据的更新，当滚动发生后，scroll事件会频繁触发，很多时候会造成<code>重复计算</code>的问题，从性能上来说无疑存在浪费的情况。</p>
+<p>可以使用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/IntersectionObserver">IntersectionObserver</a>替换监听scroll事件，<code>IntersectionObserver</code>可以监听目标元素是否出现在可视区域内，在监听的回调事件中执行可视区域数据的更新，并且<code>IntersectionObserver</code>的监听回调是异步触发，不随着目标元素的滚动而触发，性能消耗极低。</p>
+<h2 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h2><p>我们虽然实现了根据列表项动态高度下的虚拟列表，但如果列表项中包含图片，并且列表高度由图片撑开，由于图片会发送网络请求，此时无法保证我们在获取列表项真实高度时图片是否已经加载完成，从而造成计算不准确的情况。</p>
+<p>这种情况下，如果我们能监听列表项的大小变化就能获取其真正的高度了。我们可以使用<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/ResizeObserver">ResizeObserver</a>来监听列表项内容区域的高度改变，从而实时获取每一列表项的高度。</p>
+<p>不过遗憾的是，在撰写本文的时候，仅有少数<a target="_blank" rel="noopener" href="https://www.caniuse.com/#search=ResizeObserver">浏览器支持</a><code>ResizeObserver</code>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>📚 <a target="_blank" rel="noopener" href="https://github.com/dwqs/blog/issues/70">浅说虚拟列表的实现原理</a></li>
+<li>📚 <a target="_blank" rel="noopener" href="https://github.com/dwqs/blog/issues/72">react-virtualized组件的虚拟列表实现</a></li>
+<li>📚 <a target="_blank" rel="noopener" href="https://itsze.ro/blog/2017/04/09/infinite-list-and-react.html">React和无限列表</a></li>
+<li>📚 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34585166">再谈前端虚拟列表的实现</a></li>
+</ul>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -556,10 +695,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -569,6 +704,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -591,11 +730,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

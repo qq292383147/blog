@@ -157,602 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/03/23/PHP/php-mysql-ajax%E5%AD%A6%E4%B9%A0/">
-                php+mysql+ajax学习
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-03-23</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/php/">php</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <ul>
-<li><p>PHP是用于网页服务器端编程的脚本语言。WEB服务器是安装了WEB服务器软件的计算机，存储网站脚本程序</p>
-</li>
-<li><p>用户请求对应脚本时，服务器执行对应的脚本并返回执行结果</p>
-</li>
-</ul>
-<h3 id="搭建-WEB-服务器（提供网站服务的机器）"><a href="#搭建-WEB-服务器（提供网站服务的机器）" class="headerlink" title="- 搭建 WEB 服务器（提供网站服务的机器）"></a>- 搭建 WEB 服务器（提供网站服务的机器）</h3><h3 id="服务端开发（动态网页技术）"><a href="#服务端开发（动态网页技术）" class="headerlink" title="- 服务端开发（动态网页技术）"></a>- 服务端开发（动态网页技术）</h3><h3 id="HTTP（浏览器与服务端的通讯协议）"><a href="#HTTP（浏览器与服务端的通讯协议）" class="headerlink" title="- HTTP（浏览器与服务端的通讯协议）"></a>- HTTP（浏览器与服务端的通讯协议）</h3><h3 id="数据库操作（服务端存储数据方式）"><a href="#数据库操作（服务端存储数据方式）" class="headerlink" title="- 数据库操作（服务端存储数据方式）"></a>- 数据库操作（服务端存储数据方式）</h3><ul>
-<li><p>AJAX（浏览器与服务端的数据交互方式）</p>
-</li>
-<li><p>服务器（提供服务）指的就是一台安装特定的软件的计算机，用于专门用于提供特定的服务。</p>
-</li>
-<li><p>按照服务类型的不同，又划分为：Web 服务器、数据库服务器、文件服务器等等。</p>
-</li>
-<li><p>客户端（使用服务）指的是在一次服务过程中使用这个服务的设备（网络端点）。</p>
-</li>
-<li><p>目前咱们最常见的客户端就是浏览器</p>
-</li>
-</ul>
-<h2 id="IP-地址"><a href="#IP-地址" class="headerlink" title="IP 地址"></a>IP 地址</h2><p>设备在某一个网络中的地址，目前最常见的格式：<code>[0-255].[0-255].[0-255].[0-255]</code> 即为四个 <code>0-255</code> 的数字组成。 <code>192.168.83.77</code></p>
-<p>作用就是标识一个网络设备（计算机、手机、电视）在<strong>某一个具体的网络</strong>当中的地址。</p>
-<p><code>127.0.0.1</code> 是本地回环地址 localhost：用来测试本机服务器是否连通</p>
-<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>由于 IP 地址都是没有规律的一些数字组成的，很难被人记住，不利于广泛传播，所以就有人想出来要给 IP 起名字（别名）。</p>
-<h2 id="特殊的域名"><a href="#特殊的域名" class="headerlink" title="特殊的域名"></a>特殊的域名</h2><p>localhost 含义为本地主机，对应<code>127.0.0.1</code> 。这是一个保留域名，主要用于本地测试。</p>
-<h4 id="顶级域名（了解）"><a href="#顶级域名（了解）" class="headerlink" title="顶级域名（了解）"></a><strong>顶级域名（了解）</strong></h4><p>.com: 商业机构 .cn: 中国国家、地区域名 .hk,.gov: 政府网站。.org: 机构。.edu: 教育网站。.net: 网络服务商。 php.net.mil: 军事。</p>
-<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a><strong>DNS</strong></h3><p>通过宽带运营商提供的服务器解析一个域名背后对应的 IP，这个过程叫做 <strong>DNS 寻址</strong>，帮你完成 DNS 寻址过程的服务器叫做 <strong>DNS 服务器</strong>。</p>
-<h4 id="hosts-文件"><a href="#hosts-文件" class="headerlink" title="hosts 文件"></a><strong>hosts 文件</strong></h4><p>操作系统在发起对 DNS 服务器的查询请求之前，会优先检查本机的 hosts 文件。如果这个文件中包含了对当前需要解析的域名的配置，则不再发起对 DNS 服务器的请求，直接使用 hosts 文件中的配置。</p>
-<p><strong>文件所在路径：</strong></p>
-<p>Windows：<code>C:\Windows\System32\drivers\etc\hosts</code></p>
-<p>macOS：<code>/etc/hosts</code></p>
-<p>注意：</p>
-<p>本机的 <code>hosts</code> 文件配置只能到影响本机的 DNS 寻址</p>
-<p>只有以管理员权限运行的编辑器才有权利修改 hosts 文件</p>
-<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a><strong>端口</strong></h3><p>计算机本身是一个封闭的环境，就像是一个大楼，如果需要有数据通信往来，必须有门，这个门在术语中就叫端口，每一个端口都有一个编号，每台计算机只有 65536 个端口（0-65535）。</p>
-<p>一般我们把“占门”的过程叫做监听</p>
-<p>可以通过在命令行中运行： <font color="#f0f">netstat -an</font> 命令监视本机端口使用情况：</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/1.png" alt="img"> </p>
-<ul>
-<li><p>http 默认的端口 80</p>
-</li>
-<li><p>https 默认的端口是 443</br></p>
-</li>
-</ul>
-<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a><font face="Brush Script Std" size="8">URL</font></h2><font color="#f0f"><strong>URL（Uniform Resource Locator）</strong></font>，统一资源定位符，通俗点来说就是表示网络当中某一个网页的完整访问地址，它具有一定的格式：<br><br><br>协议名称://域名:端口/文件目录(文件名称)?key=value&amp;key2=value2<br><br><br><h1> 请求响应流程 (重要)</h1><br><br>1. 用户打开浏览器<br><br>2. 地址栏输入我们需要访问的网站网址（URL）<br><br>3. 浏览器通过  DNS 服务器 获取即将访问的网站  IP 地址<br><br>4. 浏览器发起一个对这个 IP地址的 请求<br><br>5. 服务端中   监听指定的 端口 的服务器软件   接收到这个请求，进行相应的处理<br><br>6. 服务端将处理完的结果返回给客户端浏览器（响应）<br><br>7. 浏览器将服务端返回的结果呈现到界面上<br><br><br><br><strong>Web 服务器软件分类（了解）</strong><br><br>- Nginx<br><br><font color="#f0f">- Apache  -  php</font>
-
-<ul>
-<li><p>IIS  -  C#    .net</p>
-</li>
-<li><p>Tomcat  -   java</p>
-</li>
-</ul>
-<h2 id="配置第一个虚拟主机"><a href="#配置第一个虚拟主机" class="headerlink" title="配置第一个虚拟主机"></a>配置第一个虚拟主机</h2><ul>
-<li><p>单击“其它选项菜单” 》 “站点域名管理”,在弹出的对话框中 设置 ”站点域名“，”目录“，”第二域名“，”端口“，之后单击”新增“，同时单击”保存设置并添加到配置文件“</p>
-</li>
-<li><p>配置hosts文件，在这个文件中添加当前的域名映射。单击”其它选项菜单“&gt;”打开host”</p>
-</li>
-<li><p>如果当前目录下没有默认可执行文件，那么就会报错，如果想展示目录结构，就需要通过修改配置文件的方式来实现。”其它选项菜单“&gt;”打开配置文件”&gt;”vhots-ini”  :Options Indexes FollowSymLinks ExecCGI</p>
-</li>
-<li><p>重启服务器(通过phpstudy面板进行的设置 ，服务器会自动的重启，但是如果手动的设置修改了配置文件，那么就需要手动的重启服务器)</p>
-</li>
-</ul>
-<h2 id="配置第二个虚拟主机"><a href="#配置第二个虚拟主机" class="headerlink" title="配置第二个虚拟主机"></a>配置第二个虚拟主机</h2><ul>
-<li><p>单击“其它选项菜单” 》 “站点域名管理”,在弹出的对话框中 设置 ”站点域名“，”目录“，”第二域名“，”端口“，之后单击”新增“，同时单击”保存设置并添加到配置文件。</p>
-</li>
-<li><p>产生了新的问题：它会重新的生成配置文件内容并写入，会将之前对day1.com的配置重新覆盖，造成无法展示目录结构–重新添加Indexes,并重启服务器</p>
-</li>
-<li><p>配置hosts文件，在这个文件中添加当前的域名映射。单击”其它选项菜单“&gt;”打开host”</p>
-</li>
-</ul>
-<h2 id="Apache-与-PHP"><a href="#Apache-与-PHP" class="headerlink" title="Apache 与 PHP"></a>Apache 与 PHP</h2><p>对于很多初学者来说，很容易把 Apache 和 PHP 混在一起 混为一谈，其实他们两者各自有各自负责的领域，各自的职责，但是我们在使用 PHP 做动态网站开发时，两者就会产生联系，具体如下：</p>
-<p>Apache 是根据文件的扩展名找到文件的类型，然后挨个问一下每一个模块能否处理这个类型的文件，如果这些模块都不能处理，那么 Apache 就自己处理（按照静态文件的方式处理）</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/2.png" alt="img"> </p>
-<h2 id="php语言的特点"><a href="#php语言的特点" class="headerlink" title="php语言的特点"></a>php语言的特点</h2><ul>
-<li><p><font color="#f0f">开源（open source）</font>软件，跨平台，常用操作系统稳定执行。Windows / Linux。做WEB开发的经典组合 WAMP,LAMP基本都是开源软件。</p>
-</li>
-<li><p>入门简单,用户只需要关注应用，开发成本低。</p>
-</li>
-<li><p>支持的大多数主流数据库。<code>MySQL</code>，<code>oracle,Redis</code>等</p>
-</li>
-<li><p>存在大量针对PHP开发的框架。如Laravel,ThinkPHP,Yii,CoderIgniter,Symfony等，加快开发速度</p>
-</li>
-</ul>
-<h2 id="PHP-标记"><a href="#PHP-标记" class="headerlink" title="PHP 标记"></a>PHP 标记</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> 可以让代码进入“PHP 模式”</span><br><span class="line">  </span><br><span class="line"><span class="meta">?&gt;</span> 可以让代码退出“PHP 模式”</span><br></pre></td></tr></table></figure>
-<h3 id="输出内容的方式"><a href="#输出内容的方式" class="headerlink" title="输出内容的方式"></a>输出内容的方式</h3><p>​    <font color="#ffe090">echo</font>:输出多个字符串</p>
-<p>​    <font color="#ffe090">print</font>:输出一个字符串值</p>
-<p>​    <font color="#ffe090">print_r</font>:可以输出复杂数据类型，如数组，以键值对的形式输出</p>
-<p>​    <font color="#ffe090">var_dump</font>:可以输出复杂数据类型，如数组，以键值对的形式输出，还可以输出数据的长度</p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><blockquote>
-<ol>
-<li>变量是编程语言中临时存放数据的容器。</li>
-<li>PHP 中申明一个变量是用一个美元符号后面跟变量名来表示。变量名同样是区分大小写的。</li>
-<li>PHP 中变量无需声明类型，变量的类型根据值的类型来推断。</li>
-</ol>
-</blockquote>
-<h3 id="变量的生命周期"><a href="#变量的生命周期" class="headerlink" title="变量的生命周期"></a>变量的生命周期</h3><blockquote>
-<ol>
-<li>全局变量：声明的时候产生，页面执行完毕后销毁</li>
-<li>局部变量：函数执行的时候产生，函数执行完毕销毁。</li>
-</ol>
-</blockquote>
-<p>可以通过unset()手动销毁变量。</p>
-<h2 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h2><blockquote>
-<ol>
-<li>静态变量放在函数内部</li>
-<li>作用域不变，还是在函数的内部访问，但是生命周期变了，页面执行完毕后才销毁。</li>
-<li>静态变量只能被初始化一次。</li>
-</ol>
-</blockquote>
-<h2 id="定义常量"><a href="#定义常量" class="headerlink" title="定义常量"></a>定义常量</h2><blockquote>
-<font color="#98e165">1. 定义常量使用的是内置的 <code>define</code> 函数</font><br><font color="#98e165">2. 第一个参数是常量的名称，建议采用全大写字母命名，多个单词下划线分隔</font><br><font color="#98e165">3. 第二个参数是常量中存放的数据，可以是任意类型</font><br><font color="#98e165">4. 第三个参数是常量名称是否区不分大小写，默认 false 区分大小写</font>
-</blockquote>
-<p>eg:define(‘SYSTEM_NAME’, ‘阿里百秀’);</p>
-<h2 id="使用常量"><a href="#使用常量" class="headerlink" title="使用常量"></a>使用常量</h2><font color="#98e165">1. 直接通过常量的名称访问常量</font>
-
-<font color="#98e165">2. 与变量不同的是不需要用 $</font>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> SYSTEM_NAME;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> SYSTEM_ENABLE;</span><br></pre></td></tr></table></figure>
-<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><blockquote>
-<ol>
-<li>isset(): 判断变量是否定义了，同时它还可以判断变量的值是否为 <code>null</code>,如果定义了且值不为null,则返回 <code>true</code>,否则返回 <code>false</code></li>
-<li>empty(): 判断变量是否为空值，为空的值有：””  0 “0”, null, false, array().如果值为以上中的某一个，则返回 <code>true</code> 值</li>
-<li>unset(): 删除变量</li>
-</ol>
-</blockquote>
-<ul>
-<li><p>如果删除一个变量，那么变量的值会置为 null</p>
-</li>
-<li><p>可以同时删除多个变量</p>
-</li>
-<li><p>如果在函数中删除全局变量，那么并不会真正的将全局变量删除</p>
-</li>
-</ul>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
-<li><p>string（字符串） </p>
-</li>
-<li><p>integer（整型）—— 只能存整数</p>
-</li>
-<li><p>float（浮点型）—— 可以存带小数位的数字</p>
-</li>
-<li><p>boolean（布尔型）</p>
-</li>
-<li><p>array（数组） </p>
-</li>
-<li><p>object（对象）</p>
-</li>
-<li><p>NULL（空）</p>
-</li>
-</ul>
-<h3 id="数据类型的分类："><a href="#数据类型的分类：" class="headerlink" title="数据类型的分类："></a>数据类型的分类：</h3><ul>
-<li><p>基本数据类型：<code>string</code>（字符串） <code>integer</code>（整型） <code>float</code>（浮点型） <code>boolean</code>（布尔型）</p>
-</li>
-<li><p>复合数据类型： <code>array</code>（数组） <code>object</code>（对象）</p>
-</li>
-<li><p>特殊数据类型：<code>NULL</code>（空） 资源</p>
-</li>
-</ul>
-<h3 id="判断数据类型："><a href="#判断数据类型：" class="headerlink" title="判断数据类型："></a>判断数据类型：</h3><p><code>is_string()</code>: 判断当前变量是否是字符串类型</p>
-<p><code>is_bool()</code>: 判断当前变量是否是布尔类型</p>
-<p><code>is_int()</code>: 判断当前变量是否是整形类型</p>
-<p><code>is_float()</code>: 判断当前变量是否是浮点类型</p>
-<p><code>is_array()</code>: 判断当前变量是否是数组类型</p>
-<p><code>is_object()</code>: 判断当前变量是否是对象类型</p>
-<h3 id="字符串（重要）"><a href="#字符串（重要）" class="headerlink" title="字符串（重要）"></a>字符串（重要）</h3><p>PHP 有多种创建字符串的方式：单引号、双引号等。</p>
-<h3 id="单引号字符串"><a href="#单引号字符串" class="headerlink" title="单引号字符串"></a>单引号字符串</h3><p>不支持特殊的转义符号，例如 \n</p>
-<p>如果要表示一个单引号字符内容，可以通过 \’ 表达</p>
-<p>如果要表示一个反斜线字符内容，可以通过 \ 表达</p>
-<h3 id="双引号字符串"><a href="#双引号字符串" class="headerlink" title="双引号字符串"></a>双引号字符串</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">支持转义符号：\<span class="string">&quot;  \  $  \r \n \t</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">支持变量解析</span></span><br></pre></td></tr></table></figure>
-<h3 id="数组（重要）"><a href="#数组（重要）" class="headerlink" title="数组（重要）"></a>数组（重要）</h3><p>PHP有混合数组的概念：说明数组中的成员是索引数组和关联数组成员的混合</p>
-<p>如果没有手动设置key，那么 <code>key</code> 由系统自动生成.索引值是根据数组中最后一个索引值 +1</p>
-<p>如果手动设置 <code>key</code>，那么这个 <code>key</code> 也不会影响系统自动生成的索引值</p>
-<p>Strlen本质上不能获取宽字符串集的长度，所谓宽字符集就是指PHP默认不支持的字符(中文等等…)</p>
-<p>它并不能获取这些宽字符串的长度，所以在调用这个函数的时候，会根据这些字符所占据的[字节数]来获取长度值</p>
-<p>Gb2312:一个中文占 2 个字节</p>
-<p>Utf8：一个中文占 3 个字节</p>
-<p>它可以获取指定字符串的长度，但是它需要确定引入了一个扩展 <code>php_mbstring.dll</code></p>
-<p>通过 php.ini 进行配置：extension = php_mbstring.dll</p>
-<h2 id="PHP-中数组"><a href="#PHP-中数组" class="headerlink" title="PHP 中数组"></a>PHP 中数组</h2><p>索引数组（用户只是存入数据，索引由系统自动生成）</p>
-<p>  与 JavaScript 中的数组基本一致</p>
-<p> 关联数组（用户自定义key和value）</p>
-<p> 深度数组（数组中的每一个元素又是一个数组）</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(</span><br><span class="line">	<span class="title function_ invoke__">Array</span>(</span><br><span class="line">		Key =&gt;value</span><br><span class="line">	)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<ol>
-<li><h2 id="获取数组长度"><a href="#获取数组长度" class="headerlink" title="获取数组长度"></a>获取数组长度</h2></li>
-</ol>
-<font color="#98e165">count()</font>
-
-<font color="#98e165">sizeof()</font>
-
-
-
-<h3 id="文件引入"><a href="#文件引入" class="headerlink" title="文件引入"></a>文件引入</h3><font color="#98e165">require</font>
-
-<font color="#98e165">require_once</font>
-
-<font color="#98e165">include</font>
-
-<font color="#98e165">include_once</font>
-
-
-
-<p><code>include</code> 一般用于载入公共文件，这个文件的存在与否不能影响程序后面的运行</p>
-<p><code>require</code> 用于载入不可缺失的文件</p>
-<p>至于是否采用一次载入（once）这种方式取决于被载入的文件</p>
-<h2 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h2><p>include:如果<strong>载入失败</strong>，<strong>不会</strong>报错，后续代码会继续<strong>执行</strong>，它可以重复<strong>载入</strong></p>
-<p>require:如果<strong>载入失败</strong>，<strong>会</strong>报错，后续代码<strong>不</strong>会继续<strong>执行</strong>，它可以重复<strong>载入</strong></p>
-<p>include_once:如果<strong>载入失败</strong>，<strong>不会</strong>报错，后续代码会继续<strong>执行</strong>，它不会重复载入，<strong>只会</strong>真正的载入一次</p>
-<p>require_once:如果载<strong>入失败</strong>，会报错，后续代码<strong>不</strong>会继续<strong>执行</strong>，它<strong>不</strong>可以重复<strong>载入</strong></p>
-<font color="red">注意：如果想在函数内部使用，则可以通过关键字global</font>
-
-<p>Global:引用全局变量。通过global关键字可以实现在<strong>函数内部</strong>使用函数外部声明的成员</p>
-<p>不能再引用全局变量同时赋值，如果想赋值，那么换一行赋值</p>
-<p>如果在函数内部修改了全局成员的值，这个值真正的被修改了.</p>
-<h2 id="PHP的API"><a href="#PHP的API" class="headerlink" title="PHP的API"></a>PHP的API</h2><h3 id="时间处理"><a href="#时间处理" class="headerlink" title="时间处理"></a>时间处理</h3><p>Asia/Shanghai  - 上海</p>
-<p>Asia/Chongqing  - 重庆</p>
-<p>Asia/Hong_Kong  - 香港</p>
-<p>修改配置文件：php.ini data.timezone：Asia/Shanghai</p>
-<p>文件操作</p>
-<p>File_get_contents()  将文件读入字符串 <strong>可以读取文件内容并返回</strong></p>
-<p>File_put_contents(文件路径，写入的内容，FILE_APPEND)  <strong>将字符串写入文件 可以将指定的字符串内容写入到文件，其中第三个参数FILE_APPEND可以实现文件内容的追加</strong></p>
-<p>函数的声明和使用：</p>
-<ol>
-<li>声明</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名称（参数）</span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//函数体</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> 返回值</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li><p>使用：通过函数名称调用</p>
-</li>
-<li><p>细节:  函数内部默认不能直接使用函数外部声明的成员，如果想使用，可以：</p>
-</li>
-</ol>
-<p>Global:引入全局变量</p>
-<p>$GLOABALS：所有全局成员都在这个数组中，在整个php文件都能使用</p>
-<p><strong>拆分字符：explode(拆分元素(字符),字符串); //返回数组</strong></p>
-<p>foreach</p>
-<p>作用：用来遍历数组</p>
-<p>语法1：</p>
-<p>foreach(数组 as 值){}</p>
-<p>语法2：</p>
-<p>foreach(数组 <font color="pink"><strong>as</strong></font> 键 <font color="pink"><strong>=&gt;</strong></font>值){}</p>
-<p>想创建通用代码，让程序自动获取到当前文件的路径</p>
-<p>$SERVER[‘PHP_SELF’]就可以自动的获取当前文件的路径</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;&lt;?php echo <span class="subst">$_SERVER</span>[&#x27;PHP_SELF&#x27;] ?&gt;&quot;</span>method=<span class="string">&#x27;get&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
-<font color="#0d9">Get方式 - - - $_GET</font>
-
-<font color="#0d9">Post方式 - - -$_POST</font>
-
-<h3 id="REQUEST-可以接受任意类型请求方式所传递的参数"><a href="#REQUEST-可以接受任意类型请求方式所传递的参数" class="headerlink" title="$_REQUEST:可以接受任意类型请求方式所传递的参数"></a>$_REQUEST:可以接受任意类型请求方式所传递的参数</h3><h3 id="它可以接收get、post、cookie、session的参数，它有一个接收参数的排序规则，如果key名重名，那么后面接收的参数会将前面的数据覆盖–所以它不安全"><a href="#它可以接收get、post、cookie、session的参数，它有一个接收参数的排序规则，如果key名重名，那么后面接收的参数会将前面的数据覆盖–所以它不安全" class="headerlink" title="它可以接收get、post、cookie、session的参数，它有一个接收参数的排序规则，如果key名重名，那么后面接收的参数会将前面的数据覆盖–所以它不安全"></a><font color="#023">它可以接收get、post、cookie、session的参数，它有一个接收参数的排序规则，如果key名重名，那么后面接收的参数会将前面的数据覆盖–所以它不安全</font></h3><h3 id="表单基本使用"><a href="#表单基本使用" class="headerlink" title="表单基本使用"></a>表单基本使用</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HTML中有一个专门提交数据的标签&lt;form&gt;,通过这个标签可以容易的收集用户输入</span><br><span class="line"></span><br><span class="line">Form标签有两个必要属性：</span><br><span class="line"></span><br><span class="line">Action：表单提交地址</span><br><span class="line"></span><br><span class="line">Method：表单以什么方式提交</span><br></pre></td></tr></table></figure>
-<h3 id="PHP中有三个超全局变量专门用来获取表单提交内容："><a href="#PHP中有三个超全局变量专门用来获取表单提交内容：" class="headerlink" title="PHP中有三个超全局变量专门用来获取表单提交内容："></a>PHP中有三个超全局变量专门用来获取表单提交内容：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_GET</span>:用于获取以GET方式提交的内容（接收URL地址问号参数中的数据）</span><br><span class="line"></span><br><span class="line"><span class="variable">$_POST</span>:用于获取以POST方式提交的内容（接收请求体中的数据）</span><br><span class="line"></span><br><span class="line"><span class="variable">$_REQUEST</span>:用于获取GET或者POST方式提交的内容</span><br></pre></td></tr></table></figure>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/3.png" alt="img"> </p>
-<p>判断是否是 post 请求</p>
-<p>理论上说，<code>get</code> 和  <code>post</code> 上传文件的大小是没有限制，但是服务器对其做了限制</p>
-<p>如果向修改这个设置，则需要找到配置文件 php.ini 进行相关配置</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="variable">$_SERVER</span>[<span class="string">&#x27;REQUEST_METHOD&#x27;</span>]==<span class="string">&quot;POST&quot;</span>)&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$Misplaced</span> &amp;_FILES[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;tmp_name&#x27;</span>])  &amp;&amp; <span class="variable">$_FILES</span>[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;error&#x27;</span>]  != <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">echo</span> ‘没有文件被上传’;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">   <span class="title function_ invoke__">move_uploaded_file</span>(<span class="variable">$_FILES</span>[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;tmp_name&#x27;</span>],<span class="string">&#x27;./upload/&#x27;</span>.<span class="variable">$_FILES</span>[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;name&#x27;</span>]);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/4.png" alt="img"> </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Text/html:浏览器会进行解析&lt;hr&gt; ------&gt; 解析为水平线</span><br><span class="line"></span><br><span class="line">Text/plaiin:浏览器不会对这些内容进行解析： &lt;hr&gt;  ----&gt; &lt;hr&gt;</span><br><span class="line"></span><br><span class="line">Application/x-www-form-urlencoded:  POST方式传递普通键值对时需要设置的请求头 --&gt;ajax</span><br><span class="line"></span><br><span class="line">Multipart/form-data:告诉当前表单你的参数的编码格式有多种，并且，这些数据将来会以</span><br><span class="line"></span><br><span class="line">formdata的形式包装</span><br></pre></td></tr></table></figure>
-<h2 id="文件的上传步骤"><a href="#文件的上传步骤" class="headerlink" title="文件的上传步骤"></a>文件的上传步骤</h2><ol>
-<li><p>选择文件</p>
-</li>
-<li><p>将文件数据作为参数传递给服务器</p>
-</li>
-<li><p>接收用户数据</p>
-</li>
-<li><p>服务器会自动的将文件存储到临时目录，如果你没有后续的操作，那么当程序结束的时候，文件会自动被删除</p>
-</li>
-<li><p>将文件从临时目录移到你的文件存放目录（这一步是真正的将文件永久的存储在服务器端）</p>
-</li>
-</ol>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/5.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/6.png" alt="img"> </p>
-<p>$_FILES数组</p>
-<p>Type属性为file的input元素可以通过表单提交文件（上传文件），服务端PHP可以通过<code>$_FILES</code>获取上传的文件信息。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/7.png" alt="img"> </p>
-<p>文件上传后，文件信息自动保存在预定义变量$_FILES数组中。</p>
-<p>假设myFile为文件域的name属性值</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$_FILES</span>[‘myFile’][’name’]   <span class="comment">#文件的原始名称</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$_FILES</span>[‘myFile’][‘tmp_name’]   <span class="comment">#文件的临时路径，默认为c:/windows/temp (运行窗口 --&gt;temp)  没有直接将文件上传至Apache服务器的根目录</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$_FILES</span>[‘myFile’][‘type’]    <span class="comment">#文件的内容类型：image/jpeg,image/png,image/gif,text/html，text/javascript</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$_FILES</span>[‘myFile’][‘error’]    <span class="comment">#文件上传的错误代号。0代表没有发生错误</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$_FILES</span>[‘myFile’]’size’]      <span class="comment">#文件大小（单位为byte，字节）</span></span><br></pre></td></tr></table></figure>
-<p><strong>关于文件上传的完整步骤</strong></p>
-<p>1、设计表单</p>
-<p>2、接收数据：判断<font color="#0fe">$_FILES’myFile’</font>是否为空</p>
-<p>3、判断错误：<font color="#0fe">$_FILES’myFile’</font>.出错提示错误xx</p>
-<p>4、此时文件在临时路径，如果需要将上传后的文件移动到某个指定位置，需要使用<font color="#0fe">move_uploaded_file()</font>函数移动到网站永久路径</p>
-<p>move_upload_file(临时路径<font color="#0fe">$_FILES’myFile’</font>,永久路径);</p>
-<p>代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果选择了文件 $_FILES[&#x27;file&#x27;][&#x27;error&#x27;] =&gt; 0</span></span><br><span class="line"><span class="comment">// 详细的错误码说明：http://php.net/manual/zh/features.file-upload.errors.php</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$_FILES</span>[<span class="string">&#x27;file&#x27;</span>][<span class="string">&#x27;error&#x27;</span>] === <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// PHP 在会自动接收客户端上传的文件到一个临时的目录</span></span><br><span class="line">  <span class="variable">$temp_file</span> = <span class="variable">$_FILES</span>[<span class="string">&#x27;file&#x27;</span>][<span class="string">&#x27;tmp_name&#x27;</span>];</span><br><span class="line">  <span class="comment">// 我们只需要把文件保存到我们指定上传目录</span></span><br><span class="line">  <span class="variable">$target_file</span> = <span class="string">&#x27;../static/uploads/&#x27;</span> . <span class="variable">$_FILES</span>[<span class="string">&#x27;file&#x27;</span>][<span class="string">&#x27;name&#x27;</span>];</span><br><span class="line">  <span class="keyword">if</span> (<span class="title function_ invoke__">move_uploaded_file</span>(<span class="variable">$temp_file</span>, <span class="variable">$target_file</span>)) &#123;</span><br><span class="line">    <span class="variable">$image_file</span> = <span class="string">&#x27;/static/uploads/&#x27;</span> . <span class="variable">$_FILES</span>[<span class="string">&#x27;file&#x27;</span>][<span class="string">&#x27;name&#x27;</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="使用文件上传和验证功能"><a href="#使用文件上传和验证功能" class="headerlink" title="使用文件上传和验证功能"></a>使用文件上传和验证功能</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">register</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//验证用户数据是否正确</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;userName&#x27;</span>]) || <span class="title function_ invoke__">trim</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;userName&#x27;</span>])=== <span class="string">&quot;&quot;</span> )&#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;请输入姓名&#x27;</span>;</span><br><span class="line">    <span class="comment">//1.如果在php结构中直接写return，那么当运行到return代码的时候，整个php文件的执行就结束了</span></span><br><span class="line">    <span class="comment">//2.如果在方法中写return，那么这个return就只能结束这个方法的执行</span></span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">isset</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;nickName&#x27;</span>]) || <span class="title function_ invoke__">trim</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;nickName&#x27;</span>])===<span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;请输入昵称&#x27;</span>;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//实现图片的上传操作</span></span><br><span class="line">  <span class="title function_ invoke__">print_r</span>(<span class="variable">$_FILES</span>);</span><br><span class="line">  <span class="comment">//判断图片上传操作是否成功</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">empty</span>(<span class="variable">$Misplaced</span> &amp;_FILES[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;tmp_name&#x27;</span>]) &amp;&amp; <span class="variable">$_FILES</span>[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;error&#x27;</span>]!=<span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&#x27;图片上传失败&#x27;</span>;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//图片上传成功，我们需要去获取上传成功之后的图片名称</span></span><br><span class="line">  <span class="variable">$picName</span> = <span class="variable">$_FILES</span>[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;name&#x27;</span>];</span><br><span class="line">  <span class="variable">$ext</span> = <span class="title function_ invoke__">strrchr</span>(<span class="variable">$picName</span>,<span class="string">&quot;.&quot;</span>);</span><br><span class="line">  <span class="variable">$finaName</span> = <span class="title function_ invoke__">time</span>().<span class="title function_ invoke__">rand</span>(<span class="number">1000</span>,<span class="number">9999</span>).<span class="variable">$ext</span>;</span><br><span class="line">  <span class="comment">//将这个文件名称添加到$_POST中</span></span><br><span class="line">  <span class="variable">$_POST</span>[] = <span class="variable">$finaName</span>;</span><br><span class="line">  <span class="title function_ invoke__">move_uploaded_file</span>(<span class="variable">$_FILES</span>[<span class="string">&#x27;photo&#x27;</span>][<span class="string">&#x27;tmp_name&#x27;</span>],<span class="variable">$finaName</span>);</span><br><span class="line">  <span class="title function_ invoke__">print_r</span>(<span class="variable">$_POST</span>);</span><br><span class="line">  <span class="comment">//数据的写入：明确数据写入的格式 qq|qq|123|123|男|1</span></span><br><span class="line">  <span class="comment">// implode：它可以将关联的数据以指定分隔符分隔，转换为字符串</span></span><br><span class="line">  <span class="comment">// explode：他可以将字符串以指定的分隔符分隔，生成关联数组</span></span><br><span class="line">  <span class="variable">$str</span> = <span class="title function_ invoke__">implode</span>(<span class="variable">$_POST</span>,<span class="string">&quot;|&quot;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 将数据写入到文件</span></span><br><span class="line">  <span class="title function_ invoke__">file_put_contents</span>(<span class="string">&quot;data.txt&quot;</span>,<span class="variable">$str</span>.<span class="string">&quot;\n&quot;</span>,FILE_APPEND);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断用户是提交的post请求</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="variable">$_SERVER</span>[<span class="string">&quot;REQUEST_METHOD&quot;</span>]===<span class="string">&quot;POST&quot;</span>)&#123;</span><br><span class="line">    <span class="title function_ invoke__">register</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="上传的限制，修改最大值—-gt-改-php-ini"><a href="#上传的限制，修改最大值—-gt-改-php-ini" class="headerlink" title="上传的限制，修改最大值—&gt;改 php.ini"></a>上传的限制，修改最大值—&gt;改 php.ini</h2><p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/8.png" alt="img"> </p>
-<h2 id="上传文件的最小值与最大值的范围是：-8M-20M"><a href="#上传文件的最小值与最大值的范围是：-8M-20M" class="headerlink" title="上传文件的最小值与最大值的范围是： 8M-20M"></a>上传文件的最小值与最大值的范围是： 8M-20M</h2><p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/9.png" alt="img"> </p>
-<h2 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h2><p>是一种通过普通字符串描述数据的手段，用于表示有结构的数据。</p>
-<h2 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h2><p>Null、string、number、boolean、object、array</p>
-<p>注意：</p>
-<blockquote>
-<p>1.JSON中属性名称必须用双引号包裹<br><br>2.JSON中表述字符串必须使用双引号<br><br>3.JSON中不能有单行或多行注释<br><br>4.JSON没有undefined这个值<br></p>
-</blockquote>
-<h2 id="列表数据"><a href="#列表数据" class="headerlink" title="列表数据"></a>列表数据</h2><blockquote>
-<p>JSON反序列化<br>json_decode需要注意第二个参数<br>如果希望以关联数组的方式而非对象的方式操作数据，可以将json_decode的第二个参数设置为true</p>
-</blockquote>
-<h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><p>一般情况下，如果需要超链接点击发起的请求可以传递参数，我们可以采用？的方式</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">&quot;/delete.php?id=123&quot;</span>&gt;删除&lt;/a&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/10.png" alt="img"> </p>
-<h3 id="设置响应文件类型"><a href="#设置响应文件类型" class="headerlink" title="设置响应文件类型"></a>设置响应文件类型</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Type: text/css&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="设置响应头-lt-error：乱码，系统默认编码为utf-8-gt"><a href="#设置响应头-lt-error：乱码，系统默认编码为utf-8-gt" class="headerlink" title="设置响应头 &lt;error：乱码，系统默认编码为utf-8&gt;"></a>设置响应头 &lt;error：乱码，系统默认编码为utf-8&gt;</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">header(&#x27;Content-Type:text/html;charset=GB2312&#x27;)</span><br></pre></td></tr></table></figure>
-<h3 id="重定向（跳转到其他网页）"><a href="#重定向（跳转到其他网页）" class="headerlink" title="重定向（跳转到其他网页）"></a>重定向（跳转到其他网页）</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&#x27;Location: https://www.baidu.com&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 让文件下载</span></span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Type: application/octet-stream&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置默认下载文件名</span></span><br><span class="line"></span><br><span class="line"><span class="title function_ invoke__">header</span>(<span class="string">&#x27;Content-Disposition: attachment; filename=demo.txt&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><p>字面意思：拿，获取</p>
-<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p>字面意思：发，给</p>
-<h2 id="cookie-和session-的区别详解"><a href="#cookie-和session-的区别详解" class="headerlink" title="cookie 和session 的区别详解"></a>cookie 和session 的区别详解</h2><p>二者的定义：</p>
-<p>当你在浏览网站的时候，WEB 服务器会先送一小小资料放在你的计算机上，Cookie 会帮你在网站上所打的文字或是一些选择，</p>
-<p>都纪录下来。当下次你再光临同一个网站，WEB 服务器会先看看有没有它上次留下的 Cookie 资料，有的话，就会依据 Cookie</p>
-<p>里的内容来判断使用者，送出特定的网页内容给你。 Cookie 的使用很普遍，许多有提供个人化服务的网站，都是利用 Cookie</p>
-<p>来辨认使用者，以方便送出使用者量身定做的内容，像是 Web 接口的免费 email 网站，都要用到 Cookie。</p>
-<p>具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。</p>
-<p>同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制</p>
-<p>来达到保存标识的目的，但实际上它还有其他选择。</p>
-<p>cookie机制。正统的cookie分发是通过扩展HTTP协议来实现的，服务器通过在HTTP的响应头中加上一行特殊的指示以提示</p>
-<p>浏览器按照指示生成相应的cookie。然而纯粹的客户端脚本如JavaScript或者VBScript也可以生成cookie。而cookie的使用</p>
-<p>是由浏览器按照一定的原则在后台自动发送给服务器的。浏览器检查所有存储的cookie，如果某个cookie所声明的作用范围</p>
-<p>大于等于将要请求的资源所在的位置，则把该cookie附在请求资源的HTTP请求头上发送给服务器。</p>
-<p>cookie的内容主要包括：名字，值，过期时间，路径和域。路径与域一起构成cookie的作用范围。若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失。这种生命期为浏览器会话期的cookie被称为会话cookie。</p>
-<p>会话cookie一般不存储在硬盘上而是保存在内存里，当然这种行为并不是规范规定的。若设置了过期时间，浏览器就会把cookie</p>
-<p>保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在不同的浏</p>
-<p>览器进程间共享，比如两个IE窗口。而对于保存在内存里的cookie，不同的浏览器有不同的处理方式</p>
-<p>session机制。session机制是一种服务器端的机制，服务器使用一种类似于散列表的结构（也可能就是使用散列表）来保存信息。</p>
-<p>​          当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识</p>
-<p>（称为session id），如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来</p>
-<p>使用（检索不到，会新建一个），如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相</p>
-<p>关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应</p>
-<p>中返回给客户端保存。保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发送给</p>
-<p>服务器。一般这个cookie的名字都是类似于SEEESIONID。但cookie可以被人为的禁止，则必须有其他机制以便在cookie被禁止时</p>
-<p>仍然能够把session id传递回服务器。</p>
-<p>经常被使用的一种技术叫做URL重写，就是把session id直接附加在URL路径的后面。还有一种技术叫做表单隐藏字段。就是服务器</p>
-<p>会自动修改表单，添加一个隐藏字段，以便在表单提交时能够把session id传递回服务器。比如： </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form name=&quot;testform&quot; action=&quot;/xxx&quot;&gt; </span><br><span class="line">&lt;input type=&quot;hidden&quot; name=&quot;jsessionid&quot; value=&quot;ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764&quot;&gt; </span><br><span class="line">&lt;input type=&quot;text&quot;&gt; </span><br><span class="line">&lt;/form&gt; </span><br></pre></td></tr></table></figure>
-<p>实际上这种技术可以简单的用对<code>action</code>应用<code>URL</code>重写来代替。</p>
-<p>cookie 和session 的区别：</p>
-<p>1、cookie数据存放在客户的浏览器上，session数据放在服务器上。</p>
-<p>2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗<br>   考虑到安全应当使用session。</p>
-<p>3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能<br>   考虑到减轻服务器性能方面，应当使用COOKIE。</p>
-<p>4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
-<p>5、所以个人建议：<br>   将登陆信息等重要信息存放为SESSION<br>   其他信息如果需要保留，可以放在COOKIE中</p>
-<p>Cookie需要解决三个问题：分发、内容和使用。</p>
-<p>cookie的分发是通过扩展HTTP协议来实现的，服务器端通过在HTTP的响应由中加上一行特殊的指示以提示浏览器按照指示生成相应的cookie。</p>
-<p>cookie的内容主要包括name(名字)、value(值)、maxAge(失效时间)、path(路径),domain(域)和secure</p>
-<p><strong>name</strong>：cookie的名字，一旦创建，名称不可更改。</p>
-<p><strong>value</strong>：cookie的值，如果值为Unicode字符，需要为字符编码。如果为二进制数据，则需要使用BASE64编码.</p>
-<p><strong>maxAge</strong>：cookie失效时间，单位秒。如果为正数，则该cookie在maxAge后失效。如果为负数，该cookie为临时cookie，关闭浏览器即失效，浏览器也不会以任何形式保存该cookie。如果为0，表示删除该cookie。默认为-1</p>
-<p><strong>path</strong>：该cookie的使用路径。如果设置为”/sessionWeb/“，则只有ContextPath为“/sessionWeb/”的程序可以访问该cookie。如果设置为“/”，则本域名下ContextPath都可以访问该cookie。</p>
-<p><strong>domain</strong>:域.可以访问该Cookie的域名。第一个字符必须为”.”,如果设置为”.google.com”,则所有以”google.com结尾的域名都可以访问该cookie”,如果不设置,则为所有域名</p>
-<p><strong>secure</strong>：该cookie是否仅被使用安全协议传输。</p>
-<p>cookie的使用是由浏览器按照一定的原则在后台自动发送给服务器。浏览器检查所有存储的cookie，如果某个cookie所声明的作用范围大于等于将要请求的资源所在的位置，则把该cookie附在请求资源的HTTP请求头上发送给服务器.</p>
-<p>Session机制</p>
-<p>Session机制是一种服务端的机制，服务器使用一种类似散列表的结构来保存信息。当程序需要为某个客户端的请求创建一个session的时候，服务器首先检查这个客户端里的请求里是否已包含了一个session标识–sessionID，如果已经包含一个sessionID，则说明以前已经为此客户端创建过session，服务器就按照sessionID把这个session检索出来使用（检索不到，可能会新建一个），如果客户端请求不包含sessionID，则为此客户端创建一个session并且声称一个与此session相关联的sessionID，sessionID的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串(服务器会自动创建),这个sessionID将被在本次响应中返回给客户端保存。</p>
-<p>保存sessionID的方式</p>
-<p>1，使用Cookie.此时Cookie不再用作认证,只是作为载体,存储sessionID</p>
-<p>2，URL重写：因为cookie可以被人为禁止，所以为了保证sessionID能够被传递给服务器，使用URL重写也是一种解决方法。如,</p>
-<p>href=”&lt;%=response.encodeURL(“index.jsp”) %&gt;”</p>
-<p>写好后URL是这样的</p>
-<p>href=”index.jsp;jsessionid=0CCD096E7F8D97B0BE608AFDC3E1931E”</p>
-<p>3, 隐藏表单提交.将sessionId放在隐藏表单中</p>
-<p>实际上这几种方式最方便的还是cookie,其他两种方式都各有弊端,URL重写的弊端是要对所有的URL都重写,非常繁琐.表单隐藏字段的弊端是只能局限于表单提交,如果是单纯的文本链接则不能提供会话跟踪</p>
-<p>Cookie和Session之间的区别</p>
-<p>1.Cookie数据存放在客户的浏览器(本地),session数据放在服务器上</p>
-<p>2.Cookie不如session安全，别人可以分析存放在本地的Cookie并进行Cookie欺骗,所以出于安全性的考虑应当使用Session</p>
-<p>3.Session会在一定时间内保存在服务器上。当访问增多,会占用较多的服务器资源,所以出于性能考虑则应当使用cookie</p>
-<p>单个cookie保存的数据不能超过4k,很多浏览器都限制一个站点最多保存20个cookie.实际上为了性能考虑,不论是cookie还是session,其中的信息都应当短小精悍</p>
-<p>session因为是保存在服务器上,所以不支持跨域的访问</p>
-<p>摘要</p>
-<p>Cookie：</p>
-<p>Setcookie(name,value,expire,path,domain)</p>
-<p>Expire:一定要参数当前时间：time() + 10</p>
-<p>—&gt;有效期10秒</p>
-<p>Path:path是以当前网站根目录做为参照/目录名称</p>
-<p>通过$_cookie获取存储的数据</p>
-<p>if(isset($_cookie[‘isLogin’]) )</p>
-<p>删除</p>
-<p>Setcookie(name,过期时间)</p>
-<p>Setcookie(name,false)</p>
-<p>Setcookie(name,””)</p>
-<p>Setcookie(name)</p>
-<p>Session:</p>
-<ol>
-<li>session_start();</li>
-</ol>
-<p>A. 随机生成session_id</p>
-<p>B. 根据session_id创建数据存储文件</p>
-<p>C. 将session_id以cookie的形式返回</p>
-<ol start="2">
-<li><p>赋值和取值都是通过$_session</p>
-</li>
-<li><p>删除session</p>
-</li>
-</ol>
-<p>Unset($_SESSION[key])</p>
-<p>$_session= []</p>
-<p>Session_destroy()</p>
-<p>–&gt;会同时销毁文件</p>
-<h2 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h2><p>– 注释使用–</p>
-<p>– 实现数据操作</p>
-<p>– 增加删除和修改返回受影响的行数–修改表数据</p>
-<p>– 查询是返回结果集–虚拟表</p>
-<p>– 增加</p>
-<p>– 语法：insert [into] 表名[(字段名列表)] values(值列表)</p>
-<p>– 细节：</p>
-<p>– 1.值的数量，类型和顺序需要和字段列表的完全一致</p>
-<p>– 2.如果在表名后面没有指定字段,意味着需要对表的所有字段添加值</p>
-<p>– 3.标识列不要人为设置，一般给null</p>
-<p>– 4.如果字段有默认值，也可能传入default</p>
-<p>– 5.如果是非空字段，建议一定要赋值</p>
-<p>– 6. 有标记列的字段一般赋值null</p>
-<p>INSERT into songs VALUES(‘qq’,’qq’,’qq’,’2018-8-8’)</p>
-<p>INSERT into songs(singer,title,album,pubtime) VALUES(‘qq’,’qq’,’qq’,’2018-8-8’)</p>
-<p>INSERT into songs(title,album,pubtime) VALUES(‘qaaq’,’qaq’,’2018-8-8’)</p>
-<p>INSERT into songs(singer,album,pubtime) VALUES(DEFAULT,’qaaq’,’2018-8-8’)</p>
-<p>INSERT into songs VALUES(null,’qq’,’qq’,’qq’,’2018-8-8’,DEFAULT)</p>
-<p>– 常见错误</p>
-<p>– Column count doesn’t match value count at row 1:值的数量和字段数量不匹配</p>
-<p>– Unknown column ‘ablum’ in ‘field list’  列不存在，一般是列名写错了</p>
-<p>– 删除:删除是针对数据行而言，删除一定要考虑是否有条件</p>
-<p>– 语法 </p>
-<p>– DELETE FROM 表：删除整个表的数据行</p>
-<p>– DELETE FROM 表 WHERE 条件 </p>
-<p>– 多条件的连接使用 !-not &amp;&amp;-and  ||-or</p>
-<p>DELETE from songs</p>
-<p>DELETE from songs where id = 7</p>
-<p>DELETE from songs where title=’aa’ and album=’aa’</p>
-<p>​    </p>
-<p>– 修改:一定要考虑是否有条件</p>
-<p>– 语法：</p>
-<p>– UPDATE 表名 set 字段=新值,字段2=新值2 WHERE 条件</p>
-<p>– 值可以是具体的数据，也可以是简单的表达式</p>
-<p>UPDATE songs set singer = CONCAT(singer,’123’)</p>
-<p>UPDATE songs set title=’李四的歌’,album=’我是李四’ where id= 10</p>
-<p>– 查询 </p>
-<p>– 语法：select 字段列表|* from 表 WHERE 查询条件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SELECT \* from songs</span><br><span class="line"></span><br><span class="line">select \* from songs where album=&#x27;qq&#x27;</span><br><span class="line"></span><br><span class="line">SELECT \* from songs where isdelete = 0</span><br></pre></td></tr></table></figure>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/11.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/12.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/13.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/14.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/15.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/16.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/17.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/18.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/19.png" alt="img"> </p>
-<p>Date类型的处理</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/20.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/21.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/22.png" alt="img"> </p>
-<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><p>HTML请求3个组成部分与XMLHttpRequest方法的对应关系</p>
-<h3 id="1、请求行："><a href="#1、请求行：" class="headerlink" title="1、请求行："></a>1、请求行：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="title function_ invoke__">open</span>(<span class="string">&#x27;get&#x27;</span>,<span class="string">&#x27;index.php&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="2、请求头："><a href="#2、请求头：" class="headerlink" title="2、请求头："></a>2、请求头：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="title function_ invoke__">setRequestHeader</span>(<span class="string">&#x27;Context-Type&#x27;</span> , <span class="string">&#x27;text/html&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="3、请求主体：-get请求可以不设置"><a href="#3、请求主体：-get请求可以不设置" class="headerlink" title="3、请求主体：(get请求可以不设置)"></a>3、请求主体：(get请求可以不设置)</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xhr.<span class="title function_ invoke__">send</span>(<span class="literal">null</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="响应：-onreadystatechange是javascript的事件的一种，其意义在于监听XMLHttpRequest的状态"><a href="#响应：-onreadystatechange是javascript的事件的一种，其意义在于监听XMLHttpRequest的状态" class="headerlink" title="响应：(onreadystatechange是javascript的事件的一种，其意义在于监听XMLHttpRequest的状态)"></a>响应：(onreadystatechange是javascript的事件的一种，其意义在于监听XMLHttpRequest的状态)</h3><h4 id="1、获取状态行-包括状态码-amp-状态信息"><a href="#1、获取状态行-包括状态码-amp-状态信息" class="headerlink" title="1、获取状态行(包括状态码&amp;状态信息)"></a>1、获取状态行(包括状态码&amp;状态信息)</h4><p>xhr.status        //状态码</p>
-<p>xhr.statusText   //状态信息</p>
-<h3 id="3、-获取响应头"><a href="#3、-获取响应头" class="headerlink" title="3、 获取响应头"></a>3、 获取响应头</h3><p>xhr.getRespnseHeader(‘Context-Type’);  //获取指定头信息</p>
-<p>xhr.getAllResponseHeaders();            //获取所有响应头信息</p>
-<p>xhr.open()  //发起请求，可以是get\post方式</p>
-<p>xhr.setRequestHeader()  //设置请求头</p>
-<p>xhr.send()   //发送请求主体get方式使用xhr.send(null);</p>
-<p>xhr.onreadystatechange = function(){}  //监听响应状态</p>
-<p>readstate 属性有五个状态：</p>
-<p>xhr.readyState = 0 时，(未初始化)还没有调用send()方法</p>
-<p>xhr.readyState = 1 时，(载入)已调用send()方法，正在发送请求</p>
-<p>xhr.readyState = 2 时，(载入完成)send()方法执行完成，已经接收到全部响应内容</p>
-<p>xhr.readyState = 3时， (交互)正在解析响应内容</p>
-<p>xhr.readyState = 4时，(完成)响应内容解析完成，可以在客户端调用了</p>
-<p>xhr.getAllResponseHeaders() 获取全部响应头信息</p>
-<p>xhr.getResponseHeader(‘key’) 获取指定头信息</p>
-<p>xhr.responseText、xhr.responseXML都表示响应主体</p>
-<h2 id="JSON-1"><a href="#JSON-1" class="headerlink" title="JSON"></a>JSON</h2><p>即JavaScript Object Notation 另一种轻量级的文本数据交换格式，独立于语言</p>
-<h3 id="1-ajax概念："><a href="#1-ajax概念：" class="headerlink" title="1.ajax概念："></a>1.ajax概念：</h3><p>​    为什么需要ajax:提升用户体现，可以实现页面局部刷新</p>
-<h3 id="2-ajax：异步的js-and-xml"><a href="#2-ajax：异步的js-and-xml" class="headerlink" title="2.ajax：异步的js and xml"></a>2.ajax：异步的js and xml</h3><h3 id="3-异步和同步"><a href="#3-异步和同步" class="headerlink" title="3.异步和同步"></a>3.异步和同步</h3><p>​    异步：同时可以做多个事情。异步非阻塞   异步的执行顺序不依赖于书写顺序  异步往往会伴随着回调</p>
-<p>​    同步：事情需要一步一步来执行，在执行一个操作的时候，另外的操作就需要等待</p>
-<h3 id="4-使用异步对象实现请求和响应的接收"><a href="#4-使用异步对象实现请求和响应的接收" class="headerlink" title="4.使用异步对象实现请求和响应的接收"></a>4.使用异步对象实现请求和响应的接收</h3><p>​    1.使用XMLHttpRequest:</p>
-<p>​        var xhr = new XMLHttpRequest()</p>
-<p>​    2.使用异步对象发送请求</p>
-<p>​        设置请求行</p>
-<p>​            如果有参数，get方式需要在url中拼接参数</p>
-<p>​            xhr.open(请求方式，请求url)</p>
-<p>​        设置请求头：</p>
-<p>​            get不需要设置，post需要以下设置：</p>
-<p>​            xhr.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’)</p>
-<p>​        设置请求体：</p>
-<p>​            get方式没有请求体，post才会在这个位置设置请求体</p>
-<p>​            xhr.send(请求体)</p>
-<p>​    3.接收响应</p>
-<p>​        添加对响应状态和异步对象执行状态的监听</p>
-<p>​        xhr.onreadystatechange = function(){}</p>
-<p>​        一个成功的响应有两个前提：服务器成功响应  数据解析完毕可以在客户端使用</p>
-<p>​        if(xhr.status == 200 &amp;&amp; xhr.readyState == 4){</p>
-<p>​            // 接收响应</p>
-<p>​            xhr.responseText;</p>
-<p>​        }</p>
-<p>​    4.json格式数据的转换</p>
-<p>​        JSON.parse(jsonStr):将json格式字符串转换为js变量(数组，对象)</p>
-<p>​        JSON.stringify(js变量):将js变量转换为json格式字符串</p>
-<h3 id="5-get和post请求方式在异步处理时的异同"><a href="#5-get和post请求方式在异步处理时的异同" class="headerlink" title="5.get和post请求方式在异步处理时的异同"></a>5.get和post请求方式在异步处理时的异同</h3><p>​        发送请求时的三句代码都不一样</p>
-<p>​        请求行：</p>
-<p>​            get:如果有参数，应该在url中拼接参数</p>
-<p>​            post:不在url拼接参数</p>
-<p>​        请求头：</p>
-<p>​            get:不需要设置请求头</p>
-<p>​            post:需要设置                                 xhr.setRequestHeader(‘Content-Type’,’application/x-www/form-urlencoded’)</p>
-<p>​        请求体：</p>
-<p>​            get:没有请求体</p>
-<p>​            post:如果有参数在请求体中传递参数</p>
-<p>​        接收响应：</p>
-<p>​            get和post代码完全一致</p>
-<p>​            但是接收数据之后的解析过程不一样</p>
-<h2 id="POST和GET有什么区别？"><a href="#POST和GET有什么区别？" class="headerlink" title="POST和GET有什么区别？"></a>POST和GET有什么区别？</h2><p>1、 GET主要用于从服务器查询数据，POST用于向服务器提交数据</p>
-<p>2、 GET通过URL传递数据，POST通过http请求体传递数据</p>
-<p>3、 GET传输数据量有限制，不能大于2kb，POST传递的数据量较大，一般大量的数据提交都是通过POST方式</p>
-<p>4、 GET安全性较低，容易在URL中暴漏数据，POST安全性较高</p>
-<p><strong>使用模板实现数据遍历</strong></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/23.png" alt="img"> </p>
-<p>在script标签中设置type为：text/template,让浏览器不认识的格式</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/24.png" alt="img"> </p>
-<p><strong>添加模板数据</strong></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/25.png" alt="img"> </p>
-<p><strong>在结构中设置方式  &lt;%%&gt;表示script中的逻辑表达方式，看以下图</strong></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/26.png" alt="img"> </p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/27.png" alt="img"> </p>
-<p><strong>获取并生成数据（遍历）</strong></p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/28.png" alt="img"> </p>
-<p><strong>理解传入的数据是数组还是对象，对象可以直接用，数组需要转换</strong></p>
-<p>Test与exec函数的作用和区别</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/29.png" alt="img"> </p>
-<h2 id="一：JQ中的ajax"><a href="#一：JQ中的ajax" class="headerlink" title="一：JQ中的ajax"></a>一：JQ中的ajax</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">type</span>:请求方式</span><br><span class="line"></span><br><span class="line">    <span class="attr">url</span>:请求url</span><br><span class="line"></span><br><span class="line">    <span class="attr">data</span>:参数</span><br><span class="line"></span><br><span class="line">    <span class="attr">timeout</span>:设置超时</span><br><span class="line"></span><br><span class="line">    <span class="attr">dataType</span>:返回值的类型</span><br><span class="line"></span><br><span class="line">    <span class="attr">beforeSend</span>:请求发送之前的回调</span><br><span class="line"></span><br><span class="line">    <span class="attr">success</span>:响应成功后的回调</span><br><span class="line"></span><br><span class="line">    <span class="attr">error</span>:请求失败时的回调</span><br><span class="line"></span><br><span class="line">    <span class="attr">complete</span>:无论请求是否成功都会执行的回调</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.<span class="title function_">get</span>(url,data,success,dataType)</span><br><span class="line"></span><br><span class="line">$.<span class="title function_">post</span>(url,data,success,dataType)</span><br></pre></td></tr></table></figure>
-<h2 id="二：模板引擎的使用"><a href="#二：模板引擎的使用" class="headerlink" title="二：模板引擎的使用"></a>二：模板引擎的使用</h2><p>​    1.作用：可以代替拼接字符串的操作</p>
-<p>​    2.步骤</p>
-<p>​        1.请求接收响应数据</p>
-<p>​        2.创建模板</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">script标签创建模板 &lt;script type=<span class="string">&#x27;text/template&#x27;</span> id=<span class="string">&#x27;&#x27;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>​        3.创建模板内容结构</p>
-<p>​            原生写法</p>
-<p>​                逻辑表达式：&lt;% 逻辑表达式 %&gt;</p>
-<p>​                输出表达式：&lt;%= 内容表达式 %&gt;</p>
-<p>​            简写写法：</p>
-<p>​                逻辑表达式：</p>
-<p>​                输出表达式：</p>
-<p>​    3.使用模板的原则</p>
-<p>​        1.如果传入的数据是对象，就直接传入对象</p>
-<p>​        2.如果传入的数据是数组，就包装为对象</p>
-<h2 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h2><p>同源策略是浏览器的一种安全策略，所谓同源是指，域名，协议，端口完全相同。</p>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>不同源则跨域</p>
-<ol>
-<li><p>不允许进行DOM操作</p>
-</li>
-<li><p>不能进行ajax请求</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 服务器跨域：cross-origin-resource-sharing</span></span><br><span class="line"></span><br><span class="line"><span class="title function_">header</span>( <span class="string">&#x27;Access-Control-Allow-Origin:*&#x27;</span> ); </span><br><span class="line"></span><br><span class="line"><span class="title function_">header</span>( <span class="string">&#x27;Access-Control-Allow-Origin:http://www.study.com&#x27;</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="1-JSONP的由来"><a href="#1-JSONP的由来" class="headerlink" title="1.JSONP的由来"></a>1.JSONP的由来</h2><p>根据浏览器同源策略，所谓同源就是协议、主机、端口号都相同时成为同源。a 域的js不能直接访问 b域名的信息，但是script 标签的src属性可以跨域引用文件，jsonp是请求之后后台包装好一段json，并且把数据放在一个callback函数，返回一个js文件，动态引入这个文件，下载完成js之后，会去调用这个callback,通过这样访问数据。</p>
-<h2 id="2-JSONP有什么用"><a href="#2-JSONP有什么用" class="headerlink" title="2. JSONP有什么用"></a>2. JSONP有什么用</h2><p>由于同源从略的限制，XMLHttpRequest只允许请求前源（域名、协议、端口）的资源，为了实现跨域请求，可以通过script标签实现跨域请求，然后再服务端输出JSON数据并执行回调函数，从而解决跨域数据请求</p>
-<h2 id="3-如何使用JSONP"><a href="#3-如何使用JSONP" class="headerlink" title="3. 如何使用JSONP"></a>3. 如何使用JSONP</h2><p>HTML代码</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/30.png" alt="img"></p>
-<p>PHP代码</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/31.png" alt="img"></p>
-<h2 id="4-JSONP原理"><a href="#4-JSONP原理" class="headerlink" title="4. JSONP原理"></a>4. JSONP原理</h2><p>首先在客户端注册一个callback，然后把callback的名字传给服务器。此时，服务器先生成json数据，然后以javascript语法的方式，生成function，function名字就是传递上来I带参数jsonp。最后将json数据直接以入参的方式，放置function中，这样就生成js语法的文档，返回给客户端。客户端浏览器，解析script变迁，并执行返回javascript文档，此时数据作为参数，传入了客户端预先定义好的callback函数里。简单的说，就是利用script标签没有跨域限制的“漏洞”来达到与第三方通讯的目的。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/32.png" alt="img"></p>
-<h2 id="json-是一种数据格式，jsonp-是一种数据调用的方式，带callback的json就是jsonp"><a href="#json-是一种数据格式，jsonp-是一种数据调用的方式，带callback的json就是jsonp" class="headerlink" title="json 是一种数据格式，jsonp 是一种数据调用的方式，带callback的json就是jsonp"></a>json 是一种数据格式，jsonp 是一种数据调用的方式，带callback的json就是jsonp</h2><p>前端向后台发送请求有几种方式？</p>
-<p>1、 link标签的href属性</p>
-<p>2、 script标签的src属性</p>
-<p>3、 img标签的src属性</p>
-<p>4、 ajax发送请求</p>
-<p>5、 表单提交发送请求</p>
-<p>6、 a标签的href发送请求</p>
-<p>7、 iframe的src属性发送请求</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/php_mysql_ajax/33.png" alt="img"> </p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/03/23/HTML/Bootstrap-H5-C3-%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
                 Bootstrap+H5+C3+移动端
             </a>
@@ -1531,6 +935,64 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/03/23/JavaScript/JS%E9%AB%98%E7%BA%A7%E7%AC%94%E8%AE%B0/">
+                JS高级笔记
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-23</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="实例对象和构造函数之间的关系："><a href="#实例对象和构造函数之间的关系：" class="headerlink" title="实例对象和构造函数之间的关系："></a>实例对象和构造函数之间的关系：</h3><p>1.实例对象时通过构造个数来创建的—创建的过程叫实例化<br>2.如何判断对象是不是这个数据类型？<br>    1、通过构造器的方式 实例对象，构造器=构造函数名字<br>    2、对象instanceof 构造函数名字<br>尽可能的使用第二种方式来识别</p>
+<p>实例对象中有两个属性（这两个属性是通过构造函数来获取的），<code>__proto__</code>这个属性<br>构造函数中并没有sex和age的两个属性</p>
+<p>实例对象中有个属性，<code>__proto__</code>也是对象，叫原型，不是标准的属性，浏览器使用的</p>
+<p>构造函数中有一个属性，<code>prototype</code>也是对象，叫原型，是标准属性，程序员使用</p>
+<h3 id="构造函数可以实例化对象"><a href="#构造函数可以实例化对象" class="headerlink" title="构造函数可以实例化对象"></a>构造函数可以实例化对象</h3><p>构造函数中有一个属性叫<code>prototype</code>，是构造函数的原型对象<br>构造函数的原型对象（prototype）中有一个constructor构造器，这个构造器向的就是直接所在的原型对象所在的构造函数<br>实例对象的原型对象(<code>__proto__</code>)指向的是该构造函数的原型对象<br>构造函数的原型对象(prototype)中的方法是可以被实例对象直接访问的</p>
+<p>什么样子的数据是需要写在原型中？<br>需要共享的数据就可以写原型中<br>原型的作用之一：数据共享</p>
+<p>属性需要共享，方法也需要共享<br>不需要共享的数据写在构造函数中，需要共享的数据写在原型中</p>
+<p>实例对象使用的属性或者方法，先在实例中查找，找到了则直接使用，找不到则去实例对象的<code>__proto__</code>指向的原型对象<code>prototype</code>中找，找到了则使用，找不到则报错</p>
+<p>面向过程和面向对象都是编程的思想，方式不一样<br>面向过程：凡事都是亲力亲为，所有的代码都要自己写，每一步都要很清楚，注重的是结果<br>面向对象的特性：封装，继承，多态<br>封装：就是代码的封装，把一些特征和行为封装在对象中<br>面向对象的编程思想：根据需求，抽象出相关的对象，总结对象的特征和行为，把特征变成属性 行为变成方法，然后定义js构造函数，实例化对象，通过对象调用属性和方法，完成相应的需求</p>
+<p>对象：具体特指的某个事物，有特征（属性）和行为（方法）</p>
+<h3 id="如何创建对象？"><a href="#如何创建对象？" class="headerlink" title="如何创建对象？"></a>如何创建对象？</h3><p>通过调用<code>new</code> Object()，还有<code>&#123;&#125;</code>,自定义构造函数</p>
+<h3 id="创建对象的方式"><a href="#创建对象的方式" class="headerlink" title="创建对象的方式"></a>创建对象的方式</h3><blockquote>
+<p>1、调用系统Object()  创建出来的对象都是Object类型的，不能很明确的指出 这个对象是属于什么类型<br>2、字面量的方式{}    只能创建一个对象（一次只能创建一个）<br>3、工厂模式创建对象  推论   自定义构造函数的方式</p>
+<blockquote>
+<p>自定义构造函数(优化后的工厂模式)<br>自定义构造函数创建对象：4件事<br>1、在内存中申请一块空闲的空间，存储创建的对象<br>2、<code>this</code>就是当前实例化的对象<br>3、设置对象中的属性和方法（为对象添加属性和方法，为属性和方法赋值）<br>4、把创建后的对象返回<br>都是需要通过new的方式</p>
+</blockquote>
+</blockquote>
+<h3 id="调用构造函数会经历以下4个步骤："><a href="#调用构造函数会经历以下4个步骤：" class="headerlink" title="调用构造函数会经历以下4个步骤："></a>调用构造函数会经历以下4个步骤：</h3><blockquote>
+<p>1、创建一个新对象<br>2、将构造函数的作用域赋给新对象（因此this就指向了这个新对象）<br>3、执行构造函数中的代码<br>4、返回新对象</p>
+</blockquote>
+<h3 id="构造函数和实例对象的关系"><a href="#构造函数和实例对象的关系" class="headerlink" title="构造函数和实例对象的关系"></a>构造函数和实例对象的关系</h3><p>使用构造函数的好处不仅仅在与代码的简洁性，更重要的是我们可识别对象的具体类型了、<br>在每一个实例对象中同时有一个constructor属性，该属性指向创建该实例的构造函数</p>
+<p>对象的constructor属性最初是用来标识对象类型的，<br>但是，如果要检测对象的类型，还是使用instarceof操作符更可靠一些</p>
+<h3 id="startsWith-方法的运用"><a href="#startsWith-方法的运用" class="headerlink" title="startsWith() 方法的运用"></a>startsWith() 方法的运用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&quot;Hello world, welcome to the RO&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> n = str.<span class="title function_">startsWith</span>(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h4><p>startsWith()  方法用于检测字符串是否以指定的子字符串开始</p>
+<p>如果是以指定的子字符串开头返回 <code>true，否则</code> <code>false</code></p>
+<p>startsWith() 方法对大小写敏感</p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string.<span class="title function_">startsWith</span>(searchvalue, start)</span><br></pre></td></tr></table></figure>
+<p>[end]</p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -1575,10 +1037,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -1588,6 +1046,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -1610,11 +1072,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

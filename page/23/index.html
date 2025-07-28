@@ -157,86 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/11/13/Vue/vue%20%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%B3%E9%94%AE%E6%A0%B7%E5%BC%8F/">
-                vue 自定义右键样式
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-13</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h5 id="主要是靠双击和右键来操作，可操作多个模态框，跟操作windows类似，接下来在里面拆出一个功能块来写一篇文章，就是自定义系统默认的右键。"><a href="#主要是靠双击和右键来操作，可操作多个模态框，跟操作windows类似，接下来在里面拆出一个功能块来写一篇文章，就是自定义系统默认的右键。" class="headerlink" title="主要是靠双击和右键来操作，可操作多个模态框，跟操作windows类似，接下来在里面拆出一个功能块来写一篇文章，就是自定义系统默认的右键。"></a>主要是靠<code>双击</code>和<code>右键</code>来操作，可操作多个模态框，跟操作<code>windows</code>类似，接下来在里面拆出一个功能块来写一篇文章，就是<code>自定义系统默认的右键</code>。</h5><h5 id="自定义右键操作有五个步骤："><a href="#自定义右键操作有五个步骤：" class="headerlink" title="自定义右键操作有五个步骤："></a>自定义右键操作有五个步骤：</h5><ol>
-<li><code>阻止</code>默认右键。</li>
-<li>获取当前右键点击时的<code>x</code>/<code>y</code>坐标，及<code>id</code>。</li>
-<li>自定义右键菜单样式及内容，定位在指定的位置后显示。</li>
-<li>返回对应点击目录的事件如:<code>查看</code>、<code>删除</code>、<code>编辑</code>。</li>
-<li>在任何地方点击左键时<code>隐藏右键菜单</code>。</li>
-</ol>
-<h5 id="关键方法："><a href="#关键方法：" class="headerlink" title="关键方法："></a>关键方法：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@contextmenu.prevent</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这个是vue内置的，点击右键（阻止默认右键的默认行为）的一个回调方法，他返回了一大串东西这里我用到的是这两个(用于定位显示菜单的x,y位置)</p>
-</blockquote>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/114.jpg" alt="114"></p>
-<blockquote>
-<p><code>x_index</code>，<code>y_index</code> 是储存在<code>data</code>中的，用于定位模态框位置。<br> <code>ctrlId</code> 用于给接口处理的依据<br> <code>showMenu</code> 用于判断是否显示右键菜单</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--template--&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li class=&quot;role_list&quot; </span><br><span class="line">	v-for=&quot;(item,index) in role&quot; </span><br><span class="line">	:key=&quot;index&quot;</span><br><span class="line">	@contextmenu.prevent=&quot;(e)=&gt;&#123;</span><br><span class="line">		x_index = e.layerX;</span><br><span class="line">	        y_index = e.layerY;</span><br><span class="line">		ctrlId = item.id;</span><br><span class="line">		showMenu = true;</span><br><span class="line">	&#125;&quot;&gt;</span><br><span class="line">	    &lt;img :src=&quot;item.head_portrait&quot; alt=&quot;&quot;&gt;</span><br><span class="line">	    &lt;p&gt;&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>需要的参数(x,y,id)都具备了，因为右键操作很多地方都用到了，所以封装成了一个组件</p>
-</blockquote>
-<h4 id="right-menu-vue-组件代码"><a href="#right-menu-vue-组件代码" class="headerlink" title="right_menu.vue 组件代码"></a>right_menu.vue 组件代码</h4><table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>注释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>x</td>
-<td>x坐标</td>
-</tr>
-<tr>
-<td>y</td>
-<td>y坐标</td>
-</tr>
-<tr>
-<td>showMenu</td>
-<td>显示状态</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div v-if=&quot;show&quot;</span><br><span class="line">	     class=&quot;menu_style&quot; </span><br><span class="line">	     :style=&quot;&#123;top:y+&#x27;px&#x27;,left:x+&#x27;px&#x27;&#125;&quot;&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;!-- 分别传递事件给父元素调用 --&gt;</span><br><span class="line">			&lt;li @click=&quot;()=&gt;&#123;$emit(&#x27;open&#x27;)&#125;&quot;&gt;打开&lt;/li&gt;</span><br><span class="line">			&lt;li @click=&quot;()=&gt;&#123;$emit(&#x27;update&#x27;)&#125;&quot;&gt;编辑&lt;/li&gt;</span><br><span class="line">			&lt;li @click=&quot;()=&gt;&#123;$emit(&#x27;del&#x27;)&#125;&quot;&gt;删除&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default&#123;</span><br><span class="line">		name:&#x27;right_menu&#x27;,</span><br><span class="line">		props:&#123;</span><br><span class="line">			x:&#123;</span><br><span class="line">				type:[Number],</span><br><span class="line">				default:0</span><br><span class="line">			&#125;,</span><br><span class="line">			y:&#123;</span><br><span class="line">				type:[Number],</span><br><span class="line">				default:0</span><br><span class="line">			&#125;,</span><br><span class="line">			showMenu:&#123;</span><br><span class="line">				type:[Boolean],</span><br><span class="line">				default:false</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		data()&#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				show:false,</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods:&#123;</span><br><span class="line">			// 点击别处时隐藏目录，并传递一个关闭事件</span><br><span class="line">			closeMenu(e)&#123;</span><br><span class="line">				this.show = false;</span><br><span class="line">				this.$emit(&quot;close&quot;,false)</span><br><span class="line">			&#125;,</span><br><span class="line">		&#125;,</span><br><span class="line">		mounted()&#123;</span><br><span class="line">			// 监听body上的点击</span><br><span class="line">			document.querySelector(&quot;body&quot;).addEventListener(&quot;click&quot;,this.closeMenu)</span><br><span class="line">		&#125;,</span><br><span class="line">		beforeDestroy()&#123;</span><br><span class="line">			// 移除监听</span><br><span class="line">			document.querySelector(&quot;body&quot;).removeEventListener(&quot;click&quot;,this.closeMenu)</span><br><span class="line">		&#125;,</span><br><span class="line">		watch:&#123;</span><br><span class="line">			// 监听，保持显示状态与父元素一致</span><br><span class="line">			showMenu(val)&#123;</span><br><span class="line">				this.show = val;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">	.menu_style&#123;</span><br><span class="line">		position: absolute;</span><br><span class="line">		width: 150px;</span><br><span class="line">		background-color: #fff;</span><br><span class="line">		border-radius: 2px;</span><br><span class="line">		box-shadow: 2px 2px 14px #d0d0d0;</span><br><span class="line">	&#125;</span><br><span class="line">	.menu_style&gt;ul&gt;li&#123;</span><br><span class="line">		text-indent: 25px;</span><br><span class="line">		height: 38px;</span><br><span class="line">		line-height: 38px;</span><br><span class="line">		border-bottom: 1px dashed #f0f0f0;</span><br><span class="line">		cursor: pointer;</span><br><span class="line">	&#125;</span><br><span class="line">	.menu_style&gt;ul&gt;li:hover&#123;</span><br><span class="line">		background: #E0EEFF;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-<h5 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class=&quot;modal_data_box&quot;&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li class=&quot;role_list&quot; </span><br><span class="line">                v-for=&quot;(item,index) in role&quot; </span><br><span class="line">                :key=&quot;index&quot;</span><br><span class="line">                @contextmenu.prevent=&quot;(e)=&gt;&#123;</span><br><span class="line">                    x_index = e.layerX;</span><br><span class="line">                    y_index = e.layerY;</span><br><span class="line">                    ctrlId = item.id;</span><br><span class="line">                    showMenu = true;</span><br><span class="line">                &#125;&quot;&gt;</span><br><span class="line">                &lt;img :src=&quot;item.head_portrait&quot; alt=&quot;&quot;&gt;</span><br><span class="line">                &lt;p&gt;&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">	&lt;!--组件--&gt;</span><br><span class="line">	&lt;right-menu :x=&quot;x_index&quot;</span><br><span class="line">	            :y=&quot;y_index&quot; </span><br><span class="line">	            :showMenu=&quot;showMenu&quot;</span><br><span class="line">	            @close=&quot;closeMenu&quot;</span><br><span class="line">	            @open=&quot;openDetail&quot;</span><br><span class="line">	            @del=&quot;delAttr&quot;</span><br><span class="line">	            @update=&quot;updateArr&quot;&gt;</span><br><span class="line">	&lt;/right-menu&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 导入组件</span><br><span class="line">	import rightMenu from &#x27;../module/right_menu.vue&#x27;;</span><br><span class="line">	export default&#123;</span><br><span class="line">		name:&quot;roleModal&quot;,</span><br><span class="line">		components:&#123;rightMenu&#125;,</span><br><span class="line">		data()&#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				x_index:0,</span><br><span class="line">				y_index:0,</span><br><span class="line">				ctrlId:&#x27;&#x27;,</span><br><span class="line">				showMenu:false,</span><br><span class="line">				role:[],</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods:&#123;</span><br><span class="line">		    //关闭回调  </span><br><span class="line">		    closeMenu(state)&#123;</span><br><span class="line">		        console.log(&#x27;关闭&#x27;)</span><br><span class="line">		        this.showMenu = state;</span><br><span class="line">		    &#125;,</span><br><span class="line">		    //打开详情回调 			</span><br><span class="line">		    openDetail()&#123;</span><br><span class="line">		        console.log(&#x27;编辑&#x27;)</span><br><span class="line">		    &#125;,</span><br><span class="line">		    //删除回调 			</span><br><span class="line">		    delAttr()&#123;</span><br><span class="line">		        console.log(&#x27;删除&#x27;)</span><br><span class="line">		    &#125;,</span><br><span class="line">		    //编辑回调 			</span><br><span class="line">		    updateArr()&#123;</span><br><span class="line">		        console.log(&#x27;编辑&#x27;)</span><br><span class="line">		    &#125;,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="修复漏洞"><a href="#修复漏洞" class="headerlink" title="修复漏洞"></a>修复漏洞</h4><p><a target="_blank" rel="noopener" href="https://juejin.im/user/5cf2512e51882504d340ab01">d[o_0]b</a>同学发现了一个漏洞，就是当鼠标在屏幕右边点击时，菜单会被遮挡住，这边做了一些调整。</p>
-<h5 id="修复前："><a href="#修复前：" class="headerlink" title="修复前："></a>修复前：</h5><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/115.jpg" alt="115"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原来的代码</span></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;role_list&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">	<span class="attr">v-for</span>=<span class="string">&quot;(item,index) in role&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">	<span class="attr">:key</span>=<span class="string">&quot;index&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">	@<span class="attr">contextmenu.prevent</span>=<span class="string">&quot;(e)=&gt;&#123;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">		x_index = e.layerX;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">	        y_index = e.layerY;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">		ctrlId = item.id;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">		showMenu = true;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">	&#125;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;item.head_portrait&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	    <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h5 id="修复后："><a href="#修复后：" class="headerlink" title="修复后："></a>修复后：</h5><p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/116.jpg" alt="116"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//修改后的代码，（由于要判断，所以单独写了个方法，把e跟item都传过去）</span></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;role_list&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">v-for</span>=<span class="string">&quot;(item,index) in role&quot;</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">:key</span>=<span class="string">&quot;index&quot;</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		@<span class="attr">contextmenu.prevent</span>=<span class="string">&quot;(e)=&gt;&#123;</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">			rightClick(e,item)</span></span></span></span><br><span class="line"><span class="string"><span class="tag"><span class="language-xml">		&#125;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;item.head_portrait&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;item.name&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对应的rightClick方法</span></span><br><span class="line"><span class="title function_">rightClick</span>(<span class="params">e,item</span>)&#123;</span><br><span class="line">	<span class="comment">// 屏幕可见宽</span></span><br><span class="line">	<span class="keyword">let</span> clientWidth = <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">clientWidth</span>;</span><br><span class="line">	<span class="comment">// 菜单宽</span></span><br><span class="line">	<span class="keyword">let</span> menuWidth = <span class="number">150</span>;</span><br><span class="line">	<span class="comment">// 点击右键时会返回对应的clientX，用这个值与(clientWidth+菜单宽度)对比，如果大于的话，就把菜单左偏移一个菜单宽</span></span><br><span class="line">	<span class="keyword">let</span> clickClientX = e.<span class="property">clientX</span> + menuWidth</span><br><span class="line">	<span class="keyword">if</span>(clickClientX &gt; clientWidth)&#123;</span><br><span class="line">		<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;菜单超出视线范围&quot;</span>)</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">x_index</span> = e.<span class="property">layerX</span> - menuWidth;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="variable language_">this</span>.<span class="property">x_index</span> = e.<span class="property">layerX</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">y_index</span> = e.<span class="property">layerY</span>;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">ctrlId</span> = item.<span class="property">id</span>;</span><br><span class="line">	<span class="variable language_">this</span>.<span class="property">showMenu</span> = <span class="literal">true</span>;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h4 id="方法更新"><a href="#方法更新" class="headerlink" title="方法更新:"></a>方法更新:</h4><p>右键的优化方案  <code>$event</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@contextmenu.<span class="property">prevent</span>=<span class="string">&quot;rightClick($event,item)&quot;</span></span><br></pre></td></tr></table></figure>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/11/13/Css/CSS%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E5%85%A8%E7%9A%84%E2%80%9C%E6%96%87%E6%9C%AC%E6%BA%A2%E5%87%BA%E6%88%AA%E6%96%AD%E7%9C%81%E7%95%A5%E2%80%9D/">
                 CSS可能是最全的“文本溢出截断省略”
             </a>
@@ -632,6 +552,48 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/11/11/%E5%85%B6%E5%AE%83/%E5%B0%8F%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E6%B5%8B%E8%AF%95/">
+                小项目实战测试
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-11</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/其它/">其它</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <center><h1>小程序</h1></center>
+
+<p><a href=""></a></p>
+<center><h1>Vue</h1></center>
+
+<p><a href=""></a></p>
+<center><h1>Jquery</h1></center>
+
+<p><a href=""></a></p>
+<center><h1>JavaScript</h1></center>
+
+<p><a href=""></a></p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -676,10 +638,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -689,6 +647,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -711,11 +673,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

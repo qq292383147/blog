@@ -157,120 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/12/21/React/%E5%9B%BE%E8%A7%A3%20React%20Native%20%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9BRN%E4%B8%96%E7%95%8C/">
-                图解 React Native 带你走进RN世界
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-12-21</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p>当你读完本文后，希望你能重新回到这里，并能够轻松回答以下问题:</p>
-<ul>
-<li>什么是 React Native ？为什么它的名字中有 “Native” 字样？</li>
-<li>为什么 React Native 如此之酷？</li>
-<li>我们可以分别使用 React Native 和 React 来开发什么？</li>
-<li>为什么会出现 ReactDOM ？它是做什么的？</li>
-<li>React 渲染器 ( renderer )是用来做什么的？</li>
-<li>React Sketch.app 工作原理是什么？</li>
-<li>ReactVR 的工作原理是什么？</li>
-<li>什么是 ReactJS ？React.js 又是什么？</li>
-</ul>
-<h2 id="不仅仅是-Web"><a href="#不仅仅是-Web" class="headerlink" title="不仅仅是 Web"></a>不仅仅是 Web</h2><p>学完上一篇文章的你现在脑海中的画面应该是这样的:</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/12.jpg" alt="12"></p>
-<p>你也知道，React 是在 Web 上开发用户界面的利器。使用 React 来开发 UI 的话，就能够描述你想要什么，而不是告诉 UI 如何更新 (响应式 UI)，还可以在可重用组件中组织代码，并创建高性能用户界面，而无需担心DOM超慢的速度 (虚拟 DOM)。越来越多的开发者选择 React 是因为它可以使得开发者更专注于上层业务，而不是底层 DOM 更新的细节。我们将这种开发 UI 的方式称之为 React 范式。范式基本上就是你思考一个问题的方式，以及这个问题的描述方式和解决方案。</p>
-<p>对于 Web 应用来说这无疑很棒。那对于其他平台呢，比如 iOS 和 安卓？如果能将 React 范式应用于原生应用的开发，岂不是很棒？</p>
-<p>在某种程度上来说，移动端的工作方式与 Web 端是相同的。比方说，有一个模特(树人)，还有一个根据模特来创建视觉元素的艺术家。没什么可惊讶的，构建原生应用 UI 的传统方式就是直接操纵树人并告诉他如何更新(直接跟树人交谈)。这与在 Web 浏览器中直接操纵 DOM 有类似的缺点。React 绝对有助于解决此类问题。</p>
-<p>除了相似之处外，移动端还有与 Web 端不同的地方，不同系统之间都是完全不同的。在过去，要开发原生应用的话，开发者需要学习特定的语言和平台工具链。</p>
-<p>这有点像在国外的工作室上班，员工需要说不同的语言。你需要精通所有语言才能跟所有模特进行交流。这听上去就很麻烦，你说是吧？</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/13.jpg" alt="13"></p>
-<p>所以，如果想要你开发出的原生应用能运行在 iOS 和安卓两个平台上的话，你需要创建两套完全分离的代码库。同样的业务逻辑需要写两遍。开发应用既困难，成本又高，从长期的维护来看的话更是如此。</p>
-<p>这正是 React Native 诞生的原因。我们来一起看看它是如何将开发过程大大简化的。</p>
-<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><h3 id="渲染器-renderer-和全新的-React"><a href="#渲染器-renderer-和全新的-React" class="headerlink" title="渲染器 ( renderer ) 和全新的 React"></a>渲染器 ( renderer ) 和全新的 React</h3><p>对于 Web 应用来说，React 负责启用 React 范式 (管理响应式 UI、组件和虚拟 DOM)，以及实际更新浏览器中的 DOM (与 Domo 交流)。当 DOM 是唯一需要交互的对象时，React 可以轻松处理好这两项任务。</p>
-<p>但是，对于原生应用的话，当需要管理不同平台上的各种“树人”时，事情就变得有挑战了。如果我们将更多的重担压在 React 肩上的话，那我们可怜的超级英雄将会为此抓狂。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/14.jpg" alt="14"></p>
-<p>为了解决此问题，React 创建者们将原来的 React 拆分成两部分。第一部分是全新的 React ，它只负责启用 React 范式。第二部分叫做 ReactDOM ，它唯一的任务就是与浏览器中的 DOM 进行交互。因为 ReactDOM 负责更新 DOM ，而 DOM 又决定了浏览器渲染的内容，所以我们将 ReactDOM 称之为渲染器。</p>
-<p>想象一下，我们的超级英雄脱下了他的斗篷，并在上面洒了一些魔法之尘。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/15.jpg" alt="15"></p>
-<p>斗篷立刻就有了生命，并成为了超级英雄的小助手。从负责与 Domo 沟通的枷锁中释放后，React 现在可以专注于做他最擅长的事。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/16.jpg" alt="16"></p>
-<p>这种角色分离的理念非常之强大。现在我们只需要维护一个共享的核心库，同时编写全新的渲染器来适应新平台。这种方式要比之前简单多了。由于有了 iOS 和安卓渲染器的强力支撑，现在你可以<strong>只使用一种语言和相同的 React 范式</strong>来同时为两个平台开发应用。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/17.jpg" alt="17"></p>
-<p>React 只需要专注于他擅长的领域即可。渲染器来负责沟通。</p>
-<h3 id="一个完整的平台"><a href="#一个完整的平台" class="headerlink" title="一个完整的平台"></a>一个完整的平台</h3><p>React 的官网定义是: 用来开发用户界面的 JavaScript 库。它的含义有两层: 首先它是 UI 开发的利器，其次它不涉及除 UI 开发以外的任何其他领域。</p>
-<p>实际上，<strong>你无法单独使用 React 开发出一个完整的应用</strong>。例如，你需要 CSS 来写外观样式，你需要 webpack 来打包，你需要 Firebase 来做数据持久化，等等。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/18.jpg" alt="18"></p>
-<p>“网络浏览器” 工作室里的实际景象要你比之前所见到的要忙碌得多。</p>
-<p>这在 Web 开发环境下还好，因为 React 是一个 JavaScript 库，所以它能自然地适应 Web 环境下的其他部件。这些部件要么本身就是 JavaScript 库，要么能很容易地与 JavaScript 适配。毕竟 JavaScript 是 Web 上的标准语言。</p>
-<p>但是，对于移动端来说就比较困难了，因为那里需要支持多种语言和技术。这个时候，我们就需要包含一整套部件，而且这些部件的使用方法要跟 React 类似，至少是能用 JavaScript 来调用。这样，React Native 诞生了。</p>
-<p>相比于 Web 上的 React ，React Native 包括更多东西:</p>
-<ul>
-<li>全新的 React 作为核心库 (我们的超级英雄，只不过没穿斗篷)</li>
-<li>iOS 和安卓的渲染器</li>
-<li>将代码转换成可安装应用的工具</li>
-<li>原生 UI 组件 (状态栏、列表等等)和动画</li>
-<li>UI 的样式和布局工具箱 (flexbox)</li>
-<li>构建大多数应用的基础部分 (比如网络)</li>
-<li>提供原生功能的部分，比如粘贴板、加速计和存储</li>
-<li>…</li>
-</ul>
-<p>我们说 React Native 本身是一个完整的平台是因为<strong>它包含开发完整应用所需的一切</strong>。相比之下，原本的 React 只负责 Web UI ，你需要去自己引用其他部分才能创建出一个 Web 应用。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/19.jpg" alt="19"></p>
-<p>React Native 的组成</p>
-<h3 id="原生-UI"><a href="#原生-UI" class="headerlink" title="原生 UI"></a>原生 UI</h3><p>为什么 React Native 的名字里有 Native 字样？这实际上是它的标志性特征: React Native 的内置 UI 是由<strong>原生 UI 组件</strong>组成的，这些组件表现良好，外观/感觉一致，并非 WebView 中所包含的一些垃圾模拟。用 React Native 开发的应用与用像 Swift 和 Java 开发的原生应用放在一起，通常是难以区分的。</p>
-<p>你也知道，像滚动加速、动画、键盘行为和阴影这些细节，实际上在应用程序的用户体验中扮演了非常重要的角色。如果这些东西不能与你手机中其他应用保持统一的话，那么用户很快就会觉得不爽。</p>
-<p>我原本的目的就是想在这里解释清楚 “native” 的真正含义以及为何 React Native 的性能更好。但我发现在几次头脑风暴之后，我的一整页笔记很快就写满了。还是在后面的文章中再来单独讲它吧。</p>
-<p>到目前为止，我只需要你记住原生 UI 是让 React Native 大放异彩的原因之一。</p>
-<p>看到这里，你应该了解到 React Native 是一个完整的平台，它可以让你使用 JavaScript 来开发真正的原生应用，而且还是用 React 的路子来写（React 范式）。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/20.jpg" alt="20"></p>
-<h2 id="React-Sketch-app、ReactVR、React-XYZ…"><a href="#React-Sketch-app、ReactVR、React-XYZ…" class="headerlink" title="React Sketch.app、ReactVR、React XYZ…"></a>React Sketch.app、ReactVR、React XYZ…</h2><p>Airbnb 最近发布了一款十分有趣的工具，叫做 <a target="_blank" rel="noopener" href="https://airbnb.design/painting-with-code/">React Sketch.app</a> ，它可以将 React 代码转换成 Sketch 里的图层。你能猜出它的工作原理吗？</p>
-<p>没错！从本质上来说，它就是使用了特殊渲染器的 React Native ，这个渲染器能与 Sketch 中的树人进行交流！</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/21.jpg" alt="21"></p>
-<p>因为 React Sketch.app 是基于 React Native 的，它也是一个完整的平台，所以可以直接使用它来从远程 API 来获取数据并在 Sketch 中进行渲染。</p>
-<p>与此同时，许多 React Native 的其他变种纷纷问世，用来支持在 <a target="_blank" rel="noopener" href="https://github.com/Microsoft/react-native-windows">Windows</a>、 <a target="_blank" rel="noopener" href="https://github.com/ptmt/react-native-macos">macOS</a>、<a target="_blank" rel="noopener" href="https://github.com/facebook/react-360">VR</a> 等平台上创建应用。</p>
-<p>这意味着只要你掌握了 React ，就可以在大量的平台上使用 JavaScript 来创建应用，而且对新平台的支持还在不断涌现。不同的平台，同样的思维模式。正如 React Native 的创建者们所倡导的: “<strong>一次学习，随处编写</strong>”。</p>
-<h2 id="动手时刻！"><a href="#动手时刻！" class="headerlink" title="动手时刻！"></a>动手时刻！</h2><p>说了这么多！你是否想在自己的手机上也尝试一番？</p>
-<p>我也很兴奋！拿起你的手机跟我一起动起来！</p>
-<ol>
-<li>在手机上下载 Expo 应用。你可以点击这里下载: <a target="_blank" rel="noopener" href="https://itunes.apple.com/app/apple-store/id982107779?mt=8">iOS</a>、<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=host.exp.exponent">安卓</a>，或者在 App Store 中搜索 “Expo” 。</li>
-<li>在电脑上打开网页: <a target="_blank" rel="noopener" href="https://snack.expo.io/">snack.expo.io/</a> 。</li>
-<li>在手机上启动 Expo 应用并点击 “Scan QR Code” 。</li>
-<li>扫描电脑上显示的二维码。如果一些正常，你应该可以看见一条绿色的信息 “Device connected” 。</li>
-<li>如果二维码无法自动消失的话，可以点击页面右上角的小叉关闭。关闭后应该可以看见代码编辑器。</li>
-<li>删除编辑器中的所有代码，然后将<a target="_blank" rel="noopener" href="https://gist.githubusercontent.com/lintonye/5cb3c11349591bf475b91573682fe688/raw/4ea0d4562ce45c1ba3867a1759359e1f86bb590a/domohat.jsx">此代码</a>粘贴进去。</li>
-<li>你在手机上看到了什么？</li>
-<li>你可以随意更改编辑器中的代码，然后立即在手机中查看结果！</li>
-</ol>
-<p>在后面的文章中我会对开发环境进行详细地解释。你暂时只需记住它就是 React Native 的 Codepen (在上篇文章中我曾使用它来展示示例 Domo 的帽子)。</p>
-<p>如果你将 <a target="_blank" rel="noopener" href="https://gist.github.com/lintonye/5cb3c11349591bf475b91573682fe688">React Native 版本</a> 和 <a target="_blank" rel="noopener" href="https://codepen.io/focuser/pen/gROrXx">React (Web) 版本</a>进行对比的话，你会发现它们的代码十分相似，都是这样的:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const Hat = ...</span><br><span class="line"></span><br><span class="line">const Thinker = ...</span><br><span class="line"></span><br><span class="line">// 下面的代码是 React Native 版本的</span><br><span class="line">// Web 版本的话，只需将 “View” 替换成 “div”</span><br><span class="line">const ThinkerWithHat = (&#123;hat&#125;) =&gt; (</span><br><span class="line">  &lt;View&gt;</span><br><span class="line">    &lt;Thinker /&gt;</span><br><span class="line">    &lt;Hat type=&#123;hat&#125;/&gt;</span><br><span class="line">  &lt;/View&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const HatSwitcher = ...</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p>“一次学习，随处编写”！还记得吗？</p>
-<h2 id="什么是-ReactJS-？什么是-React-js-？"><a href="#什么是-ReactJS-？什么是-React-js-？" class="headerlink" title="什么是 ReactJS ？什么是 React.js ？"></a>什么是 ReactJS ？什么是 React.js ？</h2><p>你可能无数次地听到 ReactJS (或 React.js) ，我也是这么叫的。实际上这并非官方名称。自从<a target="_blank" rel="noopener" href="https://web.archive.org/web/20130529213355/https://facebook.github.io/react/">诞生之日</a>起，官方名称一直都是 “React” ，从未改过。</p>
-<p>因为一般 JavaScript 库的名字都趋向于叫 “XyzJS” 或 “Xyz.js” ，React 也不例外，或许开发者们都已经习惯给库的名称加上 “JS” 或 “.js” 的后缀了。因为 React 最开始是作为 Web 库的身份出现的，所以很多开发者都习惯于实用 ReactJS 或 React.js 来泛指 Web 上的 React ，即 React 和 ReactDOM 的集合。</p>
-<p>按照惯例，当我提到 ReactJS 时，其实我想表达的也是 Web 上的 React 。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，到目前为止，我们已经介绍了不少内容。我们了解了一些 React 的历史以及 React Native 的组成。作为一个完整的平台，React Native 包含开发原生应用所需的一切，并且它使用的是 JavaScript 语言和 React 范式。React Native 现在支持多个平台，其中包括 iOS、Android、Windows、macOS、Sketch.app ，甚至还有 VR 。“一次学习，随处编写”！</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/12/21/React/%E3%80%8EReact%20Navigation%203x%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%E3%80%8FcreateBottomTabNavigator%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">
                 『React Navigation 3x系列教程』createBottomTabNavigator开发指南
             </a>
@@ -539,6 +425,102 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/12/20/React/React%20Native%20%E9%9B%86%E6%88%90%E5%88%86%E4%BA%AB%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E5%8A%9F%E8%83%BD%E5%88%86%E4%BA%AB%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91(Android)/">
+                React Native 集成分享第三方登录功能分享第三方登录模块开发(Android)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <p>在我们常用的App中经常会看到分享与第三方登录的功能，可以说分享与第三方登录已经成为了各大APP的必备功能。对于产品运行与推广来说，分享与第三方登录不仅能加强用户粘性，增加流量及新用户，也能提升用户存、留优化产品质量等。</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\8.gif" alt="8"></p>
+<p>各大平台都有对应的开发平台来提供分享与第三方登录的服务，比如微信开发平台/腾讯开发平台、新浪开发者平台等。因为各大平台及相关SDK存在很大的差异，单独集成起来比较繁琐，为了快速集成分享与第三方登录我们可以使用相应统一的服务提供商，常用的分享与登录的提供商有umeng与shareSdk。</p>
+<p>截止目前，但各大平台与集成服务的提供方都只提供了Native版本的SDK，没有对React Native做支持，为此要在React Native应用中添加分享与第三方登录我们需要开发出能供React Native应用使用的分享与登录模块。</p>
+<p>在这篇文章中我会向大家分享，在React Native中集分享第与三方登录功能的流程以及分享与第三方登录模块开发。(在本文中我将以umeng为例来进行讲解)</p>
+<h2 id="第一步：集成准备"><a href="#第一步：集成准备" class="headerlink" title="第一步：集成准备"></a>第一步：集成准备</h2><p>首先我们需要到<a target="_blank" rel="noopener" href="http://www.umeng.com/">umeng</a>官网申请一个开发者账号。然后创建一个应用并<a target="_blank" rel="noopener" href="http://mobile.umeng.com/apps/new">获取appkey</a>。 在之后呢，我们需要进行必不可少的一步就是，到各大平台申请第三方开发者账号，关于申请的流程<a target="_blank" rel="noopener" href="http://dev.umeng.com/social/android/operation">官网文档</a>讲解的已经很详细了，在这里我不再重复了。</p>
+<blockquote>
+<p>各大平台申请服务所需要等待的时间不等，通常是1-3天就可以搞定，建议在申请的同时，就进行sdk的集成，等申请通过之后，在换成正式的账号进行调试，这样一来开发申请两不误。</p>
+</blockquote>
+<h2 id="第二步：集成SDK"><a href="#第二步：集成SDK" class="headerlink" title="第二步：集成SDK"></a>第二步：集成SDK</h2><p>获取到appkey之后呢，我们接下来就来集成集成SDK。</p>
+<p>友盟分享目前还不支持AndroidStudio的Gradle配置，所以我们需要将分享sdk下来然后倒入到项目中。</p>
+<blockquote>
+<p>前往，<a target="_blank" rel="noopener" href="http://dev.umeng.com/social/android/sdk-download">SDK下载中心</a>，根据提示下载SDK即可，建议下载最新的。</p>
+</blockquote>
+<p>将下载的压缩文件解压，或会看到如下目录：</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\9.png" alt="9"></p>
+<p>其中，<code>umeng_integrate_tool.jar</code>为，sdk辅助集成功能，双击该文件将打开如下界面：</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\10.png" alt="10"></p>
+<p>然后根据需要勾选相应的平台，单击ok即可生成<code>umeng_integratetool_result</code>文件夹，然后将该文件夹中的文件导入到项目中即可，关于详细的集成说明可以参考<a target="_blank" rel="noopener" href="http://dev.umeng.com/social/android/quick-integration">快速集成</a>。</p>
+<h2 id="第三步：构建分享及登录模块"><a href="#第三步：构建分享及登录模块" class="headerlink" title="第三步：构建分享及登录模块"></a>第三步：构建分享及登录模块</h2><p>为了能够在React Native中使用umeng分享及登录，我们需要为刚才导出的sdk创建一个Native 模块然后通过桥接的方式供js部分进行调用.</p>
+<blockquote>
+<p>为了减少我们所集成的分享与统计代码对我们项目的入侵，保持模块之间的独立性，也就是我们经常所提倡的高内聚低耦合，在这里我们将分享与登录单独封装成一个模块，如下图：</p>
+</blockquote>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\11.png" alt="11"></p>
+<p>我们通过AndroidStudio新创建了一个名为<code>u_share</code>的module，然后将<code>umeng_integratetool_result</code>文件夹中的内容复制到了<code>u_share</code>的对应位置。</p>
+<p><strong>创建UShare.java</strong></p>
+<p>在u_share模块中我们创建了一个UShare.java类，该类主要负责umeng分享sdk之间的通信。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/** * 分享组件 * 出自：https://www.devio.org * GitHub:https://github.com/crazycodeboy * Eamil:crazycodeboy@gmail.com */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UShare</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> WeakReference&lt;Activity&gt; mActivity;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> WeakReference&lt;ShareModel&gt; mShareModel;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(Activity activity)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (activity == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        mActivity = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(activity);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">share</span><span class="params">(<span class="keyword">final</span> String title, <span class="keyword">final</span> String content, <span class="keyword">final</span> String imageUrl, <span class="keyword">final</span> String targetUrl, <span class="keyword">final</span> Callback errorCallback, <span class="keyword">final</span> Callback successCallback)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (mActivity == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">granted</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (!TextUtils.isEmpty(imageUrl)) &#123;</span><br><span class="line">            granted = ContextCompat.checkSelfPermission(mActivity.get(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!granted) &#123;</span><br><span class="line">            ShareModel shareModel=<span class="keyword">new</span> <span class="title class_">ShareModel</span>(title,content,imageUrl,targetUrl,errorCallback,successCallback);</span><br><span class="line">            mShareModel=<span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;&gt;(shareModel);</span><br><span class="line">            ActivityCompat.requestPermissions(mActivity.get(),<span class="keyword">new</span> <span class="title class_">String</span>[]&#123;Manifest.permission.WRITE_EXTERNAL_STORAGE&#125;, Constants.RC_REQUEST_PERMISSIONS);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        mActivity.get().runOnUiThread(<span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">                openShare(title, content, imageUrl, targetUrl, errorCallback, successCallback);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//...省略部分代码，你也可以通过视频教程(http://coding.imooc.com/class/304.html)来学习实现分享第三方登录的具体细节</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">onRequestPermissionsResult</span><span class="params">(<span class="type">int</span> requestCode, String[] permissions, <span class="type">int</span>[] grantResults)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(mShareModel==<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (requestCode == Constants.RC_REQUEST_PERMISSIONS) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = permissions.length; i &lt; j; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(TextUtils.equals(permissions[i],Manifest.permission.WRITE_EXTERNAL_STORAGE))&#123;</span><br><span class="line">                    <span class="keyword">if</span> (grantResults[i] == PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">                        share(mShareModel.get());</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="keyword">if</span>(mActivity==<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">                        Toast.makeText(mActivity.get(),<span class="string">&quot;没有使用SD卡的权限，请在权限管理中为GitHubPopular开启使用SD卡的权限&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="代码解读："><a href="#代码解读：" class="headerlink" title="代码解读："></a>代码解读：</h3><p>在上述代码中有个<code>public static void init(Activity activity)</code>方法来对UShare模块进行初始化。</p>
+<p>另外，公共方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">share</span><span class="params">(</span></span><br><span class="line"><span class="params">    <span class="keyword">final</span> String title,</span></span><br><span class="line"><span class="params">    <span class="keyword">final</span> String content,</span></span><br><span class="line"><span class="params">    <span class="keyword">final</span> String imageUrl,</span></span><br><span class="line"><span class="params">    <span class="keyword">final</span> String targetUrl,</span></span><br><span class="line"><span class="params">    <span class="keyword">final</span> Callback errorCallback,</span></span><br><span class="line"><span class="params">    <span class="keyword">final</span> Callback successCallback)</span></span><br></pre></td></tr></table></figure>
+<p>负责调用分享sdk之前的相应权限的检查。为了适配Android6.0的动态权限，我们添加了：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">onActivityResult</span><span class="params">(<span class="type">int</span> requestCode, <span class="type">int</span> resultCode, Intent data)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (mActivity == <span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    UMShareAPI.get(mActivity.get()).onActivityResult(requestCode, resultCode, data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">onRequestPermissionsResult</span><span class="params">(<span class="type">int</span> requestCode, String[] permissions, <span class="type">int</span>[] grantResults)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(mShareModel==<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (requestCode == Constants.RC_REQUEST_PERMISSIONS) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = permissions.length; i &lt; j; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(TextUtils.equals(permissions[i],Manifest.permission.WRITE_EXTERNAL_STORAGE))&#123;</span><br><span class="line">                <span class="keyword">if</span> (grantResults[i] == PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">                    share(mShareModel.get());</span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span>(mActivity==<span class="literal">null</span>)<span class="keyword">return</span>;</span><br><span class="line">                    Toast.makeText(mActivity.get(),<span class="string">&quot;没有使用SD卡的权限，请在权限管理中为GitHubPopular开启使用SD卡的权限&quot;</span>,Toast.LENGTH_SHORT).show();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来进行动态权限的处理。</p>
+<blockquote>
+<p>关于登录：</p>
+</blockquote>
+<p>分享和登录采用的是同一套sdk，如果要在React Native中进第三方登录，只需要在上述代码中添加下面的代码即可，方法和调用分享是一样的，有需要的朋友可以参考<a target="_blank" rel="noopener" href="http://dev.umeng.com/social/android/login-page">登录集成</a>来添加一下。</p>
+<blockquote>
+<p>mShareAPI.getPlatformInfo(UserinfoActivity.this, SHARE_MEDIA.SINA, umAuthListener);</p>
+</blockquote>
+<p><strong>创建UShareModule.java</strong></p>
+<p>然后我们创建了UShareModule.java来暴露分享方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** * 分享组件 * 出自：https://www.devio.org * GitHub:https://github.com/crazycodeboy * Eamil:crazycodeboy@gmail.com */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UShareModule</span> <span class="keyword">extends</span> <span class="title class_">ReactContextBaseJavaModule</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">UShareModule</span><span class="params">(ReactApplicationContext reactContext)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(reactContext);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;UShare&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@ReactMethod</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">share</span><span class="params">(</span></span><br><span class="line"><span class="params">        String title,</span></span><br><span class="line"><span class="params">        String content,</span></span><br><span class="line"><span class="params">        String imageUrl,</span></span><br><span class="line"><span class="params">        String targetUrl,</span></span><br><span class="line"><span class="params">        <span class="keyword">final</span> Callback successCallback,</span></span><br><span class="line"><span class="params">        <span class="keyword">final</span> Callback errorCallback)</span> &#123;</span><br><span class="line">        UShare.share(</span><br><span class="line">            title,content,imageUrl,targetUrl,successCallback,errorCallback</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在UShareModule.java中我们通过<code>UShare.share(title,content,imageUrl,targetUrl,successCallback,errorCallback);</code>调用了<code>UShare.java</code>的分享方法来打开分享对话框。</p>
+<p><strong>创建UShareReactPackage.java</strong></p>
+<p>为了向React Native注册我们刚才创建的原生模块，我们需要实现ReactPackage，ReactPackage主要为注册原生模块所存在，只有已经向React Native注册的模块才能在js模块使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 分享组件</span></span><br><span class="line"><span class="comment"> * 出自：https://www.devio.org</span></span><br><span class="line"><span class="comment"> * GitHub:https://github.com/crazycodeboy</span></span><br><span class="line"><span class="comment"> * Eamil:crazycodeboy@gmail.com</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UShareReactPackage</span> <span class="keyword">implements</span> <span class="title class_">ReactPackage</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;Class&lt;? <span class="keyword">extends</span> <span class="title class_">JavaScriptModule</span>&gt;&gt; createJSModules() &#123;</span><br><span class="line">        <span class="keyword">return</span> Collections.emptyList();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;ViewManager&gt; <span class="title function_">createViewManagers</span><span class="params">(ReactApplicationContext reactContext)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Collections.emptyList();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> List&lt;NativeModule&gt; <span class="title function_">createNativeModules</span><span class="params">(</span></span><br><span class="line"><span class="params">            ReactApplicationContext reactContext)</span> &#123;</span><br><span class="line">        List&lt;NativeModule&gt; modules = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        modules.add(<span class="keyword">new</span> <span class="title class_">UShareModule</span>(reactContext));</span><br><span class="line">        <span class="keyword">return</span> modules;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>环境配置</strong></p>
+<p>因为分享与登录SDK需要用到一些权限、Activity、Appkey及相关第三方key的配置，所以我呢需要在AndroidManifest.xml文件中添加如下的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;manifest xmlns:android=<span class="string">&quot;http://schemas.android.com/apk/res/android&quot;</span></span><br><span class="line">    <span class="keyword">package</span>=<span class="string">&quot;com.jph.u_share&quot;</span>&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> /&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span> /&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.READ_PHONE_STATE&quot;</span> /&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span>/&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.READ_EXTERNAL_STORAGE&quot;</span>/&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span> /&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.ACCESS_COARSE_LOCATION&quot;</span> /&gt;</span><br><span class="line">    &lt;uses-permission android:name=<span class="string">&quot;android.permission.ACCESS_LOCATION_EXTRA_COMMANDS&quot;</span> /&gt;</span><br><span class="line">    &lt;application</span><br><span class="line">        android:allowBackup=<span class="string">&quot;true&quot;</span></span><br><span class="line">        android:supportsRtl=<span class="string">&quot;true&quot;</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--weixin callback--&gt;</span><br><span class="line">        &lt;activity</span><br><span class="line">            android:name=<span class="string">&quot;com.jph.githubpopular.wxapi.WXEntryActivity&quot;</span></span><br><span class="line">            android:configChanges=<span class="string">&quot;keyboardHidden|orientation|screenSize&quot;</span></span><br><span class="line">            android:exported=<span class="string">&quot;true&quot;</span></span><br><span class="line">            android:screenOrientation=<span class="string">&quot;portrait&quot;</span></span><br><span class="line">            android:theme=<span class="string">&quot;@android:style/Theme.Translucent.NoTitleBar&quot;</span> /&gt;</span><br><span class="line">        &lt;!--qq callback--&gt;</span><br><span class="line">        &lt;activity</span><br><span class="line">            android:name=<span class="string">&quot;com.tencent.tauth.AuthActivity&quot;</span></span><br><span class="line">            android:launchMode=<span class="string">&quot;singleTask&quot;</span></span><br><span class="line">            android:noHistory=<span class="string">&quot;true&quot;</span>&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=<span class="string">&quot;android.intent.action.VIEW&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;category android:name=<span class="string">&quot;android.intent.category.DEFAULT&quot;</span> /&gt;</span><br><span class="line">                &lt;category android:name=<span class="string">&quot;android.intent.category.BROWSABLE&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line">                &lt;data android:scheme=<span class="string">&quot;xxx&quot;</span> /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line">        &lt;activity</span><br><span class="line">            android:name=<span class="string">&quot;com.tencent.connect.common.AssistActivity&quot;</span></span><br><span class="line">            android:configChanges=<span class="string">&quot;orientation|keyboardHidden|screenSize&quot;</span></span><br><span class="line">            android:screenOrientation=<span class="string">&quot;portrait&quot;</span></span><br><span class="line">            android:theme=<span class="string">&quot;@android:style/Theme.Translucent.NoTitleBar&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!--umeng：--&gt;</span><br><span class="line">        &lt;!--分享编辑页：--&gt;</span><br><span class="line">        &lt;activity</span><br><span class="line">            android:name=<span class="string">&quot;com.umeng.socialize.editorpage.ShareActivity&quot;</span></span><br><span class="line">            android:excludeFromRecents=<span class="string">&quot;true&quot;</span></span><br><span class="line">            android:theme=<span class="string">&quot;@style/Theme.UMDefault&quot;</span> /&gt;</span><br><span class="line">        &lt;meta-data</span><br><span class="line">            android:name=<span class="string">&quot;UMENG_APPKEY&quot;</span></span><br><span class="line">            android:value=<span class="string">&quot;UMENG_APPKEY&quot;</span>&gt;&lt;/meta-data&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/application&gt;</span><br><span class="line"></span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure>
+<p>上述代码根据所选择的平台不同而略有差异，具体可参照<a target="_blank" rel="noopener" href="http://dev.umeng.com/social/android/quick-integration">快速集成</a>：</p>
+<h2 id="第四步：分享模块的使用"><a href="#第四步：分享模块的使用" class="headerlink" title="第四步：分享模块的使用"></a>第四步：分享模块的使用</h2><p>到目前为止呢，我们的Android分享模块已经创建好了，接下来呢我们就可以使用它了。</p>
+<p><strong>添加依赖</strong></p>
+<p>首先我们需要让我们的应用模块依赖<code>u_share</code>模块：</p>
+<p>在…/xxx/android/app/build.gradle中添加：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    + compile project(&#x27;:u_share&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>初始化UShare</strong></p>
+<p>接下来我们需要在<code>MainActivity.java</code>中初始化UShare：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainActivity</span> <span class="keyword">extends</span> <span class="title class_">ReactActivity</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">(Bundle savedInstanceState)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        +UShare.init(<span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//...省略部分代码</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onRequestPermissionsResult</span><span class="params">(<span class="type">int</span> requestCode, String[] permissions, <span class="type">int</span>[] grantResults)</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>.onRequestPermissionsResult(requestCode, permissions, grantResults);</span><br><span class="line">        +UShare.onRequestPermissionsResult(requestCode,permissions,grantResults);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注册UShareReactPackage</strong> 然后我们需要在MainApplication.java中注册UShareReactPackage以及进行Umeng的一些配置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MainApplication</span> <span class="keyword">extends</span> <span class="title class_">Application</span> <span class="keyword">implements</span> <span class="title class_">ReactApplication</span> &#123;</span><br><span class="line">  &#123;</span><br><span class="line">    +PlatformConfig.setWeixin(Constants.KEY_WEIXIN,Constants.SECRET_WEIXIN);</span><br><span class="line">    +PlatformConfig.setSinaWeibo(<span class="string">&quot;xxx&quot;</span>, <span class="string">&quot;xxx&quot;</span>);</span><br><span class="line">    +PlatformConfig.setQQZone(<span class="string">&quot;xxx&quot;</span>, <span class="string">&quot;xxx&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">ReactNativeHost</span> <span class="variable">mReactNativeHost</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ReactNativeHost</span>(<span class="built_in">this</span>) &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="type">boolean</span> <span class="title function_">getUseDeveloperSupport</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> BuildConfig.DEBUG;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> List&lt;ReactPackage&gt; <span class="title function_">getPackages</span><span class="params">()</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(</span><br><span class="line">          <span class="keyword">new</span> <span class="title class_">MainReactPackage</span>(),</span><br><span class="line">         + <span class="keyword">new</span> <span class="title class_">UShareReactPackage</span>()</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCreate</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">super</span>.onCreate();</span><br><span class="line">    SoLoader.init(<span class="built_in">this</span>, <span class="comment">/* native exopackage */</span> <span class="literal">false</span>);</span><br><span class="line">    +UMShareAPI.get(<span class="built_in">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>原生模块导出一个js模块</strong></p>
+<p>我们创建一个UShare.js文件，然后添加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; NativeModules &#125; from &#x27;react-native&#x27;;</span><br><span class="line">module.exports = NativeModules.UShare;</span><br></pre></td></tr></table></figure>
+<p>这样以来呢，我们就可以在JS模块中来使用分享以及第三方登录了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import UShare from &#x27;../common/UShare&#x27;//导入UShare.js</span><br><span class="line">//...省略部分代码</span><br><span class="line">UShare.share(shareApp.title, shareApp.content,</span><br><span class="line">    shareApp.imgUrl,shareApp.url,()=&gt;&#123;&#125;,()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -583,10 +565,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -596,6 +574,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -618,11 +600,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

@@ -157,125 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/12/20/React/%E3%80%8EReact%20Navigation%203x%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%E3%80%8FcreateSwitchNavigator%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">
-                『React Navigation 3x系列教程』 createMaterialTopTabNavigator开发指南
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-12-20</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="createMaterialTopTabNavigator-API"><a href="#createMaterialTopTabNavigator-API" class="headerlink" title="[createMaterialTopTabNavigator API]"></a>[createMaterialTopTabNavigator API]</h2><blockquote>
-<p>createMaterialTopTabNavigator(RouteConfigs, TabNavigatorConfig):</p>
-</blockquote>
-<ul>
-<li><code>RouteConfigs</code>(必选)：路由配置对象是从路由名称到路由配置的映射，告诉导航器该路由呈现什么。</li>
-<li><code>TabNavigatorConfig</code>(可选)：配置导航器的路由(如：默认首屏，navigationOptions，paths等)样式(如，转场模式mode、头部模式等)。</li>
-</ul>
-<p>从createMaterialTopTabNavigator API上可以看出<code>createMaterialTopTabNavigator</code>支持通过<code>RouteConfigs</code>和 <code>TabNavigatorConfig</code>两个参数来创建createMaterialTopTabNavigator导航器。</p>
-<h2 id="RouteConfigs"><a href="#RouteConfigs" class="headerlink" title="[RouteConfigs]"></a>[RouteConfigs]</h2><p>RouteConfigs支持三个参数<code>screen</code>、<code>path</code>以及<code>navigationOptions</code>；</p>
-<ul>
-<li><code>screen</code>(必选)：指定一个 React 组件作为屏幕的主要显示内容，当这个组件被TabNavigator加载时，它会被分配一个<code>navigation</code> prop。</li>
-<li><code>path</code>(可选)：用来设置支持schema跳转时使用，具体使用会在下文的有关<code>Schema</code>章节中讲到；</li>
-<li><code>navigationOptions</code>(可选)：用以配置全局的屏幕导航选项如：title、headerRight、headerLeft等；</li>
-</ul>
-<h2 id="TabNavigatorConfig"><a href="#TabNavigatorConfig" class="headerlink" title="[TabNavigatorConfig]"></a>[TabNavigatorConfig]</h2><ul>
-<li>tabBarComponent：指定TabNavigator的TabBar组件；</li>
-<li>tabBarPosition: 用于指定TabBar的显示位置，支持’top’ 与 ‘bottom’两种方式；</li>
-<li>swipeEnabled : 是否可以左右滑动切换tab；</li>
-<li>lazy - 默认值是 false。如果是true，Tab 页只会在被选中或滑动到该页时被渲染。当为 false 时，所有的 Tab 页都将直接被渲染；（可以轻松实现多Tab 页面的懒加载）；</li>
-<li>optimizationsEnabled -是否将 Tab 页嵌套在到 中。如果是，一旦该 Tab 页失去焦点，将被移出当前页面, 从而提高内存使用率。</li>
-<li>animationEnabled : 切换页面时是否有动画效果。</li>
-<li>initialLayout : 包含初始高度和宽度的可选对象可以被传递以防止react-native-tab-view呈现中的一个帧延迟；</li>
-<li>tabBarOptions: 配置TaBar下文会详细讲解；</li>
-<li>initialRouteName : 默认页面组件，TabNavigator显示的第一个页面；</li>
-<li>order: 定义tab顺序的routeNames数组。</li>
-<li>paths: 提供routeName到path config的映射，它覆盖routeConfigs中设置的路径。</li>
-<li>backBehavior: 后退按钮是否会导致标签切换到初始tab？ 如果是，则设切换到初始tab，否则什么也不做。 默认为切换到初始tab。</li>
-</ul>
-<h2 id="tabBarOptions（tab配置）"><a href="#tabBarOptions（tab配置）" class="headerlink" title="[tabBarOptions（tab配置）]"></a>[tabBarOptions（tab配置）]</h2><ul>
-<li>activeTintColor: 设置TabBar选中状态下的标签和图标的颜色；</li>
-<li>inactiveTintColor: 设置TabBar非选中状态下的标签和图标的颜色；</li>
-<li>showIcon: 是否展示图标，默认是false；</li>
-<li>showLabel: 是否展示标签，默认是true；</li>
-<li>upperCaseLabel - 是否使标签大写，默认为true。</li>
-<li>tabStyle: 设置单个tab的样式；</li>
-<li>indicatorStyle: 设置 indicator(tab下面的那条线)的样式；</li>
-<li>labelStyle: 设置TabBar标签的样式；</li>
-<li>iconStyle: 设置图标的样式；</li>
-<li>style: 设置整个TabBar的样式；</li>
-<li>allowFontScaling: 设置TabBar标签是否支持缩放，默认支持；</li>
-<li>pressColor -Color for material ripple（仅支持 Android &gt;= 5.0；</li>
-<li>pressOpacity -按下标签时的不透明度（支持 iOS 和 Android &lt; 5.0）；</li>
-<li>scrollEnabled -是否支持 选项卡滚动</li>
-</ul>
-<blockquote>
-<p>eg:</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">tabBarOptions: &#123;</span><br><span class="line">  labelStyle: &#123;</span><br><span class="line">    fontSize: 12,</span><br><span class="line">  &#125;,</span><br><span class="line">  tabStyle: &#123;</span><br><span class="line">    width: 100,</span><br><span class="line">  &#125;,</span><br><span class="line">  style: &#123;</span><br><span class="line">    backgroundColor: &#x27;blue&#x27;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="navigationOptions（屏幕导航选项）"><a href="#navigationOptions（屏幕导航选项）" class="headerlink" title="[navigationOptions（屏幕导航选项）]"></a>[navigationOptions（屏幕导航选项）]</h2><p>createMaterialTopTabNavigator支持的屏幕导航选项的参数有：</p>
-<ul>
-<li>title: 可以用作headerTitle和tabBarLabel的备选的通用标题。</li>
-<li>swipeEnabled：是否允许tab之间的滑动切换，默认允许；</li>
-<li>tabBarIcon: 设置TabBar的图标；</li>
-<li>tabBarLabel: 设置TabBar的标签；</li>
-<li>tabBarOnPress: Tab被点击的回调函数，它的参数是一保函一下变量的对象：<ul>
-<li>navigation：页面的 navigation props</li>
-<li>defaultHandler: tab press 的默认 handler</li>
-</ul>
-</li>
-<li>tabBarAccessibilityLabel：选项卡按钮的辅助功能标签。 当用户点击标签时，屏幕阅读器会读取这些信息。 如果您没有选项卡的标签，建议设置此项；</li>
-<li>tabBarTestID：用于在测试中找到该选项卡按钮的 ID；</li>
-</ul>
-<h2 id="【案例1】使用createMaterialTopTabNavigator做界面导航、配置navigationOptions"><a href="#【案例1】使用createMaterialTopTabNavigator做界面导航、配置navigationOptions" class="headerlink" title="[【案例1】使用createMaterialTopTabNavigator做界面导航、配置navigationOptions]"></a>[【案例1】使用createMaterialTopTabNavigator做界面导航、配置navigationOptions]</h2><p><img src="H:\上传到git里面的md文件图片\picture\React\RN3.x\2.png" alt="2"></p>
-<h2 id="第一步：创建一个createMaterialTopTabNavigator类型的导航器"><a href="#第一步：创建一个createMaterialTopTabNavigator类型的导航器" class="headerlink" title="[第一步：创建一个createMaterialTopTabNavigator类型的导航器]"></a>[第一步：创建一个createMaterialTopTabNavigator类型的导航器]</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">export const MaterialTopTabNavigator = createMaterialTopTabNavigator(&#123;//在这里配置页面的路由</span><br><span class="line">        Page1: &#123;</span><br><span class="line">            screen: Page1,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &#x27;Page10&#x27;,</span><br><span class="line">                tabBarIcon: (&#123;tintColor, focused&#125;) =&gt; (</span><br><span class="line">                    &lt;Ionicons</span><br><span class="line">                        name=&#123;&#x27;ios-home&#x27;&#125;</span><br><span class="line">                        size=&#123;26&#125;</span><br><span class="line">                        style=</span><br><span class="line">                    /&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        Page4: &#123;</span><br><span class="line">            screen: Page4,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &#x27;Page2&#x27;,</span><br><span class="line">                tabBarIcon: (&#123;tintColor, focused&#125;) =&gt; (</span><br><span class="line">                    &lt;Ionicons</span><br><span class="line">                        name=&#123;&#x27;ios-people&#x27;&#125;</span><br><span class="line">                        size=&#123;26&#125;</span><br><span class="line">                        style=</span><br><span class="line">                    /&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        Page3: &#123;</span><br><span class="line">            screen: Page3,</span><br><span class="line">            navigationOptions: &#123;</span><br><span class="line">                tabBarLabel: &#x27;Page3&#x27;,</span><br><span class="line">                tabBarIcon: (&#123;tintColor, focused&#125;) =&gt; (</span><br><span class="line">                    &lt;Ionicons</span><br><span class="line">                        name=&#123;&#x27;ios-chatboxes&#x27;&#125;</span><br><span class="line">                        size=&#123;26&#125;</span><br><span class="line">                        style=</span><br><span class="line">                    /&gt;</span><br><span class="line">                ),</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        tabBarOptions: &#123;</span><br><span class="line">            tabStyle: &#123;</span><br><span class="line">                minWidth: 50</span><br><span class="line">            &#125;,</span><br><span class="line">            upperCaseLabel: false,//是否使标签大写，默认为true</span><br><span class="line">            scrollEnabled: true,//是否支持 选项卡滚动，默认false</span><br><span class="line">            // activeTintColor: &#x27;white&#x27;,//label和icon的前景色 活跃状态下（选中）</span><br><span class="line">            // inactiveTintColor: &#x27;gray&#x27;,//label和icon的前景色 活跃状态下（未选中）</span><br><span class="line">            style: &#123;</span><br><span class="line">                backgroundColor: &#x27;#678&#x27;,//TabBar 的背景颜色</span><br><span class="line">            &#125;,</span><br><span class="line">            indicatorStyle: &#123;</span><br><span class="line">                height: 2,</span><br><span class="line">                backgroundColor: &#x27;white&#x27;,</span><br><span class="line">            &#125;,//标签指示器的样式</span><br><span class="line">            labelStyle: &#123;</span><br><span class="line">                fontSize: 13,</span><br><span class="line">                marginTop: 6,</span><br><span class="line">                marginBottom: 6,</span><br><span class="line">            &#125;,//文字的样式</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h2 id="第二步：配置navigationOptions："><a href="#第二步：配置navigationOptions：" class="headerlink" title="[第二步：配置navigationOptions：]"></a>[第二步：配置navigationOptions：]</h2><p>TabNavigator的navigationOptions有两个关键的属性，tabBarLabel标签与tabBarIcon图标：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Page2: &#123;</span><br><span class="line">    screen: Page2,</span><br><span class="line">    navigationOptions: &#123;</span><br><span class="line">        tabBarLabel: &#x27;Page2&#x27;,</span><br><span class="line">        tabBarIcon: (&#123;tintColor, focused&#125;) =&gt; (</span><br><span class="line">            &lt;Ionicons</span><br><span class="line">                name=&#123;focused ? &#x27;ios-people&#x27; : &#x27;ios-people-outline&#x27;&#125;</span><br><span class="line">                size=&#123;26&#125;</span><br><span class="line">                style=</span><br><span class="line">            /&gt;</span><br><span class="line">        ),</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>在上述代码中使用了<code>react-native-vector-icons</code>的矢量图标作为Tab的显示图标，tabBarIcon接收一个React 组件，大家可以根据需要进行定制：</p>
-<ul>
-<li>tintColor: 当前状态下Tab的颜色；</li>
-<li>focused: Tab是否被选中；</li>
-</ul>
-<h2 id="第三步：界面跳转"><a href="#第三步：界面跳转" class="headerlink" title="[第三步：界面跳转]"></a>[第三步：界面跳转]</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> const &#123;navigation&#125; = this.props;</span><br><span class="line"> ...</span><br><span class="line"> &lt;Button</span><br><span class="line">    title=&quot;跳转到页面4&quot;</span><br><span class="line">    onPress=&#123;() =&gt; &#123;</span><br><span class="line">        navigation.navigate(&quot;Page4&quot;,&#123; name: &#x27;Devio&#x27; &#125;)</span><br><span class="line">    &#125;&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>代码解析：</p>
-</blockquote>
-<p>页面跳转可分为两步：</p>
-<ul>
-<li><ol>
-<li>获取navigation：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const &#123;navigation&#125; = this.props;</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li>通过<code>navigate(routeName, params, action)</code>进行页面跳转：</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">navigation.navigate(&#x27;Page2&#x27;);</span><br><span class="line">navigation.navigate(&#x27;Page3&#x27;,&#123; name: &#x27;Devio&#x27; &#125;);</span><br></pre></td></tr></table></figure>
-<p>这里在跳转到<code>Page3</code>的时候传递了参数<code>&#123; name: &#39;Devio&#39; &#125;</code>；</p>
-</li>
-</ul>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/12/20/React/%E3%80%8EReact%20Navigation%203x%E7%B3%BB%E5%88%97%E6%95%99%E7%A8%8B%E3%80%8FcreateMaterialTopTabNavigator%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">
                 『React Navigation 3x系列教程』createSwitchNavigator开发指南
             </a>
@@ -503,6 +384,121 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/12/20/React/React%20Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B(%E4%B8%AD)/">
+                React Native之React速学教程(中)
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-20</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="组件的详细说明"><a href="#组件的详细说明" class="headerlink" title="组件的详细说明"></a>组件的详细说明</h2><p>当通过调用 React.createClass() 来创建组件的时候，每个组件必须提供render方法，并且也可以包含其它的在这里描述的生命周期方法。</p>
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><p><code>ReactComponent render()</code><br><code>render()</code> 方法是必须的。<br>当该方法被回调的时候，会检测 <code>this.props</code> 和 <code>this.state</code>，并返回一个单子级组件。该子级组件可以是虚拟的本地 DOM 组件（比如 <div /> 或者 <code>React.DOM.div()</code>），也可以是自定义的复合组件。<br>你也可以返回 <code>null</code> 或者 <code>false</code> 来表明不需要渲染任何东西。实际上，React 渲染一个<code>&lt;noscript&gt;</code>标签来处理当前的差异检查逻辑。当返回 <code>null</code> 或者 <code>false</code> 的时候，<code>this.getDOMNode()</code> 将返回 <code>null</code>。</p>
+<p><strong>注意：</strong></p>
+<p><code>render()</code>函数应该是纯粹的，也就是说该函数不修改组件的 <code>state</code>，每次调用都返回相同的结果，不读写 DOM 信息，也不和浏览器交互（例如通过使用 <code>setTimeout</code>）。如果需要和浏览器交互，在 <code>componentDidMount()</code> 中或者其它生命周期方法中做这件事。保持 <code>render()</code> 纯粹，可以使服务器端渲染更加切实可行，也使组件更容易被理解。</p>
+<blockquote>
+<p>心得：不要在<code>render()</code>函数中做复杂的操作，更不要进行网络请求，数据库读写，I/O等操作。</p>
+</blockquote>
+<h2 id="getInitialState"><a href="#getInitialState" class="headerlink" title="getInitialState"></a>getInitialState</h2><p><code>object getInitialState()</code> 初始化组件状态，在组件挂载之前调用一次。返回值将会作为 <code>this.state</code>的初始值。</p>
+<blockquote>
+<p>心得：通常在该方法中对组件的状态进行初始化。</p>
+</blockquote>
+<h2 id="getDefaultProps"><a href="#getDefaultProps" class="headerlink" title="getDefaultProps"></a>getDefaultProps</h2><p><code>object getDefaultProps()</code><br>设置组件属性的默认值，在组件类创建的时候调用一次，然后返回值被缓存下来。如果父组件没有指定 <code>props</code> 中的某个键，则此处返回的对象中的相应属性将会合并到 <code>this.props</code> （使用 in 检测属性）。</p>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage:"></a>Usage:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">getDefaultProps() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      title: &#x27;&#x27;,</span><br><span class="line">      popEnabled:true</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong><br>该方法在任何实例创建之前调用，因此不能依赖于 <code>this.props</code>。另外，<code>getDefaultProps()</code> 返回的任何复杂对象将会在实例间共享，而不是每个实例拥有一份拷贝。</p>
+<blockquote>
+<p>心得：该方法在你封装一个自定义组件的时候经常用到，通常用于为组件初始化默认属性。</p>
+</blockquote>
+<h2 id="PropTypes"><a href="#PropTypes" class="headerlink" title="PropTypes"></a><a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/top-level-api.html#react.proptypes">PropTypes</a></h2><p><code>object propTypes</code><br><code>propTypes</code> 对象用于验证传入到组件的 <code>props</code>。 可参考<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/reusable-components.html">可重用的组件</a>。</p>
+<h2 id="Usage-1"><a href="#Usage-1" class="headerlink" title="Usage:"></a>Usage:</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var NavigationBar=React.createClass(&#123;</span><br><span class="line">  propTypes: &#123;</span><br><span class="line">    navigator:React.PropTypes.object,</span><br><span class="line">    leftButtonTitle: React.PropTypes.string,</span><br><span class="line">    leftButtonIcon: Image.propTypes.source,</span><br><span class="line">    popEnabled:React.PropTypes.bool,</span><br><span class="line">    onLeftButtonClick: React.PropTypes.func,</span><br><span class="line">    title:React.PropTypes.string,</span><br><span class="line">    rightButtonTitle: React.PropTypes.string,</span><br><span class="line">    rightButtonIcon:Image.propTypes.source,</span><br><span class="line">    onRightButtonClick:React.PropTypes.func</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>心得：在封装组件时，对组件的属性通常会有类型限制，如：组件的背景图片，需要<code>Image.propTypes.source</code>类型，propTypes便可以帮你完成你需要的属性类型的检查。</p>
+</blockquote>
+<h2 id="mixins"><a href="#mixins" class="headerlink" title="mixins"></a>mixins</h2><p><code>array mixins</code><br><code>mixin</code> 数组允许使用混合来在多个组件之间共享行为。更多关于混合的信息，可参考<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/reusable-components.html#mixins">Reusable Components</a>。</p>
+<blockquote>
+<p>心得：由于ES6不再支持mixins，所以不建议在使用mixins，我们可以用另外一种方式来替代mixins，请参考：<a target="_blank" rel="noopener" href="https://www.devio.org/2016/08/10/React-Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B-(%E4%B8%AD">React Native之React速学教程(下)-ES6不再支持Mixins</a>/)。</p>
+</blockquote>
+<h2 id="statics"><a href="#statics" class="headerlink" title="statics"></a>statics</h2><p><code>object statics</code><br><code>statics</code> 对象允许你定义静态的方法，这些静态的方法可以在组件类上调用。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var MyComponent = React.createClass(&#123;</span><br><span class="line">  statics: &#123;</span><br><span class="line">    customMethod: function(foo) &#123;</span><br><span class="line">      return foo === &#x27;bar&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  render: function() &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">MyComponent.customMethod(&#x27;bar&#x27;);  // true</span><br></pre></td></tr></table></figure>
+<p>在这个块儿里面定义的方法都是静态的，你可以通过<code>ClassName.funcationName</code>的形式调用它。<br><strong>注意</strong><br>这些方法不能获取组件的 <code>props</code> 和 <code>state</code>。如果你想在静态方法中检查 <code>props</code> 的值，在调用处把 <code>props</code> 作为参数传入到静态方法。</p>
+<h2 id="displayName"><a href="#displayName" class="headerlink" title="displayName"></a>displayName</h2><p><code>string displayName</code><br><code>displayName</code> 字符串用于输出调试信息。JSX 自动设置该值；可参考<a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/jsx-in-depth.html#the-transform">JSX in Depth</a>。</p>
+<h2 id="isMounted"><a href="#isMounted" class="headerlink" title="isMounted"></a>isMounted</h2><p><code>boolean isMounted()</code>，当组件被渲染到DOM，该方法返回true，否则返回false。该方法通常用于异步任务完成后修改state前的检查，以避免修改一个没有被渲染的组件的state。</p>
+<blockquote>
+<p>心得：开发中不建议大家isMounted，大家可以使用另外一种更好的方式来避免修改没有被渲染的DOM，请下文的<a target="_blank" rel="noopener" href="https://www.devio.org/2016/08/10/React-Native%E4%B9%8BReact%E9%80%9F%E5%AD%A6%E6%95%99%E7%A8%8B-(%E4%B8%AD">isMounted 是个反模式</a>/)。</p>
+</blockquote>
+<h2 id="组件的生命周期-Component-Lifecycle"><a href="#组件的生命周期-Component-Lifecycle" class="headerlink" title="组件的生命周期(Component Lifecycle)"></a><a target="_blank" rel="noopener" href="https://facebook.github.io/react/docs/working-with-the-browser.html#component-lifecycle">组件的生命周期(Component Lifecycle)</a></h2><p>在iOS中<code>UIViewController</code>提供了<code>(void)viewWillAppear:(BOOL)animated</code>, <code>- (void)viewDidLoad</code>,<code>(void)viewWillDisappear:(BOOL)animated</code>等生命周期方法，在Android中<code>Activity</code>则提供了<code>onCreate()</code>,<code>onStart()</code>,<code>onResume()</code>,<code>onPause()</code>,<code>onStop()</code>,<code>onDestroy()</code>等生命周期方法，这些生命周期方法展示了一个界面从创建到销毁的一生。</p>
+<p>那么在React 中组件(Component)也是有自己的生命周期方法的。</p>
+<p><img src="H:\上传到git里面的md文件图片\picture\React\RN之React速学\2.jpg" alt="2"></p>
+<h2 id="组件的生命周期分成三个状态："><a href="#组件的生命周期分成三个状态：" class="headerlink" title="组件的生命周期分成三个状态："></a>组件的生命周期分成三个状态：</h2><ul>
+<li>Mounting：已插入真实 DOM</li>
+<li>Updating：正在被重新渲染</li>
+<li>Unmounting：已移出真实 DOM</li>
+</ul>
+<blockquote>
+<p>心得：你会发现这些React 中组件(Component)的生命周期方法从写法上和iOS中<code>UIViewController</code>的生命周期方法很像，React 为每个状态都提供了两种处理函数，will 函数在进入状态之前调用，did 函数在进入状态之后调用。</p>
+</blockquote>
+<h2 id="Mounting-装载"><a href="#Mounting-装载" class="headerlink" title="Mounting(装载)"></a>Mounting(装载)</h2><ul>
+<li><code>getInitialState()</code>: 在组件挂载之前调用一次。返回值将会作为 this.state 的初始值。</li>
+<li><code>componentWillMount()</code>：服务器端和客户端都只调用一次，在初始化渲染执行之前立刻调用。</li>
+<li><code>componentDidMount()</code>：在初始化渲染执行之后立刻调用一次，仅客户端有效（服务器端不会调用）。</li>
+</ul>
+<h2 id="Updating-更新"><a href="#Updating-更新" class="headerlink" title="Updating (更新)"></a>Updating (更新)</h2><ul>
+<li>componentWillReceiveProps(object nextProps) 在组件接收到新的 props 的时候调用。在初始化渲染的时候，该方法不会调用。</li>
+</ul>
+<p>用此函数可以作为 react 在 prop 传入之后， render() 渲染之前更新 state 的机会。老的 props 可以通过 this.props 获取到。在该函数中调用 this.setState() 将不会引起第二次渲染。</p>
+<ul>
+<li>shouldComponentUpdate(object nextProps, object nextState): 在接收到新的 props 或者 state，将要渲染之前调用。</li>
+</ul>
+<p>该方法在初始化渲染的时候不会调用，在使用 forceUpdate 方法的时候也不会。如果确定新的 props 和 state 不会导致组件更新，则此处应该 返回 false。</p>
+<blockquote>
+<p>心得：重写次方你可以根据实际情况，来灵活的控制组件当 props 和 state 发生变化时是否要重新渲染组件。</p>
+</blockquote>
+<ul>
+<li>componentWillUpdate(object nextProps, object nextState)：在接收到新的 props 或者 state 之前立刻调用。</li>
+</ul>
+<p>在初始化渲染的时候该方法不会被调用。使用该方法做一些更新之前的准备工作。</p>
+<blockquote>
+<p>注意：你不能在该方法中使用 this.setState()。如果需要更新 state 来响应某个 prop 的改变，请使用 <code>componentWillReceiveProps</code>。</p>
+</blockquote>
+<ul>
+<li>componentDidUpdate(object prevProps, object prevState): 在组件的更新已经同步到 DOM 中之后立刻被调用。</li>
+</ul>
+<p>该方法不会在初始化渲染的时候调用。使用该方法可以在组件更新之后操作 DOM 元素。</p>
+<h2 id="Unmounting-移除"><a href="#Unmounting-移除" class="headerlink" title="Unmounting(移除)"></a>Unmounting(移除)</h2><ul>
+<li>componentWillUnmount：在组件从 DOM 中移除的时候立刻被调用。</li>
+</ul>
+<p>在该方法中执行任何必要的清理，比如无效的定时器，或者清除在 componentDidMount 中创建的 DOM 元素。</p>
+<h2 id="isMounted是个反模式"><a href="#isMounted是个反模式" class="headerlink" title="isMounted是个反模式"></a>isMounted是个反模式</h2><p>isMounted通常用于避免修改一个已经被卸载的组件的状态，因为调用一个没有被装载的组件的<code>setState()</code>方法，系统会抛出异常警告。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if(this.isMounted()) &#123; //不推荐</span><br><span class="line">  this.setState(&#123;...&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面做法有点反模式，<code>isMounted()</code>起到作用的时候也就是组件被卸载之后还有异步操作在进行的时候，这就意味着一个被销毁的组件还持有着一些资源的引用，这会导致系统性能降低甚至内存溢出。</p>
+<p>React 在设计的时候通过<code>setState()</code>被调用时做了一些检查，来帮助开发者发现被卸载的组件还持有一些资源的引用的情况。如何你使用了<code>isMounted()</code>，也就是跳过的React的检查，也就无法发现被卸载的组件还持有资源的问题。</p>
+<p>既然isMounted()是反模式，那么有没有可替代方案呢？<br>我们可以通过在设置一个变量来表示组件的装载和卸载的状态，当<code>componentDidMount</code>被调用时该变量为true，当 <code>componentWillUnmount</code>被调用时，该变量为false，这样该变量就可以当<code>isMounted()</code>来使用。但还不够，到目前为止，我们只是通过变量来替代<code>isMounted()</code>，还没有做任何的优化，接下来我们需要在<code>componentWillUnmount</code>被调用时取消所有的异步回调，主动释放所有资源，这样就能避免被卸载的组件还持有资源的引用的情况，从而减少了内存溢出等情况的发生。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyComponent extends React.Component &#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    mydatastore.subscribe(this);</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    mydatastore.unsubscribe(this);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用可取消的Promise做异步操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const cancelablePromise = makeCancelable(</span><br><span class="line">  new Promise(r =&gt; component.setState(&#123;...&#125;&#125;))</span><br><span class="line">);</span><br><span class="line">cancelablePromise</span><br><span class="line">  .promise</span><br><span class="line">  .then(() =&gt; console.log(&#x27;resolved&#x27;))</span><br><span class="line">  .catch((reason) =&gt; console.log(&#x27;isCanceled&#x27;, reason.isCanceled));</span><br><span class="line">cancelablePromise.cancel(); // Cancel the promise</span><br></pre></td></tr></table></figure>
+<p>可取消的Promise。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const makeCancelable = (promise) =&gt; &#123;</span><br><span class="line">  let hasCanceled_ = false;</span><br><span class="line">  const wrappedPromise = new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    promise.then((val) =&gt;</span><br><span class="line">      hasCanceled_ ? reject(&#123;isCanceled: true&#125;) : resolve(val)</span><br><span class="line">    );</span><br><span class="line">    promise.catch((error) =&gt;</span><br><span class="line">      hasCanceled_ ? reject(&#123;isCanceled: true&#125;) : reject(error)</span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">  return &#123;</span><br><span class="line">    promise: wrappedPromise,</span><br><span class="line">    cancel() &#123;</span><br><span class="line">      hasCanceled_ = true;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -547,10 +543,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -560,6 +552,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -582,11 +578,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

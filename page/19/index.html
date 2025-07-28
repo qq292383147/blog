@@ -157,100 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/11/24/Vue/%E5%9F%BA%E4%BA%8E%20Vue%20%E7%9A%84%E4%B8%A4%E5%B1%82%E5%90%B8%E9%A1%B6%E8%B8%A9%E5%9D%91%E6%80%BB%E7%BB%93/">
-                基于 Vue 的两层吸顶踩坑总结
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-11-24</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近日，在做活动页的过程中遇到两层吸顶的需求，并且要兼容 IE9 及以上的浏览器。乍一看不就是个吸顶嘛，应该不难吧，事实证明还是踩了很多坑才出来。兼容性问题多到吐血，我太难了。废话不多说，先看一下两层吸顶的最终实现效果，如下图所示。</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/127.gif" alt="127"></p>
-<p>功能点：两层吸顶，因为 Tabs 区域比较长所以在滚动过程中点击一层 Tabs 会回弹至一层吸顶刚吸顶的位置，这个功能点和锚点有些类似。二层 Tabs 通过 hover 切换，没有回弹效果。</p>
-<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>本文主要通过  <code>VueSticky</code>  插件来实现吸顶，实现步骤描述如下：</p>
-<ul>
-<li>安装：<code>npm install vue-sticky --save</code></li>
-<li>引入:   <code>import VueSticky from &quot;vue-sticky&quot;</code></li>
-<li>使用：</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">directives</span>: &#123;</span><br><span class="line">    <span class="string">&#x27;sticky&#x27;</span>: <span class="title class_">VueSticky</span>,</span><br><span class="line">&#125;,</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">ELEMENT</span> <span class="attr">v-sticky</span>=<span class="string">&quot;&#123; zIndex: NUMBER, stickyTop: NUMBER, disabled: [true|false]&#125;&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="comment">&lt;!-- sticky wrapper, IMPORTANT --&gt;</span></span></span><br><span class="line"><span class="language-xml">    CONTENT</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">ELEMENT</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<p>看了  <code>VueSticky</code>  的源码后将该插件的实现原理简要概括如下：</p>
-<p>首先判断该浏览器是否支持  <code>position:sticky;</code>，若支持就用  <code>position:sticky;</code>  来实现，若不支持就用  <code>position:fixed;</code>  的方式实现</p>
-<p>所以大家不用担心兼容性问题，因为我已经帮大家测试过了，IE9 及以上的浏览器都可以支持。</p>
-<h2 id="生效条件"><a href="#生效条件" class="headerlink" title="生效条件"></a>生效条件</h2><p>需要注意的是，使用 <code>v-sticky</code> 有几个必要条件，否则会失效：</p>
-<ul>
-<li>父元素不能设置  <code>overflow:hidden</code>  或者  <code>overflow:auto</code>  属性</li>
-<li>至少指定 top 、bottom 、left 、right  4  个值中的一个，否则只会处于相对定位</li>
-<li>父元素的高度不能低于 sticky 元素的高度</li>
-<li>sticky 元素仅在其父元素内生效</li>
-</ul>
-<h2 id="问题汇总"><a href="#问题汇总" class="headerlink" title="问题汇总"></a>问题汇总</h2><h3 id="◎-吸顶“叠罗汉”"><a href="#◎-吸顶“叠罗汉”" class="headerlink" title="◎ 吸顶“叠罗汉”"></a>◎ 吸顶“叠罗汉”</h3><p>吸顶元素在滚动到组件底部时，在谷歌、火狐等浏览器中，两层吸顶在消失过程中有重叠现象，具体现象如下图所示:</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/128.jpg" alt="128"></p>
-<p>主要原因：第一层吸顶还符合吸顶条件，第二层吸顶已经开始消失</p>
-<p>解决方案：给第一层吸顶元素添加  <code>minHeight</code>  属性，其大小为第一层吸顶元素的高度与第二层吸顶元素的高度的和。这里有一个需要注意的点在于：一开始第一层吸顶元素的高度并非两者之和，所以这里就需要监听滚动事件，在吸顶元素距离底部的距离为两者高度之和的位置处给第一层吸顶元素添加   <code>minHeight</code>  属性</p>
-<p>以下代码块中，<code>sumHeight</code> 表示两个吸顶元素的高度和，<code>initialHeight</code> 表示的是第一层吸顶元素的高度</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> offsetTop = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.xxx&quot;</span>).<span class="property">offsetBottom</span>;</span><br><span class="line"><span class="keyword">if</span> (offsetBottom &lt;= sumHeight) &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.xxx&quot;</span>).<span class="property">style</span>.<span class="property">minHeight</span> = sumHeight;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.xxx&quot;</span>).<span class="property">style</span>.<span class="property">minHeight</span> = initialHeight;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="◎-吸顶“舍不得离开”"><a href="#◎-吸顶“舍不得离开”" class="headerlink" title="◎ 吸顶“舍不得离开”"></a>◎ 吸顶“舍不得离开”</h3><p>在 IE 浏览器中，吸顶元素滚动到组件底部时不消失，具体现象如下图所示</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/129.jpg" alt="129"></p>
-<p>主要原因：在滚动过程中吸顶元素的 <code>position:sticky;</code> 属性始终存在</p>
-<p>解决方案：监听滚动事件，当滚动到组件底部时，将 <code>v-sticky=&quot;&#123; stickyTop: 0, disabled: false &#125;&quot;</code> 中的 <code>disabled</code> 的值设为 <code>true</code> 即可</p>
-<h3 id="◎-吸顶“难舍难分”"><a href="#◎-吸顶“难舍难分”" class="headerlink" title="◎ 吸顶“难舍难分”"></a>◎ 吸顶“难舍难分”</h3><p>在 IE 浏览器中，两层吸顶元素始终吸在一起</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/130.jpg" alt="129"></p>
-<p>主要原因：第二层吸顶元素在不需要吸顶的区域，它的 <code>position</code> 值也为 <code>sticky</code></p>
-<p>解决方案：监听滚动事件，在不需要吸顶的区域设置它的 <code>position</code> 值为 <code>static</code> 即可</p>
-<h3 id="◎-吸顶“变形”"><a href="#◎-吸顶“变形”" class="headerlink" title="◎ 吸顶“变形”"></a>◎ 吸顶“变形”</h3><p>同样 DOM 结构的吸顶元素，在 IE 浏览器中，吸顶会变形</p>
-<p>查看 <code>vue-sticky</code> 的源码，发现 <code>position:fixed;</code> 是设置在要吸顶的元素的第一个子元素上</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/vue/131.jpg" alt="131"></p>
-<p>因此为了兼容IE需要多加一层 <code>div</code> 结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-sticky=&quot;&#123; stickyTop: 0, disabled: false &#125;&gt;</span><br><span class="line">    &lt;div&gt; &lt;!-- sticky wrapper, IMPORTANT --&gt;</span><br><span class="line">        content</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li><p>组件的监听与移除 </p>
-<ul>
-<li>在 <code>mounted</code> 回调中加入以下代码</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// handleScroll 为页面滚动的监听回调</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;scroll&#x27;</span>, <span class="variable language_">this</span>.<span class="property">handleScroll</span>);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<ul>
-<li>同时要在 <code>destroy</code> 回调中移除监听</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">beforeDestroy</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">removeEventListener</span>(<span class="string">&quot;scroll&quot;</span>, <span class="variable language_">this</span>.<span class="property">handleScroll</span>);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="优化点"><a href="#优化点" class="headerlink" title="优化点"></a>优化点</h2><ul>
-<li><p>用监听事件监听滚动时，吸顶消失的很突兀</p>
-<ul>
-<li>判断浏览器是否支持 <code>sticky</code> ，若支持用 <code>position:sticky;</code> 实现，否则用 <code>position:fixed;</code></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> supportCSSSticky = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.xxx&quot;</span>).<span class="property">style</span>.<span class="property">position</span> === <span class="string">&quot;sticky&quot;</span>;</span><br><span class="line"><span class="keyword">if</span> (!supportCSSSticky) &#123;</span><br><span class="line">    <span class="comment">// 不支持的情况下监听滚动</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>图片懒加载</p>
-<ul>
-<li>对于图片过多的页面，为了加速页面的加载速度，我们需要将页面内未出现在可视区域内的图片先不做加载， 等到滚动到可视区域后再去加载。这样子对于页面加载性能上会有很大的提升，也提高了用户体验，关于图片优化方面内容可以阅读我们团队另一篇文章<a target="_blank" rel="noopener" href="https://juejin.im/post/5dc7fb87e51d454b4213c934">为你重新系统梳理下， Web 体验优化中和图有关的那些事（万字长文）</a></li>
-</ul>
-</li>
-</ul>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/11/15/JavaScript/%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82Web%E4%B8%AD%E6%9A%97%E8%97%8F%E7%9A%84%E5%AF%86%E7%A0%81%E5%AD%A6/">
                 一文搞懂Web中暗藏的密码学
             </a>
@@ -585,6 +491,88 @@ SHA-256
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/11/15/JavaScript/%E5%8A%A8%E7%94%BB%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F/">
+                动画：什么是闭包？
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-11-15</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h3 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h3><p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/80.jpg" alt="80"></p>
+<h3 id="1、什么是闭包？"><a href="#1、什么是闭包？" class="headerlink" title="1、什么是闭包？"></a>1、什么是闭包？</h3><p>学习一个陌生的概念，我们首先要去明白是什么？也就是闭包是什么？要想完全掌握闭包，一定要清楚函数作用域、内存回收机制、作用域继承。我们就简单讲一下这几个概念。</p>
+<h4 id="1-1-函数作用域"><a href="#1-1-函数作用域" class="headerlink" title="1.1 函数作用域"></a>1.1 函数作用域</h4><p>作用域的概念，形象描述的话，可以认为它是一个封闭的空间，只允许在这个封闭的空间内进行一些操作，也将这个封闭空间称为私有作用域。在 JS 中，一个函数的执行就会在内存中创建一个私有作用域——封闭的空间。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/81.jpg" alt="81"></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/82.gif" alt="82"></p>
+<p>比如在函数中定义一个变量，只能在函数这个私有作用域中使用（也就是封闭空间）。只要超出了这个作用域，就找不到该变量了。</p>
+<p>而且函数执行完成后，这个私有作用域（封闭的空间）就会销毁。有一种情况它是不会销毁的，那就是“闭包”，后边会讲到。</p>
+<h4 id="1-2-内存回收机制"><a href="#1-2-内存回收机制" class="headerlink" title="1.2 内存回收机制"></a>1.2 内存回收机制</h4><p>内存回收机制就是不在用到的内存，我们系统就自动进行回收从而清理出空间供其他程序使用。那回收的规则是什么？</p>
+<p>内部函数引用着外部的函数的变量，外部的函数尽管执行完毕，作用域也不会销毁。从而形成了一种不销毁的私有作用域。</p>
+<p>某一变量或者对象被引用着，因此在回收的时候不会释放它，因为被引用代表着被使用，回收器不会对正在引用的变量或对象回收的。</p>
+<h4 id="1-3-作用域继承"><a href="#1-3-作用域继承" class="headerlink" title="1.3 作用域继承"></a>1.3 作用域继承</h4><p>所谓的作用域继承，就像是儿子可以继承父亲的财产一样。比如小鹿这里有一个大的盒子作为一个父级的作用域，然后在这个大的盒子里边放一个小的盒子，作为子作用域。我们规定可以在小盒子中获取到大盒子中的东西，大盒子不能获取小盒子里的东西就称为作用域继承。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/83.jpg" alt="83"></p>
+<p>在 JS 中，道理是一样的，在一个函数里边我们再声明一个函数，内部函数可以访问外部函数作用域的变量，而外部的函数不能获取到内部函数的作用域变量。</p>
+<p>那好，上边的这几个概念理解了之后，什么是闭包对你来说已经不是什么问题。</p>
+<p>大白话说什么是闭包，那就是在一个函数里边再定义一个函数。这个内部函数一直保持有对外部函数中作用域的访问权限(小盒子一直可以有大盒子的访问权限)。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/84.jpg" alt="84"></p>
+<p>函数执行，形成一个私有的作用域，保护里边的私有变量不受外界的干扰，除了保护私有变量外，还可以存储一些内容，这样的模式叫做闭包。</p>
+<p><strong><font color="red">动画实现：</font></strong></p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/85.gif" alt="85"></p>
+<h3 id="2、闭包的作用是什么？"><a href="#2、闭包的作用是什么？" class="headerlink" title="2、闭包的作用是什么？"></a>2、闭包的作用是什么？</h3><p>想必你对闭包还是有点懵懵懂懂，没关系，我们再继续深入了解。闭包主要的作用是什么呢？为什么要使用闭包呢？</p>
+<p>通过上边对闭包的解释，外部函数 return 内部函数，但是仍然还是可以有访问外部函数的作用域，因为外部一直保持着引用。这就让我们发现它的可用之处。</p>
+<p>不是有块作用域不销毁吗？我们可以用来保存一些内容，还可以用来保护一些私有的变量。我们总结出闭包有两个作用，分别为<font color="red">保护和保存</font>。</p>
+<h3 id="3、闭包的应用场景"><a href="#3、闭包的应用场景" class="headerlink" title="3、闭包的应用场景"></a>3、闭包的应用场景</h3><p>既然我们知道闭包的作用是保存和保护，那在实际项目中哪里用到了呢？</p>
+<h4 id="3-1-保护作用"><a href="#3-1-保护作用" class="headerlink" title="3.1 保护作用"></a>3.1 保护作用</h4><p>团队开发时，每个开发者把自己的代码放在一个私有的作用域中，防止相互之间的变量命名冲突；把需要提供给别人的方法，通过 return 或 window.xxx 的方式暴露在全局下。</p>
+<blockquote>
+<p>jQuery 的源码中也是利用了这种保护机制。</p>
+</blockquote>
+<h4 id="3-2-保存作用"><a href="#3-2-保存作用" class="headerlink" title="3.2 保存作用"></a>3.2 保存作用</h4><p>选项卡闭包的解决方案。我们经常在网页中使用选项卡，但是它存在一个问题，那就是索引引发的问题，其实和下边的经典面试题问题相同。</p>
+<h3 id="4、经典的闭包面试题"><a href="#4、经典的闭包面试题" class="headerlink" title="4、经典的闭包面试题"></a>4、经典的闭包面试题</h3><blockquote>
+<p>循环绑定事件引发的索引什么问题？怎么解决这种问题？</p>
+</blockquote>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/86.jpg" alt="86"></p>
+<p>此时运行程序，你会得出的结果都是 len 的数值。</p>
+<p>为什么会出现这种问题，我们如何解决呢？</p>
+<p>原因很简单，所有的事件绑定都是异步的，当触发点击事件，执行方法的时候，循环早就结束了。</p>
+<p>我们在多说一点，什么是同步什么是异步？</p>
+<blockquote>
+<p>同步：JS 中当前这个任务没有完成，下面的任务都不会执行，只有等当前彻底完成，才会执行下面的任务。</p>
+</blockquote>
+<blockquote>
+<p>异步：JS 中的当前任务没有完成，需要等一会在完成，此时我们可以继续执行下面的任务。</p>
+</blockquote>
+<p><strong>解决方案：</strong></p>
+<p>当点击事件执行的时候，就会在私有作用域查找 i 的值，此时私有作用域没有 i ，就回去全局作用域查找，此时全局作用域的 i 已经被改变。所以说，要创建一个私有作用域的 i 。</p>
+<p>方法一，闭包的方式。闭包终于排上用场了，用来保存私有的变量。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/87.jpg" alt="87"></p>
+<p>但是闭包解决又优点，也有缺点。优点就是通过创建私有作用域（闭包）方式解决，循环几次，就创建几个私有作用域（闭包），然后，每个私有作用域都有一个私有变量 i ，存的值分别是循环的值。</p>
+<p>缺点是生成多个不销毁的私有作用域（堆内存），对性能有一定的影响。</p>
+<p>方法二，使用自定义属性。我们给每个对象添加一个索引属性就 OK 了。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/88.jpg" alt="88"></p>
+<p>终极解决方案，这是 ES6 中的知识，因为之前在 JS 中是没有块级作用域的概念的，到了 ES6 中就有了，Let 声明的变量就可以更好的解决上述问题。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/JavaScript/89.jpg" alt="89"></p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -629,10 +617,6 @@ SHA-256
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -642,6 +626,10 @@ SHA-256
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -664,11 +652,11 @@ SHA-256
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

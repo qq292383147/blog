@@ -157,84 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/05/24/React/%E4%B8%89%E5%88%86%E9%92%9F%E6%8E%8C%E6%8F%A1-React-%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6-%E6%8B%96%E6%8B%BD%E7%BB%84%E4%BB%B6%E7%AD%89/">
-                三分钟掌握 React 高阶组件(拖拽组件等)
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-05-24</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="什么是高阶组件？"><a href="#什么是高阶组件？" class="headerlink" title="什么是高阶组件？"></a>什么是高阶组件？</h2><p>高阶组件（HOC）是 <code>React</code> 中用于复用组件逻辑的一种高级技巧。<code>HOC</code> 自身不是 <code>React API</code> 的一部分，它是一种基于 <code>React</code> 的组合特性而形成的设计模式。</p>
-<h2 id="它做了什么？"><a href="#它做了什么？" class="headerlink" title="它做了什么？"></a>它做了什么？</h2><p>他们接收一个组件并返回一个新的组件！</p>
-<h2 id="什么时候去使用？"><a href="#什么时候去使用？" class="headerlink" title="什么时候去使用？"></a>什么时候去使用？</h2><p>当你的组件之间出现重复的模式 / 逻辑的时候。</p>
-<p>例子：</p>
-<blockquote>
-<p>挂载，订阅数据<br>为 UI 增加交互（也可以使用容器组件，或者 <a target="_blank" rel="noopener" href="https://react.docschina.org/docs/render-props.html"><code>Render Props</code></a>）<br>排序，过滤输入的数据</p>
-</blockquote>
-<blockquote>
-<p>第三个说法，我个人可能更加倾向于在传入组件之前做处理，而不是使用高阶组件</p>
-</blockquote>
-<h2 id="一个愚蠢的例子"><a href="#一个愚蠢的例子" class="headerlink" title="一个愚蠢的例子"></a>一个愚蠢的例子</h2><p>我们有一个 Mouse 组件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Mouse</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;mouse&quot;</span> <span class="attr">role</span>=<span class="string">&quot;img&quot;</span>&gt;</span>🐭<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>接下来，让我们使用 <a target="_blank" rel="noopener" href="https://greensock.com/draggable">GreenSock’s Draggable</a> 模块，来让组件变的可以拖拽。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Mouse</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">    componentDidMount = <span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Draggable</span>(<span class="variable language_">this</span>.<span class="property">ELEMENT</span>)</span><br><span class="line">    render = <span class="function">() =&gt;</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;mouse&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;e</span> =&gt;</span> (this.ELEMENT = e)&#125; role=&quot;img&quot;&gt;🐭<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/拖拽1.gif" alt=""></p>
-<p>我们加一只猫 🐱</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Cat</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">role</span>=<span class="string">&quot;img&quot;</span>&gt;</span>🐱<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>这个组件同样需要变得可拖拽✋，接下来，让我们使用高阶组件（HOC）来试一下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">withDrag</span> = <span class="title class_">Wrapped</span> =&gt; &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">WithDrag</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">        componentDidMount = <span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Draggable</span>(<span class="variable language_">this</span>.<span class="property">ELEMENT</span>)</span><br><span class="line">        render = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;draggable_wrapper&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;e</span> =&gt;</span> (this.ELEMENT = e)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">                    <span class="tag">&lt;<span class="name">Wrapped</span>  &#123;<span class="attr">...this.props</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title class_">WithDrag</span>.<span class="property">displayName</span> = <span class="string">`WithDrag(<span class="subst">$&#123;Wrapped.displayName || Wrapped.name&#125;</span>)`</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">WithDrag</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们的高阶组件（HOC）可以通过 <code>props</code> 接受一组件，并返回一个新的组件。</p>
-<p>许多高阶组件会在传递组件的过程中，注入新的 <code>props</code> 。这通常是决定我们是否应该使用高阶组件的因素之一。如果，我们不注入 <code>props</code> ，我们可以使用一个容器组件，或者 <a target="_blank" rel="noopener" href="https://react.docschina.org/docs/render-props.html">Render Props</a>。</p>
-<p>对于我们的高阶组件（HOC），我们也可以使用 Render Props 来达到相同的效果。你可能会觉得使用 <code>HOC</code> 来实现并不合适。但是，这个 “愚蠢的例子” 会让你更加熟悉 <code>HOC</code> 。 这比注入数据的示例更加有趣！😉</p>
-<p>让我们将这个 <code>HOC</code> 应用到 <code>Cat</code> 和 <code>Mouse</code> 组件上吧 👍</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Mouse</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;mouse&quot;</span> <span class="attr">role</span>=<span class="string">&quot;img&quot;</span>&gt;</span>🐭<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Cat</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;cat&quot;</span> <span class="attr">role</span>=<span class="string">&quot;img&quot;</span>&gt;</span>🐱<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">DraggableMouse</span> = <span class="title function_">withDrag</span>(<span class="title class_">Mouse</span>)</span><br><span class="line"><span class="keyword">const</span> <span class="title class_">DraggableCat</span> = <span class="title function_">withDrag</span>(<span class="title class_">Cat</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">    render = <span class="function">() =&gt;</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">Fragment</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">DraggableMouse</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">DraggableCat</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Fragment</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/拖拽2.gif" alt=""></p>
-<p>接下来，让我们在高阶组件中增加 <code>onDrag</code> 回调函数，并在 <code>props</code> 中注入 <code>x</code> 和 <code>y</code> 的位置属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">withDrag</span> = <span class="title class_">Wrapped</span> =&gt; &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">WithDrag</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">        state = &#123;</span><br><span class="line">            <span class="attr">x</span>: <span class="literal">undefined</span>,</span><br><span class="line">            <span class="attr">y</span>: <span class="literal">undefined</span>,</span><br><span class="line">        &#125;</span><br><span class="line">        componentDidMount = <span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Draggable</span>(<span class="variable language_">this</span>.<span class="property">ELEMENT</span>, &#123; <span class="attr">onDrag</span>: <span class="variable language_">this</span>.<span class="property">onDrag</span> &#125;)</span><br><span class="line">        onDrag = <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> &#123; x, y &#125; = e.<span class="property">target</span>.<span class="title function_">getBoundingClientRect</span>();</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123; <span class="attr">x</span>: <span class="title class_">Math</span>.<span class="title function_">floor</span>(x), <span class="attr">y</span>: <span class="title class_">Math</span>.<span class="title function_">floor</span>(y) &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        render = <span class="function">() =&gt;</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;draggable_wrapper&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;e</span> =&gt;</span> (this.ELEMENT = e)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">Wrapped</span>  &#123;<span class="attr">...this.props</span>&#125; <span class="attr">x</span>=<span class="string">&#123;this.state.x&#125;</span> <span class="attr">y</span>=<span class="string">&#123;this.state.y&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title class_">WithDrag</span>.<span class="property">displayName</span> = <span class="string">`WithDrag(<span class="subst">$&#123;Wrapped.displayName || Wrapped.name&#125;</span>)`</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">WithDrag</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Mouse</span> = (<span class="params"></span>) =&gt; (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;mouse&quot;</span> <span class="attr">role</span>=<span class="string">&quot;img&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        🐭</span></span><br><span class="line"><span class="language-xml">        &#123;x !== undefined &amp;&amp; </span></span><br><span class="line"><span class="language-xml">            y !== undefined &amp;&amp; (</span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;mouse__position&quot;</span>&gt;</span> &#123;`($&#123;x&#125;, $&#123;y&#125;)`&#125; <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        )&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>现在 <code>Mouse</code> 组件会向用户展示他的 <code>XY</code> 位置属性 🤓</p>
-<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/拖拽3.gif" alt=""></p>
-<p>我们也可以给 <code>HOC</code> 传递 <code>props</code>。然后在传递的过程中过滤掉这些无用的属性。举个例子，传递一个 <code>onDrag</code> 回调函数。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">withDrag</span> = <span class="title class_">Wrapped</span> =&gt; &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">WithDrag</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">        componentDidMount = <span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Draggable</span>(<span class="variable language_">this</span>.<span class="property">ELEMENT</span>, &#123; <span class="attr">onDrag</span>: <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">onDrag</span> &#125;)</span><br><span class="line">        render = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">const</span> &#123; onDrag, ...passed &#125; = <span class="variable language_">this</span>.<span class="property">props</span>;</span><br><span class="line">            <span class="keyword">return</span> (</span><br><span class="line">                <span class="language-xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">&quot;draggable__wrapper&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;e</span> =&gt;</span> (this.ELEMENT = e)&#125;&gt;</span></span><br><span class="line"><span class="language-xml">                    <span class="tag">&lt;<span class="name">Wrapped</span>  &#123;<span class="attr">...passed</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title class_">WithDrag</span>.<span class="property">displayName</span> = <span class="string">`WithDrag(<span class="subst">$&#123;Wrapped.displayName || Wrapped.name&#125;</span>)`</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">WithDrag</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">App</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">    render = <span class="function">() =&gt;</span> (</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">Fragment</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">DraggableMouse</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">                <span class="attr">onDrag</span>=<span class="string">&#123;e</span> =&gt;</span> console.info(e.target.getBoundingClientRect())&#125;</span></span><br><span class="line"><span class="language-xml">            /&gt;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">Fragment</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过使用 <code>HOC</code> ，我们的组件仍然很简单，复杂的逻辑都交给 <code>HOC</code> 来处理了。 我们的组件只关心传递给他们的内容。 我们可以在其他地方重复使用它们而且不会有可以被拖拽的属性。这使得我们的应用更容易维护。</p>
-<p>优秀的实践 👍</p>
-<blockquote>
-<p>当出现重复的模式的时候，使用它们<br>为了方便调试，需要更新处理之后组件的 <code>displayName</code><br>传递与当前 <code>HOC</code> 无关的所有 <code>props</code></p>
-</blockquote>
-<p>糟糕的实践 👎</p>
-<blockquote>
-<p>过度使用，其他模式可能会更加适合<br>改变原始组件<br>在 <code>render</code> 方法中使用高阶组件</p>
-</blockquote>
-<blockquote>
-<p>永远不要在 <code>React render()</code>方法中定义 <code>React</code> 组件（甚至是无状态组件）。<code>React</code> 在每次更新状态的时候，都会废弃旧的 <code>html DOM</code> 元素并将其替换为全新的元素。比如在 <code>render()</code> 函数中定义一个输入组件，元素被替换之后就会失去焦点，每次只能输入一个字符。</p>
-</blockquote>
-<p>注意 🙏</p>
-<blockquote>
-<p><code>Refs</code> 不会被传递<br>务必复制静态方法<br>大部分 <code>HOC</code> 都可以和 <code>render props</code> 相互替换使用</p>
-</blockquote>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/05/24/React/%E5%9B%BE%E5%83%8F%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD-%E5%88%97%E8%A1%A8%E5%9B%BE%E9%A1%BA%E5%BA%8F%E5%8A%A0%E8%BD%BD/">
                 图像延迟加载 && 列表图顺序加载
             </a>
@@ -360,6 +282,65 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/05/24/React/%E4%B8%80%E6%AC%A1-Web-%E7%AB%AF%E5%A4%A7%E9%87%8F%E5%9B%BE%E7%89%87%E5%90%8C%E6%97%B6%E5%8A%A0%E8%BD%BD%E5%8D%A1%E9%A1%BF%E9%97%AE%E9%A2%98%E7%9A%84%E4%BC%98%E5%8C%96%E4%B9%8B%E6%97%85/">
+                一次 Web 端大量图片同时加载卡顿问题的优化之旅
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-05-24</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <blockquote>
+<p>具体场景</p>
+</blockquote>
+<p>在描述如何解决问题，我们现在先来申明，问题是什么？ 笔者的需求大概是在某个页面显示 1~1000张，200~500k大小的图。好消息是这些图片来源于本地硬盘而非网络。(否则这个问题就要变成优化网络….)</p>
+<blockquote>
+<p>踩坑历程</p>
+</blockquote>
+<p>由于不是纯前端的项目，笔者可以从本地文件夹中读取文件。然后一段代码劈里啪啦的就出现了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileList = <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">fileList</span>;</span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    &lt;div className=&quot;list-wrapper&quot;&gt;</span><br><span class="line">        &#123;</span><br><span class="line">            fileList.map((file) =&gt; &#123;</span><br><span class="line">                &lt;img className=&quot;img-item&quot; src=&#123;file.src&#125;&gt;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>就在笔者满心欢喜的认为这个需求基本搞定了，该去楼下加鸡腿的时候。无情的现实狠狠的抽了我一巴掌。随着网页的刷新，一张纯白的画面展示在了我的面前，然后只见图片一点一点的从上面加载出来。 我不禁陷入了沉思，是CPU跑不动道了还是内存飘了？在一想，我这电脑都这个表现，真要上线了，这客户能忍受吗？不对，就这表现，没上线前产品小姐姐就的把我ko了…</p>
+<h2>方案一 懒加载</h2>
+
+<p>这种场景下想必大家第一反应也是懒加载。简单介绍一下图片懒加载。常见的图片懒加载方案是指页面加载时只渲染屏幕可见区域及周围的图片。当页面滚动时再加载需要显示的图片。<br>出于提高效（tou）率（lan）的目的，笔者在网上找了个比较好用的懒加载库然后引入项目。然而，情况并不乐观。因为该需求场景下每一张图片的宽高都是 50*50，那么在PC端常见的 1080p 的设备上首屏需要显示的图片达到了400+张。<br>即便我们忽视这个问题，当用户滚动网页速度很快时图片加载的体验也是不ok的。所以懒加载并不是万能的。</p>
+<h2>方案二 预加载</h2>
+
+<p>首先我们要知道，在硬件性能不变且CPU调度不能更积极的前提下。理论上我们无法减少图片渲染的时间。所以我们只能想办法调整图片渲染的方式来提高用户的体验。所以我们采用预加载的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fileList = <span class="variable language_">this</span>.<span class="property">props</span>.<span class="property">fileList</span>;</span><br><span class="line">fileList.<span class="title function_">forEach</span>(<span class="function">(<span class="params">element</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> img = <span class="keyword">new</span> <span class="title class_">Image</span>();</span><br><span class="line">    img.<span class="property">src</span> = element.<span class="property">src</span>;</span><br><span class="line">    img.<span class="property">onload</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 渲染这张图</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>当然我们也可以使用img.decode()方法对图片进行解码，它会返回一个promise对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img.<span class="title function_">decode</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 渲染这张图</span></span><br><span class="line">     ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>采用了这套方案后，图片会一张又一张的加载。然而，加载的速度实在是不敢恭维。如果用户想看最后那张图片，那他只能在哪里进行长久的等待…</p>
+<h2>方案三 懒加载 + 预加载</h2>
+
+<p>众所周知，3 = 1 + 2。 所以方案三就是方案一和方案二的结合体。首先我们加载一张图片未加载时的底图（占位）。而后我们继续采用方案二的方式进行图片逐个的预加载。当用户滚动图片时，我们便改变下一站预渲染的图片为用户可见区域的第一张。然而，情况还是不乐观。当用户的滚动条匀速直线不停的往下运动时，效果依然很差。</p>
+<h2>终结方案</h2>
+
+<p>综合上面几种方案，基本能优化的我们都已经优化了。那如继续何提高用户的体验呢？似乎，我们只能从图片本身去下手？<br>上文也提到，在我所面临的需求场景下一张图片的显示宽高为50 * 50。而图片的大小为200~500k。所以我们可以采用缩率图的方式，先渲染一张3~5k大小的缩略图，等用户点击图片查看详情时再去渲染大图。采用缩略图的情况下我们再使用方案三进行优化，性能表现几乎就可以满足这个场景下用户的需求了。</p>
+<h2>其他</h2>
+
+<p>当然，上面的几种优化方案只是我在某个项目中使用。我们仍然可以采用例如图片渐进式增强，CDN缓存，图片压缩，设立单独的资源服务器等诸多方式。图片的加载优化本身也是一个前端老生常谈的问题，业内已经有太多太多的解决方案。</p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -404,10 +385,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -417,6 +394,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -439,11 +420,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>

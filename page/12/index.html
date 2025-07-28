@@ -157,167 +157,6 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/blog/2019/12/21/%E5%85%B6%E5%AE%83/Linux%20CentOS%20+%20Nodejs%20+%20Express%E9%83%A8%E7%BD%B2vue%E9%A1%B9%E7%9B%AE/">
-                Linux CentOS + Nodejs + Express部署vue项目
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-12-21</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/blog/categories/其它/">其它</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>注：服务器为CentOS 7.3.1611，使用Xshell6 + Xftp6工具完成服务器远程操作</p>
-<h2 id="一、安装Node环境"><a href="#一、安装Node环境" class="headerlink" title="一、安装Node环境"></a>一、安装Node环境</h2><p>通过Xshell连接服务器成功之后就可以开始以下工作</p>
-<h3 id="1-清理工作"><a href="#1-清理工作" class="headerlink" title="1.清理工作"></a>1.清理工作</h3><p>如果之前有安装过nodejs，用自带的包管理命名先删除一次</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum remove nodejs npm -y</span><br></pre></td></tr></table></figure>
-<p>然后手动进入以下目录删除相关文件<br>进入 /usr/local/lib 删除所有 node 和 node_modules文件夹<br>进入 /usr/local/include 删除所有 node 和 node_modules 文件夹<br>进入 /usr/local/bin 删除 node 的可执行文件</p>
-<h3 id="2-去官网复制node安装包链接"><a href="#2-去官网复制node安装包链接" class="headerlink" title="2.去官网复制node安装包链接"></a>2.去官网复制node安装包链接</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a><br><img src="H:\上传到git里面的md文件图片\picture\other\24.png" alt="24"></p>
-<h3 id="3-在Xshell里cd到安装目录"><a href="#3-在Xshell里cd到安装目录" class="headerlink" title="3.在Xshell里cd到安装目录"></a>3.在Xshell里cd到安装目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/</span><br></pre></td></tr></table></figure>
-<h3 id="4-输入命令链接开始下载nodejs安装包"><a href="#4-输入命令链接开始下载nodejs安装包" class="headerlink" title="4.输入命令链接开始下载nodejs安装包"></a>4.输入命令链接开始下载nodejs安装包</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v10.16.0/node-v10.16.0-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
-<h3 id="5-输入命令两步解压"><a href="#5-输入命令两步解压" class="headerlink" title="5.输入命令两步解压"></a>5.输入命令两步解压</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v10.16.0-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v10.16.0-linux-x64.tar</span><br></pre></td></tr></table></figure>
-<h3 id="6-重名解压的文件夹名称为nodejs"><a href="#6-重名解压的文件夹名称为nodejs" class="headerlink" title="6.重名解压的文件夹名称为nodejs"></a>6.重名解压的文件夹名称为nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> node-v10.16.0-linux-x64 nodejs</span><br></pre></td></tr></table></figure>
-<h3 id="7-进入解压目录"><a href="#7-进入解压目录" class="headerlink" title="7.进入解压目录"></a>7.进入解压目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> nodejs</span><br></pre></td></tr></table></figure>
-<h3 id="8-创建软连接"><a href="#8-创建软连接" class="headerlink" title="8.创建软连接"></a>8.创建软连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s  /usr/local/nodejs/bin/node /usr/local/bin/node</span><br><span class="line"><span class="built_in">ln</span> -s  /usr/local/nodejs/bin/npm /usr/local/bin/npm</span><br></pre></td></tr></table></figure>
-<p>如果不小心输错了路径，重新创建会提示：‘ln: 无法创建符号链接”/usr/local/bin/npm”: 文件已存在’，输入rm /usr/local/bin/npm命令清除后可以重新创建</p>
-<h3 id="9-测试"><a href="#9-测试" class="headerlink" title="9.测试"></a>9.测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<h3 id="10-安装cnpm淘宝镜像并创建软链接"><a href="#10-安装cnpm淘宝镜像并创建软链接" class="headerlink" title="10.安装cnpm淘宝镜像并创建软链接"></a>10.安装cnpm淘宝镜像并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm</span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/nodejs/bin/cnpm /usr/local/bin/cnpm</span><br></pre></td></tr></table></figure>
-<h2 id="二、用Express搭建web服务"><a href="#二、用Express搭建web服务" class="headerlink" title="二、用Express搭建web服务"></a>二、用Express搭建web服务</h2><h3 id="1-在Xshell里cd到指定目录"><a href="#1-在Xshell里cd到指定目录" class="headerlink" title="1.在Xshell里cd到指定目录"></a>1.在Xshell里cd到指定目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/</span><br></pre></td></tr></table></figure>
-<p>注：如果没有www目录就在var目录下输入命令mkdir www手动创建一个，并进入到www目录</p>
-<h3 id="2-创建web服务项目文件夹"><a href="#2-创建web服务项目文件夹" class="headerlink" title="2.创建web服务项目文件夹"></a>2.创建web服务项目文件夹</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> demo</span><br></pre></td></tr></table></figure>
-<h3 id="3-cd进入项目目录"><a href="#3-cd进入项目目录" class="headerlink" title="3.cd进入项目目录"></a>3.cd进入项目目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> demo</span><br></pre></td></tr></table></figure>
-<h3 id="4-初始化项目生成package-json"><a href="#4-初始化项目生成package-json" class="headerlink" title="4.初始化项目生成package.json"></a>4.初始化项目生成package.json</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init -y</span><br></pre></td></tr></table></figure>
-<p>注：这里的-y意思是省略创建过程中一直输yes的步骤</p>
-<h3 id="5-安装express"><a href="#5-安装express" class="headerlink" title="5.安装express"></a>5.安装express</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm i express -D</span><br></pre></td></tr></table></figure>
-<h3 id="6-创建web服务程序文件app-js"><a href="#6-创建web服务程序文件app-js" class="headerlink" title="6.创建web服务程序文件app.js"></a>6.创建web服务程序文件app.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> app.js</span><br></pre></td></tr></table></figure>
-<h3 id="7-编写web服务程序代码app-js"><a href="#7-编写web服务程序代码app-js" class="headerlink" title="7.编写web服务程序代码app.js"></a>7.编写web服务程序代码app.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>); <span class="comment">//文件模块</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>); <span class="comment">//路径模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>); <span class="comment">//express框架模块</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">&#x27;11.22.33.44&#x27;</span>; <span class="comment">//ip</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">9999</span>; <span class="comment">//端口</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(express.<span class="title function_">static</span>(path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./dist&#x27;</span>))); <span class="comment">// 设置静态项目访问路径(此处的dist为webpack打包生成的项目文件夹名称)</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;*&#x27;</span>, <span class="keyword">function</span>(<span class="params">req, res</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> html = fs.<span class="title function_">readFileSync</span>(path.<span class="title function_">resolve</span>(__dirname, <span class="string">&#x27;./dist/index.html&#x27;</span>), <span class="string">&#x27;utf-8&#x27;</span>); <span class="comment">// 设置所有访问服务请求默认返回index.html文件</span></span><br><span class="line">    res.<span class="title function_">send</span>(html);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, hostName, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(服务器运行在<span class="attr">http</span>:<span class="comment">//$&#123;hostName&#125;:$&#123;port&#125;);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="三、打包部署vue项目"><a href="#三、打包部署vue项目" class="headerlink" title="三、打包部署vue项目"></a>三、打包部署vue项目</h2><h3 id="1-在本地开发工具里打包需要部署的vue项目"><a href="#1-在本地开发工具里打包需要部署的vue项目" class="headerlink" title="1.在本地开发工具里打包需要部署的vue项目"></a>1.在本地开发工具里打包需要部署的vue项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
-<p>生成的dist文件夹就是我们需要部署到服务器上的项目</p>
-<p><img src="H:\上传到git里面的md文件图片\picture\other\25.png" alt="25"></p>
-<h2 id="2-把dist文件夹通过Xftp工具复制到服务器的var-www-demo目录下"><a href="#2-把dist文件夹通过Xftp工具复制到服务器的var-www-demo目录下" class="headerlink" title="2.把dist文件夹通过Xftp工具复制到服务器的var/www/demo目录下"></a>2.把dist文件夹通过Xftp工具复制到服务器的var/www/demo目录下</h2><p><img src="H:\上传到git里面的md文件图片\picture\other\26.png" alt="26"></p>
-<h2 id="四、启动web服务"><a href="#四、启动web服务" class="headerlink" title="四、启动web服务"></a>四、启动web服务</h2><h3 id="1-在Xshell里cd到var-www-demo目录，输入以下命令启动web服务程序"><a href="#1-在Xshell里cd到var-www-demo目录，输入以下命令启动web服务程序" class="headerlink" title="1.在Xshell里cd到var/www/demo目录，输入以下命令启动web服务程序"></a>1.在Xshell里cd到var/www/demo目录，输入以下命令启动web服务程序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node app.js</span><br></pre></td></tr></table></figure>
-<p>如果能正常访问项目地址表示已经搭建成功。</p>
-<p>请求后端接口跨域方案请见：<br>跨域代理方案1：Nginx使用教程<br>跨域代理方案2：Nodejs 中使用http-proxy-middleware实现代理跨域</p>
-<h3 id="2-安装PM2托管Node-Web服务程序"><a href="#2-安装PM2托管Node-Web服务程序" class="headerlink" title="2.安装PM2托管Node Web服务程序"></a>2.安装PM2托管Node Web服务程序</h3><p>在xshell里用node默认的启动方式有一个缺点，xshell退出后nodejs项目便会停止<br>使用pm2这个托管工具可以很好的解决这个问题，而且当代码有更改时会自动重启服务更新</p>
-<h3 id="1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"><a href="#1-首先多按两次ctrl-c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接" class="headerlink" title="1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接"></a>1.首先多按两次ctrl +c结束之前的运行程序，接着输入下面的命令安装pm2并创建软链接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install pm2 -g</span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/nodejs/bin/pm2 /usr/local/bin/pm2</span><br></pre></td></tr></table></figure>
-<h3 id="2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称"><a href="#2-然后输入下面的命令启动托管任务，abc为托管项目定义的名称" class="headerlink" title="2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称"></a>2.然后输入下面的命令启动托管任务，abc为托管项目定义的名称</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start app.js --name abc</span><br></pre></td></tr></table></figure>
-<h3 id="以下为pm2常用命令说明"><a href="#以下为pm2常用命令说明" class="headerlink" title="以下为pm2常用命令说明"></a>以下为pm2常用命令说明</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pm2 start app.js –name abc</td>
-<td>启动(–name为定义任务名称的指令，abc为任务名称值)</td>
-</tr>
-<tr>
-<td>pm2 start app.js –watch</td>
-<td>启动( –watch为监听应用目录的变化的指令)</td>
-</tr>
-<tr>
-<td>pm2 restart app.js</td>
-<td>重启任务</td>
-</tr>
-<tr>
-<td>pm2 stop abc</td>
-<td>结束(abc为任务名称或id)</td>
-</tr>
-<tr>
-<td>pm2 list</td>
-<td>查看所有任务列表</td>
-</tr>
-</tbody>
-</table>
-<h3 id="pm2基本功能命令"><a href="#pm2基本功能命令" class="headerlink" title="pm2基本功能命令"></a>pm2基本功能命令</h3><table>
-<thead>
-<tr>
-<th>功能</th>
-<th>命令</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>启动进程/应用</td>
-<td>pm2 start bin/abc 或 pm2 start app.js</td>
-</tr>
-<tr>
-<td>重命名进程/应用</td>
-<td>pm2 start app.js –name abc</td>
-</tr>
-<tr>
-<td>添加进程/应用</td>
-<td>pm2 start bin/abc –watch</td>
-</tr>
-<tr>
-<td>结束进程/应用</td>
-<td>pm2 stop abc</td>
-</tr>
-<tr>
-<td>结束所有进程/应用</td>
-<td>pm2 stop all</td>
-</tr>
-<tr>
-<td>删除进程/应用</td>
-<td>pm2 delete abc</td>
-</tr>
-<tr>
-<td>删除所有进程/应用</td>
-<td>pm2 delete all</td>
-</tr>
-<tr>
-<td>列出所有进程/应用</td>
-<td>pm2 list</td>
-</tr>
-<tr>
-<td>查看进程/应用详情</td>
-<td>pm2 show abc 或 pm2 describe abc</td>
-</tr>
-<tr>
-<td>查看进程/应用资源消耗</td>
-<td>pm2 monit</td>
-</tr>
-<tr>
-<td>查看进程/应用日志</td>
-<td>pm2 logs abc</td>
-</tr>
-<tr>
-<td>查看所有进程/应用日志</td>
-<td>pm2 logs</td>
-</tr>
-<tr>
-<td>重新启动进程/应用</td>
-<td>pm2 restart abc</td>
-</tr>
-<tr>
-<td>重新启动所有进程/应用</td>
-<td>pm2 restart all</td>
-</tr>
-</tbody>
-</table>
-<p>pm2使用教程参考链接：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/chyingp/p/pm2-documentation.html">https://www.cnblogs.com/chyingp/p/pm2-documentation.html</a><br><a target="_blank" rel="noopener" href="https://www.jb51.net/article/113398.htm">https://www.jb51.net/article/113398.htm</a></p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
             <a href="/blog/2019/12/21/%E5%85%B6%E5%AE%83/%E5%A6%82%E4%BD%95%E8%BF%9C%E7%A8%8B%E9%83%A8%E7%BD%B2CentOS%E5%89%8D%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%80%9D%E8%B7%AF/">
                 如何远程部署CentOS前后端项目的思路
             </a>
@@ -479,6 +318,120 @@
 
 </div>
             
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/blog/2019/12/21/React/%E5%9B%BE%E8%A7%A3%20React%20Native%20%E5%B8%A6%E4%BD%A0%E8%B5%B0%E8%BF%9BRN%E4%B8%96%E7%95%8C/">
+                图解 React Native 带你走进RN世界
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-12-21</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/blog/categories/React-React-Native/">React & React Native</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p>当你读完本文后，希望你能重新回到这里，并能够轻松回答以下问题:</p>
+<ul>
+<li>什么是 React Native ？为什么它的名字中有 “Native” 字样？</li>
+<li>为什么 React Native 如此之酷？</li>
+<li>我们可以分别使用 React Native 和 React 来开发什么？</li>
+<li>为什么会出现 ReactDOM ？它是做什么的？</li>
+<li>React 渲染器 ( renderer )是用来做什么的？</li>
+<li>React Sketch.app 工作原理是什么？</li>
+<li>ReactVR 的工作原理是什么？</li>
+<li>什么是 ReactJS ？React.js 又是什么？</li>
+</ul>
+<h2 id="不仅仅是-Web"><a href="#不仅仅是-Web" class="headerlink" title="不仅仅是 Web"></a>不仅仅是 Web</h2><p>学完上一篇文章的你现在脑海中的画面应该是这样的:</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/12.jpg" alt="12"></p>
+<p>你也知道，React 是在 Web 上开发用户界面的利器。使用 React 来开发 UI 的话，就能够描述你想要什么，而不是告诉 UI 如何更新 (响应式 UI)，还可以在可重用组件中组织代码，并创建高性能用户界面，而无需担心DOM超慢的速度 (虚拟 DOM)。越来越多的开发者选择 React 是因为它可以使得开发者更专注于上层业务，而不是底层 DOM 更新的细节。我们将这种开发 UI 的方式称之为 React 范式。范式基本上就是你思考一个问题的方式，以及这个问题的描述方式和解决方案。</p>
+<p>对于 Web 应用来说这无疑很棒。那对于其他平台呢，比如 iOS 和 安卓？如果能将 React 范式应用于原生应用的开发，岂不是很棒？</p>
+<p>在某种程度上来说，移动端的工作方式与 Web 端是相同的。比方说，有一个模特(树人)，还有一个根据模特来创建视觉元素的艺术家。没什么可惊讶的，构建原生应用 UI 的传统方式就是直接操纵树人并告诉他如何更新(直接跟树人交谈)。这与在 Web 浏览器中直接操纵 DOM 有类似的缺点。React 绝对有助于解决此类问题。</p>
+<p>除了相似之处外，移动端还有与 Web 端不同的地方，不同系统之间都是完全不同的。在过去，要开发原生应用的话，开发者需要学习特定的语言和平台工具链。</p>
+<p>这有点像在国外的工作室上班，员工需要说不同的语言。你需要精通所有语言才能跟所有模特进行交流。这听上去就很麻烦，你说是吧？</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/13.jpg" alt="13"></p>
+<p>所以，如果想要你开发出的原生应用能运行在 iOS 和安卓两个平台上的话，你需要创建两套完全分离的代码库。同样的业务逻辑需要写两遍。开发应用既困难，成本又高，从长期的维护来看的话更是如此。</p>
+<p>这正是 React Native 诞生的原因。我们来一起看看它是如何将开发过程大大简化的。</p>
+<h2 id="React-Native"><a href="#React-Native" class="headerlink" title="React Native"></a>React Native</h2><h3 id="渲染器-renderer-和全新的-React"><a href="#渲染器-renderer-和全新的-React" class="headerlink" title="渲染器 ( renderer ) 和全新的 React"></a>渲染器 ( renderer ) 和全新的 React</h3><p>对于 Web 应用来说，React 负责启用 React 范式 (管理响应式 UI、组件和虚拟 DOM)，以及实际更新浏览器中的 DOM (与 Domo 交流)。当 DOM 是唯一需要交互的对象时，React 可以轻松处理好这两项任务。</p>
+<p>但是，对于原生应用的话，当需要管理不同平台上的各种“树人”时，事情就变得有挑战了。如果我们将更多的重担压在 React 肩上的话，那我们可怜的超级英雄将会为此抓狂。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/14.jpg" alt="14"></p>
+<p>为了解决此问题，React 创建者们将原来的 React 拆分成两部分。第一部分是全新的 React ，它只负责启用 React 范式。第二部分叫做 ReactDOM ，它唯一的任务就是与浏览器中的 DOM 进行交互。因为 ReactDOM 负责更新 DOM ，而 DOM 又决定了浏览器渲染的内容，所以我们将 ReactDOM 称之为渲染器。</p>
+<p>想象一下，我们的超级英雄脱下了他的斗篷，并在上面洒了一些魔法之尘。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/15.jpg" alt="15"></p>
+<p>斗篷立刻就有了生命，并成为了超级英雄的小助手。从负责与 Domo 沟通的枷锁中释放后，React 现在可以专注于做他最擅长的事。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/16.jpg" alt="16"></p>
+<p>这种角色分离的理念非常之强大。现在我们只需要维护一个共享的核心库，同时编写全新的渲染器来适应新平台。这种方式要比之前简单多了。由于有了 iOS 和安卓渲染器的强力支撑，现在你可以<strong>只使用一种语言和相同的 React 范式</strong>来同时为两个平台开发应用。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/17.jpg" alt="17"></p>
+<p>React 只需要专注于他擅长的领域即可。渲染器来负责沟通。</p>
+<h3 id="一个完整的平台"><a href="#一个完整的平台" class="headerlink" title="一个完整的平台"></a>一个完整的平台</h3><p>React 的官网定义是: 用来开发用户界面的 JavaScript 库。它的含义有两层: 首先它是 UI 开发的利器，其次它不涉及除 UI 开发以外的任何其他领域。</p>
+<p>实际上，<strong>你无法单独使用 React 开发出一个完整的应用</strong>。例如，你需要 CSS 来写外观样式，你需要 webpack 来打包，你需要 Firebase 来做数据持久化，等等。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/18.jpg" alt="18"></p>
+<p>“网络浏览器” 工作室里的实际景象要你比之前所见到的要忙碌得多。</p>
+<p>这在 Web 开发环境下还好，因为 React 是一个 JavaScript 库，所以它能自然地适应 Web 环境下的其他部件。这些部件要么本身就是 JavaScript 库，要么能很容易地与 JavaScript 适配。毕竟 JavaScript 是 Web 上的标准语言。</p>
+<p>但是，对于移动端来说就比较困难了，因为那里需要支持多种语言和技术。这个时候，我们就需要包含一整套部件，而且这些部件的使用方法要跟 React 类似，至少是能用 JavaScript 来调用。这样，React Native 诞生了。</p>
+<p>相比于 Web 上的 React ，React Native 包括更多东西:</p>
+<ul>
+<li>全新的 React 作为核心库 (我们的超级英雄，只不过没穿斗篷)</li>
+<li>iOS 和安卓的渲染器</li>
+<li>将代码转换成可安装应用的工具</li>
+<li>原生 UI 组件 (状态栏、列表等等)和动画</li>
+<li>UI 的样式和布局工具箱 (flexbox)</li>
+<li>构建大多数应用的基础部分 (比如网络)</li>
+<li>提供原生功能的部分，比如粘贴板、加速计和存储</li>
+<li>…</li>
+</ul>
+<p>我们说 React Native 本身是一个完整的平台是因为<strong>它包含开发完整应用所需的一切</strong>。相比之下，原本的 React 只负责 Web UI ，你需要去自己引用其他部分才能创建出一个 Web 应用。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/19.jpg" alt="19"></p>
+<p>React Native 的组成</p>
+<h3 id="原生-UI"><a href="#原生-UI" class="headerlink" title="原生 UI"></a>原生 UI</h3><p>为什么 React Native 的名字里有 Native 字样？这实际上是它的标志性特征: React Native 的内置 UI 是由<strong>原生 UI 组件</strong>组成的，这些组件表现良好，外观/感觉一致，并非 WebView 中所包含的一些垃圾模拟。用 React Native 开发的应用与用像 Swift 和 Java 开发的原生应用放在一起，通常是难以区分的。</p>
+<p>你也知道，像滚动加速、动画、键盘行为和阴影这些细节，实际上在应用程序的用户体验中扮演了非常重要的角色。如果这些东西不能与你手机中其他应用保持统一的话，那么用户很快就会觉得不爽。</p>
+<p>我原本的目的就是想在这里解释清楚 “native” 的真正含义以及为何 React Native 的性能更好。但我发现在几次头脑风暴之后，我的一整页笔记很快就写满了。还是在后面的文章中再来单独讲它吧。</p>
+<p>到目前为止，我只需要你记住原生 UI 是让 React Native 大放异彩的原因之一。</p>
+<p>看到这里，你应该了解到 React Native 是一个完整的平台，它可以让你使用 JavaScript 来开发真正的原生应用，而且还是用 React 的路子来写（React 范式）。</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/20.jpg" alt="20"></p>
+<h2 id="React-Sketch-app、ReactVR、React-XYZ…"><a href="#React-Sketch-app、ReactVR、React-XYZ…" class="headerlink" title="React Sketch.app、ReactVR、React XYZ…"></a>React Sketch.app、ReactVR、React XYZ…</h2><p>Airbnb 最近发布了一款十分有趣的工具，叫做 <a target="_blank" rel="noopener" href="https://airbnb.design/painting-with-code/">React Sketch.app</a> ，它可以将 React 代码转换成 Sketch 里的图层。你能猜出它的工作原理吗？</p>
+<p>没错！从本质上来说，它就是使用了特殊渲染器的 React Native ，这个渲染器能与 Sketch 中的树人进行交流！</p>
+<p><img src="https://qq292383147.github.io/pictureLibrary/picture/React/21.jpg" alt="21"></p>
+<p>因为 React Sketch.app 是基于 React Native 的，它也是一个完整的平台，所以可以直接使用它来从远程 API 来获取数据并在 Sketch 中进行渲染。</p>
+<p>与此同时，许多 React Native 的其他变种纷纷问世，用来支持在 <a target="_blank" rel="noopener" href="https://github.com/Microsoft/react-native-windows">Windows</a>、 <a target="_blank" rel="noopener" href="https://github.com/ptmt/react-native-macos">macOS</a>、<a target="_blank" rel="noopener" href="https://github.com/facebook/react-360">VR</a> 等平台上创建应用。</p>
+<p>这意味着只要你掌握了 React ，就可以在大量的平台上使用 JavaScript 来创建应用，而且对新平台的支持还在不断涌现。不同的平台，同样的思维模式。正如 React Native 的创建者们所倡导的: “<strong>一次学习，随处编写</strong>”。</p>
+<h2 id="动手时刻！"><a href="#动手时刻！" class="headerlink" title="动手时刻！"></a>动手时刻！</h2><p>说了这么多！你是否想在自己的手机上也尝试一番？</p>
+<p>我也很兴奋！拿起你的手机跟我一起动起来！</p>
+<ol>
+<li>在手机上下载 Expo 应用。你可以点击这里下载: <a target="_blank" rel="noopener" href="https://itunes.apple.com/app/apple-store/id982107779?mt=8">iOS</a>、<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=host.exp.exponent">安卓</a>，或者在 App Store 中搜索 “Expo” 。</li>
+<li>在电脑上打开网页: <a target="_blank" rel="noopener" href="https://snack.expo.io/">snack.expo.io/</a> 。</li>
+<li>在手机上启动 Expo 应用并点击 “Scan QR Code” 。</li>
+<li>扫描电脑上显示的二维码。如果一些正常，你应该可以看见一条绿色的信息 “Device connected” 。</li>
+<li>如果二维码无法自动消失的话，可以点击页面右上角的小叉关闭。关闭后应该可以看见代码编辑器。</li>
+<li>删除编辑器中的所有代码，然后将<a target="_blank" rel="noopener" href="https://gist.githubusercontent.com/lintonye/5cb3c11349591bf475b91573682fe688/raw/4ea0d4562ce45c1ba3867a1759359e1f86bb590a/domohat.jsx">此代码</a>粘贴进去。</li>
+<li>你在手机上看到了什么？</li>
+<li>你可以随意更改编辑器中的代码，然后立即在手机中查看结果！</li>
+</ol>
+<p>在后面的文章中我会对开发环境进行详细地解释。你暂时只需记住它就是 React Native 的 Codepen (在上篇文章中我曾使用它来展示示例 Domo 的帽子)。</p>
+<p>如果你将 <a target="_blank" rel="noopener" href="https://gist.github.com/lintonye/5cb3c11349591bf475b91573682fe688">React Native 版本</a> 和 <a target="_blank" rel="noopener" href="https://codepen.io/focuser/pen/gROrXx">React (Web) 版本</a>进行对比的话，你会发现它们的代码十分相似，都是这样的:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const Hat = ...</span><br><span class="line"></span><br><span class="line">const Thinker = ...</span><br><span class="line"></span><br><span class="line">// 下面的代码是 React Native 版本的</span><br><span class="line">// Web 版本的话，只需将 “View” 替换成 “div”</span><br><span class="line">const ThinkerWithHat = (&#123;hat&#125;) =&gt; (</span><br><span class="line">  &lt;View&gt;</span><br><span class="line">    &lt;Thinker /&gt;</span><br><span class="line">    &lt;Hat type=&#123;hat&#125;/&gt;</span><br><span class="line">  &lt;/View&gt;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">const HatSwitcher = ...</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>“一次学习，随处编写”！还记得吗？</p>
+<h2 id="什么是-ReactJS-？什么是-React-js-？"><a href="#什么是-ReactJS-？什么是-React-js-？" class="headerlink" title="什么是 ReactJS ？什么是 React.js ？"></a>什么是 ReactJS ？什么是 React.js ？</h2><p>你可能无数次地听到 ReactJS (或 React.js) ，我也是这么叫的。实际上这并非官方名称。自从<a target="_blank" rel="noopener" href="https://web.archive.org/web/20130529213355/https://facebook.github.io/react/">诞生之日</a>起，官方名称一直都是 “React” ，从未改过。</p>
+<p>因为一般 JavaScript 库的名字都趋向于叫 “XyzJS” 或 “Xyz.js” ，React 也不例外，或许开发者们都已经习惯给库的名称加上 “JS” 或 “.js” 的后缀了。因为 React 最开始是作为 Web 库的身份出现的，所以很多开发者都习惯于实用 ReactJS 或 React.js 来泛指 Web 上的 React ，即 React 和 ReactDOM 的集合。</p>
+<p>按照惯例，当我提到 ReactJS 时，其实我想表达的也是 Web 上的 React 。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，到目前为止，我们已经介绍了不少内容。我们了解了一些 React 的历史以及 React Native 的组成。作为一个完整的平台，React Native 包含开发原生应用所需的一切，并且它使用的是 JavaScript 语言和 React 范式。React Native 现在支持多个平台，其中包括 iOS、Android、Windows、macOS、Sketch.app ，甚至还有 VR 。“一次学习，随处编写”！</p>
+
+        </div>
+    
+
+</div>
+            
         </section>
     </div>
 </div>
@@ -523,10 +476,6 @@
         <ul>
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
-                <a class="footer-post" href="/blog/2025/07/25/%E5%85%B6%E5%AE%83/%E9%A6%99%E6%B8%AF%E6%97%85%E6%B8%B8%E6%94%BB%E7%95%A5/">香港旅游攻略</a>
-            </li>
-            
-            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/20/JavaScript/html5%E9%A1%B5%E9%9D%A2%E5%BD%93%E7%82%B9%E5%87%BBinput%E8%BE%93%E5%85%A5%E6%A1%86%E5%BC%B9%E5%87%BA%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%B8%8A%E9%94%AE%E7%9B%98%E5%B0%B1%E4%BC%9A%E6%8A%8A%E8%83%8C%E6%99%AF%E9%A1%B6%E4%BA%86%E4%B8%8A%E6%9D%A5%20%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E5%B0%B1%E4%B9%B1%E4%BA%86/">html5页面当点击input输入框弹出安卓手机上</a>
             </li>
             
@@ -536,6 +485,10 @@
             
             <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
                 <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%85%B3%E4%BA%8E%E9%97%AE%E5%8F%B7%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E5%8F%8A%E7%94%A8%E6%B3%95/">JS 关于问号相关问题及用法</a>
+            </li>
+            
+            <li style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                <a class="footer-post" href="/blog/2021/10/18/JavaScript/JS%20%E5%88%A4%E6%96%AD%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/">JS 判断对象是否为空对象的几种方法</a>
             </li>
             
         </ul>
@@ -558,11 +511,11 @@
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/php/">php</a>
+            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
         </li>
         
         <li>
-            <a class="footer-post" href="/blog/tags/nodeJS/">nodeJS</a>
+            <a class="footer-post" href="/blog/tags/php/">php</a>
         </li>
         
     </ul>
